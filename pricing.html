@@ -114,14 +114,7 @@
   .closer h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:16px;}
   .closer p{font-size:1.15rem;opacity:.9;margin-bottom:32px;}
 
-  footer{border-top:1px solid var(--line);padding:40px 0;}
-  .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:30px;}
-  .foot-brand .logo{font-size:1.8rem;-webkit-text-stroke:.6px var(--ink);}
-  .foot-brand p{color:var(--muted);font-size:.9rem;margin-top:10px;max-width:26ch;}
-  .foot-cols{display:flex;gap:56px;flex-wrap:wrap;}
-  .foot-col h5{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:14px;}
-  .foot-col a{display:block;color:var(--body);text-decoration:none;font-size:.92rem;font-weight:500;margin-bottom:9px;} .foot-col a:hover{color:var(--ink);}
-  .foot-base{border-top:1px solid var(--line);margin-top:32px;padding-top:22px;color:var(--muted);font-size:.85rem;}
+  /* footer styles inherited from assets/site.css (shared across all pages) */
 
   @media(max-width:860px){
     .nav-links a:not(.nav-cta){display:none;} .wrap{padding:0 22px;} .logo{font-size:2rem;}
@@ -404,9 +397,10 @@
         <p>The phone system for new businesses and modern small teams.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="#">Pricing</a><a href="features.html#mobile">Mobile app</a></div>
-        <div class="foot-col"><h5>Build</h5><a href="features.html#developers">Developers</a><a href="features.html#developers">Webhooks</a><a href="features.html#integrations">Integrations</a><a href="#">API docs</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="#">About</a><a href="#">Contact</a><a href="#">Support</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="features.html#mobile">Mobile app</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a></div>
+        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/slack-notifications.html">Phone system with Slack notifications</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a></div>
       </div>
     </div>
     <div class="foot-base">© 2026 JOEL. All rights reserved.</div>
