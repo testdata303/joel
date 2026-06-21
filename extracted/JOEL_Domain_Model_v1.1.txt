@@ -1,0 +1,567 @@
+
+
+
+    JOEL Domain Model v1.1 FINAL FROZEN
+
+    STATUS: FROZEN V1.1
+
+    JOEL is an extension-based business phone system.
+
+    Extensions are the primary operational object.
+
+    Numbers are entry points.
+
+    Devices are endpoints.
+
+    Users are optional.
+
+    AI is analytics-focused.
+
+    
+
+    BUSINESS
+
+    Owns:
+
+    Numbers
+
+    Greetings / Menus
+
+    Extensions
+
+    Devices
+
+    Users
+
+    Shared SMS Inbox
+
+    Integrations
+
+    Calls
+
+    Voicemails
+
+    Notifications
+
+    Analytics
+
+    States:
+
+    Active
+
+    Cancelled
+
+    Deleted
+
+    Restored
+
+    Recovery Window:
+
+    30 Days
+
+    
+
+    NUMBER
+
+    Business-owned phone number.
+
+    Entry point only.
+
+    Routes to:
+
+    Main Greeting / Menu
+
+    Direct Extension
+
+    Owns:
+
+    Public Identity
+
+    Caller ID Identity
+
+    SMS Filter Identity
+
+    Does not own:
+
+    Routing
+
+    Voicemail
+
+    Notifications
+
+    
+
+    GREETING / MENU
+
+    Greeting owns:
+
+    Generated Audio
+
+    Uploaded Audio
+
+    Text-To-Speech Content
+
+    Menu owns:
+
+    Menu Options
+
+    Timeout Behavior
+
+    Invalid Input Behavior
+
+    Routing Rules
+
+    Business Hours selects which Greeting plays.
+
+    No Input Behavior is configurable:
+
+    Replay Greeting
+
+    Route To Extension
+
+    Disconnect
+
+    Invalid Input Behavior is configurable:
+
+    Replay Greeting
+
+    Route To Extension
+
+    Disconnect
+
+    Operator (Extension 0) may be used as a fallback destination but is not required.
+
+    Holiday Greetings supported in V1.
+
+    
+
+    EXTENSION NUMBERING
+
+    0 = Operator
+
+    Every account automatically receives Extension 0.
+
+    1–8 = Standard Extensions
+
+    9 = Directory (Reserved)
+
+    100+ = Additional Extensions
+
+    Single-digit extensions are real extensions.
+
+    No shortcut mapping layer exists.
+
+    Examples:
+
+    Press 1 → Extension 1
+
+    Press 2 → Extension 2
+
+    Press 0 → Extension 0
+
+    Press 9 → Directory
+
+    
+
+    EXTENSION
+
+    Owns:
+
+    Destinations
+
+    Voicemail
+
+    Notifications
+
+    Routing
+
+    Forwarding
+
+    Recordings
+
+    Analytics Grouping
+
+    Routing Methods:
+
+    Ring All At Once
+
+    Ring One At A Time
+
+    Hybrid routing is not exposed in V1.
+
+    
+
+    DESTINATION TYPES
+
+    External Phone Number
+
+    SIP Desk Phone
+
+    Mobile App
+
+    Supports:
+
+    Ring Duration
+
+    Schedule
+
+    Priority / Order
+
+    Enabled / Disabled
+
+    Call Screening
+
+    Call Handling:
+
+    Direct Connect (Default)
+
+    Call Screening
+
+    Call Screening Outcomes:
+
+    Accept Call
+
+    Send To Voicemail
+
+    Continue Routing
+
+    Voicemail is a terminal outcome.
+
+    Not a destination.
+
+    
+
+    DEVICE
+
+    Types:
+
+    SIP Desk Phone
+
+    Mobile App
+
+    Future Softphone
+
+    Inbound:
+
+    Extensions route calls to devices.
+
+    Outbound:
+
+    Requires:
+
+    Extension
+
+    Caller ID Number
+
+    Devices may have:
+
+    Default Outbound Extension
+
+    Default Caller ID Number
+
+    
+
+    SIP PHONES
+
+    Admin-managed.
+
+    Each SIP phone has:
+
+    Default Outbound Extension
+
+    Default Caller ID Number
+
+    No multi-line behavior in V1.
+
+    SIP Phones do not own:
+
+    Public Numbers
+
+    Voicemail
+
+    Notifications
+
+    Routing
+
+    Extensions reference SIP phones as destinations.
+
+    
+
+    MOBILE APP
+
+    Purpose:
+
+    Operational use only.
+
+    Supports:
+
+    Shared SMS Inbox
+
+    Voicemail
+
+    Call History
+
+    Dialer
+
+    Organization Switching
+
+    Does not support:
+
+    Billing
+
+    Number Management
+
+    Extension Management
+
+    User Management
+
+    Integrations
+
+    
+
+    SHARED SMS INBOX
+
+    Business owns one Shared SMS Inbox.
+
+    All SMS-enabled numbers feed into it.
+
+    Numbers act as filters.
+
+    Supports:
+
+    Reply
+
+    Archive
+
+    Delete Conversation
+
+    Block Number
+
+    
+
+    VOICEMAIL
+
+    Belongs to an Extension.
+
+    Includes:
+
+    Audio
+
+    Transcript
+
+    Summary
+
+    
+
+    CALLS
+
+    Inbound:
+
+    Business
+
+    Number
+
+    Extension
+
+    Outbound:
+
+    Business
+
+    Extension
+
+    Caller ID Number
+
+    Device/User
+
+    
+
+    NOTIFICATIONS
+
+    Events:
+
+    Missed Call
+
+    Voicemail
+
+    Transcript
+
+    Summary
+
+    Channels:
+
+    Email
+
+    Slack
+
+    Webhook
+
+    In-App
+
+    SMS Alerts are Inbox-level events.
+
+    Not Extension events.
+
+    
+
+    INTEGRATIONS
+
+    Business-level.
+
+    Supported:
+
+    Slack
+
+    Webhook
+
+    
+
+    CONTACTS
+
+    Lightweight caller identity. NOT a CRM.
+
+    Purpose: turn a phone number (+1 415 555 0182) into a name (Daniel Okafor)
+    across Calls, Voicemails, the Shared SMS Inbox, and Caller Details.
+
+    A Contact may contain ONLY:
+
+    Name
+
+    Multiple Phone Numbers
+
+    Multiple Email Addresses
+
+    Internal Note (one shared sticky note, team-visible)
+
+    Does NOT include (explicitly out of scope):
+
+    Lead Status / Pipelines / Opportunities / Deal Stages
+
+    Companies / Contact Owners / Revenue
+
+    Follow-Up Flags / Tasks / Activities
+
+    Customer Lifecycle / Prospect Tracking / Tags / VIP labels
+
+    Matching: when a call, voicemail, or SMS arrives, if the number matches a
+    Contact, show the Contact name; otherwise show the phone number.
+
+    DATABASE SCHEMA
+
+    CONTACTS
+      id
+      business_id
+      name
+      internal_note        (single text field; team-visible)
+      created_at
+      updated_at
+
+    CONTACT_PHONE_NUMBERS
+      id
+      contact_id
+      phone_number
+      label                (Mobile / Office / Home / Other)
+
+    CONTACT_EMAILS
+      id
+      contact_id
+      email
+      label                (Personal / Work / Other)
+
+    Principle: Contacts = YES, CRM = NO. Caller Identity = YES,
+    Customer Management = NO.
+
+    
+
+    ANALYTICS / AI
+
+    Outputs:
+
+    Transcript
+
+    Summary
+
+    Categorization
+
+    Missed Call Analysis
+
+    Volume Analysis
+
+    Extension Performance
+
+    Not:
+
+    AI Receptionist
+
+    AI Agent
+
+    
+
+    PERMISSIONS
+
+    Roles:
+
+    Owner
+
+    Admin
+
+    User
+
+    Permissions are Extension-based.
+
+    Inbox permissions are separate.
+
+    
+
+    RELATIONSHIPS
+
+    Business ├── Numbers ├── Greetings / Menus ├── Extensions ├── Devices ├── Users ├── Shared SMS Inbox ├── Contacts ├── Integrations └── Calls
+
+    Number → Greeting/Menu OR → Direct Extension
+
+    Menu → Extension
+
+    Extension → Destinations
+
+    Destinations → Devices / Phone Numbers
+
+    Extension → Voicemail
+
+    Business → Shared SMS Inbox
+
+    
+
+    CANONICAL TRUTH
+
+    Numbers receive calls.
+
+    Greetings play.
+
+    Menus route callers.
+
+    Extensions control operations.
+
+    Destinations receive calls.
+
+    Voicemail is a fallback outcome.
+
+    Devices provide endpoints.
+
+    SMS lives in one shared business inbox.
+
+    Contacts give callers a name — lightweight identity, never a CRM.
+
+    AI analyzes activity.
+
+    JOEL remains a business phone system that manages itself.
+
+    
+      
+        
+                
+        
+        
+              
+      
+    
+  
+

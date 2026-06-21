@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>JOEL — Get your number</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#2540ee;--blue-dark:#1b32c4;--blue-soft:#eef1ff;--ink:#0f1115;--body:#4a4f59;--muted:#767c87;--line:#e7e8ec;--line-soft:#f1f2f4;--bg:#fff;--bg-alt:#f7f8fa;--ai:#6b2fe8;--ai-soft:#f1ecfe;--green:#1bb56a;--gold:#f5a623;--sans:'Plus Jakarta Sans',system-ui,sans-serif;}
+  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
+  .logo{font-family:'Archivo Black',var(--sans);font-weight:900;font-size:2.6rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;-webkit-text-stroke:1px var(--ink);line-height:1;}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a.active{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px;text-decoration-color:var(--blue);}
+  .nav-cta{background:var(--blue);color:#fff!important;padding:11px 22px;border-radius:10px;font-weight:700!important;} .nav-cta:hover{background:var(--blue-dark);}
+  .btn{padding:16px 30px;border-radius:11px;font-weight:700;font-size:1.02rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-block;text-align:center;border:none;font-family:var(--sans);}
+  .btn-primary{background:var(--blue);color:#fff;border:1px solid var(--blue);} .btn-primary:hover{background:var(--blue-dark);transform:translateY(-1px);}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+  .kicker{display:inline-block;background:var(--ink);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:7px;margin-bottom:18px;}
+
+  .signup{padding:52px 0 70px;}
+  .sec-head{max-width:680px;margin:0 auto 36px;text-align:center;}
+  .sec-head h1{font-size:clamp(1.9rem,3.8vw,2.6rem);font-weight:800;letter-spacing:-.025em;}
+  .su-sub{margin-top:14px;color:var(--body);font-size:1.05rem;line-height:1.55;max-width:46ch;margin-left:auto;margin-right:auto;font-weight:500;}
+  .signup-card{max-width:660px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(15,17,21,.07);overflow:hidden;}
+  .su-body{padding:32px;}
+  .su-step-label{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:14px;}
+
+  .ntype{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;}
+  .ntab{border:1px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .15s;background:#fff;}
+  .ntab:hover{border-color:#cdd0d6;}
+  .ntab.sel{border-color:var(--blue);background:var(--blue-soft);}
+  .ntab .nt-ic{width:30px;height:30px;margin:0 auto 9px;color:var(--muted);} .ntab.sel .nt-ic{color:var(--blue);} .ntab .nt-ic svg{width:100%;height:100%;}
+  .ntab b{display:block;font-size:.92rem;font-weight:800;margin-bottom:2px;} .ntab span{font-size:.74rem;color:var(--muted);font-weight:600;}
+  .field-label{font-size:.86rem;font-weight:700;margin-bottom:8px;display:block;}
+  .su-select,.su-input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:11px;font-family:var(--sans);font-size:1rem;font-weight:600;background:#fff;color:var(--ink);}
+  .su-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%23767c87' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;margin-bottom:20px;}
+  .su-input::placeholder{color:#a3a8b2;font-weight:500;}
+  .su-input:focus,.su-select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft);}
+  .num-display{background:var(--bg-alt);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .num-display .nd-num{font-size:1.55rem;font-weight:800;letter-spacing:-.01em;} .num-display .nd-sub{font-size:.78rem;color:var(--muted);font-weight:600;margin-top:2px;}
+  .num-cycle{display:flex;gap:8px;}
+  .num-cycle button{width:42px;height:42px;border-radius:11px;border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--body);transition:all .15s;}
+  .num-cycle button:hover{border-color:var(--blue);color:var(--blue);} .num-cycle button svg{width:18px;height:18px;}
+  .num-hint{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:12px;text-align:center;}
+  .su-reassure{display:flex;gap:10px;align-items:flex-start;background:var(--blue-soft);border-radius:12px;padding:14px 16px;margin-top:20px;}
+  .su-reassure svg{width:18px;height:18px;color:var(--blue);flex-shrink:0;margin-top:1px;}
+  .su-reassure span{font-size:.88rem;color:var(--ink);font-weight:600;line-height:1.5;}
+  .port-msg{background:var(--blue-soft);border:1px solid #d4dcff;border-radius:14px;padding:24px;display:flex;gap:14px;align-items:flex-start;}
+  .port-msg .pm-ic{width:40px;height:40px;border-radius:11px;background:var(--blue);color:#fff;display:grid;place-items:center;flex-shrink:0;} .port-msg .pm-ic svg{width:21px;height:21px;}
+  .port-msg h4{font-size:1.05rem;font-weight:800;margin-bottom:5px;} .port-msg p{color:var(--body);font-size:.94rem;line-height:1.55;}
+  .su-panel{display:none;} .su-panel.active{display:block;}
+
+  .su-divide{height:1px;background:var(--line);margin:30px 0;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+  .field-single{margin-bottom:16px;}
+  .card-logos{display:flex;gap:7px;align-items:center;}
+  .card-logos svg{height:24px;width:36px;}
+  .pay-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .exp-cvc{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+  .su-cta-wrap{padding:0 32px 8px;}
+  .su-cta-wrap .btn{width:100%;}
+  .su-cta-wrap .fineprint{text-align:center;color:var(--muted);font-size:.82rem;font-weight:600;margin-top:12px;}
+
+  .plan-summary{margin:22px 32px 32px;border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--bg-alt);}
+  .ps-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px;}
+  .ps-name{display:flex;align-items:baseline;gap:8px;}
+  .ps-name .pname{font-family:'Archivo Black',var(--sans);font-size:1.1rem;letter-spacing:.05em;}
+  .ps-name .pp{color:var(--muted);font-weight:700;font-size:.9rem;}
+  .ps-desc{color:var(--body);font-size:.9rem;font-weight:500;line-height:1.5;}
+  .su-change{position:relative;}
+  .su-change-btn{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--blue);border:1px solid var(--line);cursor:pointer;font-family:var(--sans);font-weight:700;font-size:.82rem;padding:8px 13px;border-radius:9px;transition:all .15s;}
+  .su-change-btn:hover{border-color:var(--blue);} .su-change-btn svg{width:14px;height:14px;}
+  .plan-menu{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px rgba(15,17,21,.14);padding:6px;width:300px;z-index:20;display:none;}
+  .plan-menu.open{display:block;}
+  .plan-opt{padding:12px 13px;border-radius:9px;cursor:pointer;}
+  .plan-opt:hover{background:#fff;} .plan-opt.sel{background:var(--blue-soft);}
+  .plan-opt .po-top{display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:.94rem;margin-bottom:2px;}
+  .plan-opt .po-top .pmprice{color:var(--muted);font-weight:700;font-size:.84rem;} .plan-opt.sel .po-top,.plan-opt.sel .po-top .pmprice{color:var(--blue);}
+  .plan-opt .po-desc{font-size:.8rem;color:var(--muted);font-weight:500;line-height:1.4;}
+
+  .proof{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0;}
+  .proof-stars{display:flex;justify-content:center;gap:4px;margin-bottom:14px;}
+  .proof-stars svg{width:22px;height:22px;color:var(--gold);}
+  .proof-rate{text-align:center;font-weight:700;color:var(--body);font-size:.96rem;margin-bottom:34px;}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto;}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;}
+  .quote p{font-size:.96rem;line-height:1.55;color:var(--ink);margin-bottom:16px;}
+  .quote .who{display:flex;align-items:center;gap:11px;}
+  .quote .av{width:38px;height:38px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
+  .quote .who b{display:block;font-size:.88rem;font-weight:800;} .quote .who span{font-size:.78rem;color:var(--muted);}
+
+  .faq{padding:64px 0;}
+  .faq h2{text-align:center;font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:36px;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.02rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .faq-q summary::-webkit-details-marker{display:none;}
+  .faq-q summary .ic{width:22px;height:22px;color:var(--blue);flex-shrink:0;transition:transform .2s;}
+  .faq-q[open] summary .ic{transform:rotate(45deg);}
+  .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.97rem;line-height:1.6;}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;}
+  .foot-base{color:var(--muted);font-size:.85rem;text-align:center;}
+
+  @media(max-width:600px){
+    .nav-links a:not(.nav-cta){display:none;} .logo{font-size:2rem;}
+    .num-display{flex-direction:column;align-items:stretch;text-align:center;} .num-cycle{justify-content:center;}
+    .quotes{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+    .plan-menu{width:260px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">JOEL</a>
+    <div class="nav-links">
+      <a href="how-it-works.html">How it works</a>
+      <a href="features.html">Features</a>
+      <a href="features.html#integrations">Integrations</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="signup.html?plan=grow" class="nav-cta">Get your number</a>
+    </div>
+  </div>
+</nav>
+
+<section class="signup">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h1>Get your business number.</h1>
+      <p class="su-sub">You're a few minutes from a real business line. No contracts, no hardware — and it works on the phone you already have.</p>
+    </div>
+
+    <div class="signup-card reveal">
+      <div class="su-body">
+        <!-- 1. NUMBER -->
+        <div class="su-step-label">Choose your number</div>
+        <div class="ntype">
+          <div class="ntab sel" data-type="local">
+            <div class="nt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <b>Local</b><span>Your area code</span>
+          </div>
+          <div class="ntab" data-type="tollfree">
+            <div class="nt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <b>Toll-free</b><span>800-style</span>
+          </div>
+          <div class="ntab" data-type="port">
+            <div class="nt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M21 3l-9 9M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></div>
+            <b>Keep mine</b><span>Port it in</span>
+          </div>
+        </div>
+
+        <div class="su-panel active" id="panel-local">
+          <label class="field-label">Where are your customers?</label>
+          <select class="su-select" id="citySelect">
+            <option data-ac="212" value="New York, NY">New York, NY — (212)</option>
+            <option data-ac="310" value="Los Angeles, CA">Los Angeles, CA — (310)</option>
+            <option data-ac="312" value="Chicago, IL">Chicago, IL — (312)</option>
+            <option data-ac="713" value="Houston, TX">Houston, TX — (713)</option>
+            <option data-ac="305" value="Miami, FL">Miami, FL — (305)</option>
+            <option data-ac="415" value="San Francisco, CA">San Francisco, CA — (415)</option>
+            <option data-ac="404" value="Atlanta, GA">Atlanta, GA — (404)</option>
+            <option data-ac="617" value="Boston, MA">Boston, MA — (617)</option>
+            <option data-ac="206" value="Seattle, WA">Seattle, WA — (206)</option>
+            <option data-ac="602" value="Phoenix, AZ">Phoenix, AZ — (602)</option>
+            <option data-ac="303" value="Denver, CO">Denver, CO — (303)</option>
+            <option data-ac="214" value="Dallas, TX">Dallas, TX — (214)</option>
+          </select>
+          <div class="num-display">
+            <div>
+              <div class="nd-num" id="localNum">(212) 555-0142</div>
+              <div class="nd-sub" id="localCity">New York, NY</div>
+            </div>
+            <div class="num-cycle">
+              <button id="localPrev" aria-label="Previous number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button id="localNext" aria-label="Next number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+            </div>
+          </div>
+          <div class="num-hint">Don't love it? Tap the arrows to see other available numbers.</div>
+        </div>
+
+        <div class="su-panel" id="panel-tollfree">
+          <label class="field-label">Available toll-free numbers</label>
+          <div class="num-display">
+            <div>
+              <div class="nd-num" id="tfNum">(800) 555-0118</div>
+              <div class="nd-sub" id="tfPrefix">Toll-free · 800</div>
+            </div>
+            <div class="num-cycle">
+              <button id="tfPrev" aria-label="Previous number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button id="tfNext" aria-label="Next number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+            </div>
+          </div>
+          <div class="num-hint">800, 888, 877 and more — tap the arrows to browse.</div>
+        </div>
+
+        <div class="su-panel" id="panel-port">
+          <div class="port-msg">
+            <div class="pm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></div>
+            <div>
+              <h4>Keep your current number</h4>
+              <p>No problem — you can bring your existing number to JOEL. Once you sign up, we'll email you simple step-by-step instructions to port it over. It's free, and your number keeps working the whole time.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="su-reassure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          <span>Your customers will see your business number, and your personal number stays private. You can always change or add numbers later.</span>
+        </div>
+
+        <div class="su-divide"></div>
+
+        <!-- 2. DETAILS -->
+        <div class="su-step-label">Your details</div>
+        <div class="field-row">
+          <div><label class="field-label">First name</label><input class="su-input" type="text" placeholder="Jordan"></div>
+          <div><label class="field-label">Last name</label><input class="su-input" type="text" placeholder="Rivera"></div>
+        </div>
+        <div class="field-single"><label class="field-label">Work email</label><input class="su-input" type="email" placeholder="you@yourbusiness.com"></div>
+
+        <div class="su-divide"></div>
+
+        <!-- 3. PAYMENT -->
+        <div class="pay-head">
+          <div class="su-step-label" style="margin-bottom:0;">Payment</div>
+          <div class="card-logos">
+            <svg viewBox="0 0 48 32"><rect width="48" height="32" rx="4" fill="#fff" stroke="#e7e8ec"/><text x="24" y="21" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="11" fill="#1a1f71">VISA</text></svg>
+            <svg viewBox="0 0 48 32"><rect width="48" height="32" rx="4" fill="#fff" stroke="#e7e8ec"/><circle cx="21" cy="16" r="7" fill="#eb001b"/><circle cx="27" cy="16" r="7" fill="#f79e1b" fill-opacity="0.85"/></svg>
+            <svg viewBox="0 0 48 32"><rect width="48" height="32" rx="4" fill="#1f72cd"/><text x="24" y="20" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="8" fill="#fff">AMEX</text></svg>
+          </div>
+        </div>
+        <div class="field-single"><label class="field-label">Card number</label><input class="su-input" type="text" placeholder="1234 1234 1234 1234" inputmode="numeric"></div>
+        <div class="exp-cvc">
+          <div><label class="field-label">Expiry</label><input class="su-input" type="text" placeholder="MM / YY" inputmode="numeric"></div>
+          <div><label class="field-label">CVC</label><input class="su-input" type="text" placeholder="123" inputmode="numeric"></div>
+        </div>
+      </div>
+
+      <!-- CTA (no price) -->
+      <div class="su-cta-wrap">
+        <a href="#" class="btn btn-primary" id="suCta">Continue</a>
+        <div class="fineprint">Set up in minutes · No contract · Free number porting · Works on your current phone</div>
+      </div>
+
+      <!-- PLAN SUMMARY (below CTA) -->
+      <div class="plan-summary">
+        <div class="ps-top">
+          <div class="ps-name"><span class="pname" id="suPlanName">GROW</span><span class="pp" id="suPlanPrice">$39/mo</span></div>
+          <div class="su-change">
+            <button class="su-change-btn" id="planBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg> Change</button>
+            <div class="plan-menu" id="planMenu">
+              <div class="plan-opt" data-plan="LITE" data-price="$15/mo" data-desc="1 number, 2 extensions, 200 minutes.">
+                <div class="po-top"><span>Lite</span><span class="pmprice">$15/mo</span></div>
+                <div class="po-desc">1 number, 2 extensions, 200 minutes.</div>
+              </div>
+              <div class="plan-opt sel" data-plan="GROW" data-price="$39/mo" data-desc="10 extensions, 1,500 minutes, call recording &amp; voicemail summaries.">
+                <div class="po-top"><span>Grow</span><span class="pmprice">$39/mo</span></div>
+                <div class="po-desc">10 extensions, 1,500 minutes, call recording.</div>
+              </div>
+              <div class="plan-opt" data-plan="MAX" data-price="$79/mo" data-desc="Unlimited everything, plus advanced integrations &amp; custom workflows.">
+                <div class="po-top"><span>Max</span><span class="pmprice">$79/mo</span></div>
+                <div class="po-desc">Unlimited everything + advanced integrations.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ps-desc" id="suPlanDesc">10 extensions, 1,500 minutes, call recording &amp; voicemail summaries.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-stars reveal">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+    </div>
+    <div class="proof-rate reveal">Over 4,000 small businesses served</div>
+    <div class="quotes">
+      <div class="quote reveal"><p>“Set it up between jobs in about 20 minutes. Now every call rings my cell but shows our business number — customers have no idea it's just me.”</p><div class="who"><div class="av">DM</div><div><b>Diego M.</b><span>Plumber, Houston</span></div></div></div>
+      <div class="quote reveal"><p>“The voicemail summaries alone are worth it. I scan who called and why between patients instead of sitting through messages.”</p><div class="who"><div class="av">SK</div><div><b>Dr. Sara K.</b><span>Dental office, Miami</span></div></div></div>
+      <div class="quote reveal"><p>“We finally know which ads actually make the phone ring. Killed the ones that didn't and put the money where it works.”</p><div class="who"><div class="av">RT</div><div><b>Renee T.</b><span>Med spa owner, Phoenix</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions before you start</h2>
+    <div class="faq-list">
+      <details class="faq-q" open><summary>How fast can I be up and running?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Minutes. Pick a number, add your details, and your line is live — no hardware to ship, no technician, no waiting.</div></details>
+      <details class="faq-q"><summary>Can I keep my current number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Choose “Keep mine” above and we'll email you simple steps to port it over for free after you sign up. Your number keeps working the whole time.</div></details>
+      <details class="faq-q"><summary>Is there a contract?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Every plan is month-to-month — upgrade, downgrade, or cancel anytime from your dashboard.</div></details>
+      <details class="faq-q"><summary>Do I need to buy any equipment?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. JOEL runs on the phone and computer you already have. A VoIP desk phone is optional if you want a handset.</div></details>
+      <details class="faq-q"><summary>When am I charged?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Your first month is billed when you activate. After that it's the same date each month, and you can cancel anytime before your next bill.</div></details>
+      <details class="faq-q"><summary>Can I change my plan later?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Anytime. Start on Grow and move up to Max when you want advanced integrations and custom workflows, or down to Lite — changes take effect on your next bill.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><div class="foot-base">© 2026 JOEL. All rights reserved.</div></div>
+</footer>
+
+<script>
+  (function(){
+    var plans={
+      LITE:{price:'$15/mo',desc:'1 number, 2 extensions, 200 minutes.'},
+      GROW:{price:'$39/mo',desc:'10 extensions, 1,500 minutes, call recording &amp; voicemail summaries.'},
+      MAX:{price:'$79/mo',desc:'Unlimited everything, plus advanced integrations &amp; custom workflows.'}
+    };
+    var planBtn=document.getElementById('planBtn'),planMenu=document.getElementById('planMenu'),
+        planName=document.getElementById('suPlanName'),planPrice=document.getElementById('suPlanPrice'),
+        planDesc=document.getElementById('suPlanDesc');
+    function setPlan(name){
+      name=(name||'GROW').toUpperCase();
+      if(!plans[name]) name='GROW';
+      planName.textContent=name; planPrice.textContent=plans[name].price; planDesc.innerHTML=plans[name].desc;
+      planMenu.querySelectorAll('.plan-opt').forEach(function(o){o.classList.toggle('sel',o.dataset.plan===name);});
+    }
+    var params=new URLSearchParams(window.location.search);
+    setPlan(params.get('plan'));
+    planBtn.addEventListener('click',function(e){e.stopPropagation();planMenu.classList.toggle('open');});
+    document.addEventListener('click',function(){planMenu.classList.remove('open');});
+    planMenu.addEventListener('click',function(e){e.stopPropagation();});
+    planMenu.querySelectorAll('.plan-opt').forEach(function(opt){
+      opt.addEventListener('click',function(){ setPlan(opt.dataset.plan); planMenu.classList.remove('open'); });
+    });
+    document.querySelectorAll('.ntab').forEach(function(tab){
+      tab.addEventListener('click',function(){
+        document.querySelectorAll('.ntab').forEach(function(t){t.classList.remove('sel');});
+        tab.classList.add('sel');
+        document.querySelectorAll('.su-panel').forEach(function(p){p.classList.remove('active');});
+        document.getElementById('panel-'+tab.dataset.type).classList.add('active');
+      });
+    });
+    var citySel=document.getElementById('citySelect'),localNum=document.getElementById('localNum'),localCity=document.getElementById('localCity');
+    var localPool=[],localIdx=0;
+    function buildLocalPool(ac){ localPool=[]; for(var i=0;i<6;i++){ localPool.push('('+ac+') 555-0'+(140+i*7).toString().slice(-3)); } localIdx=0; }
+    function renderLocal(){ localNum.textContent=localPool[localIdx]; }
+    citySel.addEventListener('change',function(){ var opt=citySel.options[citySel.selectedIndex]; localCity.textContent=opt.value; buildLocalPool(opt.dataset.ac); renderLocal(); });
+    buildLocalPool('212'); renderLocal();
+    document.getElementById('localPrev').addEventListener('click',function(){localIdx=(localIdx-1+localPool.length)%localPool.length;renderLocal();});
+    document.getElementById('localNext').addEventListener('click',function(){localIdx=(localIdx+1)%localPool.length;renderLocal();});
+    var tfNum=document.getElementById('tfNum'),tfPrefixEl=document.getElementById('tfPrefix');
+    var tfPool=[{p:'800',n:'(800) 555-0118'},{p:'888',n:'(888) 555-0231'},{p:'877',n:'(877) 555-0144'},{p:'866',n:'(866) 555-0190'},{p:'855',n:'(855) 555-0207'},{p:'800',n:'(800) 555-0382'}],tfIdx=0;
+    function renderTF(){ tfNum.textContent=tfPool[tfIdx].n; tfPrefixEl.textContent='Toll-free · '+tfPool[tfIdx].p; }
+    renderTF();
+    document.getElementById('tfPrev').addEventListener('click',function(){tfIdx=(tfIdx-1+tfPool.length)%tfPool.length;renderTF();});
+    document.getElementById('tfNext').addEventListener('click',function(){tfIdx=(tfIdx+1)%tfPool.length;renderTF();});
+    /* NOTE: numbers + payment are demo only. Wire numbers to a real
+       inventory API (e.g. Twilio) and payment to Stripe Elements later. */
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+</script>
+</body>
+</html>

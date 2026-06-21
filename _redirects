@@ -1,0 +1,7 @@
+# Netlify redirects — legacy filenames → clean URLs (301 permanent).
+/Plumber%20Landing%20Page.html              /for/plumbers                301
+/Phone%20System%20with%20Slack%20Notifications.html   /learn/slack-notifications   301
+
+# Friendly short aliases
+/plumbers        /for/plumbers                301
+/slack           /learn/slack-notifications   301

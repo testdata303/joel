@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOEL · Numbers in topbar + Call Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/joel-app.css">
+<style>
+  .scroll{flex:1;min-height:0;overflow:auto;}
+  .top-div{width:1px;height:24px;background:var(--line);margin:0 6px;flex-shrink:0;}
+
+  /* ---- the number token: ONE convention, used in topbar + call flow ---- */
+  .ntok-ic{border-radius:8px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex-shrink:0;}
+  .ntok-num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
+
+  /* topbar chip = compact number token */
+  .numchip{display:inline-flex;align-items:center;gap:9px;height:38px;padding:0 7px 0 9px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:border-color .14s,background .14s;}
+  .numchip:hover{border-color:#cdd2db;background:var(--bg-alt);}
+  .numchip .ntok-ic{width:24px;height:24px;}
+  .numchip .ntok-ic svg{width:14px;height:14px;}
+  .numchip-tx{display:flex;flex-direction:column;line-height:1.12;text-align:left;}
+  .numchip-tx .ntok-num{font-size:.86rem;}
+  .numchip-tx .numchip-lbl{font-size:.64rem;font-weight:700;color:var(--muted);letter-spacing:.02em;}
+  .numchip-copy{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;color:var(--muted);flex-shrink:0;}
+  .numchip-copy:hover{background:var(--blue-soft);color:var(--blue);}
+  .numchip-copy.done{color:var(--green);}
+  .numchip-copy svg{width:15px;height:15px;}
+
+  /* ---- Call Flow ---- */
+  .cf{max-width:660px;margin:0 auto;padding:34px 30px 90px;}
+  .cf-h h1{font-size:1.8rem;font-weight:800;letter-spacing:-.03em;}
+  .cf-h p{color:var(--body);font-size:1rem;margin-top:6px;max-width:54ch;}
+
+  .cf-tier{display:flex;align-items:center;gap:9px;margin:28px 2px 12px;}
+  .cf-tier-n{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:.72rem;font-weight:800;display:grid;place-items:center;flex-shrink:0;}
+  .cf-tier-t{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+  .cf-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-card);overflow:hidden;}
+  .cf-num{display:flex;align-items:center;gap:13px;padding:14px 16px;border-top:1px solid var(--line-soft);}
+  .cf-num:first-child{border-top:none;}
+  .cf-num .ntok-ic{width:38px;height:38px;}
+  .cf-num .ntok-ic svg{width:18px;height:18px;}
+  .cf-num-tx{flex:1;min-width:0;}
+  .cf-num-tx .ntok-num{font-size:1rem;display:block;}
+  .cf-num-tx span{font-size:.8rem;color:var(--muted);}
+  .cf-num-meta{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .cf-route{font-size:.8rem;color:var(--body);display:inline-flex;align-items:center;gap:7px;}
+  .cf-route svg{width:14px;height:14px;color:var(--muted);}
+  .cf-sms{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:7px;white-space:nowrap;}
+  .cf-sms.on{color:#0f7a47;background:var(--green-soft);}
+  .cf-sms.pend{color:var(--amber);background:var(--amber-soft);}
+  .cf-sms.off{color:var(--muted);background:var(--bg-alt);}
+  .cf-num-copy{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:var(--muted);flex-shrink:0;}
+  .cf-num-copy:hover{background:var(--blue-soft);color:var(--blue);}
+  .cf-num-copy.done{color:var(--green);}
+  .cf-num-copy svg{width:15px;height:15px;}
+
+  .cf-conn{display:flex;flex-direction:column;align-items:center;gap:0;padding:6px 0;}
+  .cf-conn-line{width:2px;height:20px;background:var(--line);}
+  .cf-conn svg{width:20px;height:20px;color:var(--muted);margin-top:-2px;}
+
+  .cf-node{display:flex;align-items:center;gap:14px;padding:16px 18px;}
+  .cf-node-ic{width:40px;height:40px;border-radius:11px;background:#f1ecfe;color:var(--ai);display:grid;place-items:center;flex-shrink:0;}
+  .cf-node-ic svg{width:19px;height:19px;}
+  .cf-node-tx{flex:1;}
+  .cf-node-tx b{font-weight:700;font-size:1rem;color:var(--ink);}
+  .cf-node-tx span{display:block;font-size:.82rem;color:var(--muted);margin-top:1px;}
+  .cf-play{width:38px;height:38px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex-shrink:0;}
+  .cf-play svg{width:16px;height:16px;}
+
+  .cf-exts{display:flex;flex-direction:column;}
+  .cf-ext{display:flex;align-items:center;gap:13px;padding:13px 16px;border-top:1px solid var(--line-soft);}
+  .cf-ext:first-child{border-top:none;}
+  .cf-extkey{width:34px;height:34px;border-radius:9px;background:var(--bg-alt);color:var(--body);font-weight:800;font-size:.85rem;display:grid;place-items:center;flex-shrink:0;}
+  .cf-ext-tx{flex:1;}
+  .cf-ext-tx b{font-weight:700;font-size:.92rem;color:var(--ink);}
+  .cf-ext-tx span{display:block;font-size:.78rem;color:var(--muted);}
+  .cf-ext-rings{font-size:.78rem;color:var(--muted);}
+
+  .cf-note{display:flex;gap:10px;align-items:flex-start;margin-top:22px;font-size:.84rem;color:var(--muted);line-height:1.55;}
+  .cf-note svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--blue);}
+  .cf-note b{color:var(--ink);font-weight:700;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#2540ee">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2540ee"/>
+    <g transform="translate(600 350)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-120 -60 h70 l24 60 -36 24 a150 150 0 0 0 84 84 l24 -36 60 24 v70 a30 30 0 0 1 -30 30 A270 270 0 0 1 -150 -30 a30 30 0 0 1 30 -30 z"/>
+    </g>
+    <text x="600" y="560" text-anchor="middle" font-family="Archivo Black, Arial Black, sans-serif" font-size="84" letter-spacing="3" fill="#ffffff">NUMBERS</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="app/ui.jsx"></script>
+
+<script type="text/babel">
+const { Icon, Avatar } = window;
+const { useState } = React;
+function Cp(){ return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>); }
+
+const NUMBERS = [
+  { num:'(617) 555-0100', label:'Local', main:true,  sms:'on',   route:'Main flow' },
+  { num:'(617) 555-0188', label:'Toll-free', sms:'pend', route:'Main flow' },
+  { num:'(617) 555-0199', label:'Marketing tracking', sms:'off', route:'Ext. 3 Billing' },
+];
+const SMS = { on:'Texting on', pend:'Texting pending', off:'Calls only' };
+const EXTS = [
+  { n:0, name:'Operator', rings:'Front desk' },
+  { n:1, name:'Sales', rings:'Rings 4' },
+  { n:2, name:'Support', rings:'Rings 2' },
+  { n:3, name:'Billing', rings:'Voicemail' },
+];
+
+/* topbar chip */
+function NumChip(){
+  const main = NUMBERS.find(n=>n.main);
+  const [done,setDone]=useState(false);
+  const copy=(e)=>{ e.stopPropagation(); setDone(true); setTimeout(()=>setDone(false),1300); };
+  return (
+    <button className="numchip" title="Your main business line">
+      <span className="ntok-ic"><Icon name="phone"/></span>
+      <span className="numchip-tx"><span className="ntok-num">{main.num}</span><span className="numchip-lbl">Main line · {main.label}</span></span>
+      <span className={`numchip-copy${done?' done':''}`} onClick={copy}>{done?<Icon name="check"/>:<Cp/>}</span>
+    </button>
+  );
+}
+
+function CfCopy(){
+  const [done,setDone]=useState(false);
+  return <button className={`cf-num-copy${done?' done':''}`} title="Copy" onClick={()=>{ setDone(true); setTimeout(()=>setDone(false),1300); }}>{done?<Icon name="check"/>:<Cp/>}</button>;
+}
+
+function Shell(){
+  return (
+    <div className="app">
+      <aside className="sidebar">
+        <div className="sb-top">
+          <div className="sb-brand"><span className="sb-word">JOEL</span></div>
+          <button className="switcher">
+            <span className="biz-tile">S</span>
+            <span className="biz-name">Smilebar</span>
+            <span className="chev"><Icon name="chevdown" style={{width:16,height:16}}/></span>
+          </button>
+        </div>
+        <nav className="sb-nav">
+          <button className="sb-item"><Icon name="phone"/>Calls & Voicemails<span className="badge">3</span></button>
+          <button className="sb-item"><Icon name="message"/>Texts</button>
+          <div className="sb-group">System</div>
+          <button className="sb-item active"><Icon name="route"/>Call Flow</button>
+          <button className="sb-item"><Icon name="layers"/>Integrations</button>
+          <button className="sb-item"><Icon name="settings"/>Settings</button>
+          <button className="sb-item"><Icon name="card"/>Billing</button>
+        </nav>
+      </aside>
+      <div className="main">
+        <header className="topbar">
+          <button className="search"><Icon name="search" style={{width:17,height:17}}/><input placeholder="Search calls, voicemails, messages…" readOnly/><span className="kbd">⌘K</span></button>
+          <div className="top-actions">
+            <NumChip/>
+            <span className="top-div"></span>
+            <button className="icon-btn"><Icon name="bell" style={{width:19,height:19}}/><span className="dot"/></button>
+            <button className="acct"><Avatar name="Bob Stevens"/><span className="acct-who"><b>Bob Stevens</b><span>Owner</span></span><Icon name="chevdown" style={{width:15,height:15,color:'var(--muted)'}}/></button>
+          </div>
+        </header>
+        <div className="scroll">
+          <div className="cf">
+            <div className="cf-h">
+              <h1>Call flow</h1>
+              <p>Everything that happens when someone calls Smilebar — starting with the numbers they dial.</p>
+            </div>
+
+            <div className="cf-tier"><span className="cf-tier-n">1</span><span className="cf-tier-t">Calls come in on</span></div>
+            <div className="cf-card">
+              {NUMBERS.map(n=>(
+                <div className="cf-num" key={n.num}>
+                  <span className="ntok-ic"><Icon name="phone"/></span>
+                  <div className="cf-num-tx"><span className="ntok-num">{n.num}</span><span>{n.label}</span></div>
+                  <div className="cf-num-meta">
+                    <span className="cf-route"><Icon name="route"/>{n.route}</span>
+                    <span className={`cf-sms ${n.sms}`}>{SMS[n.sms]}</span>
+                    <CfCopy/>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="cf-conn"><span className="cf-conn-line"></span><Icon name="chevdown"/></div>
+
+            <div className="cf-tier"><span className="cf-tier-n">2</span><span className="cf-tier-t">Main greeting</span></div>
+            <div className="cf-card">
+              <div className="cf-node">
+                <span className="cf-node-ic"><Icon name="audiolines"/></span>
+                <div className="cf-node-tx"><b>“Thanks for calling Smilebar…”</b><span>Open Mon–Fri, 9–5 · After-hours greeting set</span></div>
+                <button className="cf-play"><Icon name="play"/></button>
+              </div>
+            </div>
+
+            <div className="cf-conn"><span className="cf-conn-line"></span><Icon name="chevdown"/></div>
+
+            <div className="cf-tier"><span className="cf-tier-n">3</span><span className="cf-tier-t">Extensions</span></div>
+            <div className="cf-card cf-exts">
+              {EXTS.map(e=>(
+                <div className="cf-ext" key={e.n}>
+                  <span className="cf-extkey">{e.n}</span>
+                  <div className="cf-ext-tx"><b>{e.name}</b><span>Ext. {e.n}</span></div>
+                  <span className="cf-ext-rings">{e.rings}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="cf-note"><Icon name="info"/><span><b>One number convention, two places.</b> The chip up top is the same token you see here at the head of the flow — soft-blue phone tile, tabular number, copy on click. Glance from anywhere via the topbar; see the full picture (routing + texting status) where calls actually enter.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Shell/>);
+</script>
+</body>
+</html>

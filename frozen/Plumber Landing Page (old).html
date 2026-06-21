@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>JOEL — A business phone number built for plumbers</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#101012;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;--card:#fff;
+    --accent:#2540ee;--accent-dark:#1b32c4;--accent-soft:#eef1ff;
+    --green:#1bb56a;--green-soft:#ecfdf3;--gold:#f5a623;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;border:1.5px solid transparent;font-family:var(--sans);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--accent);color:#fff;padding:15px 26px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
+  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:14px 24px;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-lg{padding:17px 32px;font-size:1.05rem;}
+  .btn svg{width:18px;height:18px;}
+
+  /* slim PPC header — no nav links, single goal */
+  header.lp{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .logo{font-family:'Archivo Black',var(--sans);font-weight:900;font-size:2.1rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;-webkit-text-stroke:1px var(--ink);line-height:1;}
+  .hdr-right{display:flex;align-items:center;gap:18px;}
+  .hdr-call{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;color:var(--ink);text-decoration:none;}
+  .hdr-call svg{width:17px;height:17px;color:var(--accent);}
+  .hdr-call span small{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;line-height:1;margin-bottom:2px;}
+  .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
+  .hdr-cta:hover{background:var(--accent-dark);}
+
+  /* hero */
+  .hero{padding:56px 0 64px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
+  .hero h1{font-weight:800;font-size:clamp(2.3rem,4.4vw,3.5rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:18px;text-wrap:balance;}
+  .hero h1 .u{color:var(--accent);}
+  .hero-sub{font-size:1.18rem;line-height:1.5;color:var(--body);max-width:30ch;margin-bottom:24px;font-weight:500;}
+  .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .hero-bullets .ck svg{width:14px;height:14px;}
+  .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px;}
+  .trust-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted);font-weight:600;font-size:.9rem;}
+  .stars{display:inline-flex;gap:2px;color:var(--gold);}
+  .stars svg{width:16px;height:16px;}
+  .trust-sep{width:4px;height:4px;border-radius:50%;background:var(--line);}
+
+  /* number claim card */
+  .claim{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);overflow:hidden;}
+  .claim-top{background:var(--ink);color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .claim-top b{font-size:1rem;font-weight:700;}
+  .claim-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(27,181,106,.18);color:#7ef0b4;font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
+  .claim-badge i{width:7px;height:7px;border-radius:50%;background:#34d98a;display:block;}
+  .claim-body{padding:24px;}
+  .claim-label{font-size:.82rem;font-weight:700;margin-bottom:8px;display:block;color:var(--ink);}
+  .claim-select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:1rem;font-weight:600;background:#fff;color:var(--ink);cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%23838995' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;margin-bottom:16px;}
+  .claim-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  .claim-num{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;}
+  .claim-num .cn-no{font-size:1.7rem;font-weight:800;letter-spacing:-.01em;}
+  .claim-num .cn-sub{font-size:.76rem;color:var(--muted);font-weight:600;margin-top:2px;}
+  .claim-shuffle{width:42px;height:42px;border-radius:11px;border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--body);flex-shrink:0;transition:all .15s;}
+  .claim-shuffle:hover{border-color:var(--accent);color:var(--accent);} .claim-shuffle svg{width:18px;height:18px;}
+  .claim .btn{width:100%;}
+  .claim-fine{text-align:center;color:var(--muted);font-size:.8rem;font-weight:600;margin-top:13px;}
+
+  /* trust strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
+  .strip-inner{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;padding:20px 0;color:var(--body);font-weight:700;font-size:.95rem;}
+  .strip-inner span{display:inline-flex;align-items:center;gap:9px;}
+  .strip-inner svg{width:18px;height:18px;color:var(--accent);}
+
+  /* section shell */
+  section.block{padding:74px 0;}
+  .sec-head{text-align:center;max-width:620px;margin:0 auto 44px;}
+  .sec-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:balance;}
+  .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
+
+  /* benefits */
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .bcard{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
+  .bcard .bic{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:18px;}
+  .bcard .bic svg{width:23px;height:23px;}
+  .bcard h3{font-size:1.18rem;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;}
+  .bcard p{color:var(--body);font-size:.98rem;line-height:1.55;}
+
+  /* steps */
+  .steps-wrap{background:var(--soft);border-radius:0;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s;}
+  .step{position:relative;padding-top:6px;}
+  .step .sn{width:44px;height:44px;border-radius:12px;background:var(--accent);color:#fff;font-weight:800;font-size:1.2rem;display:grid;place-items:center;margin-bottom:16px;}
+  .step h3{font-size:1.18rem;font-weight:800;margin-bottom:7px;}
+  .step p{color:var(--body);font-size:.98rem;line-height:1.55;}
+
+  /* testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;}
+  .quote .qs{display:inline-flex;gap:2px;color:var(--gold);margin-bottom:14px;} .quote .qs svg{width:16px;height:16px;}
+  .quote p{font-size:1rem;line-height:1.55;color:var(--ink);margin-bottom:18px;}
+  .quote .who{display:flex;align-items:center;gap:12px;}
+  .quote .av{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:.95rem;flex-shrink:0;}
+  .quote .who b{display:block;font-size:.92rem;font-weight:800;} .quote .who span{font-size:.8rem;color:var(--muted);font-weight:600;}
+
+  /* closer band */
+  .closer{padding:20px 0 84px;}
+  .closer-card{background:linear-gradient(140deg,#2540ee,#1b32c4);border-radius:26px;padding:64px 48px;text-align:center;color:#fff;box-shadow:0 40px 80px -44px rgba(37,64,238,.6);}
+  .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,3rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;text-wrap:balance;}
+  .closer-card p{font-size:1.18rem;line-height:1.55;color:rgba(255,255,255,.9);max-width:44ch;margin:0 auto 30px;font-weight:500;}
+  .closer-card .btn-primary{background:#fff;color:var(--accent-dark);box-shadow:none;}
+  .closer-card .btn-primary:hover{background:#eef1ff;}
+  .closer-mini{margin-top:18px;font-size:.92rem;color:rgba(255,255,255,.82);font-weight:600;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+
+  /* faq */
+  .faq{padding:0 0 84px;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .faq-q summary::-webkit-details-marker{display:none;}
+  .faq-q summary .ic{width:22px;height:22px;color:var(--accent);flex-shrink:0;transition:transform .2s;}
+  .faq-q[open] summary .ic{transform:rotate(45deg);}
+  .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 96px;}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;font-weight:600;}
+  .foot-inner a{color:var(--muted);text-decoration:none;}
+  .foot-inner a:hover{color:var(--ink);}
+
+  /* sticky mobile CTA */
+  .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
+  .sticky-cta a{flex:1;}
+  .sticky-cta .btn{width:100%;}
+  .sticky-cta .btn-ghost{flex:0 0 52px;padding:14px 0;}
+
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero{padding:40px 0 48px;}
+    .hero-sub{max-width:none;}
+    .benefits,.steps,.quotes{grid-template-columns:1fr;}
+    .strip-inner{gap:18px;font-size:.88rem;}
+    .hdr-call{display:none;}
+    .sticky-cta{display:flex;}
+    footer{padding-bottom:96px;}
+  }
+  @media(max-width:520px){
+    .logo{font-size:1.8rem;}
+    .closer-card{padding:48px 26px;}
+    .claim-num .cn-no{font-size:1.45rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="lp">
+  <div class="wrap lp-inner">
+    <a href="index.html" class="logo">JOEL</a>
+    <div class="hdr-right">
+      <a href="tel:18005655635" class="hdr-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span><small>Talk to a human</small>1 (800) JOEL-NOW</span>
+      </a>
+      <a href="signup.html?plan=grow" class="hdr-cta">Get your number</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">For plumbers &amp; home-service pros</span>
+      <h1>Catch every job &mdash; even the <span class="u">2&nbsp;a.m. emergency.</span></h1>
+      <p class="hero-sub">A business number that sends emergency calls straight to your phone, takes quotes and invoices by text, and keeps your personal cell private.</p>
+      <ul class="hero-bullets">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Emergency calls ring straight through &mdash; day or night</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Text quotes, deposits &amp; invoices from your business line</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Rings your cell or the on-call tech &mdash; never your personal number</li>
+      </ul>
+      <div class="hero-acts">
+        <a href="signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+      </div>
+      <div class="trust-line">
+        <span class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+        </span>
+        <span>Trusted by 4,000+ trades &amp; home-service pros</span>
+      </div>
+    </div>
+
+    <div class="claim reveal" id="claim">
+      <div class="claim-top">
+        <b>Claim your local number</b>
+        <span class="claim-badge"><i></i> Available now</span>
+      </div>
+      <div class="claim-body">
+        <label class="claim-label" for="acSelect">Choose your city &amp; area code</label>
+        <select class="claim-select" id="acSelect">
+          <option data-ac="713" value="Houston, TX">Houston, TX — (713)</option>
+          <option data-ac="602" value="Phoenix, AZ">Phoenix, AZ — (602)</option>
+          <option data-ac="214" value="Dallas, TX">Dallas, TX — (214)</option>
+          <option data-ac="404" value="Atlanta, GA">Atlanta, GA — (404)</option>
+          <option data-ac="305" value="Miami, FL">Miami, FL — (305)</option>
+          <option data-ac="312" value="Chicago, IL">Chicago, IL — (312)</option>
+          <option data-ac="303" value="Denver, CO">Denver, CO — (303)</option>
+          <option data-ac="206" value="Seattle, WA">Seattle, WA — (206)</option>
+        </select>
+        <div class="claim-num">
+          <div>
+            <div class="cn-no" id="cnNo">(713) 555-0142</div>
+            <div class="cn-sub" id="cnSub">Houston, TX · Local</div>
+          </div>
+          <button class="claim-shuffle" id="cnShuffle" type="button" aria-label="Show another number">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </button>
+        </div>
+        <a href="signup.html?plan=grow" class="btn btn-primary btn-arrow" id="claimCta">Get this number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="claim-fine">Free local number · Keeps your cell · Ready in minutes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Live in minutes</span>
+    <span class="trust-sep"></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Keep your cell phone</span>
+    <span class="trust-sep"></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> No hardware to buy</span>
+    <span class="trust-sep"></span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.5"/><path d="M21 4v5h-5"/></svg> Cancel anytime</span>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Built for the truck, not the office</div>
+      <h2>The phone jobs a plumber actually needs handled.</h2>
+    </div>
+    <div class="benefits">
+      <div class="bcard reveal">
+        <div class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+        <h3>Emergency calls, 24/7</h3>
+        <p>Flag emergency calls so a burst pipe at midnight rings your cell &mdash; or whoever's on call &mdash; instead of going to voicemail. Win the urgent, high-ticket jobs.</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>Quotes &amp; invoices by text</h3>
+        <p>Send an estimate, a deposit link, or the final bill straight from your business number. Get paid before you pull out of the driveway.</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Ring the whole crew</h3>
+        <p>Calls ring you, your apprentice, or the on-call tech at once &mdash; first to answer takes the job. Nobody misses the phone.</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+        <h3>After-hours auto-reply</h3>
+        <p>Can't pick up? Customers instantly get a text back letting them know you'll call right back &mdash; so they wait for you instead of dialing the next plumber.</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></div>
+        <h3>Voicemail you can read</h3>
+        <p>Every voicemail comes back as a short summary &mdash; who called and what they need &mdash; with one-tap call-back to ring them between jobs.</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+        <h3>Spam &amp; robocalls blocked</h3>
+        <p>Telemarketers and scam calls get filtered out automatically, so the phone in your pocket only rings for real work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="block steps-wrap" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Up and running today</div>
+      <h2>Three steps to a phone that works as hard as you do.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="sn">1</div>
+        <h3>Pick your number</h3>
+        <p>Choose a local number in your service area — or keep the number your customers already call. It's free to port.</p>
+      </div>
+      <div class="step reveal">
+        <div class="sn">2</div>
+        <h3>Set where calls ring</h3>
+        <p>Point calls at your cell, ring the whole crew, and set your after-hours and emergency rules. No new handset, no installer.</p>
+      </div>
+      <div class="step reveal">
+        <div class="sn">3</div>
+        <h3>Answer &amp; get paid</h3>
+        <p>Every call comes through with your business caller ID. Catch the emergency, text the quote, and send the invoice &mdash; all from one number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">From the trades</div>
+      <h2>Plumbers don't think about their phone system anymore.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <span class="qs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg></span>
+        <p>“A burst-pipe call came in at 11 at night and rang straight to my cell. That one emergency job paid for the whole year of JOEL.”</p>
+        <div class="who"><div class="av">DM</div><div><b>Diego M.</b><span>Plumber &middot; Houston, TX</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="qs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg></span>
+        <p>“I text the invoice before I leave the driveway now &mdash; half my jobs are paid same day. And the voicemail summaries mean I never sit through a message.”</p>
+        <div class="who"><div class="av">RT</div><div><b>Ray T.</b><span>Drain &amp; sewer &middot; Phoenix, AZ</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="qs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg></span>
+        <p>“Calls ring me and my apprentice at the same time, so an emergency never hits voicemail. Kept my old number too &mdash; took five minutes.”</p>
+        <div class="who"><div class="av">SK</div><div><b>Sam K.</b><span>Plumbing &amp; heating &middot; Dallas, TX</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSER -->
+<section class="closer">
+  <div class="wrap">
+    <div class="closer-card reveal">
+      <h2>Your next call could be your next job.</h2>
+      <p>Claim your business number today. Free local number, keep your cell, and you're answering calls in minutes.</p>
+      <a href="signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="closer-mini"><span>Month-to-month</span> · <span>Free number porting</span> · <span>Works on your current phone</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Before you sign up</div>
+      <h2>Questions plumbers ask us</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-q" open><summary>Can emergency calls reach me after hours?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Set your own emergency and after-hours rules &mdash; urgent calls ring your cell (or the on-call tech) around the clock, while everything else can take a message. The 2&nbsp;a.m. burst pipe gets to you; the spam doesn't.</div></details>
+      <details class="faq-q"><summary>Can I send quotes, invoices, and take payment?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Text estimates, deposit links, and final invoices right from your business number, so customers can pay by text &mdash; often before you've left the job. Everything lives in one thread per customer.</div></details>
+      <details class="faq-q"><summary>Can calls ring more than one tech?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Absolutely. Ring your whole crew at once and the first to pick up takes the job, or set an on-call rotation so the right person answers. No call slips through.</div></details>
+      <details class="faq-q"><summary>Can I keep the number my customers already call?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes &mdash; porting your existing number is free, and it keeps working the whole time we move it over. Or grab a fresh local number in your service area.</div></details>
+      <details class="faq-q"><summary>Do I need any equipment or a contract?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Neither. JOEL runs on the phone you already carry &mdash; no desk phone, nothing to ship &mdash; and every plan is month-to-month. Cancel anytime, no fees.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 JOEL. The next-generation small business phone system.</div>
+    <div><a href="index.html">Home</a></div>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="tel:18005655635" class="btn btn-ghost" aria-label="Call us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="signup.html?plan=grow"><span class="btn btn-primary">Get your number</span></a>
+</div>
+
+<script>
+  (function(){
+    var sel=document.getElementById('acSelect'),no=document.getElementById('cnNo'),sub=document.getElementById('cnSub'),
+        shuffle=document.getElementById('cnShuffle'),cta=document.getElementById('claimCta');
+    function rand4(){return String(Math.floor(Math.random()*9000)+1000);}
+    function render(){
+      var opt=sel.options[sel.selectedIndex], ac=opt.dataset.ac;
+      no.textContent='('+ac+') 555-'+rand4();
+      sub.textContent=opt.value+' · Local';
+      cta.setAttribute('href','signup.html?plan=grow&ac='+ac);
+    }
+    sel.addEventListener('change',render);
+    shuffle.addEventListener('click',render);
+    render();
+
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+</script>
+</body>
+</html>

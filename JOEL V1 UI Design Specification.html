@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOEL · V1 UI Design Specification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/joel-spec.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <aside class="toc">
+    <a class="brand" href="#top">
+      <span class="mark">J</span>
+      <b>JOEL</b>
+    </a>
+    <div class="doctype">V1 UI Spec</div>
+
+    <a class="item" href="#top">Overview</a>
+
+    <div class="toc-group">Foundations</div>
+    <a class="item" href="#design-system">1 · Design System Direction</a>
+    <a class="item" href="#app-shell">2 · App Shell</a>
+
+    <div class="toc-group">Screens</div>
+    <a class="item" href="#signup">Signup</a>
+    <a class="item" href="#onboarding">Onboarding</a>
+    <a class="item" href="#inbox">Inbox</a>
+    <a class="item" href="#calls">Calls</a>
+    <a class="item" href="#voicemails">Voicemails</a>
+    <a class="item" href="#numbers">Numbers</a>
+    <a class="item" href="#extensions">Extensions</a>
+    <a class="item" href="#extension-detail">Extension Detail</a>
+    <a class="item" href="#devices">Devices</a>
+    <a class="item" href="#users">Users</a>
+    <a class="item" href="#settings">Settings</a>
+    <a class="item" href="#billing">Billing</a>
+
+    <div class="toc-group">Boundaries</div>
+    <a class="item" href="#exclusions">4 · V1 Exclusions</a>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main" id="top">
+    <div class="wrap">
+
+      <!-- COVER -->
+      <header class="cover">
+        <span class="eyebrow">JOEL · Product UI · V1</span>
+        <h1>JOEL V1 UI Design Specification</h1>
+        <p class="lede">The authenticated product UI for JOEL — a modern business phone system for small teams. Extensions are primary, numbers are entry points, devices are endpoints, and SMS lives in one shared inbox. This document defines the design direction, app shell, and every V1 screen.</p>
+        <div class="meta">
+          <span>Scope · Web application, V1</span>
+          <span>Source · Product Rules v1.0 · Domain Model v1.1 · Navigation v1.0</span>
+          <span>Visual system · jack-site (live tokens)</span>
+          <span>No Dashboard in V1</span>
+        </div>
+      </header>
+
+      <!-- mental-model strip -->
+      <section class="block" id="model" style="border-bottom:1px solid var(--line);">
+        <span class="kicker">The Mental Model — Never Break This</span>
+        <h2 class="sec">Numbers in. Extensions decide. Devices ring.</h2>
+        <p class="sec-intro">Every screen in this spec serves one chain. The UI must always reinforce it and never demote the Extension.</p>
+        <div class="wf">
+          <div class="wf-cap">Canonical flow</div>
+          <div class="wf-body">
+            <div class="wf-row" style="align-items:stretch;text-align:center;">
+              <div class="wf-col wfb fill"><span class="wf-tag">Entry point</span><b style="font-size:.95rem;">Business Number</b><p style="font-size:.82rem;margin:4px 0 0;">Receives calls &amp; SMS</p></div>
+              <div class="wf-col wfb fill" style="background:var(--blue-soft);border-color:#d7ddff;"><span class="wf-tag" style="color:var(--blue);">Primary object</span><b style="font-size:.95rem;color:var(--blue);">Extension</b><p style="font-size:.82rem;margin:4px 0 0;color:#3a4a8e;">Owns routing, voicemail, notifications</p></div>
+              <div class="wf-col wfb fill"><span class="wf-tag">Endpoints</span><b style="font-size:.95rem;">Devices</b><p style="font-size:.82rem;margin:4px 0 0;">SIP phone · mobile · phone number</p></div>
+              <div class="wf-col wfb fill"><span class="wf-tag">Fallback</span><b style="font-size:.95rem;">Voicemail</b><p style="font-size:.82rem;margin:4px 0 0;">Terminal outcome, not a destination</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="callout rule"><span class="t">Voice &amp; terminology guardrail</span>No telecom language anywhere in the UI. Never &ldquo;SIP registration failed&rdquo; — say &ldquo;Your desk phone is offline.&rdquo; Never &ldquo;PBX,&rdquo; &ldquo;carrier provisioning,&rdquo; &ldquo;trunk,&rdquo; or &ldquo;DID.&rdquo; Banned platform language: communication hub, operating system, unified communications, omnichannel, orchestration. AI is described with concrete verbs (routes, summarizes, transcribes) — never &ldquo;answers for you&rdquo; or &ldquo;AI receptionist.&rdquo;</div>
+      </section>
+
+      <!-- ====== CONTENT SECTIONS APPENDED BELOW ====== -->
+      <!-- ============================================================ 1 · DESIGN SYSTEM DIRECTION ============================================================ -->
+      <section class="block" id="design-system">
+        <span class="kicker">Foundations · 01</span>
+        <h2 class="sec">Design System Direction</h2>
+        <p class="sec-intro">The product UI inherits the marketing site wholesale — same tokens, type ramp, buttons, cards, kicker pills, and blue-soft icon tiles. The aesthetic is light, calm, and quiet: Stripe / Linear / Notion clarity. White is the default surface; blue is the only accent; black does the heavy lifting. Nothing here is invented — it is the jack-site system applied to dense application views.</p>
+
+        <h3 class="sub">Typography</h3>
+        <p>One body family, <strong>Plus Jakarta Sans</strong>, across the entire product. <strong>Archivo Black</strong> is reserved exclusively for the JOEL wordmark in the sidebar. No third typeface. Tracking tightens as type grows; application text sits a notch smaller than marketing for density.</p>
+        <div class="ramp">
+          <div class="r"><span style="font-size:1.7rem;font-weight:800;letter-spacing:-.025em;">Page title — Extensions</span><span class="spec">800 · -0.025em · 1.7&ndash;2rem</span></div>
+          <div class="r"><span style="font-size:1.22rem;font-weight:800;letter-spacing:-.02em;">Section / panel heading</span><span class="spec">800 · -0.02em · 1.2rem</span></div>
+          <div class="r"><span style="font-size:1rem;font-weight:700;">Row title · Sales &middot; Ext 1</span><span class="spec">700 · 1rem</span></div>
+          <div class="r"><span style="font-size:.95rem;color:var(--body);">Body &amp; table cells — calm, readable, never cramped.</span><span class="spec">400&ndash;500 · 0.95rem · body</span></div>
+          <div class="r"><span style="font-size:.8rem;color:var(--muted);font-weight:600;">Meta / timestamp / caption</span><span class="spec">600 · 0.8rem · muted</span></div>
+          <div class="r"><span style="font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;">Kicker / eyebrow label</span><span class="spec">800 · .14em · uppercase</span></div>
+        </div>
+
+        <h3 class="sub">Color</h3>
+        <p>The marketing palette, unchanged. Blue is the single accent — resist a second one. Status uses green for live/connected only. The AI violet appears solely on summary blocks, never on chrome.</p>
+        <div class="swatches">
+          <div class="sw"><div class="chip-fill" style="background:var(--blue);"></div><div class="meta"><b>Blue</b><code>#2540EE</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--blue-soft);"></div><div class="meta"><b>Blue Soft</b><code>#EEF1FF</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--ink);"></div><div class="meta"><b>Ink</b><code>#0F1115</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--body);"></div><div class="meta"><b>Body</b><code>#4A4F59</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--line);"></div><div class="meta"><b>Line</b><code>#E7E8EC</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--bg-alt);"></div><div class="meta"><b>BG Alt</b><code>#F7F8FA</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--green);"></div><div class="meta"><b>Green · live</b><code>#1BB56A</code></div></div>
+          <div class="sw"><div class="chip-fill" style="background:var(--ai);"></div><div class="meta"><b>AI · summary</b><code>#6B2FE8</code></div></div>
+        </div>
+        <div class="callout blue"><span class="t">Status dots, used sparingly</span><span style="color:var(--green);font-weight:800;">●</span> Green = live / ringing / connected / online device. &nbsp;<span style="color:var(--muted);font-weight:800;">●</span> Gray = offline / disabled / archived. No amber, no red dots — errors are plain-language banners, not traffic lights.</div>
+
+        <h3 class="sub">Spacing &amp; layout principles</h3>
+        <div class="grid2">
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Rhythm</h4>
+            <ul class="clean">
+              <li>4px base unit; common steps 8 · 12 · 16 · 24 · 32.</li>
+              <li>Generous whitespace over dividers — let air separate groups.</li>
+              <li>Content column caps around 1100&ndash;1200px; tables go edge-to-edge inside it.</li>
+              <li>Card radius 14&ndash;16px; chips &amp; pills 8&ndash;11px; inputs 10px.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Borders &amp; elevation</h4>
+            <ul class="clean">
+              <li>1px <code style="font-size:.82rem;">--line</code> borders everywhere; no heavy strokes.</li>
+              <li>Flat by default. Elevation only for overlays: <code style="font-size:.8rem;">0 24px 60px rgba(15,17,21,.10)</code>.</li>
+              <li>No glows, no gradients (the brand has none), no inner shadows.</li>
+              <li>Kickers above section headlines carry the marketing rhythm inward.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="sub">Component style</h3>
+        <p>Every reusable atom is lifted from jack-site. Below is the working inventory the product UI draws from.</p>
+        <div class="card">
+          <h4 class="subsub" style="margin-top:0;">Buttons</h4>
+          <div class="chips" style="gap:12px;align-items:center;margin-bottom:6px;">
+            <span style="background:var(--blue);color:#fff;font-weight:700;padding:10px 18px;border-radius:10px;font-size:.9rem;">Primary &middot; solid blue</span>
+            <span style="background:#fff;color:var(--ink);border:1px solid var(--line);font-weight:700;padding:10px 18px;border-radius:10px;font-size:.9rem;">Secondary &middot; white + line</span>
+            <span style="background:#fff;color:var(--red);border:1px solid #f4cdca;font-weight:700;padding:10px 18px;border-radius:10px;font-size:.9rem;">Destructive &middot; text only</span>
+          </div>
+          <p style="margin:8px 0 0;font-size:.9rem;">Primary hovers to <code style="font-size:.82rem;">--blue-dark</code> with a 1px lift. One primary per view. Destructive actions are never the loudest thing on screen.</p>
+        </div>
+        <div class="grid2">
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Cards &amp; icon tiles</h4>
+            <div style="display:flex;gap:12px;align-items:center;">
+              <span style="width:44px;height:44px;border-radius:12px;background:var(--blue-soft);display:grid;place-items:center;flex-shrink:0;"><span style="width:20px;height:20px;border:2px solid var(--blue);border-radius:5px;display:block;"></span></span>
+              <p style="margin:0;font-size:.9rem;">White fill, 1px line, 16px radius. 44px blue-soft tile holds a 2px blue glyph. The signature feature-card motif, reused for every settings group and list item.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Kicker pills &amp; chips</h4>
+            <div class="chips">
+              <span class="kicker" style="margin:0;">Section eyebrow</span>
+              <span class="chip blue">Ext 1 · Sales</span>
+              <span class="chip green">Live</span>
+              <span class="chip gray">Disabled</span>
+            </div>
+            <p style="margin:10px 0 0;font-size:.9rem;">Black kicker pills sit above headings. Status &amp; entity chips label rows in tables and detail views.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h4 class="subsub" style="margin-top:0;">Tables, forms &amp; the Stripe-style settings rail</h4>
+          <p style="margin:0 0 6px;font-size:.92rem;">With no Dashboard, list views carry the product. <strong>Tables</strong>: quiet header in <code style="font-size:.82rem;">--muted</code>, 1px row dividers, full-row hover to <code style="font-size:.82rem;">--bg-alt</code>, right-aligned actions on hover. <strong>Forms</strong>: stacked label + 10px-radius input, helper text in muted below, inline validation. <strong>Settings</strong> use a left sub-nav rail (General · Routing · Voicemail · Notifications · Recording · Permissions) with the panel on the right — the canonical Extension layout.</p>
+        </div>
+
+        <h3 class="sub">Empty states</h3>
+        <p>Empty is the first run of almost every screen. The pattern is always the same and always inviting: centered blue-soft icon tile, one plain-language line, one short subline, one primary action. Never a dead end, never telecom jargon.</p>
+        <div class="wf">
+          <div class="wf-cap">Empty-state pattern</div>
+          <div class="wf-body">
+            <div class="wf-empty">
+              <div class="ic"></div>
+              <div class="sk ln tall w40" style="margin-bottom:9px;"></div>
+              <div class="sk ln w60" style="margin-bottom:7px;"></div>
+              <div class="sk ln w50" style="margin-bottom:16px;"></div>
+              <span class="wf-btn"></span>
+            </div>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="callout rule" style="margin:0;"><span class="t">Voicemails</span>&ldquo;No voicemails yet. When a caller leaves a message, it shows up here with a transcript and summary.&rdquo;</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Inbox</span>&ldquo;No messages yet. Texts to your business numbers land in this shared inbox.&rdquo;</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Users</span>&ldquo;It&rsquo;s just you for now. Invite teammates when you&rsquo;re ready — JOEL works fine without them.&rdquo;</div>
+        </div>
+
+        <h3 class="sub">Loading states</h3>
+        <p>Skeletons, not spinners. Reuse the table and card silhouette so layout never jumps. Calm shimmer (no spinner overlays); content streams in. Audio waveforms render a flat placeholder bar until the file is ready.</p>
+        <div class="wf">
+          <div class="wf-cap">Skeleton — list view</div>
+          <div class="wf-body sk stack">
+            <div class="wf-tablerow head"><span class="sk circ" style="width:14px;height:14px;"></span><span class="sk ln w60"></span><span class="sk ln w40"></span><span class="sk ln w40"></span><span class="sk ln w30"></span></div>
+            <div class="wf-tablerow"><span class="sk sq" style="width:22px;height:22px;border-radius:6px;"></span><span class="sk ln w70"></span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w20"></span></div>
+            <div class="wf-tablerow"><span class="sk sq" style="width:22px;height:22px;border-radius:6px;"></span><span class="sk ln w50"></span><span class="sk ln w60"></span><span class="sk ln w30"></span><span class="sk ln w20"></span></div>
+            <div class="wf-tablerow"><span class="sk sq" style="width:22px;height:22px;border-radius:6px;"></span><span class="sk ln w80"></span><span class="sk ln w40"></span><span class="sk ln w50"></span><span class="sk ln w20"></span></div>
+          </div>
+        </div>
+
+        <h3 class="sub">Error states</h3>
+        <p>The error philosophy is a product rule: <strong>plain, recoverable, never technical.</strong> Errors describe what the customer sees and what to do next — a human sentence plus a retry. They appear inline where the problem lives, or as a dismissible banner, never a modal wall.</p>
+        <div class="grid2">
+          <div class="callout warn" style="margin:8px 0;"><span class="t">Say this</span>&ldquo;Your desk phone is offline. Check that it&rsquo;s plugged in and connected.&rdquo; · &ldquo;We couldn&rsquo;t buy that number. It was just taken — pick another.&rdquo; · &ldquo;Slack connection needs attention. Reconnect to keep notifications flowing.&rdquo;</div>
+          <div class="callout rule" style="margin:8px 0;"><span class="t">Never this</span>SIP Registration Failed · Carrier Rejected (code 487) · Webhook 500 · Provisioning timeout · Trunk unreachable. Carrier-specific terminology is never surfaced to the customer.</div>
+        </div>
+        <div class="callout rule"><span class="t">Three error surfaces</span><strong>Inline field</strong> — validation under the input (red text, calm). <strong>Banner</strong> — persistent &ldquo;Needs attention&rdquo; strip for degraded integrations/devices, with a Reconnect/Retry action. <strong>Toast</strong> — transient confirmation or soft failure, auto-dismiss, with Undo where destructive.</div>
+      </section>
+
+      <!-- ============================================================ 2 · APP SHELL ============================================================ -->
+      <section class="block" id="app-shell">
+        <span class="kicker">Foundations · 02</span>
+        <h2 class="sec">App Shell</h2>
+        <p class="sec-intro">A fixed left sidebar for primary navigation, a slim top bar carrying the business switcher and global search, and a single scrolling content area. Calm and unmistakably JOEL — the marketing site&rsquo;s lightness carried into the product. No Dashboard: the user lands directly on their default working screen.</p>
+
+        <div class="wf">
+          <div class="wf-cap">App shell — Owner / Admin</div>
+          <div class="wf-body">
+            <div class="appwf" style="grid-template-columns:188px 1fr;">
+              <div class="side" style="padding:16px 12px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:7px;background:var(--ink);"></span><span style="font-family:'Archivo Black',var(--sans);font-size:.95rem;letter-spacing:.03em;">JOEL</span></div>
+                <div style="height:30px;border-radius:8px;background:#fff;border:1px solid var(--line);margin-bottom:12px;display:flex;align-items:center;padding:0 8px;gap:6px;"><span class="sk circ" style="width:14px;height:14px;"></span><span class="sk ln w60"></span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;">
+                  <span style="height:28px;border-radius:8px;background:var(--blue-soft);"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                  <span style="height:28px;border-radius:8px;background:transparent;"></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="top" style="height:54px;">
+                  <div class="swer" style="width:148px;height:32px;display:flex;align-items:center;gap:7px;padding:0 9px;"><span class="sk sq" style="width:18px;height:18px;border-radius:5px;"></span><span class="sk ln w50"></span></div>
+                  <div class="srch" style="height:32px;display:flex;align-items:center;padding:0 11px;gap:8px;"><span class="sk circ" style="width:13px;height:13px;"></span><span class="sk ln w40"></span></div>
+                  <div class="av"></div>
+                </div>
+                <div class="content">
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span class="sk ln tall w30"></span><span class="wf-btn" style="height:28px;width:100px;"></span></div>
+                  <div class="wfb solid sk stack" style="padding:0;">
+                    <div class="wf-tablerow" style="padding:12px 14px;"><span class="sk circ" style="width:8px;height:8px;background:var(--green);"></span><span class="sk ln w60"></span><span class="sk ln w40"></span><span class="sk ln w40"></span><span class="sk ln w20"></span></div>
+                    <div class="wf-tablerow" style="padding:12px 14px;"><span class="sk circ" style="width:8px;height:8px;"></span><span class="sk ln w50"></span><span class="sk ln w50"></span><span class="sk ln w30"></span><span class="sk ln w20"></span></div>
+                    <div class="wf-tablerow" style="padding:12px 14px;"><span class="sk circ" style="width:8px;height:8px;"></span><span class="sk ln w70"></span><span class="sk ln w40"></span><span class="sk ln w40"></span><span class="sk ln w20"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="annot">
+              <div class="a">Business switcher, top-left of the bar — switch workspaces without logging out.</div>
+              <div class="a">Global search, centered — searches Calls, Voicemails, SMS, Extensions, Numbers.</div>
+              <div class="a">Account avatar &amp; in-app notifications, far right.</div>
+              <div class="a">Sidebar nav — role-filtered; active item carries the blue-soft fill.</div>
+              <div class="a">Content area — one screen, no Dashboard; lands on the default screen.</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub">Sidebar</h3>
+        <p>The JOEL wordmark anchors the top. Below it, the business switcher, then the role-filtered nav list. Active item uses the <code style="font-size:.82rem;">--blue-soft</code> fill with blue label and a 2px blue glyph; inactive items are <code style="font-size:.82rem;">--body</code> with muted icons. Icons follow the lucide-style, 2px-stroke phone-system vocabulary (handset, message, voicemail, hash/number, layers/extension, monitor/device, people, sliders, card). Settings &amp; Billing sit visually grouped at the bottom. Collapses to a 62px icon rail on narrow desktop.</p>
+
+        <h3 class="sub">Top bar</h3>
+        <p>Slim and quiet, inheriting the white page surface with a single 1px bottom line. Left: business switcher. Center: global search. Right: in-app notification bell and the account menu. Nothing competes with the content below it.</p>
+
+        <h3 class="sub">Global search</h3>
+        <p>Visible on every screen. A click or <code style="font-size:.82rem;">⌘K</code> opens a command-style overlay that searches <strong>Calls, Voicemails, SMS, Extensions, and Numbers</strong> — and nothing else. Results are <strong>permission-filtered</strong>: a User only sees results for extensions they can access. Grouped results with type labels; plain-language empty result (&ldquo;No matches for &lsquo;pricing&rsquo; in your extensions&rdquo;).</p>
+        <div class="wf">
+          <div class="wf-cap">Global search overlay</div>
+          <div class="wf-body">
+            <div class="wfb solid" style="max-width:560px;margin:0 auto;padding:0;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);"><span class="sk circ" style="width:16px;height:16px;"></span><span class="sk ln w60"></span></div>
+              <div style="padding:10px 16px;">
+                <span class="wf-tag">Extensions</span>
+                <div class="wf-tablerow" style="grid-template-columns:24px 1fr;padding:7px 0;"><span class="chip blue" style="padding:3px 7px;">1</span><span class="sk ln w50"></span></div>
+                <span class="wf-tag" style="margin-top:8px;">Voicemails</span>
+                <div class="wf-tablerow" style="grid-template-columns:24px 1fr;padding:7px 0;"><span class="sk sq" style="width:18px;height:18px;border-radius:5px;"></span><span class="sk ln w70"></span></div>
+                <div class="wf-tablerow" style="grid-template-columns:24px 1fr;padding:7px 0;"><span class="sk sq" style="width:18px;height:18px;border-radius:5px;"></span><span class="sk ln w40"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub">Business switcher</h3>
+        <p>A user may belong to multiple businesses. The switcher (top of sidebar / top bar) lists every workspace they have access to with its initial tile and name; selecting one swaps the entire context — <strong>no logout required</strong>. The current business is shown with its mark. This is the only place workspace context changes.</p>
+
+        <h3 class="sub">Role-based navigation</h3>
+        <p>Three roles: <span class="chip role">Owner</span> <span class="chip role">Admin</span> <span class="chip role">User</span>. The sidebar renders only what the role can reach. Permissions are extension-based; Inbox access is separate. The default landing screen follows the same rule.</p>
+        <div class="grid2">
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Owner / Admin</h4>
+            <div class="navset">
+              <span class="navpill on">Inbox</span><span class="navpill">Calls</span><span class="navpill">Voicemails</span><span class="navpill">Numbers</span><span class="navpill">Extensions</span><span class="navpill">Devices</span><span class="navpill">Users</span><span class="navpill">Settings</span><span class="navpill">Billing</span>
+            </div>
+            <p style="margin:12px 0 0;font-size:.9rem;">Full configuration access. <strong>Billing is Owner-only</strong> — an Admin sees the other eight but not Billing.</p>
+          </div>
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">User</h4>
+            <div class="navset">
+              <span class="navpill on">Inbox</span><span class="navpill">Calls</span><span class="navpill">Voicemails</span><span class="navpill">Settings</span>
+            </div>
+            <p style="margin:12px 0 0;font-size:.9rem;">Operational only. <strong>Inbox appears only if Inbox Access is granted.</strong> Calls &amp; Voicemails are filtered to the extensions they can access. No Numbers, Extensions, Devices, Users, or Billing.</p>
+          </div>
+        </div>
+        <div class="callout blue"><span class="t">Default landing</span>Inbox if the user has Inbox Access; otherwise Calls. There is no Dashboard to land on — the product opens straight into work.</div>
+        <div class="callout rule"><span class="t">Permission state, everywhere</span>The UI never shows a locked screen a role can&rsquo;t use. Out-of-scope nav items simply don&rsquo;t render. Within a screen, an action the user lacks permission for is hidden, not disabled — except destructive/admin actions on shared objects, which show a quiet &ldquo;Admins only&rdquo; note in place of the control.</div>
+      </section>
+
+      <!-- ============ SCREENS DIVIDER ============ -->
+      <section class="block" id="screens-intro" style="padding-bottom:28px;">
+        <span class="kicker blue">Foundations · 03</span>
+        <h2 class="sec">Screen-by-Screen UI Spec</h2>
+        <p class="sec-intro">Twelve screens, each documented the same way: purpose, layout, primary components, visible fields, primary &amp; secondary actions, empty state, permission state, and mobile-responsive notes — with a schematic wireframe. Nothing here adds behavior beyond the Product Rules; the design only gives that behavior a calm, modern surface.</p>
+      </section>
+
+      <!-- ============ SIGNUP ============ -->
+      <section class="block" id="signup">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Signup</h2>
+        <p class="sec-intro">Get a new business from nothing to an account in seconds, then hand off to Onboarding. A single centered card on white — the marketing closer band&rsquo;s confidence, none of its chrome.</p>
+        <div class="wf">
+          <div class="wf-cap">Signup — centered card</div>
+          <div class="wf-body" style="display:flex;justify-content:center;">
+            <div class="wfb solid" style="max-width:380px;width:100%;text-align:center;padding:26px 24px;">
+              <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px;"><span style="width:24px;height:24px;border-radius:7px;background:var(--ink);"></span><span style="font-family:'Archivo Black',var(--sans);font-size:.9rem;letter-spacing:.03em;">JOEL</span></div>
+              <div class="sk ln tall w60" style="margin:0 auto 16px;"></div>
+              <div class="wfb fill" style="height:38px;margin-bottom:9px;"></div>
+              <div class="wfb fill" style="height:38px;margin-bottom:9px;"></div>
+              <div class="wfb fill" style="height:38px;margin-bottom:14px;"></div>
+              <span class="wf-btn" style="width:100%;height:38px;"></span>
+              <div class="sk ln w50" style="margin:14px auto 0;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Create the account and the Owner user. The fastest possible doorway — speed is the explicit product goal. No plan selection here; that lives in Onboarding / Billing.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Single centered card, ~380px, on a white surface. Wordmark, headline, fields, one primary button, one secondary link. No marketing nav, no footer noise.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Auth card</span><span class="chip">Text inputs</span><span class="chip blue">Primary button</span><span class="chip">SSO buttons (Google)</span><span class="chip">Inline validation</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Work email</li><li>Password (or magic-link / Google continue)</li><li>Full name</li></ul><p style="margin-top:8px;color:var(--muted);font-size:.9rem;">Business name is captured in Onboarding step 1, not here.</p></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Create account</strong> → proceeds directly into Onboarding.</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Continue with Google · Log in (for returning users) · Terms &amp; privacy links.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>N/A — first-run form. Fields render with placeholder helper text.</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p>Public, pre-auth. The creator becomes the <strong>Owner</strong>. An invited teammate hits a different path (accept-invite) that skips business creation and lands in their granted screen.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Card goes full-width with comfortable margins; inputs are 44px minimum hit height; primary button full-width and thumb-reachable.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ ONBOARDING ============ -->
+      <section class="block" id="onboarding">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Onboarding</h2>
+        <p class="sec-intro">Move from new account to receiving calls within minutes. Two paths, one promise. The whole flow reuses the marketing routing idiom — a number at the top, extensions fanning to phones — so the customer learns the mental model while they set it up.</p>
+        <div class="wf">
+          <div class="wf-cap">Onboarding — path choice → number → done</div>
+          <div class="wf-body">
+            <div class="wf-row">
+              <div class="wf-col wfb solid"><span class="wf-tag">Step 1 · Business name</span><div class="wfb fill" style="height:34px;margin-bottom:10px;"></div><span class="wf-tag">Choose a path</span><div class="wfb fill" style="height:46px;margin-bottom:8px;border:2px solid var(--blue);"></div><div class="wfb fill" style="height:46px;"></div></div>
+              <div class="wf-col wfb solid"><span class="wf-tag">Step 2 · Get a number</span><div class="chips" style="margin-bottom:10px;"><span class="chip blue">Local</span><span class="chip">Toll-free</span><span class="chip">Port</span></div><div class="sk stack"><div class="wfb fill" style="height:30px;"></div><div class="wfb fill" style="height:30px;"></div><div class="wfb fill" style="height:30px;"></div></div></div>
+              <div class="wf-col wfb solid"><span class="wf-tag">Step 3 · You&rsquo;re live</span><div class="wf-empty" style="padding:14px 6px;"><div class="ic" style="background:#e6f7ef;"></div><div class="sk ln w70" style="margin:0 auto 7px;"></div><div class="sk ln w50" style="margin:0 auto 12px;"></div><span class="wf-btn" style="height:28px;width:90px;"></span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Create a working phone system fast: a Business Number, a Greeting, an Extension, and a Destination — the four things that complete onboarding. Porting never blocks progress.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Full-screen guided flow with a slim progress indicator. One decision per step. The two paths split at step 1.</p><ul class="clean"><li><strong>Path A — Just ring my phone:</strong> JOEL auto-creates Extension 0 (Operator) forwarding to the customer&rsquo;s mobile. Operational immediately.</li><li><strong>Path B — Set up extensions:</strong> customer adds one or more extensions (e.g. 0 Operator, 1 Sales, 2 Support).</li></ul></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Path cards</span><span class="chip">Number search</span><span class="chip">Suggested-number list (3 + Show more)</span><span class="chip">Port wizard</span><span class="chip">Extension mini-form</span><span class="chip green">Success state</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Business name (e.g. Smilebar)</li><li>Path choice — Just ring my phone / Set up extensions</li><li>Number acquisition — Buy (Local / Toll-free) or Port existing</li><li>Local search by City or State, area code shown for clarity</li><li>Per extension (Path B): number, name, text-to-voice name, initial forwarding number</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p>Continue through each step → <strong>Finish</strong> lands the user on their default screen (Inbox or Calls).</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Back · Skip to defaults (24/7 hours, directory on, AI greeting, voicemail on, email notifications on) · Test the system (with the temporary number while a port is pending).</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>This <em>is</em> the empty-account state. Defaults are pre-filled so a customer can accept-and-go.</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p>Owner-only flow (the account creator). Recording is <strong>off by default</strong> and never silently enabled here.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Steps stack vertically, one per screen; number list scrolls; path cards become full-width stacked tiles. Fully completable on a phone.</p></div></div>
+        </div>
+        <div class="callout ai"><span class="t">AI greeting, framed correctly</span>The generated greeting is offered as &ldquo;We&rsquo;ll generate your greeting audio — preview and edit anytime.&rdquo; Concrete and optional. Never &ldquo;JOEL answers for you.&rdquo;</div>
+      </section>
+
+      <!-- ============ INBOX ============ -->
+      <section class="block" id="inbox">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Inbox</h2>
+        <p class="sec-intro">The one Shared SMS Inbox for the whole business. Every SMS-enabled number feeds in; numbers are filters, not separate inboxes. A Gmail / Slack two-pane layout: conversation list left, thread right. Default landing for anyone with Inbox Access.</p>
+        <div class="wf">
+          <div class="wf-cap">Inbox — conversation list + thread</div>
+          <div class="wf-body">
+            <div class="wf-row" style="gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:300px;">
+              <div style="width:240px;border-right:1px solid var(--line);flex-shrink:0;">
+                <div style="padding:11px 14px;border-bottom:1px solid var(--line);display:flex;gap:7px;align-items:center;"><span class="chip blue" style="padding:4px 9px;">All numbers</span><span class="sk ln w20"></span></div>
+                <div class="sk stack" style="padding:6px 0;">
+                  <div class="wf-tablerow" style="grid-template-columns:30px 1fr;padding:10px 14px;background:var(--blue-soft);"><span class="sk circ" style="width:26px;height:26px;background:#cdd6fb;"></span><span class="sk stack" style="display:block;"><span class="sk ln w70" style="margin-bottom:5px;"></span><span class="sk ln w50"></span></span></div>
+                  <div class="wf-tablerow" style="grid-template-columns:30px 1fr;padding:10px 14px;"><span class="sk circ" style="width:26px;height:26px;"></span><span class="sk stack" style="display:block;"><span class="sk ln w50" style="margin-bottom:5px;"></span><span class="sk ln w60"></span></span></div>
+                  <div class="wf-tablerow" style="grid-template-columns:30px 1fr;padding:10px 14px;"><span class="sk circ" style="width:26px;height:26px;"></span><span class="sk stack" style="display:block;"><span class="sk ln w60" style="margin-bottom:5px;"></span><span class="sk ln w40"></span></span></div>
+                </div>
+              </div>
+              <div class="wf-col" style="display:flex;flex-direction:column;">
+                <div style="padding:11px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;"><span class="sk ln w30"></span><span style="margin-left:auto;display:flex;gap:6px;"><span class="wf-pill" style="width:54px;"></span><span class="wf-pill" style="width:54px;"></span></span></div>
+                <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:10px;">
+                  <span class="wfb fill" style="width:55%;height:34px;border-radius:10px;"></span>
+                  <span class="wfb" style="width:50%;height:34px;border-radius:10px;align-self:flex-end;background:var(--blue-soft);border-color:#d7ddff;"></span>
+                  <span class="wfb fill" style="width:45%;height:34px;border-radius:10px;"></span>
+                </div>
+                <div style="padding:12px 16px;border-top:1px solid var(--line);"><div class="wfb fill" style="height:38px;border-radius:10px;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>One place to read and reply to every business text. SMS belongs to the business, not to extensions or users.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Two panes. Left: filter bar (by number) + conversation list grouped by sender, with Active / Archived views. Right: message thread + reply composer. Conversations stay unified even if a sender texts multiple business numbers.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Conversation list item</span><span class="chip">Number filter chips</span><span class="chip">Message bubbles (in/out)</span><span class="chip">MMS attachment tile</span><span class="chip blue">Reply composer</span><span class="chip">Active / Archived toggle</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Sender name (when known) &amp; phone number</li><li>Which business number received it (filter / audit label)</li><li>Message body, timestamps, MMS (images, PDFs, screenshots)</li><li>Reply text field</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Reply</strong> to the selected conversation.</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Archive · Delete conversation (confirm; for spam cleanup) · Block number · Filter by number · Switch Active / Archived. Archived threads return to Active automatically on a new message.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>&ldquo;No messages yet. Texts to your business numbers land in this shared inbox.&rdquo; Centered blue-soft message-icon tile.</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><strong>Inbox Access is separate from extension access.</strong> The Inbox nav item and screen appear only for users granted Inbox Access — independent of which extensions they can see. No contact management, tags, or lead status (not a CRM).</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Single-pane: list first, tap a conversation to slide into the thread, back arrow returns. Composer pinned above the keyboard. Supported in the mobile app.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ CALLS ============ -->
+      <section class="block" id="calls">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Calls</h2>
+        <p class="sec-intro">The call history table — extension-based, permission-filtered. With no Dashboard, this list view carries weight: it&rsquo;s the default landing for users without Inbox Access. Quiet table, plain rows, direction and status read at a glance.</p>
+        <div class="wf">
+          <div class="wf-cap">Calls — history table</div>
+          <div class="wf-body">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span class="chip blue" style="padding:5px 11px;">All extensions</span><span class="chip" style="padding:5px 11px;">Direction</span><span class="chip" style="padding:5px 11px;">Date</span><span class="srch" style="margin-left:auto;width:200px;height:30px;border-radius:8px;background:var(--bg-alt);border:1px solid var(--line);"></span></div>
+            <div class="wfb solid" style="padding:0;">
+              <div class="wf-tablerow head" style="padding:10px 14px;"><span class="sk ln w20" style="width:14px;"></span><span class="sk ln w40"></span><span class="sk ln w40"></span><span class="sk ln w30"></span><span class="sk ln w30"></span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;"><span style="font-size:.8rem;color:var(--green);">↙</span><span class="sk ln w60"></span><span class="chip blue" style="padding:3px 8px;">Sales</span><span class="sk ln w30"></span><span class="sk ln w20"></span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;"><span style="font-size:.8rem;color:var(--muted);">↗</span><span class="sk ln w50"></span><span class="chip" style="padding:3px 8px;">Support</span><span class="sk ln w40"></span><span class="sk ln w20"></span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;"><span style="font-size:.8rem;color:var(--red);">⤬</span><span class="sk ln w70"></span><span class="chip blue" style="padding:3px 8px;">Sales</span><span class="sk ln w30"></span><span class="sk ln w20"></span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;"><span style="font-size:.8rem;color:var(--green);">↙</span><span class="sk ln w40"></span><span class="chip" style="padding:3px 8px;">Operator</span><span class="sk ln w40"></span><span class="sk ln w20"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>See inbound, outbound, missed, and recorded calls. Every call belongs to an extension, which decides ownership, permission, recording, and grouping.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Filter bar above a full-width table. Row click opens a detail drawer (metadata; recording player + transcript + summary if recorded). Missed calls are visually distinct but not alarmist.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Filter bar</span><span class="chip">Call table</span><span class="chip">Direction glyph</span><span class="chip blue">Extension chip</span><span class="chip">Detail drawer</span><span class="chip ai" style="background:var(--ai-soft);border-color:#e2d6fb;color:var(--ai);">Recording + summary</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Caller number (and name if available)</li><li>Direction — inbound / outbound / missed</li><li>Extension · Date/Time · Duration · Caller ID number</li><li>Recording indicator (only if recording was on)</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Open call detail.</strong> For outbound-capable users, a <strong>Call back</strong> action where permitted.</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Filter by extension / direction / date · Search by caller number, extension, date · Play / download recording (when permitted) · Block number.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>&ldquo;No calls yet. Inbound and outbound calls for your extensions will appear here.&rdquo;</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p>Strictly extension-scoped: <strong>a user sees only calls for extensions they can access.</strong> Recordings &amp; downloads inherit the same access — no separate per-call permission. Filters and search obey it too.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Table collapses to stacked call cards (caller, extension chip, direction, time). Detail opens full-screen. Available in the mobile app call history.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ VOICEMAILS ============ -->
+      <section class="block" id="voicemails">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Voicemails</h2>
+        <p class="sec-intro">A dedicated voicemail area, separate from Calls and the Inbox. Each voicemail belongs to the extension where the call terminated, and carries audio, an auto-transcript, and an AI summary. This screen reuses the marketing voicemail card wholesale — audio player, waveform, summary block, transcript.</p>
+        <div class="wf">
+          <div class="wf-cap">Voicemails — list of voicemail cards</div>
+          <div class="wf-body sk stack">
+            <div class="wfb solid" style="padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:11px;margin-bottom:11px;"><span class="sk circ" style="width:26px;height:26px;"></span><span class="sk stack" style="flex:1;"><span class="sk ln w40" style="margin-bottom:5px;"></span><span class="sk ln w20"></span></span><span class="chip blue" style="padding:3px 8px;">Sales</span></div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px;"><span style="width:30px;height:30px;border-radius:50%;background:var(--blue);flex-shrink:0;"></span><span style="flex:1;height:22px;border-radius:6px;background:linear-gradient(90deg,#cdd6fb 30%,#e9eaee 30%);"></span><span class="sk ln w20" style="width:34px;"></span></div>
+              <div class="wfb" style="background:var(--ai-soft);border-color:#e2d6fb;padding:10px 12px;"><span class="wf-tag" style="color:var(--ai);">Summary</span><span class="sk ln w90" style="background:#ddd0f7;margin-bottom:5px;"></span><span class="sk ln w60" style="background:#ddd0f7;"></span></div>
+            </div>
+            <div class="wfb solid" style="padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:11px;"><span class="sk circ" style="width:26px;height:26px;"></span><span class="sk stack" style="flex:1;"><span class="sk ln w50" style="margin-bottom:5px;"></span><span class="sk ln w20"></span></span><span class="chip" style="padding:3px 8px;">Support</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Listen to, read, and search voicemails left for extensions the user can access. Email already carries transcript + summary; this is the searchable system of record.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Filter bar + a list of voicemail cards. Each card: caller, extension chip, timestamp, audio player with waveform, AI summary block, and an expandable transcript. Optional detail drawer for full metadata (original route, final route).</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Voicemail card</span><span class="chip">Audio player + waveform</span><span class="chip ai" style="background:var(--ai-soft);border-color:#e2d6fb;color:var(--ai);">AI summary block</span><span class="chip">Transcript (expandable)</span><span class="chip blue">Extension chip</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Caller number / name · Extension · Date/Time · Duration</li><li>Audio · Transcript · Summary</li><li>Original route &amp; final route (in detail)</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Play voicemail.</strong> Inline; scrub the waveform.</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Read transcript · Search (caller number, transcript content, summary content, extension name) · Delete (confirm; permanent) · Call back where permitted · Block number.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>&ldquo;No voicemails yet. When a caller leaves a message, it shows up here with a transcript and summary.&rdquo;</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p>Extension-scoped: <strong>users see only voicemails for extensions they can access.</strong> Deleted-extension voicemails remain searchable for those with historical access. After retention expiry, audio is removed but transcript + summary + metadata remain — show a quiet &ldquo;Audio expired&rdquo; note in place of the player.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Cards stack full-width; player and summary remain; transcript collapses by default. Supported in the mobile app.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ NUMBERS ============ -->
+      <section class="block" id="numbers">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Numbers</h2>
+        <p class="sec-intro">Business Numbers are entry points — public identity, caller ID, and SMS filter. They never own routing, voicemail, or notifications. This screen manages the list, buys or ports new numbers, and points each number at a Greeting/Menu or a direct Extension.</p>
+        <div class="wf">
+          <div class="wf-cap">Numbers — list + routing target</div>
+          <div class="wf-body">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;"><span class="sk ln tall w20"></span><span class="wf-btn" style="height:30px;width:120px;"></span></div>
+            <div class="wfb solid" style="padding:0;">
+              <div class="wf-tablerow head" style="padding:10px 14px;grid-template-columns:1.2fr 1fr 1fr .6fr;"><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w50"></span><span class="sk ln w30"></span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:1.2fr 1fr 1fr .6fr;"><span class="sk ln w70"></span><span class="sk ln w40"></span><span class="chip blue" style="padding:3px 8px;">Main Greeting</span><span class="chip green" style="padding:3px 8px;">SMS Approved</span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:1.2fr 1fr 1fr .6fr;"><span class="sk ln w60"></span><span class="sk ln w50"></span><span class="chip" style="padding:3px 8px;">→ Ext 1 Sales</span><span class="chip" style="padding:3px 8px;background:var(--amber-soft);border-color:#f3dca6;color:var(--amber);">Pending</span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:1.2fr 1fr 1fr .6fr;"><span class="sk ln w50"></span><span class="chip" style="padding:3px 8px;background:#fff6e6;border-color:#f3dca6;color:#9a6a00;">Porting</span><span class="sk ln w40"></span><span class="chip gray" style="padding:3px 8px;">Receive Only</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Own the business&rsquo;s phone numbers: buy, port, route, and retire them. A business may hold many (Main, Marketing, Google Ads, Support) — all feeding one SMS inbox.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Header with &ldquo;Add number,&rdquo; then a table of numbers. Each row shows label, type, routing target, and <strong>SMS status</strong> (the messaging-registration state, not just an on/off toggle). Row opens a detail panel (routing target, caller-ID role, SMS toggle, delete). Add-number opens the buy/port workflow (same entry point as onboarding).</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Numbers table</span><span class="chip">Routing-target selector</span><span class="chip">Buy / port workflow</span><span class="chip">Port status tracker</span><span class="chip green">SMS status chip</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Number &amp; label (e.g. Main Number · 617-555-0100)</li><li>Type — Local / Toll-free</li><li>Routing — Main Greeting/Menu <em>or</em> a direct Extension</li><li><strong>SMS status</strong> — <span class="chip green">Approved</span> <span class="chip" style="background:var(--amber-soft);border-color:#f3dca6;color:var(--amber);">Pending Registration</span> <span class="chip" style="background:var(--red-soft);border-color:#f4cdca;color:var(--red);">Failed Registration</span> <span class="chip gray">Receive Only</span> — mirrors Settings → Messaging Compliance; tapping it deep-links there</li><li>Port status — Submitted · Review · Approved · Scheduled · Completed (when applicable)</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Add number</strong> (Buy Local / Toll-free / Port existing). Per row: <strong>Set routing target.</strong></p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Edit label · Toggle SMS · View port status · Delete number (confirm; enters recovery window) · Restore deleted number. Routing changes never expose telecom terms.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>Rare post-onboarding. If reached: &ldquo;No numbers yet. Buy a number or port one you already own — your setup stays intact while a port completes.&rdquo;</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><span class="chip role">Owner</span> <span class="chip role">Admin</span> only — not in the User nav at all. A deleted number shows historical calls/SMS/voicemails as read-only and offers Restore during the recovery window.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Web-app management is desktop-first; the mobile app explicitly does <em>not</em> manage numbers. On small web screens the table becomes stacked cards, but configuration is positioned as a desk task.</p></div></div>
+        </div>
+        <div class="callout warn"><span class="t">Port failure copy</span>Only &ldquo;Additional information required&rdquo; or &ldquo;Carrier rejected the request&rdquo; with next steps — never carrier codes or technical reasons.</div>
+      </section>
+
+      <!-- ============ EXTENSIONS ============ -->
+      <section class="block" id="extensions">
+        <span class="kicker blue">Screen · The primary noun</span>
+        <h2 class="sec">Extensions</h2>
+        <p class="sec-intro">The heart of JOEL. Extensions own routing, forwarding, voicemail, notifications, and recordings — every call ultimately belongs to one. This screen lists them; the UI must keep them primary and never demote them to a sub-setting of numbers or devices.</p>
+        <div class="wf">
+          <div class="wf-cap">Extensions — list</div>
+          <div class="wf-body">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;"><span class="sk ln tall w20"></span><span class="wf-btn" style="height:30px;width:130px;"></span></div>
+            <div class="wfb solid" style="padding:0;">
+              <div class="wf-tablerow head" style="padding:10px 14px;grid-template-columns:60px 1.3fr 1fr 1fr .6fr;"><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w30"></span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:60px 1.3fr 1fr 1fr .6fr;"><span class="chip blue" style="padding:4px 9px;justify-self:start;">0</span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w60"></span><span class="chip green" style="padding:3px 8px;">On</span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:60px 1.3fr 1fr 1fr .6fr;"><span class="chip blue" style="padding:4px 9px;justify-self:start;">1</span><span class="sk ln w40"></span><span class="sk ln w50"></span><span class="sk ln w50"></span><span class="chip green" style="padding:3px 8px;">On</span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:60px 1.3fr 1fr 1fr .6fr;"><span class="chip blue" style="padding:4px 9px;justify-self:start;">2</span><span class="sk ln w60"></span><span class="sk ln w40"></span><span class="sk ln w40"></span><span class="chip" style="padding:3px 8px;">Off</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Create, browse, and open extensions. Extension 0 (Operator) always exists; 1&ndash;8 are real standard extensions; 9 is the reserved Directory; additional begin at 100. No shortcut mapping layer — what you dial is what you reach.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Header with &ldquo;New extension,&rdquo; then a table. Each row: extension number badge, name, routing method summary, destination count, status. Row click → <a href="#extension-detail" style="color:var(--blue);font-weight:700;">Extension Detail</a> (the Stripe-style settings layout).</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Extensions table</span><span class="chip blue">Number badge</span><span class="chip">Routing-method summary</span><span class="chip">Status chip</span><span class="chip">New-extension form</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Extension number (0, 1&ndash;8, 100+)</li><li>Name &amp; text-to-voice name</li><li>Routing method — Ring all / Ring one at a time</li><li>Destination count · Status (enabled / disabled)</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>New extension</strong> — captures number, name, text-to-voice name, initial forwarding number. JOEL auto-creates routing, voicemail, a menu entry, and notifications.</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Open detail · Rename · Disable / enable · Delete (auto-removes its menu entry; history retained). Reserved numbers (0, 9) can&rsquo;t be deleted in the usual way.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>Never fully empty — Extension 0 always exists. For a fresh &ldquo;just ring my phone&rdquo; account: a single Operator row plus a prominent &ldquo;Add your first department&rdquo; prompt.</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><span class="chip role">Owner</span> <span class="chip role">Admin</span> manage extensions. Not in the User nav. (Users <em>consume</em> extensions via Calls/Voicemails based on extension access — they don&rsquo;t configure them.)</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Desktop-first management; rows become stacked cards on small web screens. The mobile app does not manage extensions.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ EXTENSION DETAIL ============ -->
+      <section class="block" id="extension-detail">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Extension Detail</h2>
+        <p class="sec-intro">Where an extension&rsquo;s behavior is configured, in the canonical Stripe-style settings layout: a left sub-nav rail with the panel on the right. Six groups — General, Routing, Voicemail, Notifications, Recording, Permissions. This is the most important configuration surface in the product.</p>
+        <div class="wf">
+          <div class="wf-cap">Extension Detail — settings rail + panel</div>
+          <div class="wf-body">
+            <div class="wf-row" style="gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:280px;">
+              <div style="width:176px;border-right:1px solid var(--line);padding:14px 12px;flex-shrink:0;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span class="chip blue" style="padding:4px 9px;">1</span><span class="sk ln w40"></span></div>
+                <div class="sk stack" style="display:flex;flex-direction:column;gap:5px;">
+                  <span style="height:26px;border-radius:7px;background:var(--blue-soft);"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                </div>
+              </div>
+              <div class="wf-col" style="padding:18px;">
+                <span class="wf-tag">General</span>
+                <div class="sk stack">
+                  <div class="wfb fill" style="height:34px;margin-bottom:10px;"></div>
+                  <div class="wfb fill" style="height:34px;margin-bottom:10px;"></div>
+                  <span class="wf-tag" style="margin-top:6px;">Routing method</span>
+                  <div class="wf-row" style="gap:8px;"><span class="wfb fill" style="flex:1;height:40px;border:2px solid var(--blue);"></span><span class="wfb fill" style="flex:1;height:40px;"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Configure everything an extension owns. One screen, six clearly separated groups, so a small-business owner never feels they&rsquo;re programming a PBX.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Left rail: <strong>General · Routing · Voicemail · Notifications · Recording · Permissions.</strong> Right panel renders the selected group. Save is per-panel with clear, plain confirmation.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Settings rail</span><span class="chip">Destination list + Add destination</span><span class="chip">Routing toggle</span><span class="chip">Schedule editor</span><span class="chip">Notification channel rows</span><span class="chip">Permission assignment</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v">
+            <ul class="clean">
+              <li><strong>General</strong> — extension number, name, text-to-voice name</li>
+              <li><strong>Routing</strong> — Ring all at once / Ring one at a time; destinations (phone number, SIP phone, mobile app) with enabled, schedule, ring duration <em>(advanced, hidden in basic setup)</em>, order, call screening; fallback (voicemail / disconnect / forward to extension)</li>
+              <li><strong>Voicemail</strong> — enabled, voicemail greeting, after-hours greeting</li>
+              <li><strong>Notifications</strong> — Email · Slack · Webhook · In-App per event</li>
+              <li><strong>Recording</strong> — inherit business default <em>(off)</em> or override</li>
+              <li><strong>Permissions</strong> — which users can access this extension</li>
+            </ul>
+          </div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Save</strong> the active panel. In Routing: <strong>Add destination.</strong></p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Reorder / enable / disable destinations · Toggle call screening · Set forwarding schedule · Preview voicemail greeting audio · Grant/revoke user access · Disable or delete the extension.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>Routing with no destinations: &ldquo;This extension isn&rsquo;t ringing anywhere yet. Add a destination so calls can reach someone.&rdquo; + Add destination.</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><span class="chip role">Owner</span> <span class="chip role">Admin</span> edit all panels. Loop-creating routing (Sales→Support→Sales) is blocked at save with plain copy. Recording override surfaces a clear note that recording is off by default.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Rail collapses to a top tab/select; one panel at a time. Configuration is desktop-first; the mobile app doesn&rsquo;t expose it.</p></div></div>
+        </div>
+        <div class="callout rule"><span class="t">Call screening, in plain words</span>When enabled, the recipient hears &ldquo;JOEL call for Sales. Press 1 to accept, 2 to send to voicemail, 3 to keep ringing.&rdquo; The UI describes it exactly that way — no &ldquo;whisper,&rdquo; no &ldquo;IVR.&rdquo;</div>
+
+        <h3 class="sub">New in V1 — Forwarding additions</h3>
+        <div class="grid2">
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Caller ID on forwarded calls</h4>
+            <p style="margin:0 0 10px;font-size:.92rem;">A per-extension choice in the Forwarding panel — what your own devices see when a call is forwarded to them.</p>
+            <ul class="clean">
+              <li><strong>Show your business number</strong> <span class="chip gray">default</span> — recognizably a business call</li>
+              <li><strong>Show the original caller&rsquo;s number</strong> — easier to save / call back</li>
+            </ul>
+            <p style="margin:8px 0 0;font-size:.86rem;color:var(--muted);">Each option carries one plain explanatory sentence. No &ldquo;CNAM,&rdquo; no telecom terms.</p>
+          </div>
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Schedule-conflict warning</h4>
+            <p style="margin:0 0 10px;font-size:.92rem;">If every enabled destination is restricted by a schedule, the Forwarding panel surfaces a warning so callers never silently vanish.</p>
+            <div class="callout warn" style="margin:0;"><span class="t">Warning copy</span>&ldquo;No active destinations are available during the selected time. Calls will route to voicemail.&rdquo;</div>
+            <p style="margin:8px 0 0;font-size:.86rem;color:var(--muted);">Warning styling, inline at the top of Forwarding. No new scheduling layer is introduced.</p>
+          </div>
+        </div>
+        <div class="callout rule"><span class="t">No Extension Office Hours</span>Destinations keep their own schedules, but there is <strong>no separate &ldquo;extension hours&rdquo; layer.</strong> Scheduling stays at two levels only: <strong>account business hours</strong> and <strong>per-destination schedules</strong>.</div>
+
+        <h3 class="sub">Canonical call flow (what the caller experiences)</h3>
+        <div class="wf">
+          <div class="wf-cap">Inbound call — V1 flow</div>
+          <div class="wf-body">
+            <div class="wf-row" style="align-items:stretch;text-align:center;flex-wrap:wrap;">
+              <div class="wf-col wfb fill" style="min-width:120px;"><span class="wf-tag">1 · Account</span><b style="font-size:.9rem;">Business hours</b><p style="font-size:.8rem;margin:3px 0 0;">Open vs after-hours</p></div>
+              <div class="wf-col wfb fill" style="min-width:120px;"><span class="wf-tag">2 · Number</span><b style="font-size:.9rem;">Greeting / menu</b><p style="font-size:.8rem;margin:3px 0 0;">Caller picks or is routed</p></div>
+              <div class="wf-col wfb fill" style="min-width:120px;background:var(--blue-soft);border-color:#d7ddff;"><span class="wf-tag" style="color:var(--blue);">3 · Extension</span><b style="font-size:.9rem;color:var(--blue);">Forwarding</b><p style="font-size:.8rem;margin:3px 0 0;color:#3a4a8e;">Ring all / one at a time</p></div>
+              <div class="wf-col wfb fill" style="min-width:120px;"><span class="wf-tag">4 · Destination</span><b style="font-size:.9rem;">Per-dest schedule</b><p style="font-size:.8rem;margin:3px 0 0;">Only rings in its window</p></div>
+              <div class="wf-col wfb fill" style="min-width:120px;background:var(--ai-soft);border-color:#e2d6fb;"><span class="wf-tag" style="color:var(--ai);">Fallback</span><b style="font-size:.9rem;color:var(--ai);">Voicemail</b><p style="font-size:.8rem;margin:3px 0 0;color:#4b2e86;">If none available</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="callout rule"><span class="t">Read it as one sentence</span>Business hours → greeting → extension → destination schedule. <strong>If no destination is available, the call goes to voicemail.</strong> There is no Extension Hours step.</div>
+      </section>
+
+      <!-- ============ DEVICES ============ -->
+      <section class="block" id="devices">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Devices</h2>
+        <p class="sec-intro">Devices are endpoints, not extensions. SIP desk phones and mobile apps live here; extensions reference them as destinations. A device owns no routing, voicemail, or notifications. The screen makes that boundary obvious.</p>
+        <div class="wf">
+          <div class="wf-cap">Devices — SIP phones + mobile apps</div>
+          <div class="wf-body">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;"><span class="sk ln tall w20"></span><span class="wf-btn" style="height:30px;width:120px;"></span></div>
+            <span class="wf-tag">SIP phones</span>
+            <div class="wfb solid" style="padding:0;margin-bottom:14px;">
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:34px 1.3fr 1fr 1fr .6fr;"><span class="sk sq" style="width:24px;height:24px;border-radius:6px;background:var(--blue-soft);"></span><span class="sk ln w50"></span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="chip green" style="padding:3px 8px;">Online</span></div>
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:34px 1.3fr 1fr 1fr .6fr;"><span class="sk sq" style="width:24px;height:24px;border-radius:6px;background:var(--blue-soft);"></span><span class="sk ln w40"></span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="chip" style="padding:3px 8px;background:var(--red-soft);border-color:#f4cdca;color:var(--red);">Offline</span></div>
+            </div>
+            <span class="wf-tag">Mobile apps</span>
+            <div class="wfb solid" style="padding:0;">
+              <div class="wf-tablerow" style="padding:13px 14px;grid-template-columns:34px 1.3fr 1fr 1fr .6fr;"><span class="sk circ" style="width:24px;height:24px;background:var(--blue-soft);"></span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w40"></span><span class="chip green" style="padding:3px 8px;">Online</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Admin-manage the physical and app endpoints. SIP phones are plug-in-and-works (approved models only, no manual credentials). Mobile apps belong to users.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Two grouped sections — SIP Phones and Mobile Applications. Each row: device name, type, default outbound extension, default caller-ID number, and an online/offline status. Row opens device settings.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Device table (grouped)</span><span class="chip green">Status chip</span><span class="chip">Add-device flow</span><span class="chip">Default-extension selector</span><span class="chip">Default-caller-ID selector</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Device name (e.g. Front Desk, Jane Mobile App)</li><li>Type — SIP phone / Mobile app</li><li>Status — Active / Disabled · Online / Offline</li><li>Default outbound extension · Default caller-ID number</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Add device</strong> (approved SIP model or invite a mobile-app user). Per device: <strong>Set default outbound extension &amp; caller ID.</strong></p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Rename · Disable / enable · Remove (history retained) · See which extensions reference this device as a destination.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>&ldquo;No devices yet. Add a desk phone or connect the mobile app so your extensions have somewhere to ring.&rdquo;</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><span class="chip role">Owner</span> <span class="chip role">Admin</span> only. SIP phones are administrator-managed; users never configure them. Offline status uses plain copy (&ldquo;This phone is offline&rdquo;), never SIP errors.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Desktop-first; the mobile app does not manage devices. Stacked cards on small web screens.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ USERS ============ -->
+      <section class="block" id="users">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Users</h2>
+        <p class="sec-intro">Users are optional — a business can run with none. They exist to grant access: a role, extension access, and (separately) Inbox access. This screen invites people and tunes what each one can reach. The empty state actively reassures: you don&rsquo;t need teammates to use JOEL.</p>
+        <div class="wf">
+          <div class="wf-cap">Users — roster + access</div>
+          <div class="wf-body">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;"><span class="sk ln tall w20"></span><span class="wf-btn" style="height:30px;width:120px;"></span></div>
+            <div class="wfb solid" style="padding:0;">
+              <div class="wf-tablerow head" style="padding:10px 14px;grid-template-columns:34px 1.3fr .8fr 1.2fr .6fr;"><span></span><span class="sk ln w50"></span><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="sk ln w30"></span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;grid-template-columns:34px 1.3fr .8fr 1.2fr .6fr;"><span class="sk circ" style="width:26px;height:26px;background:#cdd6fb;"></span><span class="sk ln w60"></span><span class="chip" style="padding:3px 8px;text-transform:uppercase;letter-spacing:.04em;font-size:.66rem;">Owner</span><span class="sk ln w50"></span><span class="chip green" style="padding:3px 8px;">Inbox</span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;grid-template-columns:34px 1.3fr .8fr 1.2fr .6fr;"><span class="sk circ" style="width:26px;height:26px;"></span><span class="sk ln w50"></span><span class="chip" style="padding:3px 8px;text-transform:uppercase;letter-spacing:.04em;font-size:.66rem;">Admin</span><span class="sk ln w60"></span><span class="chip green" style="padding:3px 8px;">Inbox</span></div>
+              <div class="wf-tablerow" style="padding:12px 14px;grid-template-columns:34px 1.3fr .8fr 1.2fr .6fr;"><span class="sk circ" style="width:26px;height:26px;"></span><span class="sk ln w40"></span><span class="chip" style="padding:3px 8px;text-transform:uppercase;letter-spacing:.04em;font-size:.66rem;">User</span><span class="chip blue" style="padding:3px 8px;">Sales, Support</span><span class="sk ln w20"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Invite teammates and control access. Roles are Owner / Admin / User. Permissions are extension-based; Inbox access is a separate switch. A user may belong to multiple businesses.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Header with &ldquo;Invite user,&rdquo; then a roster table: avatar, name/email, role, extension access summary, Inbox access. Row opens a user panel for granular access.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">User roster table</span><span class="chip">Role selector</span><span class="chip blue">Extension-access picker</span><span class="chip green">Inbox-access toggle</span><span class="chip">Invite flow</span><span class="chip">Caller-ID permissions</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Name &amp; email · Role (Owner / Admin / User)</li><li>Extension access (which extensions)</li><li>Inbox access (separate)</li><li>Outbound calling &amp; allowed caller-ID numbers</li><li>Status — Active / Invited (pending)</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Invite user</strong> — email, role, extension access, Inbox access.</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Edit access · Change role · Toggle Inbox access · Set allowed caller IDs · Resend invite · Remove user (access ends; history retained).</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>&ldquo;It&rsquo;s just you for now. Invite teammates when you&rsquo;re ready — JOEL works fine without them.&rdquo; Reinforces that users are optional.</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><span class="chip role">Owner</span> <span class="chip role">Admin</span> manage users. Not in the User nav. Granting extension access automatically grants that extension&rsquo;s calls, voicemails, recordings, forwarding, notifications, and outbound calling — no per-feature toggles in V1.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Desktop-first management; the mobile app does not manage users. Stacked cards on small web screens.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="block" id="settings">
+        <span class="kicker">Screen</span>
+        <h2 class="sec">Settings</h2>
+        <p class="sec-intro">Business-level configuration, in the same left-rail layout as Extension Detail. Integrations live <em>inside</em> Settings — never as top-level navigation. Calm, grouped, and plain-spoken throughout.</p>
+        <div class="wf">
+          <div class="wf-cap">Settings — rail + panel</div>
+          <div class="wf-body">
+            <div class="wf-row" style="gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:260px;">
+              <div style="width:188px;border-right:1px solid var(--line);padding:14px 12px;flex-shrink:0;">
+                <div class="sk stack" style="display:flex;flex-direction:column;gap:5px;">
+                  <span style="height:26px;border-radius:7px;background:var(--blue-soft);"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                  <span style="height:1px;background:var(--line);margin:4px 0;"></span>
+                  <span style="height:26px;border-radius:7px;"></span>
+                </div>
+              </div>
+              <div class="wf-col" style="padding:18px;">
+                <span class="wf-tag">Business profile</span>
+                <div class="sk stack"><div class="wfb fill" style="height:34px;margin-bottom:10px;"></div><div class="wfb fill" style="height:34px;margin-bottom:10px;"></div><div class="wfb fill" style="height:60px;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Everything business-wide that isn&rsquo;t an extension: identity, hours, greetings, directory, recording defaults, retention, and integrations.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Left rail groups; right panel content. Groups: <strong>Business Profile · Business Hours · Greetings · Directory · Recording Defaults · Retention · Messaging Compliance · Hold Music · Blocked Numbers · Integrations</strong> (Slack · Webhooks · Future).</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Settings rail</span><span class="chip">Weekly-hours editor</span><span class="chip">Holiday / closure list</span><span class="chip">Greeting composer (AI audio)</span><span class="chip">Integration cards</span><span class="chip">Retention selector</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v">
+            <ul class="clean">
+              <li><strong>Business Profile</strong> — business name, time zone</li>
+              <li><strong>Business Hours</strong> — always-open vs schedule; weekly hours; holidays; temporary closures</li>
+              <li><strong>Greetings</strong> — main, after-hours, holiday, closure, voicemail; AI-generated audio with voice + preview, or upload</li>
+              <li><strong>Directory</strong> — enabled at 9; no-input &amp; invalid-input behavior</li>
+              <li><strong>Recording Defaults</strong> — <span class="chip" style="padding:2px 7px;">Off by default</span> announcement text</li>
+              <li><strong>Retention</strong> — how long audio is kept before transcript-only</li>
+              <li><strong>Integrations</strong> — Slack, Webhooks (event subscriptions), future</li>
+            </ul>
+          </div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Save</strong> the active panel. In Integrations: <strong>Connect Slack / Add webhook.</strong></p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Preview greeting audio · Change voice · Add holiday / closure · Toggle directory · Disconnect integration · Edit retention.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>Pre-filled with onboarding defaults (24/7 hours, directory on, AI greeting, recording off). Integrations panel shows &ldquo;Connect Slack to get voicemail and missed-call alerts where your team already works.&rdquo;</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><span class="chip role">Owner</span> <span class="chip role">Admin</span> manage business settings. <strong>Users</strong> see a reduced Settings — personal profile and their own notification preferences for extensions they can access — not business configuration. Integration failures show &ldquo;Needs attention&rdquo; with Reconnect.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Rail collapses to a top select; one panel at a time. Business config is desktop-first; the mobile app exposes only personal settings.</p></div></div>
+        </div>
+        <div class="callout rule"><span class="t">Integrations are not navigation</span>Slack and Webhooks live inside Settings → Integrations. They never appear as a top-level sidebar item.</div>
+
+        <h3 class="sub">New in V1 — four added Settings sections</h3>
+        <p>Four sections were added after the competitive review. All live <strong>inside Settings</strong> — none becomes primary navigation, and none introduces telecom or enterprise complexity.</p>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="chips" style="margin-bottom:10px;"><span class="kicker blue" style="margin:0;">Settings → Messaging Compliance</span></div>
+            <h4 class="subsub" style="margin-top:0;">Messaging Compliance</h4>
+            <p style="margin:0 0 10px;font-size:.92rem;">Shows the US SMS (A2P) registration status for each business number, so owners understand why texting may be limited. A table, one row per number.</p>
+            <ul class="clean">
+              <li><strong>Columns</strong> — Number · Type (Local / Toll-Free) · Registration Status</li>
+              <li><strong>Statuses</strong> — <span class="chip gray">Not Started</span> <span class="chip blue">Submitted</span> <span class="chip" style="background:var(--amber-soft);border-color:#f3dca6;color:var(--amber);">Pending</span> <span class="chip green">Approved</span> <span class="chip" style="background:var(--red-soft);border-color:#f4cdca;color:var(--red);">Failed</span></li>
+              <li><strong>Actions</strong> — Start registration · Continue registration · View status</li>
+            </ul>
+            <div class="callout warn" style="margin:10px 0 0;"><span class="t">Restricted-state copy</span>When a number isn&rsquo;t approved, say it plainly: inbound texts still arrive (where applicable), but <strong>outbound texting is paused until registration is approved.</strong> Link the Inbox composer to this section when blocked.</div>
+          </div>
+
+          <div class="card">
+            <div class="chips" style="margin-bottom:10px;"><span class="kicker blue" style="margin:0;">Settings → Hold Music</span></div>
+            <h4 class="subsub" style="margin-top:0;">Hold Music</h4>
+            <p style="margin:0 0 10px;font-size:.92rem;">One business-level setting for what callers hear while a call is being forwarded. Deliberately tiny.</p>
+            <ul class="clean">
+              <li><strong>Default hold music</strong> — selected out of the box</li>
+              <li><strong>Optional uploaded audio</strong> — if supported in V1</li>
+            </ul>
+            <div class="callout rule" style="margin:10px 0 0;"><span class="t">Not a library</span>This is a single setting, <strong>not</strong> a greeting library or Voice Studio. No per-extension hold music, no catalog.</div>
+          </div>
+
+          <div class="card">
+            <div class="chips" style="margin-bottom:10px;"><span class="kicker blue" style="margin:0;">Settings → Blocked Numbers</span></div>
+            <h4 class="subsub" style="margin-top:0;">Blocked Numbers</h4>
+            <p style="margin:0 0 10px;font-size:.92rem;">The one place to review and lift blocks added from Calls, Voicemails, or the Inbox. A simple table.</p>
+            <ul class="clean">
+              <li><strong>Columns</strong> — Phone Number · Date Blocked · Blocked By</li>
+              <li><strong>Action</strong> — Unblock (per row)</li>
+              <li><strong>Permission</strong> — <span class="chip role">Owner</span> <span class="chip role">Admin</span> only</li>
+            </ul>
+            <div class="callout rule" style="margin:10px 0 0;"><span class="t">Empty state</span>&ldquo;No blocked numbers. When you block a caller from Calls, Voicemails, or the Inbox, they&rsquo;ll show up here.&rdquo;</div>
+          </div>
+
+          <div class="card">
+            <div class="chips" style="margin-bottom:10px;"><span class="kicker blue" style="margin:0;">Extension → Forwarding</span></div>
+            <h4 class="subsub" style="margin-top:0;">Caller ID on forwarded calls</h4>
+            <p style="margin:0 0 10px;font-size:.92rem;">Lives in <strong>Extension Detail → Forwarding</strong> (closest to where forwarding is configured), not in business Settings. Controls what your own devices see when a call is forwarded to them.</p>
+            <ul class="clean">
+              <li><strong>Show your business number</strong> <span class="chip gray">default</span> — you can tell it&rsquo;s a business call</li>
+              <li><strong>Show the original caller&rsquo;s number</strong> — easier to save contacts / call back</li>
+            </ul>
+            <div class="callout rule" style="margin:10px 0 0;"><span class="t">Explain it</span>Each option carries one plain sentence describing the trade-off — no telecom terms (no &ldquo;CNAM,&rdquo; no &ldquo;ANI&rdquo;).</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BILLING ============ -->
+      <section class="block" id="billing">
+        <span class="kicker">Screen · Owner only</span>
+        <h2 class="sec">Billing</h2>
+        <p class="sec-intro">Plan, usage, add-ons, invoices, and payment method — for the Owner alone. Clear minute math up front (included / used / remaining), the way Stripe shows usage: no surprises, no telecom invoice density.</p>
+        <div class="wf">
+          <div class="wf-cap">Billing — plan + usage + invoices</div>
+          <div class="wf-body">
+            <div class="wf-row" style="margin-bottom:14px;">
+              <div class="wf-col wfb solid"><span class="wf-tag">Current plan</span><div class="sk ln tall w50" style="margin-bottom:8px;"></div><div class="sk ln w40"></div></div>
+              <div class="wf-col wfb solid"><span class="wf-tag">Minutes this cycle</span><div style="height:10px;border-radius:5px;background:var(--line);overflow:hidden;margin:6px 0 8px;"><div style="width:62%;height:100%;background:var(--blue);"></div></div><div class="sk ln w60"></div></div>
+              <div class="wf-col wfb solid"><span class="wf-tag">Payment method</span><div class="sk ln w60" style="margin-bottom:8px;"></div><span class="wf-pill" style="width:70px;"></span></div>
+            </div>
+            <span class="wf-tag">Invoices</span>
+            <div class="wfb solid" style="padding:0;">
+              <div class="wf-tablerow" style="padding:11px 14px;grid-template-columns:1.4fr 1fr 1fr .6fr;"><span class="sk ln w50"></span><span class="sk ln w40"></span><span class="chip green" style="padding:3px 8px;">Paid</span><span class="sk ln w30"></span></div>
+              <div class="wf-tablerow" style="padding:11px 14px;grid-template-columns:1.4fr 1fr 1fr .6fr;"><span class="sk ln w40"></span><span class="sk ln w50"></span><span class="chip green" style="padding:3px 8px;">Paid</span><span class="sk ln w30"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rows">
+          <div class="row"><div class="k">Purpose</div><div class="v"><p>Manage the subscription and watch usage. Add-ons (extra numbers, SIP phones) attach here; upgrades unlock limits; downgrades warn before they bite.</p></div></div>
+          <div class="row"><div class="k">Layout</div><div class="v"><p>Summary cards across the top (plan, minute usage with a meter, payment method), then Add-Ons, then an Invoices table. Plain, scannable, Stripe-calm.</p></div></div>
+          <div class="row"><div class="k">Primary components</div><div class="v"><div class="chips"><span class="chip">Plan card</span><span class="chip blue">Usage meter</span><span class="chip">Add-on list</span><span class="chip">Invoices table</span><span class="chip">Payment-method card</span></div></div></div>
+          <div class="row"><div class="k">Visible fields</div><div class="v"><ul class="clean"><li>Current plan</li><li>Included minutes · Used minutes · Remaining minutes</li><li>Add-ons (extra numbers, SIP phone add-on)</li><li>Invoices (date, amount, status, download)</li><li>Payment method · Usage breakdown</li></ul></div></div>
+          <div class="row"><div class="k">Primary action</div><div class="v"><p><strong>Upgrade plan</strong> (and the &ldquo;upgrade required&rdquo; prompt when a limit is hit elsewhere routes here).</p></div></div>
+          <div class="row"><div class="k">Secondary actions</div><div class="v"><p>Add / remove add-on · Downgrade (with warning) · Update payment method · Download invoice · View usage.</p></div></div>
+          <div class="row"><div class="k">Empty state</div><div class="v"><p>Not truly empty — every active business has a plan. New invoices area: &ldquo;No invoices yet. Your first one will appear at the end of this billing cycle.&rdquo;</p></div></div>
+          <div class="row"><div class="k">Permission state</div><div class="v"><p><strong><span class="chip role">Owner</span> only.</strong> Admins do not see Billing in the nav at all. Downgrade warnings spell out, in plain language, exactly what would be lost.</p></div></div>
+          <div class="row"><div class="k">Mobile</div><div class="v"><p><span class="mob">Mobile</span> Summary cards stack; invoices become rows. The mobile app explicitly does <em>not</em> handle billing — it&rsquo;s a web-only, Owner-only surface.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ 4 · V1 EXCLUSIONS ============================================================ -->
+      <section class="block" id="exclusions">
+        <span class="kicker">Boundaries · 04</span>
+        <h2 class="sec">V1 Exclusions</h2>
+        <p class="sec-intro">What must <strong>not</strong> appear in the UI. These aren&rsquo;t backlog stubs to tease — they are absent. No empty &ldquo;coming soon&rdquo; tabs, no greyed-out nav, no upsell placeholders. Keeping them out is what makes JOEL feel simple instead of like a stripped-down enterprise PBX.</p>
+
+        <div class="callout warn"><span class="t">No Dashboard</span>There is no Dashboard screen, no home overview, no metrics landing. The product opens straight into Inbox or Calls. Do not add summary widgets or a &ldquo;home&rdquo; nav item.</div>
+
+        <h3 class="sub">Confirmed exclusions (post-review, final)</h3>
+        <p>Decided after the competitive review. Each was considered and deliberately left out of V1 — they belong in <em>future enhancements</em>, never as empty stubs in the UI.</p>
+        <div class="grid3">
+          <div class="callout rule" style="margin:0;"><span class="t">Fax</span>No Virtual Fax, no fax-to-email, no fax history/tab. Faxing is out of V1 entirely.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Voicemail PIN</span>No dial-in voicemail retrieval and no PIN. Voicemail is read/heard in the app and web only.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Greeting Library</span>No reusable greeting catalog. Greetings are configured inline where they&rsquo;re used (Settings, Extension).</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Voice Studio</span>No professional-recording ordering flow.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Reports</span>No reports or analytics surface — basic or advanced. Activity lives in Calls / Voicemails / Inbox only.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Setup Assistant</span>No persistent setup-checklist surface after onboarding.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Instant Response SMS</span>No missed-call auto-text in V1.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Contact Management / CRM</span>No contacts object, import, tags, or lead status.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Per-number SMS Inbox permissions</span>The Shared SMS Inbox stays one all-or-nothing &ldquo;Inbox access&rdquo; grant — no per-number gating.</div>
+          <div class="callout rule" style="margin:0;"><span class="t">Extension Office Hours</span>No third scheduling layer. Only account business hours + per-destination schedules.</div>
+        </div>
+        <div class="callout blue" style="margin-top:6px;"><span class="t">What WAS added in this revision</span>Four Settings sections (<strong>Messaging Compliance, Hold Music, Blocked Numbers</strong>, plus <strong>Caller ID on forwarded calls</strong> in Extension → Forwarding), an <strong>SMS status</strong> column on Numbers, and a <strong>schedule-conflict warning</strong> on Forwarding. Nothing here added primary navigation or a dashboard.</div>
+
+        <h3 class="sub">Not in the product — at all</h3>
+        <div class="grid2">
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Wrong category</h4>
+            <ul class="clean">
+              <li><strong>CRM</strong> — no contacts as a first-class object, no contact import, lead status, deals, or tags</li>
+              <li><strong>Ticketing</strong> — no open/closed status, ticket ownership, or escalations</li>
+              <li><strong>Call-center platform</strong> — no call queues, ring groups, skill-based routing, or agent availability/presence</li>
+              <li><strong>AI receptionist / AI agent</strong> — AI is analytics only (transcribe, summarize, categorize); it never answers or acts autonomously</li>
+              <li><strong>Workflow builder / automation</strong> — notifications are simple event signals, not a workflow engine</li>
+              <li><strong>Advanced analytics</strong> — no analytics dashboards, custom reports, or BI surfaces in V1</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 class="subsub" style="margin-top:0;">Out of V1 scope</h4>
+            <ul class="clean">
+              <li><strong>Enterprise telecom</strong> — no SSO/SCIM, multi-line SIP, hot desking, shared device pools, or presence</li>
+              <li><strong>Hybrid / smart routing</strong> — only Ring-all and Ring-one; no skill or AI routing exposed</li>
+              <li><strong>Nested / multi menus</strong> — one menu tree per business; no nested, multi-language, or dynamic menus</li>
+              <li><strong>Per-number / per-extension hours</strong> — business hours are business-wide</li>
+              <li><strong>Attended / warm transfers</strong> — blind transfer only</li>
+              <li><strong>Shared voicemail boxes, sentiment, AI coaching, campaign SMS</strong> — none in V1</li>
+              <li><strong>International numbers, call-tracking pools, dynamic number insertion</strong> — none in V1</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="sub">Navigation &amp; structure boundaries</h3>
+        <ul class="clean">
+          <li><strong>Integrations are not top-level nav</strong> — they live inside Settings → Integrations only.</li>
+          <li><strong>Devices are not Extensions</strong> — never let a device own routing, voicemail, or notifications in the UI.</li>
+          <li><strong>Numbers don&rsquo;t get their own inboxes</strong> — SMS is one Shared Inbox; numbers are filters only.</li>
+          <li><strong>SIP phones aren&rsquo;t directly reachable objects</strong> — to make one reachable, you create an Extension; don&rsquo;t expose voicemail/notifications on the device.</li>
+          <li><strong>No per-feature permission toggles</strong> — extension access is the unit; Inbox access is the one separate switch.</li>
+          <li><strong>Billing is Owner-only</strong> and web-only — never in the Admin nav or the mobile app.</li>
+        </ul>
+
+        <h3 class="sub">Language &amp; tone exclusions</h3>
+        <div class="grid2">
+          <div class="callout rule" style="margin:8px 0;"><span class="t">No telecom terminology</span>SIP, PBX, trunk, DID, carrier provisioning, registration, codec — never surfaced. Failures are plain and recoverable.</div>
+          <div class="callout rule" style="margin:8px 0;"><span class="t">No platform / VC language</span>communication hub, operating system, unified communications, omnichannel, orchestration, collaboration layer, &ldquo;shared conversations&rdquo; as a concept.</div>
+        </div>
+        <div class="callout ai"><span class="t">AI stays in its lane</span>AI surfaces only as transcript, summary, and categorization on calls and voicemails. No &ldquo;JOEL answers for you,&rdquo; no &ldquo;AI receptionist,&rdquo; no autonomous-agent framing anywhere in the UI.</div>
+
+        <div class="callout blue" style="margin-top:26px;"><span class="t">The one-line test for any new UI</span>If a screen, field, or label can&rsquo;t be traced to the Product Rules and doesn&rsquo;t reinforce <em>Numbers in → Extensions decide → Devices ring → Voicemail catches</em>, it doesn&rsquo;t belong in V1.</div>
+      </section>
+
+      <footer class="foot">
+        <p><b>JOEL</b> · V1 UI Design Specification · Light theme is canonical. Built on the jack-site token system. Product Rules win over this document where they conflict.</p>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  // active-link highlighting in the TOC as you scroll
+  const items = [...document.querySelectorAll('.toc a.item')];
+  const map = new Map(items.map(a => [a.getAttribute('href').slice(1), a]));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const a = map.get(e.target.id);
+        if(a){ items.forEach(i=>i.classList.remove('active')); a.classList.add('active'); }
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+  document.querySelectorAll('main [id]').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

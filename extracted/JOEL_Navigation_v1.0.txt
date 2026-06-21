@@ -1,0 +1,176 @@
+
+
+
+    JOEL Navigation v1
+
+    Owner / Admin
+
+    Inbox (default) Calls Voicemails Numbers Extensions Devices Users Settings Billing
+
+    User
+
+    Inbox (if granted) Calls Voicemails Settings
+
+    No Dashboard exists in V1.
+
+    
+
+    Default Landing Screen
+
+    If User has Inbox Access:
+
+    Inbox
+
+    If User does not have Inbox Access:
+
+    Calls
+
+    
+
+    Global Search
+
+    Visible on every screen.
+
+    Searches:
+
+    Calls
+
+    Voicemails
+
+    SMS
+
+    Extensions
+
+    Numbers
+
+    Permission filtered.
+
+    
+
+    Calls
+
+    Separate screen.
+
+    Extension based.
+
+    Users see only calls for extensions they have access to.
+
+    
+
+    Voicemails
+
+    Separate screen.
+
+    Extension based.
+
+    Users see only voicemails for extensions they have access to.
+
+    
+
+    Inbox
+
+    Shared SMS Inbox.
+
+    Conversation list left.
+
+    Messages right.
+
+    Gmail / Slack style layout.
+
+    Inbox access is separate from extension access.
+
+    
+
+    Extensions
+
+    Stripe-style settings layout.
+
+    General
+
+    Routing
+
+    Voicemail
+
+    Notifications
+
+    Recording
+
+    Permissions
+
+    
+
+    Devices
+
+    Contains:
+
+    SIP Phones
+
+    Mobile Applications
+
+    Devices are attached to Extensions through Destinations.
+
+    Devices are not Extensions.
+
+    
+
+    Settings
+
+    Contains:
+
+    Business Profile
+
+    Business Hours
+
+    Greetings
+
+    Directory
+
+    Recording Defaults
+
+    Retention
+
+    Integrations
+
+    Slack
+
+    Webhooks
+
+    Future Integrations
+
+    Integrations are not top-level navigation.
+
+    
+
+    Billing
+
+    Owner only.
+
+    Displays:
+
+    Current Plan
+
+    Included Minutes
+
+    Used Minutes
+
+    Remaining Minutes
+
+    Add-Ons
+
+    Invoices
+
+    Payment Method
+
+    Usage
+
+    
+      
+        
+                
+        
+        
+              
+      
+    
+  
+

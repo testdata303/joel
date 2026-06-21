@@ -1,0 +1,1390 @@
+JOEL Product Rules v1
+Final Engineering Specification
+Last Updated: June 3, 2026
+Table of Contents
+TOC \o &quot;1-2&quot; \h \z \u
+Executive Summary	7
+What JOEL Is	7
+Core Architecture	8
+Product Philosophy	8
+Primary Objects	8
+What JOEL Intentionally Is NOT	9
+Introduction	9
+Purpose	9
+Product Principles	10
+Extensions Are Primary	10
+Business Numbers Are Entry Points	10
+Users Are Optional	10
+Devices Are Endpoints	10
+Shared SMS	10
+AI Enhances The System	10
+Simplicity Wins	10
+Feature: Onboarding	11
+Purpose	11
+User Experience	11
+Business Name	11
+Number Acquisition	11
+Temporary Numbers	11
+Default Configuration	12
+Completion	12
+Feature: Business Numbers	12
+Purpose	12
+User Experience	12
+Number Types	12
+Number Purchase	13
+Number Activation	13
+Additional Numbers	13
+Routing	13
+SMS Behavior	13
+Caller ID Identity	14
+Notifications	14
+Number Porting	14
+Number Deletion	15
+Analytics	15
+Audit Log	15
+Future Enhancements	15
+Feature: Extensions	16
+Purpose	16
+Extension Numbering	16
+Extension Creation	16
+Settings	16
+Permissions	17
+Extension Lifecycle	17
+Audit Log	18
+Feature: Greetings & Menu	18
+Purpose	18
+Greeting Responsibilities	18
+Menu Responsibilities	18
+User Experience	18
+Greeting Types	18
+Greeting Creation	19
+Text-To-Voice Names	19
+Menu Structure	20
+Menu Creation	20
+Menu Updates	20
+Menu Deletion	20
+Directory Integration	20
+No Input Behavior	20
+Invalid Input Behavior	20
+Business Hours Interaction	21
+Permissions	21
+Future Enhancements	21
+Feature: Directory	21
+Purpose	21
+User Experience	21
+Search Methods	21
+Search Scope	21
+Ambiguous Results	22
+No Match Found	22
+Excluded Extensions	22
+Permissions	22
+Future Enhancements	22
+Feature: Business Hours	22
+Purpose	22
+User Experience	22
+Default Behavior	22
+Settings	23
+Greeting Selection	23
+Menu Behavior	23
+Forwarding Schedules	23
+Permissions	23
+Audit Log	23
+Future Enhancements	24
+Feature: Routing	24
+Purpose	24
+Routing Methods	24
+Fallback Behavior	24
+Loop Prevention	25
+Future Enhancements	25
+Feature: Destinations	25
+Purpose	25
+Supported Destination Types	25
+Destination Creation	25
+Destination Settings	25
+Call Handling	25
+Destination Removal	26
+Disabled Destinations	26
+Device Requirements	26
+Future Enhancements	26
+Feature: Devices	27
+Purpose	27
+Supported Device Types	27
+Device Management	27
+Device Settings	27
+SIP Phones	27
+Mobile Application Devices	28
+Device Removal	28
+Disabled Devices	29
+Audit Log	29
+Future Enhancements	29
+Feature: Mobile Application	29
+Purpose	29
+Primary Functions	29
+Navigation	29
+Unsupported Functions	29
+Calls	29
+Voicemails	29
+Feature: Calls	30
+Purpose	30
+Inbound Calls	30
+Outbound Calls	30
+Call Ownership	30
+Call History	30
+Missed Calls	30
+Call Metadata	31
+Search	31
+Permissions	31
+Notifications	31
+Audit Log	31
+Future Enhancements	31
+Feature: Call Transfers	32
+Purpose	32
+Blind Transfer	32
+Transfer To Extension	32
+Transfer To Voicemail	32
+Transfer Failure	32
+Transfer To Disabled Extension	32
+Transfer To Deleted Extension	33
+Permissions	33
+Audit Log	33
+Future Enhancements	33
+Feature: Voicemail	33
+Purpose	33
+User Experience	33
+Ownership	33
+Voicemail Contents	34
+Voicemail Greetings	34
+Voicemail Inbox	34
+Notifications	34
+Permissions	34
+Search	34
+Deletion	34
+Retention	35
+Deleted Extensions	35
+Blocked Callers	35
+Future Enhancements	35
+Feature: Call Recording	35
+Purpose	35
+Recorded Calls	35
+Transfers	35
+Recording Contents	35
+Permissions	36
+Search	36
+Downloads	36
+Retention	36
+Deleted Extensions	36
+Audit Log	36
+Future Enhancements	36
+Feature: Notifications	37
+Purpose	37
+Ownership	37
+Notification Channels	37
+Extension Events	37
+Shared SMS Inbox Events	37
+Multiple Destinations	37
+Email Behavior	38
+Slack Behavior	38
+Webhook Behavior	38
+User Preferences	38
+Administrator Control	38
+Failure Handling	38
+Search	38
+Audit Log	39
+Future Enhancements	39
+Feature: Shared SMS Inbox	39
+Purpose	39
+User Experience	39
+Ownership	39
+Conversations	39
+Supported Content	39
+Views	39
+Conversation Actions	40
+Archive Behavior	40
+Delete Conversation	40
+Blocked Numbers	40
+Caller Information	40
+Notifications	40
+Permissions	40
+Search	40
+Future Enhancements	41
+Feature: Search	41
+Purpose	41
+User Experience	41
+Search Scope	41
+Search Behavior	41
+Search Examples	42
+Permission Filtering	42
+Historical Records	42
+Future Enhancements	42
+Feature: Users & Permissions	42
+Purpose	42
+User Experience	42
+User Types	43
+Multiple Businesses	43
+Extension Access	43
+Inbox Access	43
+Outbound Calling Permissions	43
+Caller ID Permissions	44
+Permission Changes	44
+User Removal	44
+Notifications	44
+Mobile Application Access	44
+Search	44
+Audit Log	44
+Future Enhancements	45
+Feature: Permissions Matrix	45
+Feature: Validation Rules	46
+Extensions	46
+Business Numbers	46
+Users	46
+Destinations	46
+Routing	46
+Integrations	47
+Feature: Web Application	47
+Purpose	47
+Dashboard	47
+Inbox	48
+Calls	48
+Voicemails	48
+Numbers	48
+Extensions	48
+Devices	48
+Users	48
+Integrations	48
+Audit Log	48
+Billing	48
+Feature: Audit Log	49
+Purpose	49
+Scope	49
+Recorded Events	49
+Audit Entry Format	50
+Search	50
+Events Not Recorded	50
+Permissions	50
+Retention	50
+Historical Objects	50
+Future Enhancements	50
+Feature: Business Lifecycle	50
+Purpose	50
+Account States	51
+Cancellation	51
+End Of Billing Cycle	51
+Deletion	51
+Recovery Window	51
+Permanent Deletion	51
+Number Protection	51
+Historical Records	51
+Audit Log	51
+Future Enhancements	52
+Feature: Billing & Plan Enforcement	52
+Purpose	52
+Upgrade Required	52
+Add-Ons	52
+SIP Phone Add-On Behavior	52
+Upgrades	52
+Downgrades	52
+Downgrade Warning	52
+Plan Limits	52
+Existing Features	53
+Add-On Removal	53
+Audit Log	53
+Future Enhancements	53
+Feature: Error States & Recovery	53
+Purpose	53
+Error Philosophy	53
+Number Purchase Failure	54
+Port Failure	54
+Slack Failure	54
+Webhook Failure	54
+Device Failure	54
+Recording Failure	54
+Transcript Failure	54
+SMS Failure	54
+Search Failure	54
+Recovery Philosophy	54
+Future Enhancements	55
+Feature: Legal Preservation & Compliance Holds	55
+Purpose	55
+Legal Preservation Sources	55
+Effect	55
+Customer Deletion Requests	55
+Product Rule	55
+Scope	55
+Audit Log	55
+Future Enhancements	55
+Future Enhancements / Parking Lot	56
+CRM	56
+Ticketing	56
+Campaign SMS	56
+Workflow Automation	56
+AI Receptionist	56
+Advanced Telephony	56
+Advanced Search	56
+Advanced Compliance	56
+Future Device Types	56
+Future Integrations	56
+Closing Principle	57
+Appendix: Change Log	57
+Final Editorial Pass	57
+Duplicate Content Removed	57
+Validation Rules Expansion	57
+Permissions Matrix Added	57
+Web Application Section Expanded	58
+Terminology Normalization	58
+Contradiction Audit Summary	58
+Version 1.0 — Final Publication	58
+Final Contradiction Audit (against Domain Model v1.1)	59
+Version 1.0 — Final Complete	59
+Final Contradiction Audit — Complete (Domain Model v1.1 and Product Rules v1)	59
+
+Executive Summary
+What JOEL Is
+JOEL is an extension-based business phone system that manages itself. It gives a business one or more phone numbers, answers and routes incoming calls, lets staff place outbound calls, captures voicemail and call recordings, consolidates all text messaging into a single shared inbox, and uses AI to transcribe, summarize, and categorize activity. The product is designed so that a customer can be receiving business calls within minutes and can operate without dedicated administrators or telecom knowledge.
+Core Architecture
+Business Numbers are entry points. A Business Number receives calls and SMS and routes a call either to a Greeting/Menu or directly to an Extension; it never routes directly to a phone, device, or person.
+Extensions are the primary operational object. Every inbound and outbound call ultimately belongs to an Extension, and Extensions own Routing, Forwarding, Voicemail, Notifications, and Recordings.
+Destinations are the endpoints an Extension rings — a Phone Number, a SIP Phone, or a Mobile Application — and Devices are the underlying endpoints. Voicemail is a terminal outcome rather than a destination.
+SMS belongs to the business and lives in a single Shared SMS Inbox; all SMS-enabled Business Numbers feed into it and act only as filters. Notifications are event-driven signals delivered by Email, Slack, Webhook, and In-App. AI analyzes activity and produces transcripts, summaries, and categorization, but is not itself the product.
+Product Philosophy
+JOEL prioritizes Simplicity, Reliability, Speed, and Low Administrative Overhead over feature complexity. Customers should never need to understand SIP, PBX, carrier provisioning, or any telecom terminology, and failures are always expressed in plain, recoverable language. AI enhances the system but does not replace it; JOEL remains a business phone system that manages itself.
+Primary Objects
+Business — owns all numbers, greetings, extensions, devices, users, the Shared SMS Inbox, integrations, calls, voicemails, notifications, and analytics. States: Active, Cancelled, Deleted, Restored, with a 30-day recovery window.
+Business Number — a business-owned phone number that serves as a public, caller ID, and SMS filter identity. Entry point only.
+Greeting / Menu — Greetings communicate; Menus collect input and route callers.
+Extension — the primary operational object; owns routing, forwarding, voicemail, notifications, and recordings.
+Destination — a Phone Number, SIP Phone, or Mobile Application that an Extension rings.
+Device — an endpoint: a SIP Phone or the Mobile Application.
+Shared SMS Inbox — the single business-wide home for all SMS conversations.
+Voicemail — belongs to the Extension where the call terminates; includes audio, transcript, and summary.
+Call & Call Recording — every call belongs to an Extension; recordings include audio, transcript, summary, and metadata.
+Notification — an event-driven message to users or external systems.
+User — provides access under one of three roles: Owner, Admin, or User. Permissions are Extension-based; inbox permissions are separate. Users are optional.
+Integration — business-level connections to Slack and Webhook.
+What JOEL Intentionally Is NOT
+Not a CRM — no contact management, lead management, or opportunity tracking.
+Not a ticketing system — no open/closed status, ticket ownership, or escalations.
+Not a call-center platform — no call queues, ring groups, skill-based routing, or agent availability.
+Not an AI receptionist or AI agent — AI is analytics-focused only.
+Not an enterprise telecom platform — no SSO/SCIM, multi-line SIP, hot desking, or shared device pools in V1.
+Introduction
+Purpose
+This document is the canonical source of truth for JOEL product behavior. It defines:
+User Experience
+Settings
+Business Rules
+Edge Cases
+Notifications
+Integrations
+Analytics
+Lifecycle Behavior
+Permissions
+This document is intended for Product, Engineering, Design, QA, and future team members.
+This document does not define Database Schema, APIs, Infrastructure, or Technical Architecture. The JOEL Domain Model defines what objects exist. The JOEL Product Rules define how those objects behave.
+Product Principles
+Extensions Are Primary
+JOEL is an Extension-based business phone system. Extensions own Routing, Forwarding, Voicemail, Notifications, Recordings, and Analytics. Business Numbers, Users, and Devices do not own operational behavior.
+Business Numbers Are Entry Points
+Business Numbers receive Calls and SMS, and route to a Greeting/Menu or a direct Extension. Business Numbers do not own Routing, Voicemail, Notifications, or Workflows.
+Users Are Optional
+Users exist to provide Access, Permissions, Mobile Application access, and Shared SMS Inbox access. Users do not own Extensions, Business Numbers, or Routing. A business may operate successfully without any JOEL Users.
+Devices Are Endpoints
+Devices are destinations. Examples include the Mobile Application and the SIP Phone. Devices do not own Routing, Voicemail, or Notifications.
+Shared SMS
+SMS belongs to the business — not to Extensions, Business Numbers, or Users. All SMS-enabled Business Numbers feed into one Shared SMS Inbox. Business Numbers act as filters only.
+AI Enhances The System
+AI provides Transcripts, Summaries, Categorization, and Analysis. AI is not the primary product. JOEL remains a business phone system.
+Simplicity Wins
+Customers should never need to understand SIP, PBX, Carrier Provisioning, or telecom terminology. The system should feel simple.
+Feature: Onboarding
+Purpose
+Move customers from no account to receiving calls as quickly as possible. The primary goal is speed; a customer should be able to start receiving business calls within minutes.
+User Experience
+Customers choose one of two onboarding paths.
+Option A — Just Ring My Phone
+Designed for businesses that want the fastest possible setup.
+JOEL automatically creates Extension 0 (Operator) and configures it to forward to the customer mobile number. The Business Number routes Greeting/Menu to Extension 0. The customer is immediately operational; no further configuration is required.
+Option B — Set Up Extensions
+Designed for businesses that want departments, teams, or more advanced routing.
+The customer creates one or more Extensions.
+Example: 0 Operator 1 Sales 2 Support
+For each Extension the customer provides an Extension Number, Extension Name, Text-To-Voice Name, and Initial Forwarding Number. JOEL automatically creates Routing, Voicemail, a Menu Entry, and Notifications.
+Business Name
+The customer enters a Business Name (example: Smilebar), used by Greetings, Voicemail Greetings, and generated audio.
+Number Acquisition
+During onboarding the customer chooses to Buy Number or Port Existing Number.
+Temporary Numbers
+Customers porting numbers automatically receive a temporary number. Porting never blocks onboarding. Customers may configure Extensions, Greetings, Routing, and Notifications, invite Users, and test the system before the port completes.
+Default Configuration
+New businesses default to:
+Business Hours: 24/7
+Directory: Enabled
+Greeting: Automatically Generated
+Voicemail: Enabled
+Email Notifications: Enabled
+Completion
+Onboarding is complete when a Business Number exists, a Greeting exists, an Extension exists, and a Destination exists. The customer can then immediately receive calls.
+Feature: Business Numbers
+Purpose
+Business Numbers provide Public Identity, Caller ID Identity, and SMS Identity. Business Numbers are entry points, not operational objects. Business Numbers do not own Routing, Voicemail, Notifications, or Workflows.
+User Experience
+A business may own multiple Business Numbers.
+Example: Main Number, Marketing Number, Google Ads Number, Support Number.
+All Business Numbers belong to the same business.
+Number Types
+Local Numbers
+Associated with geographic areas (examples: 617, 212, 305).
+Toll-Free Numbers
+Examples: 800, 888, 877, 866, 855, 844, 833.
+Number Purchase
+The customer chooses Local Number, Toll-Free Number, or Port Existing Number. All number acquisition begins from the same workflow.
+Local Number Search
+The customer searches by City or State. The area code is displayed for clarity; customers are not expected to know area codes.
+Example: Boston, MA (617)
+JOEL displays 3 suggested numbers with a Show More option for additional choices, to reduce decision fatigue.
+Toll-Free Search
+The customer may generate available numbers, select a preferred prefix, or search vanity numbers (examples: 1-800-SMILEBAR, 1-800-FLOWERS).
+Number Activation
+After purchase, the Business Number becomes active immediately. Default routing is the Main Greeting/Menu unless the customer explicitly chooses otherwise.
+Additional Numbers
+Additional Business Numbers may be purchased at any time as add-ons. Customers are not required to upgrade plans solely to add another number.
+Routing
+A Business Number may route to a Main Greeting/Menu or a Direct Extension.
+Example: Main Number to Greeting/Menu; Sales Number to Extension 1 (Sales).
+Business Numbers never route directly to Phone Numbers, SIP Phones, or Mobile Applications. Business Numbers route only to a Greeting/Menu or an Extension.
+SMS Behavior
+All SMS-enabled Business Numbers feed into the Shared SMS Inbox. Business Numbers act as filters only and do not receive independent inboxes.
+Caller ID Identity
+Business Numbers serve as outbound caller ID identities. Outbound calls always display a business-owned number. Caller ID selection follows Device configuration, Extension permissions, and administrator restrictions. (See Users & Permissions for allowed caller ID rules.)
+Notifications
+Business Numbers do not own Notifications. Notifications belong to Extensions or the Shared SMS Inbox depending on event type.
+Number Porting
+Purpose
+Allow customers to move existing Business Numbers into JOEL without interrupting onboarding.
+Port Existing Number
+The customer enters the existing number, current carrier, ownership information, and required documentation. Porting begins immediately.
+Temporary Number
+JOEL automatically assigns a temporary number so the customer may configure Extensions, Greetings, Routing, and Notifications, invite Users, and test the system while the port is in progress. Temporary numbers cannot be skipped.
+Port Wizard
+JOEL guides the customer through Carrier Selection, Ownership Verification, Documentation Requirements, and Port Authorization, to minimize support involvement.
+Port Status
+Customers can view status at all times: Submitted, Review, Approved, Scheduled, Completed.
+Port Completion
+When the port completes, the temporary number is automatically replaced with the ported number. All routing and configuration remains intact; no reconfiguration is required.
+Port Failure
+The customer receives Additional Information Required or Carrier Rejected Request, with next steps. Customers never see carrier-specific technical terminology.
+Number Deletion
+Deleting a Business Number requires confirmation. (Future MFA confirmation may be supported.)
+Recovery Window
+Deleted Business Numbers enter a recovery period and are not immediately released. Administrators may restore deleted numbers during the recovery period.
+Deleted Numbers
+Historical records remain available.
+Example: Deleted Number — Google Ads Number 617-555-1212.
+Retained historical data: Calls, SMS, Voicemails, Recordings, Transcripts, Summaries, Analytics.
+Number Restoration
+Restoring a deleted Business Number restores Routing, Greetings, SMS, and historical references. No reconfiguration is required.
+Number Reuse
+Business Numbers are not immediately released; the recovery period must expire first.
+Analytics
+Business Numbers provide attribution grouping (examples: Main Number, Marketing Number, Google Ads Number). Future reporting may group Calls, SMS, and Voicemails by number.
+Audit Log
+Recorded: Number Purchased, Number Deleted, Number Restored, Port Submitted, Port Approved, Port Completed, Routing Changed.
+Future Enhancements
+Not V1: International Numbers, Dynamic Number Insertion, Call Tracking Pools, Shared Numbers Across Businesses, Advanced Marketing Attribution.
+Feature: Extensions
+Purpose
+Extensions are the primary operational object inside JOEL. Every inbound and outbound call ultimately belongs to an Extension (examples: Sales, Support, Billing, Emergency, Bob, Front Desk). Extensions own operational behavior.
+Extension Numbering
+Reserved
+0 = Operator
+9 = Directory
+Every account automatically receives Extension 0 (Operator). Operator may serve as a fallback destination but is not required.
+Standard Extensions
+1 through 8 are real Extensions, not shortcuts.
+Example: Extension 1 is Extension 1. It is not a shortcut to Extension 101.
+Additional Extensions
+Additional Extensions begin at 100 (100, 101, 102, …). No shortcut mapping layer exists in V1. Menu selections route directly to Extension numbers.
+Example: Press 1 to Extension 1; Press 0 to Extension 0 (Operator); Press 9 to Directory.
+Extension Creation
+The customer provides Extension Number, Extension Name, Text-To-Voice Name, and Initial Forwarding Number.
+Example: Extension: 1 Name: Sales Text-To-Voice Name: Sales Forward To: 617-555-1111
+Settings
+General
+Extension Number
+Extension Name
+Text-To-Voice Name
+Routing
+Ring All At Once
+Ring One At A Time
+Voicemail
+Enabled
+Voicemail Greeting
+After-Hours Voicemail Greeting
+Notifications
+Email
+Slack
+Webhook
+In-App
+Recording
+Inherit Business Default
+Override Business Default
+Destinations
+Each Destination supports Enabled, Schedule, Ring Duration, Order, and Call Screening.
+Permissions
+Extension access grants Calls, Voicemails, Recordings, Forwarding Configuration, Notifications, and Outbound Calling. No separate per-feature permissions exist in V1; permissions inherit from Extension access.
+Example: A user with access to Sales automatically receives access to Sales Calls, Sales Voicemails, Sales Recordings, Sales Forwarding, Sales Notifications, and Sales Outbound Calling.
+Extension Lifecycle
+Disabled Extensions do not appear in the Directory.
+Deleted Extensions do not appear in the Directory.
+Historical records for deleted Extensions remain available and searchable.
+Audit Log
+Recorded: Extension Created, Extension Deleted, Extension Disabled, Extension Enabled, Extension Renamed, Text-To-Voice Name Changed.
+Feature: Greetings & Menu
+Purpose
+Greetings and Menus define the caller experience before a call reaches an Extension. Greetings communicate information. Menus collect caller input and route callers. Greetings and Menus are separate concepts.
+Greeting Responsibilities
+Greetings provide Welcome Messages, Business Information, Closed Notices, Holiday Notices, Temporary Closure Notices, Transfer Messages, Voicemail Messages, and Recording Announcements. Greetings do not perform routing and do not own Extensions or Destinations.
+Menu Responsibilities
+Menus provide Digit Routing, Timeout Handling, Invalid Input Handling, and Directory Access. Menus own routing behavior.
+User Experience
+The customer configures a Greeting and a Menu.
+Example — Greeting: Thank you for calling Smilebar. For Sales press 1. For Support press 2. For our directory press 9.
+Example — Menu: 1 to Sales 2 to Support 0 to Operator 9 to Directory
+The Greeting is what callers hear. The Menu determines what happens when callers respond.
+Greeting Types
+Main Greeting
+Default business greeting.
+Example: Thank you for calling Smilebar.
+After-Hours Greeting
+Example: Thank you for calling Smilebar. Our office is currently closed.
+Holiday Greeting
+Example: Thank you for calling Smilebar. We are closed today for Memorial Day.
+Temporary Closure Greeting
+Example: Thank you for calling Smilebar. We are temporarily closed and will reopen on July 7.
+Voicemail Greeting
+Example: Sorry we missed your call. Please leave a message after the tone.
+After-Hours Voicemail Greeting
+Example: We are currently closed. Please leave a message and we will return your call.
+Transfer Greeting
+Example: Please wait while we connect you to Sales.
+Recording Announcement
+Example: This call may be recorded for quality and training purposes.
+Greeting Creation
+AI-Generated Audio
+Default behavior and primary V1 method. The customer enters Greeting Text and selects a Voice; JOEL automatically generates the audio. The customer may Preview Audio, Change Voice, and Edit Text.
+Uploaded Audio
+Supported as an advanced option, used when customers require custom recordings.
+Text-To-Voice Names
+Every Extension supports two names:
+Extension Name
+Internal display name (example: Dr. Niaraki).
+Text-To-Voice Name
+Used by Greetings, the Directory, and Call Screening (example: Doctor Niaraki). The Text-To-Voice Name does not need to match the Extension Name; this allows proper pronunciation.
+Menu Structure
+One menu tree per business in V1.
+Example: 0 to Operator 1 to Sales 2 to Support 3 to Billing 9 to Directory
+Menu Creation
+Menu entries are automatically created when Extensions are created.
+Example: Creating Extension 1 (Sales) automatically creates the menu entry 1 to Sales.
+Menu Updates
+If an Extension name changes (example: Sales to Appointments), menu routing remains unchanged and AI-generated Greetings update automatically.
+Menu Deletion
+If an Extension is deleted (example: Extension 2 Support), the menu option 2 is automatically removed. Broken menu entries are never left behind.
+Directory Integration
+By default the Directory is enabled at 9. If disabled, 9 follows Invalid Input Behavior.
+No Input Behavior
+Configurable. Supported actions: Replay Greeting, Route To Extension, Disconnect. Recommended default: Replay Greeting once, then Route To Extension 0.
+Invalid Input Behavior
+Configurable. Supported actions: Replay Greeting, Route To Extension, Disconnect. Recommended default: Replay Greeting once, then Route To Extension 0.
+Business Hours Interaction
+Business Hours do not modify menu behavior. The same Menu is presented whether the business is Open or Closed; only the Greeting differs.
+Permissions
+Only authorized users may Edit Greetings, Edit Menus, and Enable or Disable the Directory. Admins always have access.
+Future Enhancements
+Not V1: Multiple Menu Trees, Nested Menus, Multi-Language Menus, Dynamic Menus, AI Menu Recommendations, Speech-Only Menus.
+Feature: Directory
+Purpose
+The Directory allows callers to locate Extensions by name, reducing menu complexity and allowing callers to reach the correct Extension without knowing the Extension number. The Directory is accessed through 9 by default.
+User Experience
+The caller hears “For our directory, press 9,” presses 9, and the Directory begins.
+Search Methods
+Voice Search
+Supported (examples: Sales, Support, Bob, Jane).
+Dial-By-Name
+Supported. The caller enters letters using standard telephone keypad mapping (example: BOB).
+Search Scope
+The Directory searches Extension Names only (examples: Sales, Support, Billing, Bob, Jane). The Directory does not search Phone Numbers, SIP Phone names, Users without Extensions, or internal system objects.
+Ambiguous Results
+Example: For matches Sales, Sales Team, and Sales Manager — “I found three matches. For Sales press 1. For Sales Team press 2. For Sales Manager press 3.”
+The caller selects the desired Extension.
+No Match Found
+The Directory responds “I couldn’t find a match. Please try again.” The caller may search again or use Dial-By-Name.
+Excluded Extensions
+Disabled Extensions and Deleted Extensions do not appear in the Directory.
+Permissions
+The Directory is public. No user permissions apply.
+Future Enhancements
+Not V1: Natural Language Requests, Multi-Language Directory, Fuzzy Matching, Caller Personalization, AI Recommendations.
+Feature: Business Hours
+Purpose
+Business Hours determine which Greeting is played to callers. Business Hours are intentionally lightweight and are not a routing engine. Business Hours do not control Extensions, Destinations, Voicemail, or Notifications. (Forwarding schedules belong to Destinations.)
+User Experience
+Customers may choose Always Play Main Greeting or Use Business Hours.
+Example: Open — Main Greeting; Closed — After-Hours Greeting.
+Default Behavior
+New businesses default to 24/7; no configuration is required.
+Settings
+Time Zone
+Used for Greeting selection (example: Eastern Time).
+Weekly Schedule
+Example: Monday 9AM–5PM, Tuesday 9AM–5PM.
+Holiday Schedule
+Supported in V1 (example: Memorial Day triggers the Holiday Greeting).
+Temporary Closure
+Example: July 1 – July 7 triggers the Temporary Closure Greeting.
+Greeting Selection
+Open: Play Main Greeting
+Closed: Play After-Hours Greeting
+Holiday: Play Holiday Greeting
+Temporary Closure: Play Temporary Closure Greeting
+Menu Behavior
+Business Hours do not modify Menus. The Menu is identical whether Open or Closed; only the Greeting differs.
+Forwarding Schedules
+Forwarding schedules belong to Destinations and are independent of Business Hours.
+Example: Sales — Forward To 617-555-1111, Schedule Monday–Friday 9AM–5PM.
+Permissions
+Only authorized users may modify Business Hours, Holiday Schedules, and Temporary Closures. Admins always have access.
+Audit Log
+Recorded: Business Hours Changed, Holiday Added, Holiday Removed, Temporary Closure Added, Temporary Closure Removed.
+Future Enhancements
+Not V1: Per-Number Hours, Per-Extension Hours, AI Schedule Suggestions, Automatic Holiday Detection.
+Feature: Routing
+Purpose
+Routing determines how an Extension delivers calls to configured Destinations. Routing belongs entirely to the Extension. Routing does not belong to Business Numbers, Devices, or Users.
+Routing Methods
+Ring All At Once
+All enabled Destinations ring simultaneously.
+Example: Sales rings Bob Mobile, Jane Mobile, and Front Desk SIP Phone together.
+Ring One At A Time
+Destinations ring according to configured order.
+Example: Sales attempts Bob Mobile, then Jane Mobile, then Front Desk SIP Phone, then Voicemail — each in sequence.
+Hybrid routing is not exposed in V1.
+Fallback Behavior
+When all Destinations fail, the Extension follows its configured fallback behavior:
+Voicemail
+Most common. The caller reaches the Extension Voicemail.
+Disconnect
+The caller hears a disconnect message and the call ends.
+Forward To Extension
+Example: Sales forwards to Support; the caller is transferred to another Extension.
+Loop Prevention
+Routing loops are not permitted. JOEL prevents saving invalid configurations.
+Example: Sales to Support and Support to Sales is rejected.
+Future Enhancements
+Not V1: Call Queues, Ring Groups, Skill-Based Routing, Agent Availability, Workflow Routing, AI Routing.
+Feature: Destinations
+Purpose
+Destinations are the endpoints an Extension can ring. Extensions own Destination assignments. Devices exist independently.
+Supported Destination Types
+Phone Number (example: 617-555-1111)
+SIP Phone (example: Front Desk)
+Mobile Application (example: Jane Mobile Application)
+Destination Creation
+The customer clicks Add Destination, then chooses Phone Number, SIP Phone, or Mobile Application.
+Destination Settings
+Every Destination supports:
+Enabled (On / Off)
+Schedule (example: Monday–Friday 9AM–5PM)
+Ring Duration (advanced setting, hidden during basic setup)
+Order (used only for Ring One At A Time)
+Call Handling
+Direct Connect
+Default behavior. The call immediately connects with no announcement and no screening.
+Call Screening
+Optional Destination-level setting. When enabled, the recipient hears: “JOEL call for Sales. Press 1 to accept. Press 2 to send to voicemail. Press 3 to continue routing.” The caller hears hold music while waiting.
+The announcement uses the Extension’s Text-To-Voice Name (examples: “JOEL call for Sales,” “JOEL call for Support,” “JOEL call for Doctor Niaraki”). Caller name and caller number are not announced in V1.
+Screening outcomes:
+Press 1 — Accept Call: the call immediately connects.
+Press 2 — Send To Voicemail: the caller is routed to the Extension Voicemail.
+Press 3 — Continue Routing: the call proceeds to the next Destination.
+Timeout — Continue Routing: the call proceeds automatically.
+Destination Removal
+Removing a Destination stops future routing and preserves historical Calls, Recordings, and Voicemails.
+Disabled Destinations
+Disabled Destinations behave as though they do not exist; no special routing occurs.
+Device Requirements
+A Mobile Application Destination requires an existing User.
+A SIP Phone may be attached to multiple Extensions.
+A Mobile Application may be attached to multiple Extensions.
+Example: Sales to Front Desk, Support to Front Desk, Operator to Front Desk — all referencing the same SIP Phone.
+Future Enhancements
+Not V1: Shared Device Pools, Presence, Agent Availability, Smart Routing.
+Feature: Devices
+Purpose
+Devices provide inbound and outbound calling endpoints. Devices are first-class objects. Devices do not own Routing, Voicemail, or Notifications.
+Supported Device Types
+SIP Phone
+Physical office phone (examples: Front Desk, Reception, Conference Room).
+Mobile Application
+User-operated device (examples: iPhone, Android).
+Future Softphone
+Not part of V1.
+Device Management
+Devices are managed by administrators and appear within the Devices screen (examples: Front Desk, Reception, Sales Desk, Jane Mobile Application).
+Device Settings
+Device Name — human-friendly label (example: Front Desk).
+Device Type — SIP Phone or Mobile Application.
+Status — Active or Disabled.
+Default Outbound Extension (example: Operator (0), Sales (1)).
+Default Caller ID Number (example: Main Number, Sales Number), used for outbound caller ID presentation.
+SIP Phones
+Administration
+SIP Phones are administrator-managed. Users do not configure SIP Phones.
+Provisioning
+V1 supports approved phone models only. No manual SIP credential configuration. Goal: plug in, connect, works.
+Outbound Behavior
+Each SIP Phone has a Default Outbound Extension and a Default Caller ID Number, configured by an administrator. No multi-line behavior in V1. No Extension selection on the phone. No caller ID selection on the phone.
+Inbound Behavior
+A SIP Phone may be used by multiple Extensions; the SIP Phone exists independently and Extensions reference it as a Destination.
+Example: Sales to Front Desk, Support to Front Desk, Operator to Front Desk.
+Direct Reachability
+SIP Phones do not own Business Numbers, Voicemail, Notifications, or Routing. To make a SIP Phone directly reachable, create an Extension.
+Example: Extension 5 (Front Desk) to Front Desk SIP Phone. Voicemail belongs to Extension 5, not the SIP Phone.
+Mobile Application Devices
+The Mobile Application is for operational use only and is not an administration tool. (See Feature: Mobile Application for full detail.)
+Inbound Behavior
+A Mobile Application may be configured as a Destination, and the same Mobile Application may serve multiple Extensions.
+Example: Sales to Jane Mobile Application, Support to Jane Mobile Application.
+Outbound Behavior
+Users may place outbound calls using Extensions they have access to and caller IDs allowed for those Extensions. The default Extension and caller ID are configured in application settings.
+Device Removal
+Removing a Device stops future routing and future outbound access. Historical data remains: Calls, Recordings, Voicemails, Audit Log entries.
+Disabled Devices
+Disabled Devices do not receive calls and cannot place outbound calls. Historical data remains available.
+Audit Log
+Recorded: Device Added, Device Removed, Device Enabled, Device Disabled, Default Extension Changed, Default Caller ID Changed.
+Future Enhancements
+Not V1: Softphones, Multi-Line SIP Phones, Shared Device Profiles, Device Health Monitoring, Automatic Firmware Management, BYOD SIP Support, Hot Desking.
+Feature: Mobile Application
+Purpose
+The Mobile Application allows Users to operate JOEL while away from a desk. The Mobile Application is an operational tool, not an administration tool.
+Primary Functions
+Users may Make Outbound Calls, Receive Inbound Calls, View Call History, Listen To Voicemails, View Voicemail Transcripts, View Voicemail Summaries, manage SMS conversations in the Shared SMS Inbox, and Switch Organizations.
+Navigation
+V1 navigation includes Calls, Voicemails, Inbox, Dialer, Settings, and the Organization Switcher. No administrative navigation exists.
+Unsupported Functions
+The Mobile Application does not support Billing, Number Management, Extension Management, User Management, or Integrations. All business configuration occurs in the Web Application.
+Calls
+Users may View Call History, Missed Calls, Answered Calls, Recorded Calls, and Call Details. Call visibility follows Extension permissions; Users only see calls belonging to Extensions they can access.
+Voicemails
+Users may Listen To Voicemails, View Transcripts, View Summaries, and Search Voicemails. Voicemail visibility follows Extension permissions; Users only see voicemails belonging to Extensions they can access.
+Feature: Calls
+Purpose
+Calls are the inbound and outbound voice interactions handled by JOEL. Every call ultimately belongs to an Extension, which determines how the call is owned, permitted, recorded, and grouped for analytics.
+Inbound Calls
+An inbound call arrives on a Business Number, which routes it to a Greeting/Menu or directly to an Extension. The Extension then delivers the call to its configured Destinations according to its routing method. An inbound call is associated with the Business, the Business Number that received it, and the Extension that handles it.
+Outbound Calls
+A User places an outbound call through an Extension they have access to, using a Caller ID Number allowed for that Extension. The call always displays a business-owned number. An outbound call is associated with the Business, the Extension, the Caller ID Number presented, and the Device or User that placed it.
+Call Ownership
+Every inbound and outbound call belongs to an Extension. The Extension determines ownership, permissions, recording, and analytics. Business Numbers, Devices, and Users do not own calls.
+Call History
+Call history is available in the Web Application and the Mobile Application. Users may view Answered Calls, Missed Calls, Recorded Calls, and Call Details. Call visibility follows Extension permissions; Users only see calls belonging to Extensions they can access.
+Missed Calls
+A call is missed when it reaches an Extension, no Destination answers, and the caller disconnects without leaving a voicemail. Missed calls appear in call history and may trigger the Missed Call notification.
+Call Metadata
+Each call includes Caller Number, Date/Time, Extension, Duration, Direction, and Caller ID Number.
+Search
+Calls are searchable — Answered Calls, Missed Calls, and Recorded Calls — by Caller Number, Extension, and Date. Search results respect permissions, so Users only see calls for Extensions they can access.
+Permissions
+Access to an Extension grants access to that Extension’s calls, including call history, call details, and recordings. No separate per-call permissions exist in V1; permissions inherit from Extension access.
+Notifications
+Call-related notification events are Missed Call (Email, Slack, Webhook, In-App) and Call Completed (Webhook). Notifications belong to the Extension.
+Audit Log
+The Audit Log records configuration changes only; call activity such as placing, receiving, or viewing a call is not recorded. Configuration changes that affect call handling — for example routing and number changes — are recorded under their respective objects.
+Future Enhancements
+Not V1: Call Queues, Ring Groups, Skill-Based Routing, Agent Availability.
+Feature: Call Transfers
+Purpose
+Call Transfers move a call from one Extension to another, or to voicemail, using the Extension’s configured routing behavior. V1 supports blind transfers only.
+Blind Transfer
+A blind transfer passes the call to the target without consultation and is the only transfer type in V1. After the transfer, the call follows the target Extension’s routing and Destinations. If recording is enabled, recording continues across the transfer and the entire call remains recorded.
+Transfer To Extension
+A call may be transferred to another Extension, after which it follows that Extension’s routing and Destinations. A Transfer Greeting may be played while connecting (for example, “Please wait while we connect you to Sales”).
+Example: Sales → Support — the caller is transferred to the Support Extension.
+Transfer To Voicemail
+When a transferred call is not answered, it reaches the voicemail of the Extension where the call terminates. Voicemail belongs to that final Extension; the original route is stored for historical purposes.
+Example: Sales → Support → Support Voicemail — the voicemail belongs to Support.
+Transfer Failure
+If all Destinations of the receiving Extension fail, that Extension follows its configured fallback behavior — Voicemail, Disconnect, or Forward To Extension. Routing loops are not permitted; JOEL prevents saving configurations that would create a transfer loop.
+Transfer To Disabled Extension
+A disabled Extension behaves as though it does not exist for routing purposes and does not appear in the Directory. It cannot serve as a transfer target; the call instead follows the originating Extension’s fallback behavior.
+Transfer To Deleted Extension
+A deleted Extension is removed from menus and the Directory, and broken menu entries are never left behind, so a deleted Extension cannot be a transfer target. Historical calls, recordings, and voicemails associated with the deleted Extension remain available and searchable.
+Permissions
+Transfers follow Extension permissions. A User may transfer calls only within Extensions they have access to. No separate transfer permission exists in V1.
+Audit Log
+The Audit Log records configuration changes only; individual call transfers are call activity and are not recorded. Changes to forwarding and routing configuration are recorded under Routing events.
+Future Enhancements
+Not V1: Attended Transfer, Warm Transfer, Consultative Transfer.
+Feature: Voicemail
+Purpose
+Voicemail allows callers to leave a message when an Extension is unable to answer. Voicemail belongs to the Extension where the call terminates. Voicemail does not belong to Business Numbers, Devices, or Users.
+User Experience
+The caller reaches an Extension (example: Sales). No Destination answers. The caller hears the Sales Voicemail Greeting and leaves a message. JOEL creates Audio, a Transcript, and a Summary, and Notifications are sent. The voicemail appears in the Extension’s voicemail area.
+Ownership
+Voicemail belongs to the final Extension.
+Example: Sales to Support to Support Voicemail — the voicemail belongs to Support. The original route remains stored for historical purposes.
+Voicemail Contents
+Every voicemail includes:
+Audio — original recording.
+Transcript — generated automatically.
+Summary — generated automatically.
+Metadata — Caller Number, Date/Time, Extension, Original Route, Final Route, Duration.
+Voicemail Greetings
+Voicemail Greeting (example: Sorry we missed your call. Please leave a message after the tone.)
+After-Hours Voicemail Greeting (example: We are currently closed. Please leave a message and we will return your call.)
+Greetings are produced using AI-Generated Audio or Uploaded Audio (see Greetings & Menu).
+Voicemail Inbox
+A dedicated voicemail area, separate from Call History and the Shared SMS Inbox. Supports Search, Filter, and Playback.
+Notifications
+A New Voicemail event notifies via Email, Slack, Webhook, and In-App. (See Feature: Notifications for channel behavior.)
+Permissions
+Users with access to an Extension may View Voicemails, Listen To Audio, View Transcript, and View Summary. No separate voicemail permissions exist in V1.
+Search
+Voicemail search supports Caller Number, Transcript Content, Summary Content, and Extension Name.
+Example: Searching “pricing” returns voicemails discussing pricing.
+Deletion
+Deleting a voicemail permanently removes Audio, Transcript, and Summary. Confirmation is required.
+Retention
+Manual deletion and retention expiry are distinct. When retention expires, JOEL deletes the Audio and retains the Transcript, Summary, and Metadata. This preserves business value while reducing storage costs.
+Deleted Extensions
+If an Extension is deleted, historical voicemails remain available and searchable.
+Example: Deleted Extension — Sales (1). Voicemails remain searchable.
+Blocked Callers
+Blocked callers cannot leave new voicemails. Existing voicemail history remains available.
+Future Enhancements
+Not V1: Shared Voicemail Boxes, Voicemail Assignment, Internal Notes, AI Callback Suggestions, Sentiment Analysis.
+Feature: Call Recording
+Purpose
+Call Recording captures call audio and generates derived artifacts when recording is enabled, regardless of call direction.
+Recorded Calls
+For both Inbound and Outbound calls, when recording is enabled JOEL creates an Audio Recording, a Transcript, and a Summary.
+Transfers
+Recording continues across transfers and does not stop during transfer.
+Example: Sales (recorded) to Support — the entire call remains recorded.
+Recording Contents
+Each recording contains:
+Audio — original call recording.
+Transcript — automatically generated.
+Summary — automatically generated (example: “Customer called regarding pricing and requested a callback.”).
+Metadata — Caller Number, Date/Time, Extension, Duration, Direction, Caller ID Number.
+Permissions
+Users with access to an Extension may Listen To Recordings, View Transcripts, and View Summaries. No separate recording permissions exist in V1.
+Search
+Recordings are searchable by Caller Number, Transcript Content, Summary Content, Extension, and Date.
+Downloads
+Authorized users may download the Audio Recording when permitted.
+Retention
+When retention expires, JOEL deletes the Audio and retains the Transcript, Summary, and Metadata. This preserves business value while reducing storage costs.
+Deleted Extensions
+If an Extension is deleted, historical recordings remain available and searchable.
+Example: Deleted Extension — Sales (1). Recordings remain searchable.
+Audit Log
+Recorded: Recording Enabled, Recording Disabled, Retention Changed.
+Future Enhancements
+Not V1: Pause Recording, Speaker Identification, Sentiment Analysis, AI Coaching, Automatic Redaction.
+Feature: Notifications
+Purpose
+Notifications inform users and external systems about important events occurring inside JOEL and reduce the need to log into JOEL. Notifications are event-driven. Notifications are not workflows and are not automation.
+Ownership
+Notifications belong to Extensions and to the Shared SMS Inbox. Notifications do not belong to Business Numbers, Devices, individual Calls, or individual Voicemails.
+Notification Channels
+Email (example: sales@company.com)
+Slack (example: #sales)
+Webhook (examples: CRM, Reporting System, Custom Application)
+In-App (visible within the Web Application and Mobile Application)
+Extension Events
+Missed Call — triggered when a call reaches an Extension, nobody answers, and the caller disconnects. Channels: Email, Slack, Webhook, In-App.
+Voicemail Received — triggered when a voicemail is created. Channels: Email, Slack, Webhook, In-App.
+Transcript Ready — triggered when transcript generation completes. Channels: Email, Slack, Webhook, In-App.
+Summary Ready — triggered when summary generation completes. Channels: Email, Slack, Webhook, In-App.
+Shared SMS Inbox Events
+New SMS — Channels: Email, Slack, Webhook, In-App. SMS Notifications belong to the inbox, not Extensions.
+Multiple Destinations
+A single event may notify multiple destinations.
+Example: The Sales Extension notifies Email, Slack, and Webhook — all receive the event.
+Email Behavior
+Voicemail emails contain the Transcript and Summary inline, so no login is required to understand the message. Missed Call emails include Caller Number, Caller Name (if available), Extension, and Date/Time.
+Slack Behavior
+Slack messages are human-readable.
+Example: New Voicemail Caller: 617-555-1111 Extension: Sales Summary: Customer requesting pricing information.
+Webhook Behavior
+Webhooks are event-driven. Supported events: Missed Call, Voicemail Created, Call Completed, Transcript Ready, SMS Received.
+User Preferences
+Users may control Personal Email Notifications and Personal In-App Notifications for Extensions they have access to. Users may not modify Business Slack Destinations, Business Webhooks, or Business Notification Rules.
+Administrator Control
+Administrators configure Slack Destinations, Webhooks, and Notification Rules. These remain authoritative.
+Failure Handling
+Email Failure — retried automatically.
+Slack Failure — retried automatically; if failures persist, “Slack Connection Needs Attention.”
+Webhook Failure — retried automatically; failures logged; if failures persist, the webhook is marked “Needs Attention.”
+Search
+Notifications are not a searchable system of record. Search occurs against Calls, Voicemails, and SMS — not notification history.
+Audit Log
+Recorded: Slack Destination Changed, Webhook Added, Webhook Removed, Email Recipient Changed.
+Future Enhancements
+Not V1: Notification Digests, Escalation Rules, SMS Notifications, Push Notification Rules, Conditional Notifications, AI Prioritization.
+Feature: Shared SMS Inbox
+Purpose
+The Shared SMS Inbox provides a single place for a business to manage all SMS conversations across all Business Numbers. SMS belongs to the business and does not belong to Extensions, Users, or Business Numbers. All SMS-enabled Business Numbers feed into one Shared SMS Inbox.
+User Experience
+Messages received on any Business Number (examples: Main Number, Marketing Number, Google Ads Number, Support Number) all appear inside the Shared SMS Inbox. Users do not switch inboxes; Users may filter by Business Number.
+Ownership
+SMS belongs to the business, not to an Extension, User, or Business Number. Business Numbers act as filters only.
+Conversations
+Conversations are grouped by sender phone number (example: Jane Smith 617-555-1111). If a sender texts multiple Business Numbers, the conversation remains unified; Business Numbers remain visible for filtering and auditing.
+Supported Content
+SMS — supported.
+MMS — supported (examples: Images, Photos, PDFs, Screenshots).
+Views
+Active Conversations — default view.
+Archived Conversations — separate view.
+Filter By Number (examples: Main Number, Marketing Number, Google Ads Number) — filters only, not separate inboxes.
+Conversation Actions
+Reply, Archive, Delete Conversation, Block Number.
+Archive Behavior
+Archived conversations remain searchable. If a new message arrives, the archived conversation automatically returns to Active Conversations.
+Delete Conversation
+Delete exists primarily for spam cleanup. Deleting a conversation permanently removes Messages, Attachments, and Conversation History. Confirmation is required.
+Blocked Numbers
+Blocked numbers cannot Call, Text, or Leave Voicemail. Existing history remains searchable, accessible, and visible. Blocking only affects future communication.
+Caller Information
+V1 is not a CRM and does not include Contact Management, Contact Import, Lead Status, or Tags. The inbox may display a Caller Name and Phone Number when available through caller identification services.
+Notifications
+A New SMS event notifies via Email, Slack, Webhook, and In-App. SMS Notifications belong to the Shared SMS Inbox, not to Extensions. (See Feature: Notifications.)
+Permissions
+Users either have Inbox Access or do not. V1 does not support granular inbox permissions. Inbox access is separate from Extension access. Users with inbox access may Read Messages, Reply, Archive Conversations, Delete Conversations, and Block Numbers.
+Search
+Search supports Phone Number, Caller Name (when available), SMS Content, Attachments, and Business Number. Search is global; users do not need to understand where information is stored.
+Future Enhancements
+Not V1: Assignment, Internal Notes, Tags, Ticket Workflow, Open/Closed Status, CRM Contact Management, Campaign SMS, Marketing Automation, AI Reply Suggestions, Shared Drafts, Future CRM/Patient/Customer Matching.
+Feature: Search
+Purpose
+Search allows users to find information without needing to know where it is stored. Users should not need to remember which Extension handled a call, which Business Number received an SMS, whether something was a voicemail or a call, or whether a record is active or historical. Search should simply find it.
+User Experience
+Search is globally available throughout JOEL. Users may enter a Phone Number, Extension Name, Business Number, SMS Content, Voicemail Content, or Caller Name (when available) and receive relevant results.
+Search Scope
+Calls — Answered Calls, Missed Calls, Recorded Calls.
+Voicemails — Transcript Content, Summary Content, Metadata.
+SMS Conversations — Message Content, Attachments, Sender Numbers.
+Extensions (examples: Sales, Support, Billing, Operator).
+Business Numbers (examples: Main Number, Google Ads Number, Marketing Number).
+Audit Log — configuration changes.
+Search Behavior
+Search behaves like modern software (examples: Spotlight, Gmail, Slack, Discord). Users should not need separate search modes. Search should feel immediate and users should not be required to choose Call Search, SMS Search, or Voicemail Search before searching.
+Search Examples
+Phone Number search (example: 6175551111) returns associated Calls, Voicemails, and SMS Conversations.
+Voicemail search supports Transcript Content, Summary Content, Caller Number, and Extension Name (example: “pricing”).
+SMS search supports Message Content, Phone Number, and Caller Name when available (example: “appointment”).
+Extension search (example: Sales) returns the Extension and related Calls, Voicemails, and Recordings, subject to permissions.
+Permission Filtering
+Search results automatically respect permissions. Users only see information they are authorized to access.
+Historical Records
+Search includes historical records such as Deleted Extensions and Deleted Business Numbers, which remain searchable.
+Future Enhancements
+Not V1: AI Semantic Search, Natural Language Search, Search Recommendations, Related Results, AI Search Summaries.
+Feature: Users & Permissions
+Purpose
+Users provide access to JOEL. Users are permission containers. Users are not Extensions, Routing objects, Devices, or Business Numbers. Users exist to access the Web Application, access the Mobile Application, access the Shared SMS Inbox, access Extensions, and place outbound calls.
+User Experience
+Business owners invite Users (example: Jane jane@example.com). The User receives an invitation; after accepting, Web access is granted, Mobile access is granted, and permissions are applied.
+User Types
+Owner
+Full access.
+Admin
+Operational administrator with full access to Business Numbers, Extensions, Devices, Users, Integrations, and the Shared SMS Inbox. Admins automatically have access to all Extensions.
+User
+Standard user. Access is controlled by permissions.
+Multiple Businesses
+Users may belong to multiple businesses (examples: Smilebar, Harlo, Personal Business). Permissions are independent for each business.
+Extension Access
+Extensions are the primary permission boundary.
+Example: Sales granted, Support granted, Billing not granted.
+If a User has access to an Extension they automatically receive access to Calls, Voicemails, Recordings, Forwarding Configuration, Notifications, and Outbound Calling. No separate per-feature permissions exist in V1.
+Inbox Access
+Inbox access is separate from Extension access.
+Example: Inbox granted, Sales not granted is valid. A User may manage SMS without Extension access.
+Outbound Calling Permissions
+Users may place outbound calls only through Extensions they have access to.
+Example: Sales granted allows outbound calls via Sales; Support not granted does not.
+Caller ID Permissions
+Users may only use caller IDs allowed for the Extension and allowed by administrator configuration.
+Example: Sales Extension allowed caller IDs — Sales Number, Main Number. The User may not use Support Number or Billing Number unless permitted.
+Permission Changes
+If permissions are removed, the User immediately loses access after refresh. If actively viewing restricted content, an “Access Removed” message is displayed and the User is returned to a valid screen.
+User Removal
+Removing a User revokes permissions, revokes Mobile access, revokes Web access, and logs out active sessions. Business data remains intact.
+Notifications
+Users may control Personal Email Notifications and Personal In-App Notifications for Extensions they have access to. Users may not modify Business Slack Destinations, Business Webhooks, or Business Notification Rules; administrator-configured destinations remain authoritative.
+Mobile Application Access
+Users may install and use the Mobile Application. (See Feature: Mobile Application.)
+Search
+Users may search Calls, Voicemails, SMS, Extensions, and Business Numbers, subject to permissions. Search results are automatically filtered; Users never see data they do not have access to.
+Audit Log
+Recorded: User Invited, User Removed, Role Changed, Extension Access Changed, Inbox Access Changed.
+Future Enhancements
+Not V1: View-Only Permissions, Per-Feature Permissions, Temporary Access, Team-Based Permissions, SSO, SCIM Provisioning.
+Feature: Permissions Matrix
+This matrix is the authoritative summary of role capabilities in V1.
+Legend: ✓ = Full access · ✗ = No access · Assigned = Limited to assigned Extensions · If Granted = Only when Inbox Access is granted.
+Capability
+Owner
+Admin
+User
+Buy Number
+✓
+✓
+✗
+Delete Number
+✓
+✓
+✗
+Port Number
+✓
+✓
+✗
+Create Extension
+✓
+✓
+✗
+Delete Extension
+✓
+✓
+✗
+Configure Routing
+✓
+✓
+Assigned
+Configure Voicemail
+✓
+✓
+✗
+View Calls
+✓
+✓
+Assigned
+View Voicemails
+✓
+✓
+Assigned
+View Recordings
+✓
+✓
+Assigned
+Place Outbound Calls
+✓
+✓
+Assigned
+Manage Devices
+✓
+✓
+✗
+Invite Users
+✓
+✓
+✗
+Remove Users
+✓
+✓
+✗
+Configure Integrations
+✓
+✓
+✗
+View Audit Log
+✓
+✓
+✗
+Access Shared Inbox
+✓
+✓
+If Granted
+Billing Access
+✓
+✗
+✗
+Notes:
+The User role’s access is derived entirely from assigned Extension access and Inbox Access. “Configure Routing” for a User means configuring forwarding and destinations for Extensions the User is assigned to.
+“Configure Voicemail” (enabling voicemail and editing Voicemail Greetings) is an authorized-user/administrator action and is not granted by standard Extension access.
+Billing Access is Owner-scoped, consistent with the Admin role definition, which enumerates operational areas and does not include Billing.
+Feature: Validation Rules
+Validation rules enforce structural integrity. They are organized by object. These rules restate constraints already defined throughout this document; no new behavior is introduced.
+Extensions
+Extension numbers must be unique within a business.
+Extension 0 is reserved for Operator.
+Extension 9 is reserved for Directory.
+Standard Extensions are 1 through 8; additional Extensions begin at 100.
+Extension creation requires an Extension Number, Extension Name, Text-To-Voice Name, and Initial Forwarding Number.
+Menu entries are created and removed automatically with Extensions; broken menu entries are never left behind.
+Disabled and Deleted Extensions do not appear in the Directory.
+Business Numbers
+Business Numbers must be unique.
+A Business Number routes only to a Greeting/Menu or a single Extension; it never routes directly to a Phone Number, SIP Phone, or Mobile Application.
+Outbound caller ID must always be a business-owned Business Number.
+A temporary number is always assigned during porting and cannot be skipped.
+Deleted Business Numbers enter a recovery window and are not immediately released; reuse is only possible after the recovery period expires.
+Users
+User email addresses must be unique within a business.
+A User may belong to multiple businesses; permissions are independent per business.
+Inbox Access is independent of Extension access.
+Users may place outbound calls only through Extensions they have access to, and may only use caller IDs allowed for the Extension.
+Destinations
+A Destination must be a Phone Number, a SIP Phone, or a Mobile Application.
+A Mobile Application Destination requires an existing User.
+A SIP Phone or Mobile Application may be attached to multiple Extensions.
+Disabled Destinations behave as though they do not exist.
+Order applies only to Ring One At A Time routing.
+Routing
+Routing belongs to the Extension; it cannot be owned by a Business Number, Device, or User.
+Routing loops are prohibited; JOEL prevents saving invalid configurations.
+A routing method must be Ring All At Once or Ring One At A Time.
+Fallback behavior must be Voicemail, Disconnect, or Forward To Extension.
+Integrations
+Webhook URLs must be valid HTTPS URLs.
+Slack Destinations, Webhooks, and Notification Rules are administrator-configured and authoritative; Users cannot modify business destinations.
+Feature: Web Application
+Purpose
+The Web Application is the primary administration interface. All business configuration occurs in the Web Application. The Mobile Application is operational only.
+The following subsections describe the purpose and permissions of each area. They do not define screens or workflows.
+Dashboard
+Purpose: default landing area after sign-in. Permissions: available to all signed-in roles; content is scoped to each user’s permissions.
+Inbox
+Purpose: manage the Shared SMS Inbox. Permissions: Owner, Admin, and Users with Inbox Access.
+Calls
+Purpose: review call history. Permissions: Owner and Admin see all Extensions; Users see only assigned Extensions.
+Voicemails
+Purpose: review voicemails, transcripts, and summaries. Permissions: Owner and Admin see all Extensions; Users see only assigned Extensions.
+Numbers
+Purpose: manage Business Numbers, including purchase, porting, deletion, restoration, and routing. Permissions: Owner and Admin.
+Extensions
+Purpose: manage Extensions and their settings. Permissions: Owner and Admin.
+Devices
+Purpose: manage SIP Phones and Mobile Application devices. Permissions: Owner and Admin.
+Users
+Purpose: manage Users and their permissions. Permissions: Owner and Admin.
+Integrations
+Purpose: manage Slack Destinations and Webhooks. Permissions: Owner and Admin.
+Audit Log
+Purpose: review configuration change history. Permissions: Owner and Admin.
+Billing
+Purpose: manage plan, add-ons, upgrades, and downgrades. Permissions: Owner.
+Feature: Audit Log
+Purpose
+The Audit Log tracks configuration changes made to JOEL. It exists to answer “Who changed this?” The Audit Log is not an activity tracker.
+Scope
+The Audit Log records configuration changes affecting Business Numbers, Extensions, Routing, Users, Permissions, Devices, Integrations, and Recording Settings.
+Recorded Events
+Business Number Events
+Number Purchased, Number Deleted, Number Restored, Port Submitted, Port Approved, Port Completed, Routing Changed.
+Extension Events
+Extension Created, Extension Deleted, Extension Disabled, Extension Enabled, Extension Renamed, Text-To-Voice Name Changed.
+Routing Events
+Destination Added, Destination Removed, Destination Enabled, Destination Disabled, Ring Order Changed, Schedule Changed, Voicemail Enabled, Voicemail Disabled.
+User Events
+User Invited, User Removed, Role Changed, Extension Access Changed, Inbox Access Changed.
+Device Events
+SIP Phone Added, SIP Phone Removed, Device Enabled, Device Disabled, Default Extension Changed, Default Caller ID Changed.
+Integration Events
+Slack Connected, Slack Disconnected, Webhook Added, Webhook Removed, Integration Settings Changed.
+Recording Events
+Recording Enabled, Recording Disabled, Retention Changed.
+Audit Entry Format
+Each entry contains a Timestamp, User, Action, Old Value, and New Value.
+Example: Jane Smith Changed Sales Forwarding Old: 617-555-1111 New: 617-555-2222
+Search
+The Audit Log supports search by User, Extension, Business Number, Device, and Date Range.
+Events Not Recorded
+V1 does not record Viewed Voicemail, Viewed SMS, Opened Inbox, Opened App, or Read Notifications. Configuration changes only.
+Permissions
+Owner — Full Access.
+Admin — Full Access.
+User — No Audit Log Access.
+Retention
+Audit Log retention is controlled by plan and billing rules. The Audit Log feature exists on all plans.
+Historical Objects
+Deleted objects remain visible historically within the Audit Log.
+Example: Deleted Extension — Sales (1); Deleted Number — Google Ads Number.
+Future Enhancements
+Not V1: Audit Export, Compliance Reports, Legal Hold Reports, Audit Alerts.
+Feature: Business Lifecycle
+Purpose
+Protect customer data from accidental deletion while allowing businesses to cancel, restore, deactivate, and permanently delete accounts. The goal is business continuity.
+Account States
+Active, Cancelled, Deleted, Restored.
+Cancellation
+When a customer cancels, the account remains active through the end of the billing cycle: Business Numbers continue routing, SMS continues functioning, Extensions continue functioning, and Users retain access. Cancellation does not immediately disable service.
+End Of Billing Cycle
+At billing expiration, Business Numbers stop routing, SMS stops functioning, User access is disabled, and data is retained during the recovery period.
+Deletion
+Deleting a business requires confirmation. (Future MFA confirmation may be supported.) Deletion is a soft delete; the business enters a 30-Day Recovery Window.
+Recovery Window
+During recovery, the business may be restored. Restoration restores Business Numbers, Extensions, Routing, Greetings, SMS, Users, Devices, Integrations, and Audit History. No reconfiguration is required.
+Permanent Deletion
+After the recovery period expires, business data becomes eligible for permanent deletion. Legal preservation requirements may override deletion.
+Number Protection
+Business Numbers are never immediately released; the recovery period always applies first.
+Historical Records
+Deleted businesses retain Calls, Voicemails, SMS, Recordings, and Audit History throughout the recovery period.
+Audit Log
+Recorded: Business Cancelled, Business Restored, Business Deleted.
+Future Enhancements
+Not V1: Export Before Deletion, Compliance Retention Overrides, Self-Service Legal Hold.
+Feature: Billing & Plan Enforcement
+Purpose
+Defines system behavior when customers reach plan limits or attempt to use unavailable features. This section defines system behavior; it does not define pricing.
+Upgrade Required
+When a customer attempts to use a feature unavailable on their current plan, JOEL displays “Upgrade Required” with an explanation.
+Example: On Lite, attempting to add a SIP Phone responds “Upgrade To Grow.” On Grow, attempting to add a Webhook responds “Upgrade To Max.”
+Add-Ons
+Supported add-ons: Additional Numbers, and SIP Phones (Grow and above). Add-ons do not require plan upgrades. Additional Business Numbers may be purchased without changing plans; number purchases remain separate from plan upgrades.
+SIP Phone Add-On Behavior
+SIP Phone functionality is available only on qualifying plans. Attempting to add a SIP Phone on an unsupported plan displays “Upgrade Required.”
+Upgrades
+Upgrades are immediate and prorated.
+Downgrades
+Downgrades are effective at next renewal and do not immediately disable existing functionality.
+Downgrade Warning
+Before a downgrade, the customer sees Features Lost, Disabled Integrations, Recording Changes, and Permission Changes. Confirmation is required.
+Plan Limits
+When a customer reaches a plan limit, JOEL displays Upgrade Plan. There are no hidden overages and no surprise billing.
+Existing Features
+Features already configured continue functioning until a downgrade becomes effective. No mid-cycle feature removal occurs.
+Add-On Removal
+Removing an add-on (example: an Additional Number) takes effect at the end of the billing cycle. The customer receives a warning before removal.
+Audit Log
+Recorded: Plan Changed, Upgrade, Downgrade, Add-On Purchased, Add-On Removed.
+Future Enhancements
+Not V1: Usage-Based Billing, Overage Billing, Automatic Plan Recommendations, AI Cost Optimization.
+Feature: Error States & Recovery
+Purpose
+Ensure failures are understandable, recoverable, and human-readable. Customers should never see telecom terminology.
+Error Philosophy
+Customer-facing messages replace telecom terminology with plain language.
+Example: Instead of “SIP Registration Failed,” show “Your desk phone is offline.” Instead of “Carrier Provisioning Error,” show “We couldn’t purchase that number. Please try another number.”
+(The customer-facing phrase “desk phone” is intentional plain language; the product term for the device remains SIP Phone.)
+Number Purchase Failure
+The customer may Retry or Select Another Number. No telecom details are exposed.
+Port Failure
+The customer sees “Additional Information Required” or “Carrier Rejected Request,” with next steps.
+Slack Failure
+Retried automatically. If failures persist, “Slack Connection Needs Attention.”
+Webhook Failure
+Retried automatically. Failures are logged. If failures continue, the webhook is marked “Needs Attention.”
+Device Failure
+A plain-language message such as “Desk Phone Offline” is shown instead of SIP terminology.
+Recording Failure
+Calls continue. Communication never fails because recording failed.
+Transcript Failure
+The call and voicemail remain available. The transcript is marked “Unavailable” and the user may retry later.
+SMS Failure
+The conversation remains visible. Failed messages are clearly marked, and the user may retry.
+Search Failure
+If search indexing is unavailable, users receive “Search Temporarily Unavailable.” Core communication functions continue operating.
+Recovery Philosophy
+Whenever possible, JOEL preserves communication, preserves data, retries automatically, and explains clearly.
+Future Enhancements
+Not V1: Advanced Diagnostics, AI Recovery Suggestions, Automated Carrier Escalation.
+Feature: Legal Preservation & Compliance Holds
+Purpose
+Allow legal and regulatory requirements to override standard retention and deletion behavior.
+Legal Preservation Sources
+Examples: Court Orders, Search Warrants, Subpoenas, Regulatory Requests, Legal Holds.
+Effect
+When legal preservation is active, normal retention policies may be suspended. Affected data may include Calls, Recordings, Voicemails, SMS, Audit Logs, and Account Data.
+Customer Deletion Requests
+Customer deletion requests do not override active legal preservation requirements.
+Product Rule
+Retention policies define normal behavior. Legal preservation requirements supersede retention policies when legally required.
+Scope
+Legal preservation may apply to an entire business, an individual Business Number, an individual Extension, a specific date range, or specific records, depending on legal requirements.
+Audit Log
+Recorded where legally permitted: Legal Hold Applied, Legal Hold Removed.
+Future Enhancements
+Not V1: Self-Service Legal Hold, Legal Hold Reporting, Compliance Export Packages, Regulatory Templates.
+Future Enhancements / Parking Lot
+The following items are intentionally excluded from JOEL v1.
+CRM
+Contact Management, Lead Management, Opportunity Tracking.
+Ticketing
+Open Status, Closed Status, Ticket Ownership, Escalations.
+Campaign SMS
+Marketing Broadcasts, Drip Campaigns, Mass Messaging.
+Workflow Automation
+Trigger-Based Actions, Conditional Routing, Multi-Step Workflows.
+AI Receptionist
+AI Answering Calls, AI Qualification, AI Scheduling.
+Advanced Telephony
+Call Queues, Ring Groups, Skill-Based Routing, Agent Availability.
+Advanced Search
+Semantic Search, Natural Language Search, AI Search Summaries.
+Advanced Compliance
+HIPAA Packages, SOC2 Packages, Compliance Exports.
+Future Device Types
+Softphones, Shared Device Pools, Hot Desking.
+Future Integrations
+HubSpot, Salesforce, Zapier, Teams, Practice Management Systems.
+Closing Principle
+JOEL v1 remains a business phone system that manages itself. The system prioritizes Simplicity, Reliability, Speed, and Low Administrative Overhead over feature complexity.
+Appendix: Change Log
+Version: JOEL Product Rules v1
+Final Editorial Pass
+A document-wide editorial pass was completed for internal consistency and engineering readability. No product decisions were changed; no features were added.
+Duplicate Content Removed
+Removed the duplicated sentence “Blocking only affects future communication,” which previously appeared in both the Shared SMS Inbox section and the Users section; it now appears once under Shared SMS Inbox / Blocked Numbers.
+Removed the duplicated “Confirmation required” that previously appeared at the end of Billing’s Downgrade Warning and again at the start of the Plan Limits content; it now appears once.
+Consolidated routing content (Ring All At Once, Ring One At A Time, Fallback Behavior, Loop Prevention) into the single Routing feature; the Outbound Calling duplication was removed.
+Consolidated Call Screening (previously duplicated across Destinations and the SIP Phone material) into Destinations.
+Consolidated Caller ID permission examples and Notifications descriptions that were repeated across multiple sections.
+Validation Rules Expansion
+The Validation Rules section was expanded and organized by object — Extensions, Business Numbers, Users, Destinations, Routing, and Integrations — consolidating constraints already implied throughout the document. No new constraints were invented.
+Permissions Matrix Added
+A consolidated Permissions Matrix table was added covering Buy/Delete/Port Number, Create/Delete Extension, Configure Routing, Configure Voicemail, View Calls/Voicemails/Recordings, Place Outbound Calls, Manage Devices, Invite/Remove Users, Configure Integrations, View Audit Log, Access Shared Inbox, and Billing Access, across Owner, Admin, and User roles.
+Web Application Section Expanded
+The Web Application section was expanded into subsections (Dashboard, Inbox, Calls, Voicemails, Numbers, Extensions, Devices, Users, Integrations, Audit Log, Billing), describing purpose and permissions only.
+Terminology Normalization
+Standardized terminology across the document: Mobile Application (formerly also “Mobile App”), SIP Phone (formerly also “SIP Desk Phone”), Shared SMS Inbox (formerly also “Shared Inbox”), Business Number, Extension, Operator, Directory, and Text-To-Voice Name. The greeting creation method is referred to consistently as AI-Generated Audio. Voicemail greetings are referred to consistently as Voicemail Greeting and After-Hours Voicemail Greeting.
+Contradiction Audit Summary
+Retention vs. deletion: clarified that manual deletion removes Audio, Transcript, and Summary, whereas retention expiry removes only Audio and retains Transcript, Summary, and Metadata. These are distinct triggers, stated consistently for Voicemail and Call Recording.
+Ownership model: reaffirmed that Extensions own Routing, Voicemail, Notifications, and Recordings; Business Numbers are entry points; and SMS belongs to the business. Duplicated ownership statements were consolidated.
+Mobile Application capabilities: unified the supported and unsupported function lists, which previously appeared with minor wording differences.
+Billing access scope: resolved to Owner-only, consistent with the Admin role definition, which enumerates operational areas and does not include Billing.
+Version 1.0 — Final Publication
+Document promoted to STATUS: FINAL, Version 1.0, and reconciled against the JOEL Domain Model v1.1 (FROZEN).
+Feature: Call Recording was relocated to sit alongside Voicemail and Notifications.
+Added the document status header and the CANONICAL TRUTH footer.
+Added an Executive Summary and a Table of Contents.
+Incorporated two canonical statements from the frozen Domain Model: every account automatically receives Extension 0 (Operator), and hybrid routing is not exposed in V1.
+Final Contradiction Audit (against Domain Model v1.1)
+Ownership, permissions, routing, retention, notification, numbering, and lifecycle rules were checked against the frozen Domain Model. No conflicts requiring a behavioral change were found. Confirmations:
+Ownership: Extensions own Routing, Voicemail, Notifications, and Recordings; Business Numbers are entry points; SMS belongs to the business.
+Permissions: Owner, Admin, and User roles are Extension-based; Inbox permissions are separate.
+Numbering: 0 = Operator (always present), 1–8 standard, 9 = Directory, 100+ additional; single-digit Extensions are real Extensions with no shortcut layer.
+Routing: Ring All At Once and Ring One At A Time only; hybrid routing is not exposed in V1.
+Retention: manual deletion removes Audio, Transcript, and Summary; retention expiry removes Audio only and retains Transcript, Summary, and Metadata; legal preservation supersedes retention.
+Notifications: Missed Call, Voicemail, Transcript, and Summary are Extension events; New SMS is a Shared SMS Inbox event.
+Lifecycle: Active, Cancelled, Deleted, and Restored states with a 30-day recovery window.
+Version 1.0 — Final Complete
+Added Feature: Calls and Feature: Call Transfers, drawn entirely from behavior already defined in this document and the frozen Domain Model v1.1. No new product behavior was introduced.
+Feature: Calls consolidates inbound/outbound handling, call ownership, history, missed calls, metadata, search, permissions, notifications, and audit treatment that were previously defined across Extensions, Business Numbers, Routing, Notifications, Recording, Search, and Audit Log.
+Feature: Call Transfers documents blind-transfer behavior implied by Routing (Forward To Extension), Destinations, Voicemail ownership, and Permissions. Attended, warm, and consultative transfers are explicitly not part of V1.
+Corrected Table of Contents page numbers to account for the length of the Table of Contents itself.
+Final Contradiction Audit — Complete (Domain Model v1.1 and Product Rules v1)
+The two new sections were checked against the frozen Domain Model and the existing Product Rules. No contradictions were found.
+Ownership: Calls belong to the Extension that handles them; this matches “every inbound and outbound call ultimately belongs to an Extension” and the Domain Model’s Calls associations (Business, Number, Extension inbound; Business, Extension, Caller ID, Device/User outbound). No conflict.
+Transfers: Implemented only as blind transfer via Forward To Extension; recording continues across transfers; transferred calls terminate at the final Extension’s voicemail. This matches Routing, Call Recording, and Voicemail ownership. No conflict.
+Disabled and deleted Extensions cannot be transfer targets, consistent with Disabled Destinations behavior, Directory exclusion, and “broken menu entries are never left behind.” Historical records remain searchable. No conflict.
+Permissions: Call and transfer access inherit from Extension access; no separate per-call or per-transfer permission exists, consistent with “No separate per-feature permissions exist in V1.” No conflict.
+Confirmations
+No contradictions remain across Domain Model v1.1 and Product Rules v1.
+No missing ownership rules remain. Calls now have an explicit ownership rule; Business Numbers, Extensions, Voicemail, Recordings, SMS, and Notifications ownership are all defined.
+No missing lifecycle rules remain. Business, Business Number, Extension, Device, and SMS-conversation lifecycles are all defined.
+No missing permission rules remain. The Permissions Matrix plus per-feature permission statements (including Calls and Call Transfers) cover all defined capabilities; Billing Access remains Owner-only.

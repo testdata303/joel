@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOEL · Users &amp; roles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/joel-app.css">
+<link rel="stylesheet" href="assets/settings-sections.css">
+<style>
+  .scroll{flex:1;min-height:0;overflow:auto;}
+  .um-wrap{max-width:740px;margin:0 auto;padding:30px 30px 90px;}
+  .um-back{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:14px;}
+  .um-back svg{width:15px;height:15px;}
+  .um-back:hover{color:var(--ink);}
+
+  /* ---- people list ---- */
+  .ulist{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-card);overflow:hidden;}
+  .uitem{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 18px;border-top:1px solid var(--line-soft);transition:background .14s;}
+  .uitem:first-child{border-top:none;}
+  .uitem:hover{background:#fbfbfc;}
+  .uitem.pending{opacity:.7;}
+  .uitem .avatar{width:42px;height:42px;font-size:.95rem;flex-shrink:0;}
+  .uitem-body{flex:1;min-width:0;}
+  .uitem-top{display:flex;align-items:center;gap:9px;}
+  .uitem-top b{font-weight:700;font-size:.96rem;color:var(--ink);white-space:nowrap;}
+  .uitem-sum{font-size:.83rem;color:var(--body);margin-top:3px;}
+  .uitem-sum .dot{color:var(--line);margin:0 7px;}
+  .uitem-chev{color:var(--muted);flex-shrink:0;}
+  .uitem-chev svg{width:18px;height:18px;}
+
+  .role-pill{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:800;letter-spacing:.02em;padding:3px 9px;border-radius:7px;border:1px solid transparent;white-space:nowrap;}
+  .role-pill svg{width:12px;height:12px;}
+  .role-owner{background:#eef1ff;color:var(--blue);}
+  .role-admin{background:#f1ecfe;color:var(--ai);}
+  .role-user{background:var(--bg-alt);color:var(--body);border-color:var(--line);}
+  .role-custom{background:#fff6e6;color:var(--amber);border-color:#f3dca6;}
+
+  .uadd{display:flex;align-items:center;gap:11px;padding:15px 18px;border-top:1px dashed var(--line);color:var(--blue);font-weight:700;font-size:.9rem;width:100%;white-space:nowrap;}
+  .uadd:hover{background:var(--blue-soft);}
+  .uadd .plus{width:30px;height:30px;border-radius:50%;background:var(--blue-soft);display:grid;place-items:center;}
+  .uadd .plus svg{width:17px;height:17px;}
+
+  .um-foot{font-size:.82rem;color:var(--muted);line-height:1.55;margin:16px 2px 0;display:flex;gap:9px;align-items:flex-start;}
+  .um-foot svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;}
+  .um-foot b{color:var(--ink);font-weight:700;}
+
+  /* ---- per-user detail ---- */
+  .ud-id{display:flex;align-items:center;gap:15px;margin-bottom:8px;}
+  .ud-id .avatar{width:52px;height:52px;font-size:1.15rem;flex-shrink:0;}
+  .ud-id-tx{flex:1;min-width:0;}
+  .ud-id-name{display:flex;align-items:center;gap:10px;}
+  .ud-id-name h1{font-size:1.4rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);}
+  .ud-id-email{font-size:.88rem;color:var(--muted);margin-top:2px;}
+
+  .ud-sec-h{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:26px 2px 11px;}
+  .ud-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-card);overflow:hidden;}
+  .ud-card.pad{padding:18px 20px;}
+
+  /* role chooser */
+  .ud-roles{display:flex;gap:9px;flex-wrap:wrap;}
+  .ud-role{display:flex;flex-direction:column;gap:3px;flex:1;min-width:150px;padding:13px 15px;border:1.5px solid var(--line);border-radius:13px;text-align:left;transition:border-color .14s,background .14s;}
+  .ud-role:hover{border-color:#cdd2db;}
+  .ud-role.on{border-color:var(--blue);background:var(--blue-soft);}
+  .ud-role-top{display:flex;align-items:center;gap:8px;}
+  .ud-role-top svg{width:15px;height:15px;color:var(--body);}
+  .ud-role.on .ud-role-top svg{color:var(--blue);}
+  .ud-role b{font-size:.92rem;font-weight:700;color:var(--ink);}
+  .ud-role.on b{color:var(--blue);}
+  .ud-role span{font-size:.78rem;color:var(--muted);line-height:1.4;}
+  .ud-role .ck{margin-left:auto;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:transparent;}
+  .ud-role.on .ck{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .ud-role .ck svg{width:12px;height:12px;}
+
+  /* extension access */
+  .seg{display:inline-flex;background:var(--bg-alt);border:1px solid var(--line);border-radius:11px;padding:3px;gap:3px;margin-bottom:14px;}
+  .seg button{padding:8px 16px;border-radius:8px;font-weight:700;font-size:.85rem;color:var(--muted);}
+  .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-card);}
+  .seg button:disabled{opacity:.5;}
+  .ud-extlist{display:flex;flex-direction:column;gap:8px;}
+  .ud-ext{display:flex;align-items:center;gap:13px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;text-align:left;transition:border-color .14s,background .14s;}
+  .ud-ext:hover{border-color:#cdd2db;}
+  .ud-ext.on{border-color:var(--blue);background:var(--blue-soft);}
+  .ud-ext.locked{opacity:.7;cursor:default;}
+  .ud-extkey{width:30px;height:30px;border-radius:8px;background:var(--bg-alt);color:var(--body);font-weight:800;font-size:.85rem;display:grid;place-items:center;flex-shrink:0;}
+  .ud-ext.on .ud-extkey{background:#fff;color:var(--blue);}
+  .ud-extnm{flex:1;}
+  .ud-extnm b{font-size:.9rem;font-weight:700;color:var(--ink);}
+  .ud-extnm span{display:block;font-size:.76rem;color:var(--muted);}
+  .ud-extck{width:24px;height:24px;border-radius:7px;border:1.5px solid var(--line);display:grid;place-items:center;color:transparent;flex-shrink:0;}
+  .ud-ext.on .ud-extck{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .ud-extck svg{width:15px;height:15px;}
+  .ud-allnote{font-size:.84rem;color:var(--body);display:flex;align-items:center;gap:9px;}
+  .ud-allnote svg{width:16px;height:16px;color:var(--blue);}
+
+  /* permissions */
+  .perm{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border-top:1px solid var(--line-soft);}
+  .perm:first-child{border-top:none;}
+  .perm-ic{width:36px;height:36px;border-radius:10px;background:var(--bg-alt);color:var(--body);display:grid;place-items:center;flex-shrink:0;}
+  .perm-ic svg{width:18px;height:18px;}
+  .perm-tx{flex:1;min-width:0;}
+  .perm-tx b{font-weight:700;font-size:.92rem;color:var(--ink);}
+  .perm-tx p{font-size:.82rem;color:var(--body);line-height:1.45;margin-top:2px;}
+  .perm-trail{flex-shrink:0;padding-top:2px;}
+  .perm-lock{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:800;color:var(--blue);background:var(--blue-soft);padding:5px 10px;border-radius:8px;}
+  .perm-lock svg{width:12px;height:12px;}
+
+  .ud-danger{display:flex;align-items:center;gap:14px;margin-top:26px;padding:16px 20px;border:1px solid var(--line);border-radius:14px;background:#fff;}
+  .ud-danger-tx{flex:1;}
+  .ud-danger-tx b{font-weight:700;font-size:.9rem;color:var(--ink);}
+  .ud-danger-tx p{font-size:.8rem;color:var(--muted);margin-top:2px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#2540ee">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2540ee"/>
+    <g transform="translate(600 350)" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="-40" r="46"/>
+      <path d="M-78 96 a78 78 0 0 1 156 0"/>
+    </g>
+    <text x="600" y="560" text-anchor="middle" font-family="Archivo Black, Arial Black, sans-serif" font-size="92" letter-spacing="4" fill="#ffffff">USERS</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="app/ui.jsx"></script>
+
+<script type="text/babel">
+const { Icon, Toggle, Avatar } = window;
+const { useState } = React;
+
+const EXTS = [
+  { id:'e0', num:0, name:'Operator', shared:true },
+  { id:'e1', num:1, name:'Sales' },
+  { id:'e2', num:2, name:'Support' },
+  { id:'e3', num:3, name:'Billing' },
+  { id:'e101', num:101, name:'Bob Smith' },
+];
+const ROSTER = EXTS.filter(e=>!e.shared);
+
+/* add-on permissions a USER can be granted (an Admin always has them all) */
+const PERMS = [
+  { key:'inbox',        icon:'inbox',   label:'Shared text inbox', desc:'Read and reply in the business text inbox.' },
+  { key:'reports',      icon:'sliders', label:'Reports & analytics', desc:'View call and message reports.' },
+  { key:'integrations', icon:'layers',  label:'Integrations', desc:'Connect and manage Slack, WhatsApp, and webhooks.' },
+];
+const PERM_SHORT = { inbox:'Inbox', reports:'Reports', integrations:'Integrations' };
+
+const ROLE_META = {
+  owner: { label:'Owner', cls:'role-owner', icon:'shield', desc:'Full access including billing. Exactly one — can’t be removed.' },
+  admin: { label:'Admin', cls:'role-admin', icon:'shield', desc:'Runs the whole system — every extension, all permissions, settings, and users.' },
+  user:  { label:'User',  cls:'role-user',  icon:'user',   desc:'Works only the extensions you assign. Grant extra permissions below.' },
+};
+
+const SEED = [
+  { id:'u1', name:'Bob Stevens', email:'bob@smilebar.co', role:'owner', scope:'all', exts:[], perms:{} },
+  { id:'u2', name:'Mara Lopez',  email:'mara@smilebar.co', role:'admin', scope:'all', exts:[], perms:{} },
+  { id:'u3', name:'Jane Cho',    email:'jane@smilebar.co', role:'user', scope:'some', exts:['e1','e2'], perms:{ inbox:true, reports:true, integrations:false } },
+  { id:'u4', name:'Dev Patel',   email:'dev@smilebar.co', role:'user', pending:true, scope:'some', exts:['e3'], perms:{} },
+];
+
+function detectRole(u){ return u.role; }
+function extSummary(u){
+  if(u.scope==='all') return 'All extensions';
+  const list = u.exts.map(id=>ROSTER.find(e=>e.id===id)).filter(Boolean);
+  if(list.length===0) return 'No extensions';
+  const labels = list.map(e=>`Ext. ${e.num} ${e.name}`);
+  if(labels.length<=2) return labels.join(', ');
+  return `${labels.slice(0,2).join(', ')} +${labels.length-2}`;
+}
+function permSummary(u){
+  if(u.role==='owner'||u.role==='admin') return 'Full access';
+  const on = PERMS.filter(p=>u.perms[p.key]);
+  if(on.length===0) return 'No added permissions';
+  return on.map(p=>PERM_SHORT[p.key]).join(', ');
+}
+
+function RoleTag({ role }){
+  const m=ROLE_META[role];
+  return <span className={`role-pill ${m.cls}`}><Icon name={m.icon}/>{m.label}</span>;
+}
+
+/* ---------- LIST ---------- */
+function UsersList({ users, onOpen }){
+  return (
+    <div className="um-wrap">
+      <div className="set-head">
+        <h1 className="set-title">Users &amp; roles</h1>
+        <p className="set-sub">Who can sign in, which extensions they see, and what they can manage. Select a person to set their access.</p>
+      </div>
+      <div className="ulist">
+        {users.map(u=>(
+          <button key={u.id} className={`uitem${u.pending?' pending':''}`} onClick={()=>onOpen(u.id)}>
+            <Avatar name={u.name}/>
+            <div className="uitem-body">
+              <div className="uitem-top">
+                <b>{u.name}</b>
+                <RoleTag role={detectRole(u)}/>
+                {u.pending && <span className="pill ext">Invite sent</span>}
+              </div>
+              <div className="uitem-sum">{extSummary(u)}<span className="dot">•</span>{permSummary(u)}</div>
+            </div>
+            <span className="uitem-chev"><Icon name="chevright"/></span>
+          </button>
+        ))}
+        <button className="uadd"><span className="plus"><Icon name="plus"/></span> Invite a teammate</button>
+      </div>
+      <p className="um-foot"><Icon name="info"/><span>JOEL still rings your phones whether or not anyone has an account. Accounts only control who can sign in and what they can see or change. There’s always exactly one <b>Owner</b> — full access including billing, can’t be removed.</span></p>
+    </div>
+  );
+}
+
+/* ---------- DETAIL ---------- */
+function UserDetail({ user, onBack, onChange }){
+  const u = user;
+  const role = detectRole(u);
+  const setScope=(scope)=>onChange({ ...u, scope, exts: scope==='all'?[]:u.exts });
+  const toggleExt=(id)=>{ const has=u.exts.includes(id); onChange({ ...u, scope:'some', exts: has?u.exts.filter(x=>x!==id):[...u.exts,id] }); };
+  const togglePerm=(key)=>onChange({ ...u, perms:{...u.perms,[key]:!u.perms[key]} });
+  const applyRole=(r)=>{
+    if(r==='admin') onChange({ ...u, role:'admin', scope:'all', exts:[] });
+    else onChange({ ...u, role:'user' });
+  };
+  const locked = u.role==='owner';
+
+  return (
+    <div className="um-wrap">
+      <button className="um-back" onClick={onBack}><Icon name="arrowleft"/> Users &amp; roles</button>
+
+      <div className="ud-id">
+        <Avatar name={u.name}/>
+        <div className="ud-id-tx">
+          <div className="ud-id-name"><h1>{u.name}</h1><RoleTag role={role}/>{u.pending && <span className="pill ext">Invite sent</span>}</div>
+          <div className="ud-id-email">{u.email}</div>
+        </div>
+      </div>
+
+      {locked ? (
+        <div className="ud-card pad" style={{display:'flex',gap:13,alignItems:'flex-start',marginTop:18}}>
+          <span className="perm-ic" style={{background:'var(--blue-soft)',color:'var(--blue)'}}><Icon name="shield"/></span>
+          <div><b style={{fontWeight:700,fontSize:'.95rem'}}>This person owns the workspace</b>
+          <p style={{fontSize:'.85rem',color:'var(--body)',marginTop:3,lineHeight:1.5}}>The Owner has every extension and permission, including billing. To change who has it, use <b>Transfer ownership</b>.</p></div>
+        </div>
+      ) : (
+        <>
+          <div className="ud-sec-h">Role</div>
+          <div className="ud-card pad">
+            <div className="ud-roles">
+              {['admin','user'].map(r=>{ const m=ROLE_META[r]; const on=role===r; return (
+                <button key={r} className={`ud-role${on?' on':''}`} onClick={()=>applyRole(r)}>
+                  <span className="ud-role-top"><Icon name={m.icon}/><b>{m.label}</b><span className="ck">{on && <Icon name="check" sw={3}/>}</span></span>
+                  <span>{m.desc}</span>
+                </button>
+              ); })}
+            </div>
+          </div>
+
+          {role==='admin' ? (
+            <div className="ud-card pad" style={{display:'flex',gap:13,alignItems:'flex-start',marginTop:14}}>
+              <span className="perm-ic" style={{background:'#f1ecfe',color:'var(--ai)'}}><Icon name="shield"/></span>
+              <div><b style={{fontWeight:700,fontSize:'.95rem'}}>Admins have full access</b>
+              <p style={{fontSize:'.85rem',color:'var(--body)',marginTop:3,lineHeight:1.5}}>Every extension, all permissions, and system settings — nothing to configure here. Switch to <b>User</b> to limit what they can see and do.</p></div>
+            </div>
+          ) : (<>
+          <div className="ud-sec-h">Extension access</div>
+          <div className="ud-card pad">
+            <div className="seg">
+              <button className={u.scope==='all'?'on':''} onClick={()=>setScope('all')}>All extensions</button>
+              <button className={u.scope!=='all'?'on':''} onClick={()=>setScope('some')}>Choose extensions</button>
+            </div>
+            {u.scope==='all' ? (
+              <div className="ud-allnote"><Icon name="check"/>Sees every extension now — and any added later.</div>
+            ) : (
+              <div className="ud-extlist">
+                {ROSTER.map(e=>{ const on=u.exts.includes(e.id); return (
+                  <button key={e.id} className={`ud-ext${on?' on':''}`} onClick={()=>toggleExt(e.id)}>
+                    <span className="ud-extkey">{e.num}</span>
+                    <span className="ud-extnm"><b>{e.name}</b><span>Ext. {e.num}</span></span>
+                    <span className="ud-extck">{on && <Icon name="check" sw={3}/>}</span>
+                  </button>
+                ); })}
+                <div className="ud-allnote" style={{color:'var(--muted)',marginTop:4}}><Icon name="info" style={{color:'var(--muted)'}}/>The Operator (0) is shared with everyone.</div>
+              </div>
+            )}
+          </div>
+
+          <div className="ud-sec-h">Permissions <span style={{textTransform:'none',letterSpacing:0,fontWeight:600,color:'var(--muted)'}}>— on top of their extensions</span></div>
+          <div className="ud-card">
+            {PERMS.map(p=>(
+              <div className="perm" key={p.key}>
+                <span className="perm-ic"><Icon name={p.icon}/></span>
+                <div className="perm-tx"><b>{p.label}</b><p>{p.desc}</p></div>
+                <div className="perm-trail"><Toggle on={!!u.perms[p.key]} onChange={()=>togglePerm(p.key)}/></div>
+              </div>
+            ))}
+          </div>
+          </>)}
+
+          <div className="ud-danger">
+            <span className="perm-ic" style={{background:'var(--bg-alt)'}}><Icon name="shield"/></span>
+            <div className="ud-danger-tx"><b>Make this person the Owner</b><p>Transfers billing and full control. You become an Admin.</p></div>
+            <button className="btn btn-secondary sm">Transfer ownership</button>
+          </div>
+          <div className="ud-danger" style={{marginTop:10}}>
+            <span className="perm-ic" style={{background:'var(--red-soft)',color:'var(--red)'}}><Icon name="trash"/></span>
+            <div className="ud-danger-tx"><b>{u.pending?'Cancel invite':'Remove from workspace'}</b><p>{u.pending?'They won’t be able to join.':'They lose access immediately. Your phones keep ringing.'}</p></div>
+            <button className="btn btn-secondary sm" style={{color:'var(--red)'}}>{u.pending?'Cancel invite':'Remove'}</button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function UsersScreen(){
+  const [users,setUsers]=useState(SEED);
+  const [openId,setOpenId]=useState(null);
+  const open = users.find(u=>u.id===openId);
+  const update=(nu)=>setUsers(us=>us.map(u=>u.id===nu.id?nu:u));
+  return open
+    ? <UserDetail user={open} onBack={()=>setOpenId(null)} onChange={update}/>
+    : <UsersList users={users} onOpen={setOpenId}/>;
+}
+
+/* ---------- static shell (matches the real app's nav) ---------- */
+const NAV = [
+  { icon:'phone', label:'Calls & Voicemails', badge:3 },
+  { icon:'message', label:'Texts' },
+];
+const SYS = [
+  { icon:'hashnum', label:'Your Numbers' },
+  { icon:'route', label:'Call Flow' },
+  { icon:'layers', label:'Integrations' },
+  { icon:'settings', label:'Settings', active:true },
+  { icon:'card', label:'Billing' },
+];
+
+function Shell(){
+  return (
+    <div className="app">
+      <aside className="sidebar">
+        <div className="sb-top">
+          <div className="sb-brand"><span className="sb-word">JOEL</span></div>
+          <button className="switcher">
+            <span className="biz-tile">S</span>
+            <span className="biz-name">Smilebar</span>
+            <span className="chev"><Icon name="chevdown" style={{width:16,height:16}}/></span>
+          </button>
+        </div>
+        <nav className="sb-nav">
+          {NAV.map(n=>(
+            <button key={n.label} className="sb-item">
+              <Icon name={n.icon}/>{n.label}{n.badge && <span className="badge">{n.badge}</span>}
+            </button>
+          ))}
+          <div className="sb-group">System</div>
+          {SYS.map(n=>(
+            <button key={n.label} className={`sb-item${n.active?' active':''}`}>
+              <Icon name={n.icon}/>{n.label}
+            </button>
+          ))}
+        </nav>
+      </aside>
+      <div className="main">
+        <header className="topbar">
+          <button className="search">
+            <Icon name="search" style={{width:17,height:17}}/>
+            <input placeholder="Search calls, voicemails, messages…" readOnly/>
+            <span className="kbd">⌘K</span>
+          </button>
+          <div className="top-actions">
+            <button className="icon-btn"><Icon name="bell" style={{width:19,height:19}}/><span className="dot"/></button>
+            <button className="acct">
+              <Avatar name="Bob Stevens"/>
+              <span className="acct-who"><b>Bob Stevens</b><span>Owner</span></span>
+              <Icon name="chevdown" style={{width:15,height:15,color:'var(--muted)'}}/>
+            </button>
+          </div>
+        </header>
+        <div className="scroll">
+          <UsersScreen/>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Shell/>);
+</script>
+</body>
+</html>

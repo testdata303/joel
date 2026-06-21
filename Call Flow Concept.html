@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOEL · Call Flow Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/joel-app.css">
+<link rel="stylesheet" href="assets/call-flow.css">
+</head>
+<body>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#2540ee">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2540ee"/>
+    <g stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round">
+      <path d="M600 250v90 M600 340h-180v60 M600 340h180v60"/>
+    </g>
+    <g fill="#ffffff">
+      <rect x="540" y="170" width="120" height="84" rx="20"/>
+      <rect x="360" y="406" width="120" height="84" rx="20"/>
+      <rect x="720" y="406" width="120" height="84" rx="20"/>
+    </g>
+    <text x="600" y="610" text-anchor="middle" font-family="Archivo Black, Arial Black, sans-serif" font-weight="900" font-size="96" letter-spacing="5" fill="#ffffff">JOEL</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="app/ui.jsx"></script>
+<script type="text/babel" src="app/tweaks-panel.jsx"></script>
+<script type="text/babel" src="app/flow-model.jsx"></script>
+<script type="text/babel" src="app/flow-canvas.jsx"></script>
+<script type="text/babel" src="app/flow-tree.jsx"></script>
+<script type="text/babel" src="app/flow-inspector.jsx"></script>
+<script type="text/babel" src="app/flow-shell.jsx"></script>
+<script type="text/babel" src="app/flow-app.jsx"></script>
+</body>
+</html>

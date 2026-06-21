@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Phone System with Slack Notifications | JOEL</title>
+<meta name="description" content="JOEL is a small-business phone system with one number, simple call routing, shared texts, voicemail transcripts, and Slack notifications for missed calls, texts, and voicemails.">
+<link rel="canonical" href="/phone-system-with-slack">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#101012;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
+    --accent:#2540ee;--accent-dark:#1b32c4;--accent-soft:#eef1ff;
+    --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
+    --slack:#4A154B;--slack-green:#2EB67D;--slack-blue:#36C5F0;--slack-red:#E01E5A;--slack-gold:#ECB22E;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--accent);color:#fff;padding:15px 26px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
+  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:14px 24px;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-lg{padding:17px 32px;font-size:1.05rem;}
+  .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
+  .btn-arrow:hover svg{transform:translateX(3px);}
+
+  /* header */
+  header.lp{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .logo{font-family:'Archivo Black',var(--sans);font-weight:900;font-size:2.1rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;-webkit-text-stroke:1px var(--ink);line-height:1;}
+  .hdr-right{display:flex;align-items:center;gap:18px;}
+  .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
+  .hdr-cta:hover{background:var(--accent-dark);}
+
+  /* hero */
+  .hero{padding:60px 0 68px;}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow .sl{width:15px;height:15px;display:block;}
+  .hero h1{font-weight:800;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.03em;margin-bottom:18px;text-wrap:balance;}
+  .hero h1 .u{color:var(--accent);}
+  .hero-sub{font-size:1.14rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:26px;font-weight:500;}
+  .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
+  .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .hero-bullets .ck svg{width:14px;height:14px;}
+
+  /* split mock: phone setup + slack */
+  .duo{display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);overflow:hidden;}
+  .duo-phone{padding:20px;}
+  .duo-cap{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+  .duo-cap .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block;}
+  .duo-greet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;color:var(--body);line-height:1.45;margin-bottom:12px;}
+  .duo-route{display:flex;align-items:center;gap:11px;padding:9px 0;}
+  .duo-route .k{width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.9rem;display:grid;place-items:center;flex-shrink:0;}
+  .duo-route b{font-size:.9rem;font-weight:700;}
+  .duo-route span{font-size:.8rem;color:var(--muted);font-weight:600;margin-left:auto;}
+  .duo-conn{display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:10px 20px;font-size:.74rem;font-weight:700;letter-spacing:.04em;}
+  .duo-conn svg{width:15px;height:15px;color:#8ea2ff;}
+  .duo-slack{background:var(--slack);padding:18px 20px;}
+  .duo-slack .ds-chan{color:rgba(255,255,255,.75);font-weight:700;font-size:.84rem;margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+  .duo-slack .ds-chan .h{opacity:.6;}
+  .ds-msg{display:flex;gap:10px;align-items:flex-start;padding:8px 0;}
+  .ds-ava{width:30px;height:30px;border-radius:7px;background:#fff;color:var(--ink);display:grid;place-items:center;flex-shrink:0;font-family:'Archivo Black',var(--sans);font-size:.56rem;}
+  .ds-tx{color:#fff;font-size:.84rem;line-height:1.4;}
+  .ds-tx b{font-weight:800;display:inline-flex;align-items:center;gap:6px;}
+  .ds-tx .pin{width:14px;height:14px;border-radius:4px;display:inline-grid;place-items:center;}
+  .ds-tx .pin svg{width:9px;height:9px;color:#fff;}
+  .ds-tx small{display:block;color:rgba(255,255,255,.72);font-weight:500;margin-top:2px;}
+  .slack-cap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.66rem;letter-spacing:.04em;color:rgba(255,255,255,.55);text-align:center;padding-top:12px;text-transform:uppercase;}
+
+  /* trust strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
+  .strip-inner{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;padding:20px 0;color:var(--body);font-weight:700;font-size:.95rem;}
+  .strip-inner span{display:inline-flex;align-items:center;gap:9px;}
+  .strip-inner svg{width:18px;height:18px;color:var(--accent);}
+
+  /* section shell */
+  section.block{padding:74px 0;}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 44px;}
+  .sec-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:balance;}
+  .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
+
+  /* what JOEL is */
+  .whatis{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .whatis-copy .sec-kicker{margin-bottom:12px;}
+  .whatis-copy h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;text-wrap:balance;}
+  .whatis-copy p{color:var(--body);font-size:1.08rem;line-height:1.6;max-width:46ch;}
+  .pillset{display:flex;flex-direction:column;gap:10px;}
+  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
+  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0;}
+  .pill .pic svg{width:18px;height:18px;}
+
+  /* problem */
+  .problem{background:var(--ink);color:#fff;}
+  .problem .sec-kicker{color:#8ea2ff;}
+  .problem .sec-head h2{color:#fff;}
+  .prob-copy{max-width:720px;margin:0 auto;text-align:center;}
+  .prob-copy p{font-size:1.16rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
+  .prob-copy b{color:#fff;font-weight:700;}
+
+  /* steps */
+  .steps-wrap{background:var(--soft);}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .step .sn{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1.05rem;display:grid;place-items:center;margin-bottom:14px;}
+  .step.slackstep .sn{background:var(--slack);}
+  .step h3{font-size:1rem;font-weight:800;margin-bottom:7px;line-height:1.2;}
+  .step p{color:var(--body);font-size:.9rem;line-height:1.5;}
+  .steps-note{text-align:center;max-width:620px;margin:32px auto 0;color:var(--body);font-size:1.02rem;font-weight:500;}
+  .steps-note b{color:var(--ink);font-weight:800;}
+
+  /* cards grid */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
+  .card .cic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;color:#fff;}
+  .card .cic svg{width:22px;height:22px;}
+  .cic.miss{background:var(--slack-red);} .cic.txt{background:var(--slack-green);} .cic.vm{background:var(--slack-blue);}
+  .card h3{font-size:1.16rem;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;}
+  .card p{color:var(--body);font-size:.96rem;line-height:1.55;}
+
+  /* example setup */
+  .setup-wrap{background:var(--soft);}
+  .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto;align-items:start;}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -50px rgba(16,16,18,.4);}
+  .panel-top{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;color:#fff;}
+  .panel-top.phone{background:var(--ink);}
+  .panel-top.slack{background:var(--slack);}
+  .panel-top b{font-size:.96rem;font-weight:700;}
+  .panel-top .tg{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;opacity:.7;}
+  .panel-body{padding:20px 22px;}
+  .pgreet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:.88rem;color:var(--body);line-height:1.5;font-style:italic;margin-bottom:16px;}
+  .prow{display:flex;align-items:center;gap:13px;padding:11px 0;border-top:1px solid var(--line);}
+  .prow:first-of-type{border-top:none;}
+  .prow .k{width:32px;height:32px;border-radius:9px;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;flex-shrink:0;}
+  .prow .k.zero{background:var(--ink);}
+  .prow .pl b{display:block;font-size:.94rem;font-weight:800;}
+  .prow .dest{margin-left:auto;font-weight:700;font-size:.86rem;color:var(--accent-dark);text-align:right;}
+  .srow{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);}
+  .srow:first-of-type{border-top:none;}
+  .srow .ev{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.92rem;}
+  .srow .ev .ic{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff;flex-shrink:0;}
+  .srow .ev .ic svg{width:13px;height:13px;}
+  .srow .chan{margin-left:auto;display:inline-flex;align-items:center;gap:4px;background:var(--slack);color:#fff;font-weight:700;font-size:.84rem;padding:5px 11px;border-radius:8px;}
+  .srow .chan .h{opacity:.6;}
+  .setup-foot{max-width:980px;margin:22px auto 0;text-align:center;color:var(--body);font-size:1rem;font-weight:500;}
+  .setup-foot b{color:var(--ink);font-weight:800;}
+
+  /* why different + comparison */
+  .compare-green{background:#eef9f1;border-top:1px solid #d3ecdc;border-bottom:1px solid #d3ecdc;}
+  .cmp{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;}
+  .cmp-row{display:grid;grid-template-columns:1fr 2fr;border-top:1px solid var(--line);}
+  .cmp-row:first-child{border-top:none;}
+  .cmp-row.head{background:var(--soft);}
+  .cmp-row>div{padding:20px 24px;}
+  .cmp-row .opt{font-weight:800;font-size:1.04rem;display:flex;align-items:center;gap:10px;}
+  .cmp-row.joel{background:var(--accent-soft);}
+  .cmp-row.joel .opt{color:var(--accent-dark);}
+  .cmp-row .desc{color:var(--body);font-size:.98rem;line-height:1.5;border-left:1px solid var(--line);}
+  .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
+  .cmp-row.joel .desc{border-left-color:#c9d2ff;}
+
+  /* not section */
+  .notband{background:var(--ink);color:#fff;}
+  .not-card{max-width:760px;margin:0 auto;text-align:center;}
+  .not-card .sec-kicker{color:#8ea2ff;}
+  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:#fff;text-wrap:balance;}
+  .not-card p{font-size:1.12rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
+  .not-card p b{color:#fff;font-weight:700;}
+
+  /* who for */
+  .whofor{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .whofor li{list-style:none;display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;font-weight:600;font-size:1rem;color:var(--ink);}
+  .whofor li .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .whofor li .ck svg{width:14px;height:14px;}
+
+  /* closer */
+  .closer{padding:20px 0 84px;}
+  .closer-card{background:linear-gradient(140deg,#2540ee,#1b32c4);border-radius:26px;padding:64px 48px;text-align:center;color:#fff;box-shadow:0 40px 80px -44px rgba(37,64,238,.6);}
+  .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:16px;text-wrap:balance;}
+  .closer-card p{font-size:1.18rem;line-height:1.55;color:rgba(255,255,255,.9);max-width:46ch;margin:0 auto 30px;font-weight:500;}
+  .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .closer-card .btn-primary{background:#fff;color:var(--accent-dark);box-shadow:none;}
+  .closer-card .btn-primary:hover{background:#eef1ff;}
+  .closer-card .btn-ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff;}
+  .closer-card .btn-ghost:hover{border-color:#fff;}
+
+  /* faq */
+  .faq{padding:0 0 84px;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .faq-q summary::-webkit-details-marker{display:none;}
+  .faq-q summary .ic{width:22px;height:22px;color:var(--accent);flex-shrink:0;transition:transform .2s;}
+  .faq-q[open] summary .ic{transform:rotate(45deg);}
+  .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 96px;}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;font-weight:600;}
+  .foot-inner a{color:var(--muted);text-decoration:none;}
+  .foot-inner a:hover{color:var(--ink);}
+
+  /* sticky mobile CTA */
+  .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
+  .sticky-cta a{flex:1;}
+  .sticky-cta .btn{width:100%;}
+
+  @media(max-width:980px){
+    .steps{grid-template-columns:repeat(2,1fr);}
+    .cards3{grid-template-columns:1fr;}
+  }
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero{padding:40px 0 48px;}
+    .hero-sub{max-width:none;}
+    .whatis{grid-template-columns:1fr;gap:32px;}
+    .setup-grid{grid-template-columns:1fr;}
+    .whofor{grid-template-columns:1fr;}
+    .strip-inner{gap:18px;font-size:.88rem;}
+    .sticky-cta{display:flex;}
+    .cmp-row{grid-template-columns:1fr;}
+    .cmp-row .desc{border-left:none;border-top:1px solid var(--line);}
+    .cmp-row.joel .desc{border-top-color:#c9d2ff;}
+    .cmp-row.head{display:none;}
+    footer{padding-bottom:96px;}
+  }
+  @media(max-width:560px){
+    .logo{font-size:1.8rem;}
+    .steps{grid-template-columns:1fr;}
+    .closer-card{padding:48px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="lp">
+  <div class="wrap lp-inner">
+    <a href="../index.html" class="logo">JOEL</a>
+    <div class="hdr-right">
+      <a href="../signup.html?plan=grow" class="hdr-cta">Get your number</a>
+    </div>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><svg class="sl" viewBox="0 0 24 24" fill="currentColor"><path d="M9 3a2 2 0 0 0 0 4h2V5a2 2 0 0 0-2-2zm0 6H3a2 2 0 1 0 0 4h6a2 2 0 0 0 0-4zm12 4a2 2 0 0 0 0-4h-2v2a2 2 0 0 0 2 2zm-6-10a2 2 0 0 0-2 2v6a2 2 0 1 0 4 0V5a2 2 0 0 0-2-2zm0 16a2 2 0 0 0 0-4h-2v2a2 2 0 0 0 2 2zm6-6h-6a2 2 0 1 0 0 4h6a2 2 0 0 0 0-4zM5 13a2 2 0 0 0 0 4 2 2 0 0 0 2-2v-2H5z"/></svg> Phone system with Slack notifications</span>
+      <h1>A phone system that keeps your team updated in <span class="u">Slack.</span></h1>
+      <p class="hero-sub">JOEL gives your business one number, a simple menu, call routing, shared texts, voicemail transcripts, and Slack notifications so missed calls and messages do not disappear in a separate phone app.</p>
+      <div class="hero-acts">
+        <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+      </div>
+      <ul class="hero-bullets">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>One business number for calls and texts</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Route calls to the right person or function</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Send missed calls, new texts, and voicemails to Slack</li>
+      </ul>
+    </div>
+
+    <!-- [PRODUCT SCREENSHOT: JOEL phone setup next to Slack notification] -->
+    <div class="duo reveal" role="img" aria-label="JOEL call routing setup connected to a Slack channel showing a missed call notification">
+      <div class="duo-phone">
+        <div class="duo-cap"><span class="dot"></span> JOEL · Call routing</div>
+        <div class="duo-greet">"Thanks for calling. Press 1 for sales, 2 for support, 3 for billing, or 0 for the office."</div>
+        <div class="duo-route"><span class="k">1</span><b>Sales</b><span>Owner + assistant</span></div>
+        <div class="duo-route"><span class="k">2</span><b>Support</b><span>Support lead</span></div>
+        <div class="duo-route"><span class="k">3</span><b>Billing</b><span>Finance contact</span></div>
+      </div>
+      <div class="duo-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Sends notifications to Slack</div>
+      <div class="duo-slack">
+        <div class="ds-chan"><span class="h">#</span> calls</div>
+        <div class="ds-msg">
+          <div class="ds-ava">JOEL</div>
+          <div class="ds-tx"><b><span class="pin" style="background:var(--slack-red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Missed call</b><small>From (713) 555-0142 on the Sales line. Nobody answered.</small></div>
+        </div>
+        <div class="ds-msg">
+          <div class="ds-ava">JOEL</div>
+          <div class="ds-tx"><b><span class="pin" style="background:var(--slack-blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> New voicemail</b><small>Transcript: "Calling about a quote, please call me back today."</small></div>
+        </div>
+        <div class="slack-cap">[ product screenshot: phone setup + Slack ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Built for small teams</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> One number for the business</span>
+  </div>
+</div>
+
+<!-- 2. WHAT JOEL IS -->
+<section class="block" data-screen-label="What JOEL is">
+  <div class="wrap whatis">
+    <div class="whatis-copy reveal">
+      <div class="sec-kicker">What JOEL is</div>
+      <h2>A real business phone system for small teams.</h2>
+      <p>JOEL is the phone system between your customers and the people who can help them. Customers call or text your business number. JOEL routes calls by function, keeps texts with the business, sends voicemail transcripts, and notifies your team when something needs attention.</p>
+    </div>
+    <div class="pillset reveal">
+      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> One business number</div>
+      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> A simple menu and call routing</div>
+      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Shared texts for the business</div>
+      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Voicemail with transcripts</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. THE SLACK PROBLEM -->
+<section class="block problem" data-screen-label="Why Slack matters">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Why Slack matters</div>
+      <h2>Your team already works in Slack. Your phone system should not hide somewhere else.</h2>
+    </div>
+    <div class="prob-copy reveal">
+      <p>Small teams use Slack to coordinate work, but calls, texts, and voicemails usually live in a separate phone app. That means someone has to remember to check the dashboard, check the voicemail, check the inbox, and tell the team what happened. <b>JOEL brings the important phone events into Slack.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. HOW JOEL WORKS WITH SLACK -->
+<section class="block steps-wrap" id="how" data-screen-label="How JOEL works with Slack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">How it works</div>
+      <h2>JOEL is the phone system. Slack is where the team gets notified.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="sn">1</div><h3>Get or port your number</h3><p>Start with a new business number or bring the one your customers already call.</p></div>
+      <div class="step reveal"><div class="sn">2</div><h3>Set up a greeting and menu</h3><p>Record a short greeting so callers can pick what they need.</p></div>
+      <div class="step reveal"><div class="sn">3</div><h3>Route calls to the right function</h3><p>Send each option to the owner, an assistant, a contractor, or a call center.</p></div>
+      <div class="step reveal"><div class="sn">4</div><h3>Keep texts and voicemails in JOEL</h3><p>Texts land in the shared inbox and voicemails come with transcripts.</p></div>
+      <div class="step reveal slackstep"><div class="sn">5</div><h3>Send important events to Slack</h3><p>Missed calls, new texts, and voicemails show up in the channels your team watches.</p></div>
+    </div>
+    <p class="steps-note reveal"><b>JOEL stays the phone system.</b> Slack is where the notifications appear so the right people see what happened.</p>
+  </div>
+</section>
+
+<!-- 5. WHAT SHOWS UP IN SLACK -->
+<section class="block" data-screen-label="What shows up in Slack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">What shows up in Slack</div>
+      <h2>The phone events your team should not miss.</h2>
+    </div>
+    <div class="cards3">
+      <div class="card reveal">
+        <div class="cic miss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Missed calls</h3>
+        <p>When someone calls and nobody answers, JOEL can notify Slack so the team knows a caller needs follow-up.</p>
+      </div>
+      <div class="card reveal">
+        <div class="cic txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>New texts</h3>
+        <p>When a customer texts the business number, JOEL can notify Slack so the message does not sit unseen.</p>
+      </div>
+      <div class="card reveal">
+        <div class="cic vm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></div>
+        <h3>Voicemails</h3>
+        <p>When a voicemail comes in, JOEL can notify Slack with the transcript so the team understands what the caller needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EXAMPLE SETUP -->
+<section class="block setup-wrap" data-screen-label="Example setup">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Example setup</div>
+      <h2>A simple setup for a Slack-connected phone system</h2>
+    </div>
+    <div class="setup-grid reveal">
+      <div class="panel">
+        <div class="panel-top phone"><b>JOEL phone system</b><span class="tg">Routing</span></div>
+        <div class="panel-body">
+          <div class="pgreet">"Thanks for calling. Press 1 for sales, 2 for support, 3 for billing, or 0 for the office."</div>
+          <div class="prow"><span class="k">1</span><div class="pl"><b>Sales</b></div><div class="dest">Owner + assistant</div></div>
+          <div class="prow"><span class="k">2</span><div class="pl"><b>Support</b></div><div class="dest">Support lead</div></div>
+          <div class="prow"><span class="k">3</span><div class="pl"><b>Billing</b></div><div class="dest">Finance contact</div></div>
+          <div class="prow"><span class="k zero">0</span><div class="pl"><b>Office</b></div><div class="dest">Office line</div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-top slack"><b>Slack notifications</b><span class="tg">Alerts</span></div>
+        <div class="panel-body">
+          <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Missed calls</div><span class="chan"><span class="h">#</span>calls</span></div>
+          <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> New sales texts</div><span class="chan"><span class="h">#</span>sales</span></div>
+          <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Support voicemails</div><span class="chan"><span class="h">#</span>support</span></div>
+          <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Billing voicemails</div><span class="chan"><span class="h">#</span>billing</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="setup-foot reveal">Texts and voicemail are <b>handled in JOEL</b>, with Slack alerts when the team needs to know.</p>
+  </div>
+</section>
+
+<!-- 7. WHY THIS IS DIFFERENT -->
+<section class="block compare-green" data-screen-label="Why this is different">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Why this is different</div>
+      <h2>Not just a second number. Not an enterprise phone system.</h2>
+      <p>A second number helps one person look more professional. Enterprise phone systems are built for bigger companies and call centers. JOEL sits in the middle: one business number, simple routing, shared texts, voicemail, and Slack notifications for small teams.</p>
+    </div>
+    <div class="cmp reveal">
+      <div class="cmp-row head"><div class="opt">Option</div><div class="desc">What happens</div></div>
+      <div class="cmp-row"><div class="opt">Personal cell phone</div><div class="desc">Every call hits one person. Texts mix with personal messages. The team has no shared view.</div></div>
+      <div class="cmp-row"><div class="opt">Google Voice</div><div class="desc">Useful as a second number, but mostly built around one person. It is not built around menus, extensions, shared team texting, and Slack notifications.</div></div>
+      <div class="cmp-row"><div class="opt">Enterprise phone systems</div><div class="desc">They do have Slack and WhatsApp integrations and AI features - but with per-seat pricing and an admin console that is heavy for a small business that just needs calls, texts, voicemail, and team visibility.</div></div>
+      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> JOEL</div><div class="desc">A small-business phone system with one number, simple routing, shared texts, voicemail transcripts, and Slack notifications.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. WHAT THIS IS NOT -->
+<section class="block notband" data-screen-label="What this is not">
+  <div class="wrap">
+    <div class="not-card reveal">
+      <div class="sec-kicker">What this is not</div>
+      <h2>Slack notifications, not a Slack call center.</h2>
+      <p>JOEL does not turn Slack into a call center. You do not answer calls in Slack. You do not reply to texts from Slack in this version. <b>JOEL is where the phone system lives. Slack is where the right people see that something happened.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. WHO THIS IS FOR -->
+<section class="block" data-screen-label="Who this is for">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Who this is for</div>
+      <h2>Built for small businesses that run on Slack.</h2>
+    </div>
+    <ul class="whofor reveal">
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Use Slack to coordinate work</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Want one business number</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Need more than one person to see missed calls or messages</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Work with assistants, contractors, or remote help</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Want calls routed by function</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Do not want enterprise phone software</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="faq" data-screen-label="FAQ">
+  <div class="wrap" style="padding-top:74px;">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Questions</div>
+      <h2>Questions about JOEL and Slack</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-q" open><summary>What is JOEL?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">JOEL is a simple phone system for small businesses. It gives you one business number, a simple menu, call routing, a shared text inbox, voicemail with transcripts, and Slack notifications for the events your team should not miss.</div></details>
+      <details class="faq-q"><summary>Is JOEL a phone system or a Slack app?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">JOEL is the phone system. Slack is where JOEL can send notifications for missed calls, new texts, and voicemails.</div></details>
+      <details class="faq-q"><summary>Can JOEL send missed calls to Slack?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. When a call comes in and nobody answers, JOEL can post a missed call notification to the Slack channel you choose so the team can follow up.</div></details>
+      <details class="faq-q"><summary>Can JOEL send voicemail transcripts to Slack?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. When a voicemail comes in, JOEL can send a notification with the transcript so the team knows what the caller needed.</div></details>
+      <details class="faq-q"><summary>Can JOEL send new text notifications to Slack?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. When a customer texts your business number, JOEL can notify the right Slack channel so the message does not sit unseen.</div></details>
+      <details class="faq-q"><summary>Can I reply to texts from Slack?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not in this version. Slack notifications help your team see what happened. Replies and follow-up happen in JOEL.</div></details>
+      <details class="faq-q"><summary>Can I answer phone calls in Slack?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. JOEL routes calls to phones, lines, assistants, contractors, or call centers. Slack is for notifications.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FINAL CTA -->
+<section class="closer">
+  <div class="wrap">
+    <div class="closer-card reveal">
+      <h2>Get a business phone system your team can actually keep up with.</h2>
+      <p>One business number, simple routing, shared texts, voicemail transcripts, and Slack notifications. Simple setup, built for small teams.</p>
+      <div class="closer-acts">
+        <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="../pricing.html" class="btn btn-ghost btn-lg">See pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 JOEL. The next-generation small business phone system.</div>
+    <div><a href="../index.html">Home</a></div>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="#how"><span class="btn btn-ghost">How it works</span></a>
+  <a href="../signup.html?plan=grow"><span class="btn btn-primary">Get your number</span></a>
+</div>
+
+<script>
+  (function(){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+</script>
+</body>
+</html>
