@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Contact view (exports to window)
+   AnyPhone app - Contact view (exports to window)
    One merged calls + voicemails + texts timeline by date,
    editable notes, follow-up flag + assignee, downloads, and a
    "ring my device" call-back popover. Modal drawer OR docked pane.
@@ -394,7 +394,7 @@ function CallLaunch({ target, devices, numbers, onClose }){
   const opts = devices.filter(d=>d.enabled!==false).map(d=>{
     if(d.type==='phone') return { id:d.id, t:'My phone', s:d.number, icon:'phone' };
     if(d.type==='sip')   return { id:d.id, t:'Desk phone', s:d.device, icon:'monitor' };
-    return { id:d.id, t:'JOEL app', s:d.user, icon:'smartphone' };
+    return { id:d.id, t:'AnyPhone app', s:d.user, icon:'smartphone' };
   });
   const [sel,setSel]=React.useState(opts[0]?opts[0].id:'__custom');
   const [customNum,setCustomNum]=React.useState('');
@@ -409,7 +409,7 @@ function CallLaunch({ target, devices, numbers, onClose }){
         <div className="cl-ring">
           <span className="cl-ring-ic"><Icon name="phone"/></span>
           <b>Ringing {ringing.id==='__custom'?ringing.s:`your ${ringing.t.toLowerCase()}`}…</b>
-          <p>Pick up {ringing.s} and JOEL will connect you to {toNum}.</p>
+          <p>Pick up {ringing.s} and AnyPhone will connect you to {toNum}.</p>
           <button className="btn btn-secondary sm block" onClick={onClose}>Cancel</button>
         </div>
       </div>
@@ -417,7 +417,7 @@ function CallLaunch({ target, devices, numbers, onClose }){
   }
   return (
     <div className="cl-pop" onMouseDown={e=>e.stopPropagation()}>
-      <div className="cl-h"><b>Call {target}</b><p>JOEL rings one of your devices first, then connects the call.</p></div>
+      <div className="cl-h"><b>Call {target}</b><p>AnyPhone rings one of your devices first, then connects the call.</p></div>
       {callNums.length>1 && (
         <div className="cl-tonum">
           <span className="cl-tonum-l">Call which number</span>

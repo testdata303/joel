@@ -3,20 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JOEL | The Business Phone System for Modern Small Teams</title>
-<meta name="description" content="JOEL gives new businesses and modern small teams one business phone system with unlimited users, calls, texts, voicemail, extensions, routing, Slack, WhatsApp, and bring-your-own AI.">
+<title>AnyPhone | The Business Phone System for Modern Small Teams</title>
+<meta name="description" content="AnyPhone gives new businesses and modern small teams one business phone system with unlimited users, calls, texts, voicemail, extensions, routing, Slack, WhatsApp, and bring-your-own AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@600;700;800&family=Spline+Sans+Mono:wght@500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
   /* ---- page-specific styles (chrome lives in site.css) ---- */
   /* hero */
   .hero{position:relative;text-align:center;padding:74px 0 0;}
-  .squares{position:absolute;top:18px;left:40px;display:flex;flex-direction:column;gap:9px;}
-  .squares i{width:15px;height:15px;display:block;}
-  .squares i.f{background:var(--accent);}
-  .squares i.o{border:2px solid var(--accent);}
   .hero h1{font-weight:800;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.08;letter-spacing:-.03em;max-width:24ch;margin:0 auto 22px;}
   .hero .lede{font-family:var(--sans);font-size:clamp(1.08rem,2vw,1.35rem);line-height:1.5;color:var(--body);max-width:44ch;margin:0 auto 22px;}
   .hero .acts{display:flex;gap:14px;justify-content:center;margin-bottom:30px;}
@@ -35,10 +31,10 @@
   .ha-bdg{min-width:25px;height:25px;padding:0 6px;border-radius:7px;background:var(--soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:700;}
   .ha-row.muted{color:var(--muted);}
   .ha-row.sel{background:var(--soft);}
-  .ha-row.sel .ha-bdg{background:var(--ink);color:#fff;}
+  .ha-row.sel .ha-bdg{background:var(--accent);color:#fff;}
   .ha-detail{padding:20px;}
   .ha-dh{display:flex;align-items:center;gap:11px;}
-  .ha-dh .ha-bdg{min-width:28px;height:28px;font-size:.82rem;background:var(--ink);color:#fff;}
+  .ha-dh .ha-bdg{min-width:28px;height:28px;font-size:.82rem;background:var(--accent);color:#fff;}
   .ha-dt{font-size:1.08rem;font-weight:700;}
   .ha-dsub{font-size:.59rem;letter-spacing:.15em;color:var(--muted);font-weight:700;margin:14px 0 10px;text-transform:uppercase;}
   .ha-dest{display:flex;align-items:center;gap:10px;background:var(--soft);border-radius:10px;padding:12px 13px;font-weight:600;font-size:.92rem;}
@@ -80,14 +76,14 @@
   section{padding:88px 0;}
   .sec-head{text-align:center;max-width:740px;margin:0 auto 48px;}
   .kicker{display:inline-block;color:var(--accent);font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;margin-bottom:16px;background:var(--accent-soft);padding:6px 13px;border-radius:999px;}
-  .sec-head h2{font-weight:800;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.08;letter-spacing:-.025em;margin-bottom:16px;text-wrap:balance;}
+  .sec-head h2{font-weight:800;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.08;letter-spacing:-.025em;margin-bottom:16px;text-wrap:pretty;}
   .sec-head p{font-family:var(--sans);font-size:1.12rem;line-height:1.55;color:var(--body);}
   /* feature grid */
   .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   .feat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 1px 2px rgba(16,16,18,.04),0 14px 30px -22px rgba(16,16,18,.16);}
   .fi{width:42px;height:42px;border-radius:11px;background:var(--soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
   .fi svg{width:22px;height:22px;color:var(--ink);}
-  .fi.c-indigo{background:#eef1ff;} .fi.c-indigo svg{color:#2540ee;}
+  .fi.c-indigo{background:#eef1ff;} .fi.c-indigo svg{color:#2D4ED8;}
   .fi.c-green{background:#E3F5E9;} .fi.c-green svg{color:#1FAE63;}
   .fi.c-purple{background:#F1ECFE;} .fi.c-purple svg{color:#6b2fe8;}
   .fi.c-orange{background:#FFEDE5;} .fi.c-orange svg{color:#FF4F00;}
@@ -102,10 +98,10 @@
   .fdo svg{width:34px;height:34px;padding:8px;border-radius:9px;color:var(--ink);background:var(--bg-alt);flex:none;}
   .fdo svg.ic-slack{color:#2EB67D;background:#E7F6EF;}
   .fdo svg.ic-ai{color:#6b2fe8;background:#F1ECFE;}
-  .fdo svg.ic-mobile{color:#2540ee;background:#eef1ff;}
+  .fdo svg.ic-mobile{color:#2D4ED8;background:#eef1ff;}
   .fdo svg.ic-wa{color:#1FAE63;background:#E3F5E9;}
   .fdo svg.ic-zap{color:#FF4F00;background:#FFEDE5;}
-  .fdo svg.ic-grid{color:#2540ee;background:#eef1ff;}
+  .fdo svg.ic-grid{color:#2D4ED8;background:#eef1ff;}
   /* device */
   .device-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
   .device-copy h2{font-weight:800;font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px;}
@@ -114,7 +110,7 @@
   .privacy-note svg{width:16px;height:16px;color:var(--ink);}
   .device-list{list-style:none;display:flex;flex-direction:column;gap:13px;}
   .device-list li{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink);font-size:.98rem;}
-  .device-list .n{width:24px;height:24px;border-radius:7px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex:none;}
+  .device-list .n{width:24px;height:24px;border-radius:7px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex:none;}
   .phone{width:296px;margin:0 auto;background:#0d0e12;border-radius:40px;padding:13px;box-shadow:0 50px 100px -30px rgba(16,16,18,.4);}
   .screen{background:radial-gradient(140% 100% at 50% 0,#1b1d24,#0d0e12);border-radius:28px;min-height:540px;padding:42px 22px;display:flex;flex-direction:column;align-items:center;color:#fff;}
   .calling{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#9aa0aa;font-weight:700;margin-bottom:30px;}
@@ -214,11 +210,11 @@
   .byoai-tagline b{color:var(--ink);font-weight:600;}
   /* closer */
   .closer{background:#fff;text-align:center;padding:40px 0 8px;}
-  .closer-card{background:linear-gradient(140deg,#2540ee,#1b32c4);border-radius:24px;padding:64px 40px;color:#fff;box-shadow:0 30px 60px -34px rgba(55,48,163,.55);}
-  .closer h2{font-weight:800;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:18px;text-wrap:balance;}
-  .closer p{font-family:var(--sans);font-size:1.15rem;line-height:1.55;color:rgba(255,255,255,.9);max-width:40rem;margin:0 auto 30px;font-weight:400;}
-  .closer .btn-primary{background:#fff;color:#1b32c4;}
-  .closer .btn-primary:hover{background:#f0f0fb;}
+  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:56px 40px;color:var(--ink);box-shadow:none;}
+  .closer h2{font-weight:800;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:18px;text-wrap:pretty;}
+  .closer p{font-family:var(--sans);font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
+  .closer .btn-primary{background:var(--accent);color:#fff;}
+  .closer .btn-primary:hover{background:var(--accent-dark);}
   /* responsive */
   @media(max-width:900px){
     .feat-grid{grid-template-columns:repeat(2,1fr);}
@@ -230,7 +226,7 @@
     .tx-inbox-card{width:860px;min-width:860px;max-width:none;margin:0;}
     .nlinks,.nright .tl{display:none;}
   }
-  @media(max-width:560px){.ha-body{grid-template-columns:1fr;}.ha-list{border-right:0;border-bottom:1px solid var(--line);}.squares{display:none;}}
+  @media(max-width:560px){.ha-body{grid-template-columns:1fr;}.ha-list{border-right:0;border-bottom:1px solid var(--line);}}
   .hero-diagram{padding:40px 0 22px;}
   .routing{display:block;width:100%;max-width:900px;margin:0 auto;height:auto;}
   @media(max-width:760px){.hero-diagram{padding:30px 0 64px;}}
@@ -255,7 +251,7 @@
   .cap-ic svg{width:23px;height:23px;}
   .cap-ic.slack{background:#4A154B;}
   .cap-ic.wa{background:#25D366;}
-  .cap-ic.ai{background:linear-gradient(135deg,#2540ee,#7B6BEF);}
+  .cap-ic.ai{background:linear-gradient(135deg,#2D4ED8,#7B6BEF);}
   .cap-ic.int{background:#F2622E;}
   .cap b{display:block;font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:3px;}
   .cap span{font-size:.85rem;color:var(--muted);line-height:1.42;}
@@ -264,9 +260,9 @@
   .team{display:block;width:100%;height:auto;}
 </style>
 <style>
-  .closer-micro{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.85);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
   .closer-micro svg{width:15px;height:15px;flex-shrink:0;}
-  .cap-ic.users{background:#2540ee;}
+  .cap-ic.users{background:#2D4ED8;}
   .proof .quote h3{font-size:1.18rem;font-weight:800;letter-spacing:-.015em;margin-bottom:8px;color:var(--ink);}
   .proof .quote p{margin-bottom:0;font-size:1rem;}
   /* routing diagram */
@@ -281,7 +277,7 @@
   .rd-rows{display:flex;flex-direction:column;gap:9px;}
   .rd-row{display:grid;grid-template-columns:1fr auto 1.15fr;align-items:center;gap:12px;}
   .rd-ext{display:flex;align-items:center;gap:9px;background:var(--soft);border-radius:11px;padding:11px 13px;font-weight:700;font-size:.92rem;}
-  .rd-ext .x{font-size:.64rem;font-weight:800;letter-spacing:.03em;color:#fff;background:var(--ink);padding:3px 7px;border-radius:6px;flex:none;}
+  .rd-ext .x{font-size:.64rem;font-weight:800;letter-spacing:.03em;color:#fff;background:var(--accent);padding:3px 7px;border-radius:6px;flex:none;}
   .rd-arrow{color:var(--muted);display:flex;align-items:center;justify-content:center;}
   .rd-arrow svg{width:17px;height:17px;}
   .rd-dest{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 13px;font-weight:700;font-size:.92rem;}
@@ -294,11 +290,35 @@
   .rd-dest.msg svg{color:#1FAE63;}
   @media(max-width:620px){.rd-row{grid-template-columns:1fr;gap:5px;}.rd-arrow{transform:rotate(90deg);}}
 </style>
+<style>
+  /* AnyPhone wordmark — Ink on light, Figtree 800, never recolored */
+  .logo.ap-logo{display:inline-flex;align-items:center;font-family:var(--display);font-weight:800;letter-spacing:-0.045em;color:var(--ink);line-height:1;white-space:nowrap;font-size:1.72rem;}
+  .ap-logo .ap-word{line-height:1;}
+  .ap-logo .ap-p{margin-left:0.012em;}
+  .ap-logo .ap-dot{color:var(--accent);}
+  .foot-brand .logo.ap-logo{font-size:1.5rem;}
+  /* Slack notification mockup */
+  .ap-notify{max-width:560px;margin:0 auto 44px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:0 1px 2px rgba(16,16,18,.04),0 18px 40px -26px rgba(16,16,18,.22);}
+  .ap-notify .nv-cap{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:14px;}
+  .ap-notify .nv-row{display:flex;gap:13px;}
+  .ap-notify .nv-av{width:42px;height:42px;border-radius:10px;background:var(--accent);display:grid;place-items:center;flex:none;}
+  .ap-notify .nv-av svg{width:26px;height:26px;display:block;}
+  .ap-notify .nv-body{flex:1;min-width:0;}
+  .ap-notify .nv-head{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap;}
+  .ap-notify .nv-name{font-weight:800;font-size:.98rem;color:var(--ink);}
+  .ap-notify .nv-app{font-weight:700;font-size:.6rem;letter-spacing:.04em;color:var(--muted);background:var(--soft);padding:2px 6px;border-radius:4px;text-transform:uppercase;}
+  .ap-notify .nv-time{font-size:.8rem;color:var(--muted);font-weight:500;}
+  .ap-notify .nv-msg{font-size:.94rem;color:var(--body);line-height:1.5;}
+  .ap-notify .nv-msg b{color:var(--ink);font-weight:700;}
+  .ap-notify .nv-chan{color:var(--accent);font-weight:700;}
+  .ap-notify .nv-acts{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;}
+  .ap-notify .nv-btn{font-weight:700;font-size:.84rem;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 14px;background:#fff;}
+</style>
 </head>
 <body>
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo">JOEL</a>
+    <a href="index.html" class="logo ap-logo" aria-label="AnyPhone home"><span class="ap-word">Any<span class="ap-p">Phone</span><span class="ap-dot">.</span></span></a>
     <a href="signup.html?plan=grow" class="nav-cta nav-cta-m">Get your number</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -316,9 +336,9 @@
 <section class="hero">
   <div class="wrap">
     <h1>Get the business phone number your company can grow around.</h1>
-    <p class="lede">JOEL is the phone system for new businesses and modern small teams. Start with one business number. Add extensions, people, tools, and AI without per-user pricing.</p>
+    <p class="lede">AnyPhone is the phone system for new businesses and modern small teams. Start with one business number. Add extensions, people, tools, and AI without per-user pricing.</p>
     <div class="acts">
-      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works</a>
+      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&rsaquo;</span></a>
       <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
     </div>
     <div class="hero-note">From $20/month · Unlimited users · Month-to-month · Free human support</div>
@@ -423,7 +443,7 @@
     <div class="sec-head reveal" style="max-width:680px;margin:0 auto 36px;"><h2>Free 24/7 Human Support</h2><p>No per-user pricing. No long-term contracts. Free human support from people who stay with the problem until it is solved.</p></div>
     <div class="quotes">
       <div class="quote reveal"><h3>Unlimited users</h3><p>Add everyone who needs access without another seat fee.</p></div>
-      <div class="quote reveal"><h3>Month-to-month</h3><p>Stay because JOEL works, not because a contract traps you.</p></div>
+      <div class="quote reveal"><h3>Month-to-month</h3><p>Stay because AnyPhone works, not because a contract traps you.</p></div>
       <div class="quote reveal"><h3>Free human support</h3><p>A real person owns the problem until it is resolved.</p></div>
     </div>
   </div>
@@ -434,7 +454,18 @@
     <div class="sec-head reveal">
       <div class="kicker">USE WHAT WORKS</div>
       <h2>Keep your phones. Choose your tools.</h2>
-      <p>Ring the mobile you already use. Connect a compatible desk phone. Send alerts to Slack. Add WhatsApp. Route calls to a contractor, call center, or AI answering service. JOEL keeps the phone system underneath it all.</p>
+      <p>Ring the mobile you already use. Connect a compatible desk phone. Send alerts to Slack. Add WhatsApp. Route calls to a contractor, call center, or AI answering service. AnyPhone keeps the phone system underneath it all.</p>
+    </div>
+    <div class="ap-notify reveal">
+      <div class="nv-cap">Slack notification</div>
+      <div class="nv-row">
+        <div class="nv-av"><svg viewBox="0 0 100 100"><circle cx="24" cy="50" r="12.5" fill="#fff"></circle><path d="M33 50 Q57 43 81 30" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"></path><path d="M33 50 Q57 57 81 70" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"></path></svg></div>
+        <div class="nv-body">
+          <div class="nv-head"><span class="nv-name">AnyPhone</span><span class="nv-app">App</span><span class="nv-time">9:41 AM</span></div>
+          <div class="nv-msg">New call routed to <b>your cell</b> from <b>(415) 555-0182</b>. Missed it? The voicemail is in <span class="nv-chan">#front-desk</span>.</div>
+          <div class="nv-acts"><span class="nv-btn">Call back</span><span class="nv-btn">Play voicemail</span></div>
+        </div>
+      </div>
     </div>
     <div class="flow-grid reveal">
       <div class="flow"><div class="ftrigger">Missed a call?</div><div class="fdo"><svg class="ic-slack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8v8M15 8v8M8 12h8"/></svg>Send the alert and voicemail summary to Slack.</div></div>
@@ -450,14 +481,14 @@
 <section class="device">
   <div class="wrap device-grid">
     <div class="device-copy reveal">
-      <div class="kicker">The JOEL app</div>
+      <div class="kicker">The AnyPhone app</div>
       <h2>Use the phone you already have.</h2>
-      <p>Call and text through JOEL. Customers see your business number, not your personal number. No second phone required.</p>
+      <p>Call and text through AnyPhone. Customers see your business number, not your personal number. No second phone required.</p>
       <div class="privacy-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Your personal number stays private</div>
       <ul class="device-list">
         <li><span class="n">1</span> Your personal number stays private</li>
         <li><span class="n">2</span> Outbound calls show your business caller ID</li>
-        <li><span class="n">3</span> Calls, texts, and voicemails stay in JOEL</li>
+        <li><span class="n">3</span> Calls, texts, and voicemails stay in AnyPhone</li>
         <li><span class="n">4</span> Mute the business line when you are off the clock</li>
         <li><span class="n">5</span> Works on iPhone and Android</li>
       </ul>
@@ -559,7 +590,7 @@
     <div class="sec-head reveal">
       <div class="kicker">BRING YOUR OWN AI</div>
       <h2>Pick the AI that fits the job.</h2>
-      <p>JOEL includes AI-generated greetings, transcripts, and voicemail summaries. For answering calls, route any extension to Vapi, Bland AI, a specialist provider, or your own SIP-compatible agent.</p>
+      <p>AnyPhone includes AI-generated greetings, transcripts, and voicemail summaries. For answering calls, route any extension to Vapi, Bland AI, a specialist provider, or your own SIP-compatible agent.</p>
     </div>
     <div class="byoai-grid reveal">
       <div class="byoai-ext">
@@ -605,19 +636,19 @@
 <section class="compare" data-screen-label="How it compares">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">WHY JOEL</div>
+      <div class="kicker">WHY AnyPhone</div>
       <h2>A complete phone system without per-user pricing.</h2>
-      <p>Google Voice works well for basic calling inside Google Workspace. Grasshopper keeps forwarding simple. Quo, Dialpad, and Aircall are capable products built around paid users. JOEL gives the whole company one flexible phone system.</p>
+      <p>Google Voice works well for basic calling inside Google Workspace. Grasshopper keeps forwarding simple. Quo, Dialpad, and Aircall are capable products built around paid users. AnyPhone gives the whole company one flexible phone system.</p>
     </div>
     <div class="compare-table reveal">
       <div class="cmp-r head"><div class="opt">Option</div><div class="desc">What it means for a small business</div></div>
       <div class="cmp-r"><div class="opt">Google Voice</div><div class="desc">Good for basic calling inside Google Workspace. Team access and more advanced phone-system features are tied to Google users and licenses.</div></div>
       <div class="cmp-r"><div class="opt">Grasshopper</div><div class="desc">Simple forwarding and extensions, but built before Slack, WhatsApp, shared messaging, and bring-your-own AI became normal.</div></div>
       <div class="cmp-r"><div class="opt">Per-user phone systems</div><div class="desc">Quo, Dialpad, and Aircall are capable, but the bill grows whenever another teammate, assistant, or contractor needs access.</div></div>
-      <div class="cmp-r joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> JOEL</div><div class="desc">Starts at $20 a month with unlimited users. One number can ring one phone or power extensions, shared messaging, Slack alerts, WhatsApp, compatible devices, AI answering services, and custom workflows.</div></div>
+      <div class="cmp-r joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> AnyPhone</div><div class="desc">Starts at $20 a month with unlimited users. One number can ring one phone or power extensions, shared messaging, Slack alerts, WhatsApp, compatible devices, AI answering services, and custom workflows.</div></div>
     </div>
     <div class="compare-cta reveal">
-      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works</a>
+      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&rsaquo;</span></a>
       <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
     </div>
   </div>
@@ -627,10 +658,9 @@
   <div class="wrap">
     <div class="closer-card">
       <h2>Get the business phone number your company can grow around.</h2>
-      <p>One number ringing one phone, or a tailored system across people, devices, Slack, WhatsApp, AI answering services, and custom workflows. Unlimited users either way.</p>
+      <p>One number ringing one phone, or a full system across people, devices, and tools. Unlimited users either way.</p>
       <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
       <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> From $20/month · Unlimited users · Month-to-month · Free human support</div>
-      <div class="closer-micro" style="margin-top:10px;">Small businesses are never small customers.</div>
     </div>
   </div>
 </section>
@@ -639,7 +669,7 @@
   <div class="wrap">
     <div class="foot-inner">
       <div class="foot-brand">
-        <a href="index.html" class="logo">JOEL</a>
+        <a href="index.html" class="logo ap-logo" aria-label="AnyPhone home"><span class="ap-word">Any<span class="ap-p">Phone</span><span class="ap-dot">.</span></span></a>
         <p>The phone system for new businesses and modern small teams.</p>
       </div>
       <div class="foot-cols">
@@ -648,7 +678,7 @@
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a></div>
       </div>
     </div>
-    <div class="foot-base">© 2026 JOEL. All rights reserved.</div>
+    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
   </div>
 </footer>
 

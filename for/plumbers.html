@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Phone System for Plumbers | JOEL</title>
-<meta name="description" content="JOEL gives your plumbing business one number, a simple menu, and a shared text inbox so new jobs, existing customers, and emergency calls reach the right person.">
+<title>Phone System for Plumbers | AnyPhone</title>
+<meta name="description" content="AnyPhone gives your plumbing business one number, a simple menu, and a shared text inbox so new jobs, existing customers, and emergency calls reach the right person.">
 <link rel="canonical" href="/phone-system-for-plumbers">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
@@ -13,13 +13,13 @@
 <link rel="apple-touch-icon" href="../favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
-    --ink:#101012;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#2540ee;--accent-dark:#1b32c4;--accent-soft:#eef1ff;
+    --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
+    --accent:#2D4ED8;--accent-dark:#2240C2;--accent-soft:#eef1ff;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --warn:#c0492b;--warn-soft:#fdeeea;
     --gold:#f5a623;
@@ -44,7 +44,7 @@
   /* header */
   header.lp{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
-  .logo{font-family:'Archivo Black',var(--sans);font-weight:900;font-size:2.1rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;-webkit-text-stroke:1px var(--ink);line-height:1;}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
   .hdr-right{display:flex;align-items:center;gap:18px;}
   .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
   .hdr-cta:hover{background:var(--accent-dark);}
@@ -53,7 +53,7 @@
   .hero{padding:60px 0 68px;}
   .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
-  .hero h1{font-weight:800;font-size:clamp(2.3rem,4.4vw,3.4rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:18px;text-wrap:balance;}
+  .hero h1{font-weight:800;font-size:clamp(2.3rem,4.4vw,3.4rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:18px;text-wrap:pretty;}
   .hero h1 .u{color:var(--accent);}
   .hero-sub{font-size:1.18rem;line-height:1.5;color:var(--body);max-width:34ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
@@ -90,7 +90,7 @@
   section.block{padding:74px 0;}
   .sec-head{text-align:center;max-width:640px;margin:0 auto 44px;}
   .sec-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;}
-  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:balance;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
 
   /* pain */
@@ -177,11 +177,11 @@
 
   /* closer */
   .closer{padding:20px 0 84px;}
-  .closer-card{background:linear-gradient(140deg,#2540ee,#1b32c4);border-radius:26px;padding:64px 48px;text-align:center;color:#fff;box-shadow:0 40px 80px -44px rgba(37,64,238,.6);}
-  .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,2.9rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;text-wrap:balance;}
-  .closer-card p{font-size:1.18rem;line-height:1.55;color:rgba(255,255,255,.9);max-width:46ch;margin:0 auto 30px;font-weight:500;}
-  .closer-card .btn-primary{background:#fff;color:var(--accent-dark);box-shadow:none;}
-  .closer-card .btn-primary:hover{background:#eef1ff;}
+  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:56px 44px;text-align:center;color:var(--ink);box-shadow:none;}
+  .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,2.9rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
+  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
+  .closer-card .btn-primary{background:var(--accent);color:#fff;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--accent-dark);}
   .closer-mini{margin-top:18px;font-size:.92rem;color:rgba(255,255,255,.82);font-weight:600;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   /* faq */
@@ -235,7 +235,7 @@
 
 <header class="lp">
   <div class="wrap lp-inner">
-    <a href="../index.html" class="logo">JOEL</a>
+    <a href="../index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">.</span></a>
     <div class="hdr-right">
       <a href="../signup.html?plan=grow" class="hdr-cta">Get your number</a>
     </div>
@@ -248,7 +248,7 @@
     <div class="hero-copy reveal">
       <span class="eyebrow">Phone system for plumbers</span>
       <h1>Never miss a plumbing call because you were <span class="u">on another job.</span></h1>
-      <p class="hero-sub">JOEL gives your plumbing business one number and sends every call to the right person, whether you are driving, under a sink, or out on a job.</p>
+      <p class="hero-sub">AnyPhone gives your plumbing business one number and sends every call to the right person, whether you are driving, under a sink, or out on a job.</p>
       <div class="hero-acts">
         <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your business number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
@@ -261,7 +261,7 @@
     </div>
 
     <!-- [PRODUCT SCREENSHOT: routing setup or inbox] -->
-    <div class="shot reveal" role="img" aria-label="JOEL routing setup showing a greeting and four call routes">
+    <div class="shot reveal" role="img" aria-label="AnyPhone routing setup showing a greeting and four call routes">
       <div class="shot-top">
         <b>Call routing</b>
         <span class="badge"><i></i> Live</span>
@@ -305,7 +305,7 @@
 <section class="block steps-wrap" id="how" data-screen-label="How it works">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">How JOEL works for plumbers</div>
+      <div class="sec-kicker">How AnyPhone works for plumbers</div>
       <h2>One number. Calls reach the right person.</h2>
     </div>
     <div class="steps">
@@ -369,7 +369,7 @@
       <div class="fcard reveal">
         <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13l2 2 4-4"/></svg></div>
         <h3>Slack notifications</h3>
-        <p>JOEL posts missed calls, new texts, and voicemails to Slack so the team sees them right away and someone can follow up.</p>
+        <p>AnyPhone posts missed calls, new texts, and voicemails to Slack so the team sees them right away and someone can follow up.</p>
         <div class="eg"><b>Example</b>A missed emergency call shows up in Slack and the on-call plumber calls back fast.</div>
       </div>
 
@@ -393,7 +393,7 @@
     </div>
     <div class="ba">
       <div class="ba-col ba-before reveal">
-        <span class="tag">Before JOEL</span>
+        <span class="tag">Before AnyPhone</span>
         <h3>Everything on the owner's cell</h3>
         <ul>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Calls go to the owner's personal cell</li>
@@ -404,7 +404,7 @@
         </ul>
       </div>
       <div class="ba-col ba-after reveal">
-        <span class="tag">After JOEL</span>
+        <span class="tag">After AnyPhone</span>
         <h3>One number, routed by function</h3>
         <ul>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>One number for the business</li>
@@ -439,7 +439,7 @@
       </div>
       <div class="flow-foot">
         <div><b>Missed calls</b>Go to voicemail, transcribed, emailed, and posted to Slack.</div>
-        <div><b>Texts</b>Land in the shared JOEL inbox for the team to answer.</div>
+        <div><b>Texts</b>Land in the shared AnyPhone inbox for the team to answer.</div>
       </div>
     </div>
   </div>
@@ -457,7 +457,7 @@
       <div class="cmp-row"><div class="opt">Personal cell phone</div><div class="desc">Free and familiar, but every call hits one phone, your number is out there for good, and there is no menu, no shared texts, and no way to route a job to someone else.</div></div>
       <div class="cmp-row"><div class="opt">Google Voice</div><div class="desc">Gives you a second number, but it is built for one person. There is no menu to route new jobs, emergencies, and existing customers to different people, and no shared inbox for the team.</div></div>
       <div class="cmp-row"><div class="opt">Enterprise phone systems</div><div class="desc">They really can do a lot - Slack and WhatsApp integrations, AI features, deep routing - but it comes with per-seat pricing, contracts, and an admin console built for big call centers. Most plumbing businesses spend more time fighting the setup than using it.</div></div>
-      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> JOEL</div><div class="desc">One business number, a simple menu, calls routed by function, voicemail with transcripts, and a shared text inbox. Set up in a sitting, built for a team of one to ten.</div></div>
+      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> AnyPhone</div><div class="desc">One business number, a simple menu, calls routed by function, voicemail with transcripts, and a shared text inbox. Set up in a sitting, built for a team of one to ten.</div></div>
     </div>
   </div>
 </section>
@@ -470,12 +470,12 @@
       <h2>Questions plumbers ask</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-q" open><summary>Can I use my existing plumbing business number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can port the number your customers already call into JOEL and keep it as your business number. If you would rather start fresh, you can get a new number for your area instead.</div></details>
+      <details class="faq-q" open><summary>Can I use my existing plumbing business number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can port the number your customers already call into AnyPhone and keep it as your business number. If you would rather start fresh, you can get a new number for your area instead.</div></details>
       <details class="faq-q"><summary>Can calls ring my cell phone?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can forward calls to your cell, the office line, an assistant, a dispatcher, or a call center. Your personal number stays private because customers only ever see the business number.</div></details>
       <details class="faq-q"><summary>Can I send and receive texts from the business number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Texts to the business number land in one shared inbox. The team can read and reply from the same place, so a customer message never gets stuck on one person's phone.</div></details>
       <details class="faq-q"><summary>Can different types of calls go to different people?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Set up a simple menu and route each option however you like. New jobs can ring the owner and office, emergencies can ring the owner and a backup plumber, and existing customers can ring the dispatcher.</div></details>
       <details class="faq-q"><summary>What happens if nobody answers?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The call goes to voicemail. You get a transcript and an email, and the missed call and voicemail post to Slack so someone on the team can call the customer back.</div></details>
-      <details class="faq-q"><summary>Is JOEL dispatch software?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. JOEL is your phone system. It helps calls and texts reach the right person. It does not schedule jobs, assign technicians, or manage invoices.</div></details>
+      <details class="faq-q"><summary>Is AnyPhone dispatch software?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is your phone system. It helps calls and texts reach the right person. It does not schedule jobs, assign technicians, or manage invoices.</div></details>
     </div>
   </div>
 </section>
@@ -494,7 +494,7 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div>© 2026 JOEL. The phone system for new businesses and modern small teams.</div>
+    <div>© 2026 AnyPhone. The phone system for new businesses and modern small teams.</div>
     <div><a href="../index.html">Home</a></div>
   </div>
 </footer>

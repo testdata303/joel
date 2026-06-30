@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Extension Detail panels  (exports to window)
+   AnyPhone app - Extension Detail panels  (exports to window)
    ============================================================ */
 const { Icon, Toggle, Segmented, Choice, Field, Avatar, Card, Wave, Modal } = window;
 
@@ -479,13 +479,13 @@ function DeskPhoneInfo({ onClose, onAdd }){
         <button className="btn btn-secondary" onClick={onAdd}>Bought it? Set it up</button>
         <a className="btn btn-primary" href={BUY} target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
       </>}>
-      <p className="dpi-text">JOEL works with standard SIP desk phones, and this is the one we recommend - reliable, inexpensive, and it connects in about a minute when it arrives.</p>
+      <p className="dpi-text">AnyPhone works with standard SIP desk phones, and this is the one we recommend - reliable, inexpensive, and it connects in about a minute when it arrives.</p>
       <div className="dpi-pick">
         <span className="dpi-pick-ic"><Icon name="monitor"/></span>
         <div className="dpi-pick-tx">
           <span className="dpi-pick-tag">Our pick</span>
           <b>Yealink T31G</b>
-          <span className="dpi-pick-spec">2-line desk phone · gigabit · plug-and-play with JOEL</span>
+          <span className="dpi-pick-spec">2-line desk phone · gigabit · plug-and-play with AnyPhone</span>
         </div>
         <span className="dpi-pick-price">~$65</span>
       </div>
@@ -548,7 +548,7 @@ function RoutingPanel({ ext, patch, onToggle, onScreening, onMove, onEdit, onRem
         <div className="avail-row col" style={{marginTop:14}}>
           <div className="avail-grouphdr">
             <span className="avail-grouplbl"><Icon name="phoneoff"/> If no one answers</span>
-            <p className="avail-groupsub">JOEL rings the destinations above. If they all ring out and nobody picks up, the caller gets this.</p>
+            <p className="avail-groupsub">AnyPhone rings the destinations above. If they all ring out and nobody picks up, the caller gets this.</p>
           </div>
           <div className="avail-choices">
             <button className={`avail-choice${(ext.fallback||'voicemail')==='voicemail'?' on':''}`} onClick={()=>patch({fallback:'voicemail'})}>
@@ -784,7 +784,7 @@ function VoicemailPanel({ ext, patch, goForwarding, goHours }){
     <div className="panel">
       <div className="panel-head">
         <h2>Greeting</h2>
-        <p>What callers hear when they reach {ext.name}'s voicemail. JOEL writes a transcript and summary of every message automatically.</p>
+        <p>What callers hear when they reach {ext.name}'s voicemail. AnyPhone writes a transcript and summary of every message automatically.</p>
       </div>
 
       {!reachesVm && (

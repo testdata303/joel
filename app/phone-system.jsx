@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Phone System (exports window.PhoneSystem)
+   AnyPhone app - Phone System (exports window.PhoneSystem)
    The calm, Apple-style answer to "show me my phone system."
    One quiet vertical story, top to bottom:
      ① a call comes in on a number
@@ -18,7 +18,7 @@ function psName(str){ return String(str).replace(/\s*-.*/, '').trim(); }
 /* forwarding detail per extension - label · value · kind, each independently on/off */
 const PS_FWD_SEED = {
   '0':   [{ id:'o1',  label:'Front Desk',   value:'(617) 555-2200', kind:'monitor',    on:true }],
-  '1':   [{ id:'s1',  label:'Jane Cho',     value:'JOEL app',       kind:'smartphone', on:true },
+  '1':   [{ id:'s1',  label:'Jane Cho',     value:'AnyPhone app',       kind:'smartphone', on:true },
           { id:'s2',  label:'My cell',      value:'(617) 555-1141', kind:'phone',      on:true },
           { id:'s3',  label:'Front Desk',   value:'(617) 555-2200', kind:'monitor',    on:true }],
   '2':   [{ id:'su1', label:'Front Desk',   value:'(617) 555-2200', kind:'monitor',    on:true },

@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Phone System (exports to window as SystemOverviewV3)
+   AnyPhone app - Phone System (exports to window as SystemOverviewV3)
    THE primary management surface. Numbers, greeting, after-hours,
    holidays, call forwarding, voicemail delivery, missed-call &
    Slack notifications - all managed inline. No trips to Numbers /
@@ -478,7 +478,7 @@ function SystemOverviewV3({ businessName, numbers, greeting:greetIn, hours:hours
         <Modal title="Port out number" icon="forward" desc={nums[port].num} onClose={()=>setPort(null)}
           footer={<React.Fragment><button className="btn btn-ghost sm" onClick={()=>setPort(null)}>Cancel</button><button className="btn btn-primary sm" onClick={()=>setPort(null)}>Start port-out</button></React.Fragment>}>
           <p className="ov3-tasklead">Move {nums[port].num} to another carrier. We’ll generate a port-out PIN and your account details, then your new carrier completes the transfer.</p>
-          <p className="ov3-tasknote">The number keeps working on JOEL until the port finishes - typically 1–10 business days.</p>
+          <p className="ov3-tasknote">The number keeps working on AnyPhone until the port finishes - typically 1–10 business days.</p>
         </Modal>
       )}
 

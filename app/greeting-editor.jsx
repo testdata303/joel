@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Greeting editor (exports to window)
+   AnyPhone app - Greeting editor (exports to window)
    A greeting = Text + Voice + Audio preview, always together.
    Shared by Main and After-hours so both edit identically.
    ============================================================ */

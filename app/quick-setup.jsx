@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Quick Setup (brand-new guided onboarding)
+   AnyPhone app - Quick Setup (brand-new guided onboarding)
    A 6-step wizard that gets a new customer taking calls fast.
    Hides extensions / routing / SIP / telecom jargon entirely.
    ============================================================ */

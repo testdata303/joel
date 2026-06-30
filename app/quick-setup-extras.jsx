@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Quick Setup extras: SMS Registration + Integrations
+   AnyPhone app - Quick Setup extras: SMS Registration + Integrations
    ============================================================ */
 const { useState: QX_useState } = React;
 const QXIcon = window.Icon;
@@ -144,7 +144,7 @@ function IntegrationsScreen({ extensions }){
         <div className="qx-slackconnect">
           <span className="qx-slack-logo"><QXIcon name="slack"/></span>
           <b>Get notified the moment a customer texts</b>
-          <p>JOEL posts every new customer message into Slack in real time - so you can reply fast and never leave one waiting. Missed calls and voicemails land there too.</p>
+          <p>AnyPhone posts every new customer message into Slack in real time - so you can reply fast and never leave one waiting. Missed calls and voicemails land there too.</p>
           <div className="qx-slackwhat">
             {[['message','New texts','the moment a customer messages'],['phone','Missed calls','the moment they happen'],['voicemail','Voicemails','with transcript & summary']].map(([ic,t,d])=>(
               <div className="qx-slackwhat-it" key={t}>
@@ -160,7 +160,7 @@ function IntegrationsScreen({ extensions }){
         <React.Fragment>
           <div className="qx-slackok">
             <span className="qx-st-ic ok"><QXIcon name="check" sw={3}/></span>
-            <div className="qx-slackok-t"><b>Connected to Smilebar HQ</b><span>Posting as JOEL · connected by Bob Stevens</span></div>
+            <div className="qx-slackok-t"><b>Connected to Smilebar HQ</b><span>Posting as AnyPhone · connected by Bob Stevens</span></div>
           </div>
 
           <section className="qx-card">
@@ -213,7 +213,7 @@ function IntegrationsScreen({ extensions }){
 
           <div className="qx-slackprev2">
             <div className="qx-sp2-h"><QXIcon name="slack"/> {prevCh}</div>
-            <div className="qx-sp2-msg"><span className="qx-sp2-bot">JOEL</span><div><b>New voicemail · Ext 1 Sales</b><p>Daniel Okafor (415) 555-0182 - “Hi, calling about scheduling a cleaning…” <b className="qx-sp2-sum">Summary:</b> Wants to book a cleaning this week.</p><span className="qx-sp2-btns"><span className="qx-sp2-b">▶ Play</span><span className="qx-sp2-b">Call back</span></span></div></div>
+            <div className="qx-sp2-msg"><span className="qx-sp2-bot">AnyPhone</span><div><b>New voicemail · Ext 1 Sales</b><p>Daniel Okafor (415) 555-0182 - “Hi, calling about scheduling a cleaning…” <b className="qx-sp2-sum">Summary:</b> Wants to book a cleaning this week.</p><span className="qx-sp2-btns"><span className="qx-sp2-b">▶ Play</span><span className="qx-sp2-b">Call back</span></span></div></div>
           </div>
 
           <div className="qx-offrow">

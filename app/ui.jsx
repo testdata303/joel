@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - UI primitives + icon set  (exports to window)
+   AnyPhone app - UI primitives + icon set  (exports to window)
    ============================================================ */
 const { useState, useRef, useEffect, useCallback } = React;
 

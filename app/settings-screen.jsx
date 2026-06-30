@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Settings (exports to window)
+   AnyPhone app - Settings (exports to window)
    Stripe-style: a constrained, centered page of grouped cards.
    Everyday config (Numbers, Main Greeting) jumps to its own
    top-level screen; deeper setup opens an in-place detail page.

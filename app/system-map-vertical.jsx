@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - System Map VERTICAL (exports window.SystemMapVertical)
+   AnyPhone app - System Map VERTICAL (exports window.SystemMapVertical)
    Same tree as SystemMap but flowing top → bottom so the page
    scrolls down rather than sideways:
      numbers (top row) → main greeting → extensions → phones each rings.
@@ -14,7 +14,7 @@ function vDest(str){
   const base = String(str);
   const main = base.replace(/\s*-.*/, '').trim();
   const tail = base.includes('-') ? base.replace(/.*-\s*/, '').trim() : '';
-  if(/mobile app/i.test(base)) return { icon:'smartphone', label:main, kind:'JOEL app' };
+  if(/mobile app/i.test(base)) return { icon:'smartphone', label:main, kind:'AnyPhone app' };
   if(/\d{3}.*\d{3}|\d{3}-\d{4}|\(\d{3}\)/.test(main)) return { icon:'phone', label:main, kind: tail || 'Phone' };
   if(/cell|mobile/i.test(base)) return { icon:'smartphone', label:main, kind: tail || 'Cell' };
   return { icon:'monitor', label:main, kind: tail || 'Desk phone' };

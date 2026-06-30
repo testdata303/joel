@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - System Overview (exports to window)
+   AnyPhone app - System Overview (exports to window)
    A calm setup/management summary of the phone system.
    NOT a dashboard: no analytics, no reporting. Summarizes the
    core objects (numbers, greeting, extensions, voicemail) and

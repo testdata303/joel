@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Call Forwarding (quick, on-the-go management)
+   AnyPhone app - Call Forwarding (quick, on-the-go management)
    One light, airy page: every extension and its forwarding
    numbers. Flip forwarding on/off, set hours, screen calls.
    Deeper edits open the extension's Forwarding panel.

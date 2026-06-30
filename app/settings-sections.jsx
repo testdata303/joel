@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL - Settings sections, part 1: shared helpers + System + Team
+   AnyPhone - Settings sections, part 1: shared helpers + System + Team
    Built from the app's existing vocabulary (Card / Toggle / Field /
    Choice / note / pill). Grounded in Product Rules v1.
    ============================================================ */
@@ -95,7 +95,7 @@ function DirectorySection({ extensions, onBack }){
   const setList=(id,v)=>setListing(s=>({...s,[id]:v}));
   return (
     <SetDetail title="Directory" onBack={onBack}
-      sub="Callers press 9 to reach a teammate by name instead of remembering an extension number. JOEL builds the directory automatically from your extension names.">
+      sub="Callers press 9 to reach a teammate by name instead of remembering an extension number. AnyPhone builds the directory automatically from your extension names.">
       <Card icon="route" title="Dial-by-name directory" desc="Available at 9 on your menu.">
         <SRow title="Directory enabled" meta={on?'Callers can look up an extension by name.':'Pressing 9 follows your “no match” behavior below.'}
           trail={<Toggle on={on} onChange={setOn}/>}/>
@@ -103,13 +103,13 @@ function DirectorySection({ extensions, onBack }){
 
       {on && <>
         <Card icon="mic" title="How callers search" flush>
-          <SRow title="Say a name" meta="“Sales,” “Dr. Niaraki,” “Bob” - JOEL listens and connects."
+          <SRow title="Say a name" meta="“Sales,” “Dr. Niaraki,” “Bob” - AnyPhone listens and connects."
             trail={<Toggle on={voice} onChange={setVoice}/>}/>
           <SRow title="Spell a name on the keypad" meta="Type the first letters of a name (e.g. B-O-B)."
             trail={<Toggle on={spell} onChange={setSpell}/>}/>
         </Card>
 
-        <Card icon="layers" title="In the directory" desc="Choose who callers can reach by name. JOEL uses each extension’s spoken (text-to-voice) name." flush>
+        <Card icon="layers" title="In the directory" desc="Choose who callers can reach by name. AnyPhone uses each extension’s spoken (text-to-voice) name." flush>
           {roster.map(e=>{
             const disabled = !e.enabled || e.status==='disabled';
             if(disabled){
@@ -134,7 +134,7 @@ function DirectorySection({ extensions, onBack }){
         </Card>
         <p className="ss-foot">Turn off any extension you don’t want callers reaching by name, even while it’s active. Turned-off and deleted extensions are never listed.</p>
 
-        <div className="ss-grouph">If JOEL can’t find a match</div>
+        <div className="ss-grouph">If AnyPhone can’t find a match</div>
         <div className="ss-choices">
           <Choice on={noMatch==='replay'} onClick={()=>setNoMatch('replay')} title="Replay the menu" desc="Read the main menu again so the caller can try another option, or press # to return to the main menu."/>
           <Choice on={noMatch==='operator'} onClick={()=>setNoMatch('operator')} title="Send to the Operator (Ext 0)" desc="Recommended. A person picks up instead of leaving the caller stuck."/>
@@ -158,7 +158,7 @@ const SX_DEVICES = [
 /* ---- compatible desk-phone catalog + "bring your own" connect flow ---- */
 const DESK_MODELS = [
   { id:'yealink-t31g', brand:'Yealink', name:'T31G', tag:'Our pick', price:'~$65',
-    blurb:'The desk phone we recommend - reliable, inexpensive, and plug-and-play with JOEL. A sharp display and gigabit passthrough.',
+    blurb:'The desk phone we recommend - reliable, inexpensive, and plug-and-play with AnyPhone. A sharp display and gigabit passthrough.',
     specs:['2 lines','Gigabit Ethernet','Plug-and-play setup'], buy:'https://www.amazon.com/s?k=Yealink+T31G+IP+phone' },
 ];
 function QRishCode({ size=168 }){
@@ -179,7 +179,7 @@ function AddDeskPhoneFlow({ onClose, onAdd }){
   const [step,setStep]=sxState(1);
   const [model,setModel]=sxState(DESK_MODELS.length===1?DESK_MODELS[0]:null);
   const [ext,setExt]=sxState('Operator');
-  const code='JOEL-4F2A-9C71';
+  const code='AnyPhone-4F2A-9C71';
   const back=()=>setStep(s=>Math.max(1,s-1));
   const finish=()=>{ onAdd && onAdd(model?`${model.brand} ${model.name}`:'New desk phone', ext); onClose(); };
 
@@ -205,7 +205,7 @@ function AddDeskPhoneFlow({ onClose, onAdd }){
 
       {step===1 && (
         <div className="dp-learn">
-          <p className="dp-lead">Prefer a real handset on the desk? JOEL works with standard SIP desk phones - bring your own and point it at an extension, just like the mobile app. Here’s how it works:</p>
+          <p className="dp-lead">Prefer a real handset on the desk? AnyPhone works with standard SIP desk phones - bring your own and point it at an extension, just like the mobile app. Here’s how it works:</p>
           <div className="dp-how">
             <div className="dp-howrow"><span className="dp-howic"><Icon name="monitor"/></span><div><b>Bring any approved phone</b><span>Buy a supported model - or use one you already own. No contract, no special hardware from us.</span></div></div>
             <div className="dp-howrow"><span className="dp-howic"><Icon name="webhook"/></span><div><b>Plug in &amp; scan to pair</b><span>Connect it to your network, scan the pairing code, and it configures itself - no telecom settings.</span></div></div>
@@ -300,14 +300,14 @@ function DevicesSection({ onBack }){
         {sip.map(d=><DeviceRow key={d.id} d={d} onDisable={setStatus} onRemove={remove}/>)}
         <button className="add-row" onClick={()=>setAddOpen(true)}><span className="plus"><Icon name="plus"/></span> Add a desk phone</button>
       </Card>
-      <p className="ss-foot">JOEL supports approved phone models only - plug one in and it connects automatically. No setup codes, no telecom settings.</p>
+      <p className="ss-foot">AnyPhone supports approved phone models only - plug one in and it connects automatically. No setup codes, no telecom settings.</p>
       {addOpen && <AddDeskPhoneFlow onClose={()=>setAddOpen(false)} onAdd={addPhone}/>}
 
       <div className="ss-grouph">Mobile app</div>
       <Card flush>
         {app.map(d=><DeviceRow key={d.id} d={d} onDisable={setStatus} onRemove={remove}/>)}
       </Card>
-      <p className="ss-foot">A teammate’s phone becomes a device when they sign in to the JOEL app. Add people on the <b>Users &amp; roles</b> screen.</p>
+      <p className="ss-foot">A teammate’s phone becomes a device when they sign in to the AnyPhone app. Add people on the <b>Users &amp; roles</b> screen.</p>
     </SetDetail>
   );
 }
@@ -325,7 +325,7 @@ function HoldSection({ onBack }){
   const [sel,setSel]=sxState('ambient');
   return (
     <SetDetail title="Music on hold" onBack={onBack}
-      sub="What callers hear while they wait to be connected - for example during call screening, or while JOEL rings your next destination.">
+      sub="What callers hear while they wait to be connected - for example during call screening, or while AnyPhone rings your next destination.">
       <Card flush>
         {SX_HOLD.map(h=>(
           <div className="ss-row" key={h.id}>
@@ -574,7 +574,7 @@ function UsersSection({ onBack, extensions }){
         ))}
         <button className="add-row"><span className="plus"><Icon name="plus"/></span> Invite a teammate</button>
       </div>
-      <p className="ss-foot">JOEL still rings your phones whether or not anyone has an account - accounts only control who can sign in and what they can see or change. There’s always exactly one <b>Owner</b>: full access including billing, can’t be removed.</p>
+      <p className="ss-foot">AnyPhone still rings your phones whether or not anyone has an account - accounts only control who can sign in and what they can see or change. There’s always exactly one <b>Owner</b>: full access including billing, can’t be removed.</p>
     </SetDetail>
   );
 }
@@ -603,7 +603,7 @@ function ProfileSection({ businessName, onNav, onBack }){
         <Field label="Business name" help="Shown across the app and written into your greetings.">
           <div style={{maxWidth:360}}><input className="input" value={name} onChange={e=>setName(e.target.value)}/></div>
         </Field>
-        <Field label="How it’s pronounced" help="How JOEL says your name in generated audio. Spell it out if it’s tricky - e.g. “Smile-bar.”">
+        <Field label="How it’s pronounced" help="How AnyPhone says your name in generated audio. Spell it out if it’s tricky - e.g. “Smile-bar.”">
           <div style={{maxWidth:360,display:'flex',gap:8}}>
             <input className="input" value={spoken} onChange={e=>setSpoken(e.target.value)}/>
             <ListenBtn/>
@@ -629,7 +629,7 @@ function ProfileSection({ businessName, onNav, onBack }){
       <Card icon="clock" title="Time & hours" flush>
         <div className="ss-row">
           <span className="ss-ic"><Icon name="clock"/></span>
-          <span className="ss-main"><b>Time zone</b><span className="ss-meta">JOEL uses this to decide when you’re open and which greeting to play.</span></span>
+          <span className="ss-main"><b>Time zone</b><span className="ss-meta">AnyPhone uses this to decide when you’re open and which greeting to play.</span></span>
           <span className="ss-trail">
             <select className="select" value={tz} onChange={e=>setTz(e.target.value)}>{TZS.map(t=><option key={t} value={t}>{t}</option>)}</select>
           </span>

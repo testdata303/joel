@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - SMS Inbox Notification settings
+   AnyPhone app - SMS Inbox Notification settings
    Lives inside the SMS product area (SMS → Inbox settings).
    Model: New (unassigned) conversations vs Assigned conversations
    are notified differently. Anti-spam: one primary channel.

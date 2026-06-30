@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - WhatsApp
+   AnyPhone app - WhatsApp
    1) Onboarding step (Quick Setup, after Slack): enable WhatsApp on
       the business number. Messages land in the Inbox AND the owner's
       WhatsApp app.
@@ -16,7 +16,7 @@ const WA_BIZ_NUMBER = '(617) 555-0100';
 const WA_BENEFITS = [
   { ic:'whatsapp', t:'Customers message your number on WhatsApp', d:'They start a WhatsApp chat with your business number - nothing new for them to install.' },
   { ic:'inbox',    t:'It all lands in your text inbox', d:'WhatsApp chats sit right next to your SMS - one inbox to keep an eye on.' },
-  { ic:'users',    t:'Reply & assign from JOEL', d:'Answer from your JOEL number, hand off to a teammate, and resolve together.' },
+  { ic:'users',    t:'Reply & assign from AnyPhone', d:'Answer from your AnyPhone number, hand off to a teammate, and resolve together.' },
 ];
 
 /* the routing story: a WhatsApp message lands in the same text inbox as SMS */
@@ -30,7 +30,7 @@ function WAFlow(){
       <div className="wa-flow-arrow"><WAIcon name="chevright"/></div>
       <div className="wa-flow-node biz">
         <span className="wa-flow-ic wa"><WAIcon name="whatsapp"/></span>
-        <b>Your JOEL number</b><span>{WA_BIZ_NUMBER}</span>
+        <b>Your AnyPhone number</b><span>{WA_BIZ_NUMBER}</span>
       </div>
       <div className="wa-flow-arrow"><WAIcon name="chevright"/></div>
       <div className="wa-flow-node dest">
@@ -105,7 +105,7 @@ function WAControls({ enabled, onToggle, number }){
 
       <section className="qx-card">
         <h2 className="qx-h2">WhatsApp lives in your text inbox</h2>
-        <p className="qx-sub">Your JOEL number can accept and reply to WhatsApp Business messages. Every chat arrives in the same inbox as your texts - there’s no separate app to check.</p>
+        <p className="qx-sub">Your AnyPhone number can accept and reply to WhatsApp Business messages. Every chat arrives in the same inbox as your texts - there’s no separate app to check.</p>
         <div className="wa-points">
           <div className="wa-point">
             <span className="wa-dest-ic inbox"><WAIcon name="inbox"/></span>
@@ -113,7 +113,7 @@ function WAControls({ enabled, onToggle, number }){
           </div>
           <div className="wa-point">
             <span className="wa-dest-ic wa"><WAIcon name="whatsapp"/></span>
-            <div className="wa-dest-t"><b>Reply from your JOEL number</b><span>Answer on the same business number - no personal WhatsApp account, no new number to share.</span></div>
+            <div className="wa-dest-t"><b>Reply from your AnyPhone number</b><span>Answer on the same business number - no personal WhatsApp account, no new number to share.</span></div>
           </div>
           <div className="wa-point">
             <span className="wa-dest-ic team"><WAIcon name="users"/></span>
@@ -143,7 +143,7 @@ function WAControls({ enabled, onToggle, number }){
           </div>
           <div className={`wa-notif-row${notif.app?'':' off'}`}>
             <span className="wa-notif-ic app"><WAIcon name="appbell"/></span>
-            <div className="wa-dest-t"><b>Push to the JOEL app</b><span>Whoever’s assigned gets a push notification on their phone.</span></div>
+            <div className="wa-dest-t"><b>Push to the AnyPhone app</b><span>Whoever’s assigned gets a push notification on their phone.</span></div>
             <div className="wa-notif-r"><WAToggle on={notif.app} onChange={v=>setNotif(n=>({...n,app:v}))}/></div>
           </div>
         </div>

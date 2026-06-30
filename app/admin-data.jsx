@@ -37,8 +37,8 @@ const OPTIONS = [
     key: '2', name: 'Emergency Repair', type: 'ext', glyph: 'phone',
     strategy: 'all', ringSec: 30,
     dests: [
-      { name: 'Bob Stevens', sub: 'JOEL app', kind: 'app', screen: false, on: true },
-      { name: 'Dale Ruiz', sub: 'On-call tech · JOEL app', kind: 'app', screen: false, on: true },
+      { name: 'Bob Stevens', sub: 'AnyPhone app', kind: 'app', screen: false, on: true },
+      { name: 'Dale Ruiz', sub: 'On-call tech · AnyPhone app', kind: 'app', screen: false, on: true },
     ],
     fallback: 'Voicemail',
     schedule: '24 / 7',

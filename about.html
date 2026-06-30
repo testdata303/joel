@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>JOEL - About</title>
+<title>AnyPhone - About</title>
 <meta name="description" content="Small businesses are entering their most powerful era in history. Here's what we've learned watching them get here.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@600;700;800&family=Spline+Sans+Mono:wght@500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
   :root{--cream:#faf7f2;--script:'Caveat',cursive;} /* page-specific tokens; rest inherited from site.css */
@@ -22,12 +22,12 @@
   /* NAV */
   nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
-  .logo{font-family:'Archivo Black',var(--sans);font-weight:900;font-size:2.6rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;-webkit-text-stroke:1px var(--ink);line-height:1;}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.72rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
   .nav-links{display:flex;align-items:center;gap:32px;}
   .nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
   .nav-links a:hover{color:var(--ink);}
   .nav-cta-m{display:none;}
-  .nav-cta{background:var(--blue);color:#fff!important;padding:11px 22px;border-radius:10px;font-weight:700!important;text-decoration:none;} .nav-cta:hover{background:var(--blue-dark);}
+  .nav-cta{background:var(--accent);color:#fff!important;padding:11px 22px;border-radius:10px;font-weight:700!important;text-decoration:none;} .nav-cta:hover{background:var(--accent-dark);}
   .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--ink);}
   .hamburger svg{width:26px;height:26px;}
   @media(max-width:860px){
@@ -143,7 +143,7 @@
   }
   .value-name .vl{color:var(--blue);}
   .value-letter{
-    font-family:'Archivo Black',var(--sans);font-size:1.1rem;
+    font-family:var(--display);font-weight:800;font-size:1.1rem;
     color:var(--blue);width:38px;height:38px;border:2px solid var(--blue);
     border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
     flex-shrink:0;line-height:1;
@@ -198,8 +198,8 @@
 
   /* CLOSER */
   .closer{background:var(--blue);color:#fff;text-align:center;padding:88px 0;border-bottom:none;}
-  .closer h2{font-size:clamp(1.85rem,3.6vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-bottom:14px;text-wrap:balance;}
-  .closer p{font-size:1.08rem;opacity:.94;margin-bottom:30px;max-width:50ch;margin-left:auto;margin-right:auto;text-wrap:balance;}
+  .closer h2{font-size:clamp(1.85rem,3.6vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-bottom:14px;text-wrap:pretty;}
+  .closer p{font-size:1.08rem;opacity:.94;margin-bottom:30px;max-width:50ch;margin-left:auto;margin-right:auto;text-wrap:pretty;}
   .btn-white{display:inline-block;background:#fff;color:var(--blue);padding:14px 28px;border-radius:11px;font-weight:800;text-decoration:none;transition:transform .18s;}
   .btn-white:hover{transform:translateY(-1px);background:#f3f5ff;}
 
@@ -211,14 +211,14 @@
   /* === standard closer (matches homepage) === */
   .closer{background:#fff;color:var(--ink);text-align:center;padding:48px 0 56px;}
   .closer .wrap{max-width:1140px;}
-  .closer-card{background:linear-gradient(140deg,#2540ee,#1b32c4);border-radius:24px;padding:64px 40px;color:#fff;box-shadow:0 30px 60px -34px rgba(37,64,238,.45);}
-  .closer-card h2{font-weight:800;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:18px;color:#fff;text-wrap:balance;}
-  .closer-card p{font-size:1.15rem;line-height:1.55;color:rgba(255,255,255,.9);max-width:40rem;margin:0 auto 30px;font-weight:400;}
-  .closer-card .btn,.closer-card .btn-primary,.closer-card .btn-white{background:#fff!important;color:#1b32c4!important;border:1px solid #fff!important;}
-  .closer-card .btn:hover{background:#f0f0fb!important;transform:translateY(-1px);}
+  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:56px 40px;color:var(--ink);box-shadow:none;}
+  .closer-card h2{font-weight:800;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
+  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
+  .closer-card .btn-primary{background:var(--accent)!important;color:#fff!important;border:1px solid var(--accent)!important;}
+  .closer-card .btn-primary:hover{background:var(--accent-dark)!important;transform:translateY(-1px);}
 </style>
 <style>
-  .closer-micro{margin-top:16px;font-size:.88rem;color:rgba(255,255,255,.85);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
   .closer-micro svg{width:15px;height:15px;flex-shrink:0;}
 </style>
 </head>
@@ -226,7 +226,7 @@
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo">JOEL</a>
+    <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">.</span></a>
     <a href="signup.html?plan=grow" class="nav-cta nav-cta-m">Get your number</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -245,9 +245,9 @@
 <header class="about-hero">
   <div class="wrap">
     <div class="hero-grid">
-      <span class="hero-eyebrow reveal">About JOEL</span>
+      <span class="hero-eyebrow reveal">About AnyPhone</span>
       <div class="hero-main">
-        <h1>Every business needs a number. JOEL is the <em>flexible phone system</em> built for how founders and small teams actually work.</h1>
+        <h1>Every business needs a number. AnyPhone is the <em>flexible phone system</em> built for how founders and small teams actually work.</h1>
       </div>
     </div>
   </div>
@@ -269,9 +269,9 @@
 <section class="chapter alt">
   <div class="wrap">
     <div class="ch-grid">
-      <div class="ch-label reveal">Why we built JOEL</div>
+      <div class="ch-label reveal">Why we built AnyPhone</div>
       <div class="ch-body">
-        <p class="reveal">Most phone systems force a bad trade: stay basic, or pay per seat for software you will never fully use. We built JOEL so you never have to choose.</p>
+        <p class="reveal">Most phone systems force a bad trade: stay basic, or pay per seat for software you will never fully use. We built AnyPhone so you never have to choose.</p>
         <p class="reveal">Start simple with one number. A full system with calls, texts, routing, and integrations sits underneath, ready the moment you need it. No forced migration. No per-user pricing. No unnecessary complexity.</p>
       </div>
     </div>
@@ -386,7 +386,7 @@
   <div class="wrap">
     <div class="foot-inner">
       <div class="foot-brand">
-        <a href="index.html" class="logo">JOEL</a>
+        <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">.</span></a>
         <p>The phone system for new businesses and modern small teams.</p>
       </div>
       <div class="foot-cols">
@@ -396,7 +396,7 @@
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a></div>
       </div>
     </div>
-    <div class="foot-base">© 2026 JOEL. All rights reserved.</div>
+    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
   </div>
 </footer>
 

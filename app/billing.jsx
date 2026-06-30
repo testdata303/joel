@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL - Billing screen
+   AnyPhone - Billing screen
    A deliberately small page. Optimized for five jobs:
    know the plan, see what you pay for, know when you're billed,
    change the card, and cancel. No dashboards, no analytics.
@@ -97,7 +97,7 @@ function BillingScreen(){
         {canceled && (
           <div className="note warn" style={{margin:'0 20px 4px'}}>
             <BIcon name="info"/>
-            <span><b>Scheduled to cancel.</b> Your plan stays active until <b>{renew}</b>. After that JOEL stops taking calls and texts, and your numbers are released.</span>
+            <span><b>Scheduled to cancel.</b> Your plan stays active until <b>{renew}</b>. After that AnyPhone stops taking calls and texts, and your numbers are released.</span>
           </div>
         )}
 
@@ -226,7 +226,7 @@ function BillingScreen(){
             <b>{canceled?'Subscription canceled':'Cancel subscription'}</b>
             <span>{canceled
               ? `Scheduled to end on ${renew}. You can resume any time before then with no interruption.`
-              : `Your plan stays active until ${renew}. After that, JOEL stops taking calls and texts, and your numbers are released.`}</span>
+              : `Your plan stays active until ${renew}. After that, AnyPhone stops taking calls and texts, and your numbers are released.`}</span>
           </div>
           {canceled
             ? <button className="btn btn-primary" onClick={()=>setCanceled(false)}>Resume subscription</button>
@@ -316,7 +316,7 @@ function EditContactModal({ contact, onClose, onSave }){
   const [email,setEmail]   = bState(contact.email);
   const [addr,setAddr]     = bState(contact.address);
   return (
-    <BModal icon="building" title="Billing contact" desc="Where JOEL sends invoices and receipts." onClose={onClose}
+    <BModal icon="building" title="Billing contact" desc="Where AnyPhone sends invoices and receipts." onClose={onClose}
       footer={<React.Fragment>
         <button className="btn btn-secondary" onClick={onClose}>Cancel</button>
         <button className="btn btn-primary" disabled={!email.trim()} style={!email.trim()?{opacity:.5,pointerEvents:'none'}:null} onClick={()=>onSave({email:email.trim(),address:addr.trim()})}>Save</button>
@@ -340,7 +340,7 @@ function CancelModal({ renew, planName, onClose, onConfirm }){
       </React.Fragment>}>
       <div className="note warn" style={{marginBottom:16}}>
         <BIcon name="info"/>
-        <span>Your <b>{planName}</b> plan stays active until <b>{renew}</b>. After that, JOEL <b>stops taking calls and texts</b>, and your business numbers are <b>released</b> and can't be recovered.</span>
+        <span>Your <b>{planName}</b> plan stays active until <b>{renew}</b>. After that, AnyPhone <b>stops taking calls and texts</b>, and your business numbers are <b>released</b> and can't be recovered.</span>
       </div>
       <button className="acc-ack" onClick={()=>setAck(a=>!a)} style={{marginTop:0}}>
         <span className={`acc-checkbox${ack?' on':''}`}>{ack && <BIcon name="check"/>}</span>

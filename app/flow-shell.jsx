@@ -32,7 +32,7 @@ function FcSidebar(){
   return (
     <aside className="sidebar">
       <div className="sb-top">
-        <div className="sb-brand"><span className="sb-word">JOEL</span></div>
+        <div className="sb-brand"><span className="sb-word">AnyPhone</span></div>
         <button className="switcher">
           <span className="biz-name">Bob's HVAC</span>
           <span className="chev"><Icon name="chevdown" style={{width:16,height:16}}/></span>

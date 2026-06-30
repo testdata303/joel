@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flyline — Logo Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Spectral:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@500;700;800&family=Space+Grotesk:wght@400;500;600&family=Hanken+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#191815;          /* near-black warm */
+    --paper:#f5f2ec;        /* warm cream */
+    --card:#fffdf9;
+    --line:#e4ded2;
+    --muted:#8d877a;
+    --accent:#0e7c74;       /* calm teal, used sparingly on marks */
+  }
+  body{
+    font-family:'Hanken Grotesk',system-ui,sans-serif;
+    background:var(--paper);color:var(--ink);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    padding:72px 40px 96px;
+  }
+  .head{max-width:1180px;margin:0 auto 56px;}
+  .head .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .head .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--ink);}
+  .head h1{font-family:'Instrument Serif',serif;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.01em;font-weight:400;max-width:18ch;}
+  .head p{margin-top:18px;max-width:56ch;color:#5a554b;font-size:1.08rem;line-height:1.6;font-weight:500;}
+
+  .grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
+  .stage{flex:1;min-height:200px;display:flex;align-items:center;justify-content:center;padding:54px 40px;}
+  .meta{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;background:#fbf9f4;}
+  .meta .no{font-family:'Spectral',serif;font-size:.95rem;color:var(--muted);font-weight:500;}
+  .meta .nm{font-size:.82rem;font-weight:700;letter-spacing:.01em;}
+  .meta .nm span{color:var(--muted);font-weight:500;}
+  .meta .mini{display:flex;align-items:center;gap:10px;}
+  .chip{width:34px;height:34px;border-radius:8px;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--paper);}
+
+  /* ---- wordmark treatments ---- */
+  .lock{display:flex;align-items:center;gap:16px;}
+  .lock svg{display:block;flex:none;}
+
+  .w-instrument{font-family:'Instrument Serif',serif;font-weight:400;font-size:4rem;letter-spacing:0;line-height:1;}
+  .w-instrument .dot{color:var(--accent);}
+
+  .w-spectral{font-family:'Spectral',serif;font-weight:600;font-size:3.2rem;letter-spacing:-.015em;line-height:1;}
+
+  .w-news{font-family:'Newsreader',serif;font-weight:400;font-style:italic;font-size:3.5rem;letter-spacing:-.01em;line-height:1;}
+
+  .w-schibsted{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:2.9rem;letter-spacing:-.04em;line-height:1;}
+
+  .w-space{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:2.7rem;letter-spacing:-.02em;line-height:1;text-transform:lowercase;}
+
+  .w-hanken{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:2.7rem;letter-spacing:-.035em;line-height:1;}
+
+  .mini .w-instrument{font-size:1.05rem;}
+  .mini .w-spectral{font-size:1rem;}
+  .mini .w-news{font-size:1.05rem;}
+  .mini .w-schibsted,.mini .w-space,.mini .w-hanken{font-size:.95rem;}
+  .chip .w-instrument{font-size:1.35rem;}
+  .chip .w-schibsted,.chip .w-hanken,.chip .w-space{font-size:1rem;font-weight:800;}
+
+  @media(max-width:780px){
+    body{padding:48px 20px 64px;}
+    .grid{grid-template-columns:1fr;}
+    .stage{padding:44px 26px;min-height:0;}
+  }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="eyebrow">Brand identity · wordmark directions</div>
+    <h1>Flyline, eight ways.</h1>
+    <p>A spread of serif and sans wordmarks in the refined, editorial register Vanilla works in — calm, premium, confident. A few carry a quiet flight-path mark. Tell me which one to take forward and I'll build the full lockup, favicon, and apply it across the site.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1 — Instrument Serif -->
+    <div class="card">
+      <div class="stage"><span class="w-instrument">Flyline</span></div>
+      <div class="meta">
+        <span class="no">01</span>
+        <div class="nm">Editorial serif <span>· Instrument Serif</span></div>
+        <div class="mini"><span class="w-instrument">Flyline</span><span class="chip"><span class="w-instrument">F</span></span></div>
+      </div>
+    </div>
+
+    <!-- 2 — Spectral -->
+    <div class="card">
+      <div class="stage"><span class="w-spectral">Flyline</span></div>
+      <div class="meta">
+        <span class="no">02</span>
+        <div class="nm">Refined serif <span>· Spectral 600</span></div>
+        <div class="mini"><span class="w-spectral">Flyline</span><span class="chip"><span class="w-instrument">F</span></span></div>
+      </div>
+    </div>
+
+    <!-- 3 — Newsreader italic -->
+    <div class="card">
+      <div class="stage"><span class="w-news">Flyline</span></div>
+      <div class="meta">
+        <span class="no">03</span>
+        <div class="nm">Soft italic <span>· Newsreader</span></div>
+        <div class="mini"><span class="w-news">Flyline</span><span class="chip"><span class="w-instrument">F</span></span></div>
+      </div>
+    </div>
+
+    <!-- 4 — Schibsted Grotesk -->
+    <div class="card">
+      <div class="stage"><span class="w-schibsted">Flyline</span></div>
+      <div class="meta">
+        <span class="no">04</span>
+        <div class="nm">Modern sans <span>· Schibsted Grotesk 800</span></div>
+        <div class="mini"><span class="w-schibsted">Flyline</span><span class="chip"><span class="w-schibsted">F</span></span></div>
+      </div>
+    </div>
+
+    <!-- 5 — Space Grotesk lowercase -->
+    <div class="card">
+      <div class="stage"><span class="w-space">flyline</span></div>
+      <div class="meta">
+        <span class="no">05</span>
+        <div class="nm">Technical lowercase <span>· Space Grotesk</span></div>
+        <div class="mini"><span class="w-space">flyline</span><span class="chip"><span class="w-space">f</span></span></div>
+      </div>
+    </div>
+
+    <!-- 6 — Sans + flight-path arc mark -->
+    <div class="card">
+      <div class="stage">
+        <span class="lock">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <path d="M6 36 C 18 34, 30 22, 40 8" stroke="#0e7c74" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 6"/>
+            <circle cx="6" cy="36" r="3" fill="#191815"/>
+            <path d="M40 8 l-2.4 7.4 -3.6 -3.6 z" fill="#0e7c74"/>
+          </svg>
+          <span class="w-hanken">Flyline</span>
+        </span>
+      </div>
+      <div class="meta">
+        <span class="no">06</span>
+        <div class="nm">Sans + flight path <span>· Hanken Grotesk</span></div>
+        <div class="mini">
+          <svg width="22" height="22" viewBox="0 0 46 46" fill="none"><path d="M6 36 C 18 34, 30 22, 40 8" stroke="#0e7c74" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 7"/><path d="M40 8 l-2.4 7.4 -3.6 -3.6 z" fill="#0e7c74"/></svg>
+          <span class="chip"><svg width="20" height="20" viewBox="0 0 46 46" fill="none"><path d="M6 36 C 18 34, 30 22, 40 8" stroke="#f5f2ec" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 7"/><path d="M40 8 l-2.4 7.4 -3.6 -3.6 z" fill="#f5f2ec"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 — Serif + paper plane -->
+    <div class="card">
+      <div class="stage">
+        <span class="lock">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <path d="M33 5 L5 17 L16 21 L20 33 L24 22 L33 5 Z" fill="none" stroke="#191815" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 21 L33 5" stroke="#191815" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span class="w-spectral">Flyline</span>
+        </span>
+      </div>
+      <div class="meta">
+        <span class="no">07</span>
+        <div class="nm">Serif + paper plane <span>· Spectral</span></div>
+        <div class="mini">
+          <svg width="22" height="22" viewBox="0 0 38 38" fill="none"><path d="M33 5 L5 17 L16 21 L20 33 L24 22 L33 5 Z" fill="none" stroke="#191815" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <span class="chip"><svg width="19" height="19" viewBox="0 0 38 38" fill="none"><path d="M33 5 L5 17 L16 21 L20 33 L24 22 L33 5 Z" fill="none" stroke="#f5f2ec" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 — Monogram mark + sans -->
+    <div class="card">
+      <div class="stage">
+        <span class="lock">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+            <rect x="1.25" y="1.25" width="43.5" height="43.5" rx="11" stroke="#191815" stroke-width="2"/>
+            <path d="M16 32 V14 H31" stroke="#191815" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 23 H27" stroke="#191815" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M27 14 L33 8" stroke="#0e7c74" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+          <span class="w-hanken">Flyline</span>
+        </span>
+      </div>
+      <div class="meta">
+        <span class="no">08</span>
+        <div class="nm">Monogram lockup <span>· Hanken Grotesk</span></div>
+        <div class="mini">
+          <svg width="24" height="24" viewBox="0 0 46 46" fill="none"><rect x="1.25" y="1.25" width="43.5" height="43.5" rx="11" stroke="#191815" stroke-width="2.4"/><path d="M16 32 V14 H31" stroke="#191815" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 23 H27" stroke="#191815" stroke-width="3" stroke-linecap="round"/></svg>
+          <span class="chip" style="background:var(--ink);"><svg width="22" height="22" viewBox="0 0 46 46" fill="none"><path d="M16 32 V14 H31" stroke="#f5f2ec" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 23 H27" stroke="#f5f2ec" stroke-width="3" stroke-linecap="round"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - System Map (exports to window as SystemMap)
+   AnyPhone app - System Map (exports to window as SystemMap)
    A visual, at-a-glance tree of the whole phone system:
    your numbers → main greeting → extensions → the phones each rings.
    A number that points straight at an extension draws a line to it,
@@ -14,7 +14,7 @@ function smDest(str){
   const base = String(str);
   const main = base.replace(/\s*-.*/, '').trim();
   const tail = base.includes('-') ? base.replace(/.*-\s*/, '').trim() : '';
-  if(/mobile app/i.test(base)) return { icon:'smartphone', label:main, kind:'JOEL app' };
+  if(/mobile app/i.test(base)) return { icon:'smartphone', label:main, kind:'AnyPhone app' };
   if(/\d{3}.*\d{3}|\d{3}-\d{4}|\(\d{3}\)/.test(main)) return { icon:'phone', label:main, kind: tail || 'Phone' };
   if(/cell|mobile/i.test(base)) return { icon:'smartphone', label:main, kind: tail || 'Cell' };
   return { icon:'monitor', label:main, kind: tail || 'Desk phone' };

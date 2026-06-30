@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - System page (exports to window)
+   AnyPhone app - System page (exports to window)
    One page that reads top-to-bottom as a call travels:
    Number → how it's answered → where it rings → if no one answers.
    Progressive disclosure: a single-path system never says
@@ -166,8 +166,8 @@ function NumberCard({ n, extensions, businessName, onRouting, onDelete, onGoGree
   React.useEffect(()=>{ if(!playing) return; const t=setTimeout(()=>setPlaying(false),2000); return ()=>clearTimeout(t); },[playing]);
   const tip = isMenu ? 'Callers hear your main greeting, then the phone menu.'
     : TE==='greeting' ? `“Please wait while we transfer you to ${ext?ext.name:''}.”`
-    : TE==='music' ? 'Hold music plays while JOEL rings your destinations.'
-    : 'Standard ringing plays while JOEL rings your destinations.';
+    : TE==='music' ? 'Hold music plays while AnyPhone rings your destinations.'
+    : 'Standard ringing plays while AnyPhone rings your destinations.';
   const [showTip,setShowTip]=React.useState(false);
   const qref=React.useRef(null);
   React.useEffect(()=>{ if(!showTip) return; const h=e=>{ if(qref.current && !qref.current.contains(e.target)) setShowTip(false); }; document.addEventListener('mousedown',h); return ()=>document.removeEventListener('mousedown',h); },[showTip]);
@@ -525,10 +525,10 @@ function GreetingsScreen({ onGoExtensions, extensions, businessName }){
             <div className="choices">
               <Choice on={flow==='operator'} onClick={()=>setFlow('operator')}
                 title="Hold or press 0 for the operator"
-                desc={`Callers can press a key, or just stay on the line - JOEL connects them to ${opName} (Ext 0). The simplest, most forgiving setup, and the default.`}/>
+                desc={`Callers can press a key, or just stay on the line - AnyPhone connects them to ${opName} (Ext 0). The simplest, most forgiving setup, and the default.`}/>
               <Choice on={flow==='require'} onClick={()=>setFlow('require')}
                 title="Require callers to choose"
-                desc="Callers must press a key. If they stay silent, JOEL replays the greeting once, then connects them to the operator so no one is stranded."/>
+                desc="Callers must press a key. If they stay silent, AnyPhone replays the greeting once, then connects them to the operator so no one is stranded."/>
             </div>
             <div className="sched-row" style={{marginTop:16}}>
               <span className="sched-ic"><Icon name="copy"/></span>

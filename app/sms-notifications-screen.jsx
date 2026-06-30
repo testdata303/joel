@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL - Text notifications (literal, Slack-central controls)
+   AnyPhone - Text notifications (literal, Slack-central controls)
    Owned by the SMS Inbox.
    ============================================================ */
 const { useState: NS_useState, useRef: NS_useRef, useEffect: NS_useEffect } = React;
@@ -182,7 +182,7 @@ function SmsNotifications({ onBack }) {
           {rep.assigned &&
           <React.Fragment>
               <div className="ns-row">
-                <div className="ns-row-l"><span className="ns-row-ic solo"><NSIcon name="bell" /></span><div className="ns-row-t"><b>Once assigned, alert only the assignee</b><span>When someone takes a conversation, JOEL stops pinging the shared channel and the rest of the team - only the assignee hears about new replies. Avoids notification chaos.</span></div></div>
+                <div className="ns-row-l"><span className="ns-row-ic solo"><NSIcon name="bell" /></span><div className="ns-row-t"><b>Once assigned, alert only the assignee</b><span>When someone takes a conversation, AnyPhone stops pinging the shared channel and the rest of the team - only the assignee hears about new replies. Avoids notification chaos.</span></div></div>
                 <div className="ns-row-r"><NSToggle on={rep.solo} onChange={(v) => setRep((c) => ({ ...c, solo: v }))} /></div>
               </div>
               <div className="ns-prefnote">
@@ -206,7 +206,7 @@ function SmsNotifications({ onBack }) {
                 <span className="ns-slackexp-ic"><NSIcon name="slack" /></span>
                 <div className="ns-slackexp-b">
                   <b>Getting a personal Slack message</b>
-                  <p>A Slack DM reaches a teammate only after they link their own Slack - one tap in their notification settings. You connect the workspace and shared channels under <b>Settings → Integrations</b>; each person links their personal account themselves, so JOEL never needs you to type anyone’s Slack username.</p>
+                  <p>A Slack DM reaches a teammate only after they link their own Slack - one tap in their notification settings. You connect the workspace and shared channels under <b>Settings → Integrations</b>; each person links their personal account themselves, so AnyPhone never needs you to type anyone’s Slack username.</p>
                   <div className="ns-slackexp-foot">
                     <span>{linkedCount} of {NS_ASSIGNEES.length} teammates have linked Slack</span>
                     <button className="btn btn-secondary sm"><NSIcon name="mail" /> Remind the rest</button>
@@ -216,7 +216,7 @@ function SmsNotifications({ onBack }) {
             </React.Fragment>
           }
         </div>
-        <p className="ns-help"><NSIcon name="info" /> {rep.solo ? 'Once someone’s assigned, JOEL keeps it personal - no channel-wide pings for every reply.' : 'New replies still post to the shared channel even after someone’s assigned - turn on the setting above to keep it to the assignee.'}</p>
+        <p className="ns-help"><NSIcon name="info" /> {rep.solo ? 'Once someone’s assigned, AnyPhone keeps it personal - no channel-wide pings for every reply.' : 'New replies still post to the shared channel even after someone’s assigned - turn on the setting above to keep it to the assignee.'}</p>
       </section>
 
       {/* 3 - unanswered */}

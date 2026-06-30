@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL - Settings sections, part 2: Messaging/compliance + Advanced
+   AnyPhone - Settings sections, part 2: Messaging/compliance + Advanced
    Reuses helpers from settings-sections.jsx (SetDetail/SRow/etc).
    ============================================================ */
 const { SetDetail:S2Detail, SRow:S2Row, SStatus:S2Status, SMenu:S2Menu, ListenBtn:S2Listen } = window;
@@ -18,7 +18,7 @@ function SmsComplianceSection({ numbers, onBack }){
   const lines = numbers || [];
   return (
     <S2Detail title="SMS compliance" onBack={onBack}
-      sub="Before a business number can text, carriers require it to be registered. JOEL files the registration for you - you just confirm a few details once.">
+      sub="Before a business number can text, carriers require it to be registered. AnyPhone files the registration for you - you just confirm a few details once.">
       <S2Card icon="building" title="Business details" desc="Used for carrier registration. Shared once, then reused for every number.">
         <S2Row icon="building" title="Registered name" meta="Smilebar LLC" trail={<S2Status kind="g" label="Verified"/>}/>
         <S2Row icon="hashnum" title="Tax ID (EIN)" meta="**-***4471" trail={<S2Status kind="g" label="Verified"/>}/>
@@ -42,7 +42,7 @@ function SmsComplianceSection({ numbers, onBack }){
           );
         })}
       </S2Card>
-      <p className="ss-foot">Toll-free numbers and local numbers register differently, but JOEL handles both. Review usually takes 1–3 business days; calling keeps working the whole time.</p>
+      <p className="ss-foot">Toll-free numbers and local numbers register differently, but AnyPhone handles both. Review usually takes 1–3 business days; calling keeps working the whole time.</p>
     </S2Detail>
   );
 }
@@ -100,10 +100,10 @@ function RetentionSection({ onBack }){
   const sel=(v,set)=>(<select className="select" value={v} onChange={e=>set(e.target.value)}>{RETAIN_OPTS.map(o=><option key={o.v} value={o.v}>{o.l}</option>)}</select>);
   return (
     <S2Detail title="Data retention" onBack={onBack}
-      sub="How long JOEL keeps your call recordings, voicemails, and messages before clearing them out automatically.">
+      sub="How long AnyPhone keeps your call recordings, voicemails, and messages before clearing them out automatically.">
       <div className="note info" style={{marginBottom:18}}>
         <S2Icon name="info"/>
-        <span>When a recording or voicemail reaches its limit, JOEL deletes the <b>audio</b> but keeps the <b>transcript, summary, and call details</b>. You keep the searchable history without paying to store the audio forever.</span>
+        <span>When a recording or voicemail reaches its limit, AnyPhone deletes the <b>audio</b> but keeps the <b>transcript, summary, and call details</b>. You keep the searchable history without paying to store the audio forever.</span>
       </div>
       <S2Card flush>
         <S2Row icon="disc" title="Call recordings" meta="Audio of recorded calls." trail={sel(rec,setRec)}/>
@@ -136,7 +136,7 @@ function IntegrationsSettingsSection({ onBack }){
   const removeCh=(id)=>setChannels(c=>c.filter(x=>x.id!==id));
   return (
     <S2Detail title="Integrations" onBack={onBack}
-      sub="Send JOEL activity to the tools your team already uses. Integrations belong to the business - admins set them up once for everyone.">
+      sub="Send AnyPhone activity to the tools your team already uses. Integrations belong to the business - admins set them up once for everyone.">
       <div className="ss-grouph">Slack</div>
       <S2Card flush>
         <S2Row icon="slack" iconCls="blue" title="Slack workspace" meta={<>Connected to <b style={{color:'var(--ink)'}}>Smilebar HQ</b></>}
@@ -157,7 +157,7 @@ function IntegrationsSettingsSection({ onBack }){
       <div className="ss-grouph">Approved channels</div>
       <div className="note info" style={{marginBottom:14}}>
         <S2Icon name="shield"/>
-        <span>Only admins add channels here. Everywhere notifications are set - on an extension or the shared inbox - your team <b>picks from this list</b>. Teammates can’t point JOEL at their own channels, so activity only ever flows where you’ve approved it.</span>
+        <span>Only admins add channels here. Everywhere notifications are set - on an extension or the shared inbox - your team <b>picks from this list</b>. Teammates can’t point AnyPhone at their own channels, so activity only ever flows where you’ve approved it.</span>
       </div>
       <S2Card flush>
         {channels.map(c=>(
@@ -175,11 +175,11 @@ function IntegrationsSettingsSection({ onBack }){
 
       <div className="ss-grouph">How teammates get notified</div>
       <S2Card flush>
-        <S2Row icon="appbell" iconCls="blue" title="In-app" meta="Everyone with access sees assigned activity in their JOEL inbox."
+        <S2Row icon="appbell" iconCls="blue" title="In-app" meta="Everyone with access sees assigned activity in their AnyPhone inbox."
           trail={<S2Status kind="g" label="Always on"/>}/>
         <S2Row icon="mail" title="Email" meta="Each teammate turns their own email alerts on or off."
           trail={<span className="ss-status off"><span className="d m"/>Personal</span>}/>
-        <S2Row icon="slack" title="Slack" meta="Shared, admin-curated channels only - JOEL never sends Slack DMs to individuals."
+        <S2Row icon="slack" title="Slack" meta="Shared, admin-curated channels only - AnyPhone never sends Slack DMs to individuals."
           trail={<span className="pill ext">Channels only</span>}/>
       </S2Card>
       <p className="ss-foot">Keeping Slack to shared channels means nothing assigned to a person ever lands in a private DM or an unapproved channel - cleaner for the team and safer for compliance.</p>
@@ -204,7 +204,7 @@ function IntegrationsSettingsSection({ onBack }){
         ))}
         <button className="add-row"><span className="plus"><S2Icon name="plus"/></span> Add a webhook</button>
       </S2Card>
-      <p className="ss-foot">Webhooks send a small message to a URL you control whenever an event happens. If a webhook keeps failing, JOEL flags it as <b>Needs attention</b> and keeps retrying.</p>
+      <p className="ss-foot">Webhooks send a small message to a URL you control whenever an event happens. If a webhook keeps failing, AnyPhone flags it as <b>Needs attention</b> and keeps retrying.</p>
     </S2Detail>
   );
 }
@@ -248,7 +248,7 @@ function NumberAdvSection({ numbers, onNav, onBack }){
 
       <div className="ss-grouph">Transfers & porting</div>
       <S2Card flush>
-        <S2Row icon="forward" title="Bring a number to JOEL" meta="Move an existing business number from another carrier. Calls keep working while it transfers." tappable onClick={()=>onNav&&onNav('numbers')}
+        <S2Row icon="forward" title="Bring a number to AnyPhone" meta="Move an existing business number from another carrier. Calls keep working while it transfers." tappable onClick={()=>onNav&&onNav('numbers')}
           trail={<S2Icon name="chevright" style={{width:16,height:16,color:'var(--muted)'}}/>}/>
         <S2Row icon="hashnum" title="Manage your numbers" meta="Add, route, or remove business numbers." tappable onClick={()=>onNav&&onNav('numbers')}
           trail={<S2Icon name="chevright" style={{width:16,height:16,color:'var(--muted)'}}/>}/>

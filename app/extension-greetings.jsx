@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Extension greetings panel (exports to window)
+   AnyPhone app - Extension greetings panel (exports to window)
    Sub-tab inside an extension: Voicemail · Extension name · Away.
    Uses OUR native convention: Segmented sub-nav + Card + GreetingRow
    (waveform preview, AI voice, Edit text / Change voice).
@@ -47,7 +47,7 @@ function ExtensionGreetings({ ext, patch, away, onGoSchedule }){
 
       {gtab==='voicemail' && (
         <EGCard icon="voicemail" title="Voicemail greeting"
-          desc={`What plays when a caller reaches ${nm}'s voicemail. JOEL writes a transcript and summary of every message automatically.`}>
+          desc={`What plays when a caller reaches ${nm}'s voicemail. AnyPhone writes a transcript and summary of every message automatically.`}>
           <GreetingRow text={texts.voicemail} voice={voice} suggestions={sugs.voicemail}/>
         </EGCard>
       )}

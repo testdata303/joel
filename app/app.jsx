@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app - Extension Detail root + shell + flows
+   AnyPhone app - Extension Detail root + shell + flows
    ============================================================ */
 const { Icon, Toggle, Segmented, Choice, Field, Avatar, Card, Modal, Wave, EmptyArt,
   GeneralPanel, RoutingPanel, SchedulePanel, AvailabilityPanel, VoicemailPanel, NotificationsPanel, RecordingPanel, PermissionsPanel, DangerZone, DEST_META,
@@ -90,9 +90,9 @@ const ACTIVITY = {
   calls:[
     { id:'c1', ext:1, line:'+1 (617) 555-0100', dir:'in',     num:'+1 (415) 555-0182', contact:'Daniel Okafor', cnam:null, when:'Today, 10:24 AM', date:'2026-06-05', ts:1000, dur:'-', outcome:'voicemail', vmId:'vm1' },
     { id:'c2', ext:1, line:'+1 (617) 555-0100', dir:'in',     num:'+1 (617) 555-3301', contact:'Maria Gomez',   cnam:null, when:'Today, 9:48 AM', date:'2026-06-05',  ts:992, dur:'4:12', outcome:'answered', via:'Front Desk', rec:true, recSummary:"Maria confirmed her Friday cleaning and asked about parking - directed her to the validated lot.", recTranscript:[{"at":"0:00","text":"Hi, this is Maria, I wanted to confirm my Friday appointment."},{"at":"0:22","text":"Also, is there parking nearby?"},{"at":"0:31","text":"Great, the validated lot on 2nd works. Thanks!"}] },
-    { id:'c3', ext:1, line:'+1 (617) 555-0100', dir:'out',    num:'+1 (617) 555-2290', contact:'Jane Cho',      cnam:null, when:'Today, 9:30 AM', date:'2026-06-05',  ts:984, dur:'2:05', outcome:'answered', via:'JOEL app', by:'Jane Cho' },
+    { id:'c3', ext:1, line:'+1 (617) 555-0100', dir:'out',    num:'+1 (617) 555-2290', contact:'Jane Cho',      cnam:null, when:'Today, 9:30 AM', date:'2026-06-05',  ts:984, dur:'2:05', outcome:'answered', via:'AnyPhone app', by:'Jane Cho' },
     { id:'c4', ext:1, line:'+1 (617) 555-0199', dir:'missed', num:'+1 (978) 555-7745', contact:null, cnam:'Priya Shah', when:'Yesterday, 1:02 PM', date:'2026-06-04', ts:880, dur:'-', outcome:'missed', vmId:'vm3' },
-    { id:'c5', ext:1, line:'+1 (617) 555-0100', dir:'in',     num:'+1 (508) 555-9912', contact:'Tom Reilly',    cnam:null, when:'Yesterday, 11:15 AM', date:'2026-06-04', ts:872, dur:'6:40', outcome:'answered', via:'JOEL app', by:'Jane Cho', rec:true, recSummary:"Tom asked to move his crown fitting a week later and to email the new estimate.", recTranscript:[{"at":"0:00","text":"Hey, it’s Tom Reilly. I need to push my crown fitting."},{"at":"0:30","text":"Can we do the following week instead?"},{"at":"1:10","text":"Perfect, and please email the updated estimate."}] },
+    { id:'c5', ext:1, line:'+1 (617) 555-0100', dir:'in',     num:'+1 (508) 555-9912', contact:'Tom Reilly',    cnam:null, when:'Yesterday, 11:15 AM', date:'2026-06-04', ts:872, dur:'6:40', outcome:'answered', via:'AnyPhone app', by:'Jane Cho', rec:true, recSummary:"Tom asked to move his crown fitting a week later and to email the new estimate.", recTranscript:[{"at":"0:00","text":"Hey, it’s Tom Reilly. I need to push my crown fitting."},{"at":"0:30","text":"Can we do the following week instead?"},{"at":"1:10","text":"Perfect, and please email the updated estimate."}] },
     { id:'c6', ext:1, line:'+1 (617) 555-0199', dir:'missed', num:'+1 (978) 555-7745', contact:null, cnam:'Priya Shah', when:'Mon, 3:48 PM', date:'2026-06-01', ts:700, dur:'-', outcome:'missed' },
     { id:'c7', ext:1, line:'+1 (617) 555-0100', dir:'in',     num:'+1 (305) 555-3360', contact:null, cnam:null, when:'Yesterday, 4:11 PM', date:'2026-06-04', ts:900, dur:'-', outcome:'voicemail', vmId:'vm2' },
     { id:'c8', ext:1, line:'+1 (617) 555-0100', dir:'out',    num:'+1 (415) 555-0182', contact:'Daniel Okafor', cnam:null, when:'Mon, 2:15 PM', date:'2026-06-01', ts:680, dur:'3:22', outcome:'answered', via:'(617) 555-1141', by:'Bob Stevens', rec:true, recSummary:"Confirmed Daniel’s Friday 2pm cleaning and that Delta Dental is accepted.", recTranscript:[{"at":"0:00","text":"Hi Daniel, calling to confirm your Friday 2 o’clock cleaning."},{"at":"0:25","text":"Yes, we do take Delta Dental - you’re all set."},{"at":"0:52","text":"Great, see you Friday. Thanks!"}] },
@@ -225,7 +225,7 @@ function DestinationModal({ editing, extName, initialType, onClose, onSave }){
   const TYPES=[
     { type:'phone', icon:'phone', t:'Phone number', s:'Ring a mobile or any outside number.' },
     { type:'sip', icon:'monitor', t:'Desk phone', s:'Ring a desk phone in your office.' },
-    { type:'app', icon:'smartphone', t:'Mobile app', s:'Ring a teammate in the JOEL app.' },
+    { type:'app', icon:'smartphone', t:'Mobile app', s:'Ring a teammate in the AnyPhone app.' },
   ];
   const meta = type ? DEST_META[type] : null;
   const fieldLabel = type==='phone' ? 'Phone number' : type==='sip' ? 'Desk phone' : 'Teammate';
@@ -269,7 +269,7 @@ function DestinationModal({ editing, extName, initialType, onClose, onSave }){
       ) : (
         <div>
           {type==='phone' ? (
-            <Field label={fieldLabel} help="Any mobile, landline, or outside number. JOEL rings it directly.">
+            <Field label={fieldLabel} help="Any mobile, landline, or outside number. AnyPhone rings it directly.">
               <div className="input-affix"><span className="pre">+1</span>
                 <input value={value} autoFocus onChange={e=>setValue(e.target.value)} placeholder="(617) 555-0000"/></div>
             </Field>
@@ -288,7 +288,7 @@ function DestinationModal({ editing, extName, initialType, onClose, onSave }){
               </button>
             </Field>
           ) : (
-            <Field label={fieldLabel} help="Teammates ring in the JOEL mobile app.">
+            <Field label={fieldLabel} help="Teammates ring in the AnyPhone mobile app.">
               <select className="select" value={value} autoFocus onChange={e=>setValue(e.target.value)}>
                 <option value="">Select…</option>
                 {['Jane Cho','Bob Stevens','Mara Lopez'].map(o=><option key={o} value={o}>{o}</option>)}
@@ -309,7 +309,7 @@ function DestinationModal({ editing, extName, initialType, onClose, onSave }){
             <span className="d-icon" style={{width:36,height:36,borderRadius:'50%',background:'var(--bg-alt)',color:'var(--body)'}}><Icon name="check"/></span>
             <div style={{flex:1}}>
               <b style={{fontWeight:700,fontSize:'.9rem'}}>Status</b>
-              <p style={{color:'var(--body)',fontSize:'.82rem'}}>{enabled?'Active - calls can ring here.':'Disabled - JOEL skips this destination.'}</p>
+              <p style={{color:'var(--body)',fontSize:'.82rem'}}>{enabled?'Active - calls can ring here.':'Disabled - AnyPhone skips this destination.'}</p>
             </div>
             <Toggle on={enabled} onChange={setEnabled}/>
           </div>
@@ -351,18 +351,18 @@ function DestinationModal({ editing, extName, initialType, onClose, onSave }){
             <span className="d-icon" style={{width:36,height:36,borderRadius:'50%',background:'var(--ai-soft)',color:'var(--ai)'}}><Icon name="shield"/></span>
             <div style={{flex:1}}>
               <b style={{fontWeight:700,fontSize:'.9rem'}}>Call announce</b>
-              <p style={{color:'var(--body)',fontSize:'.82rem'}}>Before connecting, JOEL says “You have a call for {ext}. Press 1 to accept.”</p>
+              <p style={{color:'var(--body)',fontSize:'.82rem'}}>Before connecting, AnyPhone says “You have a call for {ext}. Press 1 to accept.”</p>
             </div>
             <Toggle on={announce} onChange={setAnnounce}/>
           </div>
           {announce && (
             <div className="note info" style={{marginTop:12}}>
               <Icon name="info"/>
-              <span>Without this, a personal voicemail could answer first - JOEL would treat the call as answered and stop trying your other destinations. Call announce asks the person to press a key before connecting.</span>
+              <span>Without this, a personal voicemail could answer first - AnyPhone would treat the call as answered and stop trying your other destinations. Call announce asks the person to press a key before connecting.</span>
             </div>
           )}
 
-          <Field label="Ring duration" help="How long this destination rings before JOEL moves on.">
+          <Field label="Ring duration" help="How long this destination rings before AnyPhone moves on.">
             <div style={{maxWidth:200,marginTop:14}}>
               <select className="select" value={ring} onChange={e=>setRing(+e.target.value)}>
                 {[20,30,40,60].map(s=><option key={s} value={s}>{s} seconds</option>)}
@@ -453,7 +453,7 @@ function WebhookSetup({ cfg, setCfg }){
           <button className="btn btn-secondary sm" onClick={()=>setRevealed(r=>!r)}>{revealed?'Hide':'Reveal'}</button>
           <button className="btn btn-secondary sm" onClick={rotate}>Rotate</button>
         </div>
-        <p className="wh-note">Verify each request with the <code>X-JOEL-Signature</code> header - HMAC-SHA256 of the raw body using this secret.</p>
+        <p className="wh-note">Verify each request with the <code>X-AnyPhone-Signature</code> header - HMAC-SHA256 of the raw body using this secret.</p>
       </div>
 
       <div className="wh-card">
@@ -508,7 +508,7 @@ function AIAgentSetup({ provider, extensions }){
   const canConnect = sip.trim() && apiKey.trim();
   const STEPS=[
     { icon:'sparkle', t:'Build or pick your agent', d:`Create a voice agent in ${provider.name} - give it your hours, FAQs, and booking rules.` },
-    { icon:'route',   t:'Connect it to JOEL by SIP', d:'Paste the agent\u2019s SIP address and API key below. JOEL hands the live call to your agent.' },
+    { icon:'route',   t:'Connect it to AnyPhone by SIP', d:'Paste the agent\u2019s SIP address and API key below. AnyPhone hands the live call to your agent.' },
     { icon:'phone',   t:'Assign it to an extension', d:'Choose which extension the AI answers. It can transfer to a teammate or take a message anytime.' },
   ];
   const CANDO=[
@@ -532,7 +532,7 @@ function AIAgentSetup({ provider, extensions }){
         <span className="aiset-hero-ic"><Icon name="sparkle"/></span>
         <div className="aiset-hero-tx">
           <b>Bring your own AI receptionist</b>
-          <p>JOEL routes the call; <b>{provider.name}</b> answers it. The AI talks to your caller in a natural voice, handles the routine stuff, and hands the call to your team - or takes a message - whenever a person is needed. You stay in control: it lives on an extension, just like a teammate.</p>
+          <p>AnyPhone routes the call; <b>{provider.name}</b> answers it. The AI talks to your caller in a natural voice, handles the routine stuff, and hands the call to your team - or takes a message - whenever a person is needed. You stay in control: it lives on an extension, just like a teammate.</p>
         </div>
       </div>
 
@@ -551,7 +551,7 @@ function AIAgentSetup({ provider, extensions }){
         <div className="wh-secret">
           <input className="input wh-mono" value={sip} onChange={e=>setSip(e.target.value)} placeholder={provider.sip||'sip:agent@your-provider.ai'}/>
         </div>
-        <p className="wh-note">Copy this from your {provider.name} agent settings. JOEL forwards the live audio to this address over SIP.</p>
+        <p className="wh-note">Copy this from your {provider.name} agent settings. AnyPhone forwards the live audio to this address over SIP.</p>
       </div>
 
       <div className="wh-card">
@@ -606,7 +606,7 @@ function IntegrationsHub({ extensions, webhookCfg, setWebhookCfg }){
     { id:'slack', name:'Slack', icon:'slack', tone:'slack', desc:'Post new texts, missed calls, and voicemails straight into your team’s channels.', connected:true },
     { id:'whatsapp', name:'WhatsApp', icon:'whatsapp', tone:'wa', desc:'Let customers message your business on WhatsApp - replies land in your shared inbox.', connected:false },
     { id:'webhooks', name:'Webhooks', icon:'route', tone:'ink', desc:'Send call and message events to your own endpoints in real time.', connected:!!(webhookCfg&&webhookCfg.connected) },
-    { id:'zapier', name:'Zapier', icon:'sparkle', tone:'orange', desc:'Connect JOEL to 6,000+ apps with no-code automations.', soon:true },
+    { id:'zapier', name:'Zapier', icon:'sparkle', tone:'orange', desc:'Connect AnyPhone to 6,000+ apps with no-code automations.', soon:true },
   ];
   if(open){
     return (
@@ -640,7 +640,7 @@ function IntegrationsHub({ extensions, webhookCfg, setWebhookCfg }){
     <div className="apps-screen">
       <div className="apps-head">
         <h1>Integrations</h1>
-        <p>Connect JOEL to the tools your team already uses.</p>
+        <p>Connect AnyPhone to the tools your team already uses.</p>
       </div>
 
       <div className="apps-sectionh tools">
@@ -674,7 +674,7 @@ function Sidebar({ active, onNav, badges, hideSetup, companies, companyId, onSwi
   return (
     <aside className="sidebar">
       <div className="sb-top">
-        <a href="index.html" className="sb-brand" style={{textDecoration:'none'}} title="JOEL home"><span className="sb-word">JOEL</span></a>
+        <a href="index.html" className="sb-brand" style={{textDecoration:'none'}} title="AnyPhone home"><span className="sb-word">Any<span className="seam">Phone</span><span className="dot">.</span></span></a>
         <div className="switcher-wrap" ref={ref}>
           <button className={`switcher${open?' open':''}`} onClick={()=>setOpen(o=>!o)} aria-haspopup="listbox" aria-expanded={open}>
             <span className={`switcher-mark ${cur.tone||'blue'}`}>{initialsOf(cur.name)}</span>
@@ -1226,7 +1226,7 @@ function DirectoryPane({ extensions }){
           <div className="dir-card">
             <div className="dir-row">
               <span className="dir-ic"><Icon name="mic"/></span>
-              <div className="dir-row-tx"><b>Say a name</b><span>“Sales,” “Dr. Niaraki,” “Bob” - JOEL listens and connects.</span></div>
+              <div className="dir-row-tx"><b>Say a name</b><span>“Sales,” “Dr. Niaraki,” “Bob” - AnyPhone listens and connects.</span></div>
               <Toggle on={voice} onChange={setVoice}/>
             </div>
             <div className="dir-row">
@@ -1247,7 +1247,7 @@ function DirectoryPane({ extensions }){
             ); })}
           </div>
 
-          <div className="ss-grouph">If JOEL can’t find a match</div>
+          <div className="ss-grouph">If AnyPhone can’t find a match</div>
           <div className="dir-choices">
             {NM.map(([v,t,d])=>(
               <button key={v} className={`dir-choice${noMatch===v?' on':''}`} onClick={()=>setNoMatch(v)}>
@@ -1803,7 +1803,7 @@ function App(){
                           <span className="lv-num dir">9</span>
                           <span className="lv-extmeta">
                             <b>Dial by name directory</b>
-                            <span className="lv-dirnote">Built automatically from your extension names - callers speak or spell a teammate's name on the keypad and JOEL connects them to the matching extension.</span>
+                            <span className="lv-dirnote">Built automatically from your extension names - callers speak or spell a teammate's name on the keypad and AnyPhone connects them to the matching extension.</span>
                           </span>
                         </span>
                         <span className="lv-auto"><Icon name="sparkle"/> Automated</span>
