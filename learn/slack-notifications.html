@@ -7,13 +7,13 @@
 <title>Phone System with Slack Notifications | AnyPhone</title>
 <meta name="description" content="AnyPhone is a small-business phone system with one number, simple call routing, shared texts, voicemail transcripts, and Slack notifications for missed calls, texts, and voicemails.">
 <link rel="canonical" href="/phone-system-with-slack">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="../favicon-180.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=2">
+<link rel="icon" href="../favicon.ico?v=2" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -40,13 +40,6 @@
   .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
   .btn-arrow:hover svg{transform:translateX(3px);}
 
-  /* header */
-  header.lp{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-  .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
-  .hdr-right{display:flex;align-items:center;gap:18px;}
-  .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
-  .hdr-cta:hover{background:var(--accent-dark);}
 
   /* hero */
   .hero{padding:60px 0 68px;background:var(--paper);}
@@ -62,29 +55,30 @@
   .hero-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
-  /* split mock: phone setup + slack */
-  .duo{display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);overflow:hidden;}
-  .duo-phone{padding:20px;}
-  .duo-cap{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
-  .duo-cap .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block;}
-  .duo-greet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;color:var(--body);line-height:1.45;margin-bottom:12px;}
-  .duo-route{display:flex;align-items:center;gap:11px;padding:9px 0;}
-  .duo-route .k{width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.9rem;display:grid;place-items:center;flex-shrink:0;}
-  .duo-route b{font-size:.9rem;font-weight:700;}
-  .duo-route span{font-size:.8rem;color:var(--muted);font-weight:600;margin-left:auto;}
-  .duo-conn{display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:10px 20px;font-size:.74rem;font-weight:700;letter-spacing:.04em;}
-  .duo-conn svg{width:15px;height:15px;color:#8ea2ff;}
-  .duo-slack{background:var(--slack);padding:18px 20px;}
-  .duo-slack .ds-chan{color:rgba(255,255,255,.75);font-weight:700;font-size:.84rem;margin-bottom:12px;display:flex;align-items:center;gap:7px;}
-  .duo-slack .ds-chan .h{opacity:.6;}
-  .ds-msg{display:flex;gap:10px;align-items:flex-start;padding:8px 0;}
-  .ds-ava{width:30px;height:30px;border-radius:7px;background:#fff;color:var(--ink);display:grid;place-items:center;flex-shrink:0;font-family:var(--display);font-weight:800;font-size:.56rem;}
-  .ds-tx{color:#fff;font-size:.84rem;line-height:1.4;}
-  .ds-tx b{font-weight:800;display:inline-flex;align-items:center;gap:6px;}
-  .ds-tx .pin{width:14px;height:14px;border-radius:4px;display:inline-grid;place-items:center;}
-  .ds-tx .pin svg{width:9px;height:9px;color:#fff;}
-  .ds-tx small{display:block;color:rgba(255,255,255,.72);font-weight:500;margin-top:2px;}
-  .slack-cap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.66rem;letter-spacing:.04em;color:rgba(255,255,255,.55);text-align:center;padding-top:12px;text-transform:uppercase;}
+  /* hero routing map — mirrors the homepage hero, Slack row highlighted */
+  .hero-route{background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:28px;}
+  .hr-cap{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .hr-rows{display:flex;flex-direction:column;gap:12px;}
+  .hr-map{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:11px;}
+  .hr-src,.hr-dst{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;min-width:0;}
+  .hr-ic{width:34px;height:34px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;}
+  .hr-ic svg{width:17px;height:17px;color:var(--ink);}
+  .hr-src b,.hr-dst b{font-weight:700;font-size:.95rem;color:var(--ink);line-height:1.2;text-wrap:balance;}
+  .hr-dst{background:var(--accent-soft);border-color:#d6e0fb;}
+  .hr-dst .hr-ic{background:#fff;}
+  .hr-dst .hr-ic svg{color:var(--accent);}
+  .hr-dst b{color:var(--accent-dark);}
+  .hr-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none;font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1;}
+  /* highlighted Slack row */
+  .hr-map.hl .hr-src{border-color:var(--accent);box-shadow:0 0 0 3px rgba(45,78,216,.15);}
+  .hr-map.hl .hr-dst{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(45,78,216,.15);}
+  .hr-map.hl .hr-dst .hr-ic{background:rgba(255,255,255,.18);}
+  .hr-map.hl .hr-dst .hr-ic svg{color:#fff;}
+  .hr-map.hl .hr-dst b{color:#fff;}
+  .hr-map.hl .hr-arrow{color:var(--accent);}
+  .hr-tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.7rem;letter-spacing:.03em;padding:8px 13px;border-radius:999px;}
+  .hr-tag svg{width:14px;height:14px;}
+  @media(max-width:620px){.hr-map{grid-template-columns:1fr;gap:5px;}.hr-arrow{transform:rotate(90deg);}}
 
   /* trust strip */
   .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
@@ -145,6 +139,9 @@
   .panel-top.phone{background:var(--ink);}
   .panel-top.slack{background:var(--slack);}
   .panel-top b{font-size:.96rem;font-weight:700;}
+  .panel-top.phone b{display:inline-flex;align-items:center;gap:9px;}
+  .panel-top .p-ico{width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.14);display:inline-grid;place-items:center;flex:none;}
+  .panel-top .p-ico svg{width:15px;height:15px;display:block;}
   .panel-top .tg{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;opacity:.7;}
   .panel-body{padding:20px 22px;}
   .pgreet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:.88rem;color:var(--body);line-height:1.5;font-style:italic;margin-bottom:16px;}
@@ -152,6 +149,7 @@
   .prow:first-of-type{border-top:none;}
   .prow .k{width:32px;height:32px;border-radius:9px;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;flex-shrink:0;}
   .prow .k.zero{background:var(--ink);}
+  .prow .k.ext{width:auto;min-width:32px;padding:0 9px;font-size:.82rem;}
   .prow .pl b{display:block;font-size:.94rem;font-weight:800;}
   .prow .dest{margin-left:auto;font-weight:700;font-size:.86rem;color:var(--accent-dark);text-align:right;}
   .srow{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);}
@@ -200,8 +198,8 @@
   .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .closer-card .btn-primary{background:var(--accent);color:#fff;box-shadow:none;}
   .closer-card .btn-primary:hover{background:var(--accent-dark);}
-  .closer-card .btn-ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff;}
-  .closer-card .btn-ghost:hover{border-color:#fff;}
+  .closer-card .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
+  .closer-card .btn-ghost:hover{border-color:var(--ink);}
 
   /* faq */
   .faq{padding:0 0 84px;}
@@ -213,10 +211,6 @@
   .faq-q[open] summary .ic{transform:rotate(45deg);}
   .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
 
-  footer{border-top:1px solid var(--line);padding:28px 0 96px;}
-  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;font-weight:600;}
-  .foot-inner a{color:var(--muted);text-decoration:none;}
-  .foot-inner a:hover{color:var(--ink);}
 
   /* sticky mobile CTA */
   .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
@@ -243,7 +237,6 @@
     footer{padding-bottom:96px;}
   }
   @media(max-width:560px){
-    .logo{font-size:1.8rem;}
     .steps{grid-template-columns:1fr;}
     .closer-card{padding:48px 26px;}
   }
@@ -251,14 +244,22 @@
 </head>
 <body>
 
-<header class="lp">
-  <div class="wrap lp-inner">
-    <a href="../index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">.</span></a>
-    <div class="hdr-right">
-      <a href="../signup.html?plan=grow" class="hdr-cta">Get your number</a>
+<nav>
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="../signup.html?plan=grow" class="nav-cta nav-cta-m">Get your number</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="../how-it-works.html">How it works</a>
+      <a href="../features.html">Features</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../Extension Detail.html">Sign in</a>
+      <a href="../signup.html?plan=grow" class="nav-cta">Get your number</a>
     </div>
   </div>
-</header>
+</nav>
 
 <!-- 1. HERO -->
 <section class="hero" data-screen-label="Hero">
@@ -268,8 +269,8 @@
       <h1>A phone system that keeps your team updated in <span class="u">Slack.</span></h1>
       <p class="hero-sub">AnyPhone gives your business one number, a simple menu, call routing, shared texts, voicemail transcripts, and Slack notifications so missed calls and messages do not disappear in a separate phone app.</p>
       <div class="hero-acts">
-        <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+        <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <ul class="hero-bullets">
         <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>One business number for calls and texts</li>
@@ -278,28 +279,32 @@
       </ul>
     </div>
 
-    <!-- [PRODUCT SCREENSHOT: AnyPhone phone setup next to Slack notification] -->
-    <div class="duo reveal" role="img" aria-label="AnyPhone call routing setup connected to a Slack channel showing a missed call notification">
-      <div class="duo-phone">
-        <div class="duo-cap"><span class="dot"></span> AnyPhone · Call routing</div>
-        <div class="duo-greet">"Thanks for calling. Press 1 for sales, 2 for support, 3 for billing, or 0 for the office."</div>
-        <div class="duo-route"><span class="k">1</span><b>Sales</b><span>Owner + assistant</span></div>
-        <div class="duo-route"><span class="k">2</span><b>Support</b><span>Support lead</span></div>
-        <div class="duo-route"><span class="k">3</span><b>Billing</b><span>Finance contact</span></div>
-      </div>
-      <div class="duo-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Sends notifications to Slack</div>
-      <div class="duo-slack">
-        <div class="ds-chan"><span class="h">#</span> calls</div>
-        <div class="ds-msg">
-          <div class="ds-ava">AnyPhone</div>
-          <div class="ds-tx"><b><span class="pin" style="background:var(--slack-red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Missed call</b><small>From (713) 555-0142 on the Sales line. Nobody answered.</small></div>
+    <!-- Homepage hero routing image — Slack row highlighted -->
+    <div class="hero-route reveal" role="img" aria-label="AnyPhone routes calls, voicemails, texts, and integrations to the right place, with the Slack notifications row highlighted">
+      <div class="hr-cap">Route everything to the right place</div>
+      <div class="hr-rows">
+        <div class="hr-map">
+          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Extensions</b></span>
+          <span class="hr-arrow">»</span>
+          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><b>Ring your mobile</b></span>
         </div>
-        <div class="ds-msg">
-          <div class="ds-ava">AnyPhone</div>
-          <div class="ds-tx"><b><span class="pin" style="background:var(--slack-blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> New voicemail</b><small>Transcript: "Calling about a quote, please call me back today."</small></div>
+        <div class="hr-map hl">
+          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Missed calls &amp; voicemails</b></span>
+          <span class="hr-arrow">»</span>
+          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><b>Slack</b></span>
         </div>
-        <div class="slack-cap">[ product screenshot: phone setup + Slack ]</div>
+        <div class="hr-map">
+          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>SMS / WhatsApp</b></span>
+          <span class="hr-arrow">»</span>
+          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></svg></span><b>Team inbox</b></span>
+        </div>
+        <div class="hr-map">
+          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span><b>Integrations</b></span>
+          <span class="hr-arrow">»</span>
+          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Connect tools</b></span>
+        </div>
       </div>
+      <div class="hr-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg> Missed calls &amp; voicemails post to Slack</div>
     </div>
   </div>
 </section>
@@ -397,13 +402,13 @@
     </div>
     <div class="setup-grid reveal">
       <div class="panel">
-        <div class="panel-top phone"><b>AnyPhone phone system</b><span class="tg">Routing</span></div>
+        <div class="panel-top phone"><b><span class="p-ico"><svg viewBox="0 0 32 32"><g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 9 L15.5 16 L10 23"></path><path d="M17.5 9 L23 16 L17.5 23"></path></g></svg></span>AnyPhone phone system</b><span class="tg">Routing</span></div>
         <div class="panel-body">
-          <div class="pgreet">"Thanks for calling. Press 1 for sales, 2 for support, 3 for billing, or 0 for the office."</div>
-          <div class="prow"><span class="k">1</span><div class="pl"><b>Sales</b></div><div class="dest">Owner + assistant</div></div>
-          <div class="prow"><span class="k">2</span><div class="pl"><b>Support</b></div><div class="dest">Support lead</div></div>
-          <div class="prow"><span class="k">3</span><div class="pl"><b>Billing</b></div><div class="dest">Finance contact</div></div>
-          <div class="prow"><span class="k zero">0</span><div class="pl"><b>Office</b></div><div class="dest">Office line</div></div>
+          <div class="pgreet">"Thanks for calling. Press 1 for sales, 2 for support, or 0 for the operator. Know the extension? Dial it — like 101 for Bob."</div>
+          <div class="prow"><span class="k">1</span><div class="pl"><b>Sales</b></div><div class="dest">Rings 2 mobiles</div></div>
+          <div class="prow"><span class="k">2</span><div class="pl"><b>Support</b></div><div class="dest">AI answering service</div></div>
+          <div class="prow"><span class="k ext">101</span><div class="pl"><b>Bob</b></div><div class="dest">Rings Bob's mobile</div></div>
+          <div class="prow"><span class="k zero">0</span><div class="pl"><b>Operator</b></div><div class="dest">Rings the front desk</div></div>
         </div>
       </div>
       <div class="panel">
@@ -412,7 +417,7 @@
           <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Missed calls</div><span class="chan"><span class="h">#</span>calls</span></div>
           <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> New sales texts</div><span class="chan"><span class="h">#</span>sales</span></div>
           <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Support voicemails</div><span class="chan"><span class="h">#</span>support</span></div>
-          <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Billing voicemails</div><span class="chan"><span class="h">#</span>billing</span></div>
+          <div class="srow"><div class="ev"><span class="ic" style="background:var(--slack-gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Voicemail for Bob</div><span class="chan"><span class="h">#</span>bob</span></div>
         </div>
       </div>
     </div>
@@ -501,9 +506,20 @@
 </section>
 
 <footer>
-  <div class="wrap foot-inner">
-    <div>© 2026 AnyPhone. The phone system for new businesses and modern small teams.</div>
-    <div><a href="../index.html">Home</a></div>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+        <p>The phone system for modern small businesses.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../features.html#mobile">Mobile app</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="../for/plumbers.html">Plumbers</a></div>
+        <div class="foot-col"><h5>Compare / Learn</h5><a href="slack-notifications.html">Phone system with Slack notifications</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a></div>
+      </div>
+    </div>
+    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
   </div>
 </footer>
 
@@ -517,6 +533,19 @@
   (function(){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');});});
+    }
   })();
 </script>
 </body>

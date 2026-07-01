@@ -80,7 +80,7 @@
 /* ---- TIER 2 · greeting hub ---- */
 .smap-greet{
   background:#fff;
-  border:1.5px solid #e4dcfb; border-radius:18px; padding:18px; box-shadow:var(--shadow-soft);
+  border:1.5px solid #d6e0fb; border-radius:18px; padding:18px; box-shadow:var(--shadow-soft);
   position:relative;
 }
 .smap-greet-badge{
@@ -96,7 +96,7 @@
 .smap-greet-edit:hover{ background:var(--blue-soft); }
 .smap-greet-route{
   display:flex; align-items:center; gap:8px; margin-top:14px; padding:10px 12px;
-  background:rgba(107,47,232,.06); border-radius:10px; font-size:.79rem; font-weight:600; color:var(--ai);
+  background:rgba(45,78,216,.06); border-radius:10px; font-size:.79rem; font-weight:600; color:var(--ai);
 }
 .smap-greet-route svg{ width:15px; height:15px; flex-shrink:0; }
 

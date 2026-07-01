@@ -126,7 +126,7 @@
 .sb-num em{ font-style:normal; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); }
 
 /* Integrations apps screen */
-.apps-screen{ max-width:920px; margin:0 auto; padding:8px 4px 40px; }
+.apps-screen{ max-width:880px; margin:0 auto; padding:0 0 40px; }
 .apps-head{ margin-bottom:24px; }
 .apps-head h1{ font-size:1.7rem; font-weight:800; letter-spacing:-.03em; color:var(--ink); }
 .apps-head p{ color:var(--body); font-size:.96rem; margin-top:5px; }
@@ -159,25 +159,25 @@
 .apps-sectionh.tools{ margin-top:38px; padding-top:26px; border-top:1px solid var(--line); }
 .apps-sectionh h2{ font-size:1.16rem; font-weight:800; letter-spacing:-.02em; color:var(--ink); }
 .apps-sectionh p{ color:var(--body); font-size:.9rem; margin-top:5px; max-width:660px; line-height:1.55; }
-.app-logo.ai{ background:#ece2ff; color:#6b2fe8; }
-.app-kicker{ display:block; font-size:.64rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:#6b2fe8; white-space:nowrap; }
+.app-logo.ai{ background:#dce8ff; color:#2D4ED8; }
+.app-kicker{ display:block; font-size:.64rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:#2D4ED8; white-space:nowrap; }
 
 /* AI agent setup screen */
 .aiset-hero{ display:flex; gap:15px; padding:20px; border-radius:16px; margin-bottom:18px;
-  background:#f4efff; border:1px solid #e2d6fb; }
+  background:#f4efff; border:1px solid #d6e0fb; }
 .aiset-hero-ic{ width:40px; height:40px; border-radius:11px; flex-shrink:0; display:grid; place-items:center;
-  background:#6b2fe8; color:#fff; }
+  background:#2D4ED8; color:#fff; }
 .aiset-hero-ic svg{ width:21px; height:21px; }
 .aiset-hero-tx b{ display:block; font-size:1.02rem; font-weight:800; letter-spacing:-.01em; color:var(--ink); margin-bottom:4px; }
 .aiset-hero-tx p{ font-size:.88rem; color:var(--body); line-height:1.55; }
-.aiset-hero-tx b + p b{ display:inline; color:#6b2fe8; font-weight:700; }
+.aiset-hero-tx b + p b{ display:inline; color:#2D4ED8; font-weight:700; }
 .aiset-steps{ display:grid; gap:10px; margin-bottom:20px; }
 .aiset-step{ display:flex; align-items:flex-start; gap:13px; padding:15px 16px;
   background:#fff; border:1px solid var(--line); border-radius:13px; }
 .aiset-step-n{ width:22px; height:22px; border-radius:50%; flex-shrink:0; display:grid; place-items:center;
   background:var(--ink); color:#fff; font-size:.72rem; font-weight:800; }
 .aiset-step-ic{ width:34px; height:34px; border-radius:9px; flex-shrink:0; display:grid; place-items:center;
-  background:#ece2ff; color:#6b2fe8; }
+  background:#dce8ff; color:#2D4ED8; }
 .aiset-step-ic svg{ width:18px; height:18px; }
 .aiset-step-tx b{ display:block; font-size:.92rem; font-weight:700; color:var(--ink); }
 .aiset-step-tx span{ font-size:.84rem; color:var(--muted); line-height:1.45; }
@@ -187,9 +187,9 @@
 .aiset-radio{ display:flex; align-items:flex-start; gap:11px; text-align:left; padding:13px 14px;
   background:#fff; border:1.5px solid var(--line); border-radius:11px; cursor:pointer; transition:border-color .12s, background .12s; }
 .aiset-radio:hover{ border-color:#cdbdf3; }
-.aiset-radio.on{ border-color:#6b2fe8; background:#f7f3ff; }
+.aiset-radio.on{ border-color:#2D4ED8; background:#f7f3ff; }
 .aiset-dot{ width:17px; height:17px; border-radius:50%; flex-shrink:0; margin-top:1px; border:2px solid var(--line); background:#fff; }
-.aiset-radio.on .aiset-dot{ border-color:#6b2fe8; background:radial-gradient(circle, #6b2fe8 0 38%, #fff 46%); }
+.aiset-radio.on .aiset-dot{ border-color:#2D4ED8; background:radial-gradient(circle, #2D4ED8 0 38%, #fff 46%); }
 .aiset-opt-tx b{ display:block; font-size:.9rem; font-weight:700; color:var(--ink); }
 .aiset-opt-tx span{ font-size:.82rem; color:var(--muted); line-height:1.4; }
 .aiset-cando ul{ list-style:none; margin:4px 0 0; padding:0; display:grid; gap:9px; }
@@ -200,13 +200,13 @@
 .dp-steps{ display:flex; align-items:center; gap:8px; margin-bottom:18px; }
 .dp-stepdot{ font-size:.72rem; font-weight:800; letter-spacing:.02em; color:var(--muted);
   padding:5px 11px; border-radius:20px; background:var(--bg-alt); border:1px solid var(--line); white-space:nowrap; }
-.dp-stepdot.on{ color:var(--blue); background:#eaf0ff; border-color:#cfe0ff; }
+.dp-stepdot.on{ color:var(--blue); background:#dce8ff; border-color:#cfe0ff; }
 .dp-steparr{ color:var(--muted); font-size:.8rem; }
 .dp-lead{ font-size:.92rem; color:var(--body); line-height:1.55; margin-bottom:16px; }
 .dp-how{ display:grid; gap:11px; }
 .dp-howrow{ display:flex; align-items:flex-start; gap:13px; padding:14px 15px;
   background:var(--bg-alt); border:1px solid var(--line); border-radius:12px; }
-.dp-howic{ width:36px; height:36px; border-radius:10px; flex-shrink:0; display:grid; place-items:center; background:#eaf0ff; color:var(--blue); }
+.dp-howic{ width:36px; height:36px; border-radius:10px; flex-shrink:0; display:grid; place-items:center; background:#dce8ff; color:var(--blue); }
 .dp-howic svg{ width:19px; height:19px; }
 .dp-howrow b{ display:block; font-size:.92rem; font-weight:700; color:var(--ink); }
 .dp-howrow span{ font-size:.85rem; color:var(--muted); line-height:1.45; }
@@ -214,11 +214,11 @@
 .dp-card{ display:flex; flex-direction:column; align-items:flex-start; gap:7px; text-align:left;
   padding:18px; border-radius:14px; background:#fff; border:1.5px solid var(--line); cursor:pointer; transition:border-color .12s, box-shadow .12s; }
 .dp-card:hover{ border-color:#bcd0ff; }
-.dp-card.on{ border-color:var(--blue); box-shadow:0 0 0 3px #eaf0ff; }
+.dp-card.on{ border-color:var(--blue); box-shadow:0 0 0 3px #dce8ff; }
 .dp-card-top{ display:flex; align-items:center; justify-content:space-between; width:100%; }
 .dp-phoneico{ width:42px; height:42px; border-radius:11px; display:grid; place-items:center; background:#eceef3; color:var(--ink); }
 .dp-phoneico svg{ width:22px; height:22px; }
-.dp-tag{ font-size:.62rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--blue); background:#eaf0ff; padding:4px 9px; border-radius:20px; }
+.dp-tag{ font-size:.62rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--blue); background:#dce8ff; padding:4px 9px; border-radius:20px; }
 .dp-name{ font-size:1.04rem; font-weight:800; letter-spacing:-.01em; color:var(--ink); margin-top:3px; }
 .dp-price{ font-size:.82rem; font-weight:700; color:var(--muted); }
 .dp-blurb{ font-size:.84rem; color:var(--body); line-height:1.5; }
@@ -248,7 +248,7 @@
 
 /* "Get a desk phone" entry inside the extension's Add-destination modal */
 .dest-getphone{ display:flex; align-items:center; gap:12px; width:100%; margin-top:10px; padding:13px 14px;
-  background:#eaf0ff; border:1px solid #cfe0ff; border-radius:12px; text-align:left; cursor:pointer; transition:background .12s; }
+  background:#dce8ff; border:1px solid #cfe0ff; border-radius:12px; text-align:left; cursor:pointer; transition:background .12s; }
 .dest-getphone:hover{ background:#e0e9ff; }
 .dgp-ic{ width:34px; height:34px; border-radius:9px; flex-shrink:0; display:grid; place-items:center; background:#fff; color:var(--blue); }
 .dgp-ic svg{ width:18px; height:18px; }
@@ -279,12 +279,12 @@
 .dpi-text{ font-size:.92rem; color:var(--body); line-height:1.6; margin-bottom:16px; }
 .dpi-text b{ color:var(--ink); font-weight:700; }
 .dpi-pick{ display:flex; align-items:center; gap:13px; padding:15px 16px; border-radius:13px;
-  background:#fff; border:1.5px solid var(--blue); box-shadow:0 0 0 3px #eaf0ff; }
+  background:#fff; border:1.5px solid var(--blue); box-shadow:0 0 0 3px #dce8ff; }
 .dpi-pick-ic{ width:46px; height:46px; border-radius:11px; flex-shrink:0; display:grid; place-items:center; background:#eceef3; color:var(--ink); }
 .dpi-pick-ic svg{ width:24px; height:24px; }
 .dpi-pick-tx{ flex:1; }
 .dpi-pick-tag{ display:inline-block; font-size:.62rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
-  color:var(--blue); background:#eaf0ff; padding:3px 8px; border-radius:20px; margin-bottom:4px; }
+  color:var(--blue); background:#dce8ff; padding:3px 8px; border-radius:20px; margin-bottom:4px; }
 .dpi-pick-tx b{ display:block; font-size:1.04rem; font-weight:800; color:var(--ink); }
 .dpi-pick-spec{ font-size:.82rem; color:var(--muted); }
 .dpi-pick-price{ font-size:.95rem; font-weight:800; color:var(--ink); flex-shrink:0; }
@@ -293,7 +293,7 @@
 
 /* "Set up a new desk phone" link inside Add destination */
 .dest-setupphone{ display:flex; align-items:center; gap:11px; width:100%; margin-top:10px; padding:12px 14px;
-  background:#eaf0ff; border:1px solid #cfe0ff; border-radius:11px; cursor:pointer; transition:background .12s; }
+  background:#dce8ff; border:1px solid #cfe0ff; border-radius:11px; cursor:pointer; transition:background .12s; }
 .dest-setupphone:hover{ background:#e0e9ff; }
 .dsp-ic{ width:30px; height:30px; border-radius:8px; flex-shrink:0; display:grid; place-items:center; background:#fff; color:var(--blue); }
 .dsp-ic svg{ width:16px; height:16px; }

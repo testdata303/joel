@@ -6,15 +6,15 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --ink:#131316;--body:#57555C;--muted:#9AA3B0;--line:#E8EAEE;--line-soft:#f1f2f4;--soft:#F1F3F6;--bg:#FFFFFF;--bg-alt:#F7F8FA;--card:#fff;
+  --ink:#131316;--body:#4A4A52;--muted:#6E7480;--line:#E8EAEE;--line-soft:#f1f2f4;--soft:#F1F3F6;--bg:#FFFFFF;--bg-alt:#F6F6F7;--card:#fff;
   /* AnyPhone brand — Signal Blue */
-  --accent:#2D4ED8;--accent-dark:#2240C2;--accent-soft:#eef1ff;--accent-text:#2240C2;
+  --accent:#2D4ED8;--accent-dark:#2240C2;--accent-soft:#dce8ff;--accent-text:#2240C2;
   --accent-on-dark:#5B79FF; /* Signal Blue for use on dark backgrounds */
-  --paper:#F4F2ED;          /* warm paper neutral */
+  --paper:#FFFFFF;          /* white section band */
   --wa:#1FAE63;
   /* aliases — some pages reference these names; mapped to the canonical palette */
   --blue:var(--accent);--blue-dark:var(--accent-dark);--blue-soft:var(--accent-soft);
-  --ai:#6b2fe8;--ai-soft:#f1ecfe;--green:#1bb56a;
+  --ai:#2D4ED8;--ai-soft:#dce8ff;--green:#1bb56a;
   --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif;
   --display:'Figtree',var(--sans);          /* headlines + wordmark */
   --mono:'Spline Sans Mono',ui-monospace,'SFMono-Regular',monospace; /* eyebrows / small labels */
@@ -50,7 +50,7 @@ nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(25
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
 .logo{font-family:var(--display);font-weight:800;font-size:1.72rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
 .logo .seam{margin-left:0.012em;}
-.logo .dot{color:var(--accent);}
+.logo .dot{font-family:var(--display);font-weight:500;font-size:1.24em;line-height:0;vertical-align:-0.08em;margin-left:0.015em;color:inherit;}
 .nav-links{display:flex;align-items:center;gap:32px;}
 .nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
 .nav-links a:hover{color:var(--ink);}

@@ -48,7 +48,7 @@
 .psys-direct svg{ width:13px; height:13px; color:var(--muted); flex-shrink:0; }
 
 /* ---- ② greeting (the one moment of color) ---- */
-.psys-card.greet{ border-color:#e7e0fb; }
+.psys-card.greet{ border-color:#d6e0fb; }
 .psys-greetplay{
   display:flex; align-items:center; gap:14px;
   margin-top:18px; padding:6px 2px 2px;

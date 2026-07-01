@@ -7,13 +7,13 @@
 <title>Phone System for Plumbers | AnyPhone</title>
 <meta name="description" content="AnyPhone gives your plumbing business one number, a simple menu, and a shared text inbox so new jobs, existing customers, and emergency calls reach the right person.">
 <link rel="canonical" href="/phone-system-for-plumbers">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="../favicon-180.png">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=2">
+<link rel="icon" href="../favicon.ico?v=2" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -44,7 +44,7 @@
   /* header */
   header.lp{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.72rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
   .hdr-right{display:flex;align-items:center;gap:18px;}
   .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
   .hdr-cta:hover{background:var(--accent-dark);}
@@ -64,21 +64,25 @@
 
   /* product screenshot placeholder / routing mock */
   .shot{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);overflow:hidden;}
-  .shot-top{background:var(--ink);color:#fff;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;}
+  .shot-top{background:var(--ink);color:#fff;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;}
   .shot-top b{font-size:.98rem;font-weight:700;}
   .shot-top .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(27,181,106,.18);color:#7ef0b4;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
   .shot-top .badge i{width:7px;height:7px;border-radius:50%;background:#34d98a;display:block;}
-  .shot-body{padding:22px;}
-  .shot-greet{background:var(--soft);border:1px solid var(--line);border-radius:13px;padding:14px 16px;font-size:.92rem;color:var(--body);line-height:1.5;margin-bottom:16px;}
+  .shot-body{padding:15px 20px 5px;}
+  .shot-greet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:.85rem;color:var(--body);line-height:1.45;margin-bottom:8px;}
   .shot-greet small{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px;}
-  .route{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--line);}
+  .route{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line);}
   .route:first-of-type{border-top:none;}
-  .route .key{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:1.05rem;display:grid;place-items:center;flex-shrink:0;}
-  .route .rt b{display:block;font-size:.96rem;font-weight:700;}
+  .route .key{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.95rem;display:grid;place-items:center;flex-shrink:0;}
+  .route .key.ext{width:auto;min-width:30px;padding:0 8px;font-size:.85rem;}
+  .route .rt b{display:block;font-size:.92rem;font-weight:700;}
   .route .rt span{font-size:.82rem;color:var(--muted);font-weight:600;}
-  .route .arr{margin-left:auto;color:var(--muted);}
-  .route .arr svg{width:18px;height:18px;display:block;}
+  .route .arr{margin-left:auto;color:var(--muted);font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1;}
   .shot-cap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted);text-align:center;padding:13px 0 2px;text-transform:uppercase;}
+  .shot-ah{display:flex;align-items:center;gap:11px;padding:11px 20px;background:var(--soft);border-top:1px solid var(--line);}
+  .shot-ah-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent-dark);background:var(--accent-soft);padding:5px 9px;border-radius:6px;flex:none;}
+  .shot-ah-tx{font-size:.83rem;color:var(--body);line-height:1.4;font-weight:600;}
+  .shot-ah-tx b{color:var(--ink);font-weight:800;}
 
   /* trust strip */
   .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
@@ -115,6 +119,8 @@
   .menu-ex ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;}
   .menu-ex li{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink);font-size:1rem;}
   .menu-ex .pk{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;display:grid;place-items:center;flex-shrink:0;font-size:.95rem;}
+  .menu-ex .menu-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted);font-weight:600;}
+  .menu-ex .menu-note b{color:var(--ink);font-weight:800;}
 
   /* features */
   .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -154,10 +160,11 @@
   .frow:first-child{border-top:none;}
   .frow .fk{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1.1rem;display:grid;place-items:center;flex-shrink:0;}
   .frow .fk.zero{background:var(--ink);}
+  .frow .fk.ext{width:auto;min-width:38px;padding:0 10px;font-size:.9rem;}
   .frow .fl b{display:block;font-size:1.02rem;font-weight:800;}
   .frow .fl span{font-size:.9rem;color:var(--muted);font-weight:600;}
   .frow .dest{margin-left:auto;text-align:right;font-weight:700;font-size:.95rem;color:var(--accent-dark);}
-  .flow-foot{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);}
+  .flow-foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--line);}
   .flow-foot div{padding:20px 28px;font-size:.95rem;line-height:1.5;color:var(--body);}
   .flow-foot div + div{border-left:1px solid var(--line);}
   .flow-foot b{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:800;margin-bottom:6px;}
@@ -185,7 +192,7 @@
   .closer-mini{margin-top:18px;font-size:.92rem;color:rgba(255,255,255,.82);font-weight:600;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   /* faq */
-  .faq{padding:0 0 84px;}
+  .faq{padding:72px 0 84px;}
   .faq-list{max-width:760px;margin:0 auto;}
   .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
   .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
@@ -194,10 +201,7 @@
   .faq-q[open] summary .ic{transform:rotate(45deg);}
   .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
 
-  footer{border-top:1px solid var(--line);padding:28px 0 96px;}
-  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;font-weight:600;}
-  .foot-inner a{color:var(--muted);text-decoration:none;}
-  .foot-inner a:hover{color:var(--ink);}
+  footer{padding-bottom:96px;}
 
   /* sticky mobile CTA */
   .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
@@ -222,7 +226,6 @@
     footer{padding-bottom:96px;}
   }
   @media(max-width:560px){
-    .logo{font-size:1.8rem;}
     .steps{grid-template-columns:1fr;}
     .flow-foot{grid-template-columns:1fr;}
     .flow-foot div + div{border-left:none;border-top:1px solid var(--line);}
@@ -235,7 +238,7 @@
 
 <header class="lp">
   <div class="wrap lp-inner">
-    <a href="../index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">.</span></a>
+    <a href="../index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
     <div class="hdr-right">
       <a href="../signup.html?plan=grow" class="hdr-cta">Get your number</a>
     </div>
@@ -250,8 +253,8 @@
       <h1>Never miss a plumbing call because you were <span class="u">on another job.</span></h1>
       <p class="hero-sub">AnyPhone gives your plumbing business one number and sends every call to the right person, whether you are driving, under a sink, or out on a job.</p>
       <div class="hero-acts">
-        <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your business number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+        <a href="../signup.html?plan=grow" class="btn btn-primary btn-lg btn-arrow">Get your business number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <ul class="hero-bullets">
         <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>One number for the whole business</li>
@@ -267,13 +270,14 @@
         <span class="badge"><i></i> Live</span>
       </div>
       <div class="shot-body">
-        <div class="shot-greet"><small>Greeting</small>Thanks for calling Metro Plumbing. Press 1 for new jobs, 2 for existing customers, 3 for emergency service, or 0 for the office.</div>
-        <div class="route"><div class="key">1</div><div class="rt"><b>New Jobs</b><span>Owner + Office</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-        <div class="route"><div class="key">2</div><div class="rt"><b>Existing Customers</b><span>Dispatcher</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-        <div class="route"><div class="key">3</div><div class="rt"><b>Emergency Service</b><span>Owner + backup plumber</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-        <div class="route"><div class="key">0</div><div class="rt"><b>Office</b><span>Office line</span></div><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <div class="shot-greet"><small>Greeting</small>Thanks for calling Metro Plumbing. Press 1 for new jobs, 2 for existing customers, 3 for an emergency, or 0 for the operator.</div>
+        <div class="route"><div class="key">1</div><div class="rt"><b>New Jobs</b><span>Rings owner + office</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key">2</div><div class="rt"><b>Existing Customers</b><span>Rings the dispatcher</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key">3</div><div class="rt"><b>Emergency Service</b><span>Rings the on-call plumber</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key ext">101</div><div class="rt"><b>Mike</b><span>Rings Mike's mobile</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key">0</div><div class="rt"><b>Operator</b><span>Rings the front desk</span></div><span class="arr">»</span></div>
       </div>
-      <div class="shot-cap">[ product screenshot: routing setup ]</div>
+      <div class="shot-ah"><span class="shot-ah-badge">After hours</span><span class="shot-ah-tx">Forward calls to <b>the AI answering service you choose</b> so a job still gets captured.</span></div>
     </div>
   </div>
 </section>
@@ -311,7 +315,7 @@
     <div class="steps">
       <div class="step reveal"><div class="sn">1</div><h3>Use one business number</h3><p>Get a new number for your area, or port the number your customers already call.</p></div>
       <div class="step reveal"><div class="sn">2</div><h3>Add a simple menu</h3><p>Record a short greeting so callers can pick what they need before the phone rings.</p></div>
-      <div class="step reveal"><div class="sn">3</div><h3>Route calls to the right person</h3><p>Send each option to the owner, office, dispatcher, assistant, or a plumber in the field.</p></div>
+      <div class="step reveal"><div class="sn">3</div><h3>Route calls to the right person</h3><p>Send each option to the owner, office, dispatcher, a plumber in the field, or an AI answering service.</p></div>
       <div class="step reveal"><div class="sn">4</div><h3>Keep texts in one shared place</h3><p>Every text to the business number lands in one shared inbox the team can see.</p></div>
       <div class="step reveal"><div class="sn">5</div><h3>Notify the team when something is missed</h3><p>Missed calls, new texts, and voicemails post to Slack so nothing slips through.</p></div>
     </div>
@@ -322,9 +326,9 @@
         <li><span class="pk">1</span> New jobs</li>
         <li><span class="pk">2</span> Existing customers</li>
         <li><span class="pk">3</span> Emergency calls</li>
-        <li><span class="pk">4</span> Billing</li>
-        <li><span class="pk">0</span> The office</li>
+        <li><span class="pk">0</span> Operator</li>
       </ul>
+      <p class="menu-note">Regulars can skip the menu and dial a plumber's extension directly — like <b>101 for Mike</b>.</p>
     </div>
   </div>
 </section>
@@ -349,7 +353,7 @@
         <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
         <h3>Simple call routing</h3>
         <p>Set up a short menu and point each option at the right person. Callers choose what they need and the call goes straight there.</p>
-        <div class="eg"><b>Example</b>Press 1 for new jobs, press 3 for an emergency, press 0 for the office.</div>
+        <div class="eg"><b>Example</b>Press 1 for new jobs, press 3 for an emergency, press 0 for the operator.</div>
       </div>
 
       <div class="fcard reveal">
@@ -376,8 +380,8 @@
       <div class="fcard reveal">
         <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Forward to whoever answers</h3>
-        <p>Forward calls to a cell phone, the office line, an assistant, a dispatcher, or a call center. Change it any time as your day changes.</p>
-        <div class="eg"><b>Example</b>Send overflow to an overseas assistant or a call center when the crew is busy.</div>
+        <p>Forward calls to a cell phone, a desk phone, an assistant, a dispatcher, a call center, or an AI answering service. Change it any time as your day changes.</p>
+        <div class="eg"><b>Example</b>Forward after-hours calls to the AI answering service you use so a burst pipe at 2am still gets booked.</div>
       </div>
 
     </div>
@@ -430,16 +434,18 @@
         <div class="mn"><small>Main number</small><b>555-PLUMBER</b></div>
         <div class="biz">Metro Plumbing</div>
       </div>
-      <div class="flow-greet">"Thanks for calling Metro Plumbing. Press 1 for new jobs, 2 for existing customers, 3 for emergency service, or 0 for the office."</div>
+      <div class="flow-greet">"Thanks for calling Metro Plumbing. Press 1 for new jobs, 2 for existing customers, 3 for an emergency, or 0 for the operator. Know the extension? Dial it — like 101 for Mike."</div>
       <div class="flow-rows">
-        <div class="frow"><div class="fk">1</div><div class="fl"><b>New Jobs</b><span>New customer wants a quote or work booked</span></div><div class="dest">Rings owner + office admin</div></div>
-        <div class="frow"><div class="fk">2</div><div class="fl"><b>Existing Customers</b><span>Already a customer with a question or follow up</span></div><div class="dest">Rings dispatcher</div></div>
-        <div class="frow"><div class="fk">3</div><div class="fl"><b>Emergency Service</b><span>Leak, burst pipe, or flooding right now</span></div><div class="dest">Rings owner + backup plumber</div></div>
-        <div class="frow"><div class="fk zero">0</div><div class="fl"><b>Office</b><span>Billing and everything else</span></div><div class="dest">Rings office line</div></div>
+        <div class="frow"><div class="fk">1</div><div class="fl"><b>New Jobs</b><span>New customer wants a quote or work booked</span></div><div class="dest">Rings owner + office</div></div>
+        <div class="frow"><div class="fk">2</div><div class="fl"><b>Existing Customers</b><span>Already a customer with a question or follow up</span></div><div class="dest">Rings the dispatcher</div></div>
+        <div class="frow"><div class="fk">3</div><div class="fl"><b>Emergency Service</b><span>Leak, burst pipe, or flooding right now</span></div><div class="dest">Rings the on-call plumber</div></div>
+        <div class="frow"><div class="fk ext">101</div><div class="fl"><b>Mike</b><span>Regulars ask for Mike by extension</span></div><div class="dest">Rings Mike's mobile</div></div>
+        <div class="frow"><div class="fk zero">0</div><div class="fl"><b>Operator</b><span>Billing and everything else</span></div><div class="dest">Rings the front desk</div></div>
       </div>
       <div class="flow-foot">
         <div><b>Missed calls</b>Go to voicemail, transcribed, emailed, and posted to Slack.</div>
         <div><b>Texts</b>Land in the shared AnyPhone inbox for the team to answer.</div>
+        <div><b>After hours</b>Forward calls to the AI answering service you choose — it captures the job and can escalate real emergencies.</div>
       </div>
     </div>
   </div>
@@ -471,7 +477,7 @@
     </div>
     <div class="faq-list">
       <details class="faq-q" open><summary>Can I use my existing plumbing business number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can port the number your customers already call into AnyPhone and keep it as your business number. If you would rather start fresh, you can get a new number for your area instead.</div></details>
-      <details class="faq-q"><summary>Can calls ring my cell phone?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can forward calls to your cell, the office line, an assistant, a dispatcher, or a call center. Your personal number stays private because customers only ever see the business number.</div></details>
+      <details class="faq-q"><summary>Can calls ring my cell phone?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can forward calls to your cell, a desk phone, an assistant, a dispatcher, a call center, or an AI answering service. Your personal number stays private because customers only ever see the business number.</div></details>
       <details class="faq-q"><summary>Can I send and receive texts from the business number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Texts to the business number land in one shared inbox. The team can read and reply from the same place, so a customer message never gets stuck on one person's phone.</div></details>
       <details class="faq-q"><summary>Can different types of calls go to different people?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Set up a simple menu and route each option however you like. New jobs can ring the owner and office, emergencies can ring the owner and a backup plumber, and existing customers can ring the dispatcher.</div></details>
       <details class="faq-q"><summary>What happens if nobody answers?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The call goes to voicemail. You get a transcript and an email, and the missed call and voicemail post to Slack so someone on the team can call the customer back.</div></details>
@@ -493,9 +499,20 @@
 </section>
 
 <footer>
-  <div class="wrap foot-inner">
-    <div>© 2026 AnyPhone. The phone system for new businesses and modern small teams.</div>
-    <div><a href="../index.html">Home</a></div>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+        <p>The phone system for modern small businesses.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../features.html#mobile">Mobile app</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="plumbers.html">Plumbers</a></div>
+        <div class="foot-col"><h5>Compare / Learn</h5><a href="../learn/slack-notifications.html">Phone system with Slack notifications</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a></div>
+      </div>
+    </div>
+    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
   </div>
 </footer>
 

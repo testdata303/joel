@@ -8,7 +8,7 @@
    ============================================================ */
 const EA_PALETTE = {
   sms:       { accent:'#2540ee', soft:'#dfe5ff' }, // indigo - messages
-  flow:      { accent:'#6b2fe8', soft:'#ece2ff' }, // purple - greeting/voice
+  flow:      { accent:'#2D4ED8', soft:'#dce8ff' }, // purple - greeting/voice
   voicemail: { accent:'#1bb56a', soft:'#d8f1e4' }, // green  - all caught up
 };
 const EA_STROKE = '#10131a';
@@ -20,7 +20,7 @@ function EmptyArt({ name = 'sms', size = 120, soft = true }){
   return (
     <svg className="empty-art" width={size} height={size} viewBox="0 0 128 128" fill="none"
       strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {soft ? (
+      {soft && name !== 'flow' ? (
         <path d="M64 14c26 0 46 14 46 44 0 30-20 52-46 52S18 88 18 58 38 14 64 14Z" fill={cfg.soft}></path>
       ) : null}
 
@@ -36,17 +36,17 @@ function EmptyArt({ name = 'sms', size = 120, soft = true }){
 
       {name === 'flow' ? (
         <g stroke={S} strokeWidth={W}>
-          <path d="M64 65v8"></path>
-          <path d="M64 73C64 83 51 82 41 88"></path>
-          <path d="M64 73C64 83 77 82 87 88"></path>
-          <circle cx="64" cy="46" r="19" fill="#fff"></circle>
-          <g transform="translate(54.4 36.4) scale(0.8)" stroke={A} vectorEffect="non-scaling-stroke">
+          <path d="M64 66v6"></path>
+          <path d="M64 72C64 84 51 83 41 90"></path>
+          <path d="M64 72C64 84 77 83 87 90"></path>
+          <rect x="44" y="26" width="40" height="40" rx="13" fill={cfg.soft} stroke="none"></rect>
+          <g transform="translate(54 36) scale(0.83)" stroke={A} vectorEffect="non-scaling-stroke">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </g>
-          <path d="M80 30q6.5 0 7 7" stroke={A}></path>
-          <path d="M85 24q12 0 12.5 13" stroke={A}></path>
-          <rect x="30" y="88" width="22" height="16" rx="5" fill="#fff"></rect>
-          <rect x="76" y="88" width="22" height="16" rx="5" fill="#fff"></rect>
+          <path d="M87 30q6 0 6.5 6" stroke={A}></path>
+          <path d="M91 24q11 0 11.5 12" stroke={A}></path>
+          <rect x="30" y="90" width="22" height="16" rx="6" fill="#fff"></rect>
+          <rect x="76" y="90" width="22" height="16" rx="6" fill="#fff"></rect>
         </g>
       ) : null}
 

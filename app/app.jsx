@@ -674,7 +674,7 @@ function Sidebar({ active, onNav, badges, hideSetup, companies, companyId, onSwi
   return (
     <aside className="sidebar">
       <div className="sb-top">
-        <a href="index.html" className="sb-brand" style={{textDecoration:'none'}} title="AnyPhone home"><span className="sb-word">Any<span className="seam">Phone</span><span className="dot">.</span></span></a>
+        <a href="index.html" className="sb-brand" style={{textDecoration:'none'}} title="AnyPhone home"><span className="sb-word">Any<span className="seam">Phone</span><span className="dot">»</span></span></a>
         <div className="switcher-wrap" ref={ref}>
           <button className={`switcher${open?' open':''}`} onClick={()=>setOpen(o=>!o)} aria-haspopup="listbox" aria-expanded={open}>
             <span className={`switcher-mark ${cur.tone||'blue'}`}>{initialsOf(cur.name)}</span>

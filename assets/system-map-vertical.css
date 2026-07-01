@@ -59,7 +59,7 @@
 /* ---- TIER 2 · greeting hub, centered ---- */
 .vmap-greetwrap{ display:flex; justify-content:center; }
 .vmap-greet{ width:min(440px,100%); background:#fff;
-  border:1.5px solid #e4dcfb; border-radius:18px; padding:18px; box-shadow:var(--shadow-soft); position:relative; }
+  border:1.5px solid #d6e0fb; border-radius:18px; padding:18px; box-shadow:var(--shadow-soft); position:relative; }
 .vmap-greet-badge{ display:inline-flex; align-items:center; gap:7px; font-size:.72rem; font-weight:800;
   color:var(--ai); background:var(--ai-soft); padding:5px 11px; border-radius:20px; }
 .vmap-greet-badge svg{ width:13px; height:13px; }
@@ -70,7 +70,7 @@
 .vmap-greet-edit{ font-size:.8rem; font-weight:700; color:var(--blue); padding:4px 10px; border-radius:7px; transition:background .15s; }
 .vmap-greet-edit:hover{ background:var(--blue-soft); }
 .vmap-greet-route{ display:flex; align-items:center; gap:8px; margin-top:14px; padding:10px 12px;
-  background:rgba(107,47,232,.06); border-radius:10px; font-size:.79rem; font-weight:600; color:var(--ai); }
+  background:rgba(45,78,216,.06); border-radius:10px; font-size:.79rem; font-weight:600; color:var(--ai); }
 .vmap-greet-route svg{ width:15px; height:15px; flex-shrink:0; }
 
 /* ---- TIER 3+4 · extension branches stacked down a left spine ---- */
@@ -226,10 +226,10 @@
 
 /* greeting: state colors (green = open, purple = away), status dot, text pills — no glyphs */
 .cflow-greet.is-open{ background:#fff; border-color:var(--line); }
-.cflow-greet.is-away{ background:#f6f1fe; border-color:#e0d3f9; }
+.cflow-greet.is-away{ background:#eef3ff; border-color:#d6e0fb; }
 .cflow-greet{ max-width:396px; }
 .cflow-greetdot{ width:10px; height:10px; border-radius:50%; background:var(--green); box-shadow:0 0 0 4px rgba(27,181,106,.16); flex-shrink:0; margin:0 4px; }
-.is-away .cflow-greetdot{ background:var(--ai); box-shadow:0 0 0 4px rgba(107,47,232,.14); }
+.is-away .cflow-greetdot{ background:var(--ai); box-shadow:0 0 0 4px rgba(45,78,216,.14); }
 .cflow-pill{ padding:8px 13px; border-radius:20px; background:#fff; border:1px solid rgba(15,17,21,.1);
   font-weight:700; font-size:.8rem; color:var(--ink); white-space:nowrap; flex-shrink:0;
   box-shadow:0 1px 2px rgba(15,17,21,.05); transition:border-color .14s, background .14s, color .14s; }
@@ -242,9 +242,9 @@
   box-shadow:0 2px 7px rgba(37,64,238,.28); transition:transform .12s, background .14s, box-shadow .14s; }
 .cflow-playbtn svg{ width:16px; height:16px; margin-left:1px; fill:currentColor; }
 .cflow-playbtn:hover{ transform:scale(1.06); }
-.cflow-playbtn.away{ background:var(--ai); box-shadow:0 2px 7px rgba(107,47,232,.28); }
+.cflow-playbtn.away{ background:var(--ai); box-shadow:0 2px 7px rgba(45,78,216,.28); }
 .cflow-playbtn.playing{ box-shadow:0 0 0 4px rgba(37,64,238,.18), 0 2px 7px rgba(37,64,238,.28); }
-.cflow-playbtn.away.playing{ box-shadow:0 0 0 4px rgba(107,47,232,.16), 0 2px 7px rgba(107,47,232,.28); }
+.cflow-playbtn.away.playing{ box-shadow:0 0 0 4px rgba(45,78,216,.16), 0 2px 7px rgba(45,78,216,.28); }
 .cflow-playbtn.playing svg{ margin-left:0; }
 /* forwarding status dot: green = on, red = off; click to toggle (with confirm) */
 .cflow-fwddot{ width:12px; height:12px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px var(--green-soft);
@@ -665,5 +665,5 @@
 .cflow-whisper svg{ width:15px; height:15px; color:var(--blue); flex-shrink:0; margin-top:1px; }
 .cflow-whisper b{ color:var(--body); font-weight:600; }
 .cflow-fwd-ic.vm{ background:var(--ai-soft); color:var(--ai); }
-.cflow-fwd-stat.vm{ background:var(--ai-soft); border-color:#e0d3f9; color:var(--ai); }
+.cflow-fwd-stat.vm{ background:var(--ai-soft); border-color:#d6e0fb; color:var(--ai); }
 .cflow-fwd-stat.vm i{ background:var(--ai); }

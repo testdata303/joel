@@ -215,7 +215,7 @@ button.acc-chip.on:hover{filter:brightness(.97);color:var(--blue);}
 .perm-ic{width:36px;height:36px;border-radius:10px;background:var(--bg-alt);color:var(--body);display:grid;place-items:center;flex-shrink:0;}
 .perm-ic svg{width:18px;height:18px;}
 .perm-ic.blue{background:var(--blue-soft);color:var(--blue);}
-.perm-ic.ai{background:#f1ecfe;color:var(--ai);}
+.perm-ic.ai{background:#dce8ff;color:var(--ai);}
 .perm-ic.red{background:var(--red-soft);color:var(--red);}
 .perm-tx{flex:1;min-width:0;}
 .perm-tx b{font-weight:700;font-size:.92rem;color:var(--ink);}
