@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Sign in | AnyPhone</title>
+<meta name="description" content="Sign in to your AnyPhone account.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  body{background:var(--bg-alt);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+  .btn{padding:15px 30px;border-radius:11px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;font-family:var(--sans);}
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+
+  nav{background:rgba(255,255,255,.9);}
+  /* centered auth layout */
+  .auth{flex:1;display:flex;align-items:center;justify-content:center;padding:56px 24px 72px;}
+  .auth-card{width:100%;max-width:440px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 70px -40px rgba(15,17,21,.28);padding:40px 40px 34px;}
+  .auth-brand{display:flex;justify-content:center;margin-bottom:22px;}
+  .auth-brand .logo{font-size:1.7rem;}
+  .auth-card h1{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;text-align:center;margin-bottom:6px;}
+  .auth-sub{text-align:center;color:var(--body);font-size:.98rem;font-weight:500;margin-bottom:26px;}
+  .field{margin-bottom:18px;}
+  .field-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;}
+  .field-label{font-size:.86rem;font-weight:700;}
+  .field-top a{font-size:.82rem;font-weight:700;color:var(--accent);text-decoration:none;}
+  .field-top a:hover{color:var(--accent-dark);}
+  .auth-input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:1rem;font-weight:600;background:#fff;color:var(--ink);}
+  .auth-input::placeholder{color:#a3a8b2;font-weight:500;}
+  .auth-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  .pw-wrap{position:relative;}
+  .pw-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);padding:8px;border-radius:8px;display:grid;place-items:center;}
+  .pw-toggle:hover{color:var(--ink);}
+  .pw-toggle svg{width:19px;height:19px;}
+  .auth-remember{display:flex;align-items:center;gap:9px;font-size:.9rem;font-weight:600;color:var(--body);margin:2px 0 22px;cursor:pointer;user-select:none;}
+  .auth-remember input{position:absolute;opacity:0;pointer-events:none;}
+  .auth-remember .box{width:20px;height:20px;border-radius:6px;border:1.5px solid #cbd0d8;display:grid;place-items:center;color:#fff;transition:all .15s;}
+  .auth-remember .box svg{width:13px;height:13px;opacity:0;}
+  .auth-remember input:checked + .box{background:var(--accent);border-color:var(--accent);}
+  .auth-remember input:checked + .box svg{opacity:1;}
+  .auth-submit{width:100%;}
+  .auth-notice{display:none;gap:11px;align-items:flex-start;background:var(--accent-soft);border:1px solid #cdd8fb;border-radius:12px;padding:13px 15px;margin-bottom:20px;}
+  .auth-notice.show{display:flex;}
+  .auth-notice svg{width:18px;height:18px;color:var(--accent);flex:none;margin-top:1px;}
+  .auth-notice p{font-size:.9rem;color:var(--ink);font-weight:600;line-height:1.5;}
+  .auth-notice a{color:var(--accent);font-weight:800;text-decoration:none;}
+  .auth-divider{display:flex;align-items:center;gap:14px;margin:24px 0 20px;color:var(--muted);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+  .auth-divider::before,.auth-divider::after{content:"";height:1px;background:var(--line);flex:1;}
+  .auth-foot{text-align:center;font-size:.95rem;color:var(--body);font-weight:600;}
+  .auth-foot a{color:var(--accent);text-decoration:none;font-weight:800;}
+  .auth-foot a:hover{color:var(--accent-dark);}
+  .auth-legal{text-align:center;color:var(--muted);font-size:.82rem;font-weight:500;margin-top:26px;line-height:1.6;}
+  .auth-legal a{color:var(--muted);text-decoration:underline;text-underline-offset:2px;}
+  @media(max-width:480px){.auth-card{padding:32px 24px 28px;border-radius:18px;}}
+  /* fuller active-nav underline */
+  .nav-links a.active{text-decoration:none;position:relative;}
+  .nav-links a.active::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-9px;height:2px;border-radius:2px;background:var(--accent);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="how-it-works.html">How it works</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="signin.html" class="active">Sign in</a>
+      <a href="early-access.html" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<main class="auth">
+  <div class="auth-card">
+    <h1>Sign In</h1>
+    <p class="auth-sub">Sign in to your AnyPhone account.</p>
+
+    <div class="auth-notice" id="notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      <p>AnyPhone isn&rsquo;t open to the public yet. <a href="early-access.html">Join early access</a> and we&rsquo;ll email you the moment sign-in opens.</p>
+    </div>
+
+    <form id="signinForm" novalidate>
+      <div class="field">
+        <div class="field-top"><label class="field-label" for="email">Work email</label></div>
+        <input class="auth-input" type="email" id="email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <div class="field-top"><label class="field-label" for="password">Password</label><a href="#" id="forgot">Forgot password?</a></div>
+        <div class="pw-wrap">
+          <input class="auth-input" type="password" id="password" name="password" placeholder="Your password" autocomplete="current-password" required>
+          <button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <label class="auth-remember">
+        <input type="checkbox" id="remember">
+        <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        Keep me signed in
+      </label>
+      <button type="submit" class="btn btn-primary auth-submit">Sign in</button>
+    </form>
+
+    <div class="auth-divider">New here</div>
+    <div class="auth-foot">Don&rsquo;t have an account yet? <a href="early-access.html">Get early access</a></div>
+    <div class="auth-legal">By signing in you agree to the <a href="about.html">Terms</a> and <a href="about.html">Privacy Policy</a>.</div>
+  </div>
+</main>
+
+<script>
+  // password visibility
+  (function(){
+    var pw=document.getElementById('password'),tg=document.getElementById('pwToggle');
+    var shown='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>';
+    var hidden='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.9 17.9A10.4 10.4 0 0 1 12 19c-6.5 0-10-7-10-7a18.4 18.4 0 0 1 5.1-5.9M9.9 4.2A10.5 10.5 0 0 1 12 4c6.5 0 10 7 10 7a18.5 18.5 0 0 1-2.2 3.2M1 1l22 22M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>';
+    tg.addEventListener('click',function(){
+      var toText=pw.type==='password';
+      pw.type=toText?'text':'password';
+      tg.innerHTML=toText?hidden:shown;
+      tg.setAttribute('aria-label',toText?'Hide password':'Show password');
+    });
+  })();
+
+  // fake sign-in: no real auth, no app link — show the pre-launch notice
+  (function(){
+    var form=document.getElementById('signinForm'),notice=document.getElementById('notice'),forgot=document.getElementById('forgot');
+    function reveal(){ notice.classList.add('show'); var y=window.scrollY+notice.getBoundingClientRect().top-90; window.scrollTo({top:y<0?0:y,behavior:'smooth'}); }
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      reveal();
+    });
+    forgot.addEventListener('click',function(e){ e.preventDefault(); reveal(); });
+  })();
+
+  // mobile nav
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');});});
+    }
+  })();
+</script>
+</body>
+</html>

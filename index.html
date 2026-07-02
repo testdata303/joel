@@ -44,7 +44,27 @@
   .hr-dst b{color:var(--accent-text);}
   .hr-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none;}
   .hr-arrow svg{width:17px;height:17px;}
-  @media(max-width:620px){.hr-map{grid-template-columns:1fr;gap:5px;}.hr-arrow{transform:rotate(90deg);}}
+  @media(max-width:620px){
+    /* fold: big headline + stacked full-width CTAs (primary on top) */
+    .hero{padding:40px 0 0;}
+    .hero h1{font-size:2.6rem;line-height:1.05;letter-spacing:-.03em;margin-bottom:18px;}
+    .hero .lede{font-size:1.06rem;max-width:none;margin-bottom:24px;}
+    .eyebrow{margin-bottom:20px;}
+    .hero .acts{flex-direction:column;gap:12px;margin-bottom:20px;}
+    .hero .acts .btn{width:100%;justify-content:center;}
+    .hero .acts .btn-primary{order:-1;}
+    /* routing card: each mapping = one clean row "Source ···· Destination" */
+    .hero-route{padding:18px 16px;}
+    .hr-rows{gap:10px;}
+    .hr-map{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;}
+    .hr-src{background:none;border:0;padding:0;border-radius:0;gap:11px;flex:none;}
+    .hr-arrow{display:none;}
+    .hr-dst{background:none;border:0;padding:0;border-radius:0;margin-left:auto;min-width:0;}
+    .hr-dst .hr-ic{display:none;}
+    .hr-src b{font-size:.95rem;}
+    .hr-dst b{color:var(--muted);font-weight:600;font-size:.85rem;text-align:right;}
+    .hr-ic{width:30px;height:30px;}
+  }
   .hc-number{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-.02em;color:var(--ink);margin:9px 0 24px;}
   .hc-routes-label{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
   .hc-rows{display:flex;flex-direction:column;gap:12px;}
@@ -365,12 +385,51 @@
   .ap-notify .nv-acts{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;}
   .ap-notify .nv-btn{font-weight:700;font-size:.84rem;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 14px;background:#fff;}
 </style>
+
+<style id="dc-semantic">
+/* semantic product-diagram destination colors — CTA blue reserved for buttons */
+@media(min-width:621px){
+  .hr-dst{background:#F9FAFB;border-color:#E5E7EB;}
+  .hr-dst .hr-ic{background:#fff;}
+  .hr-dst .hr-ic svg{color:#374151;}
+  .hr-dst b{color:#374151;}
+  .hr-dst.dc-phone{background:#EEF4FF;border-color:#C8D8FF;} .hr-dst.dc-phone .hr-ic svg{color:#2454D6;} .hr-dst.dc-phone b{color:#2454D6;}
+  .hr-dst.dc-slack{background:#F6F2FF;border-color:#E2D6F3;} .hr-dst.dc-slack .hr-ic svg{color:#611F69;} .hr-dst.dc-slack b{color:#611F69;}
+  .hr-dst.dc-inbox{background:#ECFDF3;border-color:#BBF7D0;} .hr-dst.dc-inbox .hr-ic svg{color:#15803D;} .hr-dst.dc-inbox b{color:#15803D;}
+  .hr-dst.dc-tools{background:#ECFEFF;border-color:#BAE6FD;} .hr-dst.dc-tools .hr-ic svg{color:#0369A1;} .hr-dst.dc-tools b{color:#0369A1;}
+  .hr-map.hl .hr-dst{background:#F6F2FF;border-color:#E2D6F3;box-shadow:0 0 0 3px rgba(97,31,105,.14);}
+  .hr-map.hl .hr-dst .hr-ic{background:#fff;}
+  .hr-map.hl .hr-dst .hr-ic svg{color:#611F69;}
+  .hr-map.hl .hr-dst b{color:#611F69;}
+  .hr-map.hl .hr-src{border-color:#E2D6F3;box-shadow:0 0 0 3px rgba(97,31,105,.10);}
+  .hr-map.hl .hr-arrow{color:#611F69;}
+}
+.hr-tag{background:#F6F2FF;color:#611F69;}
+.hr-tag svg{color:#611F69;}
+</style>
+
+<style id="dc-semantic2">
+@media(min-width:621px){
+  .rd-source{background:#EEF4FF;}
+  .rd-source .ic{background:#fff;} .rd-source .ic svg{color:#2454D6;}
+  .rd-ext{background:#F9FAFB;border-color:#E5E7EB;color:#374151;}
+  .rd-ext .x{background:#E5E7EB;color:#374151;}
+  .rd-dest{background:#EEF4FF;border-color:#C8D8FF;color:#2454D6;} .rd-dest svg{color:#2454D6;}
+  .rd-dest.ai{background:#F5F3FF;border-color:#DDD6FE;color:#6D28D9;} .rd-dest.ai svg{color:#6D28D9;}
+  .rd-row.msg .rd-ext{background:#ECFDF3;border-color:#BBF7D0;color:#128C7E;}
+  .rd-row.msg .rd-arrow{color:#128C7E;}
+  .rd-dest.msg{background:#ECFDF3;border-color:#BBF7D0;color:#15803D;} .rd-dest.msg svg{color:#15803D;}
+}
+.fi.c-indigo{background:#F3F4F6;} .fi.c-indigo svg{color:#374151;}
+.fi.c-purple{background:#F6F2FF;} .fi.c-purple svg{color:#611F69;}
+.cap-ic.users{background:#374151;}
+</style>
 </head>
 <body>
 <nav>
   <div class="wrap nav-inner">
     <a href="index.html" class="logo ap-logo" aria-label="AnyPhone home"><span class="ap-word">Any<span class="ap-p">Phone</span><span class="ap-dot">»</span></span></a>
-    <a href="signup.html?plan=grow" class="nav-cta nav-cta-m">Get your number</a>
+    <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -378,8 +437,8 @@
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
       <a href="pricing.html">Pricing</a>
-      <a href="Extension Detail.html">Sign in</a>
-      <a href="signup.html?plan=grow" class="nav-cta">Get your number</a>
+      <a href="signin.html">Sign in</a>
+      <a href="early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
@@ -387,12 +446,11 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="eyebrow"><span class="eyebrow-dot"></span> Built for modern teams</div>
       <h1>The phone system for modern small businesses.</h1>
       <p class="lede">Get a local or toll-free number. Add extensions, people, tools, and AI without per-user pricing.</p>
       <div class="acts">
-        <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&rsaquo;</span></a>
-        <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
+        <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&raquo;</span></a>
+        <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
       </div>
       <div class="hero-note">From $20/month · Unlimited users · Month-to-month · Free human support</div>
     </div>
@@ -402,22 +460,22 @@
         <div class="hr-map">
           <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Extensions</b></span>
           <span class="hr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><b>Ring your mobile</b></span>
+          <span class="hr-dst dc-phone"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><b>Ring your mobile</b></span>
         </div>
         <div class="hr-map">
           <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Voicemails</b></span>
           <span class="hr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><b>Slack / Email</b></span>
+          <span class="hr-dst dc-slack"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><b>Slack / Email</b></span>
         </div>
         <div class="hr-map">
           <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>SMS / WhatsApp</b></span>
           <span class="hr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></svg></span><b>Team inbox</b></span>
+          <span class="hr-dst dc-inbox"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></svg></span><b>Team inbox</b></span>
         </div>
         <div class="hr-map">
           <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span><b>Integrations</b></span>
           <span class="hr-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="hr-dst"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Connect tools</b></span>
+          <span class="hr-dst dc-tools"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Connect tools</b></span>
         </div>
       </div>
     </div>
@@ -513,7 +571,7 @@
         <a href="features.html#integrations" class="link-arrow">More &rarr;</a>
       </div>
     </div>
-    <div class="steps-cta reveal"><a href="how-it-works.html" class="btn btn-primary btn-lg btn-arrow">See how it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="steps-cta reveal"><a href="how-it-works.html" class="btn btn-primary btn-lg btn-arrow">See how it works <span class="btn-guillemet" aria-hidden="true">»</span></a></div>
   </div>
 </section>
 
@@ -730,8 +788,8 @@
       <div class="cmp-r joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span class="ap-wm">Any<span class="seam">Phone</span><span class="dot">»</span></span></div><div class="desc">Starts at $20 a month with unlimited users. One number can ring one phone or power extensions, shared messaging, Slack alerts, WhatsApp, compatible devices, AI answering services, and custom workflows.</div></div>
     </div>
     <div class="compare-cta reveal">
-      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&rsaquo;</span></a>
-      <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
+      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&raquo;</span></a>
+      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
     </div>
   </div>
 </section>
@@ -741,7 +799,7 @@
     <div class="closer-card">
       <h2>Get the business phone number your company can grow around.</h2>
       <p>One number ringing one phone, or a full system across people, devices, and tools. Unlimited users either way.</p>
-      <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
+      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
       <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> From $20/month · Unlimited users · Month-to-month · Free human support</div>
     </div>
   </div>
@@ -752,13 +810,13 @@
     <div class="foot-inner">
       <div class="foot-brand">
         <a href="index.html" class="logo ap-logo" aria-label="AnyPhone home"><span class="ap-word">Any<span class="ap-p">Phone</span><span class="ap-dot">»</span></span></a>
-        <p>The phone system for modern small businesses.</p>
+        <p>AnyPhone is the phone system for modern small businesses. Get a local or toll-free number, route calls, manage shared texts and voicemails, connect tools like Slack, and add channels like WhatsApp or third-party AI services when your business needs them.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="features.html#mobile">Mobile app</a></div>
-        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a></div>
-        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/slack-notifications.html">Phone system with Slack notifications</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
+        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
       </div>
     </div>
     <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>

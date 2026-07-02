@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Get early access to AnyPhone | The phone system for modern small businesses</title>
+<meta name="description" content="AnyPhone is launching soon. Join the early access list and we'll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  .btn{padding:15px 30px;border-radius:11px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;font-family:var(--sans);}
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .btn-secondary{background:#fff;color:var(--ink);border:1.5px solid #D6D4CD;} .btn-secondary:hover{border-color:var(--ink);}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+  section{padding:88px 0;}
+
+  /* ---- hero ---- */
+  .ea-hero{background:var(--paper);border-bottom:1px solid var(--line);padding:78px 0 72px;}
+  .ea-hero-inner{max-width:660px;margin:0 auto;text-align:center;}
+  .ea-badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;}
+  .ea-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px var(--accent-soft);}
+  .ea-hero h1{font-size:clamp(2.4rem,5.2vw,3.9rem);line-height:1.02;letter-spacing:-.035em;margin-bottom:22px;}
+  .ea-hero .lede{font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.5;color:var(--body);max-width:44ch;margin:0 auto 30px;font-weight:500;}
+  .ea-hero-form{display:flex;gap:10px;max-width:490px;margin:0 auto;}
+  .ea-hero-form input{flex:1;min-width:0;padding:15px 17px;border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:1rem;font-weight:600;background:#fff;color:var(--ink);}
+  .ea-hero-form input::placeholder{color:#a3a8b2;font-weight:500;}
+  .ea-hero-form input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  .ea-hero-form .btn{flex:none;white-space:nowrap;}
+  .ea-hero-note{font-size:.85rem;color:var(--muted);font-weight:600;margin-top:14px;}
+  .ea-hero-sec{margin-top:22px;}
+  .ea-hero-sec a{color:var(--accent);text-decoration:none;font-weight:700;font-size:.96rem;display:inline-flex;align-items:center;gap:6px;}
+  .ea-hero-sec a:hover{color:var(--accent-dark);}
+  .ea-hero-sec svg{width:16px;height:16px;}
+  @media(max-width:560px){
+    .ea-hero-form{flex-direction:column;}
+    .ea-hero-form .btn{width:100%;}
+  }
+
+  /* ---- shared section header ---- */
+  .kicker{display:inline-block;color:var(--accent);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;margin-bottom:14px;}
+  .sec-head{max-width:720px;margin:0 auto 48px;text-align:center;}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin-bottom:16px;text-wrap:pretty;}
+  .sec-head p{font-size:1.12rem;line-height:1.6;color:var(--body);}
+  .sec-head p + p{margin-top:16px;}
+
+  /* ---- product explanation ---- */
+  .ea-what{background:var(--bg-alt);border-bottom:1px solid var(--line);border-top:1px solid var(--line);}
+  .ea-what .sec-head{max-width:760px;margin-bottom:0;}
+  .ea-what .grow-note{max-width:640px;margin:26px auto 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;font-size:1.02rem;line-height:1.55;color:var(--ink);font-weight:600;display:flex;gap:12px;align-items:flex-start;}
+  .ea-what .grow-note svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:2px;}
+
+  /* ---- why join early ---- */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto;}
+  .why-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 1px 2px rgba(16,16,18,.04),0 14px 30px -22px rgba(16,16,18,.16);}
+  .why-card .wi{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px;}
+  .why-card .wi svg{width:22px;height:22px;}
+  .why-card h3{font-size:1.12rem;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;}
+  .why-card p{font-size:.98rem;color:var(--body);line-height:1.55;}
+  @media(max-width:720px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ---- form ---- */
+  .ea-form-sec{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .ea-form-card{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(15,17,21,.07);padding:36px 38px;}
+  .ea-form-card .fc-head{text-align:center;margin-bottom:28px;}
+  .ea-form-card .fc-head h2{font-size:clamp(1.6rem,3.2vw,2.15rem);font-weight:800;letter-spacing:-.02em;margin-bottom:10px;}
+  .ea-form-card .fc-head p{color:var(--body);font-size:1.02rem;font-weight:500;max-width:40ch;margin:0 auto;}
+  .field{margin-bottom:20px;}
+  .field-label{font-size:.88rem;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:8px;}
+  .field-label .opt{font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--soft);padding:2px 8px;border-radius:5px;}
+  .ea-input,.ea-select,.ea-textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:1rem;font-weight:600;background:#fff;color:var(--ink);}
+  .ea-input::placeholder,.ea-textarea::placeholder{color:#a3a8b2;font-weight:500;}
+  .ea-textarea{font-weight:500;line-height:1.55;resize:vertical;min-height:96px;}
+  .ea-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%23767c87' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+  .ea-input:focus,.ea-select:focus,.ea-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+  .chip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;}
+  .chip{position:relative;display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;transition:all .15s;background:#fff;font-size:.92rem;font-weight:700;user-select:none;}
+  .chip:hover{border-color:#cdd0d6;}
+  .chip input{position:absolute;opacity:0;pointer-events:none;}
+  .chip .box{width:20px;height:20px;border-radius:6px;border:1.5px solid #cbd0d8;display:grid;place-items:center;flex:none;transition:all .15s;color:#fff;}
+  .chip .box svg{width:13px;height:13px;opacity:0;}
+  .chip.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-text);}
+  .chip.on .box{background:var(--accent);border-color:var(--accent);}
+  .chip.on .box svg{opacity:1;}
+  .ea-submit{width:100%;margin-top:6px;}
+  .ea-form-fine{text-align:center;color:var(--muted);font-size:.84rem;font-weight:600;margin-top:14px;}
+  @media(max-width:560px){.chip-grid{grid-template-columns:1fr;}.ea-form-card{padding:28px 22px;}}
+
+  /* ---- confirmation ---- */
+  .ea-confirm{display:none;max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(15,17,21,.07);padding:52px 44px;text-align:center;}
+  .ea-confirm .ck{width:66px;height:66px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin:0 auto 22px;}
+  .ea-confirm .ck svg{width:32px;height:32px;}
+  .ea-confirm h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;}
+  .ea-confirm p{color:var(--body);font-size:1.08rem;line-height:1.6;max-width:44ch;margin:0 auto 26px;font-weight:500;}
+  .ea-confirm a.sec-link{color:var(--accent);text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:7px;}
+  .ea-confirm a.sec-link:hover{color:var(--accent-dark);}
+  .ea-confirm a.sec-link svg{width:17px;height:17px;}
+  /* optional shape-AnyPhone questions after confirmation */
+  .ea-shape{margin-top:30px;text-align:left;}
+  .ea-shape-div{height:1px;background:var(--line);margin-bottom:26px;}
+  .ea-shape-h{text-align:center;font-size:1.15rem;font-weight:800;letter-spacing:-.01em;margin-bottom:20px;}
+  .ea-skip{display:block;margin:12px auto 0;background:none;border:none;color:var(--muted);font-weight:700;font-size:.9rem;font-family:var(--sans);cursor:pointer;}
+  .ea-skip:hover{color:var(--ink);}
+  .ea-shape-done p{color:var(--body);font-size:1.04rem;font-weight:500;margin-top:22px;}
+
+  /* ---- FAQ ---- */
+  .faq h2{text-align:center;font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.025em;margin-bottom:32px;}
+  .faq-list{max-width:780px;margin:0 auto;}
+  .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .faq-q summary::-webkit-details-marker{display:none;}
+  .faq-q summary .ic{width:22px;height:22px;color:var(--accent);flex:none;transition:transform .2s;}
+  .faq-q[open] summary .ic{transform:rotate(45deg);}
+  .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:1rem;line-height:1.62;}
+
+  /* ---- final CTA ---- */
+  .closer{background:#fff;text-align:center;padding:44px 0 72px;}
+  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:56px 40px;}
+  .closer-card h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
+  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:38rem;margin:0 auto 30px;font-weight:500;}
+
+  @media(max-width:860px){
+    section{padding:64px 0;}
+    .nav-links a:not(.nav-cta){}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="#join" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="how-it-works.html">How it works</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="signin.html">Sign in</a>
+      <a href="#join" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<header class="ea-hero" data-screen-label="Hero">
+  <div class="wrap">
+    <div class="ea-hero-inner">
+      <div class="ea-badge reveal in"><span class="dot"></span> Launching soon · Early access</div>
+      <h1 class="reveal in">Get early access to AnyPhone</h1>
+      <p class="lede reveal in">AnyPhone is launching soon. Join the early access list and we&rsquo;ll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.</p>
+      <form class="ea-hero-form reveal in" id="heroForm" novalidate>
+        <input type="email" id="heroEmail" placeholder="Work email" autocomplete="email" aria-label="Work email">
+        <button type="submit" class="btn btn-primary">Get early access</button>
+      </form>
+      <div class="ea-hero-note reveal in">No spam. Just launch updates and early access details.</div>
+      <div class="ea-hero-sec reveal in">
+        <a href="how-it-works.html">See how it works
+          <span class="btn-guillemet" aria-hidden="true">»</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 2. PRODUCT EXPLANATION -->
+<section class="ea-what" data-screen-label="What is AnyPhone">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">What is AnyPhone?</div>
+      <h2>The phone system for modern small businesses</h2>
+      <p>AnyPhone helps small businesses handle calls and messages without giving every customer a personal cell number or buying an enterprise phone system. Get a local or toll-free number, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and keep your team updated in Slack.</p>
+    </div>
+    <div class="grow-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
+      <span>As your business grows, AnyPhone is designed to support additional numbers, channels like WhatsApp, and third-party AI services.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3. WHY JOIN EARLY -->
+<section data-screen-label="Why join early">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Why join early?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+        <h3>Be first to know</h3>
+        <p>Get notified when AnyPhone is ready for public setup.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>Help shape the product</h3>
+        <p>Tell us what phone setup your business needs before launch.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M21 3l-9 9M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></div>
+        <h3>Bring your current number</h3>
+        <p>If you already have a business number, we&rsquo;ll share details about porting when early access opens.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.9H22l-6 4.6 2.3 7-6.3-4.5L5.7 20l2.3-7-6-4.6h7.6z"/></svg></div>
+        <h3>Start simple</h3>
+        <p>AnyPhone is built for small teams that want a real phone system without enterprise complexity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FORM + 5. CONFIRMATION -->
+<section class="ea-form-sec" id="join" data-screen-label="Join form">
+  <div class="wrap">
+    <div class="ea-form-card reveal" id="formCard">
+      <div class="fc-head">
+        <h2>Get early access</h2>
+        <p>Enter your email and we&rsquo;ll let you know the moment AnyPhone is ready for setup.</p>
+      </div>
+      <form id="eaForm" novalidate>
+        <div class="field">
+          <label class="field-label" for="f-email">Work email</label>
+          <input class="ea-input" type="email" id="f-email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary ea-submit">Get early access</button>
+        <div class="ea-form-fine">No spam. Just launch updates and early access details.</div>
+      </form>
+    </div>
+
+    <!-- 5. CONFIRMATION -->
+    <div class="ea-confirm" id="confirmCard">
+      <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2>You&rsquo;re on the list.</h2>
+      <p>We sent a confirmation email to <b id="confirmEmail">your inbox</b>. Click the link to confirm you want early access updates from AnyPhone.</p>
+      <a class="sec-link" href="how-it-works.html">See how AnyPhone works
+        <span class="btn-guillemet" aria-hidden="true">»</span>
+      </a>
+
+      <div class="ea-shape" id="shapeBlock">
+        <div class="ea-shape-div"></div>
+        <h3 class="ea-shape-h">Want to help us shape AnyPhone?</h3>
+        <form id="shapeForm" novalidate>
+          <div class="field">
+            <label class="field-label" for="s-using">What are you using today?</label>
+            <select class="ea-select" id="s-using" name="using">
+              <option value="" disabled selected>Select an option</option>
+              <option>Personal cell phone</option>
+              <option>Google Voice</option>
+              <option>Grasshopper</option>
+              <option>OpenPhone</option>
+              <option>RingCentral</option>
+              <option>Another phone system</option>
+              <option>Nothing yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">What do you need help with? <span class="opt">Optional</span></label>
+            <div class="chip-grid" id="s-needs">
+              <label class="chip"><input type="checkbox" name="needs" value="Local number"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Local number</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Toll-free number"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Toll-free number</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Port existing number"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Port existing number</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Call routing"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Call routing</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Menus and extensions"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Menus and extensions</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Shared texting"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Shared texting</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Voicemail transcripts"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Voicemail transcripts</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Slack notifications"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Slack notifications</label>
+              <label class="chip"><input type="checkbox" name="needs" value="WhatsApp"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>WhatsApp</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Third-party AI services"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Third-party AI services</label>
+              <label class="chip"><input type="checkbox" name="needs" value="Not sure yet"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Not sure yet</label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label" for="s-notes">Anything else we should know? <span class="opt">Optional</span></label>
+            <textarea class="ea-textarea" id="s-notes" name="notes" placeholder="Team size, how you handle calls today, or anything you want us to know."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary ea-submit">Submit details</button>
+          <button type="button" class="ea-skip" id="s-skip">Skip for now</button>
+        </form>
+      </div>
+      <div class="ea-shape-done" id="shapeDone" style="display:none;">
+        <p>Thanks, that helps. We&rsquo;ll be in touch as AnyPhone gets closer to launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section class="faq" data-screen-label="FAQ">
+  <div class="wrap">
+    <h2>Early access questions</h2>
+    <div class="faq-list">
+      <details class="faq-q" open><summary><span class="fq-text">When is AnyPhone launching?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">AnyPhone is launching soon. Get early access and we&rsquo;ll send updates as setup becomes available.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can I get a number today?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not yet. Early access lets you join the list before public launch. When AnyPhone is ready, you&rsquo;ll be able to get a local or toll-free number or bring your current number.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can I bring my current business number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, AnyPhone is designed to support number porting. We&rsquo;ll share more details when early access opens.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is AnyPhone only for one number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. You can start with a local or toll-free number and add numbers as needed.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is AnyPhone an AI receptionist?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is a phone system for modern small businesses. It is designed to connect with third-party AI services when your business needs them, but AnyPhone itself is not positioned as an AI receptionist.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Who is AnyPhone for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">AnyPhone is for modern small businesses that need a real phone system without enterprise complexity. It is built for founders, owners, small teams, contractors, assistants, and businesses that use tools like Slack.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FINAL CTA -->
+<section class="closer" data-screen-label="Final CTA">
+  <div class="wrap">
+    <div class="closer-card reveal">
+      <h2>Join the early access list</h2>
+      <p>Be first to know when AnyPhone is ready for setup.</p>
+      <a href="#join" class="btn btn-primary btn-lg" id="finalCta">Get early access</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a href="index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+        <p>AnyPhone is the phone system for modern small businesses. Get a local or toll-free number, route calls, manage shared texts and voicemails, connect tools like Slack, and add channels like WhatsApp or third-party AI services when your business needs them.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
+        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
+      </div>
+    </div>
+    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // mobile nav
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');});});
+    }
+  })();
+
+  // email capture -> confirmation (email only)
+  var heroForm=document.getElementById('heroForm'),heroEmail=document.getElementById('heroEmail'),
+      eaForm=document.getElementById('eaForm'),fEmail=document.getElementById('f-email'),
+      formCard=document.getElementById('formCard'),confirmCard=document.getElementById('confirmCard'),
+      confirmEmail=document.getElementById('confirmEmail'),join=document.getElementById('join');
+  function showConfirm(email){
+    confirmEmail.textContent=email;
+    formCard.style.display='none';
+    confirmCard.style.display='block';
+    var y=window.scrollY+confirmCard.getBoundingClientRect().top-90; window.scrollTo({top:y<0?0:y,behavior:'smooth'});
+  }
+  // hero email: confirm inline if valid, otherwise send them to the form field
+  heroForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=heroEmail.value.trim();
+    if(v && heroEmail.checkValidity()){ fEmail.value=v; showConfirm(v); return; }
+    var y=window.scrollY+join.getBoundingClientRect().top-70; window.scrollTo({top:y<0?0:y,behavior:'smooth'});
+    setTimeout(function(){ fEmail.focus({preventScroll:true}); },520);
+  });
+  // form email
+  eaForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!eaForm.checkValidity()){ eaForm.reportValidity(); return; }
+    showConfirm(fEmail.value.trim());
+  });
+
+  // optional shape-AnyPhone questions (chips + submit/skip)
+  document.querySelectorAll('#s-needs .chip').forEach(function(chip){
+    var input=chip.querySelector('input');
+    input.addEventListener('change',function(){ chip.classList.toggle('on',input.checked); });
+  });
+  var shapeForm=document.getElementById('shapeForm'),shapeBlock=document.getElementById('shapeBlock'),
+      shapeDone=document.getElementById('shapeDone'),sSkip=document.getElementById('s-skip');
+  function finishShape(){ shapeBlock.style.display='none'; shapeDone.style.display='block'; }
+  shapeForm.addEventListener('submit',function(e){ e.preventDefault(); finishShape(); });
+  sSkip.addEventListener('click',finishShape);
+
+  /* NOTE: demo only. Wire form submissions to your early-access list
+     (e.g. an email service or CRM) before going live. */
+</script>
+</body>
+</html>

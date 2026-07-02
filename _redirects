@@ -5,3 +5,29 @@
 # Friendly short aliases
 /plumbers        /for/plumbers                301
 /slack           /learn/slack-notifications   301
+
+# Signup is hidden until public launch — send anyone who reaches it to early access.
+# Use 302 (temporary) so /signup can return unchanged at launch.
+/signup          /early-access                302
+/signup.html     /early-access                302
+
+# Mobile app
+/mobile-app      /learn/mobile-app.html      200
+
+# Early access
+/early-access    /early-access.html           200
+
+# Vertical landing pages — clean slugs serve the /for/*.html files (rewrite, keeps URL).
+/phone-system-for-real-estate    /for/real-estate.html    200
+/phone-system-for-contractors    /for/contractors.html    200
+/phone-system-for-consultants    /for/consultants.html    200
+/phone-system-for-law-firms      /for/law-firms.html      200
+
+# Learn pages — clean slugs serve the /learn/*.html files.
+/virtual-phone-system                    /learn/virtual-phone-system.html                    200
+/small-business-phone-system             /learn/small-business-phone-system.html             200
+/business-phone-number                   /learn/business-phone-number.html                   200
+/local-business-phone-number             /learn/local-business-phone-number.html             200
+/toll-free-business-number               /learn/toll-free-business-number.html               200
+/google-voice-alternative                /learn/google-voice-alternative.html                200
+/personal-cell-vs-business-phone-system  /learn/personal-cell-vs-business-phone-system.html  200

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>AnyPhone Pricing | Unlimited Users From $20 a Month</title>
-<meta name="description" content="AnyPhone business phone plans start at $20 a month with unlimited users, annual savings, free number porting, and free human support.">
+<title>AnyPhone Plans | Unlimited Users, No Per-User Fees</title>
+<meta name="description" content="AnyPhone business phone plans include unlimited users, free number porting, and free human support. Pricing is announced at launch — get early access.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
@@ -244,7 +244,7 @@
   .jx-plan.pop::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.64rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:20px;}
   .jx-plan .pname{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;}
   .jx-plan.pop .pname{color:var(--blue);}
-  .jx-plan .pdesc{font-size:.9rem;color:var(--muted);margin:6px 0 16px;line-height:1.45;min-height:54px;}
+  .jx-plan .pdesc{font-size:.9rem;color:var(--muted);margin:6px 0 10px;line-height:1.45;min-height:44px;}
   .jx-plan .pprice{font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--body);}
   .jx-plan .pper{font-size:.92rem;color:var(--muted);font-weight:600;margin-left:3px;letter-spacing:0;}
   .jx-plan .pcta{display:block;width:fit-content;min-width:62%;text-align:center;margin:20px auto 22px;padding:12px 26px;border-radius:11px;font-weight:700;text-decoration:none;font-size:.96rem;transition:transform .15s,background .15s,border-color .15s,color .15s;}
@@ -277,6 +277,18 @@
   @media(max-width:760px){.guar-row{grid-template-columns:1fr 1fr;gap:24px 16px;}}
   .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
   .closer-micro svg{width:15px;height:15px;flex-shrink:0;}
+  /* pre-launch: prices removed until launch */
+  .jx-plan .pcoming{font-size:.9rem;font-weight:600;letter-spacing:0;color:var(--muted);}
+  .jx-plan.pop .pcoming{color:var(--blue);}
+  .jx-addon .aname-lg{font-size:1rem;font-weight:800;letter-spacing:-.01em;color:var(--ink);}
+</style>
+
+<style id="dc-semantic2">
+/* feature-section icon chips off CTA blue */
+.jx-card .ic{background:#F3F4F6;color:#374151;}
+.ai-agent{background:#F5F3FF;color:#6D28D9;} .ai-arrow{color:#6D28D9;}
+.diff-card .dc-ic{background:#F3F4F6;color:#374151;}
+.guar-row .gic{background:#F3F4F6;color:#374151;}
 </style>
 </head>
 <body>
@@ -284,7 +296,7 @@
 <nav>
   <div class="wrap nav-inner">
     <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-    <a href="signup.html?plan=grow" class="nav-cta nav-cta-m">Get your number</a>
+    <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -292,18 +304,17 @@
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
       <a href="#" class="active">Pricing</a>
-      <a href="Extension Detail.html">Sign in</a>
-      <a href="signup.html?plan=grow" class="nav-cta">Get your number</a>
+      <a href="signin.html">Sign in</a>
+      <a href="early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
 
 <header class="jx-hero">
   <div class="wrap">
-    <h1>One price for the phone system. Unlimited users.</h1>
-    <p>No per-user fees. No long-term contracts. Free human support.</p>
-    <div class="jx-toggle"><button id="billM" class="on">Monthly</button><button id="billA">Annual</button></div>
-    <div class="jx-save">Save 20% with annual billing.</div>
+    <h1>Simple plans, coming at launch.</h1>
+    <p>AnyPhone is launching soon with simple monthly plans for modern small businesses. Join early access and we&rsquo;ll send updates on pricing, setup, and availability.</p>
+    <div class="jx-save">One price for the phone system. Unlimited users on every plan.</div>
   </div>
 </header>
 
@@ -313,8 +324,8 @@
       <div class="jx-plan reveal">
         <div class="pname">Max</div>
         <div class="pdesc">For advanced integrations and custom workflows.</div>
-        <span class="pprice"><span data-m="$149" data-a="$119">$149</span><span class="pper">/mo</span></span>
-        <a href="signup.html?plan=max" class="pcta ghost">Get your number</a>
+        <div class="pcoming">Pricing at launch</div>
+        <a href="early-access.html" class="pcta ghost">Get early access</a>
         <ul>
           <li class="pgroup">Everything in Grow, plus:</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>1 business number</span></li>
@@ -330,8 +341,8 @@
       <div class="jx-plan pop reveal">
         <div class="pname">Grow</div>
         <div class="pdesc">For more routing, recording, and Slack.</div>
-        <span class="pprice"><span data-m="$49" data-a="$39">$49</span><span class="pper">/mo</span></span>
-        <a href="signup.html?plan=grow" class="pcta primary">Get your number</a>
+        <div class="pcoming">Pricing at launch</div>
+        <a href="early-access.html" class="pcta primary">Get early access</a>
         <ul>
           <li class="pgroup">Everything in Lite, plus:</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>1 business number</span></li>
@@ -348,8 +359,8 @@
       <div class="jx-plan reveal">
         <div class="pname">Lite</div>
         <div class="pdesc">For one number and the essentials.</div>
-        <span class="pprice"><span data-m="$20" data-a="$16">$20</span><span class="pper">/mo</span></span>
-        <a href="signup.html?plan=lite" class="pcta ghost">Get your number</a>
+        <div class="pcoming">Pricing at launch</div>
+        <a href="early-access.html" class="pcta ghost">Get early access</a>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>1 business number</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>2 extensions</span></li>
@@ -363,12 +374,12 @@
         </ul>
       </div>
     </div>
-    <p class="jx-rules">Monthly or annual billing (save 20%) · Free number porting · No setup fees · Cancel anytime</p>
+    <p class="jx-rules">Free number porting · No setup fees · Cancel anytime · Unlimited users</p>
     <div class="guar-row reveal">
       <div class="gi"><span class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M16 5.2a3.2 3.2 0 0 1 0 5.6M18.5 20a6 6 0 0 0-3-5.2"/></svg></span><div><b>Unlimited users</b><span>Add everyone who needs access without another seat fee.</span></div></div>
       <div class="gi"><span class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><b>Month-to-month</b><span>No long-term contract. Upgrade, downgrade, or cancel anytime.</span></div></div>
       <div class="gi"><span class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0M4 13v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 1zM20 13v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 1z"/></svg></span><div><b>Free human support</b><span>A real person stays with the problem until it is solved.</span></div></div>
-      <div class="gi"><span class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V4h9z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg></span><div><b>Clear pricing</b><span>Plan limits and add-ons are shown before you buy.</span></div></div>
+      <div class="gi"><span class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V4h9z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg></span><div><b>No per-user fees</b><span>Plan limits are clear, and adding people never adds a seat charge.</span></div></div>
     </div>
   </div>
 </section>
@@ -377,11 +388,12 @@
   <div class="wrap">
     <div class="jx-head"><div class="jx-kicker">Add-ons</div><h2>Add only what you need.</h2></div>
     <div class="jx-addons">
-      <div class="jx-addon reveal"><div class="aprice">$5<span style="font-size:.9rem;color:var(--muted);font-weight:600;">/mo</span></div><div class="aname">Additional business number</div></div>
-      <div class="jx-addon reveal"><div class="aprice">$30<span style="font-size:.9rem;color:var(--muted);font-weight:600;">/mo</span></div><div class="aname">Vanity number</div></div>
-      <div class="jx-addon reveal"><div class="aprice">$10<span style="font-size:.9rem;color:var(--muted);font-weight:600;">/mo</span></div><div class="aname">Additional 1,000 outbound minutes</div></div>
-      <div class="jx-addon reveal"><div class="aprice">$5<span style="font-size:.9rem;color:var(--muted);font-weight:600;">/mo</span></div><div class="aname">Compatible SIP phone connection</div></div>
+      <div class="jx-addon reveal"><div class="aname-lg">Additional business number</div></div>
+      <div class="jx-addon reveal"><div class="aname-lg">Vanity number</div></div>
+      <div class="jx-addon reveal"><div class="aname-lg">Additional outbound minutes</div></div>
+      <div class="jx-addon reveal"><div class="aname-lg">Compatible SIP phone connection</div></div>
     </div>
+    <p class="jx-rules" style="margin-top:26px;">Add-on pricing is announced at launch.</p>
   </div>
 </section>
 
@@ -392,7 +404,7 @@
       <div class="qa reveal"><div class="q">Do you charge per user?</div><div class="a">No. Users are unlimited on every plan. Plan limits apply to numbers, extensions, outbound minutes, and advanced capabilities.</div></div>
       <div class="qa reveal"><div class="q">Are extensions unlimited?</div><div class="a">Lite includes 2 extensions. Grow includes 10. Max includes unlimited extensions.</div></div>
       <div class="qa reveal"><div class="q">What counts toward my minutes?</div><div class="a">Only outbound minutes count. Inbound calls do not use your included minutes.</div></div>
-      <div class="qa reveal"><div class="q">What happens if I exceed my minutes?</div><div class="a">AnyPhone adds a 1,000-minute pack for $10. You will see the charge clearly on your bill.</div></div>
+      <div class="qa reveal"><div class="q">What happens if I exceed my minutes?</div><div class="a">You can add more outbound minutes whenever you need them. Add-on pricing is shared at launch.</div></div>
       <div class="qa reveal"><div class="q">Can I keep my current number?</div><div class="a">Yes. Porting is free, and your number keeps working while the transfer completes.</div></div>
       <div class="qa reveal"><div class="q">Can I text from Lite?</div><div class="a">Yes, after the required SMS compliance approval.</div></div>
       <div class="qa reveal"><div class="q">Do I need hardware?</div><div class="a">No. AnyPhone works on the mobile phone and computer you already have. Compatible SIP desk phones are optional on Grow and Max.</div></div>
@@ -407,8 +419,8 @@
     <div class="closer-card">
       <h2>Start with one number. Pay for the system, not the seats.</h2>
       <p>Unlimited users on every plan. Add people, tools, devices, and AI answering services without another per-user charge.</p>
-      <a href="signup.html?plan=grow" class="btn btn-primary btn-lg">Get your number</a>
-      <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> From $20/month · Unlimited users · Month-to-month · Free human support</div>
+      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
+      <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Unlimited users · Month-to-month · Free number porting · Free human support</div>
     </div>
   </div>
 </section>
@@ -418,13 +430,13 @@
     <div class="foot-inner">
       <div class="foot-brand">
         <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-        <p>The phone system for modern small businesses.</p>
+        <p>AnyPhone is the phone system for modern small businesses. Get a local or toll-free number, route calls, manage shared texts and voicemails, connect tools like Slack, and add channels like WhatsApp or third-party AI services when your business needs them.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="features.html#mobile">Mobile app</a></div>
-        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a></div>
-        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/slack-notifications.html">Phone system with Slack notifications</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
+        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
       </div>
     </div>
     <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
@@ -527,20 +539,6 @@
        (e.g. Twilio AvailablePhoneNumbers) when the backend is ready. */
   })();
 
-</script>
-<script>
-(function(){
-  var m=document.getElementById('billM'),a=document.getElementById('billA');
-  if(!m||!a) return;
-  var prices=document.querySelectorAll('.pprice [data-m]');
-  function set(annual){
-    prices.forEach(function(p){p.textContent=annual?p.getAttribute('data-a'):p.getAttribute('data-m');});
-    document.querySelectorAll('.pper').forEach(function(x){x.textContent=annual?'/mo, billed yearly':'/mo';});
-    m.classList.toggle('on',!annual);a.classList.toggle('on',annual);
-  }
-  m.addEventListener('click',function(){set(false);});
-  a.addEventListener('click',function(){set(true);});
-})();
 </script>
 </body>
 </html>
