@@ -337,30 +337,34 @@
   .cap-ic.users{background:#2D4ED8;}
   .proof .quote h3{font-size:1.18rem;font-weight:800;letter-spacing:-.015em;margin-bottom:8px;color:var(--ink);}
   .proof .quote p{margin-bottom:0;font-size:1rem;}
-  /* routing diagram */
-  .rdiag{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 26px;box-shadow:0 30px 70px -45px rgba(16,16,18,.2);}
+  /* routing diagram — one clean row per mapping: source · leader · destination chip */
+  .rdiag{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 26px;box-shadow:0 30px 70px -45px rgba(16,16,18,.2);}
   .rd-source{display:flex;align-items:center;gap:13px;padding:14px 16px;background:var(--accent-soft);border-radius:14px;}
   .rd-source .ic{width:42px;height:42px;border-radius:11px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:none;}
   .rd-source .ic svg{width:22px;height:22px;color:#fff;}
   .rd-src-txt{display:flex;flex-direction:column;}
   .rd-src-txt b{font-size:1.02rem;font-weight:800;letter-spacing:-.01em;}
   .rd-src-txt span{font-size:.84rem;color:var(--muted);font-weight:600;}
-  .rd-cat{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:18px 4px 9px;}
-  .rd-rows{display:flex;flex-direction:column;gap:9px;}
-  .rd-row{display:grid;grid-template-columns:1fr auto 1.15fr;align-items:center;gap:12px;}
-  .rd-ext{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 13px;font-weight:700;font-size:.92rem;}
-  .rd-ext .x{font-size:.64rem;font-weight:800;letter-spacing:.03em;color:#fff;background:var(--accent);padding:3px 7px;border-radius:6px;flex:none;}
-  .rd-arrow{color:var(--muted);display:flex;align-items:center;justify-content:center;}
-  .rd-arrow svg{width:17px;height:17px;}
-  .rd-dest{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 13px;font-weight:700;font-size:.92rem;}
-  .rd-dest svg{width:16px;height:16px;color:var(--accent);flex:none;}
-  .rd-dest.ai{background:#dce8ff;border-color:#d6e0fb;color:#2240C2;}
+  .rd-cat{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:20px 4px 4px;}
+  .rd-rows{display:flex;flex-direction:column;}
+  .rd-row{display:flex;align-items:center;gap:14px;padding:11px 4px;border-bottom:1px solid var(--line);}
+  .rd-rows:last-of-type .rd-row:last-child{border-bottom:none;}
+  .rd-ext{display:flex;align-items:center;gap:9px;font-weight:700;font-size:.94rem;color:var(--ink);flex:none;}
+  .rd-ext .x{font-size:.64rem;font-weight:800;letter-spacing:.03em;color:var(--accent-text);background:var(--accent-soft);padding:3px 7px;border-radius:6px;flex:none;min-width:44px;text-align:center;}
+  .rd-lead{flex:1;min-width:24px;}
+  .rd-dest{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;padding:7px 13px;border-radius:100px;background:var(--soft);color:var(--body);flex:none;}
+  .rd-dest svg{width:15px;height:15px;color:var(--accent);flex:none;}
+  .rd-dest.ai{background:#dce8ff;color:#2240C2;}
   .rd-dest.ai svg{color:#2D4ED8;}
-  .rd-row.msg .rd-ext{background:#E3F5E9;color:#13935a;}
-  .rd-row.msg .rd-arrow{color:#1FAE63;}
-  .rd-dest.msg{background:#E3F5E9;border-color:#bfe9cd;color:#13935a;}
+  .rd-row.msg .rd-ext svg{color:#1FAE63;}
+  .rd-dest.msg{background:#E3F5E9;color:#13935a;}
   .rd-dest.msg svg{color:#1FAE63;}
-  @media(max-width:620px){.rd-row{grid-template-columns:1fr;gap:5px;}.rd-arrow{transform:rotate(90deg);}}
+  @media(max-width:620px){
+    .rdiag{padding:18px;}
+    .rd-row{flex-wrap:wrap;gap:6px;padding:10px 2px;}
+    .rd-lead{display:none;}
+    .rd-dest{margin-left:auto;}
+  }
 </style>
 <style>
   /* AnyPhone wordmark - Ink on light, Figtree 800, never recolored */
@@ -428,17 +432,33 @@
 @media(min-width:621px){
   .rd-source{background:#EEF4FF;}
   .rd-source .ic{background:#fff;} .rd-source .ic svg{color:#2454D6;}
-  .rd-ext{background:#F9FAFB;border-color:#E5E7EB;color:#374151;}
+  .rd-ext{color:#374151;}
   .rd-ext .x{background:#E5E7EB;color:#374151;}
-  .rd-dest{background:#EEF4FF;border-color:#C8D8FF;color:#2454D6;} .rd-dest svg{color:#2454D6;}
-  .rd-dest.ai{background:#F5F3FF;border-color:#DDD6FE;color:#6D28D9;} .rd-dest.ai svg{color:#6D28D9;}
-  .rd-row.msg .rd-ext{background:#ECFDF3;border-color:#BBF7D0;color:#128C7E;}
-  .rd-row.msg .rd-arrow{color:#128C7E;}
-  .rd-dest.msg{background:#ECFDF3;border-color:#BBF7D0;color:#15803D;} .rd-dest.msg svg{color:#15803D;}
+  .rd-dest{background:#EEF4FF;color:#2454D6;} .rd-dest svg{color:#2454D6;}
+  .rd-dest.ai{background:#F5F3FF;color:#6D28D9;} .rd-dest.ai svg{color:#6D28D9;}
+  .rd-row.msg .rd-ext svg{color:#128C7E;}
+  .rd-dest.msg{background:#ECFDF3;color:#15803D;} .rd-dest.msg svg{color:#15803D;}
 }
 .fi.c-indigo{background:#F3F4F6;} .fi.c-indigo svg{color:#374151;}
 .fi.c-purple{background:#F6F2FF;} .fi.c-purple svg{color:#611F69;}
 .cap-ic.users{background:#374151;}
+</style>
+
+<style id="flat-routing">
+/* flat routing rows: label left, destination chip right, hairline dividers */
+.hr-rows{gap:0;}
+.hr-map{display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px solid var(--line);}
+.hr-map:last-child{border-bottom:none;}
+.hr-arrow{display:none;}
+.hr-src{background:transparent;border:none;padding:0;box-shadow:none!important;flex:1 1 0;min-width:0;}
+.hr-src b{display:block;}
+.hr-dst b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hr-src b{white-space:normal;}
+.hr-dst{margin-left:auto;border:none;background:var(--accent-soft);border-radius:100px;padding:5px 13px 5px 7px;flex:0 1 auto;gap:7px;max-width:62%;}
+.hr-dst .hr-ic{width:24px;height:24px;background:transparent!important;}
+.hr-dst .hr-ic svg{width:15px;height:15px;}
+.hr-map.hl .hr-src{border:none;box-shadow:none!important;}
+@media(max-width:620px){.hr-map{flex-wrap:wrap;row-gap:4px;}.hr-dst{margin-left:auto;}}
 </style>
 </head>
 <body>
@@ -538,17 +558,17 @@
         <div class="rd-rows">
           <div class="rd-row">
             <span class="rd-ext"><span class="x">Ext 1</span> Sales</span>
-            <span class="rd-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="rd-lead" aria-hidden="true"></span>
             <span class="rd-dest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg> Bob&rsquo;s mobile</span>
           </div>
           <div class="rd-row">
             <span class="rd-ext"><span class="x">Ext 2</span> Support</span>
-            <span class="rd-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="rd-lead" aria-hidden="true"></span>
             <span class="rd-dest ai"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> Your AI answering service</span>
           </div>
           <div class="rd-row">
             <span class="rd-ext"><span class="x">Ext 101</span> Bob</span>
-            <span class="rd-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="rd-lead" aria-hidden="true"></span>
             <span class="rd-dest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg> Bob&rsquo;s mobile</span>
           </div>
         </div>
@@ -556,7 +576,7 @@
         <div class="rd-rows">
           <div class="rd-row msg">
             <span class="rd-ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex:none;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> SMS + WhatsApp</span>
-            <span class="rd-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="rd-lead" aria-hidden="true"></span>
             <span class="rd-dest msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></svg> Shared inbox</span>
           </div>
         </div>

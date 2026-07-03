@@ -272,6 +272,23 @@
   .prow .dest{color:#2454D6;}
 }
 </style>
+
+<style id="flat-routing">
+/* flat routing rows: label left, destination chip right, hairline dividers */
+.hr-rows{gap:0;}
+.hr-map{display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px solid var(--line);}
+.hr-map:last-child{border-bottom:none;}
+.hr-arrow{display:none;}
+.hr-src{background:transparent;border:none;padding:0;box-shadow:none!important;flex:1 1 0;min-width:0;}
+.hr-src b{display:block;}
+.hr-dst b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hr-src b{white-space:normal;}
+.hr-dst{margin-left:auto;border:none;background:var(--accent-soft);border-radius:100px;padding:5px 13px 5px 7px;flex:0 1 auto;gap:7px;max-width:62%;}
+.hr-dst .hr-ic{width:24px;height:24px;background:transparent!important;}
+.hr-dst .hr-ic svg{width:15px;height:15px;}
+.hr-map.hl .hr-src{border:none;box-shadow:none!important;}
+@media(max-width:620px){.hr-map{flex-wrap:wrap;row-gap:4px;}.hr-dst{margin-left:auto;}}
+</style>
 </head>
 <body>
 
@@ -322,7 +339,7 @@
         <div class="hr-map hl">
           <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>9:12 AM: missed call</b></span>
           <span class="hr-arrow">»</span>
-          <span class="hr-dst dc-slack"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><b>Transcript posted to #front-desk</b></span>
+          <span class="hr-dst dc-slack"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><b>Transcript in #front-desk</b></span>
         </div>
         <div class="hr-map">
           <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>9:20 AM: “Open Sunday?”</b></span>

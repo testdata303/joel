@@ -272,6 +272,23 @@
   .prow .dest{color:#2454D6;}
 }
 </style>
+
+<style id="flat-routing">
+/* flat routing rows: label left, destination chip right, hairline dividers */
+.hr-rows{gap:0;}
+.hr-map{display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px solid var(--line);}
+.hr-map:last-child{border-bottom:none;}
+.hr-arrow{display:none;}
+.hr-src{background:transparent;border:none;padding:0;box-shadow:none!important;flex:1 1 0;min-width:0;}
+.hr-src b{display:block;}
+.hr-dst b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hr-src b{white-space:normal;}
+.hr-dst{margin-left:auto;border:none;background:var(--accent-soft);border-radius:100px;padding:5px 13px 5px 7px;flex:0 1 auto;gap:7px;max-width:62%;}
+.hr-dst .hr-ic{width:24px;height:24px;background:transparent!important;}
+.hr-dst .hr-ic svg{width:15px;height:15px;}
+.hr-map.hl .hr-src{border:none;box-shadow:none!important;}
+@media(max-width:620px){.hr-map{flex-wrap:wrap;row-gap:4px;}.hr-dst{margin-left:auto;}}
+</style>
 </head>
 <body>
 
