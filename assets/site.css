@@ -20,6 +20,23 @@
   --mono:'Spline Sans Mono',ui-monospace,'SFMono-Regular',monospace; /* eyebrows / small labels */
 }
 html{scroll-behavior:smooth;}
+/* ============================================================
+   NO PER-USER PRICING stamp — brand mark, always this exact
+   phrase. Inline seal: double ring, slight tilt, Signal Blue.
+   Sizes: default (inline / fact strips), .nup-lg (section-level).
+   ============================================================ */
+.nup-stamp{position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-weight:800;text-transform:uppercase;color:var(--accent-text);background:transparent;border:3px solid var(--accent-text);border-radius:50%;transform:rotate(-5deg);font-size:.62rem;letter-spacing:.1em;line-height:1.22;padding:1.28em 1.65em .92em;white-space:nowrap;user-select:none;flex-shrink:0;}
+.nup-stamp .nup-l2{display:block;}
+.nup-lg{font-size:.78rem;border-width:3.5px;}
+.closer-card .nup-stamp{margin:0 auto 22px;}
+.jx-hero .nup-stamp{margin:0 auto 26px;}
+.jx-hero:has(> .wrap > .nup-stamp){padding-top:32px;}
+.hero-copy .nup-stamp{margin:0 0 26px;}
+.nup-row{text-align:center;margin:0 0 28px;}
+.hero-note-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.hero-note-row .hero-facts{display:flex;flex-wrap:wrap;column-gap:8px;row-gap:2px;line-height:1.6;flex:1;min-width:240px;}
+.hero-note-row .hero-facts span{white-space:nowrap;}
+@media(max-width:860px){.hero-note-row{justify-content:center;text-align:center;}.hero-note-row .hero-facts{justify-content:center;flex:none;}}
 body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
 /* standardize heading line-wrapping site-wide so titles break evenly instead of orphaning a word */
 h1,h2,h3{text-wrap:pretty;}
