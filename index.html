@@ -24,12 +24,13 @@
   .hero h1{font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 24px;}
   .hero h1 .accent{color:var(--accent);}
   .hero .lede{font-family:var(--sans);font-size:clamp(1.05rem,1.5vw,1.28rem);line-height:1.5;color:var(--body);max-width:36ch;margin:0 0 30px;}
-  .hero .acts{display:flex;gap:14px;justify-content:flex-start;margin-bottom:22px;}
+  .hero .acts{display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-start;margin-bottom:22px;}
+  .hero .acts .btn{white-space:nowrap;}
   .hero-note{font-size:.85rem;color:var(--muted);font-weight:500;}
-  /* routing card — reflects AnyPhone's real call/text routing */
+  /* routing card - reflects AnyPhone's real call/text routing */
   .hero-card{background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:30px;}
   .hc-label{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-  /* hero routing map — sources on the left map to destinations on the right */
+  /* hero routing map - sources on the left map to destinations on the right */
   .hero-route{background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:28px;}
   .hr-cap{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
   .hr-rows{display:flex;flex-direction:column;gap:12px;}
@@ -362,7 +363,7 @@
   @media(max-width:620px){.rd-row{grid-template-columns:1fr;gap:5px;}.rd-arrow{transform:rotate(90deg);}}
 </style>
 <style>
-  /* AnyPhone wordmark — Ink on light, Figtree 800, never recolored */
+  /* AnyPhone wordmark - Ink on light, Figtree 800, never recolored */
   .logo.ap-logo{display:inline-flex;align-items:center;font-family:var(--display);font-weight:800;letter-spacing:-0.045em;color:var(--ink);line-height:1;white-space:nowrap;font-size:1.72rem;}
   .ap-logo .ap-word{line-height:1;}
   .ap-logo .ap-p{margin-left:0.012em;}
@@ -387,7 +388,7 @@
 </style>
 
 <style id="dc-semantic">
-/* semantic product-diagram destination colors — CTA blue reserved for buttons */
+/* semantic product-diagram destination colors - CTA blue reserved for buttons */
 @media(min-width:621px){
   .hr-dst{background:#F9FAFB;border-color:#E5E7EB;}
   .hr-dst .hr-ic{background:#fff;}
@@ -403,6 +404,21 @@
   .hr-map.hl .hr-dst b{color:#611F69;}
   .hr-map.hl .hr-src{border-color:#E2D6F3;box-shadow:0 0 0 3px rgba(97,31,105,.10);}
   .hr-map.hl .hr-arrow{color:#611F69;}
+}
+/* mobile: keep the routing rows colorful (icon chips + destination text) */
+@media(max-width:620px){
+  .hr-map:has(.dc-phone) .hr-src .hr-ic{background:#EEF4FF;}
+  .hr-map:has(.dc-phone) .hr-src .hr-ic svg{color:#2454D6;}
+  .hr-map:has(.dc-phone) .hr-dst b{color:#2454D6;}
+  .hr-map:has(.dc-slack) .hr-src .hr-ic{background:#F6F2FF;}
+  .hr-map:has(.dc-slack) .hr-src .hr-ic svg{color:#611F69;}
+  .hr-map:has(.dc-slack) .hr-dst b{color:#611F69;}
+  .hr-map:has(.dc-inbox) .hr-src .hr-ic{background:#ECFDF3;}
+  .hr-map:has(.dc-inbox) .hr-src .hr-ic svg{color:#15803D;}
+  .hr-map:has(.dc-inbox) .hr-dst b{color:#15803D;}
+  .hr-map:has(.dc-tools) .hr-src .hr-ic{background:#ECFEFF;}
+  .hr-map:has(.dc-tools) .hr-src .hr-ic svg{color:#0369A1;}
+  .hr-map:has(.dc-tools) .hr-dst b{color:#0369A1;}
 }
 .hr-tag{background:#F6F2FF;color:#611F69;}
 .hr-tag svg{color:#611F69;}
@@ -446,13 +462,13 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>The phone system for modern small businesses.</h1>
-      <p class="lede">Get a local or toll-free number. Add extensions, people, tools, and AI without per-user pricing.</p>
+      <h1>The phone system small businesses start with and never outgrow.</h1>
+      <p class="lede">Pick a local or toll-free number, get a greeting in your business's name, and take calls on the phone already in your pocket. Extensions, teams, tools, and AI are ready the day you need them.</p>
       <div class="acts">
-        <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&raquo;</span></a>
-        <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
+        <a href="early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+        <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works</a>
       </div>
-      <div class="hero-note">From $20/month · Unlimited users · Month-to-month · Free human support</div>
+      <div class="hero-note">Set up in minutes · From $20/month · Unlimited users · Month-to-month</div>
     </div>
     <div class="hero-route">
       <div class="hr-cap">Route everything to the right place</div>
@@ -610,7 +626,7 @@
       <div class="flow"><div class="ftrigger">On the go?</div><div class="fdo"><svg class="ic-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>Ring the mobile phone you already use.</div></div>
       <div class="flow"><div class="ftrigger">Use WhatsApp?</div><div class="fdo"><svg class="ic-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>Let customers message the same business number.</div></div>
       <div class="flow"><div class="ftrigger">Need more coverage?</div><div class="fdo"><svg class="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 6a3 3 0 0 1 0 6M18 20a6 6 0 0 0-3-5"/></svg>Route calls to an assistant, contractor, or call center.</div></div>
-      <div class="flow"><div class="ftrigger">Build your own workflow?</div><div class="fdo"><svg class="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Use webhooks or custom software. Zapier coming soon.</div></div>
+      <div class="flow"><div class="ftrigger">Connect your own software?</div><div class="fdo"><svg class="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Use webhooks or custom software. Zapier coming soon.</div></div>
     </div>
   </div>
 </section>
@@ -785,11 +801,11 @@
       <div class="cmp-r"><div class="opt">Google Voice</div><div class="desc">Good for basic calling inside Google Workspace. Team access and more advanced phone-system features are tied to Google users and licenses.</div></div>
       <div class="cmp-r"><div class="opt">Grasshopper</div><div class="desc">Simple forwarding and extensions, but built before Slack, WhatsApp, shared messaging, and bring-your-own AI became normal.</div></div>
       <div class="cmp-r"><div class="opt">Per-user phone systems</div><div class="desc">Quo, Dialpad, and Aircall are capable, but the bill grows whenever another teammate, assistant, or contractor needs access.</div></div>
-      <div class="cmp-r joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span class="ap-wm">Any<span class="seam">Phone</span><span class="dot">»</span></span></div><div class="desc">Starts at $20 a month with unlimited users. One number can ring one phone or power extensions, shared messaging, Slack alerts, WhatsApp, compatible devices, AI answering services, and custom workflows.</div></div>
+      <div class="cmp-r joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span class="ap-wm">Any<span class="seam">Phone</span><span class="dot">»</span></span></div><div class="desc">Starts at $20 a month with unlimited users. One number can ring one phone or power extensions, shared messaging, Slack alerts, WhatsApp, compatible devices, AI answering services, and webhooks.</div></div>
     </div>
     <div class="compare-cta reveal">
-      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works <span aria-hidden="true" style="font-weight:700;">&raquo;</span></a>
-      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
+      <a href="how-it-works.html" class="btn btn-secondary btn-lg">See how it works</a>
+      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
     </div>
   </div>
 </section>
@@ -797,9 +813,9 @@
 <section class="closer" id="start">
   <div class="wrap">
     <div class="closer-card">
-      <h2>Get the business phone number your company can grow around.</h2>
+      <h2>Every serious business has its own number. Get yours.</h2>
       <p>One number ringing one phone, or a full system across people, devices, and tools. Unlimited users either way.</p>
-      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access</a>
+      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> From $20/month · Unlimited users · Month-to-month · Free human support</div>
     </div>
   </div>
@@ -814,7 +830,7 @@
       </div>
       <div class="foot-cols">
         <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
-        <div class="foot-col"><h5>Phone systems for</h5><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
         <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
       </div>

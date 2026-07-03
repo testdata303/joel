@@ -342,26 +342,26 @@
       <!-- PLAN SUMMARY (below CTA) -->
       <div class="plan-summary">
         <div class="ps-top">
-          <div class="ps-name"><span class="pname" id="suPlanName">GROW</span><span class="pp" id="suPlanPrice">$49/mo</span></div>
+          <div class="ps-name"><span class="pname" id="suPlanName">GROW</span><span class="pp" id="suPlanPrice">$59/mo</span></div>
           <div class="su-change">
             <button class="su-change-btn" id="planBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg> Change</button>
             <div class="plan-menu" id="planMenu">
-              <div class="plan-opt" data-plan="LITE" data-price="$20/mo" data-desc="1 number, 2 extensions, 200 outbound minutes, unlimited users.">
+              <div class="plan-opt" data-plan="LITE" data-price="$20/mo" data-desc="1 number, 2 extensions, 500 outbound minutes, unlimited users.">
                 <div class="po-top"><span>Lite</span><span class="pmprice">$20/mo</span></div>
-                <div class="po-desc">1 number, 2 extensions, 200 outbound minutes, unlimited users.</div>
+                <div class="po-desc">1 number, 2 extensions, 500 outbound minutes, unlimited users.</div>
               </div>
-              <div class="plan-opt sel" data-plan="GROW" data-price="$49/mo" data-desc="1 number, 10 extensions, 1,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.">
-                <div class="po-top"><span>Grow</span><span class="pmprice">$49/mo</span></div>
-                <div class="po-desc">1 number, 10 extensions, 1,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.</div>
+              <div class="plan-opt sel" data-plan="GROW" data-price="$59/mo" data-desc="2 numbers, 5 extensions, 2,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.">
+                <div class="po-top"><span>Grow</span><span class="pmprice">$59/mo</span></div>
+                <div class="po-desc">2 numbers, 5 extensions, 2,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.</div>
               </div>
-              <div class="plan-opt" data-plan="MAX" data-price="$149/mo" data-desc="1 number, unlimited extensions and outbound minutes, advanced integrations, custom workflows, unlimited users.">
+              <div class="plan-opt" data-plan="MAX" data-price="$149/mo" data-desc="4 numbers, unlimited extensions, 10,000 outbound minutes, advanced integrations, unlimited users.">
                 <div class="po-top"><span>Max</span><span class="pmprice">$149/mo</span></div>
-                <div class="po-desc">1 number, unlimited extensions and outbound minutes, advanced integrations, custom workflows, unlimited users.</div>
+                <div class="po-desc">4 numbers, unlimited extensions, 10,000 outbound minutes, advanced integrations, unlimited users.</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="ps-desc" id="suPlanDesc">1 number, 10 extensions, 1,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.</div>
+        <div class="ps-desc" id="suPlanDesc">2 numbers, 5 extensions, 2,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.</div>
         <div class="ps-note" style="margin-top:8px;font-size:.82rem;color:var(--muted);font-weight:600;line-height:1.5;">One price for the phone system. Unlimited users are always included.</div>
       </div>
     </div>
@@ -404,9 +404,9 @@
 <script>
   (function(){
     var plans={
-      LITE:{price:'$20/mo',desc:'1 number, 2 extensions, 200 outbound minutes, unlimited users.'},
-      GROW:{price:'$49/mo',desc:'1 number, 10 extensions, 1,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.'},
-      MAX:{price:'$149/mo',desc:'1 number, unlimited extensions and outbound minutes, advanced integrations, custom workflows, unlimited users.'}
+      LITE:{price:'$20/mo',desc:'1 number, 2 extensions, 500 outbound minutes, unlimited users.'},
+      GROW:{price:'$59/mo',desc:'2 numbers, 5 extensions, 2,500 outbound minutes, call recording, AI voicemail summaries, unlimited users.'},
+      MAX:{price:'$149/mo',desc:'4 numbers, unlimited extensions, 10,000 outbound minutes, advanced integrations, unlimited users.'}
     };
     var planBtn=document.getElementById('planBtn'),planMenu=document.getElementById('planMenu'),
         planName=document.getElementById('suPlanName'),planPrice=document.getElementById('suPlanPrice'),

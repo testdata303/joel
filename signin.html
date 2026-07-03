@@ -135,7 +135,7 @@
     });
   })();
 
-  // fake sign-in: no real auth, no app link — show the pre-launch notice
+  // fake sign-in: no real auth, no app link - show the pre-launch notice
   (function(){
     var form=document.getElementById('signinForm'),notice=document.getElementById('notice'),forgot=document.getElementById('forgot');
     function reveal(){ notice.classList.add('show'); var y=window.scrollY+notice.getBoundingClientRect().top-90; window.scrollTo({top:y<0?0:y,behavior:'smooth'}); }

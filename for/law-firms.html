@@ -280,18 +280,17 @@
     </div>
 
     <!-- [PRODUCT SCREENSHOT: routing setup or inbox] -->
-    <div class="shot reveal" role="img" aria-label="AnyPhone routing setup showing a greeting and four call routes">
+    <div class="shot reveal" role="img" aria-label="One intake call at Ellison and Park: they press 1, the intake assistant and attorney ring, and missed calls become transcripts">
       <div class="shot-top">
-        <b>Call routing</b>
+        <b>One call at Ellison &amp; Park</b>
         <span class="badge"><i></i> Live</span>
       </div>
       <div class="shot-body">
-        <div class="shot-greet"><small>Greeting</small>Thanks for calling Ellison &amp; Park. Press 1 for a new matter, 2 for a current client, 3 for billing, or 0 for the front desk.</div>
-        <div class="route"><div class="key">1</div><div class="rt"><b>New intake</b><span>Rings intake assistant + attorney</span></div><span class="arr">»</span></div>
-        <div class="route"><div class="key">2</div><div class="rt"><b>Current clients</b><span>Rings the attorney on the matter</span></div><span class="arr">»</span></div>
-        <div class="route"><div class="key">3</div><div class="rt"><b>Billing</b><span>Rings the office manager</span></div><span class="arr">»</span></div>
-        <div class="route"><div class="key ext">101</div><div class="rt"><b>Ms. Park</b><span>Rings Ms. Park's mobile</span></div><span class="arr">»</span></div>
-        <div class="route"><div class="key">0</div><div class="rt"><b>Front desk</b><span>Rings the assistant</span></div><span class="arr">»</span></div>
+        <div class="shot-greet"><small>Wednesday, 9:20 AM: a potential client calls about a new matter</small>Thanks for calling Ellison &amp; Park. Press 1 for a new matter, 2 for a current client, 3 for billing, or 0 for the front desk.</div>
+        <div class="route"><div class="key">1</div><div class="rt"><b>They press 1, new matter</b><span>Anxious, and calling more than one firm</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key ext">RING</div><div class="rt"><b>Intake + attorney ring</b><span>The firm answers, even mid-hearing</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key ext">VM</div><div class="rt"><b>In court?</b><span>Voicemail is transcribed and posted to Slack</span></div><span class="arr">»</span></div>
+        <div class="route"><div class="key ext">SMS</div><div class="rt"><b>"Sending the documents"</b><span>Texts land in the shared inbox for the assistant</span></div><span class="arr">»</span></div>
       </div>
       <div class="shot-ah"><span class="shot-ah-badge">AI answering</span><span class="shot-ah-tx">Route any option to <b>the AI answering service you choose</b>, day or night, and change it any time.</span></div>
     </div>
@@ -459,9 +458,9 @@
         <div class="frow"><div class="fk zero">0</div><div class="fl"><b>Front desk</b><span>Everything else</span></div><div class="dest">Rings the assistant</div></div>
       </div>
       <div class="flow-foot">
-        <div><b>Missed calls</b>Go to voicemail, transcribed, emailed, and posted to Slack.</div>
-        <div><b>Texts</b>Land in the shared AnyPhone inbox for the assistant or attorney to answer.</div>
-        <div><b>AI answering</b>Connect a third-party AI answering service to any menu option, day or night, and switch providers any time.</div>
+        <div><b>Solo practice</b>Every option rings you. Callers still hear a firm, not a cell phone.</div>
+        <div><b>First paralegal</b>They answer intake and the shared inbox from their own phone. Ten minutes.</div>
+        <div><b>The firm</b>Attorneys join with extensions. The number on the letterhead never changes.</div>
       </div>
     </div>
   </div>
@@ -494,11 +493,13 @@
     </div>
     <div class="faq-list">
       <details class="faq-q" open><summary><span class="fq-text">Can we keep client calls off personal cells?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Clients call and text your AnyPhone business number, and you can forward calls to an attorney's cell so personal numbers stay private. Business communication stays with the firm.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can we bring our current number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. You can port the number clients already use into AnyPhone, or start with a new local or toll-free number.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can we bring our current number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, and porting is free. You get a temporary number instantly, so you can set up and take calls while the transfer completes. Nothing goes dark. When the port finishes, you can keep the temporary number free as a second line (one per business).</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can new intake and current clients ring different people?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Set up a simple menu and route each option however you like. New intake can ring an assistant and attorney, and current clients can ring the attorney on the matter.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Do voicemails come with transcripts?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. When someone leaves a voicemail, you get a transcript and an email, and the missed call posts to Slack so intake and current clients get a prompt call back.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can an assistant share the text inbox?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Texts to the business number land in one shared inbox, so an assistant and attorney can both read and reply without a message getting stuck on one phone.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Is AnyPhone practice management software?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is a phone system, not law practice management software. It helps calls and texts reach the right person. It does not manage matters, run intake automation, check conflicts, keep a calendar, or handle e-signature. It works alongside the tools you already use.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Do we need new phones or equipment?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Calls forward to the cell phones attorneys and assistants already carry. There is nothing to buy or install. Compatible desk phones are optional later, never required.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is there a contract?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is month-to-month. Upgrade, downgrade, or cancel anytime.</div></details>
     </div>
   </div>
 </section>
@@ -507,8 +508,8 @@
 <section class="closer">
   <div class="wrap">
     <div class="closer-card reveal">
-      <h2>Set up your law firm's phone system.</h2>
-      <p>Get a business number, route intake and current clients to the right attorney or assistant, and keep client calls off personal cells. A phone system, not practice management software.</p>
+      <h2>Earn the consultation by answering well.</h2>
+      <p>A firm number for intake, clients, and billing, calls that ring the right attorney or assistant, and a record that stays with the firm, not on personal phones.</p>
       <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       <div class="closer-mini"><span>New or ported number</span> · <span>Keeps personal cells private</span> · <span>Built for small firms</span></div>
     </div>
@@ -524,7 +525,7 @@
       </div>
       <div class="foot-cols">
         <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../learn/mobile-app.html">Mobile app</a><a href="../learn/slack-notifications.html">Slack notifications</a></div>
-        <div class="foot-col"><h5>Phone systems for</h5><a href="plumbers.html">Plumbers</a><a href="real-estate.html">Real estate agents</a><a href="contractors.html">Contractors</a><a href="consultants.html">Consultants and agencies</a><a href="law-firms.html">Small law firms</a></div>
+        <div class="foot-col"><h5>Phone systems for</h5><a href="new-businesses.html">New businesses</a><a href="plumbers.html">Plumbers</a><a href="real-estate.html">Real estate agents</a><a href="contractors.html">Contractors</a><a href="consultants.html">Consultants and agencies</a><a href="law-firms.html">Small law firms</a></div>
         <div class="foot-col"><h5>Compare / Learn</h5><a href="../learn/virtual-phone-system.html">Virtual phone system</a><a href="../learn/small-business-phone-system.html">Small business phone system</a><a href="../learn/business-phone-number.html">Business phone number</a><a href="../learn/google-voice-alternative.html">Google Voice alternative</a><a href="../learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
         <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a><a href="../signin.html">Sign in</a></div>
       </div>
