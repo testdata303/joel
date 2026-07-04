@@ -33,11 +33,11 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;padding:15px 26px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
+  .btn-primary{background:var(--accent);color:#fff;padding:13px 22px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
   .btn-primary:hover{background:var(--accent-dark);}
-  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:14px 24px;}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
-  .btn-lg{padding:17px 32px;font-size:1.05rem;}
+  .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
   .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
   .btn-arrow:hover svg{transform:translateX(3px);}
 
@@ -77,8 +77,12 @@
   .shot-body{padding:15px 20px 5px;}
   .shot-greet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:.85rem;color:var(--body);line-height:1.45;margin-bottom:8px;}
   .shot-greet small{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px;}
-  .route{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line);}
-  .route:first-of-type{border-top:none;}
+  .route-tree{position:relative;margin-left:8px;padding-left:22px;margin-top:4px;}
+  .route-tree::before{content:'';position:absolute;left:0;top:-2px;bottom:0;width:2px;background:var(--line);border-radius:2px;}
+  .route{display:flex;align-items:flex-start;gap:12px;padding:9px 0;position:relative;}
+  .route::before{content:'';position:absolute;left:-22px;top:24px;width:22px;height:2px;background:var(--line);}
+  .route:last-child::after{content:'';position:absolute;left:-24px;top:25px;bottom:0;width:6px;background:#fff;}
+  .route .arr{align-self:flex-start;margin-top:6px;}
   .route .key{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.95rem;display:grid;place-items:center;flex-shrink:0;}
   .route .key.ext{width:auto;min-width:30px;padding:0 8px;font-size:.85rem;}
   .route .rt b{display:block;font-size:.92rem;font-weight:700;}
@@ -161,9 +165,21 @@
   .flow-top .mn b{font-size:1.5rem;font-weight:800;letter-spacing:.01em;}
   .flow-top .biz{font-weight:700;font-size:.95rem;color:rgba(255,255,255,.85);}
   .flow-greet{padding:20px 28px;border-bottom:1px solid var(--line);font-size:1rem;color:var(--body);line-height:1.55;font-style:italic;}
-  .flow-rows{padding:8px 28px 8px;}
-  .frow{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--line);}
-  .frow:first-child{border-top:none;}
+  .flow-rows{padding:10px 30px 18px 60px;position:relative;}
+  .flow-rows::before{content:'';position:absolute;left:38px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px;}
+  .frow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;column-gap:16px;padding:15px 0;position:relative;}
+  .frow::before{content:'';position:absolute;left:-22px;top:34px;width:22px;height:2px;background:var(--line);}
+  .frow:last-child::after{content:'';position:absolute;left:-24px;top:35px;bottom:-18px;width:6px;background:#fff;}
+  .frow .fl{min-width:0;}
+  .frow .dest{justify-self:end;align-self:start;text-align:right;max-width:220px;margin-top:2px;color:var(--accent-dark);font-weight:700;font-size:.92rem;line-height:1.35;}
+  @media(max-width:560px){
+    .flow-rows{padding:10px 18px 16px 44px;}
+    .flow-rows::before{left:22px;}
+    .frow{grid-template-columns:auto minmax(0,1fr);row-gap:0;}
+    .frow::before{left:-22px;width:22px;}
+    .frow:last-child::after{left:-24px;}
+    .frow .dest{grid-column:2;justify-self:start;text-align:left;max-width:none;margin-top:6px;font-size:.88rem;}
+  }
   .frow .fk{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1.1rem;display:grid;place-items:center;flex-shrink:0;}
   .frow .fk.zero{background:var(--ink);}
   .frow .fk.ext{width:auto;min-width:38px;padding:0 10px;font-size:.9rem;}
@@ -243,7 +259,6 @@
 
 <style id="dc-semantic2">
 @media(min-width:621px){
-  .route .key{background:#F3F4F6;color:#374151;}
   .menu-ex .pk{background:#F3F4F6;color:#374151;}
   .frow .fk{background:#F3F4F6;color:#374151;}
   .frow .fk.zero{background:#374151;color:#fff;}
@@ -252,6 +267,27 @@
   .shot-ah-badge{background:#EDE9FE;color:#6D28D9;}
   .shot-ah-tx b{color:#6D28D9;}
 }
+</style>
+<style id="route-fn">
+/* shot-card routes: hero function-list convention — icon tile per function, digit key only for the actual keypress */
+.route{align-items:center;}
+.route .fic{width:34px;height:34px;border-radius:10px;background:var(--cs,#EEF4FF);display:grid;place-items:center;flex:none;font-weight:800;font-size:1rem;color:var(--c,#2454D6);}
+.route .fic svg{width:18px;height:18px;color:var(--c,#2454D6);}
+.route .arr{display:none;}
+.route-tree{margin:0;padding:0;}
+.route-tree::before,.route::before,.route:last-child::after{display:none;}
+/* example-setup table follows the same convention: icon tile per function, no fake keys, no tree lines */
+.frow .fic{width:38px;height:38px;border-radius:11px;background:var(--cs,#EEF4FF);display:grid;place-items:center;flex:none;}
+.frow .fic svg{width:19px;height:19px;color:var(--c,#2454D6);}
+.frow .dest{color:var(--c,var(--accent-dark));}
+.flow-rows{padding:10px 30px 18px;}
+.flow-rows::before{display:none;}
+.frow::before,.frow:last-child::after{display:none;}
+/* consistent at ALL widths: gray keys, function-colored destinations (not link-blue) */
+.frow .fk{background:#F3F4F6;color:#374151;}
+.frow .fk.zero{background:#374151;color:#fff;}
+.frow .dest{color:var(--c,var(--fn-fwd));}
+.menu-ex .pk{background:#F3F4F6;color:#374151;}
 </style>
 </head><body>
 
@@ -293,9 +329,11 @@
       </div>
       <div class="shot-body">
         <div class="shot-greet"><small>Greeting: generated for you</small>Thanks for calling Harlo Design. Please hold while we connect you.</div>
-        <div class="route"><div class="key">0</div><div class="rt"><b>You</b><span>Rings your cell phone</span></div><span class="arr">»</span></div>
-        <div class="route"><div class="key ext">VM</div><div class="rt"><b>No answer?</b><span>Voicemail, transcribed and emailed to you</span></div><span class="arr">»</span></div>
-        <div class="route"><div class="key ext">SMS</div><div class="rt"><b>Texts</b><span>Land in your business inbox, not your Messages app</span></div><span class="arr">»</span></div>
+        <div class="route-tree">
+        <div class="route fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div class="rt"><b>Calls ring your cell</b><span>Forwarded straight to the phone in your pocket</span></div></div>
+        <div class="route fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="rt"><b>No answer?</b><span>Voicemail, transcribed and emailed to you</span></div></div>
+        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>Texts</b><span>Land in your business inbox, not your Messages app</span></div></div>
+        </div>
       </div>
       <div class="shot-ah"><span class="shot-ah-badge">Later</span><span class="shot-ah-tx">When you hire, add <b>extensions for Sales, Support, or people</b>. Same number, no reconfiguration.</span></div>
     </div>
@@ -332,12 +370,45 @@
       <div class="sec-kicker">How AnyPhone works for a brand-new business</div>
       <h2>From no number to taking business calls, in minutes.</h2>
     </div>
-    <div class="steps">
-      <div class="step reveal"><div class="sn">1</div><h3>Pick your number</h3><p>Choose a local number for your city or a toll-free number. Already have one? Bring it and we handle the move.</p></div>
-      <div class="step reveal"><div class="sn">2</div><h3>Type your business name</h3><p>AnyPhone generates a professional greeting in your business's name. Callers hear a company, not a cell phone.</p></div>
-      <div class="step reveal"><div class="sn">3</div><h3>Forward to your cell</h3><p>Calls ring the phone you already carry. No new hardware, no new SIM, nothing to install at a desk.</p></div>
-      <div class="step reveal"><div class="sn">4</div><h3>Put the number everywhere</h3><p>Website, Google, invoices, the door. It's the business's number now. Your personal cell never leaks out.</p></div>
-      <div class="step reveal"><div class="sn">5</div><h3>Grow into it later</h3><p>Hire someone? Add extensions like Sales or Support, invite your team, and route calls. Same number, no reconfiguration.</p></div>
+    <div class="fnlist-card reveal">
+<ol class="hsteps">
+        <li class="hstep fn-number">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><b>Get a number</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-ext">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Create extensions</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Departments/team</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-fwd">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><b>Forward calls</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Route to mobile</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-vm">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Get voicemails</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Sent to email &amp; Slack</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-sms">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>Manage SMS/WhatsApp</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Team inbox</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-ai">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Add integrations</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">AI tools</span></span></div>
+          </div>
+        </li>
+      </ol>
     </div>
 
     <div class="menu-ex reveal">
@@ -454,9 +525,9 @@
       </div>
       <div class="flow-greet">"Thanks for calling Harlo Design. Please hold while we connect you."</div>
       <div class="flow-rows">
-        <div class="frow"><div class="fk zero">0</div><div class="fl"><b>You</b><span>Every call, for now. You're the whole company</span></div><div class="dest">Rings your cell</div></div>
-        <div class="frow"><div class="fk ext">VM</div><div class="fl"><b>No answer</b><span>You're with a customer or it's after hours</span></div><div class="dest">Voicemail → transcript in your email</div></div>
-        <div class="frow"><div class="fk ext">SMS</div><div class="fl"><b>Texts</b><span>Questions, photos, confirmations</span></div><div class="dest">Business inbox, app and web</div></div>
+        <div class="frow fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div class="fl"><b>Calls</b><span>Every call, for now. You're the whole company</span></div><div class="dest">Rings your cell</div></div>
+        <div class="frow fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="fl"><b>No answer</b><span>You're with a customer or it's after hours</span></div><div class="dest">Transcript to your email</div></div>
+        <div class="frow fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="fl"><b>Texts</b><span>Questions, photos, confirmations</span></div><div class="dest">Business inbox, app and web</div></div>
       </div>
       <div class="flow-foot">
         <div><b>Month one</b>One number, rings your cell. That's the whole setup, and it's enough.</div>

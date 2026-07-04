@@ -32,11 +32,11 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;padding:15px 26px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
+  .btn-primary{background:var(--accent);color:#fff;padding:13px 22px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
   .btn-primary:hover{background:var(--accent-dark);}
-  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:14px 24px;}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
-  .btn-lg{padding:17px 32px;font-size:1.05rem;}
+  .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
   .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
   .btn-arrow:hover svg{transform:translateX(3px);}
 
@@ -47,7 +47,7 @@
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
   .eyebrow .sl{width:15px;height:15px;display:block;}
   .hero h1{font-weight:800;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.03em;margin-bottom:18px;text-wrap:pretty;}
-  .hero h1 .u{color:var(--accent);}
+  .hero h1 .u{color:inherit;}
   .hero-sub{font-size:1.14rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
@@ -212,10 +212,6 @@
   .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
 
 
-  /* sticky mobile CTA */
-  .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
-  .sticky-cta a{flex:1;}
-  .sticky-cta .btn{width:100%;}
 
   @media(max-width:980px){
     .steps{grid-template-columns:repeat(2,1fr);}
@@ -229,7 +225,6 @@
     .setup-grid{grid-template-columns:1fr;}
     .whofor{grid-template-columns:1fr;}
     .strip-inner{gap:18px;font-size:.88rem;}
-    .sticky-cta{display:flex;}
     .cmp-row{grid-template-columns:1fr;}
     .cmp-row .desc{border-left:none;border-top:1px solid var(--line);}
     .cmp-row.joel .desc{border-top-color:#c9d2ff;}
@@ -274,6 +269,8 @@
 </style>
 
 <style id="flat-routing">
+/* stacked hero: cap card width */
+@media(max-width:960px){.hero-route{max-width:560px;}}
 /* flat routing rows: label left, destination chip right, hairline dividers */
 .hr-rows{gap:0;}
 .hr-map{display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px solid var(--line);}
@@ -541,11 +538,7 @@
   </div>
 </footer>
 
-<!-- sticky mobile CTA -->
-<div class="sticky-cta">
-  <a href="#how"><span class="btn btn-ghost">How it works</span></a>
-  <a href="../early-access.html"><span class="btn btn-primary">Get early access</span></a>
-</div>
+
 
 <script>
   (function(){

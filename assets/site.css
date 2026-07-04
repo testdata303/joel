@@ -50,7 +50,7 @@ h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em;}
 .reveal.in{opacity:1;transform:none;}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;text-decoration:none;border-radius:10px;font-size:.97rem;cursor:pointer;transition:transform .15s,background .15s;border:1.5px solid transparent;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;text-decoration:none;border-radius:10px;font-size:.97rem;cursor:pointer;transition:transform .15s,background .15s;border:1.5px solid transparent;font-family:var(--sans);white-space:nowrap;}
 .btn:hover{transform:translateY(-1px);}
 .btn-primary{background:var(--accent);color:#fff;padding:13px 22px;}
 .btn-primary:hover{background:var(--accent-dark);}
@@ -58,6 +58,8 @@ h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em;}
 .btn-secondary:hover{border-color:var(--ink);}
 .btn-white{background:#fff;color:var(--ink);padding:15px 28px;}
 .btn-lg{padding:15px 28px;font-size:1rem;}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
+.btn-ghost:hover{border-color:var(--ink);}
 .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
 .btn-arrow:hover svg{transform:translateX(3px);}
 /* guillemet used in place of a CTA arrow, echoing the logo » */
@@ -109,3 +111,73 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
 .foot-col a{display:block;color:var(--body);text-decoration:none;font-size:.92rem;font-weight:600;margin-bottom:9px;}
 .foot-col a:hover{color:var(--ink);}
 .foot-base{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;}
+
+
+/* ============================================================
+   BRANDED FUNCTION DESIGN — canonical way to show how AnyPhone works.
+   One row per function: colored icon tile + bold name + outcome chip.
+   Rows NEVER wrap to two lines. (Born on the homepage hero.)
+   Function → color (use these EVERYWHERE the function appears):
+     fn-number  Get a number          blue   #2454D6 / #EEF4FF
+     fn-ext     Extensions            slate  #64748B / #F1F5F9
+     fn-fwd     Forward calls         purple #611F69 / #F6F2FF
+     fn-vm      Voicemails            green  #15803D / #ECFDF3
+     fn-sms     Texts / WhatsApp      cyan   #0369A1 / #ECFEFF
+     fn-ai      Integrations / AI     pink   #BE185D / #FCE7F3
+   Markup:
+   <ol class="hsteps">
+     <li class="hstep fn-number"><div class="hstep-body">
+       <div class="hstep-title"><span class="hstep-ic">SVG</span><b>Get a number</b></div>
+       <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
+     </div></li>
+   </ol>
+   ============================================================ */
+:root{
+  --fn-number:#2454D6;--fn-number-soft:#EEF4FF;--fn-number-line:#C8D8FF;
+  --fn-ext:#64748B;--fn-ext-soft:#F1F5F9;--fn-ext-line:#E2E8F0;
+  --fn-fwd:#611F69;--fn-fwd-soft:#F6F2FF;--fn-fwd-line:#E2D6F3;
+  --fn-vm:#15803D;--fn-vm-soft:#ECFDF3;--fn-vm-line:#BBF7D0;
+  --fn-sms:#0369A1;--fn-sms-soft:#ECFEFF;--fn-sms-line:#BAE6FD;
+  --fn-ai:#BE185D;--fn-ai-soft:#FCE7F3;--fn-ai-line:#F9C7DE;
+}
+.fn-number{--c:var(--fn-number);--cs:var(--fn-number-soft);--cl:var(--fn-number-line);}
+.fn-ext{--c:var(--fn-ext);--cs:var(--fn-ext-soft);--cl:var(--fn-ext-line);}
+.fn-fwd{--c:var(--fn-fwd);--cs:var(--fn-fwd-soft);--cl:var(--fn-fwd-line);}
+.fn-vm{--c:var(--fn-vm);--cs:var(--fn-vm-soft);--cl:var(--fn-vm-line);}
+.fn-sms{--c:var(--fn-sms);--cs:var(--fn-sms-soft);--cl:var(--fn-sms-line);}
+.fn-ai{--c:var(--fn-ai);--cs:var(--fn-ai-soft);--cl:var(--fn-ai-line);}
+.hsteps{list-style:none;margin:0;padding:0;position:relative;container-type:inline-size;}
+.hstep{display:flex;align-items:center;position:relative;padding-bottom:16px;}
+.hstep:last-child{padding-bottom:0;}
+.hstep-body{display:flex;align-items:center;flex-wrap:nowrap;gap:10px;width:100%;min-width:0;}
+.hstep-title{display:flex;align-items:center;gap:11px;flex:0 1 auto;min-width:0;}
+.hstep-title b{font-size:1rem;color:var(--ink);font-weight:800;white-space:nowrap;}
+.hstep-ic{width:42px;height:42px;border-radius:12px;background:var(--cs,var(--accent-soft));display:grid;place-items:center;flex:none;}
+.hstep-ic svg{width:22px;height:22px;color:var(--c,var(--accent-text));}
+.hstep-flow{display:flex;align-items:center;gap:9px;flex:none;margin-left:auto;}
+.hstep-out{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;}
+.hstep-res{background:var(--cs,var(--accent-soft));color:var(--c,var(--accent-text));font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:100px;white-space:nowrap;flex:none;}
+/* narrow containers: shrink instead of overlapping — rows still never wrap */
+@container (max-width:335px){
+  .hstep-title b{font-size:.9rem;}
+  .hstep-ic{width:36px;height:36px;border-radius:10px;}
+  .hstep-ic svg{width:19px;height:19px;}
+  .hstep-res{font-size:.72rem;padding:3px 8px;}
+  .hstep-title{gap:9px;}
+  .hstep-body{gap:8px;}
+}
+@container (max-width:295px){
+  .hstep-title b{font-size:.82rem;}
+  .hstep-ic{width:32px;height:32px;}
+  .hstep-ic svg{width:17px;height:17px;}
+  .hstep-res{font-size:.68rem;}
+}
+/* generic pieces for reusing the palette on other components */
+.fn-chip{display:inline-flex;align-items:center;gap:7px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent-text));font-weight:700;font-size:.85rem;padding:5px 12px;border-radius:100px;white-space:nowrap;}
+.fn-chip svg{width:15px;height:15px;color:var(--c,var(--accent-text));flex:none;}
+.fn-tile{width:42px;height:42px;border-radius:12px;background:var(--cs,var(--accent-soft));display:grid;place-items:center;flex:none;}
+.fn-tile svg{width:22px;height:22px;color:var(--c,var(--accent-text));}
+
+/* card wrapper so the function list can drop into any page's "How it works" section as-is */
+.fnlist-card{max-width:560px;margin:0 auto;background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:28px;}
+@media(max-width:620px){.fnlist-card{padding:18px 14px;}}

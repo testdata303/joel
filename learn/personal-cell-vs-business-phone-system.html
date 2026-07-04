@@ -32,11 +32,11 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;padding:15px 26px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
+  .btn-primary{background:var(--accent);color:#fff;padding:13px 22px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
   .btn-primary:hover{background:var(--accent-dark);}
-  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:14px 24px;}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
-  .btn-lg{padding:17px 32px;font-size:1.05rem;}
+  .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
   .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
   .btn-arrow:hover svg{transform:translateX(3px);}
 
@@ -47,7 +47,7 @@
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
   .eyebrow .sl{width:15px;height:15px;display:block;}
   .hero h1{font-weight:800;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.03em;margin-bottom:18px;text-wrap:pretty;}
-  .hero h1 .u{color:var(--accent);}
+  .hero h1 .u{color:inherit;}
   .hero-sub{font-size:1.14rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
@@ -212,10 +212,6 @@
   .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
 
 
-  /* sticky mobile CTA */
-  .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
-  .sticky-cta a{flex:1;}
-  .sticky-cta .btn{width:100%;}
 
   @media(max-width:980px){
     .steps{grid-template-columns:repeat(2,1fr);}
@@ -229,7 +225,6 @@
     .setup-grid{grid-template-columns:1fr;}
     .whofor{grid-template-columns:1fr;}
     .strip-inner{gap:18px;font-size:.88rem;}
-    .sticky-cta{display:flex;}
     .cmp-row{grid-template-columns:1fr;}
     .cmp-row .desc{border-left:none;border-top:1px solid var(--line);}
     .cmp-row.joel .desc{border-top-color:#c9d2ff;}
@@ -289,6 +284,28 @@
 .hr-map.hl .hr-src{border:none;box-shadow:none!important;}
 @media(max-width:620px){.hr-map{flex-wrap:wrap;row-gap:4px;}.hr-dst{margin-left:auto;}}
 </style>
+<style id="hero-story-fn">
+  .hero-route{position:relative;}
+  .hero-route-stamp{position:absolute;top:-52px;right:-12px;z-index:2;background:var(--paper,#fff);}
+  @media(max-width:620px){.hero-route-stamp{top:-46px;right:2px;}}
+
+/* stacked hero: cap card width */
+@media(max-width:960px){.hero-route{max-width:560px;}}
+/* hero story card: branded function convention — icon tile, single-line event, colored destination */
+.hstory{display:flex;flex-direction:column;}
+.srow{display:flex;align-items:center;gap:12px;padding:10px 0;}
+.srow .fic{width:36px;height:36px;border-radius:10px;background:var(--cs,#EEF4FF);display:grid;place-items:center;flex:none;}
+.srow .fic svg{width:18px;height:18px;color:var(--c,#2454D6);}
+.srow b{font-size:.93rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.srow .dest{margin-left:auto;color:var(--c,var(--accent-dark));font-weight:700;font-size:.86rem;white-space:nowrap;padding-left:10px;}
+@media(max-width:680px){
+  .srow{gap:9px;}
+  .srow .fic{width:30px;height:30px;border-radius:8px;}
+  .srow .fic svg{width:15px;height:15px;}
+  .srow b{font-size:.8rem;}
+  .srow .dest{font-size:.74rem;}
+}
+</style>
 </head>
 <body>
 
@@ -327,32 +344,47 @@
       </ul>
     </div>
 
-    <!-- Homepage hero routing image - Slack row highlighted -->
-    <div class="hero-route reveal" role="img" aria-label="AnyPhone routes calls, voicemails, texts, and integrations to the right place, with the Slack notifications row highlighted">
-      <div class="hr-cap">One morning at Bluebird Bakery</div>
-      <div class="hr-rows">
-        <div class="hr-map">
-          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>9:05 AM: a customer calls</b></span>
-          <span class="hr-arrow">»</span>
-          <span class="hr-dst dc-phone"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><b>Rings Bob’s cell</b></span>
-        </div>
-        <div class="hr-map hl">
-          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>9:12 AM: missed call</b></span>
-          <span class="hr-arrow">»</span>
-          <span class="hr-dst dc-slack"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><b>Transcript in #front-desk</b></span>
-        </div>
-        <div class="hr-map">
-          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>9:20 AM: “Open Sunday?”</b></span>
-          <span class="hr-arrow">»</span>
-          <span class="hr-dst dc-inbox"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></svg></span><b>Team inbox; Riley replies</b></span>
-        </div>
-        <div class="hr-map">
-          <span class="hr-src"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span><b>9:26 AM: WhatsApp message</b></span>
-          <span class="hr-arrow">»</span>
-          <span class="hr-dst dc-tools"><span class="hr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Same inbox, tagged WhatsApp</b></span>
-        </div>
-      </div>
-      <div class="hr-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Your cell stays private, the business gets a system</div>
+    <!-- Branded function list — same card as the homepage hero -->
+    <div class="hero-route reveal" role="img" aria-label="How AnyPhone works: get a number, create extensions, forward calls, get voicemails, manage SMS and WhatsApp, add integrations">
+      <span class="nup-stamp nup-lg hero-route-stamp" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <ol class="hsteps">
+        <li class="hstep fn-number">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><b>Get a number</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-ext">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Create extensions</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Departments/team</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-fwd">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><b>Forward calls</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Route to mobile</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-vm">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Get voicemails</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Sent to email &amp; Slack</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-sms">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>Manage SMS/WhatsApp</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Team inbox</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-ai">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Add integrations</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">AI tools</span></span></div>
+          </div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
@@ -403,12 +435,45 @@
       <div class="sec-kicker">How it works</div>
       <h2>Move the business off your personal cell.</h2>
     </div>
-    <div class="steps">
-      <div class="step reveal"><div class="sn">1</div><h3>Get a business number</h3><p>Choose a local or toll-free number, or bring the number customers already use.</p></div>
-      <div class="step reveal"><div class="sn">2</div><h3>Add a greeting and menu</h3><p>Record a short greeting and set up extensions so callers reach the right person.</p></div>
-      <div class="step reveal"><div class="sn">3</div><h3>Forward to your cell</h3><p>Ring your cell if you want, but customers see the business number and your private one stays hidden.</p></div>
-      <div class="step reveal"><div class="sn">4</div><h3>Let the team help</h3><p>Route calls to more than one person and share a text inbox so anyone can reply.</p></div>
-      <div class="step reveal slackstep"><div class="sn">5</div><h3>Stay on top of it</h3><p>Voicemail transcripts and Slack notifications keep missed calls and messages from slipping.</p></div>
+    <div class="fnlist-card reveal">
+<ol class="hsteps">
+        <li class="hstep fn-number">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><b>Get a number</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-ext">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Create extensions</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Departments/team</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-fwd">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><b>Forward calls</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Route to mobile</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-vm">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Get voicemails</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Sent to email &amp; Slack</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-sms">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>Manage SMS/WhatsApp</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Team inbox</span></span></div>
+          </div>
+        </li>
+        <li class="hstep fn-ai">
+          <div class="hstep-body">
+            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Add integrations</b></div>
+            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">AI tools</span></span></div>
+          </div>
+        </li>
+      </ol>
     </div>
     <p class="steps-note reveal"><b>Keep the convenience, lose the risk.</b> Calls can still ring your phone, but the number and the relationship belong to the business.</p>
   </div>
@@ -573,11 +638,7 @@
   </div>
 </footer>
 
-<!-- sticky mobile CTA -->
-<div class="sticky-cta">
-  <a href="#how"><span class="btn btn-ghost">How it works</span></a>
-  <a href="../early-access.html"><span class="btn btn-primary">Get early access</span></a>
-</div>
+
 
 <script>
   (function(){
