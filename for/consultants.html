@@ -50,20 +50,26 @@
   .hdr-cta:hover{background:var(--accent-dark);}
 
   /* hero */
-  .hero{padding:60px 0 68px;background:var(--paper);}
+  .hero{padding:36px 0 56px;background:var(--paper);}
   .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
-  .hero h1{font-weight:800;font-size:clamp(2.3rem,4.4vw,3.4rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:18px;text-wrap:pretty;}
-  .hero h1 .u{color:var(--accent);}
-  .hero-sub{font-size:1.18rem;line-height:1.5;color:var(--body);max-width:34ch;margin-bottom:26px;font-weight:500;}
-  .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
+  .hero-kick{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
+  .hero-kick .eyebrow{display:inline-flex;width:auto;max-width:100%;margin:0;}
+  .hero-kick .nup-stamp{margin:0;}
+  .hero h1{font-weight:800;font-size:clamp(2.1rem,3.9vw,3rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:14px;text-wrap:pretty;}
+  .hero h1 .u{color:inherit;}
+  .hero-sub{font-size:1.1rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:20px;font-weight:500;}
+  .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
   .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
   .hero-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
   /* product screenshot placeholder / routing mock */
-  .shot{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);overflow:hidden;}
+  .shot{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);}
+  .shot-top{border-radius:21px 21px 0 0;}
+  .shot > :last-child:not(.shot-stamp){border-radius:0 0 21px 21px;overflow:hidden;}
+  .shot-stamp{position:absolute;top:-30px;right:-12px;z-index:2;background:var(--paper,#fff);}
   .shot-top{background:var(--ink);color:#fff;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;}
   .shot-top b{font-size:.98rem;font-weight:700;}
   .shot-top .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(27,181,106,.18);color:#7ef0b4;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
@@ -204,9 +210,7 @@
   footer{padding-bottom:96px;}
 
   /* sticky mobile CTA */
-  .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:11px 16px;gap:10px;box-shadow:0 -10px 30px rgba(16,16,18,.08);}
-  .sticky-cta a{flex:1;}
-  .sticky-cta .btn{width:100%;}
+  
 
   @media(max-width:980px){
     .steps{grid-template-columns:repeat(2,1fr);}
@@ -265,7 +269,9 @@
 <section class="hero" data-screen-label="Hero">
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
-      <span class="eyebrow">Phone system for consultants and agencies</span>
+      <div class="hero-kick"><span class="eyebrow">Phone system for consultants and agencies</span>
+      
+      </div>
       <h1>Keep client calls with your firm, not one person's <span class="u">cell phone.</span></h1>
       <p class="hero-sub">AnyPhone gives your firm a business number that routes new inquiries, current clients, and billing to the right partner or assistant, and keeps the client relationship with the business.</p>
       <div class="hero-acts">
@@ -281,6 +287,7 @@
 
     <!-- [PRODUCT SCREENSHOT: routing setup or inbox] -->
     <div class="shot reveal" role="img" aria-label="One prospect call at Northlight: they press 1, the founder and assistant ring, and missed calls become transcripts">
+      <span class="nup-stamp nup-lg shot-stamp" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <div class="shot-top">
         <b>One call at Northlight</b>
         <span class="badge"><i></i> Live</span>
@@ -522,7 +529,7 @@
     <div class="foot-inner">
       <div class="foot-brand">
         <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-        <p>AnyPhone is the phone system for modern small businesses. Get a local or toll-free number, forward calls to your mobile or team, manage shared texts and voicemails, connect tools like Slack, and add channels like WhatsApp or third-party AI services when your business needs them.</p>
+        <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../learn/mobile-app.html">Mobile app</a><a href="../learn/slack-notifications.html">Slack notifications</a></div>
@@ -536,10 +543,7 @@
 </footer>
 
 <!-- sticky mobile CTA -->
-<div class="sticky-cta">
-  <a href="#how"><span class="btn btn-ghost">How it works</span></a>
-  <a href="../early-access.html"><span class="btn btn-primary">Get early access</span></a>
-</div>
+
 
 <script>
   (function(){
@@ -547,5 +551,6 @@
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   })();
 </script>
+
 </body>
 </html>
