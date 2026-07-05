@@ -216,6 +216,11 @@
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
   .closer-card .btn-primary{background:var(--accent)!important;color:#fff!important;border:1px solid var(--accent)!important;}
   .closer-card .btn-primary:hover{background:var(--accent-dark)!important;transform:translateY(-1px);}
+  .closer-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .closer-card .btn-white{background:var(--accent);color:#fff;padding:14px 28px;border-radius:11px;font-weight:800;text-decoration:none;transition:transform .18s,background .18s;}
+  .closer-card .btn-white:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .closer-card .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);padding:14px 28px;border-radius:11px;font-weight:800;text-decoration:none;transition:transform .18s,border-color .18s;}
+  .closer-card .btn-ghost:hover{border-color:var(--ink);transform:translateY(-1px);}
 </style>
 <style>
   .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
@@ -255,7 +260,10 @@
     <div class="hero-grid">
       <span class="hero-eyebrow reveal">About AnyPhone</span>
       <div class="hero-main">
-        <h1>Every business needs a number. AnyPhone is the <em>flexible phone system</em> built for how founders and small teams actually work.</h1>
+        <h1>We work for small businesses. <em>We always will.</em></h1>
+        <div class="opening reveal">
+          <p>Every phone company in this industry starts with small businesses and leaves them the moment bigger money calls. We built AnyPhone so that never happens to you.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -273,78 +281,59 @@
   </div>
 </section>
 
-<!-- WHY -->
+<!-- WHY WE EXIST -->
 <section class="chapter alt">
   <div class="wrap">
     <div class="ch-grid">
-      <div class="ch-label reveal">Why we built AnyPhone</div>
+      <div class="ch-label reveal">Why we exist</div>
       <div class="ch-body">
-        <p class="reveal">Most phone systems force a bad trade: stay basic, or pay per seat for software you will never fully use. We built AnyPhone so you never have to choose.</p>
-        <p class="reveal">Start simple with one number. A full system with calls, texts, routing, and integrations sits underneath, ready the moment you need it. No forced migration. No per-user pricing. No unnecessary complexity.</p>
+        <h2 class="reveal">The people who start something</h2>
+        <p class="reveal">Nobody plans to start a small business at the kitchen table. It happens because a layoff landed, because the job disappeared, because working for someone else stopped making sense, or because an idea would not leave you alone.</p>
+        <p class="reveal">Then comes the first phone call. And a personal cell number with a voicemail that says "hey, it's me" is suddenly the front door of a real business.</p>
+        <p class="reveal">We started AnyPhone for that moment. For the plumber with two trucks. For the ten-person startup with contractors on three continents. For the person who got laid off on a Friday and registered an LLC on Monday. Different businesses, same act: someone put their name on something and is trying to make it work.</p>
+        <p class="reveal"><strong>That act is who we work for.</strong></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CORE VALUES -->
+<!-- OUR PROMISE -->
 <section class="chapter">
   <div class="wrap">
     <div class="ch-grid">
-      <div class="ch-label reveal">Core values</div>
+      <div class="ch-label reveal">Our promise</div>
       <div class="ch-body">
-        <span class="pull reveal">Our <em>F.A.S.T.</em> core values</span>
+        <h2 class="reveal">Sound like a company from day one, and never miss a call.</h2>
+        <p class="reveal">That is the whole promise, and it is one you can hold us to.</p>
+        <p class="reveal">Day one means day one. Pick a number, record a greeting, forward calls to your cell, and the business that started this morning sounds like it has a front desk by this afternoon.</p>
+        <p class="reveal">Never miss a call means we treat every ring like it is your paycheck. Because for a small business, it usually is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BELIEVE -->
+<section class="chapter alt">
+  <div class="wrap">
+    <div class="ch-grid">
+      <div class="ch-label reveal">What we believe</div>
+      <div class="ch-body">
         <div class="values">
           <div class="value reveal">
-            <div class="value-name"><span class="vl">F.</span> Founders</div>
-            <div class="value-split">
-              <div>
-                <div class="split-label">For customers</div>
-                <p class="split-text">We build for founders. The smallest company gets the same respect as the largest. We give them control, flexibility, and free human-based support so they can grow without being forced to add unnecessary cost or complexity.</p>
-              </div>
-              <div>
-                <div class="split-label">For our team</div>
-                <p class="split-text">We act like owners. We use first principles, leverage tools and people to do more with less, and remove everything that does not create real value.</p>
-              </div>
-            </div>
+            <div class="value-name">Small businesses, forever.</div>
+            <p class="split-text">We build for small businesses, from the one-person shop to the twenty-person team, and we are never moving upstream. No enterprise sales team. No "contact us for pricing" tier. No graduating past the customers who built us. Every business gets the same product and the same support, whether you pay us $20 a month or $149.</p>
           </div>
           <div class="value reveal">
-            <div class="value-name"><span class="vl">A.</span> Agency</div>
-            <div class="value-split">
-              <div>
-                <div class="split-label">For customers</div>
-                <p class="split-text">The customer stays in control. They choose their tools, people, contractors, and AI. We adapt to them. We do not lock them in.</p>
-              </div>
-              <div>
-                <div class="split-label">For our team</div>
-                <p class="split-text">We own the outcome. We make decisions with the information we have, solve problems end to end, and move fast without waiting for permission when action is reversible.</p>
-              </div>
-            </div>
+            <div class="value-name">Default to generous.</div>
+            <p class="split-text">When a decision is close, we choose the option that gives more than it takes. It is why porting is free, why support is free for everyone, and why unlimited means unlimited. If we are debating whether to be generous, we already know the answer.</p>
           </div>
           <div class="value reveal">
-            <div class="value-name"><span class="vl">S.</span> Simplicity</div>
-            <div class="value-split">
-              <div>
-                <div class="split-label">For customers</div>
-                <p class="split-text">We make things obvious. If it feels complicated, we failed.</p>
-              </div>
-              <div>
-                <div class="split-label">For our team</div>
-                <p class="split-text">We ruthlessly remove complexity. Small teams, rare meetings, lightweight tools, and minimal process. Anything that requires extra coordination should be questioned or eliminated.</p>
-              </div>
-            </div>
+            <div class="value-name">Figure it out.</div>
+            <p class="split-text">When something is broken, someone here owns it until it is fixed. You will never be handed a ticket number and a shrug. We come back with the answer, not the obstacle.</p>
           </div>
           <div class="value reveal">
-            <div class="value-name"><span class="vl">T.</span> Transparency</div>
-            <div class="value-split">
-              <div>
-                <div class="split-label">For customers</div>
-                <p class="split-text">No long-term contracts. No hidden fees. No nickel-and-diming. We tell the truth about what works, what does not, and what we are still fixing.</p>
-              </div>
-              <div>
-                <div class="split-label">For our team</div>
-                <p class="split-text">We share information openly and directly. No silos. No politics. No hidden agendas. The truth moves fast, even when it is uncomfortable.</p>
-              </div>
-            </div>
+            <div class="value-name">Simple is the optimization.</div>
+            <p class="split-text">Simplicity is not a design taste. It is the most optimized state of a phone system. Every setting we remove is a decision you never have to make and a failure that cannot happen. If a feature adds something you have to learn, it has to earn its place or it dies.</p>
           </div>
         </div>
       </div>
@@ -352,27 +341,34 @@
   </div>
 </section>
 
-<!-- OUR PROMISE -->
-<section class="chapter alt">
+<!-- WHERE WE'RE GOING -->
+<section class="chapter">
   <div class="wrap">
     <div class="ch-grid">
-      <div class="ch-label reveal">Our promise</div>
+      <div class="ch-label reveal">Where we're going</div>
       <div class="ch-body">
-        <span class="pull reveal">We will never outgrow small business.</span>
-        <p class="reveal">Pricing stays fair. Support stays human. Contracts stay optional. The smallest company gets the same product, and the same respect, as the largest.</p>
+        <h2 class="reveal">A million answered.</h2>
+        <p class="reveal">Our goal is one million small businesses answering on AnyPhone, without ever signing a single enterprise deal.</p>
+        <p class="reveal">Most companies in this industry believe that is impossible. They believe you have to move upmarket to survive, that small customers are a phase, that the math only works with big contracts. We believe the opposite, and we intend to prove it one answered call at a time.</p>
+        <p class="reveal"><strong>When your business picks up on AnyPhone, you are one of the million. That counts for something here.</strong></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BELIEF -->
-<section class="chapter">
+<!-- WHAT WE WILL NEVER DO -->
+<section class="chapter alt">
   <div class="wrap">
     <div class="ch-grid">
-      <div class="ch-label reveal">We believe</div>
+      <div class="ch-label reveal">What we will never do</div>
       <div class="ch-body">
-        <span class="pull reveal">The best founders grow by adding capability, not headcount.</span>
-        <p class="reveal">They use AI, contractors, and tools to do more with less, without building bigger organizations.</p>
+        <ul class="beliefs-list">
+          <li class="reveal">We will never charge per user. <strong>NO PER-USER PRICING</strong> is not a promotion. It is policy.</li>
+          <li class="reveal">We will never make you talk to sales to see a price.</li>
+          <li class="reveal">We will never treat the $20 customer worse than the $149 customer.</li>
+          <li class="reveal">We will never make you learn telecom to run your phones.</li>
+          <li class="reveal">We will never leave small businesses for bigger ones. That is the entire point of this company.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -382,10 +378,12 @@
 <section class="closer" id="start">
   <div class="wrap">
     <div class="closer-card">
-      <h2>Get the business phone number your company can grow around.</h2>
-      <p>Start with calls, texts, voicemail, and routing. Add Slack, AI answering, and other tools as your business grows.</p>
-      <a href="early-access.html" class="btn-white">Get early access</a>
-      <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Set up in minutes · Cancel anytime · 30-day money-back guarantee</div>
+      <h2>Built for the people who start something.</h2>
+      <p>One number, unlimited teammates, and a business that sounds like a business today. No per-user pricing, ever.</p>
+      <div class="closer-btns">
+        <a href="early-access.html" class="btn-white">Get your number</a>
+        <a href="pricing.html" class="btn-ghost">See pricing</a>
+      </div>
     </div>
   </div>
 </section>
