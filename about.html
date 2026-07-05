@@ -17,7 +17,8 @@
 <style>
   :root{--cream:#faf7f2;--script:'Caveat',cursive;} /* page-specific tokens; rest inherited from site.css */
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 32px;}
+  nav .wrap,.closer .wrap{max-width:1100px;}
 
   /* NAV */
   nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
@@ -43,13 +44,12 @@
   /* ============ HERO ============ */
   header.about-hero{padding:100px 0 100px;background:linear-gradient(180deg,#F1F4FF 0%,#F6F8FF 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
   .about-hero::before{content:"";position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(37,64,238,.12),transparent 70%);pointer-events:none;}
-  .hero-grid{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start;position:relative;}
-  .hero-eyebrow{display:inline-flex;align-items:center;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2240C2;background:#eef1ff;border-radius:999px;padding:8px 16px;margin-top:2px;}
-  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:18px;}.hero-eyebrow{padding-top:0;}}
+  .hero-grid{display:block;position:relative;}
+  .hero-eyebrow{display:inline-flex;align-items:center;font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin-bottom:20px;}
   .hero-main h1{
     font-size:clamp(2.1rem,4.4vw,3.5rem);
     font-weight:800;letter-spacing:-.032em;line-height:1.1;
-    color:var(--ink);margin-bottom:28px;max-width:18ch;
+    color:var(--ink);margin-bottom:28px;max-width:20ch;
   }
   .hero-main h1 em{font-style:normal;color:var(--blue);}
   .hero-main .lede{
@@ -65,18 +65,16 @@
   section.chapter.alt{background:var(--bg-alt);}
   @media(max-width:760px){section.chapter{padding:64px 0;}}
 
-  .ch-grid{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start;}
+  .ch-grid{display:block;}
   .ch-label{
-    justify-self:start;
-    display:inline-flex;align-items:center;
-    font-size:.72rem;font-weight:800;letter-spacing:.05em;
-    text-transform:uppercase;color:#2240C2;background:#eef1ff;
-    border-radius:999px;padding:8px 16px;margin-top:2px;line-height:1.4;
-    white-space:nowrap;
+    display:inline-flex;align-items:center;gap:12px;
+    font-size:.82rem;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-text);
+    margin-bottom:20px;line-height:1.4;
   }
-  .alt .ch-label{background:#e4e9ff;}
-  @media(max-width:860px){.ch-grid{grid-template-columns:1fr;gap:18px;}.ch-label{margin-top:0;}}
-  .ch-body{max-width:660px;}
+  .ch-label{gap:9px;}
+  .ch-label::before{content:none;}
+  .ch-body{max-width:100%;}
   .ch-body h2{
     font-size:clamp(1.5rem,2.5vw,1.95rem);
     font-weight:800;letter-spacing:-.022em;line-height:1.18;
@@ -89,6 +87,7 @@
   }
   .ch-body p:last-child{margin-bottom:0;}
   .ch-body p strong{color:var(--ink);font-weight:700;}
+  .ch-body h2.team-h2{max-width:34ch;}
 
   /* List with light texture */
   .ch-body ul.observed{
@@ -220,11 +219,7 @@
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
   .closer-card .btn-primary{background:var(--accent)!important;color:#fff!important;border:1px solid var(--accent)!important;}
   .closer-card .btn-primary:hover{background:var(--accent-dark)!important;transform:translateY(-1px);}
-  .closer-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .closer-card .btn-white{background:var(--accent);color:#fff;padding:14px 28px;border-radius:11px;font-weight:800;text-decoration:none;transition:transform .18s,background .18s;}
-  .closer-card .btn-white:hover{background:var(--accent-dark);transform:translateY(-1px);}
-  .closer-card .btn-ghost{display:inline-block;background:#fff;color:var(--ink);border:1px solid var(--line);padding:14px 28px;border-radius:11px;font-weight:800;text-decoration:none;transition:transform .18s,border-color .18s;}
-  .closer-card .btn-ghost:hover{border-color:var(--ink);transform:translateY(-1px);}
+  .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 </style>
 <style>
   .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
@@ -262,7 +257,7 @@
 <header class="about-hero">
   <div class="wrap">
     <div class="hero-grid">
-      <span class="hero-eyebrow reveal">About AnyPhone</span>
+      <span class="hero-eyebrow reveal">The AnyPhone Way</span>
       <div class="hero-main">
         <h1>We <em>only</em> work for small businesses.</h1>
         <div class="opening reveal">
@@ -279,7 +274,7 @@
     <div class="ch-grid">
       <div class="ch-label reveal">The team</div>
       <div class="ch-body">
-        <span class="pull reveal">Built by founders who have served hundreds of thousands of small businesses.</span>
+        <h2 class="reveal team-h2">Built by founders who have served hundreds of thousands of small businesses.</h2>
         <p class="reveal">We know what actually matters when resources are limited — because we have spent our careers on this side of the table.</p>
       </div>
     </div>
@@ -292,7 +287,7 @@
     <div class="ch-grid">
       <div class="ch-label reveal">Why we exist</div>
       <div class="ch-body">
-        <h2 class="reveal">The people who start something</h2>
+        <h2 class="reveal">We work for the people who start something.</h2>
         <p class="reveal">Nobody plans to start a small business at the kitchen table. It happens because a layoff landed, because the job disappeared, because working for someone else stopped making sense, or because an idea would not leave you alone.</p>
         <p class="reveal">Then comes the first phone call. And a personal cell number with a voicemail that says "hey, it's me" is suddenly the front door of a real business.</p>
         <p class="reveal">We started AnyPhone for that moment. For the plumber with two trucks. For the ten-person startup with contractors on three continents. For the person who got laid off on a Friday and registered an LLC on Monday. Different businesses, same act: someone put their name on something and is trying to make it work.</p>
@@ -308,10 +303,8 @@
     <div class="ch-grid">
       <div class="ch-label reveal">Our promise</div>
       <div class="ch-body">
-        <h2 class="reveal">Sound like a company from day one, and never miss a call.</h2>
-        <p class="reveal">That is the whole promise, and it is one you can hold us to.</p>
-        <p class="reveal">Day one means day one. Pick a number, record a greeting, forward calls to your cell, and the business that started this morning sounds like it has a front desk by this afternoon.</p>
-        <p class="reveal">Never miss a call means we treat every ring like it is your paycheck. Because for a small business, it usually is.</p>
+        <h2 class="reveal">We will never outgrow you.</h2>
+        <p class="reveal">Not at a million customers. Not after a funding round. We do not want enterprise deals. We are not building toward bigger customers. You are not our starting point. You are the goal. The product you sign up for as a two-person shop is the product and the support you keep for as long as you run your business.</p>
       </div>
     </div>
   </div>
@@ -321,24 +314,28 @@
 <section class="chapter alt">
   <div class="wrap">
     <div class="ch-grid">
-      <div class="ch-label reveal">What we believe</div>
+      <div class="ch-label reveal">Our core values</div>
       <div class="ch-body">
         <div class="values">
           <div class="value reveal">
-            <div class="value-name">Small businesses, forever.</div>
-            <p class="split-text">We build for small businesses, from the one-person shop to the twenty-person team, and we are never moving upstream. No enterprise sales team. No "contact us for pricing" tier. No graduating past the customers who built us. Every business gets the same product and the same support, whether you pay us $20 a month or $149.</p>
+            <div class="value-name">Small businesses, forever</div>
+            <p class="split-text">We build for small businesses, from the one-person shop to the twenty-person team, and we are never moving upstream. No enterprise sales team. No special treatment for bigger money. No graduating past the customers who built us. Every customer gets the same product and the same care, no matter what they pay us.</p>
           </div>
           <div class="value reveal">
-            <div class="value-name">Default to generous.</div>
-            <p class="split-text">When a decision is close, we choose the option that gives more than it takes. It is why porting is free, why support is free for everyone, and why unlimited means unlimited. If we are debating whether to be generous, we already know the answer.</p>
+            <div class="value-name">Be generous</div>
+            <p class="split-text">When a decision is close, we choose the option that gives more than it takes. To our customers, to each other, to the people around us. If we are debating whether to be generous, we already know the answer.</p>
           </div>
           <div class="value reveal">
-            <div class="value-name">Figure it out.</div>
-            <p class="split-text">When something is broken, someone here owns it until it is fixed. You will never be handed a ticket number and a shrug. We come back with the answer, not the obstacle.</p>
+            <div class="value-name">Figure it out</div>
+            <p class="split-text">Nobody here says "that's not my job" or "I don't know." If you hit a problem, you work it until you solve it. You ask for help, you try things, you learn what you need to learn. What you don't do is stop, wait for someone else, or explain why it can't be done.</p>
           </div>
           <div class="value reveal">
-            <div class="value-name">Simple is the optimization.</div>
-            <p class="split-text">Simplicity is not a design taste. It is the most optimized state of a phone system. Every setting we remove is a decision you never have to make and a failure that cannot happen. If a feature adds something you have to learn, it has to earn its place or it dies.</p>
+            <div class="value-name">Simplify everything</div>
+            <p class="split-text">We make things simple because simple works better. Simple products get used. Simple processes move fast. Simple decisions actually get made. Complexity slows people down and hides problems, so we cut it wherever we find it. We are not simple for the look of it. We are simple because it is the fastest way to run a business.</p>
+          </div>
+          <div class="value reveal">
+            <div class="value-name">Efficiency over headcount</div>
+            <p class="split-text">We operate the way our customers run their businesses: a small team using the best tools in the world. Before we hire someone, we ask if a tool can do the job. Before we put more people on a problem, we give more tools to the person who owns it. Today that tool is AI. Tomorrow it may be something else, and we will be early to that too. Staying small is not a budget constraint. It is how we stay fast, and it is how we stay honest about what our customers can do.</p>
           </div>
         </div>
       </div>
@@ -385,9 +382,9 @@
     <div class="closer-card">
       <h2>Built for the people who start something.</h2>
       <p>One number, unlimited teammates, and a business that sounds like a business today. No per-user pricing, ever.</p>
-      <div class="closer-btns">
-        <a href="early-access.html" class="btn-white">Get your number</a>
-        <a href="pricing.html" class="btn-ghost">See pricing</a>
+      <div class="closer-acts">
+        <a href="pricing.html" class="btn btn-ghost btn-lg">See pricing</a>
+        <a href="early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       </div>
     </div>
   </div>
@@ -396,15 +393,17 @@
 <footer>
   <div class="wrap">
     <div class="foot-inner">
-      <div class="foot-brand">
+      <div class="foot-top">
+        <div class="foot-brand">
         <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
         <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
-      <div class="foot-cols">
         <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/bring-your-own-ai.html">Bring your own AI</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
-        <div class="foot-col"><h5>Phone systems for</h5><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
-        <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
     <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
