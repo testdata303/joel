@@ -89,7 +89,10 @@
   /* section shell */
   section.block{padding:74px 0;}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 44px;}
-  .sec-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
+  /* kicker pill: solid white chip on tinted bands */
+  .steps-wrap .sec-kicker,.setup-wrap .sec-kicker,.compare-green .sec-kicker,.cmp-section .sec-kicker,.strip .sec-kicker,.block.alt .sec-kicker{background:#fff;}
+
   .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
 
@@ -99,21 +102,23 @@
   .whatis-copy h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
   .whatis-copy p{color:var(--body);font-size:1.08rem;line-height:1.6;max-width:46ch;}
   .pillset{display:flex;flex-direction:column;gap:10px;}
-  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
-  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0;}
+  .pillset-head{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
+  .pillset-head .logo{font-size:1.5rem;}
+  .pillset-head .lbl{font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--cl,var(--line));border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
+  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent));display:grid;place-items:center;flex-shrink:0;}
   .pill .pic svg{width:18px;height:18px;}
 
   /* problem */
-  .problem{background:var(--ink);color:#fff;}
-  .problem .sec-kicker{color:#8ea2ff;}
-  .problem .sec-head h2{color:#fff;}
+  .problem{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .prob-copy{max-width:720px;margin:0 auto;text-align:center;}
-  .prob-copy p{font-size:1.16rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
-  .prob-copy b{color:#fff;font-weight:700;}
+  .prob-copy p{font-size:1.16rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .prob-copy b{color:var(--ink);font-weight:700;}
 
   /* steps */
   .steps-wrap{background:var(--soft);}
   .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .steps.four{grid-template-columns:repeat(4,1fr);}
   .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;}
   .step .sn{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1.05rem;display:grid;place-items:center;margin-bottom:14px;}
   .step.slackstep .sn{background:var(--slack);}
@@ -164,25 +169,37 @@
 
   /* why different + comparison */
   .compare-green{background:#eef9f1;border-top:1px solid #d3ecdc;border-bottom:1px solid #d3ecdc;}
-  .cmp{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;}
-  .cmp-row{display:grid;grid-template-columns:1fr 2fr;border-top:1px solid var(--line);}
+  .cmp{max-width:980px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(16,16,18,.04),0 18px 40px -28px rgba(15,17,21,.18);}
+  .cmp-row{display:grid;grid-template-columns:1fr 1.25fr 1.25fr;border-top:1px solid var(--line);}
   .cmp-row:first-child{border-top:none;}
   .cmp-row.head{background:var(--soft);}
-  .cmp-row>div{padding:20px 24px;}
-  .cmp-row .opt{font-weight:800;font-size:1.04rem;display:flex;align-items:center;gap:10px;}
-  .cmp-row.joel{background:var(--accent-soft);}
-  .cmp-row.joel .opt{color:var(--accent-dark);}
-  .cmp-row .desc{color:var(--body);font-size:.98rem;line-height:1.5;border-left:1px solid var(--line);}
-  .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
-  .cmp-row.joel .desc{border-left-color:#c9d2ff;}
+  .cmp-row>div{padding:18px 22px;}
+  .cmp-row .crit{font-weight:800;font-size:.98rem;display:flex;align-items:center;}
+  .cmp-row .gv,.cmp-row .jl{color:var(--body);font-size:.95rem;line-height:1.5;border-left:1px solid var(--line);display:flex;align-items:flex-start;gap:10px;}
+  .cmp-row .jl{background:var(--accent-soft);border-left-color:#c9d2ff;}
+  .cmp-row.head>div{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:800;padding:14px 22px;display:flex;align-items:center;gap:8px;}
+  .cmp-row.head .jl{color:var(--accent-dark);}
+  .cmp-row .mk{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .cmp-row .mk svg{width:12px;height:12px;}
+  .cmp-row .mk.no{background:#fdecec;color:#c2352b;}
+  .cmp-row .mk.yes{background:var(--green-soft);color:var(--green-ink);}
+  .cmp-row .gv b,.cmp-row .jl b{color:var(--ink);font-weight:800;display:block;margin-bottom:2px;}
+  .cmp .lbl{display:none;}
+  @media(max-width:880px){
+    .cmp-row{grid-template-columns:1fr;}
+    .cmp-row.head{display:none;}
+    .cmp-row .crit{padding-bottom:4px;}
+    .cmp-row .gv,.cmp-row .jl{border-left:none;}
+    .cmp .lbl{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:4px;}
+    .cmp-row .jl .lbl{color:var(--accent-dark);}
+  }
 
   /* not section */
-  .notband{background:var(--ink);color:#fff;}
+  .notband{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .not-card{max-width:760px;margin:0 auto;text-align:center;}
-  .not-card .sec-kicker{color:#8ea2ff;}
-  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:#fff;text-wrap:pretty;}
-  .not-card p{font-size:1.12rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
-  .not-card p b{color:#fff;font-weight:700;}
+  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
+  .not-card p{font-size:1.12rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .not-card p b{color:var(--ink);font-weight:700;}
 
   /* who for */
   .whofor{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -214,7 +231,7 @@
 
 
   @media(max-width:980px){
-    .steps{grid-template-columns:repeat(2,1fr);}
+    .steps,.steps.four{grid-template-columns:repeat(2,1fr);}
     .cards3{grid-template-columns:1fr;}
   }
   @media(max-width:880px){
@@ -232,7 +249,7 @@
     footer{padding-bottom:96px;}
   }
   @media(max-width:560px){
-    .steps{grid-template-columns:1fr;}
+    .steps,.steps.four{grid-template-columns:1fr;}
     .closer-card{padding:48px 26px;}
   }
 </style>
@@ -261,7 +278,6 @@
 
 <style id="dc-semantic2">
 @media(min-width:621px){
-  .pill .pic{background:#F3F4F6;color:#374151;}
   .prow .k{background:#F3F4F6;color:#374151;}
   .prow .k.zero{background:#374151;color:#fff;}
   .prow .dest{color:#2454D6;}
@@ -332,7 +348,7 @@
     <div class="hero-copy reveal">
       <span class="eyebrow">Google Voice alternative</span>
       <h1>A Google Voice alternative built for a <span class="u">team.</span></h1>
-      <p class="hero-sub">Google Voice is handy for a simple second number for one person. The catch for a small business is that it charges per user, ties you to a Google account, and does not connect to the tools you use. AnyPhone is different.</p>
+      <p class="hero-sub">Google Voice looks free until you add a teammate. Then it is a per-user Google Workspace product: every person needs a paid Google account, every seat adds to the bill, and nothing connects to Slack, WhatsApp, or AI. AnyPhone is different.</p>
       <div class="hero-acts">
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
         <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
@@ -402,80 +418,63 @@
 <section class="block" data-screen-label="What AnyPhone is">
   <div class="wrap whatis">
     <div class="whatis-copy reveal">
-      <div class="sec-kicker">Where Google Voice fits</div>
-      <h2>Google Voice is good for a simple second number.</h2>
-      <p>Google Voice can be genuinely useful. For one person who wants a free second number to keep work and personal calls apart, it does the job. The trouble for a small business is not the basics: it is that Google Voice for teams charges per user, is tied to Google Workspace accounts, and does not connect to tools like Slack, WhatsApp, or a third-party AI answering service. That is where AnyPhone is different.</p>
+      <div class="sec-kicker">The catch</div>
+      <h2>The free version is for one person. The business version is a Google Workspace product.</h2>
+      <p>The free Google Voice everyone knows is personal-only and cannot be shared with a team. The moment two people need to answer, you are on Google Voice for Workspace: a paid Google Workspace account for every user, plus a per-user Voice license on top, all managed through the Workspace admin console. And even then, nothing connects to Slack, WhatsApp, or a third-party AI answering service.</p>
     </div>
     <div class="pillset reveal">
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> Unlimited users, no per-seat fee</div>
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span> Not tied to Google Workspace</div>
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Connects to Slack and WhatsApp</div>
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> Bring your own AI answering service</div>
+      <div class="pillset-head"><span class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></span> <span class="lbl">What you get instead</span></div>
+      <div class="pill fn-ext"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> Unlimited users, no per-seat fee</div>
+      <div class="pill fn-number"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span> Not tied to Google Workspace</div>
+      <div class="pill fn-sms"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Connects to Slack and WhatsApp</div>
+      <div class="pill fn-ai"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span> Bring your own AI answering service</div>
     </div>
   </div>
 </section>
 
-<!-- 3. THE SLACK PROBLEM -->
-<section class="block problem" data-screen-label="Why Slack matters">
+<!-- 3. THE ANSWER -->
+<section class="block problem" data-screen-label="The AnyPhone answer">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">Where it can break</div>
-      <h2>What trips up a growing small business.</h2>
+      <div class="sec-kicker">The AnyPhone answer</div>
+      <h2>One flat price. Unlimited users. No Google account.</h2>
     </div>
     <div class="prob-copy reveal">
-      <p>The problem usually is not a missing feature. It is the model. Google Voice's team plans price per user, so every teammate, assistant, or contractor adds to the bill, and access is tied to Google Workspace accounts. It also does not connect to the tools a small business runs on, like Slack, WhatsApp, or a third-party AI answering service. <b>AnyPhone includes unlimited users, works without a Google account, and connects to those tools.</b></p>
+      <p>Every teammate, assistant, or contractor needs a paid Google Workspace seat <b>and</b> a Voice license before they can pick up a call. A five-person shop is paying ten subscriptions to run one phone number, and the whole system lives or dies with your Google accounts. <b>AnyPhone is one flat price with unlimited users, no Google account anywhere, and real integrations.</b></p>
     </div>
   </div>
 </section>
 
-<!-- 4. HOW AnyPhone WORKS WITH SLACK -->
-<section class="block steps-wrap" id="how" data-screen-label="How AnyPhone works with Slack">
+<!-- 4. HOW SWITCHING WORKS -->
+<section class="block steps-wrap" id="how" data-screen-label="How switching works">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">How it works</div>
-      <h2>Move from a second number to a phone system.</h2>
+      <div class="sec-kicker">How switching works</div>
+      <h2>Move off Google Voice without going dark.</h2>
     </div>
-    <div class="fnlist-card reveal">
-<ol class="hsteps">
-        <li class="hstep fn-number">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><b>Get a number</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-ext">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Create extensions</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Departments/team</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-fwd">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><b>Forward calls</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Route to mobile</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-vm">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Get voicemails</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Sent to email &amp; Slack</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-sms">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>Manage SMS/WhatsApp</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Team inbox</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-ai">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Add integrations</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">AI tools</span></span></div>
-          </div>
-        </li>
-      </ol>
+    <div class="steps four reveal">
+      <div class="step">
+        <div class="sn">1</div>
+        <h3>Start with a temporary number</h3>
+        <p>Sign up and get a working number instantly, so you can set up and take calls today.</p>
+      </div>
+      <div class="step">
+        <div class="sn">2</div>
+        <h3>Port your Google Voice number free</h3>
+        <p>We handle the transfer. Your number keeps working the whole time — nothing goes dark.</p>
+      </div>
+      <div class="step">
+        <div class="sn">3</div>
+        <h3>Set up greeting and routing</h3>
+        <p>Record a greeting, add extensions, and forward calls to the cell phones you already have.</p>
+      </div>
+      <div class="step">
+        <div class="sn">4</div>
+        <h3>Add the team — no Google accounts</h3>
+        <p>Invite everyone who answers. Unlimited users, no Workspace seats, no per-user fees.</p>
+      </div>
     </div>
-    <p class="steps-note reveal"><b>Keep the simplicity, add the system.</b> AnyPhone stays easy to run while giving the whole team a real phone system.</p>
+    <p class="steps-note reveal"><b>Most switches finish in a few days.</b> You take calls from day one, and the port completes in the background.</p>
   </div>
 </section>
 
@@ -483,8 +482,8 @@
 <section class="block" data-screen-label="What shows up in Slack">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">The real difference</div>
-      <h2>Same essentials. A very different model.</h2>
+      <div class="sec-kicker">Why AnyPhone</div>
+      <h2>What AnyPhone gives you that Google Voice doesn't.</h2>
     </div>
     <div class="cards3">
       <div class="card reveal">
@@ -511,7 +510,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">Example setup</div>
-      <h2>A simple setup a small team can share</h2>
+      <h2>A simple AnyPhone setup a small team can share.</h2>
     </div>
     <div class="setup-grid reveal">
       <div class="panel">
@@ -542,16 +541,42 @@
 <section class="block compare-green" data-screen-label="Why this is different">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">Honest comparison</div>
-      <h2>Google Voice vs a small business phone system.</h2>
-      <p>Google Voice is a fair choice for one person. Here is where it and AnyPhone differ for a team.</p>
+      <div class="sec-kicker">Head to head</div>
+      <h2>Google Voice vs AnyPhone for a small business.</h2>
+      <p>Feature by feature, this is what the two models actually mean for a team.</p>
     </div>
     <div class="cmp reveal">
-      <div class="cmp-row head"><div class="opt">Option</div><div class="desc">What it means for a small business</div></div>
-      <div class="cmp-row"><div class="opt">Google Voice</div><div class="desc">A useful free second number for one person to separate work and personal calls, with basic voicemail and texting.</div></div>
-      <div class="cmp-row"><div class="opt">Google Voice for a team</div><div class="desc">Team plans price per user and require Google Workspace accounts, and there are no integrations with Slack, WhatsApp, or a third-party AI answering service.</div></div>
-      <div class="cmp-row"><div class="opt">Personal cell</div><div class="desc">Free, but the number gets passed around and the team cannot share the work. See <a href="personal-cell-vs-business-phone-system.html" style="color:var(--accent-dark);font-weight:700;">personal cell vs business phone system</a>.</div></div>
-      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> AnyPhone</div><div class="desc">The same phone-system essentials, plus unlimited users, no Google account required, and integrations with Slack, WhatsApp, and third-party AI answering services.</div></div>
+      <div class="cmp-row head"><div class="crit"></div><div class="gv">Google Voice</div><div class="jl">AnyPhone</div></div>
+      <div class="cmp-row">
+        <div class="crit">Pricing model</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span><b>Per user, per month</b>Every teammate adds a Voice license on top of a Workspace seat.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">AnyPhone</span><b>Flat price, unlimited users</b>Add teammates, assistants, and contractors. The bill does not move.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Account requirement</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span><b>Google Workspace required</b>Business use requires a paid Google account for every user, managed in the admin console.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">AnyPhone</span><b>Standalone</b>No Google account, no Workspace, no admin console. Invite anyone by phone or email.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Shared team texting</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>Texts belong to one user's account. No shared inbox for the team.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">AnyPhone</span>One shared inbox for SMS and WhatsApp. Anyone on the team can reply.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Integrations</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>No Slack, no WhatsApp, no third-party AI answering. Google tools only.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">AnyPhone</span>Slack, WhatsApp, webhooks, and <a href="bring-your-own-ai.html" style="color:var(--accent-dark);font-weight:700;">bring-your-own AI answering</a>.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Menus &amp; extensions</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>Auto-attendant is reserved for upper Workspace tiers.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">AnyPhone</span>Menus, extensions, and routing by function on every plan.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Leaving</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>Your number lives inside your Google account. Cancel Workspace and the phone system goes with it.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">AnyPhone</span>Your number is yours. Port in free, port out any time, no contracts.</span></div>
+      </div>
     </div>
     <p style="max-width:900px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">Learn more: <a href="small-business-phone-system.html" style="color:var(--accent-dark);font-weight:700;">small business phone system</a>, <a href="business-phone-number.html" style="color:var(--accent-dark);font-weight:700;">business phone number</a>, and <a href="personal-cell-vs-business-phone-system.html" style="color:var(--accent-dark);font-weight:700;">personal cell vs business phone system</a>.</p>
   </div>
@@ -562,8 +587,8 @@
   <div class="wrap">
     <div class="not-card reveal">
       <div class="sec-kicker">Fair and clear</div>
-      <h2>Google Voice is fine, until you need a team.</h2>
-      <p>This is not a knock on Google Voice. It is a solid free second number for one person. <b>The point is simply that a growing small business usually wants unlimited users, independence from a Google account, and real integrations, which is a different job.</b></p>
+      <h2>Google Voice is fine, until you are a team.</h2>
+      <p>This is not a knock on Google Voice. The free version is a solid second number for one person. <b>The point is that the business version is really a Google Workspace add-on: per-user pricing, Google accounts for everyone, and no integrations. A small business deserves a phone system that is not somebody else's suite.</b></p>
     </div>
   </div>
 </section>
@@ -610,7 +635,7 @@
   <div class="wrap">
     <div class="closer-card reveal">
       <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
-      <h2>Outgrown Google Voice? Get a real phone system.</h2>
+      <h2>Switch to a phone system that doesn't charge per user or lock you into Google.</h2>
       <p>Unlimited users with no per-seat fee, no Google account required, and integrations with Slack, WhatsApp, and third-party AI answering services.</p>
       <div class="closer-acts">
         <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>

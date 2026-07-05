@@ -89,7 +89,10 @@
   /* section shell */
   section.block{padding:74px 0;}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 44px;}
-  .sec-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
+  /* kicker pill: solid white chip on tinted bands */
+  .steps-wrap .sec-kicker,.setup-wrap .sec-kicker,.compare-green .sec-kicker,.cmp-section .sec-kicker,.strip .sec-kicker,.block.alt .sec-kicker{background:#fff;}
+
   .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
 
@@ -99,21 +102,23 @@
   .whatis-copy h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
   .whatis-copy p{color:var(--body);font-size:1.08rem;line-height:1.6;max-width:46ch;}
   .pillset{display:flex;flex-direction:column;gap:10px;}
-  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
-  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0;}
+  .pillset-head{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
+  .pillset-head .logo{font-size:1.5rem;}
+  .pillset-head .lbl{font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--cl,var(--line));border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
+  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent));display:grid;place-items:center;flex-shrink:0;}
   .pill .pic svg{width:18px;height:18px;}
 
   /* problem */
-  .problem{background:var(--ink);color:#fff;}
-  .problem .sec-kicker{color:#8ea2ff;}
-  .problem .sec-head h2{color:#fff;}
+  .problem{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .prob-copy{max-width:720px;margin:0 auto;text-align:center;}
-  .prob-copy p{font-size:1.16rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
-  .prob-copy b{color:#fff;font-weight:700;}
+  .prob-copy p{font-size:1.16rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .prob-copy b{color:var(--ink);font-weight:700;}
 
   /* steps */
   .steps-wrap{background:var(--soft);}
   .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .steps.four{grid-template-columns:repeat(4,1fr);}
   .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;}
   .step .sn{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1.05rem;display:grid;place-items:center;margin-bottom:14px;}
   .step.slackstep .sn{background:var(--slack);}
@@ -177,12 +182,11 @@
   .cmp-row.joel .desc{border-left-color:#c9d2ff;}
 
   /* not section */
-  .notband{background:var(--ink);color:#fff;}
+  .notband{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .not-card{max-width:760px;margin:0 auto;text-align:center;}
-  .not-card .sec-kicker{color:#8ea2ff;}
-  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:#fff;text-wrap:pretty;}
-  .not-card p{font-size:1.12rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
-  .not-card p b{color:#fff;font-weight:700;}
+  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
+  .not-card p{font-size:1.12rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .not-card p b{color:var(--ink);font-weight:700;}
 
   /* who for */
   .whofor{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -214,7 +218,7 @@
 
 
   @media(max-width:980px){
-    .steps{grid-template-columns:repeat(2,1fr);}
+    .steps,.steps.four{grid-template-columns:repeat(2,1fr);}
     .cards3{grid-template-columns:1fr;}
   }
   @media(max-width:880px){
@@ -232,7 +236,7 @@
     footer{padding-bottom:96px;}
   }
   @media(max-width:560px){
-    .steps{grid-template-columns:1fr;}
+    .steps,.steps.four{grid-template-columns:1fr;}
     .closer-card{padding:48px 26px;}
   }
 </style>
@@ -261,7 +265,6 @@
 
 <style id="dc-semantic2">
 @media(min-width:621px){
-  .pill .pic{background:#F3F4F6;color:#374151;}
   .prow .k{background:#F3F4F6;color:#374151;}
   .prow .k.zero{background:#374151;color:#fff;}
   .prow .dest{color:#2454D6;}
@@ -407,9 +410,10 @@
       <p>A business phone number is the number customers call and text to reach your company. With AnyPhone it is more than a line: it carries a menu and extensions, routes to the right person, keeps texts in a shared inbox, and turns voicemail into transcripts, so communication belongs to the business.</p>
     </div>
     <div class="pillset reveal">
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span> Local numbers in the area code you want</div>
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M21 3l-9 9M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></span> Toll-free numbers and free porting</div>
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Shared texts and voicemail transcripts</div>
+      <div class="pillset-head"><span class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></span> <span class="lbl">What's included</span></div>
+      <div class="pill fn-number"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span> Local numbers in the area code you want</div>
+      <div class="pill fn-number"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M21 3l-9 9M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></span> Toll-free numbers and free porting</div>
+      <div class="pill fn-sms"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Shared texts and voicemail transcripts</div>
       <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span> Owned by the team, not one phone</div>
     </div>
   </div>
@@ -429,51 +433,17 @@
 </section>
 
 <!-- 4. HOW AnyPhone WORKS WITH SLACK -->
-<section class="block steps-wrap" id="how" data-screen-label="How AnyPhone works with Slack">
+<section class="block steps-wrap" id="how" data-screen-label="How it works">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How it works</div>
       <h2>Get and use a business number in a few steps.</h2>
     </div>
-    <div class="fnlist-card reveal">
-<ol class="hsteps">
-        <li class="hstep fn-number">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><b>Get a number</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-ext">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><b>Create extensions</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Departments/team</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-fwd">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><b>Forward calls</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Route to mobile</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-vm">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><b>Get voicemails</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Sent to email &amp; Slack</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-sms">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><b>Manage SMS/WhatsApp</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Team inbox</span></span></div>
-          </div>
-        </li>
-        <li class="hstep fn-ai">
-          <div class="hstep-body">
-            <div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><b>Add integrations</b></div>
-            <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">AI tools</span></span></div>
-          </div>
-        </li>
-      </ol>
+    <div class="steps four reveal">
+      <div class="step"><div class="sn">1</div><h3>Pick your number</h3><p>Choose a local or toll-free number, or port the number you already have for free.</p></div>
+      <div class="step"><div class="sn">2</div><h3>Record a greeting</h3><p>Add a greeting and a simple menu so callers reach the right person or department.</p></div>
+      <div class="step"><div class="sn">3</div><h3>Forward calls</h3><p>Route calls to the cell phones you already have. Nothing to buy or install.</p></div>
+      <div class="step"><div class="sn">4</div><h3>Add the team</h3><p>Invite everyone who answers. Unlimited users, plus Slack, WhatsApp, and AI integrations.</p></div>
     </div>
     <p class="steps-note reveal"><b>Start with one number and add more later.</b> AnyPhone is designed to support additional numbers when your business needs them.</p>
   </div>

@@ -89,7 +89,10 @@
   /* section shell */
   section.block{padding:74px 0;}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 44px;}
-  .sec-kicker{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:12px;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
+  /* kicker pill: solid white chip on tinted bands */
+  .steps-wrap .sec-kicker,.setup-wrap .sec-kicker,.compare-green .sec-kicker,.cmp-section .sec-kicker,.strip .sec-kicker,.block.alt .sec-kicker{background:#fff;}
+
   .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
 
@@ -99,17 +102,18 @@
   .whatis-copy h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
   .whatis-copy p{color:var(--body);font-size:1.08rem;line-height:1.6;max-width:46ch;}
   .pillset{display:flex;flex-direction:column;gap:10px;}
-  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
-  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0;}
+  .pillset-head{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
+  .pillset-head .logo{font-size:1.5rem;}
+  .pillset-head .lbl{font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--cl,var(--line));border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
+  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent));display:grid;place-items:center;flex-shrink:0;}
   .pill .pic svg{width:18px;height:18px;}
 
   /* problem */
-  .problem{background:var(--ink);color:#fff;}
-  .problem .sec-kicker{color:#8ea2ff;}
-  .problem .sec-head h2{color:#fff;}
+  .problem{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .prob-copy{max-width:720px;margin:0 auto;text-align:center;}
-  .prob-copy p{font-size:1.16rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
-  .prob-copy b{color:#fff;font-weight:700;}
+  .prob-copy p{font-size:1.16rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .prob-copy b{color:var(--ink);font-weight:700;}
 
   /* steps */
   .steps-wrap{background:var(--soft);}
@@ -177,12 +181,11 @@
   .cmp-row.joel .desc{border-left-color:#c9d2ff;}
 
   /* not section */
-  .notband{background:var(--ink);color:#fff;}
+  .notband{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .not-card{max-width:760px;margin:0 auto;text-align:center;}
-  .not-card .sec-kicker{color:#8ea2ff;}
-  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:#fff;text-wrap:pretty;}
-  .not-card p{font-size:1.12rem;line-height:1.6;color:rgba(255,255,255,.82);font-weight:500;}
-  .not-card p b{color:#fff;font-weight:700;}
+  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
+  .not-card p{font-size:1.12rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .not-card p b{color:var(--ink);font-weight:700;}
 
   /* who for */
   .whofor{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -261,7 +264,6 @@
 
 <style id="dc-semantic2">
 @media(min-width:621px){
-  .pill .pic{background:#F3F4F6;color:#374151;}
   .prow .k{background:#F3F4F6;color:#374151;}
   .prow .k.zero{background:#374151;color:#fff;}
   .prow .dest{color:#2454D6;}
@@ -367,8 +369,9 @@
       <p>The AnyPhone mobile app lets you make outgoing calls from your phone using your AnyPhone business number. Customers see the business number, not your personal cell, so you can call back from the right number while keeping your personal number private. Incoming calls do not have to depend on the app: AnyPhone can route calls to the phones, lines, assistants, contractors, or call centers you choose.</p>
     </div>
     <div class="pillset reveal">
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Outgoing calls from your business number</div>
-      <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> Customers see your business caller ID</div>
+      <div class="pillset-head"><span class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></span> <span class="lbl">What the app does</span></div>
+      <div class="pill fn-fwd"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Outgoing calls from your business number</div>
+      <div class="pill fn-number"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> Customers see your business caller ID</div>
       <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Your personal cell number stays private</div>
       <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span> For owners, assistants, and contractors</div>
     </div>
@@ -459,7 +462,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How it compares</div>
-      <h2>How it compares.</h2>
+      <h2>The app vs. the other ways people call customers back.</h2>
       <p>The mobile app has one job: outgoing business calls. Here is how that compares to the usual ways people call customers back.</p>
     </div>
     <div class="cmp reveal">
