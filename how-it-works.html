@@ -43,7 +43,7 @@
   .jx-alt{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   section{padding:80px 0;}
 
-  /* ======= THE WHOLE SYSTEM — one unifying diagram ======= */
+  /* ======= THE WHOLE SYSTEM - one unifying diagram ======= */
   .glance{background:var(--bg-alt);border-bottom:1px solid var(--line);}
   .rdiag{max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 28px;box-shadow:0 30px 70px -45px rgba(16,16,18,.28);}
   .rd-source{display:flex;align-items:center;gap:13px;padding:15px 17px;background:#EEF4FF;border-radius:14px;}
@@ -136,7 +136,8 @@
   .mrow b{font-weight:800;font-size:.98rem;flex:none;}
   .mrow .marrow{flex:1;height:2px;background:var(--line);position:relative;min-width:16px;}
   .mrow .marrow::after{content:'';position:absolute;right:0;top:-3px;border-left:6px solid var(--line);border-top:4px solid transparent;border-bottom:4px solid transparent;}
-  .mdest{font-size:.82rem;font-weight:700;color:var(--c);background:var(--cs);padding:5px 11px;border-radius:100px;flex:none;}
+  .mdest{font-size:.82rem;font-weight:700;color:#2454D6;background:#EEF4FF;padding:5px 11px;border-radius:100px;flex:none;}
+  .mdest.ai{color:var(--fn-ai);background:var(--fn-ai-soft);}
 
   /* 3 · ring sequence */
   .seq-src{text-align:center;background:var(--cs);border-radius:12px;padding:11px;margin-bottom:6px;font-weight:800;color:var(--c);font-size:.95rem;}
@@ -280,7 +281,7 @@
 <header class="jx-hero" data-screen-label="How it works hero">
   <div class="wrap">
     <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
-    <h1>One number. Every call in the right place.</h1>
+    <h1>One number. You decide where every call goes.</h1>
     <p>Get a business number, decide where it rings, and catch what you miss. Add extensions, teammates, messaging, and AI only when you need them.</p>
     <div class="jx-acts">
       <a href="early-access.html" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
@@ -293,16 +294,16 @@
 <section class="glance" data-screen-label="Whole system at a glance">
   <div class="wrap">
     <div class="jx-head">
-      <div class="jx-kicker">The whole system, one picture</div>
-      <h2>Your number sits on top. Everything else hangs off it.</h2>
-      <p>One business number, routed however your day needs it — to people, devices, messaging, and AI. Here's the shape of it before we walk each part.</p>
+      <div class="jx-kicker">How it all fits together</div>
+      <h2>Your number sits on top of everything.</h2>
+      <p>One business number, routed however your day needs it - to people, devices, messaging, and AI. Here's the shape of it before we walk each part.</p>
     </div>
 
     <div class="rdiag reveal">
       <div class="rd-source">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"></path></svg></span>
         <span class="rd-src-txt"><b>Your business number</b><span>(212) 555-5225</span></span>
-        <span class="rd-src-badge">One number</span>
+        <span class="rd-src-badge">Toll-free or local</span>
       </div>
       <div class="rd-cat">Call routing</div>
       <div class="rd-rows">
@@ -314,7 +315,7 @@
         <div class="rd-row">
           <span class="rd-ext"><span class="x">Ext 2</span> Support</span>
           <span class="rd-lead" aria-hidden="true"></span>
-          <span class="rd-dest ai"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg> Your AI answering service</span>
+          <a href="learn/bring-your-own-ai.html" class="rd-dest ai" style="text-decoration:none;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg> Your AI answering service</a>
         </div>
         <div class="rd-row">
           <span class="rd-ext"><span class="x">Ext 101</span> Bob</span>
@@ -350,9 +351,9 @@
       <div class="step-tag"><span class="num">1</span><h2>Get a number</h2></div>
       <p>Every account starts with one business number. Pick a fresh one or bring the number your customers already know.</p>
       <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Local</b> — a number in any US area code, so you look local.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Toll-free</b> — an 800, 888, or 877 number for a national feel.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Keep yours</b> — port your current number free. It never stops working.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Local</b> - a number in any US area code, so you look local.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Toll-free</b> - an 800, 888, or 877 number for a national feel.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Keep yours</b> - port your current number free. It never stops working.</span></li>
       </ul>
     </div>
     <div class="visual">
@@ -369,7 +370,7 @@
         </div>
         <div class="np">
           <span class="np-tick"></span>
-          <span class="np-t"><b>Keep my number</b><small>Port it — keeps working the whole time</small></span>
+          <span class="np-t"><b>Keep my number</b><small>Port it - keeps working the whole time</small></span>
           <span class="np-tag free">Free</span>
         </div>
       </div>
@@ -382,19 +383,19 @@
   <div class="wrap">
     <div class="step-copy">
       <div class="step-tag"><span class="num">2</span><h2>Create extensions <span class="step-opt">Optional</span></h2></div>
-      <p>Extensions are how callers reach the right place — &ldquo;press 1 for Sales, 2 for Support&rdquo; — or dial a person directly. Each one rings wherever you point it.</p>
+      <p>Extensions are how callers reach the right place - &ldquo;press 1 for Sales, 2 for Support&rdquo; - or dial a person directly. Each one rings wherever you point it.</p>
       <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>One per department or person — Sales, Support, or 101 for Bob.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>One per department or person - Sales, Support, or 101 for Bob.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Each has its own greeting, hours, ring order, and voicemail.</span></li>
       </ul>
-      <div class="step-note"><strong>Just starting?</strong> Skip extensions entirely — your number rings straight to your cell. Add a menu the day you need one.</div>
+      <div class="step-note"><strong>Just starting?</strong> Skip extensions entirely - your number rings straight to your cell. Add a menu the day you need one.</div>
     </div>
     <div class="visual">
       <div class="il reveal">
         <div class="il-cap">Caller hears your menu</div>
         <div class="menu-greet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"></path><path d="M16 8a5 5 0 0 1 0 8"></path></svg><p>&ldquo;Thanks for calling Reyes Plumbing…&rdquo;</p></div>
         <div class="mrow"><span class="mkey">1</span><b>Sales</b><span class="marrow"></span><span class="mdest">Bob&rsquo;s mobile</span></div>
-        <div class="mrow"><span class="mkey">2</span><b>Support</b><span class="marrow"></span><span class="mdest">AI service</span></div>
+        <div class="mrow"><span class="mkey">2</span><b>Support</b><span class="marrow"></span><a href="learn/bring-your-own-ai.html" class="mdest ai" style="text-decoration:none;">AI service</a></div>
         <div class="mrow"><span class="mkey">101</span><b>Bob</b><span class="marrow"></span><span class="mdest">Bob&rsquo;s mobile</span></div>
       </div>
     </div>
@@ -406,10 +407,10 @@
   <div class="wrap">
     <div class="step-copy">
       <div class="step-tag"><span class="num">3</span><h2>Forward calls</h2></div>
-      <p>Ring one phone, several people, or a mix — in order, all at once, or on a schedule. Your personal number always stays private.</p>
+      <p>Ring one phone, several people, or a mix - in order, all at once, or on a schedule. Your personal number always stays private.</p>
       <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Just you</b> — your mobile, the app, or a desk phone.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Your business</b> — teammates, contractors, call centers, and AI, each with its own schedule.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Just you</b> - your mobile, the app, or a desk phone.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Your business</b> - teammates, contractors, call centers, and AI, each with its own schedule.</span></li>
       </ul>
     </div>
     <div class="visual">
@@ -431,7 +432,7 @@
   <div class="wrap">
     <div class="step-copy">
       <div class="step-tag"><span class="num">4</span><h2>Get voicemails</h2></div>
-      <p>Every missed call is recorded, transcribed, and summarized by AI — then sent where you'll actually see it.</p>
+      <p>Every missed call is recorded, transcribed, and summarized by AI - then sent where you'll actually see it.</p>
       <ul class="step-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Audio, full transcript, and a short summary in AnyPhone or by email.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Pushed straight to email and Slack so the right person follows up fast.</span></li>
@@ -446,7 +447,7 @@
               <span><span class="sc-hn">New voicemail</span><span class="sc-hs">(415) 555-0182 · 0:24</span></span>
               <span class="sc-badge">Summary</span>
             </div>
-            <div class="sc-sum"><b>Water heater is leaking</b> — wants a callback this afternoon for an emergency visit.</div>
+            <div class="sc-sum"><b>Water heater is leaking</b> - wants a callback this afternoon for an emergency visit.</div>
             <div class="sc-wave"><i style="height:40%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:35%"></i><i style="height:65%"></i><i style="height:95%"></i><i style="height:45%"></i><i style="height:75%"></i><i style="height:30%"></i><i style="height:60%"></i></div>
             <div class="sc-chips">
               <span class="sc-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>Email</span>
@@ -464,7 +465,7 @@
   <div class="wrap">
     <div class="step-copy">
       <div class="step-tag"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><h2>SMS &amp; WhatsApp <span class="step-opt">Extra</span></h2></div>
-      <p>Customers message your business number and every conversation lands in one shared inbox — the history stays with the company, not one person's phone.</p>
+      <p>Customers message your business number and every conversation lands in one shared inbox - the history stays with the company, not one person's phone.</p>
       <ul class="step-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Any teammate can reply from the shared inbox.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>When someone leaves, the conversations don't leave with them.</span></li>
@@ -477,7 +478,7 @@
           <span><b>Shared inbox</b><span>(212) 555-5225 · SMS &amp; WhatsApp</span></span>
         </div>
         <div class="bub them"><span class="who">Dana M.</span>Hi! Can someone come look at a slow drain tomorrow?</div>
-        <div class="bub us"><span class="who">You · Reyes Plumbing</span>Absolutely — we have 9am or 1pm open. Which works?</div>
+        <div class="bub us"><span class="who">You · Reyes Plumbing</span>Absolutely - we have 9am or 1pm open. Which works?</div>
         <div class="bub them"><span class="who">Dana M.</span>1pm is perfect, thanks!</div>
         <div class="inbox-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 3-5 6-5s6 2 6 5"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M15.5 20c0-2.6 2-4 4.5-4"></path></svg>3 teammates can reply<span class="who-row"><span class="av">B</span><span class="av">M</span><span class="av">+1</span></span></div>
       </div>
@@ -495,6 +496,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Point Sales at a lead-qualifier, Support at an answer bot, Scheduling at a booking agent.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Switch providers without ever changing your number or extensions.</span></li>
       </ul>
+      <div class="step-note"><strong>Bring your own AI.</strong> AnyPhone includes AI transcripts, summaries, and greetings - and lets you route calls to the answering service you choose. <a href="learn/bring-your-own-ai.html" style="color:var(--c);font-weight:800;">See how it works &rsaquo;</a></div>
     </div>
     <div class="visual">
       <div class="il reveal">
@@ -600,7 +602,7 @@
         <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/bring-your-own-ai.html">Bring your own AI</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
         <div class="foot-col"><h5>Phone systems for</h5><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
         <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>

@@ -1,0 +1,169 @@
+/* ============================================================
+   JOEL — SMS inbox: Apple-Messages calm redesign
+   ============================================================ */
+/* --- left list: single Filter control replaces always-on chips --- */
+.sms-filterrow{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.sms-count{font-size:.78rem;font-weight:600;color:var(--muted);}
+.sms-minebtn{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:.8rem;font-weight:600;color:var(--body);transition:border-color .12s,color .12s,background .12s;}
+.sms-minebtn svg{width:14px;height:14px;}
+.sms-minebtn:hover{border-color:#dadce1;color:var(--ink);}
+.sms-minebtn.on{border-color:var(--blue);color:var(--blue);background:var(--blue-soft);}
+.sms-mine-n{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--blue);color:#fff;font-size:.68rem;font-weight:800;font-variant-numeric:tabular-nums;}
+.sms-minebtn.on .sms-mine-n{background:var(--blue);}
+.sms-filterdd{position:relative;display:flex;align-items:center;gap:4px;}
+.sms-filterbtn{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:.8rem;font-weight:600;color:var(--body);transition:border-color .12s,color .12s,background .12s;}
+.sms-filterbtn svg{width:14px;height:14px;}
+.sms-filterbtn:hover{border-color:#dadce1;color:var(--ink);}
+.sms-filterbtn.active{border-color:var(--blue);color:var(--blue);background:var(--blue-soft);}
+.sms-filterclear{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:var(--muted);}
+.sms-filterclear:hover{background:var(--bg-alt);color:var(--ink);}
+.sms-filterclear svg{width:13px;height:13px;}
+.sms-filtermenu{position:absolute;top:calc(100% + 7px);left:0;right:auto;width:212px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-pop);padding:6px;z-index:60;animation:pop .15s cubic-bezier(.2,0,0,1);}
+.sms-fm-h{font-size:.64rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:7px 9px 4px;}
+.sms-fm-opt{display:flex;align-items:center;gap:8px;width:100%;padding:8px 9px;border-radius:8px;text-align:left;font-size:.86rem;font-weight:500;color:var(--ink);transition:background .12s;}
+.sms-fm-opt:hover{background:var(--bg-alt);}
+.sms-fm-opt.on{font-weight:700;}
+.sms-fm-opt > span:first-child{flex:1;}
+.sms-fm-n{font-size:.72rem;font-weight:800;color:var(--muted);}
+.sms-fm-opt > svg{width:14px;height:14px;color:var(--blue);}
+
+/* --- single filter control --- */
+.sms-filterrow{display:flex;align-items:center;justify-content:flex-start;gap:6px;}
+.sms-filterbtn{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 11px;border:1px solid var(--line);border-radius:9px;background:#fff;font-size:.82rem;font-weight:600;color:var(--body);transition:border-color .12s,color .12s,background .12s;}
+.sms-filterbtn svg:first-child{width:14px;height:14px;}
+.sms-filterbtn:hover{border-color:#dadce1;color:var(--ink);}
+.sms-filterbtn.active{border-color:var(--blue);color:var(--blue);background:var(--blue-soft);}
+.sms-filterlbl{max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* --- conversation rows --- */
+.sms-convo{align-items:flex-start;gap:12px;padding:13px 12px 13px 14px;}
+.sms-convo.resolved:not(.sel){opacity:.55;}
+.sms-top{display:flex;align-items:center;gap:7px;min-width:0;width:100%;}
+.sms-unreaddot{width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.sms-name{font-weight:600;font-size:.94rem;color:var(--ink);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sms-convo.unread .sms-name{font-weight:800;}
+.sms-when{margin-left:auto;flex-shrink:0;font-size:.74rem;font-weight:500;color:var(--muted);opacity:.75;}
+.sms-prevrow{margin-top:2px;}
+.sms-preview{display:block;font-size:.86rem;color:var(--body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sms-convo.unread .sms-preview{color:var(--ink);font-weight:500;}
+
+/* meta line: number context + ownership */
+.sms-metaline{display:flex;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap;}
+.sms-metanum{display:inline-flex;align-items:center;gap:4px;font-size:.74rem;font-weight:600;color:var(--muted);}
+.sms-metanum svg{width:11px;height:11px;opacity:.7;}
+.sms-metaown{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:600;color:var(--muted);}
+.sms-metaown .team-dot{width:15px;height:15px;font-size:.5rem;background:var(--bg-alt);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line);}
+.sms-metaown.mine{color:var(--blue);}
+.sms-metaown.mine .team-dot{background:var(--blue);color:#fff;box-shadow:none;}
+.sms-metaown.none{color:#b0b4bd;}
+
+/* quieter New button (secondary action) */
+.sms-newbtn{border:none;background:transparent;color:var(--muted);font-weight:600;padding:0 8px;height:40px;}
+.sms-newbtn:hover{background:var(--bg-alt);color:var(--ink);}
+.sms-newbtn svg{width:15px;height:15px;}
+/* row hover actions (desktop triage) */
+.sms-convo{position:relative;}
+.sms-rowactions{position:absolute;top:10px;right:10px;display:none;gap:4px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:3px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.sms-convo:hover .sms-rowactions{display:flex;}
+.sms-convo:hover .sms-when{visibility:hidden;}
+.sms-rowact{width:28px;height:28px;border-radius:6px;display:grid;place-items:center;color:var(--muted);transition:background .12s,color .12s;}
+.sms-rowact:hover{background:var(--bg-alt);color:var(--blue);}
+.sms-rowact svg{width:15px;height:15px;}
+@media(hover:none){ .sms-rowactions{display:none!important;} }
+
+/* --- thread header: Call + Assign + Resolve, rest in overflow --- */
+.sms-thread-h{padding:14px 18px;gap:13px;}
+.sms-callbtn{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 13px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:.8rem;font-weight:700;color:var(--blue);transition:border-color .12s,background .12s;}
+.sms-callbtn svg{width:14px;height:14px;}
+.sms-callbtn:hover{border-color:#bcd3f6;background:var(--blue-soft);}
+.sms-more{position:relative;}
+.sms-more .sms-iconbtn.on{background:var(--bg-alt);color:var(--ink);}
+.sms-moremenu{position:absolute;top:calc(100% + 6px);right:0;width:208px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-pop);padding:6px;z-index:40;animation:pop .15s cubic-bezier(.2,0,0,1);}
+.sms-moremenu button{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border-radius:8px;text-align:left;font-size:.86rem;font-weight:500;color:var(--ink);transition:background .12s;}
+.sms-moremenu button:hover{background:var(--bg-alt);}
+.sms-moremenu button svg{width:15px;height:15px;color:var(--muted);}
+.sms-moremenu button.danger{color:var(--red);}
+.sms-moremenu button.danger svg{color:var(--red);}
+.sms-moremenu button.danger:hover{background:var(--red-soft);}
+.sms-moredv{height:1px;background:var(--line);margin:5px 4px;}
+
+/* --- header fit: keep the contact name + number on two tidy lines, never wrap to many --- */
+.sms-thread{container-type:inline-size;}
+.sms-thread-h{flex-wrap:nowrap;}
+.sth-id{flex:1 1 auto;min-width:0;}
+.sth-id .sth-num{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sms-hacts{flex:0 0 auto;}
+.sms-btn-lbl{display:inline;}
+/* when the conversation pane is narrow (e.g. docked beside the list), collapse
+   the Call/Resolve labels to icons so the buttons stop squeezing the name */
+@container (max-width:540px){
+  .sms-thread-h .sms-callbtn,
+  .sms-thread-h .sms-resolvebtn{padding:0;width:32px;justify-content:center;}
+  .sms-thread-h .sms-callbtn .sms-btn-lbl,
+  .sms-thread-h .sms-resolvebtn .sms-btn-lbl,
+  .sms-thread-h .sms-resolved-pill .sms-btn-lbl{display:none;}
+  .sms-thread-h .sms-resolved-pill{padding-left:10px;}
+  .sms-thread-h .sms-assignbtn{max-width:108px;}
+  .sms-thread-h .sms-assignbtn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+}
+
+/* --- thread body: more breathing room between messages --- */
+.sms-thread-body{padding:22px 22px 12px;}
+.msg-line{margin-bottom:13px;}
+.sms-thread-body .bubble{padding:10px 14px;}
+.msg-day{margin:10px 0 18px;}
+
+/* --- composer: lightweight, iMessage-like; tools are quiet icons --- */
+.sms-compose-wrap .sms-toolbar{gap:4px;padding:8px 14px 0;}
+.sms-toolbtn{height:30px;padding:0 9px;border-color:transparent;background:transparent;color:var(--muted);font-weight:600;}
+.sms-toolbtn:hover:not(:disabled){background:var(--bg-alt);border-color:transparent;color:var(--ink);}
+.sms-toolbtn.on{background:var(--blue-soft);border-color:transparent;color:var(--blue);}
+.sms-compose-wrap .sms-compose{padding:9px 14px 6px;}
+.msg-input{border-radius:21px;background:var(--bg-alt);border-color:transparent;}
+.msg-input:focus{background:#fff;}
+
+/* --- internal note bar: slim, collapsed --- */
+.sms-notebar.no-note .sms-notetoggle .sms-note-expand{color:var(--blue);}
+
+/* --- conversation compliance history (read-only audit record) --- */
+.cl-overlay{position:fixed;inset:0;background:rgba(20,22,28,.42);display:flex;justify-content:flex-end;z-index:120;animation:qsfade .15s ease;}
+.cl-panel{width:min(480px,100%);height:100%;background:#fff;display:flex;flex-direction:column;box-shadow:-12px 0 40px rgba(0,0,0,.16);animation:cl-slide .22s cubic-bezier(.2,0,0,1);}
+@keyframes cl-slide{from{transform:translateX(24px);opacity:.4;}to{transform:translateX(0);opacity:1;}}
+.cl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line);}
+.cl-head-t{display:flex;align-items:center;gap:12px;min-width:0;}
+.cl-lock{width:38px;height:38px;border-radius:11px;background:var(--ink);color:#fff;display:grid;place-items:center;flex-shrink:0;}
+.cl-lock svg{width:17px;height:17px;}
+.cl-head-t b{display:block;font-size:1rem;font-weight:800;color:var(--ink);}
+.cl-head-t span{display:block;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:1px;}
+.cl-x{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:var(--muted);flex-shrink:0;}
+.cl-x:hover{background:var(--bg-alt);color:var(--ink);}
+.cl-x svg{width:16px;height:16px;}
+.cl-meta{display:flex;gap:8px;padding:14px 20px;border-bottom:1px solid var(--line-soft);flex-wrap:wrap;}
+.cl-meta-r{flex:1;min-width:90px;}
+.cl-meta-r span{display:block;font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);}
+.cl-meta-r b{display:block;font-size:.84rem;color:var(--ink);margin-top:3px;}
+.cl-bar{display:flex;gap:8px;align-items:flex-start;padding:11px 20px;background:var(--bg-alt);font-size:.78rem;line-height:1.45;color:var(--muted);}
+.cl-bar svg{width:14px;height:14px;flex-shrink:0;margin-top:1px;}
+.cl-body{flex:1;overflow-y:auto;padding:8px 20px 16px;}
+.cl-ev{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line-soft);position:relative;}
+.cl-ev::before{content:"";position:absolute;left:15px;top:38px;bottom:-1px;width:2px;background:var(--line-soft);}
+.cl-ev:last-child{border-bottom:none;}
+.cl-ev:last-child::before{display:none;}
+.cl-ev-ic{width:32px;height:32px;border-radius:50%;background:var(--bg-alt);color:var(--muted);display:grid;place-items:center;flex-shrink:0;z-index:1;}
+.cl-ev-ic svg{width:15px;height:15px;}
+.cl-ev.consent .cl-ev-ic,.cl-ev.resolved .cl-ev-ic{background:var(--green-soft);color:#0f8f53;}
+.cl-ev.assign .cl-ev-ic,.cl-ev.note .cl-ev-ic{background:var(--blue-soft);color:var(--blue);}
+.cl-ev.in .cl-ev-ic{background:#eceef3;color:var(--body);}
+.cl-ev-main{flex:1;min-width:0;}
+.cl-ev-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.cl-ev-top b{font-size:.88rem;font-weight:700;color:var(--ink);}
+.cl-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:20px;background:var(--bg-alt);color:var(--muted);}
+.cl-badge.ok{background:var(--green-soft);color:#0f8f53;}
+.cl-badge.warn{background:var(--amber-soft);color:#7a5600;}
+.cl-badge.muted{background:var(--bg-alt);color:var(--muted);}
+.cl-ev-text{font-size:.84rem;color:var(--body);line-height:1.5;margin-top:3px;word-break:break-word;}
+.cl-ev-foot{font-size:.74rem;color:var(--muted);margin-top:5px;font-variant-numeric:tabular-nums;}
+.cl-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.cl-foot-note{font-size:.76rem;color:var(--muted);}
+.cl-foot-acts{display:flex;gap:8px;}
+.cl-foot-acts .btn svg{width:14px;height:14px;}

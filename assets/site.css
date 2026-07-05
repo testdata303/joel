@@ -119,7 +119,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
    Rows NEVER wrap to two lines. (Born on the homepage hero.)
    Function → color (use these EVERYWHERE the function appears):
      fn-number  Get a number          blue   #2454D6 / #EEF4FF
-     fn-ext     Extensions            slate  #64748B / #F1F5F9
+     fn-ext     Extensions            yellow #57534E on #FEFCE8
      fn-fwd     Forward calls         purple #611F69 / #F6F2FF
      fn-vm      Voicemails            green  #15803D / #ECFDF3
      fn-sms     Texts / WhatsApp      cyan   #0369A1 / #ECFEFF
@@ -134,7 +134,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
    ============================================================ */
 :root{
   --fn-number:#2454D6;--fn-number-soft:#EEF4FF;--fn-number-line:#C8D8FF;
-  --fn-ext:#64748B;--fn-ext-soft:#F1F5F9;--fn-ext-line:#E2E8F0;
+  --fn-ext:#57534E;--fn-ext-soft:#FEFCE8;--fn-ext-line:#EFE9CE;
   --fn-fwd:#611F69;--fn-fwd-soft:#F6F2FF;--fn-fwd-line:#E2D6F3;
   --fn-vm:#15803D;--fn-vm-soft:#ECFDF3;--fn-vm-line:#BBF7D0;
   --fn-sms:#0369A1;--fn-sms-soft:#ECFEFF;--fn-sms-line:#BAE6FD;

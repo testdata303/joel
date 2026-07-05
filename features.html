@@ -218,6 +218,196 @@
 .aiband .fitem .ft svg{color:#6D28D9;}
 .moat-source .ms-l{color:#374151;}
 </style>
+<style id="fviz">
+  /* ===== full-width feature rows ===== */
+  .frow-ink{--c:var(--ink);--cs:#F3F4F6;--cl:#E5E7EB;}
+  .frow-sec{padding:8px 0 0;}
+  .frow-sec-single{padding:0;}
+  .frow-sec-single .frow{border-top:none;padding-top:24px;}
+  .frow{display:grid;grid-template-columns:1.02fr 1fr;gap:64px;align-items:center;padding:60px 0;border-top:1px solid var(--line);}
+  .frow-sec .frow:first-child{border-top:none;}
+  .frow.rev .frow-viz{order:-1;}
+  .frow-hd{display:flex;align-items:center;gap:15px;margin-bottom:18px;}
+  .frow-ic{width:52px;height:52px;border-radius:14px;background:var(--cs);color:var(--c);display:grid;place-items:center;flex:none;}
+  .frow-ic svg{width:26px;height:26px;}
+  .frow-ink .frow-ic{background:var(--ink);color:#fff;}
+  .frow-hd-t{display:flex;flex-direction:column;gap:2px;}
+  .frow-num{font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--c);opacity:.9;}
+  .frow-ink .frow-num{color:var(--muted);}
+  .frow h3{font-size:clamp(1.5rem,2.7vw,2.05rem);font-weight:800;letter-spacing:-.028em;line-height:1.04;color:var(--ink);}
+  .frow-desc{color:var(--body);font-size:1.06rem;line-height:1.6;margin-bottom:22px;max-width:48ch;}
+  .fchips{display:flex;flex-wrap:wrap;gap:9px;}
+  .fchip{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 14px 7px 10px;}
+  .fchip svg{width:14px;height:14px;color:var(--c);flex:none;}
+  .frow-ink .fchip svg{color:var(--ink);}
+  .fchip.pro{border-color:var(--cl);background:var(--cs);}
+  .fchip.pro em{font-style:normal;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--c);border-left:1px solid var(--cl);padding-left:7px;margin-left:1px;}
+  .frow-ink .fchip.pro em{color:var(--body);}
+
+  /* ===== shared visual frame ===== */
+  .frow-viz{min-width:0;}
+  .fviz{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 30px 66px -38px rgba(15,17,21,.5);}
+  .fviz-cap{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--c);margin-bottom:14px;}
+  .frow-ink .fviz-cap{color:var(--muted);}
+
+  /* number picker */
+  .vpk-row{display:flex;align-items:center;gap:13px;padding:14px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:10px;}
+  .vpk-row:last-child{margin-bottom:0;}
+  .vpk-row.sel{border-color:var(--c);background:var(--cs);}
+  .vpk-tick{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex:none;color:#fff;}
+  .vpk-row.sel .vpk-tick{background:var(--c);border-color:var(--c);}
+  .vpk-tick svg{width:13px;height:13px;opacity:0;}
+  .vpk-row.sel .vpk-tick svg{opacity:1;}
+  .vpk-t{flex:1;min-width:0;}
+  .vpk-t b{display:block;font-size:1.02rem;font-weight:800;color:var(--ink);}
+  .vpk-t small{display:block;color:var(--muted);font-size:.82rem;font-weight:500;margin-top:1px;}
+  .vpk-tag{font-size:.64rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:100px;flex:none;}
+  .vpk-tag.sel{color:var(--c);background:#fff;}
+  .vpk-tag.free{color:var(--fn-vm);background:var(--fn-vm-soft);}
+
+  /* greeting player */
+  .vgr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .vgr-voice{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;color:var(--c);background:var(--cs);padding:5px 11px;border-radius:100px;}
+  .vgr-voice svg{width:14px;height:14px;}
+  .vplay{width:52px;height:52px;border-radius:50%;background:var(--c);color:#fff;border:none;cursor:pointer;display:grid;place-items:center;flex:none;box-shadow:0 10px 22px -10px var(--c);}
+  .frow-ink .vplay{background:var(--ink);box-shadow:none;}
+  .vplay svg{width:22px;height:22px;margin-left:2px;}
+  .vgr-player{display:flex;align-items:center;gap:15px;padding:6px 4px 4px;}
+  .vgr-player.sm .vplay{width:42px;height:42px;}
+  .vgr-player.sm .vplay svg{width:18px;height:18px;}
+  .vwave{display:flex;align-items:center;gap:3px;flex:1;height:40px;min-width:0;overflow:hidden;}
+  .vwave i{flex:1;min-width:2px;border-radius:2px;background:var(--c);opacity:.32;}
+  .frow-ink .vwave i{background:var(--ink);}
+  .vgr-time{font-size:.82rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;flex:none;}
+  .vgr-text{position:relative;margin-top:14px;padding:15px 16px;background:var(--bg-alt);border:1px solid var(--line);border-radius:13px;font-size:.92rem;line-height:1.55;color:var(--ink);font-weight:500;}
+  .vgr-edit{float:right;margin:-2px -3px 3px 10px;font-size:.58rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--c);background:var(--cs);padding:3px 8px;border-radius:6px;}
+
+  /* routing menu */
+  .vmn-greet{display:flex;gap:10px;align-items:center;background:var(--cs);border-radius:12px;padding:12px 14px;margin-bottom:14px;}
+  .vmn-greet svg{width:18px;height:18px;color:var(--c);flex:none;}
+  .vmn-greet span{font-size:.9rem;font-weight:600;color:var(--ink);font-style:italic;}
+  .vmn-row{display:flex;align-items:center;gap:13px;padding:12px 2px;border-top:1px solid var(--line-soft);}
+  .vmn-row b{font-weight:800;font-size:.98rem;color:var(--ink);flex:none;}
+  .vmn-key{width:38px;height:38px;border-radius:11px;background:var(--bg-alt);border:1px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:.98rem;color:var(--ink);flex:none;}
+  .vmn-arrow{flex:1;height:2px;background:var(--line);position:relative;min-width:14px;}
+  .vmn-arrow::after{content:'';position:absolute;right:0;top:-3px;border-left:6px solid var(--line);border-top:4px solid transparent;border-bottom:4px solid transparent;}
+  .vmn-dest{font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:100px;flex:none;}
+  .vmn-dest.num{color:var(--fn-number);background:var(--fn-number-soft);}
+  .vmn-dest.ai{color:var(--fn-ai);background:var(--fn-ai-soft);}
+  .vmn-dest.desk{color:var(--fn-fwd);background:var(--fn-fwd-soft);}
+
+  /* inbox */
+  .vib-top{display:flex;align-items:center;justify-content:space-between;padding:2px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+  .vib-top b{font-size:1rem;font-weight:800;color:var(--ink);}
+  .vib-tabs{display:flex;gap:5px;}
+  .vib-tabs span{font-size:.72rem;font-weight:700;color:var(--muted);padding:5px 11px;border-radius:100px;}
+  .vib-tabs span.on{color:var(--c);background:var(--cs);}
+  .vib-row{display:flex;align-items:center;gap:12px;padding:13px 6px;border-radius:12px;}
+  .vib-row.unread{background:var(--cs);}
+  .vib-av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:#fff;flex:none;}
+  .vib-av.a1{background:#6366F1;}.vib-av.a2{background:#0EA5A0;}.vib-av.a3{background:#E4655E;}
+  .vib-c{flex:1;min-width:0;}
+  .vib-h{display:flex;align-items:center;gap:8px;}
+  .vib-h b{font-size:.94rem;font-weight:800;color:var(--ink);}
+  .vib-ch{font-size:.58rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:5px;}
+  .vib-ch.sms{color:var(--fn-sms);background:var(--fn-sms-soft);}
+  .vib-ch.wa{color:#0B7A44;background:#DCFCE7;}
+  .vib-c p{font-size:.85rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .vib-time{font-size:.74rem;color:var(--muted);font-weight:600;flex:none;}
+
+  /* voicemail */
+  .vvm-hd{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .vvm-who b{display:block;font-size:1rem;font-weight:800;color:var(--ink);}
+  .vvm-who small{display:block;font-size:.8rem;color:var(--muted);font-weight:500;margin-top:1px;}
+  .vvm-sum{margin-top:14px;padding:13px 15px;background:var(--cs);border-radius:12px;}
+  .vvm-tr{margin-top:10px;padding:0 3px;}
+  .vvm-l{display:block;font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:4px;}
+  .vvm-l.muted{color:var(--muted);}
+  .vvm-sum p{font-size:.9rem;line-height:1.5;color:var(--ink);font-weight:500;}
+  .vvm-tr p{font-size:.86rem;line-height:1.5;color:var(--muted);font-style:italic;}
+
+  /* notifications */
+  .vnt{display:flex;flex-direction:column;gap:12px;background:transparent;border:none;box-shadow:none;padding:0;}
+  .vnt-toast{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:0 16px 34px -24px rgba(15,17,21,.5);}
+  .vnt-ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none;color:#fff;}
+  .vnt-ic svg{width:20px;height:20px;}
+  .vnt-ic.email{background:#2454D6;}.vnt-ic.slack{background:#4A154B;}.vnt-ic.hook{background:var(--ink);}
+  .vnt-b{flex:1;min-width:0;}
+  .vnt-b b{font-size:.9rem;font-weight:800;color:var(--ink);}
+  .vnt-b p{font-size:.83rem;color:var(--muted);margin-top:1px;}
+  .vnt-t{font-size:.72rem;color:var(--muted);font-weight:600;flex:none;}
+
+  /* dashboard */
+  .vdb{display:grid;grid-template-columns:140px 1fr;gap:0;padding:0;overflow:hidden;}
+  .vdb-side{background:var(--bg-alt);border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:3px;min-width:0;}
+  .vdb-logo{font-family:var(--display,inherit);font-weight:800;font-size:.95rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px;}
+  .vdb-logo b{font-weight:800;}
+  .vdb-nav{font-size:.8rem;font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px;}
+  .vdb-nav.on{color:var(--ink);background:#fff;font-weight:800;box-shadow:0 2px 8px -4px rgba(15,17,21,.3);}
+  .vdb-main{padding:20px;min-width:0;}
+  .vdb-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .vdb-h b{font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .vdb-live{font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--fn-vm);background:var(--fn-vm-soft);padding:3px 8px;border-radius:100px;}
+  .vdb-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;min-width:0;}
+  .vdb-card{border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-width:0;}
+  .vdb-card small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;}
+  .vdb-card b{font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.1;}
+  .vdb-list{display:flex;flex-direction:column;gap:8px;}
+  .vdb-li{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.83rem;font-weight:600;color:var(--ink);padding:9px 12px;border:1px solid var(--line);border-radius:11px;min-width:0;}
+  .vdb-li span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .vdb-pill{font-size:.68rem;font-weight:800;padding:3px 9px;border-radius:100px;white-space:nowrap;flex:none;}
+  .vdb-pill.num{color:var(--fn-number);background:var(--fn-number-soft);}
+  .vdb-pill.ai{color:var(--fn-ai);background:var(--fn-ai-soft);}
+  .vdb-pill.desk{color:var(--fn-fwd);background:var(--fn-fwd-soft);}
+
+  /* ===== device band ===== */
+  .fdev{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;}
+  .fdev-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .fdev-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.028em;line-height:1.08;margin-bottom:14px;}
+  .fdev-head p{color:var(--body);font-size:1.08rem;line-height:1.55;}
+  .fdev-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:860px;margin:0 auto;}
+  .fdev-item{background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px 30px 30px;text-align:center;box-shadow:0 26px 60px -40px rgba(15,17,21,.5);}
+  .fdev-viz{display:flex;justify-content:center;align-items:flex-end;min-height:330px;margin-bottom:22px;}
+  .fdev-cap b{display:block;font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .fdev-cap span{display:block;font-size:.88rem;color:var(--muted);font-weight:500;margin-top:3px;}
+  .fdev-item .deskphone{border:none;box-shadow:none;padding:0;}
+
+  /* phone frame */
+  .vphone{width:236px;border-radius:38px;padding:9px;background:#16161a;box-shadow:0 30px 60px -30px rgba(15,17,21,.7);}
+  .vphone-scr{background:#fff;border-radius:30px;overflow:hidden;position:relative;}
+  .vph-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px 6px;font-size:.72rem;font-weight:700;color:var(--ink);}
+  .vph-dots{width:52px;height:16px;background:#16161a;border-radius:0 0 12px 12px;position:absolute;top:0;left:50%;transform:translateX(-50%);}
+  .vph-hd{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 12px;border-bottom:1px solid var(--line);}
+  .vph-hd b{font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .vph-badge{font-size:.6rem;font-weight:700;color:var(--fn-number);background:var(--fn-number-soft);padding:3px 8px;border-radius:100px;}
+  .vph-call{display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid var(--line-soft);text-align:left;}
+  .vph-av{width:36px;height:36px;border-radius:50%;background:#E2E6EE;color:#5A6172;display:grid;place-items:center;font-size:.74rem;font-weight:800;flex:none;}
+  .vph-c{flex:1;min-width:0;}
+  .vph-c b{display:block;font-size:.9rem;font-weight:700;color:var(--ink);}
+  .vph-c small{display:block;font-size:.74rem;color:var(--muted);margin-top:1px;}
+  .vph-call.miss .vph-c b,.vph-call.miss .vph-c small{color:#DC2626;}
+  .vph-ic{color:#DC2626;}.vph-ic svg{width:16px;height:16px;}
+  .vph-tab{display:flex;justify-content:space-between;padding:11px 16px 15px;}
+  .vph-tab span{font-size:.66rem;font-weight:700;color:var(--muted);}
+  .vph-tab span.on{color:var(--fn-number);}
+
+  /* ===== integrations ===== */
+  .fintg{padding:72px 0 36px;border-top:1px solid var(--line);}
+  .fintg-head{max-width:760px;margin:0 auto 34px;text-align:center;}
+  .fintg-head .frow-ic{margin:0 auto 14px;}
+  .fintg-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.028em;}
+  .fintg-head .frow-num{display:block;margin-bottom:2px;}
+  .fintg-head p{color:var(--body);font-size:1.06rem;line-height:1.55;margin-top:10px;}
+  .fintg .ig-grid{max-width:1000px;margin:0 auto;}
+  .fintg > .wrap > p{max-width:760px;margin:20px auto 0;text-align:center;}
+
+  @media(max-width:900px){
+    .frow{grid-template-columns:1fr;gap:30px;padding:46px 0;}
+    .frow.rev .frow-viz{order:0;}
+    .fdev-grid,.vdb{grid-template-columns:1fr;}
+    .vdb-side{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--line);}
+  }
+</style>
 </head>
 <body>
 
@@ -251,57 +441,107 @@
   </div>
 </header>
 
-<section class="fg reveal">
+<section class="frow-sec"><div class="wrap">
+<article class="frow fn-number reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div class="frow-hd-t"><span class="frow-num">01</span><h3>Business numbers</h3></div></div>
+      <p class="frow-desc">Choose a local or toll-free number, or move the number your customers already know - for free. It keeps working the whole time the transfer completes.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Local numbers</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Toll-free numbers</span></span><span class="fchip pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Port your number</span><em>Free</em></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Additional numbers</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Vanity numbers</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>SMS registration status</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vpk">
+  <div class="fviz-cap">Choose your number</div>
+  <div class="vpk-row sel"><span class="vpk-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="vpk-t"><b>(212) 555-0182</b><small>New York · Local</small></span><span class="vpk-tag sel">Selected</span></div>
+  <div class="vpk-row"><span class="vpk-tick"></span><span class="vpk-t"><b>(800) 244-7746</b><small>Toll-free</small></span></div>
+  <div class="vpk-row"><span class="vpk-tick"></span><span class="vpk-t"><b>Keep my number</b><small>Port it - keeps working the whole time</small></span><span class="vpk-tag free">Free</span></div>
+</div></div>
+  </article>
+<article class="frow fn-ai rev reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg></span><div class="frow-hd-t"><span class="frow-num">02</span><h3>AI-generated greetings</h3></div></div>
+      <p class="frow-desc">Write what callers hear during business hours, after hours, holidays, and voicemail. Generate the audio with an AI voice, preview it, and edit the text anytime.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Main greeting</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>After-hours greeting</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Holiday & away dates</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>AI voice generation</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Preview & listen</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Editable greeting text</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vgr">
+  <div class="vgr-top"><span class="fviz-cap" style="margin:0">Main greeting</span><span class="vgr-voice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> AI voice · Ava</span></div>
+  <div class="vgr-player"><button class="vplay" aria-label="Play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></button><div class="vwave"><i style="height:8px"></i><i style="height:26px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:30px"></i><i style="height:34px"></i><i style="height:27px"></i><i style="height:19px"></i><i style="height:24px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:26px"></i><i style="height:17px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:31px"></i><i style="height:23px"></i><i style="height:28px"></i><i style="height:28px"></i><i style="height:33px"></i><i style="height:29px"></i><i style="height:21px"></i><i style="height:23px"></i><i style="height:34px"></i></div><span class="vgr-time">0:12</span></div>
+  <div class="vgr-text">&ldquo;Thanks for calling Reyes Plumbing. For sales press 1, for support press 2, or stay on the line and we&rsquo;ll be right with you.&rdquo;<span class="vgr-edit">Editable</span></div>
+</div></div>
+  </article>
+<article class="frow fn-fwd reveal" id="extensions">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><div class="frow-hd-t"><span class="frow-num">03</span><h3>Extensions & call forwarding</h3></div></div>
+      <p class="frow-desc">Create extensions for Sales, Support, Billing, or individual people - then route each one to mobiles, the AnyPhone app, a compatible desk phone, a call center, or an AI answering service.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Department & personal extensions</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Forward to any phone number</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Forward to the AnyPhone app</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Compatible SIP phones</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Route to a call center or AI</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ring one-by-one or all at once</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Call Announce</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Per-destination schedules</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vmn">
+  <div class="fviz-cap">Caller hears your menu</div>
+  <div class="vmn-greet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg><span>&ldquo;Thanks for calling Reyes Plumbing…&rdquo;</span></div>
+  <div class="vmn-row"><span class="vmn-key">1</span><b>Sales</b><span class="vmn-arrow"></span><span class="vmn-dest num">Bob&rsquo;s mobile</span></div>
+  <div class="vmn-row"><span class="vmn-key">2</span><b>Support</b><span class="vmn-arrow"></span><a href="learn/bring-your-own-ai.html" class="vmn-dest ai" style="text-decoration:none;">AI service</a></div>
+  <div class="vmn-row"><span class="vmn-key">101</span><b>Bob</b><span class="vmn-arrow"></span><span class="vmn-dest desk">Desk phone</span></div>
+</div></div>
+  </article>
+<article class="frow fn-sms rev reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="frow-hd-t"><span class="frow-num">04</span><h3>SMS & WhatsApp inbox</h3></div></div>
+      <p class="frow-desc">Let customers message your business number by SMS or WhatsApp. Every conversation lands in one shared inbox - the history stays with the company, not one person&rsquo;s phone.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Shared SMS & WhatsApp inbox</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>See the number & channel</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Reply over the same channel</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>New outbound texts</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Archive & resolve</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Block numbers</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Lightweight contacts</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Internal notes</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vib">
+  <div class="vib-top"><b>Shared inbox</b><div class="vib-tabs"><span class="on">All</span><span>SMS</span><span>WhatsApp</span></div></div>
+  <div class="vib-row unread"><span class="vib-av a1">RM</span><div class="vib-c"><div class="vib-h"><b>Rosa Martinez</b><span class="vib-ch sms">SMS</span></div><p>Hi! Are you free Thursday morning to look at a leak?</p></div><span class="vib-time">2m</span></div>
+  <div class="vib-row"><span class="vib-av a2">JT</span><div class="vib-c"><div class="vib-h"><b>James Tan</b><span class="vib-ch wa">WhatsApp</span></div><p>Thanks - see you at 9. 👍</p></div><span class="vib-time">1h</span></div>
+  <div class="vib-row"><span class="vib-av a3">LP</span><div class="vib-c"><div class="vib-h"><b>Lena Powell</b><span class="vib-ch sms">SMS</span></div><p>Can you send the invoice to this number?</p></div><span class="vib-time">3h</span></div>
+</div></div>
+  </article>
+<article class="frow fn-vm reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="frow-hd-t"><span class="frow-num">05</span><h3>Calls & voicemail</h3></div></div>
+      <p class="frow-desc">See every call, missed call, and voicemail in one place. Read the transcript or AI summary when listening isn&rsquo;t convenient, and call back with your business caller ID.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Call history</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Missed calls</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Voicemail to email</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>MP3 recording attached</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Transcripts</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>AI summaries</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Search</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Outbound calling</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Your business caller ID</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vvm">
+  <div class="vvm-hd"><span class="vib-av a2">MC</span><div class="vvm-who"><b>Miguel Cruz</b><small>(415) 555-0147 · 0:34 · Missed call</small></div></div>
+  <div class="vgr-player sm"><button class="vplay" aria-label="Play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></button><div class="vwave"><i style="height:8px"></i><i style="height:26px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:30px"></i><i style="height:34px"></i><i style="height:27px"></i><i style="height:19px"></i><i style="height:24px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:26px"></i><i style="height:17px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:31px"></i><i style="height:23px"></i><i style="height:28px"></i><i style="height:28px"></i><i style="height:33px"></i></div></div>
+  <div class="vvm-sum"><span class="vvm-l">AI summary</span><p>Miguel wants a quote for a water-heater install and asks for a callback before Friday.</p></div>
+  <div class="vvm-tr"><span class="vvm-l muted">Transcript</span><p>&ldquo;Hey, this is Miguel - I saw your listing and wanted to get a quote for a new water heater…&rdquo;</p></div>
+</div></div>
+  </article>
+<article class="frow frow-ink rev reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><div class="frow-hd-t"><span class="frow-num">06</span><h3>Notifications, your way</h3></div></div>
+      <p class="frow-desc">Choose who gets missed-call, voicemail, and text alerts - by email, SMS, Slack, WhatsApp, or webhook - with separate settings for each extension.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Email alerts</span></span><span class="fchip pro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Slack notifications</span><em>Grow & Max</em></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Text alerts</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Voicemail alerts by extension</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Missed-call alerts by extension</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>SMS inbox notifications</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vnt">
+  <div class="vnt-toast"><span class="vnt-ic email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></span><div class="vnt-b"><b>Email · Missed call</b><p>Missed call from (415) 555-0147</p></div><span class="vnt-t">now</span></div>
+  <div class="vnt-toast"><span class="vnt-ic slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v8M10 21v-8M3 10h8M21 14h-8"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span><div class="vnt-b"><b>Slack · #front-desk</b><p>New voicemail from Miguel Cruz</p></div><span class="vnt-t">now</span></div>
+  <div class="vnt-toast"><span class="vnt-ic hook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></span><div class="vnt-b"><b>Webhook · 200 OK</b><p>call.missed → your CRM</p></div><span class="vnt-t">now</span></div>
+</div></div>
+  </article>
+</div></section>
+<section class="fdev">
   <div class="wrap">
-    <div class="fg-top"><h2><span class="n">1</span>Business numbers</h2><p>Choose a local or toll-free number, or move your existing number to AnyPhone for free. It keeps working while the transfer completes.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Local numbers</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Toll-free numbers</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Port your number</b><span class="tag">Free</span></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Additional numbers</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Vanity numbers</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>SMS registration status</b></div></div>
+    <div class="fdev-head"><span class="jx-kicker">Answer anywhere</span><h2>The app in your pocket. The desk phone on your desk.</h2><p>Take business calls on the AnyPhone mobile app, on the web, or on a compatible SIP desk phone - same number, same extensions, wherever you are.</p></div>
+    <div class="fdev-grid">
+      <div class="fdev-item"><div class="fdev-viz"><div class="vphone"><div class="vphone-scr">
+   <div class="vph-top"><span>9:41</span><span class="vph-dots"></span></div>
+   <div class="vph-hd"><b>Recents</b><span class="vph-badge">Reyes Plumbing</span></div>
+   <div class="vph-call miss"><span class="vph-av">MC</span><div class="vph-c"><b>Miguel Cruz</b><small>Missed · 2m ago</small></div><span class="vph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></div>
+   <div class="vph-call"><span class="vph-av">RM</span><div class="vph-c"><b>Rosa Martinez</b><small>Incoming · 1h ago</small></div></div>
+   <div class="vph-call"><span class="vph-av">JT</span><div class="vph-c"><b>James Tan</b><small>Outgoing · 3h ago</small></div></div>
+   <div class="vph-tab"><span class="on">Calls</span><span>Inbox</span><span>Keypad</span><span>Settings</span></div>
+ </div></div></div><div class="fdev-cap"><b>AnyPhone mobile app</b><span>iOS & Android · calls, texts, voicemail</span></div></div>
+      <div class="fdev-item"><div class="fdev-viz"><div class="deskphone">
+   <div class="dp-art"><div class="dp-handset"></div><div class="dp-cord"></div><div class="dp-base"></div><div class="dp-screen">ANYPHONE</div><div class="dp-keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+   <span class="dp-eth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg> Plug into ethernet - no server</span>
+ </div></div><div class="fdev-cap"><b>Compatible SIP desk phones</b><span>Bring your own - plug in and register</span></div></div>
+    </div>
   </div>
 </section>
-
-
-<section class="fg reveal">
+<section class="fintg" id="integrations">
   <div class="wrap">
-    <div class="fg-top"><h2><span class="n">2</span>Greetings</h2><p>Write what callers hear during business hours, after hours, holidays, and voicemail. Generate the audio with an AI voice, preview it, and edit it anytime.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Main greeting</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>After-hours greeting</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Holiday & away dates</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>AI voice generation</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Preview & listen</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Editable greeting text</b></div></div>
-  </div>
-</section>
-
-
-<section class="fg reveal">
-  <div class="wrap">
-    <div class="fg-top"><h2><span class="n">3</span>Extensions & call forwarding</h2><p>Create extensions for Sales, Support, Billing, Scheduling, or individual people, then route each one to mobiles, the AnyPhone app, compatible desk phones, contractors, call centers, or AI answering services.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Department and personal extensions</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Forward to any phone number</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Forward to the AnyPhone app</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Connect any compatible SIP phone</b><span class="tag">Grow & Max</span></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Route to a call center or AI service</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Call Announce</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Ring one by one</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Ring all at once</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Per-destination schedules</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Ring duration per destination</b></div></div>
-  </div>
-</section>
-
-
-<section class="fg reveal">
-  <div class="wrap">
-    <div class="fg-top"><h2><span class="n">4</span>SMS and WhatsApp inbox</h2><p>Let customers message your business number by SMS or WhatsApp. Every conversation lands in one shared inbox.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Shared SMS and WhatsApp inbox</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>See the number and channel used</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Reply over the same channel</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>New outbound texts</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Archive & resolve</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Block numbers</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Lightweight contacts</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Internal notes</b></div></div>
-  </div>
-</section>
-
-
-<section class="fg reveal">
-  <div class="wrap">
-    <div class="fg-top"><h2><span class="n">5</span>Calls & voicemail</h2><p>See every call, missed call, and voicemail in one place. Read the transcript or AI summary when listening is not convenient.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Call history</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Missed calls</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Voicemail to email</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>MP3 recording attached</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Transcripts</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>AI summaries</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Search</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Outbound calling</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Your business caller ID</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Call from the app or desk phone</b></div></div>
-  </div>
-</section>
-
-
-<section class="fg reveal">
-  <div class="wrap">
-    <div class="fg-top"><h2><span class="n">6</span>Notifications</h2><p>Choose who receives missed-call, voicemail, and text alerts by email, SMS, Slack, WhatsApp, or webhook, with separate settings for each extension.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Email alerts</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Slack notifications</b><span class="tag">Grow & Max</span></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Text alerts</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Voicemail alerts by extension</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Missed-call alerts by extension</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>SMS inbox notifications</b></div></div>
-  </div>
-</section>
-
-
-<section class="jx-alt fg reveal" id="integrations">
-  <div class="wrap">
-    <div class="fg-top"><h2><span class="n">7</span>Integrations</h2><p>Connect AnyPhone to the tools you already use. Send alerts to Slack, add WhatsApp to your business number, trigger webhooks, and route any extension to the AI answering service you choose.</p></div>
+    <div class="fintg-head "><span class="frow-ic fn-ai" style="--c:var(--fn-ai);--cs:var(--fn-ai-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><div><span class="frow-num" style="--c:var(--fn-ai);color:var(--fn-ai)">07</span><h2>Integrations</h2></div><p>Connect AnyPhone to the tools you already use. Send alerts to Slack, add WhatsApp to your number, trigger webhooks, and route any extension to the AI answering service you choose. <a href="learn/bring-your-own-ai.html" style="color:var(--fn-ai);font-weight:700;text-decoration:none;">See how bring-your-own AI works &rsaquo;</a></p></div>
     <div class="ig-grid">
       <div class="ig reveal"><div class="lg slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v8M10 21v-8M3 10h8M21 14h-8"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></div><div class="ig-bd"><h3>Slack<span class="tag on">Connected</span></h3><p>Post new texts, missed calls, and voicemails into the channels your team already watches.</p></div></div>
       <div class="ig reveal"><div class="lg wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.2A8 8 0 1 1 8 20.4z"/></svg></div><div class="ig-bd"><h3>WhatsApp</h3><p>Let customers message your business number on WhatsApp. Conversations appear alongside SMS in the shared AnyPhone inbox.</p></div></div>
@@ -310,17 +550,23 @@
       <div class="ig reveal"><div class="lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></div><div class="ig-bd"><h3>Webhooks<span class="tag">Max</span></h3><p>Send call and message events to your own software in real time.</p></div></div>
       <div class="ig reveal"><div class="lg zap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="ig-bd"><h3>Zapier<span class="tag soon">Coming soon</span></h3><p>Connect AnyPhone to other apps with no-code automations.</p></div></div>
     </div>
-    <p style="margin-top:18px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;">AnyPhone provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the AI service that fits your business.</p>
+    <p style="margin-top:18px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;">AnyPhone provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the AI service that fits your business. <a href="learn/bring-your-own-ai.html" style="color:var(--fn-ai);font-weight:700;">Learn about bring-your-own AI &rsaquo;</a></p>
   </div>
 </section>
-
-
-<section class="fg reveal">
-  <div class="wrap">
-    <div class="fg-top"><h2><span class="n">8</span>One place to manage the system</h2><p>Manage numbers, greetings, extensions, routing, voicemail delivery, users, permissions, and integrations from one clear dashboard.</p></div>
-    <div class="fl"><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Unlimited users on every plan</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Phone System overview</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Numbers</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Greetings</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Call forwarding</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Voicemail delivery</b></div><div class="fi"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><b>Advanced settings</b></div></div>
+<section class="frow-sec-single"><div class="wrap"><article class="frow frow-ink reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6"/></svg></span><div class="frow-hd-t"><span class="frow-num">08</span><h3>One place to manage it all</h3></div></div>
+      <p class="frow-desc">Manage numbers, greetings, extensions, routing, voicemail delivery, users, permissions, and integrations from one clear dashboard - with unlimited users on every plan.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Unlimited users on every plan</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Phone system overview</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Numbers</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Greetings</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Call forwarding</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Voicemail delivery</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Advanced settings</span></span></div>
+    </div>
+    <div class="frow-viz"><div class="fviz vdb">
+  <div class="vdb-side"><span class="vdb-logo">Any<b>Phone</b></span><span class="vdb-nav on">Overview</span><span class="vdb-nav">Numbers</span><span class="vdb-nav">Greetings</span><span class="vdb-nav">Forwarding</span><span class="vdb-nav">Users</span><span class="vdb-nav">Integrations</span></div>
+  <div class="vdb-main"><div class="vdb-h"><b>Phone system</b><span class="vdb-live">Live</span></div>
+    <div class="vdb-cards"><div class="vdb-card"><small>Numbers</small><b>2</b></div><div class="vdb-card"><small>Extensions</small><b>5</b></div><div class="vdb-card"><small>Users</small><b>&infin;</b></div></div>
+    <div class="vdb-list"><div class="vdb-li"><span>Ext 1 · Sales</span><span class="vdb-pill num">Mobile</span></div><div class="vdb-li"><span>Ext 2 · Support</span><span class="vdb-pill ai">AI service</span></div><div class="vdb-li"><span>Ext 101 · Bob</span><span class="vdb-pill desk">Desk phone</span></div></div>
   </div>
-</section>
+</div></div>
+  </article></div></section>
 
 <section class="closer" id="start">
   <div class="wrap">
@@ -345,7 +591,7 @@
         <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/bring-your-own-ai.html">Bring your own AI</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
         <div class="foot-col"><h5>Phone systems for</h5><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/law-firms.html">Small law firms</a></div>
         <div class="foot-col"><h5>Compare / Learn</h5><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div>
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
