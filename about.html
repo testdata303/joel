@@ -41,10 +41,10 @@
   }
 
   /* ============ HERO ============ */
-  header.about-hero{padding:100px 0 100px;background:var(--paper);border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
-  .about-hero::before{content:"";position:absolute;top:-80px;right:-100px;width:520px;height:520px;background:radial-gradient(circle,rgba(37,64,238,.06),transparent 70%);pointer-events:none;}
+  header.about-hero{padding:100px 0 100px;background:linear-gradient(180deg,#F1F4FF 0%,#F6F8FF 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .about-hero::before{content:"";position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(37,64,238,.12),transparent 70%);pointer-events:none;}
   .hero-grid{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start;position:relative;}
-  .hero-eyebrow{display:block;font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:9px;}
+  .hero-eyebrow{display:inline-flex;align-items:center;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2240C2;background:#eef1ff;border-radius:999px;padding:8px 16px;margin-top:2px;}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:18px;}.hero-eyebrow{padding-top:0;}}
   .hero-main h1{
     font-size:clamp(2.1rem,4.4vw,3.5rem);
@@ -67,11 +67,15 @@
 
   .ch-grid{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start;}
   .ch-label{
-    font-size:.74rem;font-weight:800;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--muted);
-    padding-top:9px;line-height:1.5;
+    justify-self:start;
+    display:inline-flex;align-items:center;
+    font-size:.72rem;font-weight:800;letter-spacing:.05em;
+    text-transform:uppercase;color:#2240C2;background:#eef1ff;
+    border-radius:999px;padding:8px 16px;margin-top:2px;line-height:1.4;
+    white-space:nowrap;
   }
-  @media(max-width:860px){.ch-grid{grid-template-columns:1fr;gap:18px;}.ch-label{padding-top:0;}}
+  .alt .ch-label{background:#e4e9ff;}
+  @media(max-width:860px){.ch-grid{grid-template-columns:1fr;gap:18px;}.ch-label{margin-top:0;}}
   .ch-body{max-width:660px;}
   .ch-body h2{
     font-size:clamp(1.5rem,2.5vw,1.95rem);
@@ -260,7 +264,7 @@
     <div class="hero-grid">
       <span class="hero-eyebrow reveal">About AnyPhone</span>
       <div class="hero-main">
-        <h1>We work for small businesses. <em>We always will.</em></h1>
+        <h1>We <em>only</em> work for small businesses.</h1>
         <div class="opening reveal">
           <p>Every phone company in this industry starts with small businesses and leaves them the moment bigger money calls. We built AnyPhone so that never happens to you.</p>
         </div>
@@ -275,7 +279,8 @@
     <div class="ch-grid">
       <div class="ch-label reveal">The team</div>
       <div class="ch-body">
-        <p class="reveal">Built by founders who have served hundreds of thousands of small businesses. We know what actually matters when resources are limited.</p>
+        <span class="pull reveal">Built by founders who have served hundreds of thousands of small businesses.</span>
+        <p class="reveal">We know what actually matters when resources are limited — because we have spent our careers on this side of the table.</p>
       </div>
     </div>
   </div>
