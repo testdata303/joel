@@ -1,0 +1,52 @@
+/* ============================================================
+   APP CANON — carries the Numberline logo direction into the
+   product: hard-edged geometry, ink-first actions, the
+   rule-with-ticks motif, Figtree 900 caps.
+   Loaded LAST of all app stylesheets, so it wins.
+   ============================================================ */
+
+/* Ink is the primary action. Blue is demoted to links + focus. */
+.btn-primary{background:var(--ink);color:#fff;}
+.btn-primary:hover{background:#33333A;}
+
+/* Play buttons are inverted, not solid black — white face, ink glyph */
+.greet-play,.greet-playbtn,.cflow-playbtn,.psys-play,.esys-play{background:#fff;color:var(--ink);border:1px solid var(--line);}
+.greet-play:hover,.greet-playbtn:hover,.cflow-playbtn:hover,.psys-play:hover,.esys-play:hover{background:var(--bg-alt);border-color:#d7d9e0;}
+.greet-playbtn.on,.cflow-playbtn.playing,.psys-play.on,.esys-play.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.cc-sug-go{background:var(--ink);color:#fff;}
+.greet-play,.cflow-playbtn,.psys-play,.esys-play{box-shadow:none;}
+
+/* Service tiles keep their own brand colour — never flat black.
+   Glyphs sit at a bright value so they read as colour, not ink. */
+.app-logo.slack{background:#f3ecfb;color:#7a4ddb;}
+.app-logo.wa{background:var(--wa-soft);color:#12a05a;}
+.app-logo.ink{background:#ece9fb;color:#7a4ddb;}
+.app-logo.ai{background:var(--blue-soft);color:var(--blue);}
+.app-logo.orange{background:#fff1e8;color:#e8590c;}
+.alert-ic.slack,.ns-row-ic.slack,.wa-notif-ic.slack,.qx-dismissed-ic.slack,
+.vm-cardic.slack,.cap-ic.slack{background:#f3eefb;color:#7a4ddb;}
+.alert-ic.wa,.wa-flow-ic.wa,.wa-dest-ic.wa,.qx-dismissed-ic.wa{background:var(--wa-soft);color:#12a05a;}
+
+/* Workspace mark: squared like the logo tile, but keeps its colour */
+.switcher-mark{border-radius:2px;}
+.switcher-mark.blue{background:var(--blue-soft);color:var(--blue);}
+.switcher-mark.green{background:var(--green-soft);color:var(--green);}
+
+/* Squared affordances — circles reserved for person avatars */
+.icon-btn,.greet-play,.psys-play,.esys-play,.cflow-playbtn,
+.id-av.guess,.id-av.unknown,.cc-sug-go{border-radius:3px;}
+
+/* Active nav: flat ground + an ink tick on the leading edge */
+.sb-item{position:relative;}
+.sb-item.active{background:var(--bg-alt);color:var(--ink);font-weight:800;}
+.sb-item.active::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:15px;background:var(--ink);}
+.sb-item.sub.active{color:var(--ink);}
+
+/* Every small label: Figtree 900 caps at the wordmark's tracking */
+.sb-group,.ss-grouph,.dlabel,.srail-label,.d-sec-h,.hist-h,.notes-h,.cprof-h,
+.focus-rec-h,.fwd-label,.num-flow-h,.act-day,.tl-day,.msg-day,.avp-ts-h,
+.lv-headrow span,.nrow-k,.num-field > span,.gsched-lbl,.away-date > span,
+.phead .ext-kicker,.fwd-menu-h,.afp-h,.switcher-menu-h,.smap-colhead,.vmap-tier,.set-grouph{
+  font-family:var(--display);font-weight:900;letter-spacing:.11em;
+}
+.cflow-tier{font-family:var(--display);font-weight:900;letter-spacing:.11em;color:var(--ink);text-transform:uppercase;font-size:.7rem;}

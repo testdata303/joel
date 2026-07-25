@@ -1,5 +1,5 @@
 /* ============================================================
-   AnyPhone app - UI primitives + icon set  (exports to window)
+   Numberline app - UI primitives + icon set  (exports to window)
    ============================================================ */
 const { useState, useRef, useEffect, useCallback } = React;
 

@@ -17,7 +17,7 @@
 
 /* ---- a stage card ---- */
 .psys-card{
-  background:#fff; border:1px solid var(--line); border-radius:20px;
+  background:#fff; border:1px solid var(--line); border-radius:4px;
   padding:22px 24px; box-shadow:var(--shadow-card);
 }
 .psys-cardhead{ display:flex; align-items:center; gap:14px; }
@@ -43,7 +43,7 @@
   display:inline-flex; align-items:center; gap:6px; flex-shrink:0;
   font-size:.78rem; font-weight:600; color:var(--body);
   background:var(--bg-alt); border:1px solid var(--line);
-  padding:5px 11px; border-radius:20px; white-space:nowrap;
+  padding:5px 11px; border-radius:4px; white-space:nowrap;
 }
 .psys-direct svg{ width:13px; height:13px; color:var(--muted); flex-shrink:0; }
 
@@ -73,7 +73,7 @@
 }
 .psys-hours{ display:inline-flex; align-items:center; gap:7px; font-size:.84rem; font-weight:600; color:var(--body); }
 .psys-hours svg{ width:15px; height:15px; color:var(--muted); flex-shrink:0; }
-.psys-textbtn{ font-size:.86rem; font-weight:700; color:var(--blue); padding:5px 11px; border-radius:8px; transition:background .14s; }
+.psys-textbtn{ font-size:.86rem; font-weight:700; color:var(--blue); padding:5px 11px; border-radius:3px; transition:background .14s; }
 .psys-textbtn:hover{ background:var(--blue-soft); }
 
 /* ---- ③ extensions → people ---- */
@@ -83,7 +83,7 @@
 .psys-ext{
   display:flex; align-items:center; gap:13px; width:100%; text-align:left;
   padding:12px 4px; cursor:pointer;
-  transition:background .14s; border-radius:10px;
+  transition:background .14s; border-radius:3px;
 }
 .psys-ext:hover{ background:var(--bg-alt); }
 .psys-digit{
@@ -110,7 +110,7 @@
 /* ---- expanded forwarding panel ---- */
 .psys-fwd{
   margin:0 4px 14px 47px; padding:4px 14px 10px;
-  background:var(--bg-alt); border-radius:14px;
+  background:var(--bg-alt); border-radius:4px;
 }
 .psys-fwd-off{ font-size:.84rem; color:var(--muted); line-height:1.5; padding:10px 2px 6px; text-wrap:pretty; }
 .psys-fwdrow{
@@ -120,7 +120,7 @@
 .psys-fwdrow:first-child{ border-top:none; }
 .psys-fwd-off + .psys-fwdrow{ border-top:1px solid var(--line-soft); }
 .psys-fwdic{
-  width:28px; height:28px; flex-shrink:0; border-radius:8px;
+  width:28px; height:28px; flex-shrink:0; border-radius:3px;
   background:#fff; border:1px solid var(--line); color:var(--body);
   display:grid; place-items:center;
 }
@@ -142,7 +142,7 @@
 }
 .psys-addinput{
   flex:1; min-width:0; height:34px; padding:0 11px;
-  background:#fff; border:1px solid var(--line); border-radius:9px;
+  background:#fff; border:1px solid var(--line); border-radius:3px;
   font-size:.86rem; color:var(--ink);
 }
 .psys-addinput.num{ flex:1.2; font-variant-numeric:tabular-nums; }

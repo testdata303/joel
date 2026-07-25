@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>AnyPhone Features | Calls, Texts, Extensions, Slack and More</title>
-<meta name="description" content="Explore AnyPhone business phone features including calls, SMS, WhatsApp, voicemail, extensions, routing, Slack notifications, SIP phones, webhooks, and bring-your-own AI.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-<link rel="icon" href="favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="favicon-180.png?v=2">
+<title>Numberline Features | Calls, Texts, Extensions, Slack and More</title>
+<meta name="description" content="Explore Numberline business phone features including calls, SMS, WhatsApp, voicemail, extensions, routing, Slack notifications, SIP phones, webhooks, and bring-your-own AI.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+<link rel="icon" href="favicon.ico?v=3" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
 
@@ -20,7 +20,7 @@
   .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
   nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.72rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
+  .logo{font-size:1.72rem;}
   .nav-links{display:flex;align-items:center;gap:32px;}
   .nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
   .nav-links a:hover{color:var(--ink);}
@@ -28,13 +28,13 @@
   .nav-links a.active{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px;text-decoration-color:var(--blue);}
   .nav-cta{background:var(--accent);color:#fff!important;padding:11px 22px;border-radius:10px;font-weight:700!important;text-decoration:none;}
   .nav-cta:hover{background:var(--accent-dark);}
-  .btn{padding:15px 30px;border-radius:11px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-block;} .btn .btn-guillemet{margin-left:2px;}
-  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .btn{padding:15px 30px;border-radius:11px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-block;} .btn .btn-guillemet{font-weight:700;font-size:1.15em;position:relative;top:.03em;margin-left:-.06em;}
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);color:#fff;transform:translateY(-1px);}
   .btn-secondary{background:#fff;color:var(--ink);border:1.5px solid #D6D4CD;} .btn-secondary:hover{border-color:var(--ink);}
   .btn-white{background:#fff;color:var(--blue);border:1px solid #fff;} .btn-white:hover{transform:translateY(-1px);background:#f3f5ff;}
   section{padding:84px 0;}
   .sec-head{max-width:680px;margin-bottom:48px;} .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
-  .kicker{display:inline-block;color:var(--blue);font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;}
+  .kicker{display:inline-block;color:var(--cta-dark);background:var(--cta-soft);font-weight:800;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:16px;padding:6px 13px;border-radius:8px;}
   .sec-head h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.06;margin-bottom:16px;}
   .sec-head p{color:var(--body);font-size:1.12rem;line-height:1.55;}
   .closer{background:var(--blue);color:#fff;text-align:center;}
@@ -44,7 +44,7 @@
 
   /* HERO */
   header{text-align:center;padding:78px 0 64px;border-bottom:1px solid var(--line);}
-  .eyebrow{display:inline-block;color:var(--blue);font-weight:800;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;}
+  .eyebrow{display:inline-block;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
   h1{font-size:clamp(2.5rem,5.6vw,4.3rem);font-weight:800;letter-spacing:-.03em;line-height:1.03;margin-bottom:22px;}
   .lede{font-size:clamp(1.08rem,2vw,1.35rem);color:var(--body);max-width:46ch;margin:0 auto 36px;line-height:1.5;}
   .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
@@ -157,11 +157,11 @@
 
   /* === standard closer (matches homepage) === */
   .closer{background:#fff;color:var(--ink);text-align:center;padding:48px 0 56px;}
-  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:56px 40px;color:var(--ink);box-shadow:none;}
+  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;color:var(--ink);}
   .closer-card h2{font-weight:800;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
   .closer-card .btn-primary{background:var(--accent)!important;color:#fff!important;border:1px solid var(--accent)!important;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark)!important;transform:translateY(-1px);}
+  .closer-card .btn-primary:hover{background:var(--accent-dark)!important;color:#fff!important;transform:translateY(-1px);}
 
   
   /* === features content toolkit === */
@@ -169,7 +169,7 @@
   .jx-hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px;max-width:18ch;margin-left:auto;margin-right:auto;}
   .jx-hero p{font-size:clamp(1.08rem,2vw,1.35rem);color:var(--body);max-width:48ch;margin:0 auto 32px;line-height:1.5;}
   .jx-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .jx-kicker{display:inline-block;color:var(--blue);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;}
+  .jx-kicker{display:inline-block;color:var(--cta-dark);background:var(--cta-soft);font-size:.8rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:16px;padding:7px 13px;border-radius:8px;}
   .fg{padding:64px 0;border-bottom:1px solid var(--line);}
   .fg:last-of-type{border-bottom:none;}
   .fg-top{max-width:760px;margin-bottom:30px;}
@@ -178,7 +178,7 @@
   .fg-top p{color:var(--body);font-size:1rem;line-height:1.5;}
   .fl{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
   .fi{display:flex;align-items:center;gap:11px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;}
-  .fi .ck{width:22px;height:22px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex-shrink:0;}
+  .fi .ck{width:22px;height:22px;color:#131316;display:grid;place-items:center;flex-shrink:0;}
   .fi .ck svg{width:13px;height:13px;}
   .fi b{font-size:.94rem;font-weight:700;letter-spacing:-.01em;line-height:1.25;}
   .fi .tag{margin-left:auto;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:3px 7px;border-radius:5px;white-space:nowrap;}
@@ -213,7 +213,7 @@
 .fvert .fv-ic{background:#F3F4F6;color:#374151;}
 .moat-dest .md-ic{background:#F3F4F6;color:#374151;}
 .fg-top h2 .n{background:#F3F4F6;color:#374151;}
-.fi .ck{background:#F3F4F6;color:#374151;}
+.fi .ck{background:none;color:#131316;}
 .fitem .ft svg{color:#374151;}
 .aiband .fitem .ft svg{color:#6D28D9;}
 .moat-source .ms-l{color:#374151;}
@@ -238,10 +238,10 @@
   .frow-desc{color:var(--body);font-size:1.06rem;line-height:1.6;margin-bottom:22px;max-width:48ch;}
   .fchips{display:flex;flex-wrap:wrap;gap:9px;}
   .fchip{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 14px 7px 10px;}
-  .fchip svg{width:14px;height:14px;color:var(--c);flex:none;}
+  .fchip svg{width:14px;height:14px;color:var(--cta);flex:none;}
   .frow-ink .fchip svg{color:var(--ink);}
-  .fchip.pro{border-color:var(--cl);background:var(--cs);}
-  .fchip.pro em{font-style:normal;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--c);border-left:1px solid var(--cl);padding-left:7px;margin-left:1px;}
+  .fchip.pro{border-color:var(--line);background:#F1F1F0;}
+  .fchip.pro em{font-style:normal;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--line);padding-left:7px;margin-left:1px;}
   .frow-ink .fchip.pro em{color:var(--body);}
 
   /* ===== shared visual frame ===== */
@@ -263,7 +263,7 @@
   .vpk-t small{display:block;color:var(--muted);font-size:.82rem;font-weight:500;margin-top:1px;}
   .vpk-tag{font-size:.64rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:100px;flex:none;}
   .vpk-tag.sel{color:var(--c);background:#fff;}
-  .vpk-tag.free{color:var(--fn-vm);background:var(--fn-vm-soft);}
+  .vpk-tag.free{color:var(--ink);background:#fff;}
 
   /* greeting player */
   .vgr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -292,9 +292,9 @@
   .vmn-arrow{flex:1;height:2px;background:var(--line);position:relative;min-width:14px;}
   .vmn-arrow::after{content:'';position:absolute;right:0;top:-3px;border-left:6px solid var(--line);border-top:4px solid transparent;border-bottom:4px solid transparent;}
   .vmn-dest{font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:100px;flex:none;}
-  .vmn-dest.num{color:var(--fn-number);background:var(--fn-number-soft);}
-  .vmn-dest.ai{color:var(--fn-ai);background:var(--fn-ai-soft);}
-  .vmn-dest.desk{color:var(--fn-fwd);background:var(--fn-fwd-soft);}
+  .vmn-dest.num{color:var(--ink);background:#fff;}
+  .vmn-dest.ai{color:var(--ink);background:#fff;}
+  .vmn-dest.desk{color:var(--ink);background:#fff;}
 
   /* inbox */
   .vib-top{display:flex;align-items:center;justify-content:space-between;padding:2px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:6px;}
@@ -310,7 +310,7 @@
   .vib-h{display:flex;align-items:center;gap:8px;}
   .vib-h b{font-size:.94rem;font-weight:800;color:var(--ink);}
   .vib-ch{font-size:.58rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:5px;}
-  .vib-ch.sms{color:var(--fn-sms);background:var(--fn-sms-soft);}
+  .vib-ch.sms{color:var(--ink);background:#fff;}
   .vib-ch.wa{color:#0B7A44;background:#DCFCE7;}
   .vib-c p{font-size:.85rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .vib-time{font-size:.74rem;color:var(--muted);font-weight:600;flex:none;}
@@ -347,7 +347,7 @@
   .vdb-main{padding:20px;min-width:0;}
   .vdb-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
   .vdb-h b{font-size:1.05rem;font-weight:800;color:var(--ink);}
-  .vdb-live{font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--fn-vm);background:var(--fn-vm-soft);padding:3px 8px;border-radius:100px;}
+  .vdb-live{font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:#fff;padding:3px 8px;border-radius:100px;}
   .vdb-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;min-width:0;}
   .vdb-card{border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-width:0;}
   .vdb-card small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;}
@@ -356,9 +356,9 @@
   .vdb-li{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.83rem;font-weight:600;color:var(--ink);padding:9px 12px;border:1px solid var(--line);border-radius:11px;min-width:0;}
   .vdb-li span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .vdb-pill{font-size:.68rem;font-weight:800;padding:3px 9px;border-radius:100px;white-space:nowrap;flex:none;}
-  .vdb-pill.num{color:var(--fn-number);background:var(--fn-number-soft);}
-  .vdb-pill.ai{color:var(--fn-ai);background:var(--fn-ai-soft);}
-  .vdb-pill.desk{color:var(--fn-fwd);background:var(--fn-fwd-soft);}
+  .vdb-pill.num{color:var(--ink);background:#fff;}
+  .vdb-pill.ai{color:var(--ink);background:#fff;}
+  .vdb-pill.desk{color:var(--ink);background:#fff;}
 
   /* ===== device band ===== */
   .fdev{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;}
@@ -379,7 +379,7 @@
   .vph-dots{width:52px;height:16px;background:#16161a;border-radius:0 0 12px 12px;position:absolute;top:0;left:50%;transform:translateX(-50%);}
   .vph-hd{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 12px;border-bottom:1px solid var(--line);}
   .vph-hd b{font-size:1.05rem;font-weight:800;color:var(--ink);}
-  .vph-badge{font-size:.6rem;font-weight:700;color:var(--fn-number);background:var(--fn-number-soft);padding:3px 8px;border-radius:100px;}
+  .vph-badge{font-size:.6rem;font-weight:700;color:var(--ink);background:#fff;padding:3px 8px;border-radius:100px;}
   .vph-call{display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid var(--line-soft);text-align:left;}
   .vph-av{width:36px;height:36px;border-radius:50%;background:#E2E6EE;color:#5A6172;display:grid;place-items:center;font-size:.74rem;font-weight:800;flex:none;}
   .vph-c{flex:1;min-width:0;}
@@ -389,14 +389,14 @@
   .vph-ic{color:#DC2626;}.vph-ic svg{width:16px;height:16px;}
   .vph-tab{display:flex;justify-content:space-between;padding:11px 16px 15px;}
   .vph-tab span{font-size:.66rem;font-weight:700;color:var(--muted);}
-  .vph-tab span.on{color:var(--fn-number);}
+  .vph-tab span.on{color:var(--ink);}
 
   /* ===== integrations ===== */
   .fintg{padding:72px 0 36px;border-top:1px solid var(--line);}
   .fintg-head{max-width:760px;margin:0 auto 34px;text-align:center;}
   .fintg-head .frow-ic{margin:0 auto 14px;}
   .fintg-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.028em;}
-  .fintg-head .frow-num{display:block;margin-bottom:2px;}
+  .fintg-head .frow-num{display:none;}
   .fintg-head p{color:var(--body);font-size:1.06rem;line-height:1.55;margin-top:10px;}
   .fintg .ig-grid{max-width:1000px;margin:0 auto;}
   .fintg > .wrap > p{max-width:760px;margin:20px auto 0;text-align:center;}
@@ -408,12 +408,61 @@
     .vdb-side{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--line);}
   }
 </style>
+<style id="convention-sweep">
+/* one convention: white tiles + thin border + black glyph; aqua only as accent chip */
+.lg,.lg.slack,.lg.wa,.lg.ink,.lg.zap,.lg.ai{background:#fff!important;border:1px solid #E7E3DA;color:var(--ink)!important;}
+.lg svg{color:var(--ink)!important;}
+.vnt-ic,.vnt-ic.email,.vnt-ic.slack,.vnt-ic.hook{background:#fff!important;border:1px solid #E7E3DA;color:var(--ink)!important;}
+.frow-ic{background:#fff!important;border:1px solid #E7E3DA;}
+.frow-ink .frow-ic{background:#fff!important;}
+.frow-num{display:none!important;}
+.frow-ic{color:#2D4ED8!important;}
+.frow-ic svg{color:#2D4ED8!important;}
+.fb-ic,.fvert .fv-ic,.moat-dest .md-ic{color:#2D4ED8!important;}
+.fb-ic svg,.fvert .fv-ic svg,.moat-dest .md-ic svg{color:#2D4ED8!important;}
+.fi .ck{background:#EEF3FF!important;color:#2D4ED8!important;}
+.fi .ck svg{color:#2D4ED8!important;}
+.fitem .ft svg{color:#2D4ED8!important;}
+.kicker,.jx-kicker,.moat-source .ms-l{color:#2D4ED8!important;}
+.fg-top h2 .n{color:#2D4ED8!important;background:#EEF3FF!important;}
+.ig .tag,.fi .tag{color:#2240C2!important;background:#EEF3FF!important;}
+.fintg-head .frow-ic svg{color:#2D4ED8!important;}
+/* product mockups keep the app's Signal Blue UI */
+.vplay{background:#2D4ED8!important;box-shadow:none!important;color:#fff!important;}
+.frow-ink .vplay{background:var(--ink)!important;box-shadow:none!important;color:#fff!important;}
+.vwave i{background:#2D4ED8!important;}
+.vpk-row.sel{border-color:#2D4ED8!important;background:#EEF3FF!important;}
+.vpk-row.sel .vpk-tick{background:#2D4ED8!important;border-color:#2D4ED8!important;}
+.vgr-voice{color:#2240C2!important;background:#EEF3FF!important;border:1px solid #D6E2FF;}
+.vib-row.unread,.vvm-sum{background:#EEF3FF!important;}
+.vib-tabs span.on{color:#2240C2!important;background:#EEF3FF!important;}
+.vib-av.a1{background:#6366F1!important;}.vib-av.a2{background:#0EA5A0!important;}.vib-av.a3{background:#E4655E!important;}
+.vvm-l{color:#2240C2!important;}
+.vgr-edit{background:#EEF3FF!important;border:1px solid #D6E2FF;color:#2240C2!important;}
+.vmn-greet{background:#EEF3FF!important;color:var(--ink)!important;}
+.ig .tag,.fi .tag{color:var(--ink)!important;background:#F1F1F0!important;}
+.ig .tag.on{color:var(--ink)!important;background:#A2FBEF!important;}
+.ig .tag.soon,.fi .tag.soon{color:var(--muted)!important;background:#F1F1F0!important;}
+.tag-soon{color:var(--muted)!important;background:#F1F1F0!important;}
+.kicker,.jx-kicker,.fg-top h2 .n,.moat-source .ms-l{color:var(--ink)!important;}
+.fg-top h2 .n{background:#F1F1F0!important;}
+.fb-ic,.fvert .fv-ic,.moat-dest .md-ic{background:#fff!important;border:1px solid #E7E3DA;}
+.dp-eth svg{color:#2D4ED8!important;}
+.byod-steps li::before{background:var(--ink)!important;}
+.closer{background:var(--ink)!important;}
+.btn-white{color:var(--ink)!important;}
+.nav-links a.active{text-decoration-color:var(--ink)!important;}
+.fchip,.fchip.pro{background:#F1F1F0!important;color:var(--ink)!important;}
+
+.dp-screen{background:#F1F1F0!important;}
+</style>
+<link rel="stylesheet" href="assets/canon.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
     <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -442,7 +491,7 @@
 </header>
 
 <section class="frow-sec"><div class="wrap">
-<article class="frow fn-number reveal">
+<article class="frow fn-number reveal" id="numbers">
     <div class="frow-copy">
       <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div class="frow-hd-t"><span class="frow-num">01</span><h3>Business numbers</h3></div></div>
       <p class="frow-desc">Choose a local or toll-free number, or move the number your customers already know - for free. It keeps working the whole time the transfer completes.</p>
@@ -470,8 +519,8 @@
 <article class="frow fn-fwd reveal" id="extensions">
     <div class="frow-copy">
       <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><div class="frow-hd-t"><span class="frow-num">03</span><h3>Extensions & call forwarding</h3></div></div>
-      <p class="frow-desc">Create extensions for Sales, Support, Billing, or individual people - then route each one to mobiles, the AnyPhone app, a compatible desk phone, a call center, or an AI answering service.</p>
-      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Department & personal extensions</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Forward to any phone number</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Forward to the AnyPhone app</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Compatible SIP phones</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Route to a call center or AI</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ring one-by-one or all at once</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Call Announce</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Per-destination schedules</span></span></div>
+      <p class="frow-desc">Create extensions for Sales, Support, Billing, or individual people - then route each one to mobiles, the Numberline app, a compatible desk phone, a call center, or an AI answering service.</p>
+      <div class="fchips"><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Department & personal extensions</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Forward to any phone number</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Forward to the Numberline app</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Compatible SIP phones</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Route to a call center or AI</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ring one-by-one or all at once</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Call Announce</span></span><span class="fchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Per-destination schedules</span></span></div>
     </div>
     <div class="frow-viz"><div class="fviz vmn">
   <div class="fviz-cap">Caller hears your menu</div>
@@ -481,7 +530,7 @@
   <div class="vmn-row"><span class="vmn-key">101</span><b>Bob</b><span class="vmn-arrow"></span><span class="vmn-dest desk">Desk phone</span></div>
 </div></div>
   </article>
-<article class="frow fn-sms rev reveal">
+<article class="frow fn-sms rev reveal" id="messaging">
     <div class="frow-copy">
       <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="frow-hd-t"><span class="frow-num">04</span><h3>SMS & WhatsApp inbox</h3></div></div>
       <p class="frow-desc">Let customers message your business number by SMS or WhatsApp. Every conversation lands in one shared inbox - the history stays with the company, not one person&rsquo;s phone.</p>
@@ -494,7 +543,7 @@
   <div class="vib-row"><span class="vib-av a3">LP</span><div class="vib-c"><div class="vib-h"><b>Lena Powell</b><span class="vib-ch sms">SMS</span></div><p>Can you send the invoice to this number?</p></div><span class="vib-time">3h</span></div>
 </div></div>
   </article>
-<article class="frow fn-vm reveal">
+<article class="frow fn-vm reveal" id="voicemail">
     <div class="frow-copy">
       <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="frow-hd-t"><span class="frow-num">05</span><h3>Calls & voicemail</h3></div></div>
       <p class="frow-desc">See every call, missed call, and voicemail in one place. Read the transcript or AI summary when listening isn&rsquo;t convenient, and call back with your business caller ID.</p>
@@ -507,7 +556,7 @@
   <div class="vvm-tr"><span class="vvm-l muted">Transcript</span><p>&ldquo;Hey, this is Miguel - I saw your listing and wanted to get a quote for a new water heater…&rdquo;</p></div>
 </div></div>
   </article>
-<article class="frow frow-ink rev reveal">
+<article class="frow frow-ink rev reveal" id="notifications">
     <div class="frow-copy">
       <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><div class="frow-hd-t"><span class="frow-num">06</span><h3>Notifications, your way</h3></div></div>
       <p class="frow-desc">Choose who gets missed-call, voicemail, and text alerts - by email, SMS, Slack, WhatsApp, or webhook - with separate settings for each extension.</p>
@@ -522,7 +571,7 @@
 </div></section>
 <section class="fdev">
   <div class="wrap">
-    <div class="fdev-head"><span class="jx-kicker">Answer anywhere</span><h2>The app in your pocket. The desk phone on your desk.</h2><p>Take business calls on the AnyPhone mobile app, on the web, or on a compatible SIP desk phone - same number, same extensions, wherever you are.</p></div>
+    <div class="fdev-head"><span class="jx-kicker">Answer anywhere</span><h2>The app in your pocket. The desk phone on your desk.</h2><p>Take business calls on the Numberline mobile app, on the web, or on a compatible SIP desk phone - same number, same extensions, wherever you are.</p></div>
     <div class="fdev-grid">
       <div class="fdev-item"><div class="fdev-viz"><div class="vphone"><div class="vphone-scr">
    <div class="vph-top"><span>9:41</span><span class="vph-dots"></span></div>
@@ -531,9 +580,9 @@
    <div class="vph-call"><span class="vph-av">RM</span><div class="vph-c"><b>Rosa Martinez</b><small>Incoming · 1h ago</small></div></div>
    <div class="vph-call"><span class="vph-av">JT</span><div class="vph-c"><b>James Tan</b><small>Outgoing · 3h ago</small></div></div>
    <div class="vph-tab"><span class="on">Calls</span><span>Inbox</span><span>Keypad</span><span>Settings</span></div>
- </div></div></div><div class="fdev-cap"><b>AnyPhone mobile app</b><span>iOS & Android · calls, texts, voicemail</span></div></div>
+ </div></div></div><div class="fdev-cap"><b>Numberline mobile app</b><span>iOS & Android · calls, texts, voicemail</span></div></div>
       <div class="fdev-item"><div class="fdev-viz"><div class="deskphone">
-   <div class="dp-art"><div class="dp-handset"></div><div class="dp-cord"></div><div class="dp-base"></div><div class="dp-screen">ANYPHONE</div><div class="dp-keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+   <div class="dp-art"><div class="dp-handset"></div><div class="dp-cord"></div><div class="dp-base"></div><div class="dp-screen">NUMBERLINE</div><div class="dp-keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
    <span class="dp-eth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg> Plug into ethernet - no server</span>
  </div></div><div class="fdev-cap"><b>Compatible SIP desk phones</b><span>Bring your own - plug in and register</span></div></div>
     </div>
@@ -541,16 +590,16 @@
 </section>
 <section class="fintg" id="integrations">
   <div class="wrap">
-    <div class="fintg-head "><span class="frow-ic fn-ai" style="--c:var(--fn-ai);--cs:var(--fn-ai-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><div><span class="frow-num" style="--c:var(--fn-ai);color:var(--fn-ai)">07</span><h2>Integrations</h2></div><p>Connect AnyPhone to the tools you already use. Send alerts to Slack, add WhatsApp to your number, trigger webhooks, and route any extension to the AI answering service you choose. <a href="learn/bring-your-own-ai.html" style="color:var(--fn-ai);font-weight:700;text-decoration:none;">See how bring-your-own AI works &rsaquo;</a></p></div>
+    <div class="fintg-head "><span class="frow-ic fn-ai" style="--c:var(--ink);--cs:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><div><span class="frow-num" style="--c:var(--ink);color:var(--ink)">07</span><h2>Integrations</h2></div><p>Connect Numberline to the tools you already use. Send alerts to Slack, add WhatsApp to your number, trigger webhooks, and route any extension to the AI answering service you choose. <a href="learn/bring-your-own-ai.html" style="color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap;">See how bring-your-own AI works &rsaquo;</a></p></div>
     <div class="ig-grid">
       <div class="ig reveal"><div class="lg slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v8M10 21v-8M3 10h8M21 14h-8"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></div><div class="ig-bd"><h3>Slack<span class="tag on">Connected</span></h3><p>Post new texts, missed calls, and voicemails into the channels your team already watches.</p></div></div>
-      <div class="ig reveal"><div class="lg wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.2A8 8 0 1 1 8 20.4z"/></svg></div><div class="ig-bd"><h3>WhatsApp</h3><p>Let customers message your business number on WhatsApp. Conversations appear alongside SMS in the shared AnyPhone inbox.</p></div></div>
+      <div class="ig reveal"><div class="lg wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.2A8 8 0 1 1 8 20.4z"/></svg></div><div class="ig-bd"><h3>WhatsApp</h3><p>Let customers message your business number on WhatsApp. Conversations appear alongside SMS in the shared Numberline inbox.</p></div></div>
       <div class="ig reveal"><div class="lg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><div class="ig-bd"><h3>Vapi<span class="tag">AI answering</span></h3><p>Connect a Vapi voice agent to any extension through SIP.</p></div></div>
       <div class="ig reveal"><div class="lg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="ig-bd"><h3>Bland AI<span class="tag">AI answering</span></h3><p>Route an extension to a Bland AI agent for answering, qualification, scheduling, or after-hours coverage.</p></div></div>
       <div class="ig reveal"><div class="lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></div><div class="ig-bd"><h3>Webhooks<span class="tag">Max</span></h3><p>Send call and message events to your own software in real time.</p></div></div>
-      <div class="ig reveal"><div class="lg zap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="ig-bd"><h3>Zapier<span class="tag soon">Coming soon</span></h3><p>Connect AnyPhone to other apps with no-code automations.</p></div></div>
+      <div class="ig reveal"><div class="lg zap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="ig-bd"><h3>Zapier<span class="tag soon">Coming soon</span></h3><p>Connect Numberline to other apps with no-code automations.</p></div></div>
     </div>
-    <p style="margin-top:18px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;">AnyPhone provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the AI service that fits your business. <a href="learn/bring-your-own-ai.html" style="color:var(--fn-ai);font-weight:700;">Learn about bring-your-own AI &rsaquo;</a></p>
+    <p style="margin-top:18px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;">Numberline provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the AI service that fits your business. <a href="learn/bring-your-own-ai.html" style="color:var(--ink);font-weight:700;">Learn about bring-your-own AI &rsaquo;</a></p>
   </div>
 </section>
 <section class="frow-sec-single"><div class="wrap"><article class="frow frow-ink reveal">
@@ -588,8 +637,8 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-        <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
+        <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/bring-your-own-ai.html">Bring your own AI</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
@@ -599,7 +648,7 @@
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
-    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
   </div>
 </footer>
 

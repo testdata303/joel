@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Mobile App for Business Calls | AnyPhone</title>
-<meta name="description" content="The AnyPhone mobile app lets you make outgoing business calls from your phone using your business number, so customers see your business caller ID, not your personal cell.">
+<title>Mobile App for Business Calls | Numberline</title>
+<meta name="description" content="The Numberline mobile app lets you make outgoing business calls from your phone using your business number, so customers see your business caller ID, not your personal cell.">
 <link rel="canonical" href="/mobile-app">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=2">
-<link rel="icon" href="../favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="../favicon-180.png?v=2">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=3">
+<link rel="icon" href="../favicon.ico?v=3" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#2D4ED8;--accent-dark:#2240C2;--accent-soft:#eef1ff;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --slack:#4A154B;--slack-green:#2EB67D;--slack-blue:#36C5F0;--slack-red:#E01E5A;--slack-gold:#ECB22E;
     --sans:'Plus Jakarta Sans',system-ui,sans-serif;
@@ -32,8 +32,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;padding:13px 22px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
-  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -44,7 +44,7 @@
   /* hero */
   .hero{padding:60px 0 68px;background:var(--paper);}
   .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
   .eyebrow .sl{width:15px;height:15px;display:block;}
   .hero h1{font-weight:800;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.03em;margin-bottom:18px;text-wrap:pretty;}
   .hero h1 .u{color:inherit;}
@@ -52,7 +52,7 @@
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
   .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
-  .hero-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
   /* hero routing map - mirrors the homepage hero, Slack row highlighted */
@@ -64,9 +64,9 @@
   .hr-ic{width:34px;height:34px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;}
   .hr-ic svg{width:17px;height:17px;color:var(--ink);}
   .hr-src b,.hr-dst b{font-weight:700;font-size:.95rem;color:var(--ink);line-height:1.2;text-wrap:balance;}
-  .hr-dst{background:var(--accent-soft);border-color:#d6e0fb;}
+  .hr-dst{background:#fff;border-color:var(--line);}
   .hr-dst .hr-ic{background:#fff;}
-  .hr-dst .hr-ic svg{color:var(--accent);}
+  .hr-dst .hr-ic svg{color:#131316;}
   .hr-dst b{color:var(--accent-dark);}
   .hr-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none;font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1;}
   /* highlighted Slack row */
@@ -76,7 +76,7 @@
   .hr-map.hl .hr-dst .hr-ic svg{color:#fff;}
   .hr-map.hl .hr-dst b{color:#fff;}
   .hr-map.hl .hr-arrow{color:var(--accent);}
-  .hr-tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.7rem;letter-spacing:.03em;padding:8px 13px;border-radius:999px;}
+  .hr-tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.7rem;letter-spacing:.03em;padding:8px 13px;border-radius:999px;}
   .hr-tag svg{width:14px;height:14px;}
   @media(max-width:620px){.hr-map{grid-template-columns:1fr;gap:5px;}.hr-arrow{transform:rotate(90deg);}}
 
@@ -89,14 +89,12 @@
   /* section shell */
   section.block{padding:74px 0;}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 44px;}
-  .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
-  /* kicker pill: solid white chip on tinted bands */
-  .steps-wrap .sec-kicker,.setup-wrap .sec-kicker,.compare-green .sec-kicker,.cmp-section .sec-kicker,.strip .sec-kicker,.block.alt .sec-kicker{background:#fff;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cta-dark);background:var(--cta-soft);font-weight:800;padding:6px 13px;border-radius:8px;margin-bottom:14px;}
 
   .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
 
-  /* what AnyPhone is */
+  /* what Numberline is */
   .whatis{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
   .whatis-copy .sec-kicker{margin-bottom:12px;}
   .whatis-copy h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
@@ -105,7 +103,7 @@
   .pillset-head{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
   .pillset-head .logo{font-size:1.5rem;}
   .pillset-head .lbl{font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
-  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--cl,var(--line));border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
+  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
   .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent));display:grid;place-items:center;flex-shrink:0;}
   .pill .pic svg{width:18px;height:18px;}
 
@@ -167,15 +165,17 @@
   .setup-foot b{color:var(--ink);font-weight:800;}
 
   /* why different + comparison */
-  .compare-green{background:#eef9f1;border-top:1px solid #d3ecdc;border-bottom:1px solid #d3ecdc;}
+  .compare-green{background:#F6F7FB;border-top:1px solid #ECEEF4;border-bottom:1px solid #ECEEF4;}
   .cmp{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;}
   .cmp-row{display:grid;grid-template-columns:1fr 2fr;border-top:1px solid var(--line);}
   .cmp-row:first-child{border-top:none;}
   .cmp-row.head{background:var(--soft);}
   .cmp-row>div{padding:20px 24px;}
   .cmp-row .opt{font-weight:800;font-size:1.04rem;display:flex;align-items:center;gap:10px;}
-  .cmp-row.joel{background:var(--accent-soft);}
-  .cmp-row.joel .opt{color:var(--accent-dark);}
+  .cmp-row.joel{background:var(--ink);}
+  .cmp-row.joel .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
+  .cmp-row.joel .desc{color:rgba(255,255,255,.86);}
+  .cmp-row.joel .desc a{color:#fff;text-decoration-color:rgba(255,255,255,.5);}
   .cmp-row .desc{color:var(--body);font-size:.98rem;line-height:1.5;border-left:1px solid var(--line);}
   .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
   .cmp-row.joel .desc{border-left-color:#c9d2ff;}
@@ -190,17 +190,17 @@
   /* who for */
   .whofor{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .whofor li{list-style:none;display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;font-weight:600;font-size:1rem;color:var(--ink);}
-  .whofor li .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .whofor li .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .whofor li .ck svg{width:14px;height:14px;}
 
   /* closer */
   .closer{padding:20px 0 84px;}
-  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:56px 44px;text-align:center;color:var(--ink);box-shadow:none;}
+  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;text-align:center;color:var(--ink);}
   .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
   .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .closer-card .btn-primary{background:var(--accent);color:#fff;box-shadow:none;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark);}
+  .closer-card .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--accent-dark);color:#fff;}
   .closer-card .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
   .closer-card .btn-ghost:hover{border-color:var(--ink);}
 
@@ -247,26 +247,26 @@
   .hr-dst .hr-ic{background:#fff;}
   .hr-dst .hr-ic svg{color:#374151;}
   .hr-dst b{color:#374151;}
-  .hr-dst.dc-phone{background:#EEF4FF;border-color:#C8D8FF;} .hr-dst.dc-phone .hr-ic svg{color:#2454D6;} .hr-dst.dc-phone b{color:#2454D6;}
-  .hr-dst.dc-slack{background:#F6F2FF;border-color:#E2D6F3;} .hr-dst.dc-slack .hr-ic svg{color:#611F69;} .hr-dst.dc-slack b{color:#611F69;}
-  .hr-dst.dc-inbox{background:#ECFDF3;border-color:#BBF7D0;} .hr-dst.dc-inbox .hr-ic svg{color:#15803D;} .hr-dst.dc-inbox b{color:#15803D;}
-  .hr-dst.dc-tools{background:#ECFEFF;border-color:#BAE6FD;} .hr-dst.dc-tools .hr-ic svg{color:#0369A1;} .hr-dst.dc-tools b{color:#0369A1;}
-  .hr-map.hl .hr-dst{background:#F6F2FF;border-color:#E2D6F3;box-shadow:0 0 0 3px rgba(97,31,105,.14);}
+  .hr-dst.dc-phone{background:#fff;border-color:var(--line);} .hr-dst.dc-phone .hr-ic svg{color:var(--ink);} .hr-dst.dc-phone b{color:var(--ink);}
+  .hr-dst.dc-slack{background:#fff;border-color:var(--line);} .hr-dst.dc-slack .hr-ic svg{color:var(--ink);} .hr-dst.dc-slack b{color:var(--ink);}
+  .hr-dst.dc-inbox{background:#fff;border-color:var(--line);} .hr-dst.dc-inbox .hr-ic svg{color:var(--ink);} .hr-dst.dc-inbox b{color:var(--ink);}
+  .hr-dst.dc-tools{background:#fff;border-color:var(--line);} .hr-dst.dc-tools .hr-ic svg{color:var(--ink);} .hr-dst.dc-tools b{color:var(--ink);}
+  .hr-map.hl .hr-dst{background:#fff;border-color:var(--line);box-shadow:0 0 0 3px rgba(97,31,105,.14);}
   .hr-map.hl .hr-dst .hr-ic{background:#fff;}
-  .hr-map.hl .hr-dst .hr-ic svg{color:#611F69;}
-  .hr-map.hl .hr-dst b{color:#611F69;}
-  .hr-map.hl .hr-src{border-color:#E2D6F3;box-shadow:0 0 0 3px rgba(97,31,105,.10);}
-  .hr-map.hl .hr-arrow{color:#611F69;}
+  .hr-map.hl .hr-dst .hr-ic svg{color:var(--ink);}
+  .hr-map.hl .hr-dst b{color:var(--ink);}
+  .hr-map.hl .hr-src{border-color:var(--line);box-shadow:0 0 0 3px rgba(97,31,105,.10);}
+  .hr-map.hl .hr-arrow{color:var(--ink);}
 }
-.hr-tag{background:#F6F2FF;color:#611F69;}
-.hr-tag svg{color:#611F69;}
+.hr-tag{background:#fff;color:var(--ink);}
+.hr-tag svg{color:var(--ink);}
 </style>
 
 <style id="dc-semantic2">
 @media(min-width:621px){
   .prow .k{background:#F3F4F6;color:#374151;}
   .prow .k.zero{background:#374151;color:#fff;}
-  .prow .dest{color:#2454D6;}
+  .prow .dest{color:var(--ink);}
 }
 </style>
 
@@ -282,18 +282,19 @@
 .hr-src b{display:block;}
 .hr-dst b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .hr-src b{white-space:normal;}
-.hr-dst{margin-left:auto;border:none;background:var(--accent-soft);border-radius:100px;padding:5px 13px 5px 7px;flex:0 1 auto;gap:7px;max-width:62%;}
+.hr-dst{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:100px;padding:5px 13px 5px 7px;flex:0 1 auto;gap:7px;max-width:62%;}
 .hr-dst .hr-ic{width:24px;height:24px;background:transparent!important;}
 .hr-dst .hr-ic svg{width:15px;height:15px;}
 .hr-map.hl .hr-src{border:none;box-shadow:none!important;}
 @media(max-width:620px){.hr-map{flex-wrap:wrap;row-gap:4px;}.hr-dst{margin-left:auto;}}
 </style>
+<link rel="stylesheet" href="../assets/canon.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
     <a href="../early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -314,7 +315,7 @@
     <div class="hero-copy reveal">
       <span class="eyebrow">Mobile app</span>
       <h1>Make business calls from <span class="u">your phone.</span></h1>
-      <p class="hero-sub">Use the AnyPhone mobile app to make outgoing calls from your business number, so customers see your business caller ID instead of your personal cell number.</p>
+      <p class="hero-sub">Use the Numberline mobile app to make outgoing calls from your business number, so customers see your business caller ID instead of your personal cell number.</p>
       <div class="hero-acts">
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
         <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
@@ -327,11 +328,11 @@
     </div>
 
         <!-- Mobile app dialer screen -->
-    <div class="reveal" role="img" aria-label="AnyPhone mobile app dialer showing a number being dialed and the business caller ID selected">
+    <div class="reveal" role="img" aria-label="Numberline mobile app dialer showing a number being dialed and the business caller ID selected">
       <div style="max-width:288px;margin:0 auto;background:#111114;border-radius:40px;padding:12px;box-shadow:0 45px 90px -50px rgba(16,16,18,.55),inset 0 0 0 2px #26262c;">
         <div style="background:#fff;border-radius:30px;min-height:512px;padding:20px 18px 18px;display:flex;flex-direction:column;">
           <div style="border:1px solid var(--line);border-radius:14px;padding:9px 12px;display:flex;align-items:center;gap:10px;">
-            <span style="width:30px;height:30px;border-radius:9px;background:#EEF4FF;display:grid;place-items:center;flex:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#2454D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span style="width:30px;height:30px;border-radius:9px;background:#fff;display:grid;place-items:center;flex:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#2454D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <span style="display:flex;flex-direction:column;line-height:1.15;min-width:0;flex:1;">
               <span style="font-size:.54rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:800;">Caller ID</span>
               <b style="font-size:.9rem;color:var(--ink);">Rivera &amp; Co.</b>
@@ -360,16 +361,16 @@
   </div>
 </div>
 
-<!-- 2. WHAT AnyPhone IS -->
-<section class="block" data-screen-label="What AnyPhone is">
+<!-- 2. WHAT Numberline IS -->
+<section class="block" data-screen-label="What Numberline is">
   <div class="wrap whatis">
     <div class="whatis-copy reveal">
       <div class="sec-kicker">Mobile app</div>
       <h2>Outbound calling from your business number.</h2>
-      <p>The AnyPhone mobile app lets you make outgoing calls from your phone using your AnyPhone business number. Customers see the business number, not your personal cell, so you can call back from the right number while keeping your personal number private. Incoming calls do not have to depend on the app: AnyPhone can route calls to the phones, lines, assistants, contractors, or call centers you choose.</p>
+      <p>The Numberline mobile app lets you make outgoing calls from your phone using your Numberline business number. Customers see the business number, not your personal cell, so you can call back from the right number while keeping your personal number private. Incoming calls do not have to depend on the app: Numberline can route calls to the phones, lines, assistants, contractors, or call centers you choose.</p>
     </div>
     <div class="pillset reveal">
-      <div class="pillset-head"><span class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></span> <span class="lbl">What the app does</span></div>
+      <div class="pillset-head"><span class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></span> <span class="lbl">What the app does</span></div>
       <div class="pill fn-fwd"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> Outgoing calls from your business number</div>
       <div class="pill fn-number"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> Customers see your business caller ID</div>
       <div class="pill"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Your personal cell number stays private</div>
@@ -391,14 +392,14 @@
   </div>
 </section>
 
-<!-- 4. HOW AnyPhone WORKS WITH SLACK -->
-<section class="block steps-wrap" id="how" data-screen-label="How AnyPhone works with Slack">
+<!-- 4. HOW Numberline WORKS WITH SLACK -->
+<section class="block steps-wrap" id="how" data-screen-label="How Numberline works with Slack">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How it fits</div>
       <h2>The app is one part of your phone system.</h2>
     </div>
-    <p class="steps-note reveal" style="max-width:720px;font-size:1.08rem;line-height:1.6;">AnyPhone is more than a calling app. It is a phone system for modern small businesses. Get a local or toll-free number, add numbers as needed, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and keep your team updated in Slack.</p>
+    <p class="steps-note reveal" style="max-width:720px;font-size:1.08rem;line-height:1.6;">Numberline is more than a calling app. It is a phone system for modern small businesses. Get a local or toll-free number, add numbers as needed, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and keep your team updated in Slack.</p>
     <p class="steps-note reveal">The mobile app handles one important job: <b>making outgoing calls from your business number</b> when you are not sitting at a desk.</p>
   </div>
 </section>
@@ -446,10 +447,10 @@
       <div class="panel">
         <div class="panel-top phone"><b><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>Mobile calling setup</b><span class="tg">Example</span></div>
         <div class="panel-body" style="padding:6px 22px 14px;">
-          <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Business number</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Your AnyPhone local or toll-free number</span></div>
+          <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Business number</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Your Numberline local or toll-free number</span></div>
           <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Incoming calls</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Route to the owner, office line, assistant, or whoever should answer</span></div>
           <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Missed calls</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Go to voicemail, get transcribed, and notify the team</span></div>
-          <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;color:#2454D6;flex:none;width:150px;">Outgoing calls</b><span style="color:#2454D6;font-weight:700;font-size:.9rem;line-height:1.5;flex:1;">Use the AnyPhone mobile app to call customers back from the business number</span></div>
+          <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;color:var(--ink);flex:none;width:150px;">Outgoing calls</b><span style="color:var(--ink);font-weight:700;font-size:.9rem;line-height:1.5;flex:1;">Use the Numberline mobile app to call customers back from the business number</span></div>
         </div>
       </div>
     </div>
@@ -470,7 +471,7 @@
       <div class="cmp-row"><div class="opt">Personal cell phone</div><div class="desc">Fast and familiar, but customers see your personal number. Over time, your cell becomes the business number.</div></div>
       <div class="cmp-row"><div class="opt">Second phone</div><div class="desc">Keeps things separate, but now you are carrying and managing another device.</div></div>
       <div class="cmp-row"><div class="opt">Generic calling app</div><div class="desc">May let you place calls, but it is not tied to your full small-business phone system.</div></div>
-      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> AnyPhone mobile app</div><div class="desc">Make outgoing calls from your business number while AnyPhone handles routing, shared texts, voicemail transcripts, and team notifications.</div></div>
+      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Numberline mobile app</div><div class="desc">Make outgoing calls from your business number while Numberline handles routing, shared texts, voicemail transcripts, and team notifications.</div></div>
     </div>
   </div>
 </section>
@@ -481,7 +482,7 @@
     <div class="not-card reveal">
       <div class="sec-kicker">What this is not</div>
       <h2>Not another phone to carry.</h2>
-      <p>The AnyPhone mobile app is not meant to replace your entire phone system or force your team into a new communication tool. It helps you make business calls from your phone using the right caller ID. <b>The rest of AnyPhone handles the phone system: numbers, menus, extensions, routing, shared texts, voicemails, transcripts, and notifications.</b></p>
+      <p>The Numberline mobile app is not meant to replace your entire phone system or force your team into a new communication tool. It helps you make business calls from your phone using the right caller ID. <b>The rest of Numberline handles the phone system: numbers, menus, extensions, routing, shared texts, voicemails, transcripts, and notifications.</b></p>
     </div>
   </div>
 </section>
@@ -496,14 +497,14 @@
       <h2>Questions about the mobile app</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-q" open><summary><span class="fq-text">What is the AnyPhone mobile app for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The AnyPhone mobile app lets you make outgoing business calls from your phone using your AnyPhone business number as the caller ID.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Will customers see my personal cell number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. When you make calls through the AnyPhone mobile app, customers see your business number instead of your personal cell number.</div></details>
+      <details class="faq-q" open><summary><span class="fq-text">What is the Numberline mobile app for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The Numberline mobile app lets you make outgoing business calls from your phone using your Numberline business number as the caller ID.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Will customers see my personal cell number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. When you make calls through the Numberline mobile app, customers see your business number instead of your personal cell number.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Do incoming calls have to go through the app?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Incoming calls can route to the phones, lines, assistants, contractors, or call centers you choose.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can team members make calls from the business number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, the mobile app is designed so owners, assistants, contractors, or remote team members can make business calls from the right number.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is AnyPhone just a mobile calling app?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is a phone system for modern small businesses. The mobile app is for outgoing calls from your business number.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can I use a local or toll-free number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. AnyPhone is designed to support local and toll-free numbers, with the ability to add numbers as needed.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is the mobile app available now?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">AnyPhone is launching soon. Get early access and we&rsquo;ll send updates on setup, availability, and mobile app access.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Do I need new phones or equipment?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone forwards calls to the cell phone you already have. There is nothing to buy or install. Compatible desk phones are optional, never required.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is Numberline just a mobile calling app?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is a phone system for modern small businesses. The mobile app is for outgoing calls from your business number.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can I use a local or toll-free number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Numberline is designed to support local and toll-free numbers, with the ability to add numbers as needed.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is the mobile app available now?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is launching soon. Get early access and we&rsquo;ll send updates on setup, availability, and mobile app access.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Do I need new phones or equipment?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline forwards calls to the cell phone you already have. There is nothing to buy or install. Compatible desk phones are optional, never required.</div></details>
     </div>
   </div>
 </section>
@@ -514,7 +515,7 @@
     <div class="closer-card reveal">
       <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <h2>Make business calls without giving out your personal number.</h2>
-      <p>Get early access and be first in line when AnyPhone is ready for setup.</p>
+      <p>Get early access and be first in line when Numberline is ready for setup.</p>
       <div class="closer-acts">
         <a href="../how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
         <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
@@ -528,8 +529,8 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-        <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
+        <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="mobile-app.html">Mobile app</a><a href="bring-your-own-ai.html">Bring your own AI</a><a href="slack-notifications.html">Slack notifications</a></div>
         <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a><a href="../signin.html">Sign in</a></div>
@@ -539,7 +540,7 @@
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="virtual-phone-system.html">Virtual phone system</a><a href="small-business-phone-system.html">Small business phone system</a><a href="business-phone-number.html">Business phone number</a><a href="google-voice-alternative.html">Google Voice alternative</a><a href="personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
-    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
   </div>
 </footer>
 

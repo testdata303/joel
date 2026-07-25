@@ -1,5 +1,5 @@
 /* ============================================================
-   AnyPhone app - EmptyArt: friendly monoline empty-state illustrations
+   Numberline app - EmptyArt: friendly monoline empty-state illustrations
    (Direction B "soft duotone": ink line art + one accent + tonal
    shape behind). One system, reused across every empty/welcome pane.
 

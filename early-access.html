@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Get early access to AnyPhone | The phone system for modern small businesses</title>
-<meta name="description" content="AnyPhone is launching soon. Join the early access list and we'll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-<link rel="icon" href="favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="favicon-180.png?v=2">
+<title>Get early access to Numberline | The phone system for modern small businesses</title>
+<meta name="description" content="Numberline is launching soon. Join the early access list and we'll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+<link rel="icon" href="favicon.ico?v=3" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
   .btn{padding:15px 30px;border-radius:11px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;font-family:var(--sans);}
-  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);color:#fff;transform:translateY(-1px);}
   .btn-secondary{background:#fff;color:var(--ink);border:1.5px solid #D6D4CD;} .btn-secondary:hover{border-color:var(--ink);}
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
   section{padding:88px 0;}
@@ -26,7 +26,7 @@
   /* ---- hero ---- */
   .ea-hero{background:var(--paper);border-bottom:1px solid var(--line);padding:78px 0 72px;}
   .ea-hero-inner{max-width:660px;margin:0 auto;text-align:center;}
-  .ea-badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;}
+  .ea-badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:.8rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;}
   .ea-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px var(--accent-soft);}
   .ea-hero h1{font-size:clamp(2.4rem,5.2vw,3.9rem);line-height:1.02;letter-spacing:-.035em;margin-bottom:22px;}
   .ea-hero .lede{font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.5;color:var(--body);max-width:44ch;margin:0 auto 30px;font-weight:500;}
@@ -103,7 +103,7 @@
   .ea-confirm a.sec-link{color:var(--accent);text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:7px;}
   .ea-confirm a.sec-link:hover{color:var(--accent-dark);}
   .ea-confirm a.sec-link svg{width:17px;height:17px;}
-  /* optional shape-AnyPhone questions after confirmation */
+  /* optional shape-Numberline questions after confirmation */
   .ea-shape{margin-top:30px;text-align:left;}
   .ea-shape-div{height:1px;background:var(--line);margin-bottom:26px;}
   .ea-shape-h{text-align:center;font-size:1.15rem;font-weight:800;letter-spacing:-.01em;margin-bottom:20px;}
@@ -132,12 +132,13 @@
     .nav-links a:not(.nav-cta){}
   }
 </style>
+<link rel="stylesheet" href="assets/canon.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
     <a href="#join" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -157,8 +158,8 @@
   <div class="wrap">
     <div class="ea-hero-inner">
       <div class="ea-badge reveal in"><span class="dot"></span> Launching soon · Early access</div>
-      <h1 class="reveal in">Get early access to AnyPhone</h1>
-      <p class="lede reveal in">AnyPhone is launching soon. Join the early access list and we&rsquo;ll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.</p>
+      <h1 class="reveal in">Get early access to Numberline</h1>
+      <p class="lede reveal in">Numberline is launching soon. Join the early access list and we&rsquo;ll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.</p>
       <form class="ea-hero-form reveal in" id="heroForm" novalidate>
         <input type="email" id="heroEmail" placeholder="Work email" autocomplete="email" aria-label="Work email">
         <button type="submit" class="btn btn-primary">Get early access</button>
@@ -174,16 +175,16 @@
 </header>
 
 <!-- 2. PRODUCT EXPLANATION -->
-<section class="ea-what" data-screen-label="What is AnyPhone">
+<section class="ea-what" data-screen-label="What is Numberline">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">What is AnyPhone?</div>
+      <div class="kicker">What is Numberline?</div>
       <h2>The phone system for modern small businesses</h2>
-      <p>AnyPhone helps small businesses handle calls and messages without giving every customer a personal cell number or buying an enterprise phone system. Get a local or toll-free number, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and keep your team updated in Slack.</p>
+      <p>Numberline helps small businesses handle calls and messages without giving every customer a personal cell number or buying an enterprise phone system. Get a local or toll-free number, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and keep your team updated in Slack.</p>
     </div>
     <div class="grow-note reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
-      <span>As your business grows, AnyPhone is designed to support additional numbers, channels like WhatsApp, and third-party AI services.</span>
+      <span>As your business grows, Numberline is designed to support additional numbers, channels like WhatsApp, and third-party AI services.</span>
     </div>
   </div>
 </section>
@@ -198,7 +199,7 @@
       <div class="why-card reveal">
         <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
         <h3>Be first to know</h3>
-        <p>Get notified when AnyPhone is ready for public setup.</p>
+        <p>Get notified when Numberline is ready for public setup.</p>
       </div>
       <div class="why-card reveal">
         <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
@@ -213,7 +214,7 @@
       <div class="why-card reveal">
         <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.9H22l-6 4.6 2.3 7-6.3-4.5L5.7 20l2.3-7-6-4.6h7.6z"/></svg></div>
         <h3>Start simple</h3>
-        <p>AnyPhone is built for small teams that want a real phone system without enterprise complexity.</p>
+        <p>Numberline is built for small teams that want a real phone system without enterprise complexity.</p>
       </div>
     </div>
   </div>
@@ -225,7 +226,7 @@
     <div class="ea-form-card reveal" id="formCard">
       <div class="fc-head">
         <h2>Get early access</h2>
-        <p>Enter your email and we&rsquo;ll let you know the moment AnyPhone is ready for setup.</p>
+        <p>Enter your email and we&rsquo;ll let you know the moment Numberline is ready for setup.</p>
       </div>
       <form id="eaForm" novalidate>
         <div class="field">
@@ -241,14 +242,14 @@
     <div class="ea-confirm" id="confirmCard">
       <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
       <h2>You&rsquo;re on the list.</h2>
-      <p>We sent a confirmation email to <b id="confirmEmail">your inbox</b>. Click the link to confirm you want early access updates from AnyPhone.</p>
-      <a class="sec-link" href="how-it-works.html">See how AnyPhone works
+      <p>We sent a confirmation email to <b id="confirmEmail">your inbox</b>. Click the link to confirm you want early access updates from Numberline.</p>
+      <a class="sec-link" href="how-it-works.html">See how Numberline works
         <span class="btn-guillemet" aria-hidden="true">»</span>
       </a>
 
       <div class="ea-shape" id="shapeBlock">
         <div class="ea-shape-div"></div>
-        <h3 class="ea-shape-h">Want to help us shape AnyPhone?</h3>
+        <h3 class="ea-shape-h">Want to help us shape Numberline?</h3>
         <form id="shapeForm" novalidate>
           <div class="field">
             <label class="field-label" for="s-using">What are you using today?</label>
@@ -288,7 +289,7 @@
         </form>
       </div>
       <div class="ea-shape-done" id="shapeDone" style="display:none;">
-        <p>Thanks, that helps. We&rsquo;ll be in touch as AnyPhone gets closer to launch.</p>
+        <p>Thanks, that helps. We&rsquo;ll be in touch as Numberline gets closer to launch.</p>
       </div>
     </div>
   </div>
@@ -299,12 +300,12 @@
   <div class="wrap">
     <h2>Early access questions</h2>
     <div class="faq-list">
-      <details class="faq-q" open><summary><span class="fq-text">When is AnyPhone launching?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">AnyPhone is launching soon. Get early access and we&rsquo;ll send updates as setup becomes available.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can I get a number today?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not yet. Early access lets you join the list before public launch. When AnyPhone is ready, you&rsquo;ll be able to get a local or toll-free number or bring your current number.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can I bring my current business number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, AnyPhone is designed to support number porting. We&rsquo;ll share more details when early access opens.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is AnyPhone only for one number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. You can start with a local or toll-free number and add numbers as needed.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is AnyPhone an AI receptionist?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is a phone system for modern small businesses. It is designed to connect with third-party AI services when your business needs them, but AnyPhone itself is not positioned as an AI receptionist.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Who is AnyPhone for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">AnyPhone is for modern small businesses that need a real phone system without enterprise complexity. It is built for founders, owners, small teams, contractors, assistants, and businesses that use tools like Slack.</div></details>
+      <details class="faq-q" open><summary><span class="fq-text">When is Numberline launching?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is launching soon. Get early access and we&rsquo;ll send updates as setup becomes available.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can I get a number today?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not yet. Early access lets you join the list before public launch. When Numberline is ready, you&rsquo;ll be able to get a local or toll-free number or bring your current number.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can I bring my current business number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, Numberline is designed to support number porting. We&rsquo;ll share more details when early access opens.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is Numberline only for one number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. You can start with a local or toll-free number and add numbers as needed.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is Numberline an AI receptionist?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is a phone system for modern small businesses. It is designed to connect with third-party AI services when your business needs them, but Numberline itself is not positioned as an AI receptionist.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Who is Numberline for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is for modern small businesses that need a real phone system without enterprise complexity. It is built for founders, owners, small teams, contractors, assistants, and businesses that use tools like Slack.</div></details>
     </div>
   </div>
 </section>
@@ -314,7 +315,7 @@
   <div class="wrap">
     <div class="closer-card reveal">
       <h2>Join the early access list</h2>
-      <p>Be first to know when AnyPhone is ready for setup.</p>
+      <p>Be first to know when Numberline is ready for setup.</p>
       <a href="#join" class="btn btn-primary btn-lg" id="finalCta">Get early access</a>
     </div>
   </div>
@@ -325,8 +326,8 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-        <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
+        <a href="index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/bring-your-own-ai.html">Bring your own AI</a><a href="learn/slack-notifications.html">Slack notifications</a></div>
         <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
@@ -336,7 +337,7 @@
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
-    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
   </div>
 </footer>
 
@@ -386,7 +387,7 @@
     showConfirm(fEmail.value.trim());
   });
 
-  // optional shape-AnyPhone questions (chips + submit/skip)
+  // optional shape-Numberline questions (chips + submit/skip)
   document.querySelectorAll('#s-needs .chip').forEach(function(chip){
     var input=chip.querySelector('input');
     input.addEventListener('change',function(){ chip.classList.toggle('on',input.checked); });

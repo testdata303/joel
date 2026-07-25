@@ -1,5 +1,5 @@
 /* ============================================================
-   AnyPhone app - Extension Overview (activity, not settings)
+   Numberline app - Extension Overview (activity, not settings)
    Shows the extension's voicemails & calls; rows open detail drawers.
    ============================================================ */
 const { Icon, Card, Avatar, identityOf, EmptyArt } = window;

@@ -9,9 +9,9 @@
 .esys-stack{ display:flex; flex-direction:column; gap:18px; }
 
 /* preview toggle (simple vs multi-extension) */
-.esys-preview{ display:inline-flex; align-items:center; gap:3px; background:var(--bg-alt); border:1px solid var(--line); border-radius:10px; padding:3px; flex-shrink:0; }
+.esys-preview{ display:inline-flex; align-items:center; gap:3px; background:var(--bg-alt); border:1px solid var(--line); border-radius:3px; padding:3px; flex-shrink:0; }
 .esys-preview > span{ font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:0 7px 0 7px; }
-.esys-preview button{ padding:6px 12px; border-radius:7px; font-size:.82rem; font-weight:700; color:var(--body); transition:background .12s,color .12s; white-space:nowrap; }
+.esys-preview button{ padding:6px 12px; border-radius:2px; font-size:.82rem; font-weight:700; color:var(--body); transition:background .12s,color .12s; white-space:nowrap; }
 .esys-preview button.on{ background:#fff; color:var(--blue); box-shadow:0 1px 2px rgba(15,17,21,.1); }
 
 /* icon-filled extension tile (Main Extension in simple mode) */
@@ -20,7 +20,7 @@
 
 /* ---- a section card ---- */
 .esys-sec{
-  background:#fff; border:1px solid var(--line); border-radius:18px;
+  background:#fff; border:1px solid var(--line); border-radius:4px;
   box-shadow:var(--shadow-card); overflow:hidden;
 }
 .esys-sechead{
@@ -29,7 +29,7 @@
   border-bottom:1px solid var(--line);
 }
 .esys-secic{
-  width:40px; height:40px; flex-shrink:0; border-radius:12px;
+  width:40px; height:40px; flex-shrink:0; border-radius:4px;
   display:grid; place-items:center;
 }
 .esys-secic svg{ width:20px; height:20px; }
@@ -43,7 +43,7 @@
 
 .esys-secact{
   display:inline-flex; align-items:center; gap:7px; flex-shrink:0;
-  height:34px; padding:0 13px; border-radius:9px; white-space:nowrap;
+  height:34px; padding:0 13px; border-radius:3px; white-space:nowrap;
   font-size:.84rem; font-weight:700; color:var(--blue);
   background:var(--blue-soft); transition:filter .14s;
 }
@@ -60,7 +60,7 @@
 .esys-nums .esys-numrow:first-child{ border-top:none; }
 .esys-numrow:hover{ background:var(--bg-alt); }
 .esys-numic{
-  width:34px; height:34px; flex-shrink:0; border-radius:9px;
+  width:34px; height:34px; flex-shrink:0; border-radius:3px;
   background:var(--green-soft); color:var(--green); display:grid; place-items:center;
 }
 .esys-numic svg{ width:16px; height:16px; }
@@ -76,7 +76,7 @@
   display:inline-flex; align-items:center; gap:6px; flex-shrink:0;
   font-size:.78rem; font-weight:600; color:var(--body);
   background:var(--bg-alt); border:1px solid var(--line);
-  padding:5px 11px; border-radius:20px; white-space:nowrap;
+  padding:5px 11px; border-radius:4px; white-space:nowrap;
 }
 .esys-route svg{ width:13px; height:13px; color:var(--muted); flex-shrink:0; }
 .esys-route.direct{ color:var(--ai); background:var(--ai-soft); border-color:#d6e0fb; }
@@ -117,7 +117,7 @@
 .esys-greetbody .wave i{ width:2.5px; max-height:28px; border-radius:2px; background:#d4cbef; display:block; }
 .esys-greettext{
   font-size:.95rem; line-height:1.55; color:var(--body); text-wrap:pretty;
-  padding:14px 16px; background:var(--bg-alt); border-radius:12px;
+  padding:14px 16px; background:var(--bg-alt); border-radius:4px;
 }
 .esys-greettext b{ color:var(--ink); font-weight:700; }
 
@@ -133,7 +133,7 @@
 /* away banner state */
 .esys-awaynote{
   display:flex; align-items:center; gap:10px; margin-top:14px;
-  padding:11px 14px; border-radius:12px;
+  padding:11px 14px; border-radius:4px;
   background:var(--amber-soft); border:1px solid #f4e2b8; color:var(--amber);
   font-size:.85rem; line-height:1.45;
 }
@@ -154,7 +154,7 @@
 }
 .esys-addext:hover{ filter:brightness(.985); }
 .esys-addtile{
-  width:38px; height:34px; border-radius:9px; flex-shrink:0;
+  width:38px; height:34px; border-radius:3px; flex-shrink:0;
   background:var(--blue); color:#fff; display:grid; place-items:center;
 }
 .esys-addtile svg{ width:18px; height:18px; }
@@ -167,13 +167,13 @@
 /* simple → multi switch callout */
 .esys-switch{
   display:flex; align-items:center; gap:15px; width:100%; text-align:left;
-  padding:17px 20px; border-radius:16px;
+  padding:17px 20px; border-radius:4px;
   background:#fff; border:1px dashed var(--line); box-shadow:var(--shadow-card);
   transition:border-color .14s, background .14s;
 }
 .esys-switch:hover{ border-color:var(--blue); background:var(--blue-soft); }
 .esys-switch-ic{
-  width:40px; height:40px; flex-shrink:0; border-radius:12px;
+  width:40px; height:40px; flex-shrink:0; border-radius:4px;
   background:var(--blue-soft); color:var(--blue); display:grid; place-items:center;
 }
 .esys-switch:hover .esys-switch-ic{ background:#fff; }
@@ -196,7 +196,7 @@
 .aext-grid .field{ margin:0; }
 .aext-preview{
   display:flex; align-items:center; gap:13px; margin-top:18px;
-  padding:14px 16px; background:var(--bg-alt); border-radius:12px;
+  padding:14px 16px; background:var(--bg-alt); border-radius:4px;
 }
 .aext-preview .lv-num{ flex-shrink:0; }
 .aext-preview-t{ display:flex; flex-direction:column; gap:2px; min-width:0; }

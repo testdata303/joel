@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Phone System for Real Estate Agents | AnyPhone</title>
-<meta name="description" content="AnyPhone gives real estate agents a business number that keeps calls off your personal cell, routes new leads and current clients, and shares texts with your assistant or team.">
+<title>Phone System for Real Estate Agents | Numberline</title>
+<meta name="description" content="Numberline gives real estate agents a business number that keeps calls off your personal cell, routes new leads and current clients, and shares texts with your assistant or team.">
 <link rel="canonical" href="/phone-system-for-real-estate">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=2">
-<link rel="icon" href="../favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="../favicon-180.png?v=2">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=3">
+<link rel="icon" href="../favicon.ico?v=3" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#2D4ED8;--accent-dark:#2240C2;--accent-soft:#eef1ff;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --warn:#c0492b;--warn-soft:#fdeeea;
     --gold:#f5a623;
@@ -33,8 +33,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;padding:13px 22px;box-shadow:0 14px 28px -14px rgba(37,64,238,.7);}
-  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -44,7 +44,7 @@
   /* header */
   header.lp{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.72rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
+  .logo{font-size:1.72rem;}
   .hdr-right{display:flex;align-items:center;gap:18px;}
   .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
   .hdr-cta:hover{background:var(--accent-dark);}
@@ -52,7 +52,7 @@
   /* hero */
   .hero{padding:36px 0 56px;background:var(--paper);}
   .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
   .hero-kick{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
   .hero-kick .eyebrow{display:inline-flex;width:auto;max-width:100%;margin:0;}
   .hero-kick .nup-stamp{margin:0;}
@@ -62,7 +62,7 @@
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
   .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
-  .hero-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
   /* product screenshot placeholder / routing mock */
@@ -79,16 +79,16 @@
   .shot-greet small{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px;}
   .route{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line);}
   .route:first-of-type{border-top:none;}
-  .route .key{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;font-size:.95rem;display:grid;place-items:center;flex-shrink:0;}
+  .route .key{width:30px;height:30px;border-radius:8px;background:#fff;border:1px solid var(--line);color:#131316;font-weight:800;font-size:.95rem;display:grid;place-items:center;flex-shrink:0;}
   .route .key.ext{width:auto;min-width:30px;padding:0 8px;font-size:.85rem;}
   .route .rt b{display:block;font-size:.92rem;font-weight:700;}
   .route .rt span{font-size:.82rem;color:var(--muted);font-weight:600;}
   .route .arr{margin-left:auto;color:var(--muted);font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1;}
   .shot-cap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted);text-align:center;padding:13px 0 2px;text-transform:uppercase;}
-  .shot-ah{display:flex;align-items:center;gap:11px;padding:11px 20px;background:var(--soft);border-top:1px solid var(--line);}
-  .shot-ah-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--accent-dark);background:var(--accent-soft);padding:5px 9px;border-radius:6px;flex:none;}
+  .shot-ah{display:flex;align-items:center;gap:11px;padding:11px 20px;background:#FDF4F9;border-top:1px solid var(--line);}
+  .shot-ah-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#B0447F;background:#FBE3F0;border:1px solid #F6D0E4;padding:5px 9px;border-radius:6px;flex:none;}
   .shot-ah-tx{font-size:.83rem;color:var(--body);line-height:1.4;font-weight:600;}
-  .shot-ah-tx b{color:var(--ink);font-weight:800;}
+  .shot-ah-tx b{color:#B0447F;font-weight:800;}
 
   /* trust strip */
   .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
@@ -99,9 +99,7 @@
   /* section shell */
   section.block{padding:74px 0;}
   .sec-head{text-align:center;max-width:640px;margin:0 auto 44px;}
-  .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
-  /* kicker pill: solid white chip on tinted bands */
-  .steps-wrap .sec-kicker,.setup-wrap .sec-kicker,.compare-green .sec-kicker,.cmp-section .sec-kicker,.strip .sec-kicker,.block.alt .sec-kicker{background:#fff;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cta-dark);background:var(--cta-soft);font-weight:800;padding:6px 13px;border-radius:8px;margin-bottom:14px;}
 
   .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
@@ -126,14 +124,14 @@
   .menu-ex h4{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:16px;}
   .menu-ex ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;}
   .menu-ex li{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink);font-size:1rem;}
-  .menu-ex .pk{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;display:grid;place-items:center;flex-shrink:0;font-size:.95rem;}
+  .menu-ex .pk{width:30px;height:30px;border-radius:8px;background:#fff;border:1px solid var(--line);color:#131316;font-weight:800;display:grid;place-items:center;flex-shrink:0;font-size:.95rem;}
   .menu-ex .menu-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted);font-weight:600;}
   .menu-ex .menu-note b{color:var(--ink);font-weight:800;}
 
   /* features */
   .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .fcard{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
-  .fcard .fic{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:18px;}
+  .fcard .fic{width:46px;height:46px;border-radius:12px;background:#fff;border:1px solid var(--line);color:#131316;display:grid;place-items:center;margin-bottom:18px;}
   .fcard .fic svg{width:23px;height:23px;}
   .fcard h3{font-size:1.16rem;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;}
   .fcard p{color:var(--body);font-size:.96rem;line-height:1.55;}
@@ -157,58 +155,56 @@
 
   /* example setup */
   .setup-wrap{background:var(--soft);}
-  .flow{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -50px rgba(16,16,18,.4);}
-  .flow-top{background:var(--ink);color:#fff;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-  .flow-top .mn small{display:block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:800;margin-bottom:4px;}
-  .flow-top .mn b{font-size:1.5rem;font-weight:800;letter-spacing:.01em;}
-  .flow-top .biz{font-weight:700;font-size:.95rem;color:rgba(255,255,255,.85);}
-  .flow-greet{padding:20px 28px;border-bottom:1px solid var(--line);font-size:1rem;color:var(--body);line-height:1.55;font-style:italic;}
-  .flow-rows{padding:10px 30px 18px 60px;position:relative;}
-  .flow-rows::before{content:'';position:absolute;left:38px;top:0;bottom:0;width:2px;background:var(--line);border-radius:2px;}
-  .frow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;column-gap:16px;padding:15px 0;position:relative;}
-  .frow::before{content:'';position:absolute;left:-22px;top:34px;width:22px;height:2px;background:var(--line);}
-  .frow:last-child::after{content:'';position:absolute;left:-24px;top:35px;bottom:-18px;width:6px;background:#fff;}
+  .flow{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(16,16,18,.04),0 24px 60px -46px rgba(16,16,18,.3);}
+  .flow-top{background:var(--ink);color:#fff;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .flow-top .mn small{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:800;margin-bottom:5px;}
+  .flow-top .mn b{font-size:1.42rem;font-weight:800;letter-spacing:.01em;font-family:var(--display);}
+  .flow-top .biz{font-weight:700;font-size:.92rem;color:rgba(255,255,255,.8);}
+  .flow-greet{padding:18px 26px;background:var(--soft);border-bottom:1px solid var(--line);font-size:.98rem;color:var(--body);line-height:1.55;font-style:italic;}
+  .flow-rows{padding:4px 26px;}
+  .frow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:16px;padding:16px 0;border-top:1px solid var(--line);}
+  .frow:first-child{border-top:0;}
   .frow .fl{min-width:0;}
-  .frow .dest{justify-self:end;align-self:start;text-align:right;max-width:220px;margin-top:2px;color:var(--accent-dark);font-weight:700;font-size:.92rem;line-height:1.35;}
+  .frow .dest{justify-self:end;align-self:center;display:inline-flex;align-items:center;gap:9px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:8px 15px 8px 13px;text-align:left;max-width:250px;line-height:1.25;}
+  .frow .dest::before{content:'\2192';color:var(--cta);font-weight:800;font-size:1.02rem;line-height:1;}
   @media(max-width:560px){
-    .flow-rows{padding:10px 18px 16px 44px;}
-    .flow-rows::before{left:22px;}
-    .frow{grid-template-columns:auto minmax(0,1fr);row-gap:0;}
-    .frow::before{left:-22px;width:22px;}
-    .frow:last-child::after{left:-24px;}
-    .frow .dest{grid-column:2;justify-self:start;text-align:left;max-width:none;margin-top:6px;font-size:.88rem;}
+    .flow-rows{padding:2px 18px;}
+    .frow{grid-template-columns:auto minmax(0,1fr);align-items:start;row-gap:10px;}
+    .frow .dest{grid-column:2;justify-self:start;text-align:left;max-width:none;}
   }
-  .frow .fk{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1.1rem;display:grid;place-items:center;flex-shrink:0;}
-  .frow .fk.zero{background:var(--ink);}
-  .frow .fk.ext{width:auto;min-width:38px;padding:0 10px;font-size:.9rem;}
+  .frow .fk{width:44px;height:44px;border-radius:12px;background:var(--cta-soft);color:var(--cta);font-weight:800;font-size:1.16rem;display:grid;place-items:center;flex-shrink:0;font-family:var(--display);}
+  .frow .fk.zero{background:var(--soft);color:var(--ink);}
+  .frow .fk.ext{width:auto;min-width:44px;padding:0 13px;font-size:1rem;background:#FBF3BF;color:#6E5600;}
   .frow .fl b{display:block;font-size:1.02rem;font-weight:800;}
   .frow .fl span{font-size:.9rem;color:var(--muted);font-weight:600;}
-  .frow .dest{margin-left:auto;text-align:right;font-weight:700;font-size:.95rem;color:var(--accent-dark);}
+  .frow .dest{font-weight:700;font-size:.9rem;color:var(--ink);}
   .flow-foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--line);}
   .flow-foot div{padding:20px 28px;font-size:.95rem;line-height:1.5;color:var(--body);}
   .flow-foot div + div{border-left:1px solid var(--line);}
   .flow-foot b{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:800;margin-bottom:6px;}
 
   /* comparison */
-  .compare-green{background:#eef9f1;border-top:1px solid #d3ecdc;border-bottom:1px solid #d3ecdc;}
+  .compare-green{background:#F6F7FB;border-top:1px solid #ECEEF4;border-bottom:1px solid #ECEEF4;}
   .cmp{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;}
   .cmp-row{display:grid;grid-template-columns:1.2fr 2fr;border-top:1px solid var(--line);}
   .cmp-row:first-child{border-top:none;}
   .cmp-row.head{background:var(--soft);}
   .cmp-row > div{padding:20px 24px;}
   .cmp-row .opt{font-weight:800;font-size:1.04rem;display:flex;align-items:center;gap:10px;}
-  .cmp-row.joel{background:var(--accent-soft);}
-  .cmp-row.joel .opt{color:var(--accent-dark);}
+  .cmp-row.joel{background:var(--ink);}
+  .cmp-row.joel .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
+  .cmp-row.joel .desc{color:rgba(255,255,255,.86);}
+  .cmp-row.joel .desc a{color:#fff;text-decoration-color:rgba(255,255,255,.5);}
   .cmp-row .desc{color:var(--body);font-size:.98rem;line-height:1.5;border-left:1px solid var(--line);}
   .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
 
   /* closer */
   .closer{padding:20px 0 84px;}
-  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:56px 44px;text-align:center;color:var(--ink);box-shadow:none;}
+  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;text-align:center;color:var(--ink);}
   .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,2.9rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
-  .closer-card .btn-primary{background:var(--accent);color:#fff;box-shadow:none;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark);}
+  .closer-card .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--accent-dark);color:#fff;}
   .closer-mini{margin-top:18px;font-size:.92rem;color:rgba(255,255,255,.82);font-weight:600;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   /* faq */
@@ -259,31 +255,29 @@
 @media(min-width:621px){
   .frow .fk{background:#F3F4F6;color:#374151;}
   .frow .fk.zero{background:#374151;color:#fff;}
-  .frow .dest{color:#2454D6;}
-  .shot-ah{background:#F5F3FF;}
-  .shot-ah-badge{background:#EDE9FE;color:#6D28D9;}
-  .shot-ah-tx b{color:#6D28D9;}
+  .frow .dest{color:var(--ink);}
 }
 </style>
 <style id="route-fn">
 /* shot-card routes: hero function-list convention - icon tile per function, digit key only for the actual keypress */
 .route{align-items:center;}
-.route .fic{width:34px;height:34px;border-radius:10px;background:var(--cs,#EEF4FF);display:grid;place-items:center;flex:none;font-weight:800;font-size:1rem;color:var(--c,#2454D6);}
-.route .fic svg{width:18px;height:18px;color:var(--c,#2454D6);}
+.route .fic{width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none;font-weight:800;font-size:1rem;color:var(--ink);}
+.route .fic svg{width:18px;height:18px;color:var(--ink);}
 .route .arr{display:none;}
 .route-tree{margin:0;padding:0;}
 .route-tree::before,.route::before,.route:last-child::after{display:none;}
 /* consistent at ALL widths: gray keys, function-colored destinations (not link-blue) */
 .frow .fk{background:#F3F4F6;color:#374151;}
 .frow .fk.zero{background:#374151;color:#fff;}
-.frow .dest{color:var(--c,var(--fn-fwd));}
+.frow .dest{color:var(--c,var(--ink));}
 </style>
+<link rel="stylesheet" href="../assets/canon.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
     <a href="../early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -306,7 +300,7 @@
       
       </div>
       <h1>A business line for your real estate business, not your <span class="u">personal cell.</span></h1>
-      <p class="hero-sub">AnyPhone gives you a business number that routes new leads and current clients to the right person, and lets an assistant or teammate help without handing out your personal cell.</p>
+      <p class="hero-sub">Numberline gives you a business number that routes new leads and current clients to the right person, and lets an assistant or teammate help without handing out your personal cell.</p>
       <div class="hero-acts">
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
         <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
@@ -364,7 +358,7 @@
 <section class="block steps-wrap" id="how" data-screen-label="How it works">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">How AnyPhone works for real estate agents</div>
+      <div class="sec-kicker">How Numberline works for real estate agents</div>
       <h2>One business number. Calls reach the right person.</h2>
     </div>
     <div class="fnlist-card grid reveal">
@@ -461,7 +455,7 @@
       <div class="fcard reveal">
         <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13l2 2 4-4"/></svg></div>
         <h3>Slack notifications</h3>
-        <p>AnyPhone posts missed calls, new texts, and voicemails to Slack so you or your assistant can follow up before the lead calls someone else.</p>
+        <p>Numberline posts missed calls, new texts, and voicemails to Slack so you or your assistant can follow up before the lead calls someone else.</p>
         <div class="eg"><b>Example</b>A missed call from a new buyer shows up in Slack and your assistant calls back within minutes.</div>
       </div>
 
@@ -485,7 +479,7 @@
     </div>
     <div class="ba">
       <div class="ba-col ba-before reveal">
-        <span class="tag">Before AnyPhone</span>
+        <span class="tag">Before Numberline</span>
         <h3>Everything on your personal cell</h3>
         <ul>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>Your private cell number gets passed around</li>
@@ -496,7 +490,7 @@
         </ul>
       </div>
       <div class="ba-col ba-after reveal">
-        <span class="tag">After AnyPhone</span>
+        <span class="tag">After Numberline</span>
         <h3>A business number, routed by need</h3>
         <ul>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>A business number keeps your cell private</li>
@@ -544,14 +538,14 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How it compares</div>
-      <h2>How AnyPhone compares for real estate agents.</h2>
+      <h2>How Numberline compares for real estate agents.</h2>
     </div>
     <div class="cmp reveal">
       <div class="cmp-row head"><div class="opt">Option</div><div class="desc">What it means for a real estate agent</div></div>
       <div class="cmp-row"><div class="opt">Personal cell phone</div><div class="desc">Free and familiar, but your private number gets handed to every lead and client, texts mix with personal messages, and no one else can help answer.</div></div>
       <div class="cmp-row"><div class="opt">Google Voice</div><div class="desc">Gives you a second number, but it is built for one person. There is no menu to route buyers, sellers, and current clients to different people, and no shared inbox for an assistant. See the <a href="../learn/google-voice-alternative.html" style="color:var(--accent-dark);font-weight:700;">Google Voice alternative</a>.</div></div>
       <div class="cmp-row"><div class="opt">Enterprise phone systems</div><div class="desc">They can do a lot, but they come with per-seat pricing, contracts, and an admin console built for big call centers. Most solo agents and small teams spend more time fighting setup than using it.</div></div>
-      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> AnyPhone</div><div class="desc">A business number, a simple menu, calls routed by need, voicemail with transcripts, and a shared text inbox. Set up in a sitting, built for a solo agent or a small team.</div></div>
+      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Numberline</div><div class="desc">A business number, a simple menu, calls routed by need, voicemail with transcripts, and a shared text inbox. Set up in a sitting, built for a solo agent or a small team.</div></div>
     </div>
     <p style="max-width:820px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">Related reading: <a href="../learn/virtual-phone-system.html" style="color:var(--accent-dark);font-weight:700;">virtual phone system</a>, <a href="../learn/business-phone-number.html" style="color:var(--accent-dark);font-weight:700;">business phone number</a>, and <a href="../learn/slack-notifications.html" style="color:var(--accent-dark);font-weight:700;">phone system with Slack notifications</a>.</p>
   </div>
@@ -565,14 +559,14 @@
       <h2>Questions real estate agents ask</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-q" open><summary><span class="fq-text">Can I keep my calls off my personal cell?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Clients call and text your AnyPhone business number, and you can forward calls to your cell so your personal number stays private. You can put the business number on signs, listings, and cards.</div></details>
+      <details class="faq-q" open><summary><span class="fq-text">Can I keep my calls off my personal cell?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Clients call and text your Numberline business number, and you can forward calls to your cell so your personal number stays private. You can put the business number on signs, listings, and cards.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can I bring my current number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, and porting is free. You get a temporary number instantly, so you can set up and take calls while the transfer completes. Nothing goes dark. When the port finishes, you can keep the temporary number free as a second line (one per business).</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can my assistant see and reply to texts?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Texts to the business number land in one shared inbox, so your assistant or a teammate can read and reply without the message getting stuck on your phone.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can new leads and current clients ring different people?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Set up a simple menu and route each option however you like. New buyers can ring you and your assistant, while a current transaction can ring a coordinator or teammate.</div></details>
       <details class="faq-q"><summary><span class="fq-text">What happens to missed calls?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The call goes to voicemail. You get a transcript and an email, and the missed call posts to Slack so you or your assistant can call the lead back quickly.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is AnyPhone a CRM?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is your phone system. It helps calls and texts reach the right person. It does not manage your pipeline, your listings, or route leads from third-party sites. It works alongside the tools you already use.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is Numberline a CRM?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is your phone system. It helps calls and texts reach the right person. It does not manage your pipeline, your listings, or route leads from third-party sites. It works alongside the tools you already use.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Do I need new phones or equipment?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Calls forward to the cell phones you and your assistant already carry. There is nothing to buy or install. Compatible desk phones are optional later, never required.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is there a contract?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone is month-to-month. Upgrade, downgrade, or cancel anytime.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Is there a contract?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is month-to-month. Upgrade, downgrade, or cancel anytime.</div></details>
     </div>
   </div>
 </section>
@@ -595,8 +589,8 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="../index.html" class="logo" aria-label="AnyPhone home">Any<span class="seam">Phone</span><span class="dot">»</span></a>
-        <p>AnyPhone is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
+        <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../learn/mobile-app.html">Mobile app</a><a href="../learn/bring-your-own-ai.html">Bring your own AI</a><a href="../learn/slack-notifications.html">Slack notifications</a></div>
         <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a><a href="../signin.html">Sign in</a></div>
@@ -606,7 +600,7 @@
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="../learn/virtual-phone-system.html">Virtual phone system</a><a href="../learn/small-business-phone-system.html">Small business phone system</a><a href="../learn/business-phone-number.html">Business phone number</a><a href="../learn/google-voice-alternative.html">Google Voice alternative</a><a href="../learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
-    <div class="foot-base">© 2026 AnyPhone. All rights reserved.</div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
   </div>
 </footer>
 

@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Get Your Business Number | AnyPhone</title>
-<meta name="description" content="Choose a local or toll-free AnyPhone business number, or transfer the number you already have. Unlimited users, month-to-month pricing, and free human support.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-<link rel="icon" href="favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="favicon-180.png?v=2">
+<title>Get Your Business Number | Numberline</title>
+<meta name="description" content="Choose a local or toll-free Numberline business number, or transfer the number you already have. Unlimited users, month-to-month pricing, and free human support.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+<link rel="icon" href="favicon.ico?v=3" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
   :root{--gold:#f5a623;} /* page-specific tokens; rest inherited from site.css */
@@ -20,7 +20,7 @@
   .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
   nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.72rem;letter-spacing:-0.045em;color:var(--ink);text-decoration:none;line-height:1;}
+  .logo{font-size:1.72rem;}
   .nav-links{display:flex;align-items:center;gap:32px;}
   .nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
   .nav-links a:hover{color:var(--ink);}
@@ -29,7 +29,7 @@
   .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;margin:-8px;color:var(--ink);}
   .hamburger svg{width:28px;height:28px;display:block;}
   .btn{padding:16px 30px;border-radius:11px;font-weight:700;font-size:1.02rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-block;text-align:center;border:none;font-family:var(--sans);}
-  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);} .btn-primary:hover{background:var(--accent-dark);color:#fff;transform:translateY(-1px);}
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
 
   .signup{padding:40px 0 56px;}
@@ -168,12 +168,13 @@
     .plan-menu{width:260px;}
   }
 </style>
+<link rel="stylesheet" href="assets/canon.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo">Any<span class="seam">Phone</span><span class="dot">»</span></a>
+    <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
     <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -389,8 +390,8 @@
       <details class="faq-q"><summary>Can I keep my current number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Choose “Keep mine,” complete signup, and we will guide you through the free transfer. Your number keeps working while the port completes.</div></details>
       <details class="faq-q"><summary>Am I locked into a long contract?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Every plan is month-to-month. Upgrade, downgrade, or cancel from your dashboard.</div></details>
       <details class="faq-q"><summary>Do you charge per user?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Users are unlimited. Add teammates, assistants, contractors, and occasional users without another seat fee.</div></details>
-      <details class="faq-q"><summary>Do I need to buy equipment?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. AnyPhone works on the mobile phone and computer you already have. A compatible SIP desk phone is optional on Grow and Max.</div></details>
-      <details class="faq-q"><summary>Can I connect Slack, WhatsApp, or an AI answering service?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Depending on your plan, AnyPhone can send notifications to Slack, add WhatsApp to your business number, trigger webhooks, and route an extension to the AI answering service you choose.</div></details>
+      <details class="faq-q"><summary>Do I need to buy equipment?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline works on the mobile phone and computer you already have. A compatible SIP desk phone is optional on Grow and Max.</div></details>
+      <details class="faq-q"><summary>Can I connect Slack, WhatsApp, or an AI answering service?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Depending on your plan, Numberline can send notifications to Slack, add WhatsApp to your business number, trigger webhooks, and route an extension to the AI answering service you choose.</div></details>
       <details class="faq-q"><summary>When am I charged?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Your first month is charged when you activate. After that, you are billed on the same date each month.</div></details>
       <details class="faq-q"><summary>Can I change my plan later?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Upgrade or downgrade at any time. Changes take effect on your next bill.</div></details>
     </div>
@@ -398,7 +399,7 @@
 </section>
 
 <footer>
-  <div class="wrap"><div class="foot-base">© 2026 AnyPhone. All rights reserved.</div></div>
+  <div class="wrap"><div class="foot-base">© 2026 Numberline. All rights reserved.</div></div>
 </footer>
 
 <script>

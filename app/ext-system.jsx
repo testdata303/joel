@@ -1,5 +1,5 @@
 /* ============================================================
-   AnyPhone app - Numbers + Main greeting overview sections.
+   Numberline app - Numbers + Main greeting overview sections.
    These sit ABOVE the extension list on the Extensions screen so
    an owner can see their whole phone system at a glance:
      · Numbers      - what people call; edit/add jumps to Numbers settings

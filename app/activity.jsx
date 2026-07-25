@@ -1,5 +1,5 @@
 /* ============================================================
-   AnyPhone app - global Activity screen (exports ActivityScreen)
+   Numberline app - global Activity screen (exports ActivityScreen)
    One merged feed of calls + voicemails + texts across every
    extension the user can access. Filter by type and by extension.
    ============================================================ */
@@ -604,7 +604,7 @@ function SmsThread({ num, id, msgs, calls, voicemails, me, onSend, onViewContact
       <Modal icon="ban" title={blocked ? 'Unblock contact' : 'Block contact?'}
       desc={blocked ?
       `Calls and texts from ${num} will be allowed through again.` :
-      `AnyPhone will silently reject calls and texts from ${num}. They won\u2019t hear that they\u2019ve been blocked.`}
+      `Numberline will silently reject calls and texts from ${num}. They won\u2019t hear that they\u2019ve been blocked.`}
       onClose={() => setShowBlock(false)}
       footer={<React.Fragment>
             <button className="btn btn-secondary" onClick={() => setShowBlock(false)}>Cancel</button>

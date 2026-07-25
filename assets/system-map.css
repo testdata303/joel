@@ -41,7 +41,7 @@
   letter-spacing:.07em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; padding-left:2px;
 }
 .smap-colhead-2{ font-weight:600; letter-spacing:.01em; color:var(--muted); opacity:.7; text-transform:none; white-space:nowrap; }
-.smap-colic{ width:24px; height:24px; border-radius:7px; display:grid; place-items:center; }
+.smap-colic{ width:24px; height:24px; border-radius:2px; display:grid; place-items:center; }
 .smap-colic svg{ width:14px; height:14px; }
 .smap-colic.n{ background:var(--green-soft); color:var(--green); }
 .smap-colic.g{ background:var(--ai-soft); color:var(--ai); }
@@ -50,7 +50,7 @@
 
 /* ============ shared compact node look ============ */
 .smap-node{
-  background:#fff; border:1px solid var(--line); border-radius:13px;
+  background:#fff; border:1px solid var(--line); border-radius:4px;
   box-shadow:var(--shadow-card); transition:border-color .15s, box-shadow .15s, transform .12s;
 }
 
@@ -65,13 +65,13 @@
 .smap-numroute{
   display:inline-flex; align-items:center; gap:6px; margin:9px 0 0 17px;
   font-size:.74rem; font-weight:700; color:var(--amber); background:var(--amber-soft);
-  padding:4px 9px; border-radius:7px;
+  padding:4px 9px; border-radius:2px;
 }
 .smap-numroute svg{ width:12px; height:12px; flex-shrink:0; }
 
 .smap-add{
   display:flex; align-items:center; justify-content:center; gap:7px; padding:11px;
-  border:1.5px dashed var(--line); border-radius:13px; color:var(--muted); font-weight:700; font-size:.85rem;
+  border:1.5px dashed var(--line); border-radius:4px; color:var(--muted); font-weight:700; font-size:.85rem;
   background:transparent; transition:border-color .15s, color .15s, background .15s;
 }
 .smap-add svg{ width:15px; height:15px; }
@@ -80,23 +80,23 @@
 /* ---- TIER 2 · greeting hub ---- */
 .smap-greet{
   background:#fff;
-  border:1.5px solid #d6e0fb; border-radius:18px; padding:18px; box-shadow:var(--shadow-soft);
+  border:1.5px solid #d6e0fb; border-radius:4px; padding:18px; box-shadow:var(--shadow-soft);
   position:relative;
 }
 .smap-greet-badge{
   display:inline-flex; align-items:center; gap:7px; font-size:.72rem; font-weight:800;
-  color:var(--ai); background:var(--ai-soft); padding:5px 11px; border-radius:20px;
+  color:var(--ai); background:var(--ai-soft); padding:5px 11px; border-radius:4px;
 }
 .smap-greet-badge svg{ width:13px; height:13px; }
 .smap-greet-text{ font-size:.94rem; line-height:1.5; color:var(--ink); font-weight:500; margin:12px 0 14px; text-wrap:pretty; }
 .smap-greet-foot{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:12px; border-top:1px solid var(--line-soft); }
 .smap-greet-hours{ display:inline-flex; align-items:center; gap:6px; font-size:.76rem; font-weight:600; color:var(--body); }
 .smap-greet-hours svg{ width:14px; height:14px; color:var(--muted); flex-shrink:0; }
-.smap-greet-edit{ font-size:.8rem; font-weight:700; color:var(--blue); padding:4px 10px; border-radius:7px; transition:background .15s; }
+.smap-greet-edit{ font-size:.8rem; font-weight:700; color:var(--blue); padding:4px 10px; border-radius:2px; transition:background .15s; }
 .smap-greet-edit:hover{ background:var(--blue-soft); }
 .smap-greet-route{
   display:flex; align-items:center; gap:8px; margin-top:14px; padding:10px 12px;
-  background:rgba(45,78,216,.06); border-radius:10px; font-size:.79rem; font-weight:600; color:var(--ai);
+  background:rgba(45,78,216,.06); border-radius:3px; font-size:.79rem; font-weight:600; color:var(--ai);
 }
 .smap-greet-route svg{ width:15px; height:15px; flex-shrink:0; }
 
@@ -122,7 +122,7 @@
 .smap-node.ext.dirnode:hover{ transform:none; box-shadow:var(--shadow-card); border-color:var(--line); }
 
 .smap-extnum{
-  min-width:34px; height:34px; padding:0 9px; border-radius:9px; background:var(--blue-soft); color:var(--blue);
+  min-width:34px; height:34px; padding:0 9px; border-radius:3px; background:var(--blue-soft); color:var(--blue);
   display:grid; place-items:center; font-weight:800; font-size:.96rem; flex-shrink:0; font-variant-numeric:tabular-nums;
 }
 .smap-extnum.off{ background:var(--line-soft); color:var(--muted); }
@@ -130,7 +130,7 @@
 .smap-ext-name{ flex:1; min-width:0; display:flex; flex-direction:column; gap:1px; }
 .smap-ext-name b{ font-weight:700; font-size:.92rem; }
 .smap-ext-name span{ font-size:.75rem; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.smap-ext-flag{ width:22px; height:22px; border-radius:6px; display:grid; place-items:center; background:var(--amber-soft); color:var(--amber); flex-shrink:0; }
+.smap-ext-flag{ width:22px; height:22px; border-radius:2px; display:grid; place-items:center; background:var(--amber-soft); color:var(--amber); flex-shrink:0; }
 .smap-ext-flag svg{ width:13px; height:13px; }
 .smap-ext-auto{ color:var(--ai); display:grid; place-items:center; flex-shrink:0; }
 .smap-ext-auto svg{ width:15px; height:15px; }
@@ -142,13 +142,13 @@
 .smap-leaves{ display:flex; flex-direction:column; gap:8px; }
 .smap-leaf{
   display:flex; align-items:center; gap:9px; padding:8px 11px;
-  background:#fff; border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow-card);
+  background:#fff; border:1px solid var(--line); border-radius:3px; box-shadow:var(--shadow-card);
   max-width:280px;
 }
 .smap-leaf.off{ opacity:.6; background:var(--bg-alt); }
 .smap-leaf.empty{ color:var(--muted); font-size:.8rem; font-weight:600; max-width:200px; }
 .smap-leaf.empty svg{ width:15px; height:15px; }
-.smap-leaf-ic{ width:28px; height:28px; border-radius:8px; background:var(--bg-alt); color:var(--body); display:grid; place-items:center; flex-shrink:0; }
+.smap-leaf-ic{ width:28px; height:28px; border-radius:3px; background:var(--bg-alt); color:var(--body); display:grid; place-items:center; flex-shrink:0; }
 .smap-leaf-ic svg{ width:14px; height:14px; }
 .smap-leaf-tx{ display:flex; flex-direction:column; gap:0; min-width:0; }
 .smap-leaf-tx b{ font-weight:700; font-size:.83rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
