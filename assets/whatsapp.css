@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — WhatsApp
+   JOEL - WhatsApp
    Onboarding + manage surfaces, Inbox channel tagging (green vs
    the blue SMS), and the notification verification flow.
    Reuses the qx-* onboarding shell from quick-setup-extras.css.
@@ -99,7 +99,7 @@
 }
 
 /* ============================================================
-   INBOX — WhatsApp channel tagging (green) vs SMS (blue)
+   INBOX - WhatsApp channel tagging (green) vs SMS (blue)
    ============================================================ */
 /* channel chip used in list rows + thread header */
 .chan-chip{display:inline-flex;align-items:center;gap:4px;font-size:.64rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap;flex-shrink:0;}
@@ -131,7 +131,7 @@
 .rf-static .rf-wa svg{width:13px;height:13px;}
 
 /* ============================================================
-   NOTIFICATIONS — WhatsApp channel + phone verification
+   NOTIFICATIONS - WhatsApp channel + phone verification
    ============================================================ */
 .wa-verify{display:flex;flex-direction:column;gap:12px;}
 .wa-verify-add{display:flex;gap:8px;}

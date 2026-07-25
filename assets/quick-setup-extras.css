@@ -1,7 +1,7 @@
 /* ============================================================
-   JOEL — Quick Setup sidebar section + SMS Reg / Integrations
+   JOEL - Quick Setup sidebar section + SMS Reg / Integrations
    ============================================================ */
-/* temporary "Quick Setup" sidebar block — green tint so it reads as transient */
+/* temporary "Quick Setup" sidebar block - green tint so it reads as transient */
 .sb-setup{margin:6px 8px 8px;padding:6px 6px 8px;background:linear-gradient(180deg,#effaf2,#e3f5ea);border:1px solid #c2e8d1;border-radius:4px;}
 .sb-group.setup{display:flex;align-items:center;gap:7px;color:#2f8456;margin:6px 8px 5px;padding:0;}
 .sb-setup-dot{width:6px;height:6px;border-radius:50%;background:#1f9d57;box-shadow:0 0 0 3px rgba(31,157,87,.18);}

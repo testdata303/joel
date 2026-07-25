@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — product app styles (Extension Detail)
+   JOEL - product app styles (Extension Detail)
    Tokens lifted from jack-site. Light, calm, Stripe-quality.
    ============================================================ */
 :root{
@@ -29,7 +29,7 @@ body{
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
 input,select,textarea{font-family:inherit;font-size:inherit;color:inherit;}
 ::selection{background:var(--blue-soft);}
-/* Numberline headlines — Figtree 800 */
+/* Numberline headlines - Figtree 800 */
 h1,h2{font-family:var(--display);letter-spacing:-.03em;}
 
 /* ===================== APP SHELL ===================== */
@@ -810,7 +810,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .time-range .select{max-width:150px;}
 .time-range .to{color:var(--muted);font-weight:600;font-size:.88rem;}
 
-/* composed Settings page — separate stacked sections */
+/* composed Settings page - separate stacked sections */
 .panel + .panel{margin-top:18px;padding-top:30px;border-top:1px solid var(--line);}
 
 /* ===================== RECORDING / UPSELL ===================== */
@@ -921,7 +921,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .pick .check svg{width:14px;height:14px;opacity:0;}
 .pick .check.on svg{opacity:1;}
 
-/* greeting player — compact inline pill */
+/* greeting player - compact inline pill */
 .greeting{display:inline-flex;align-items:center;gap:10px;padding:5px 14px 5px 5px;background:var(--bg-alt);border:1px solid var(--line);border-radius:2px;max-width:100%;}
 .greeting .play{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;flex-shrink:0;transition:background .15s,transform .1s;}
 .greeting .play:hover{background:var(--blue-dark);}
@@ -1179,7 +1179,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .drawer-b{flex:1;overflow-y:auto;padding:8px 22px 28px;}
 .drawer-f{flex-shrink:0;border-top:1px solid var(--line);background:var(--bg-alt);padding:14px 18px;}
 
-/* docked (non-modal) pane variant — wide screens only */
+/* docked (non-modal) pane variant - wide screens only */
 .drawer.docked{position:fixed;top:60px;right:0;bottom:0;height:auto;width:440px;max-width:440px;border-left:1px solid var(--line);box-shadow:-12px 0 36px rgba(15,17,21,.07);z-index:25;animation:slidein .26s cubic-bezier(.2,0,0,1);}
 .app.pane-open .scroll{padding-right:440px;transition:padding-right .26s cubic-bezier(.2,0,0,1);}
 .app.pane-open .savebar{right:464px;}
@@ -1214,7 +1214,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .id-sub-line{font-size:.88rem;color:var(--body);font-weight:600;text-align:center;}
 .new-tag{font-size:.66rem;font-weight:800;color:#fff;background:var(--blue);padding:2px 7px;border-radius:2px;letter-spacing:.02em;}
 
-/* quick actions — clean circular buttons (no nested boxes) */
+/* quick actions - clean circular buttons (no nested boxes) */
 .qact-row{display:flex;gap:6px;padding:6px 0 14px;}
 .qact{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;padding:6px 2px;background:none;border:none;font-size:.76rem;font-weight:600;color:var(--body);transition:transform .08s;}
 .qact:active{transform:translateY(1px);}
@@ -1692,7 +1692,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .tag-opt{display:block;width:100%;text-align:left;padding:8px 10px;border-radius:2px;font-size:.86rem;font-weight:600;color:var(--ink);}
 .tag-opt:hover{background:var(--bg-alt);}
 .tag-menu-empty{padding:8px 10px;font-size:.82rem;color:var(--muted);}
-/* activity digest — grouped list (Apple-style) */
+/* activity digest - grouped list (Apple-style) */
 .dig-list{border:1px solid var(--line);border-radius:2px;overflow:hidden;}
 .dig-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px 14px;border-top:1px solid var(--line-soft);background:#fff;transition:background .12s;}
 .dig-row:first-child{border-top:none;}
@@ -1818,7 +1818,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 
 /* ===== SMS refinement: calmer, denser, more premium ===== */
 
-/* Conversation list — iMessage/Linear hierarchy, tighter rows */
+/* Conversation list - iMessage/Linear hierarchy, tighter rows */
 .sms-convo{gap:10px;padding:11px 10px 11px 14px;}
 .sms-convo .act-av{width:34px;height:34px;}
 .sms-convo .avatar.act-av{font-size:.8rem;}
@@ -1833,7 +1833,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-when{font-size:.72rem;font-weight:400;color:var(--muted);}
 .sms-convo.unread .sms-when{color:var(--blue);font-weight:600;}
 
-/* list header — quieter title */
+/* list header - quieter title */
 .sms-title{font-size:1.08rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
 .sms-list-head{padding:12px 14px 8px;}
 .sms-head-row{margin-bottom:9px;}
@@ -1851,7 +1851,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-hbtn svg{color:var(--muted);}
 .sms-hbtn:hover{background:var(--bg-alt);color:var(--ink);}
 
-/* internal note — calm collapsible row, never a big yellow panel */
+/* internal note - calm collapsible row, never a big yellow panel */
 .sms-notebar,.sms-notebar.has-note{background:#fff;border-bottom:1px solid var(--line-soft);}
 .sms-notetoggle,.sms-notebar.has-note .sms-notetoggle{padding:8px 16px;font-size:.78rem;font-weight:500;color:var(--body);}
 .sms-notetoggle > svg:first-child,.sms-notebar.has-note .sms-notetoggle > svg:first-child{width:13px;height:13px;color:var(--muted);}
@@ -1860,14 +1860,14 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-noteexpand{margin-left:auto;font-size:.74rem;font-weight:500;color:var(--muted);}
 .sms-notetoggle:hover .sms-noteexpand{color:var(--ink);}
 
-/* message bubbles — readable but lighter */
+/* message bubbles - readable but lighter */
 .msg-day{color:var(--muted);font-weight:700;}
 .msg-author{color:var(--muted);font-weight:600;}
 .bubble{font-size:.92rem;line-height:1.45;font-weight:500;}
 .bubble.in{background:#eceef3;color:var(--ink);}
 .bubble.out{background:var(--blue);color:#fff;}
 
-/* composer — shorter, Replying From as quiet metadata */
+/* composer - shorter, Replying From as quiet metadata */
 .sms-replyfrom{padding:7px 16px 0;}
 .rf-k{font-size:.66rem;font-weight:600;letter-spacing:.04em;color:var(--muted);}
 .rf-sel{padding:3px 24px 3px 8px;font-weight:500;font-size:.78rem;color:var(--body);border-color:transparent;background-color:transparent;}
@@ -1877,7 +1877,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .msg-send{width:34px;height:34px;}
 .msg-send svg{width:16px;height:16px;}
 
-/* sidebar — lighter nav labels, quieter section headers */
+/* sidebar - lighter nav labels, quieter section headers */
 .sb-item{font-weight:500;font-size:.875rem;}
 .sb-item.active{font-weight:600;}
 .sb-group{font-size:.62rem;font-weight:700;letter-spacing:.1em;color:#9aa0ab;padding:16px 10px 5px;}
@@ -1929,7 +1929,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 /* internal notes description */
 .notes-desc{font-size:.8rem;color:var(--muted);line-height:1.45;margin:-3px 0 9px;}
 
-/* ===== Internal note — single sticky note (SMS header + contact drawer) ===== */
+/* ===== Internal note - single sticky note (SMS header + contact drawer) ===== */
 :root{--note-bg:#fdf7da;--note-bg2:#fffdf3;--note-line:#efe1a6;--note-ink:#5c4a12;--note-accent:#8a6d00;}
 
 /* SMS conversation header note bar */
@@ -1965,7 +1965,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sticky-ta::placeholder{color:#b39a4d;}
 .sticky-acts{display:flex;align-items:center;justify-content:flex-end;margin-top:10px;}
 
-/* ===== SMS left column header — calm, conversation-first hierarchy ===== */
+/* ===== SMS left column header - calm, conversation-first hierarchy ===== */
 .sms-list-head{padding:14px 14px 11px;border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:10px;}
 .sms-list-head .sms-title{font-size:1.15rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;margin:0;}
 .sms-search{display:flex;align-items:center;gap:8px;height:36px;padding:0 11px;background:var(--bg-alt);border:1px solid var(--line);border-radius:2px;color:var(--muted);transition:border-color .14s,background .14s,box-shadow .14s;}
@@ -2020,7 +2020,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ov-extnum{width:26px;height:26px;border-radius:2px;background:var(--ink);color:#fff;font-weight:800;font-size:.82rem;display:grid;place-items:center;flex-shrink:0;}
 .ov-extnum.sm{width:22px;height:22px;font-size:.74rem;border-radius:2px;background:var(--bg-alt);color:var(--body);border:1px solid var(--line);}
 
-/* V1 — numbers grid + greeting + ext/forwarding/vm rows */
+/* V1 - numbers grid + greeting + ext/forwarding/vm rows */
 .ov-numgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 .ov-numcard{border:1px solid var(--line);border-radius:2px;padding:12px;background:#fff;box-shadow:var(--shadow-card);}
 .ov-numcard-h{display:flex;align-items:center;justify-content:space-between;gap:8px;}
@@ -2075,7 +2075,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ov-notif{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--body);flex-shrink:0;}
 .ov-notif svg{width:13px;height:13px;color:var(--muted);}
 
-/* V2 — status banner, stat pills, attention, quick modes, summary rows */
+/* V2 - status banner, stat pills, attention, quick modes, summary rows */
 .ov-status{display:flex;align-items:center;gap:13px;padding:14px 16px;border-radius:2px;margin-bottom:16px;}
 .ov-status.ok{background:var(--green-soft);border:1px solid #bfe9d2;}
 .ov-status.attn{background:var(--amber-soft);border:1px solid #f3dca6;}
@@ -2125,7 +2125,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ov-sum-main span{font-size:.78rem;color:var(--muted);margin-top:1px;}
 .ov-sum-route{font-size:.8rem;font-weight:600;color:var(--body);flex-shrink:0;white-space:nowrap;}
 
-/* V3 — plain-English narrative */
+/* V3 - plain-English narrative */
 .sysov.v3{max-width:680px;}
 .ov3-biz{display:flex;align-items:center;gap:12px;}
 .ov3-bizmark{width:38px;height:38px;border-radius:2px;background:var(--blue);color:#fff;font-weight:800;font-size:1.2rem;display:grid;place-items:center;}
@@ -2191,7 +2191,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ov3-action.on .ov3-action-ic{background:#fff;border-color:#c7cffb;color:var(--blue);}
 .ov3-action-on{font-size:.72rem;font-weight:700;color:var(--green);background:var(--green-soft);padding:2px 9px;border-radius:2px;flex-shrink:0;}
 .ov3-tasknote{font-size:.84rem;color:var(--muted);line-height:1.5;margin-top:10px;}
-/* adaptive overview — head row + preview-as switch */
+/* adaptive overview - head row + preview-as switch */
 .ov-headrow{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
 .ov-acctswitch{display:flex;align-items:center;gap:4px;background:var(--bg-alt);border:1px solid var(--line);border-radius:2px;padding:3px;flex-shrink:0;margin-top:4px;}
 .ov-acctswitch > span{font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:0 8px;}
@@ -2199,7 +2199,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ov-acctswitch button:hover{color:var(--ink);}
 .ov-acctswitch button.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(15,17,21,.1);}
 
-/* ===== Phone System — inline management ===== */
+/* ===== Phone System - inline management ===== */
 .ps-numrow .ps-rowacts{display:flex;align-items:center;gap:2px;flex-shrink:0;opacity:0;transition:opacity .12s;}
 .ps-numrow:hover .ps-rowacts{opacity:1;}
 .ps-iconbtn{width:28px;height:28px;border-radius:2px;display:grid;place-items:center;color:var(--muted);transition:background .14s,color .14s;}
@@ -2258,7 +2258,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ps-toggle small{font-size:.8rem;color:var(--muted);margin-top:1px;}
 .ps-extfoot{margin-top:16px;padding-top:13px;border-top:1px solid var(--line-soft);}
 
-/* ===== Settings (Stripe-style — constrained card grid) ===== */
+/* ===== Settings (Stripe-style - constrained card grid) ===== */
 .settings-screen{max-width:880px;margin:0 auto;}
 .set-head{margin-bottom:30px;}
 .set-title{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;}
@@ -2277,7 +2277,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .set-card > svg:last-child{width:16px;height:16px;color:var(--muted);flex-shrink:0;margin-top:9px;}
 @media(max-width:680px){ .set-grid{grid-template-columns:1fr;} }
 
-/* Phone System v2 — inline number edit, after-hours, forwarding, Slack */
+/* Phone System v2 - inline number edit, after-hours, forwarding, Slack */
 .ps-numwrap{border-top:1px solid var(--line-soft);}
 .ps-numwrap:first-child{border-top:none;}
 .ps-numwrap .ps-numrow{border-top:none;}
@@ -2390,7 +2390,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ge-radio-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;}
 .ge-radio.on .ge-radio-dot{border-color:var(--blue);border-width:5px;}
 
-/* ===== Voicemail & alerts — three cards ===== */
+/* ===== Voicemail & alerts - three cards ===== */
 .vm-card{background:#fff;border:1px solid var(--line);border-radius:2px;box-shadow:var(--shadow-card);padding:16px;margin-bottom:12px;}
 .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .vm-grid .vm-card{margin-bottom:0;}
@@ -2431,7 +2431,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .vm-subnote{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);margin:0 0 4px 84px;}
 .vm-subnote svg{width:13px;height:13px;color:var(--green);flex-shrink:0;}
 @media(max-width:620px){ .vm-grid{grid-template-columns:1fr;} }
-/* expanded extension panel — per-destination pills + status */
+/* expanded extension panel - per-destination pills + status */
 .ps-destpills{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px;}
 .ps-destpills .ps-pill{display:inline-flex;align-items:center;gap:5px;}
 .ps-destpills .ps-pill svg{width:11px;height:11px;color:var(--muted);}
@@ -2465,14 +2465,14 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .ge-subhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;}
 .ge-subhead .ge-blockh{margin-bottom:0;white-space:nowrap;}
 
-/* ===== Numbers screen — calmer hierarchy (the phone number is the focal point) ===== */
+/* ===== Numbers screen - calmer hierarchy (the phone number is the focal point) ===== */
 .num-list .nrow{padding:11px 12px 11px 14px;gap:14px;}
-/* 1 · phone number — the single dominant element */
+/* 1 · phone number - the single dominant element */
 .nrow-num{font-weight:700;font-size:1.04rem;color:var(--ink);letter-spacing:-.01em;}
 .nrow-dot{width:7px;height:7px;}
-/* 2 · label (e.g. Marketing tracking) — quiet supporting line */
+/* 2 · label (e.g. Marketing tracking) - quiet supporting line */
 .nrow-label{font-size:.78rem;font-weight:400;color:var(--muted);margin-top:0;}
-/* 5 · metadata badges — present but recessive; SMS Approved must not grab the eye */
+/* 5 · metadata badges - present but recessive; SMS Approved must not grab the eye */
 .num-badge{font-size:.68rem;font-weight:600;color:var(--muted);background:transparent;border:1px solid var(--line);padding:2px 8px;}
 .sms-badge{font-size:.68rem;font-weight:600;padding:2px 8px 2px 7px;}
 .sms-badge svg{width:11px;height:11px;opacity:.85;}
@@ -2480,11 +2480,11 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-badge.pending{color:#7a5600;background:var(--amber-soft);}
 .sms-badge.fail{color:var(--red);background:var(--red-soft);}
 .sms-badge.muted{color:var(--muted);background:var(--bg-alt);border:1px solid var(--line);}
-/* 3/4 · section labels — subtle, not loud */
+/* 3/4 · section labels - subtle, not loud */
 .nrow-k{font-size:.62rem;font-weight:600;letter-spacing:.03em;color:var(--muted);}
-/* 3 · routing value — medium weight */
+/* 3 · routing value - medium weight */
 .nrow-sel.nrow-sel{font-weight:500;font-size:.86rem;}
-/* 4 · caller experience — descriptive, recessive */
+/* 4 · caller experience - descriptive, recessive */
 .nrow-expv{font-weight:500;}
 .nrow-expt{font-weight:500;font-size:.86rem;color:var(--body);}
 
@@ -2496,7 +2496,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-notearea,.sticky-ta{border-color:#ddd0b0;}
 .sms-notearea:focus,.sticky-ta:focus{border-color:#c9b88a;box-shadow:0 0 0 3px rgba(176,156,108,.22);}
 
-/* internal note — NO-NOTE state: gray, subtle, never warm, never attention-grabbing */
+/* internal note - NO-NOTE state: gray, subtle, never warm, never attention-grabbing */
 .sms-notebar.no-note{background:#fff;border-bottom-color:var(--line-soft);}
 .sms-notebar.no-note .sms-note-ic{background:var(--bg-alt);color:var(--muted);}
 .sms-notebar.no-note .sms-note-lbl{color:var(--muted);}
@@ -2512,7 +2512,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-newbtn:hover{background:var(--bg-alt);border-color:#dadce1;color:var(--ink);}
 .sms-newbtn svg{width:15px;height:15px;color:var(--muted);}
 
-/* number filter — discoverable chip, still compact */
+/* number filter - discoverable chip, still compact */
 .sms-numfilter{align-self:flex-start;height:30px;padding:0 8px 0 10px;border:1px solid var(--line);background:var(--bg-alt);border-radius:2px;color:var(--body);}
 .sms-numfilter:hover{background:#fff;border-color:#dadce1;}
 .sms-numfilter > svg:first-child{color:var(--muted);}
@@ -2527,7 +2527,7 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 /* ===== Internal note v3: lightweight sticky note, NOT a warning banner ===== */
 /* keep only a very subtle warm-paper background; all text/icon/button = normal neutral UI */
 :root{--note-bg:#faf6ec;--note-bg2:#fffefa;--note-line:#ece4d2;}
-/* icon — standard muted, no colored chip */
+/* icon - standard muted, no colored chip */
 .sms-note-ic,.sticky-ic,.sms-notebar.no-note .sms-note-ic{background:transparent;color:var(--muted);}
 .sms-note-ic svg{width:15px;height:15px;}
 /* labels neutral; note content is the primary focus in normal text color */
@@ -2537,10 +2537,10 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-notearea{color:var(--ink);background:#fff;border-color:var(--line);}
 .sms-notearea:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft);}
 .sms-notearea::placeholder{color:var(--muted);}
-/* Expand — a normal small secondary button, not a warm pill */
+/* Expand - a normal small secondary button, not a warm pill */
 .sms-note-expand{background:#fff;border:1px solid var(--line);color:var(--body);font-weight:600;padding:3px 11px;border-radius:2px;}
 .sms-notetoggle:hover .sms-note-expand{background:var(--bg-alt);border-color:#dadce1;color:var(--ink);}
-/* contact-drawer sticky note — same neutral treatment */
+/* contact-drawer sticky note - same neutral treatment */
 .sticky-ic svg{width:15px;height:15px;}
 .sticky-ht b{color:var(--ink);}
 .sticky-ht span{color:var(--muted);}
@@ -2795,12 +2795,12 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .eg-awayrow b{font-weight:700;font-size:.94rem;}
 .eg-awayrow p{color:var(--body);font-size:.86rem;margin-top:2px;}
 
-/* ===================== SMS v2 — shared team inbox ===================== */
+/* ===================== SMS v2 - shared team inbox ===================== */
 /* teammate initials dot */
 .team-dot{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.01em;flex-shrink:0;}
 .team-dot.sm{width:18px;height:18px;font-size:.56rem;}
 
-/* status filter chips — single tidy row, scrolls if needed */
+/* status filter chips - single tidy row, scrolls if needed */
 .sms-chips{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
 .sms-chips::-webkit-scrollbar{display:none;}
 .sms-chip{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:2px;border:1px solid var(--line);background:#fff;font-size:.78rem;font-weight:600;color:var(--body);transition:all .12s;}
@@ -2834,12 +2834,12 @@ textarea.input{height:auto;padding:11px 13px;line-height:1.5;resize:vertical;min
 .sms-hbtn.sm{height:32px;}
 .sms-hacts{gap:7px;}
 .sms-hdiv{width:1px;height:20px;background:var(--line);flex-shrink:0;margin:0 1px;}
-/* resolved status pill (fresh classes — no base-rule conflict) */
+/* resolved status pill (fresh classes - no base-rule conflict) */
 .sms-resolved-pill{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 8px 0 12px;border-radius:2px;background:#1f9d57;color:#fff;font-size:.8rem;font-weight:700;}
 .sms-resolved-pill svg{width:14px;height:14px;}
 .sms-reopen{margin-left:4px;height:24px;padding:0 9px;border-radius:2px;background:rgba(255,255,255,.22);color:#fff;font-size:.74rem;font-weight:700;transition:background .12s;}
 .sms-reopen:hover{background:rgba(255,255,255,.34);}
-/* resolve / reopen — neutral action when open, green confirmation when done */
+/* resolve / reopen - neutral action when open, green confirmation when done */
 .sms-resolvebtn{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border:1px solid var(--line);border-radius:2px;background:#fff;font-size:.8rem;font-weight:700;color:var(--body);transition:border-color .12s,background .12s,color .12s;}
 .sms-resolvebtn svg{width:14px;height:14px;}
 .sms-resolvebtn:hover{border-color:#dadce1;background:var(--bg-alt);color:var(--ink);}

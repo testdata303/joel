@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — SMS inbox: Apple-Messages calm redesign
+   JOEL - SMS inbox: Apple-Messages calm redesign
    ============================================================ */
 /* --- left list: single Filter control replaces always-on chips --- */
 .sms-filterrow{display:flex;align-items:center;justify-content:space-between;gap:10px;}

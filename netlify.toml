@@ -1,4 +1,4 @@
-# JOEL — static marketing site. No build step (plain HTML/CSS/JS).
+# JOEL - static marketing site. No build step (plain HTML/CSS/JS).
 # Deploy: connect this repo/folder in Netlify; publish dir is the project root.
 
 [build]

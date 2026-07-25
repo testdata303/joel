@@ -1,5 +1,5 @@
 /* ============================================================
-   APP CANON — carries the Numberline logo direction into the
+   APP CANON - carries the Numberline logo direction into the
    product: hard-edged geometry, ink-first actions, the
    rule-with-ticks motif, Figtree 900 caps.
    Loaded LAST of all app stylesheets, so it wins.
@@ -9,14 +9,14 @@
 .btn-primary{background:var(--ink);color:#fff;}
 .btn-primary:hover{background:#33333A;}
 
-/* Play buttons are inverted, not solid black — white face, ink glyph */
+/* Play buttons are inverted, not solid black - white face, ink glyph */
 .greet-play,.greet-playbtn,.cflow-playbtn,.psys-play,.esys-play{background:#fff;color:var(--ink);border:1px solid var(--line);}
 .greet-play:hover,.greet-playbtn:hover,.cflow-playbtn:hover,.psys-play:hover,.esys-play:hover{background:var(--bg-alt);border-color:#d7d9e0;}
 .greet-playbtn.on,.cflow-playbtn.playing,.psys-play.on,.esys-play.on{background:var(--ink);color:#fff;border-color:var(--ink);}
 .cc-sug-go{background:var(--ink);color:#fff;}
 .greet-play,.cflow-playbtn,.psys-play,.esys-play{box-shadow:none;}
 
-/* Service tiles keep their own brand colour — never flat black.
+/* Service tiles keep their own brand colour - never flat black.
    Glyphs sit at a bright value so they read as colour, not ink. */
 .app-logo.slack{background:#f3ecfb;color:#7a4ddb;}
 .app-logo.wa{background:var(--wa-soft);color:#12a05a;}
@@ -32,7 +32,7 @@
 .switcher-mark.blue{background:var(--blue-soft);color:var(--blue);}
 .switcher-mark.green{background:var(--green-soft);color:var(--green);}
 
-/* Squared affordances — circles reserved for person avatars */
+/* Squared affordances - circles reserved for person avatars */
 .icon-btn,.greet-play,.psys-play,.esys-play,.cflow-playbtn,
 .id-av.guess,.id-av.unknown,.cc-sug-go{border-radius:3px;}
 

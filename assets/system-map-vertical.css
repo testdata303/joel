@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app — System Map (VERTICAL)
+   JOEL app - System Map (VERTICAL)
    Same tree, flowing top → bottom so the page scrolls down:
    numbers → main greeting → extensions → the phones each rings.
    ============================================================ */
@@ -224,7 +224,7 @@
 .cflow-exts{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 .cflow-add{ grid-column:1 / -1; }
 
-/* greeting: state colors (green = open, purple = away), status dot, text pills — no glyphs */
+/* greeting: state colors (green = open, purple = away), status dot, text pills - no glyphs */
 .cflow-greet.is-open{ background:#fff; border-color:var(--line); }
 .cflow-greet.is-away{ background:#eef3ff; border-color:#d6e0fb; }
 .cflow-greet{ max-width:396px; }
@@ -236,7 +236,7 @@
 .cflow-pill:hover{ border-color:var(--blue); color:var(--blue); }
 .cflow-pill.playing{ border-color:var(--green); background:var(--green-soft); color:var(--green); }
 .cflow-pill.on{ border-color:var(--ai); background:#fff; color:var(--ai); }
-/* main-greeting card: round play button — plays the greeting that's currently active */
+/* main-greeting card: round play button - plays the greeting that's currently active */
 .cflow-playbtn{ width:38px; height:38px; border-radius:50%; border:none; background:var(--blue); color:#fff;
   display:grid; place-items:center; flex-shrink:0; cursor:pointer;
   box-shadow:0 2px 7px rgba(37,64,238,.28); transition:transform .12s, background .14s, box-shadow .14s; }
@@ -252,13 +252,13 @@
 .cflow-fwddot:hover{ transform:scale(1.3); }
 .cflow-fwddot.off{ background:#c2c6cf; box-shadow:0 0 0 3px var(--line-soft); }
 
-/* ext card v3: plain numeral, avatar stack, light label — no boxes, no christmas */
+/* ext card v3: plain numeral, avatar stack, light label - no boxes, no christmas */
 /* number + name read as one title line; toggle replaces the status light */
 .cflow-num{ font-size:.98rem; font-weight:800; color:var(--blue); min-width:18px; text-align:left;
   font-variant-numeric:tabular-nums; flex-shrink:0; line-height:1; }
 .cflow-ext.off .cflow-num{ color:#aab3c5; }
 .cflow-exttgl{ margin-left:auto; flex-shrink:0; display:flex; align-items:center; }
-/* status pill (matches the app's ACTIVE/AWAY convention) — click to toggle with confirm */
+/* status pill (matches the app's ACTIVE/AWAY convention) - click to toggle with confirm */
 .cflow-stat{ margin-left:auto; display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:4px;
   background:var(--green-soft); border:1px solid #cfe9db; color:var(--green); font-weight:800; font-size:.66rem;
   letter-spacing:.05em; text-transform:uppercase; flex-shrink:0; cursor:pointer; white-space:nowrap;
@@ -474,7 +474,7 @@
 .sysmng-sub{ font-size:.78rem; color:var(--body); font-weight:600; display:block; margin-top:2px; }
 
 /* ============================================================
-   VISUAL POLISH — confident blue, soft depth, no wireframe
+   VISUAL POLISH - confident blue, soft depth, no wireframe
    ============================================================ */
 /* keypad badges: brand blue, auto-sized so 101 fits comfortably */
 .cflow-key, .cflow-exthead .cflow-key{ width:auto; min-width:30px; height:30px; padding:0 9px; border-radius:3px;

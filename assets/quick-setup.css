@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — Quick Setup wizard styles
+   JOEL - Quick Setup wizard styles
    ============================================================ */
 .qs{max-width:640px;margin:0 auto;padding:8px 0 40px;}
 .qs-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
@@ -18,7 +18,7 @@
 .qs-title{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;line-height:1.12;color:var(--ink);text-wrap:balance;}
 .qs-sub{margin-top:9px;color:var(--body);font-size:.98rem;line-height:1.5;max-width:48ch;}
 .qs-fineprint{margin-top:16px;font-size:.82rem;color:var(--muted);line-height:1.5;}
-/* welcome — "callers will hear" card */
+/* welcome - "callers will hear" card */
 .qs-hearcard{margin-top:24px;border:1px solid var(--line);border-radius:4px;padding:20px;background:var(--bg-alt);}
 .qs-hear-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
 .qs-hear-ic{width:34px;height:34px;border-radius:3px;background:var(--blue);color:#fff;display:grid;place-items:center;flex-shrink:0;}
@@ -133,7 +133,7 @@
 .qs-ext-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
 .qs-ext-head b{font-weight:700;font-size:.95rem;color:var(--ink);}
 .qs-ext-note{display:block;font-size:.82rem;color:var(--muted);margin-top:4px;line-height:1.4;}
-/* locked (Operator) — never blue, can't be unchecked */
+/* locked (Operator) - never blue, can't be unchecked */
 .qs-extopt.locked{cursor:default;background:var(--bg-alt);border-color:var(--line);}
 .qs-extopt.locked:hover{border-color:var(--line);}
 .qs-extopt.locked .qs-ext-check{background:#fff;border-color:var(--line);color:var(--muted);}

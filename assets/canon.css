@@ -1,8 +1,8 @@
 /* ============================================================
-   CANON — canonical component layer.
+   CANON - canonical component layer.
    Loaded LAST on every page (after each page's inline <style>),
    so rules here WIN and apply site-wide. To change a shared
-   component everywhere, edit it HERE — one file, whole site.
+   component everywhere, edit it HERE - one file, whole site.
    ============================================================ */
 
 /* --- Brand safety: logo + primary CTA never turn blue on hover --- */
@@ -32,7 +32,7 @@ nav .logo{font-size:1.72rem;}
 
 /* --- Hero shot-card routing rows: icon tiles carry the pastel FUNCTION
        colour (blue digit, purple forward, green voicemail, cyan SMS) instead
-       of flat white tiles — the same function palette as everywhere else.
+       of flat white tiles - the same function palette as everywhere else.
        Each .route row sets --c/--cs via its .fn-* class. --- */
 .route .fic{background:var(--cs,var(--soft));border:0;color:var(--c,var(--ink));}
 .route .fic svg{color:var(--c,var(--ink));}
@@ -51,10 +51,15 @@ nav .logo{font-size:1.72rem;}
 /* --- Section eyebrow: identical blue chip everywhere --- */
 .sec-kicker,.kicker,.jx-kicker{color:var(--cta-dark);background:var(--cta-soft);border-radius:8px;}
 
-/* --- Mobile: the standalone nav CTA wraps to two lines — hide it.
+/* --- Mobile: the standalone nav CTA wraps to two lines - hide it.
        The same link stays available inside the hamburger menu. --- */
 @media(max-width:860px){.nav-cta-m{display:none;}}
 
 /* --- Hero band: the homepage's soft coloured wash, applied to every hero
-       (contained gradient — no overflow, works regardless of markup) --- */
+       (contained gradient - no overflow, works regardless of markup) --- */
 .hero,.jx-hero{background:radial-gradient(120% 92% at 92% -12%,rgba(37,64,238,.10),transparent 58%),radial-gradient(82% 74% at -12% 112%,rgba(162,251,239,.15),transparent 60%),var(--paper);}
+
+/* --- Industry (/for/) pages carry class="lp" on <body>. The intro
+       paragraphs under the hero read left-aligned; headings and the
+       closer stay centred. Applies to current and future /for/ pages. --- */
+body.lp .pain-copy{text-align:left;}

@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — shared design system
+   JOEL - shared design system
    One source of truth for chrome + primitives across every
    marketing + landing page. Page-specific rules stay in-page.
    ============================================================ */
@@ -7,16 +7,16 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --ink:#131316;--body:#4A4A52;--muted:#6E7480;--line:#E8EAEE;--line-soft:#f1f2f4;--soft:#F1F3F6;--bg:#FFFFFF;--bg-alt:#F6F6F7;--card:#fff;
-  /* Numberline brand — Ink actions + one electric accent (#A2FBEF). */
+  /* Numberline brand - Ink actions + one electric accent (#A2FBEF). */
   --neon:#A2FBEF;
-  --beige:#F4F2ED; /* Paper — warm neutral chip/section ground */
-  --cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4; /* Signal Blue — primary action fill */
+  --beige:#F4F2ED; /* Paper - warm neutral chip/section ground */
+  --cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4; /* Signal Blue - primary action fill */
   --accent:#131316;--accent-dark:#33333A;--accent-soft:#F1F1F0;--accent-text:#131316;
-  --accent-ink:#1B31C4; /* accent used as TEXT or ICON — Signal Blue, never teal */
+  --accent-ink:#1B31C4; /* accent used as TEXT or ICON - Signal Blue, never teal */
   --accent-on-dark:#FFFFFF; /* actions reverse to white on Ink */
   --paper:#FFFFFF;          /* white section band */
   --wa:#1FAE63;
-  /* aliases — some pages reference these names; mapped to the canonical palette */
+  /* aliases - some pages reference these names; mapped to the canonical palette */
   --blue:#2540EE;--blue-dark:#1B31C4;--blue-soft:#E7EBFE;--blue-ink:#1B31C4;
   --ai:#131316;--ai-soft:#F1F1F0;--green:#1bb56a;
   --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif;
@@ -25,7 +25,7 @@
 }
 html{scroll-behavior:smooth;}
 /* ============================================================
-   NO PER-USER PRICING stamp — brand mark, always this exact
+   NO PER-USER PRICING stamp - brand mark, always this exact
    phrase. Inline seal: double ring, slight tilt, Signal Blue.
    Sizes: default (inline / fact strips), .nup-lg (section-level).
    ============================================================ */
@@ -44,13 +44,13 @@ html{scroll-behavior:smooth;}
 body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
 /* standardize heading line-wrapping site-wide so titles break evenly instead of orphaning a word */
 h1,h2,h3{text-wrap:pretty;}
-/* Numberline headlines — Figtree 800. Body + UI text stay Plus Jakarta Sans. */
+/* Numberline headlines - Figtree 800. Body + UI text stay Plus Jakarta Sans. */
 h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em;}
-/* Brand rule: marketing headlines are ALWAYS ink — never colored. Accent lives in eyebrows, links, and function icons only. */
+/* Brand rule: marketing headlines are ALWAYS ink - never colored. Accent lives in eyebrows, links, and function icons only. */
 h1,h2,h3,.sec-head h2,.sec-head h3{color:var(--ink);}
-/* default links — Signal Blue, never browser blue */
+/* default links - Signal Blue, never browser blue */
 a{color:var(--cta);}a:hover{color:var(--cta-dark);}
-/* small labels / eyebrows — Plus Jakarta Sans 700, uppercase (per brand guidelines; no mono) */
+/* small labels / eyebrows - Plus Jakarta Sans 700, uppercase (per brand guidelines; no mono) */
 /* exploration: warm Paper hero band */
 .jx-hero{background:var(--paper);}
 .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
@@ -107,7 +107,7 @@ nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(25
   .nav-cta-m{display:inline-flex;align-items:center;margin-left:auto;margin-right:14px;padding:9px 15px;font-size:.82rem;border-radius:9px;}
 }
 
-/* NOTE: section / .sec-head / .kicker / .closer are intentionally NOT shared —
+/* NOTE: section / .sec-head / .kicker / .closer are intentionally NOT shared -
    pages diverge (centered vs left-aligned headers, gradient vs solid CTA).
    Those stay page-local until a deliberate unification pass. */
 
@@ -138,7 +138,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
 
 
 /* ============================================================
-   BRANDED FUNCTION DESIGN — canonical way to show how Numberline works.
+   BRANDED FUNCTION DESIGN - canonical way to show how Numberline works.
    One row per function: colored icon tile + bold name + outcome chip.
    Rows NEVER wrap to two lines. (Born on the homepage hero.)
    Rows use black icon tiles + one accent chip (Direction C).
@@ -185,7 +185,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
 .hstep-flow{display:flex;align-items:center;gap:9px;flex:none;margin-left:auto;}
 .hstep-out{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;}
 .hstep-res{background:#fff;color:var(--ink);border:1px solid #E7E3DA;font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:100px;white-space:nowrap;flex:none;}
-/* narrow containers: shrink instead of overlapping — rows still never wrap */
+/* narrow containers: shrink instead of overlapping - rows still never wrap */
 @container (max-width:335px){
   .hstep-title b{font-size:.9rem;}
   .hstep-ic{width:36px;height:36px;border-radius:10px;}
@@ -211,7 +211,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
 .fnlist-card{max-width:560px;margin:0 auto;background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:28px;}
 @media(max-width:620px){.fnlist-card{padding:18px 14px;}}
 
-/* grid variant: full-width section row layout (not a hero copy) — 2-col tiles, no stepper spine */
+/* grid variant: full-width section row layout (not a hero copy) - 2-col tiles, no stepper spine */
 .fnlist-card.grid{max-width:940px;background:transparent;border:none;padding:0;}
 .hsteps.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .hsteps.grid::before{display:none;}

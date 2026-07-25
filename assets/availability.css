@@ -1,4 +1,4 @@
-/* ===== Extension Availability — Active / Away ===== */
+/* ===== Extension Availability - Active / Away ===== */
 .avail{ display:flex; flex-direction:column; gap:14px; }
 
 /* hero status banner */
@@ -78,8 +78,8 @@
 .avail-fwd-pick{ margin-top:2px; padding-left:29px; }
 .avail-fwd-pick .select{ width:100%; }
 
-/* ===== Main Greeting pane — inline sections ===== */
-/* "Switch to after-hours now" — text block + toggle row */
+/* ===== Main Greeting pane - inline sections ===== */
+/* "Switch to after-hours now" - text block + toggle row */
 .mg-awaynow{ display:flex; align-items:center; gap:16px; padding:14px 16px; margin-bottom:16px;
   border:1px solid var(--line); border-radius:4px; background:#fff; }
 .mg-awaynow-tx{ flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; }
@@ -154,7 +154,7 @@
 .intg-back{ display:inline-flex; align-items:center; gap:7px; margin:0 0 4px 4px; font-size:.86rem; font-weight:700; color:var(--blue); white-space:nowrap; }
 .intg-back svg{ width:16px; height:16px; }
 
-/* Integrations — sections + AI agents */
+/* Integrations - sections + AI agents */
 .apps-sectionh{ margin:30px 0 14px; }
 .apps-sectionh.tools{ margin-top:38px; padding-top:26px; border-top:1px solid var(--line); }
 .apps-sectionh h2{ font-size:1.16rem; font-weight:800; letter-spacing:-.02em; color:var(--ink); }
@@ -196,7 +196,7 @@
 .aiset-cando li{ display:flex; align-items:flex-start; gap:10px; font-size:.88rem; color:var(--body); line-height:1.45; }
 .aiset-cando li svg{ width:17px; height:17px; flex-shrink:0; margin-top:1px; color:var(--green); }
 
-/* Add a desk phone — flow */
+/* Add a desk phone - flow */
 .dp-steps{ display:flex; align-items:center; gap:8px; margin-bottom:18px; }
 .dp-stepdot{ font-size:.72rem; font-weight:800; letter-spacing:.02em; color:var(--muted);
   padding:5px 11px; border-radius:4px; background:var(--bg-alt); border:1px solid var(--line); white-space:nowrap; }
@@ -257,7 +257,7 @@
 .dgp-tx span{ font-size:.8rem; color:var(--body); line-height:1.4; }
 .dest-getphone > svg{ width:17px; height:17px; color:var(--blue); flex-shrink:0; }
 
-/* Extension desk-phone destination — empty state (no devices set up) */
+/* Extension desk-phone destination - empty state (no devices set up) */
 .dest-nodevices{ display:flex; align-items:flex-start; gap:13px; padding:16px;
   background:var(--bg-alt); border:1px solid var(--line); border-radius:4px; }
 .dnd-ic{ width:38px; height:38px; border-radius:3px; flex-shrink:0; display:grid; place-items:center; background:#eceef3; color:var(--ink); }
@@ -266,7 +266,7 @@
 .dnd-tx span{ font-size:.85rem; color:var(--body); line-height:1.5; }
 .dnd-tx b + span b, .dnd-tx span b{ color:var(--ink); font-weight:700; }
 
-/* Desk phone — one-line hint (opens the desk-phone picker) */
+/* Desk phone - one-line hint (opens the desk-phone picker) */
 .dest-hint{ display:flex; align-items:center; gap:10px; width:100%; margin-top:14px; padding:12px 14px;
   background:var(--bg-alt); border:1px solid var(--line); border-radius:3px; cursor:pointer; transition:background .12s; }
 .dest-hint:hover{ background:#eef1f6; }
@@ -275,7 +275,7 @@
 .dest-hint span b{ color:var(--ink); font-weight:700; }
 .dest-hint > svg:last-child{ width:16px; height:16px; color:var(--muted); flex-shrink:0; }
 
-/* Desk phone info modal — recommended model */
+/* Desk phone info modal - recommended model */
 .dpi-text{ font-size:.92rem; color:var(--body); line-height:1.6; margin-bottom:16px; }
 .dpi-text b{ color:var(--ink); font-weight:700; }
 .dpi-pick{ display:flex; align-items:center; gap:13px; padding:15px 16px; border-radius:4px;
@@ -300,7 +300,7 @@
 .dsp-tx{ flex:1; text-align:left; font-size:.88rem; font-weight:700; color:var(--ink); }
 .dest-setupphone > svg:last-child{ width:16px; height:16px; color:var(--blue); flex-shrink:0; }
 
-/* extension Alerts — webhook row */
+/* extension Alerts - webhook row */
 .alert-ic.hook{ background:#eceef3; color:var(--ink); }
 .alert-endpoint{ flex:1; min-width:0; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.78rem;
   color:var(--body); background:var(--bg-alt); border:1px solid var(--line); border-radius:3px; padding:6px 9px;
@@ -353,7 +353,7 @@
 .wh-delivery-ev{ flex:1; min-width:0; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.8rem; color:var(--ink); }
 .wh-delivery-when{ font-size:.78rem; color:var(--muted); flex-shrink:0; }
 
-/* Call Flow — empty inspector state */
+/* Call Flow - empty inspector state */
 .sysmng-empty{ display:flex; align-items:center; justify-content:center; }
 .sysempty{ max-width:400px; text-align:center; padding:32px 24px; }
 .sysempty-ic{ width:58px; height:58px; border-radius:4px; display:inline-grid; place-items:center;
@@ -366,7 +366,7 @@
 .syschat svg{ width:16px !important; height:16px !important; margin:0 !important; color:inherit !important; flex:none; }
 .myext-sub{ margin:8px 0 0; font-size:.92rem; line-height:1.55; color:var(--muted); max-width:560px; }
 .ext-detail.myext .ext-kicker-inline{ display:inline-block; margin-bottom:6px; }
-/* My extensions list — tags + shared-line tile */
+/* My extensions list - tags + shared-line tile */
 .lv-tag{ margin-left:8px; font-size:.66rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:2px 7px; border-radius:2px; background:var(--bg-alt); color:var(--muted); }
 .lv-tag.shared{ background:var(--ai-soft); color:var(--ai); }
 .lv-num.shared{ background:var(--ai-soft); color:var(--ai); }
@@ -402,20 +402,20 @@
 .ssc-tx span{ font-size:.85rem; color:var(--muted); line-height:1.55; }
 .syssimple-cta .btn{ flex:1 1 100%; justify-content:center; }
 
-/* ===================== EmptyArt — shared illustration empty states ===================== */
+/* ===================== EmptyArt - shared illustration empty states ===================== */
 .empty-art{ display:block; }
-/* SMS right pane — no conversation selected */
+/* SMS right pane - no conversation selected */
 .sms-noselect{ gap:6px; padding:24px; }
 .sms-noselect .empty-art{ margin-bottom:8px; }
 .sms-noselect h3{ font-size:1.08rem; font-weight:800; letter-spacing:-.02em; color:var(--ink); }
 .sms-noselect p{ font-size:.9rem; color:var(--body); max-width:34ch; line-height:1.5; }
-/* Voicemail sub-list — compact, centred */
+/* Voicemail sub-list - compact, centred */
 .ov-empty{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:2px; padding:18px 12px 14px; color:var(--muted); }
 .ov-empty .empty-art{ margin-bottom:6px; }
 .ov-empty b{ font-size:.95rem; font-weight:800; letter-spacing:-.01em; color:var(--ink); }
 .ov-empty span{ font-size:.85rem; color:var(--body); max-width:32ch; line-height:1.5; }
 
-/* ===================== Forwarding — desk-phone callout ===================== */
+/* ===================== Forwarding - desk-phone callout ===================== */
 .dest-callout{ display:flex; align-items:center; gap:12px; width:100%; text-align:left;
   margin-top:14px; padding:12px 14px; border:1px solid var(--line); border-radius:4px;
   background:var(--bg-alt); transition:border-color .14s, background .14s; }
@@ -453,7 +453,7 @@
 .syshelp-actions .btn{ flex:1 1 140px; justify-content:center; white-space:nowrap; }
 .syshelp-actions .btn svg{ width:15px; height:15px; flex-shrink:0; }
 
-/* Messages — SMS A2P-registration deactivation warning */
+/* Messages - SMS A2P-registration deactivation warning */
 .sms-regwarn{ margin:14px 16px 4px; width:calc(100% - 32px); padding:12px 14px; background:var(--red-soft); border:1px solid #f6c9c6; border-radius:4px; display:flex; align-items:center; gap:12px; text-align:left; cursor:pointer; transition:background .12s; }
 .sms-regwarn:hover{ background:#fbe3e1; }
 .sms-regwarn > svg{ width:18px; height:18px; color:#a3251f; flex-shrink:0; }

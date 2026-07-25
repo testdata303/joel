@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — Text notifications: literal Slack-central controls
+   JOEL - Text notifications: literal Slack-central controls
    ============================================================ */
 /* shared shell */
 .sms-setbtn{display:grid;place-items:center;width:40px;height:40px;border-radius:3px;border:1px solid var(--line);background:#fff;color:var(--muted);flex-shrink:0;transition:border-color .12s,color .12s,background .12s;}

@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app — Phone system overview on the Extensions screen.
+   JOEL app - Phone system overview on the Extensions screen.
    Three stacked section cards (Numbers · Main greeting · Extensions),
    each headed by a soft, colour-coded icon tile that matches the
    rest of the app: green = numbers, purple = greeting, blue = extensions.
@@ -145,7 +145,7 @@
 .esys-exts .lv-row{ border-top:1px solid var(--line-soft); }
 .esys-exts .lv-row:first-child{ border-top:none; }
 
-/* clear add-extension affordance — uses the blue extension-tile language */
+/* clear add-extension affordance - uses the blue extension-tile language */
 .esys-addext{
   display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:14px;
   width:100%; text-align:left; padding:15px 20px;

@@ -1,4 +1,4 @@
-# Netlify redirects — legacy filenames → clean URLs (301 permanent).
+# Netlify redirects - legacy filenames → clean URLs (301 permanent).
 /Plumber%20Landing%20Page.html              /for/plumbers                301
 /Phone%20System%20with%20Slack%20Notifications.html   /learn/slack-notifications   301
 
@@ -6,7 +6,7 @@
 /plumbers        /for/plumbers                301
 /slack           /learn/slack-notifications   301
 
-# Signup is hidden until public launch — send anyone who reaches it to early access.
+# Signup is hidden until public launch - send anyone who reaches it to early access.
 # Use 302 (temporary) so /signup can return unchanged at launch.
 /signup          /early-access                302
 /signup.html     /early-access                302
@@ -17,13 +17,14 @@
 # Early access
 /early-access    /early-access.html           200
 
-# Vertical landing pages — clean slugs serve the /for/*.html files (rewrite, keeps URL).
+# Vertical landing pages - clean slugs serve the /for/*.html files (rewrite, keeps URL).
 /phone-system-for-real-estate    /for/real-estate.html    200
 /phone-system-for-contractors    /for/contractors.html    200
 /phone-system-for-consultants    /for/consultants.html    200
 /phone-system-for-law-firms      /for/law-firms.html      200
+/phone-system-for-interior-designers  /for/interior-design.html  200
 
-# Learn pages — clean slugs serve the /learn/*.html files.
+# Learn pages - clean slugs serve the /learn/*.html files.
 /virtual-phone-system                    /learn/virtual-phone-system.html                    200
 /small-business-phone-system             /learn/small-business-phone-system.html             200
 /business-phone-number                   /learn/business-phone-number.html                   200

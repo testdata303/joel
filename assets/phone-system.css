@@ -1,7 +1,7 @@
 /* ============================================================
-   JOEL app — Phone System (calm, Apple-style)
+   JOEL app - Phone System (calm, Apple-style)
    A single centered column. Three soft cards, one hairline
-   connecting them. Typography and whitespace do the work —
+   connecting them. Typography and whitespace do the work -
    no connector web, one quiet accent on the greeting.
    ============================================================ */
 .psys{ max-width:560px; margin:0 auto; }

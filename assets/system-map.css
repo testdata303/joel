@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL app — System Map screen
+   JOEL app - System Map screen
    Numbers → greeting → extensions → the phones each rings.
    ============================================================ */
 .smap{ max-width:1280px; }
@@ -109,7 +109,7 @@
 .smap-branch.is-dim{ opacity:.4; }
 .smap-branch.dir{ align-items:center; }
 
-/* extension node — compact box, not a long row */
+/* extension node - compact box, not a long row */
 .smap-node.ext{
   display:flex; align-items:center; gap:11px; padding:11px 13px; width:100%; text-align:left;
 }
@@ -138,7 +138,7 @@
 .smap-dot.on{ background:var(--green); box-shadow:0 0 0 3px var(--green-soft); }
 .smap-dot.off{ background:var(--muted); opacity:.5; }
 
-/* the phones an extension rings — small leaf boxes */
+/* the phones an extension rings - small leaf boxes */
 .smap-leaves{ display:flex; flex-direction:column; gap:8px; }
 .smap-leaf{
   display:flex; align-items:center; gap:9px; padding:8px 11px;

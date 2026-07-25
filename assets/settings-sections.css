@@ -1,5 +1,5 @@
 /* ============================================================
-   JOEL — Settings detail pages
+   JOEL - Settings detail pages
    Reuses the app's card/row/toggle/pill vocabulary. New here:
    a generic settings list-row, a status line, and a few small
    layouts for retention, devices, users, and the menu tree.
@@ -136,7 +136,7 @@ button.acc-chip.on:hover{filter:brightness(.97);color:var(--blue);}
 }
 
 /* ============================================================
-   Users & roles — people list → per-user access page
+   Users & roles - people list → per-user access page
    ============================================================ */
 .ulist{background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow-card);overflow:hidden;}
 .uitem{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 18px;border-top:1px solid var(--line-soft);transition:background .14s;}
