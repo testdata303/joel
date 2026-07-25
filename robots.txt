@@ -1,3 +1,0 @@
-# Private launch — do not index any part of this site.
-User-agent: *
-Disallow: /
