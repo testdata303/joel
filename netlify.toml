@@ -1,0 +1,22 @@
+# JOEL — static marketing site. No build step (plain HTML/CSS/JS).
+# Deploy: connect this repo/folder in Netlify; publish dir is the project root.
+
+[build]
+  publish = "."
+  command = ""
+
+# Pretty URLs (serve /pricing instead of /pricing.html) are on by default
+# via Netlify's post-processing. Renaming files to clean slugs (no spaces)
+# is what makes those URLs tidy.
+
+# No-index header fallback (also set in _headers).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+# ── Private-launch password ────────────────────────────────────────────────
+# Site-wide visitor password is a Netlify PRO feature, set in the UI:
+#   Site settings → Access & security → Visitor access → Password protection
+# (Not configurable from this file.) On the free tier, use Netlify Identity
+# (invite-only) or a JS password gate instead.

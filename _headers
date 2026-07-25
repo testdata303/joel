@@ -1,0 +1,6 @@
+# Applied by Netlify to every response.
+# Belt-and-suspenders no-index for the private launch (covers HTML + all assets).
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin

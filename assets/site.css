@@ -1,0 +1,221 @@
+/* ============================================================
+   JOEL — shared design system
+   One source of truth for chrome + primitives across every
+   marketing + landing page. Page-specific rules stay in-page.
+   ============================================================ */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#131316;--body:#4A4A52;--muted:#6E7480;--line:#E8EAEE;--line-soft:#f1f2f4;--soft:#F1F3F6;--bg:#FFFFFF;--bg-alt:#F6F6F7;--card:#fff;
+  /* Numberline brand — Ink actions + one electric accent (#A2FBEF). */
+  --neon:#A2FBEF;
+  --beige:#F4F2ED; /* Paper — warm neutral chip/section ground */
+  --cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4; /* Signal Blue — primary action fill */
+  --accent:#131316;--accent-dark:#33333A;--accent-soft:#F1F1F0;--accent-text:#131316;
+  --accent-ink:#1B31C4; /* accent used as TEXT or ICON — Signal Blue, never teal */
+  --accent-on-dark:#FFFFFF; /* actions reverse to white on Ink */
+  --paper:#FFFFFF;          /* white section band */
+  --wa:#1FAE63;
+  /* aliases — some pages reference these names; mapped to the canonical palette */
+  --blue:#2540EE;--blue-dark:#1B31C4;--blue-soft:#E7EBFE;--blue-ink:#1B31C4;
+  --ai:#131316;--ai-soft:#F1F1F0;--green:#1bb56a;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif;
+  --display:'Figtree',var(--sans);          /* headlines + wordmark */
+  --mono:'Spline Sans Mono',ui-monospace,'SFMono-Regular',monospace; /* eyebrows / small labels */
+}
+html{scroll-behavior:smooth;}
+/* ============================================================
+   NO PER-USER PRICING stamp — brand mark, always this exact
+   phrase. Inline seal: double ring, slight tilt, Signal Blue.
+   Sizes: default (inline / fact strips), .nup-lg (section-level).
+   ============================================================ */
+.nup-stamp{position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-weight:800;text-transform:uppercase;color:var(--accent-text);background:transparent;border:3px solid var(--accent-text);border-radius:50%;transform:rotate(-5deg);font-size:.62rem;letter-spacing:.1em;line-height:1.22;padding:1.28em 1.65em .92em;white-space:nowrap;user-select:none;flex-shrink:0;}
+.nup-stamp .nup-l2{display:block;}
+.nup-lg{font-size:.78rem;border-width:3.5px;}
+.closer-card .nup-stamp{margin:0 auto 22px;}
+.jx-hero .nup-stamp{margin:0 auto 26px;}
+.jx-hero:has(> .wrap > .nup-stamp){padding-top:32px;}
+.hero-copy .nup-stamp{margin:0 0 26px;}
+.nup-row{text-align:center;margin:0 0 28px;}
+.hero-note-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.hero-note-row .hero-facts{display:flex;flex-wrap:wrap;column-gap:8px;row-gap:2px;line-height:1.6;flex:1;min-width:240px;}
+.hero-note-row .hero-facts span{white-space:nowrap;}
+@media(max-width:860px){.hero-note-row{justify-content:center;text-align:center;}.hero-note-row .hero-facts{justify-content:center;flex:none;}}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+/* standardize heading line-wrapping site-wide so titles break evenly instead of orphaning a word */
+h1,h2,h3{text-wrap:pretty;}
+/* Numberline headlines — Figtree 800. Body + UI text stay Plus Jakarta Sans. */
+h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em;}
+/* Brand rule: marketing headlines are ALWAYS ink — never colored. Accent lives in eyebrows, links, and function icons only. */
+h1,h2,h3,.sec-head h2,.sec-head h3{color:var(--ink);}
+/* default links — Signal Blue, never browser blue */
+a{color:var(--cta);}a:hover{color:var(--cta-dark);}
+/* small labels / eyebrows — Plus Jakarta Sans 700, uppercase (per brand guidelines; no mono) */
+/* exploration: warm Paper hero band */
+.jx-hero{background:var(--paper);}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;text-decoration:none;border-radius:10px;font-size:.97rem;cursor:pointer;transition:transform .15s,background .15s;border:2px solid transparent;font-family:var(--sans);white-space:nowrap;}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);padding:13px 22px;}
+.btn-primary:hover{background:var(--accent-dark);color:#fff;border-color:var(--accent-dark);}
+.btn-secondary{background:#fff;border-color:var(--ink);color:var(--ink);padding:12px 22px;}
+.btn-secondary:hover{background:var(--ink);color:#fff;}
+.btn-white{background:#fff;color:var(--ink);padding:15px 28px;}
+.btn-lg{padding:15px 28px;font-size:1rem;}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
+.btn-ghost:hover{border-color:var(--ink);}
+.btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
+.btn-arrow:hover svg{transform:translateX(3px);}
+/* arrow glyph used on CTAs */
+.btn-guillemet{font-family:var(--display);font-weight:700;font-size:1.15em;line-height:1;display:inline-block;position:relative;top:.03em;margin-left:-.06em;transition:transform .18s;}
+.btn-arrow:hover .btn-guillemet{transform:translateX(3px);}
+.link-arrow{color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:.9rem;}
+
+/* keep FAQ question text as a single flex item */
+.faq-q summary>.fq-text{min-width:0;}
+
+/* nav */
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
+.logo{display:inline-flex;flex-direction:row;align-items:center;gap:.4em;font-family:var(--display);font-weight:900;font-size:1.45rem;letter-spacing:.01em;color:var(--ink);text-decoration:none;line-height:1;}
+.logo .lw{display:block;line-height:.9;white-space:nowrap;-webkit-text-stroke:.02em currentColor;}
+.logo .lmark{width:1.25em;height:1.25em;background:currentColor;display:flex;align-items:center;justify-content:center;flex:none;}
+.logo .lmr{display:flex;justify-content:space-between;align-items:flex-start;width:.825em;border-top:.1375em solid var(--logo-glyph,#fff);}
+.logo .lmr i{display:block;width:.1375em;height:.1875em;background:var(--logo-glyph,#fff);}
+.logo.nomark .lmark{display:none;}
+.logo,.logo:hover,.logo:focus{color:var(--ink);}
+.logo.lg{font-size:2.1rem;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta-m{display:none;}
+.nav-links a.active{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px;text-decoration-color:var(--accent);}
+.nav-cta{background:var(--accent);color:#fff!important;padding:11px 22px;border-radius:10px;font-weight:700!important;text-decoration:none;}
+.nav-cta:hover{background:var(--accent-dark);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;margin:-8px;color:var(--ink);}
+.hamburger svg{width:28px;height:28px;display:block;}
+@media(max-width:860px){
+  .hamburger{display:block;}
+  .nav-links{position:fixed;top:88px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;box-shadow:0 16px 40px rgba(15,17,21,.08);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
+  .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
+  .nav-links a:not(.nav-cta){display:block!important;padding:15px 24px;font-size:1.05rem;border-bottom:1px solid var(--line);}
+  .nav-links a.nav-cta{display:none;}
+  .nav-cta-m{display:inline-flex;align-items:center;margin-left:auto;margin-right:14px;padding:9px 15px;font-size:.82rem;border-radius:9px;}
+}
+
+/* NOTE: section / .sec-head / .kicker / .closer are intentionally NOT shared —
+   pages diverge (centered vs left-aligned headers, gradient vs solid CTA).
+   Those stay page-local until a deliberate unification pass. */
+
+/* footer */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px;}
+.foot-inner{display:flex;flex-direction:column;gap:44px;}
+.foot-top{display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start;}
+.foot-brand{max-width:420px;flex:1;min-width:280px;}
+.foot-brand .logo{font-size:1.5rem;}
+.foot-brand p{font-family:var(--sans);color:var(--body);margin-top:10px;font-size:.95rem;font-weight:500;line-height:1.6;}
+.foot-cols{display:flex;gap:80px;flex-wrap:wrap;width:100%;padding-top:44px;border-top:1px solid var(--line);}
+.foot-col-wide .foot-links a{white-space:nowrap;}
+.foot-col-stack{display:flex;flex-direction:column;gap:28px;}
+.foot-group h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:14px;}
+.foot-group a{display:block;color:var(--body);text-decoration:none;font-size:.92rem;font-weight:600;margin-bottom:9px;}
+.foot-group a:hover{color:var(--ink);}
+.foot-col h5{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:14px;}
+.foot-col a{display:block;color:var(--body);text-decoration:none;font-size:.92rem;font-weight:600;margin-bottom:9px;}
+.foot-col a:hover{color:var(--ink);}
+.foot-base{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;}
+@media(max-width:620px){
+  footer{padding:40px 0 28px;}
+  .foot-inner{gap:28px;}
+  .foot-top{gap:28px;}
+  .foot-cols{gap:28px;padding-top:28px;}
+  .foot-base{margin-top:28px;}
+}
+
+
+/* ============================================================
+   BRANDED FUNCTION DESIGN — canonical way to show how Numberline works.
+   One row per function: colored icon tile + bold name + outcome chip.
+   Rows NEVER wrap to two lines. (Born on the homepage hero.)
+   Rows use black icon tiles + one accent chip (Direction C).
+   Function → color, for chips/badges where a function appears in isolation:
+     fn-number  Get a number          blue   #2454D6 / #EEF4FF
+     fn-ext     Extensions            yellow #57534E on #FEFCE8
+     fn-fwd     Forward calls         purple #611F69 / #F6F2FF
+     fn-vm      Voicemails            green  #15803D / #ECFDF3
+     fn-sms     Texts / WhatsApp      cyan   #0369A1 / #ECFEFF
+     fn-ai      Integrations / AI     pink   #BE185D / #FCE7F3
+   Markup:
+   <ol class="hsteps">
+     <li class="hstep fn-number"><div class="hstep-body">
+       <div class="hstep-title"><span class="hstep-ic">SVG</span><b>Get a number</b></div>
+       <div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div>
+     </div></li>
+   </ol>
+   ============================================================ */
+:root{
+  --fn-number:#12308F;--fn-number-soft:#CFE0FF;--fn-number-line:#A8C4FF;
+  --fn-ext:#6B5A12;--fn-ext-soft:#FBF3C4;--fn-ext-line:#EAD98A;
+  --fn-fwd:#4A1160;--fn-fwd-soft:#E9D2FF;--fn-fwd-line:#D9B8FF;
+  --fn-vm:#0A5A2A;--fn-vm-soft:#A8F5C8;--fn-vm-line:#7FE8AB;
+  --fn-sms:#08525E;--fn-sms-soft:#9FEFFF;--fn-sms-line:#6FE0F5;
+  --fn-ai:#12308F;--fn-ai-soft:#CFE0FF;--fn-ai-line:#A8C4FF;
+}
+.fn-number{--c:var(--fn-number);--cs:var(--fn-number-soft);--cl:var(--fn-number-line);}
+.fn-ext{--c:var(--fn-ext);--cs:var(--fn-ext-soft);--cl:var(--fn-ext-line);}
+.fn-fwd{--c:var(--fn-fwd);--cs:var(--fn-fwd-soft);--cl:var(--fn-fwd-line);}
+.fn-vm{--c:var(--fn-vm);--cs:var(--fn-vm-soft);--cl:var(--fn-vm-line);}
+.fn-sms{--c:var(--fn-sms);--cs:var(--fn-sms-soft);--cl:var(--fn-sms-line);}
+.fn-ai{--c:var(--fn-ai);--cs:var(--fn-ai-soft);--cl:var(--fn-ai-line);}
+.hsteps{list-style:none;margin:0;padding:0;position:relative;container-type:inline-size;}
+/* stepper spine: continuous line through the icon column, icons sit on top */
+.hsteps::before{content:'';position:absolute;left:21px;top:26px;bottom:26px;width:2px;background:var(--line);transform:translateX(-50%);}
+.hstep{display:flex;align-items:center;position:relative;padding-bottom:20px;}
+.hstep:last-child{padding-bottom:0;}
+.hstep-ic{position:relative;z-index:1;}
+.hstep-body{display:flex;align-items:center;flex-wrap:nowrap;gap:10px;width:100%;min-width:0;}
+.hstep-title{display:flex;align-items:center;gap:11px;flex:0 1 auto;min-width:0;}
+.hstep-title b{font-size:1rem;color:var(--ink);font-weight:800;white-space:nowrap;}
+.hstep-ic{width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--cs,#eef) 55%,#fff);border:1px solid color-mix(in srgb,var(--cl,var(--line)) 45%,#fff);display:grid;place-items:center;flex:none;}
+.hstep-ic svg{width:22px;height:22px;color:var(--c,var(--ink));}
+.hstep-flow{display:flex;align-items:center;gap:9px;flex:none;margin-left:auto;}
+.hstep-out{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;}
+.hstep-res{background:#fff;color:var(--ink);border:1px solid #E7E3DA;font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:100px;white-space:nowrap;flex:none;}
+/* narrow containers: shrink instead of overlapping — rows still never wrap */
+@container (max-width:335px){
+  .hstep-title b{font-size:.9rem;}
+  .hstep-ic{width:36px;height:36px;border-radius:10px;}
+  .hstep-ic svg{width:19px;height:19px;}
+  .hstep-res{font-size:.72rem;padding:3px 8px;}
+  .hstep-title{gap:9px;}
+  .hstep-body{gap:8px;}
+  .hsteps::before{left:18px;}
+}
+@container (max-width:295px){
+  .hstep-title b{font-size:.82rem;}
+  .hstep-ic{width:32px;height:32px;}
+  .hstep-ic svg{width:17px;height:17px;}
+  .hstep-res{font-size:.68rem;}
+}
+/* generic pieces for reusing the palette on other components */
+.fn-chip{display:inline-flex;align-items:center;gap:7px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent-text));font-weight:700;font-size:.85rem;padding:5px 12px;border-radius:100px;white-space:nowrap;}
+.fn-chip svg{width:15px;height:15px;color:var(--c,var(--accent-text));flex:none;}
+.fn-tile{width:42px;height:42px;border-radius:12px;background:var(--cs,var(--accent-soft));display:grid;place-items:center;flex:none;}
+.fn-tile svg{width:22px;height:22px;color:var(--c,var(--accent-text));}
+
+/* card wrapper so the function list can drop into any page's "How it works" section as-is */
+.fnlist-card{max-width:560px;margin:0 auto;background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:28px;}
+@media(max-width:620px){.fnlist-card{padding:18px 14px;}}
+
+/* grid variant: full-width section row layout (not a hero copy) — 2-col tiles, no stepper spine */
+.fnlist-card.grid{max-width:940px;background:transparent;border:none;padding:0;}
+.hsteps.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.hsteps.grid::before{display:none;}
+.hsteps.grid .hstep{padding-bottom:0;background:#fff;border:1px solid var(--cl,var(--line));border-radius:16px;padding:18px 20px;}
+.hsteps.grid .hstep-body{gap:12px;}
+@media(max-width:720px){.hsteps.grid{grid-template-columns:1fr;}}
+
