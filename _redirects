@@ -25,6 +25,8 @@
 /phone-system-for-interior-designers  /for/interior-design.html  200
 
 # Learn pages - clean slugs serve the /learn/*.html files.
+/slack-notifications                     /learn/slack-notifications.html                     200
+/bring-your-own-ai                       /learn/bring-your-own-ai.html                       200
 /virtual-phone-system                    /learn/virtual-phone-system.html                    200
 /small-business-phone-system             /learn/small-business-phone-system.html             200
 /business-phone-number                   /learn/business-phone-number.html                   200

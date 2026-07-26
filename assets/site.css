@@ -44,8 +44,8 @@ html{scroll-behavior:smooth;}
 body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
 /* standardize heading line-wrapping site-wide so titles break evenly instead of orphaning a word */
 h1,h2,h3{text-wrap:pretty;}
-/* Numberline headlines - Figtree 800. Body + UI text stay Plus Jakarta Sans. */
-h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em;}
+/* Numberline headlines - Figtree 600 (weight restraint, tight tracking). Body + UI text stay Plus Jakarta Sans. */
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.035em;}
 /* Brand rule: marketing headlines are ALWAYS ink - never colored. Accent lives in eyebrows, links, and function icons only. */
 h1,h2,h3,.sec-head h2,.sec-head h3{color:var(--ink);}
 /* default links - Signal Blue, never browser blue */
@@ -182,9 +182,9 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
 .hstep-title b{font-size:1rem;color:var(--ink);font-weight:800;white-space:nowrap;}
 .hstep-ic{width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--cs,#eef) 55%,#fff);border:1px solid color-mix(in srgb,var(--cl,var(--line)) 45%,#fff);display:grid;place-items:center;flex:none;}
 .hstep-ic svg{width:22px;height:22px;color:var(--c,var(--ink));}
-.hstep-flow{display:flex;align-items:center;gap:9px;flex:none;margin-left:auto;}
-.hstep-out{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;}
-.hstep-res{background:#fff;color:var(--ink);border:1px solid #E7E3DA;font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:100px;white-space:nowrap;flex:none;}
+.hstep-flow{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex:0 1 auto;min-width:0;margin-left:auto;}
+.hstep-out{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;min-width:0;}
+.hstep-res{background:#fff;color:var(--ink);border:1px solid #E7E3DA;font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:100px;white-space:nowrap;flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;}
 /* narrow containers: shrink instead of overlapping - rows still never wrap */
 @container (max-width:335px){
   .hstep-title b{font-size:.9rem;}
@@ -215,7 +215,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
 .fnlist-card.grid{max-width:940px;background:transparent;border:none;padding:0;}
 .hsteps.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .hsteps.grid::before{display:none;}
-.hsteps.grid .hstep{padding-bottom:0;background:#fff;border:1px solid var(--cl,var(--line));border-radius:16px;padding:18px 20px;}
+.hsteps.grid .hstep{min-width:0;padding-bottom:0;background:#fff;border:1px solid var(--cl,var(--line));border-radius:16px;padding:18px 20px;}
 .hsteps.grid .hstep-body{gap:12px;}
 @media(max-width:720px){.hsteps.grid{grid-template-columns:1fr;}}
 

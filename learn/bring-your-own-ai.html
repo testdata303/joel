@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>Forward an Extension to Any AI Answering Service - Keep Your Number | Numberline</title>
-<meta name="description" content="Keep your business number and forward any extension to whatever AI answering service you want - Vapi, Bland, or your own agent. Use a different AI on each extension, keep the rest ringing people, and switch anytime. No migrating your whole phone system.">
+<title>Third-Party AI Answering Services | Numberline</title>
+<meta name="description" content="Use the third-party AI answering service you choose without moving your business number. Numberline stays your phone system.">
 <link rel="canonical" href="/bring-your-own-ai">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=3">
-<link rel="icon" href="../favicon.ico?v=3" sizes="any">
-<link rel="apple-touch-icon" href="../favicon-180.png?v=3">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=4">
+<link rel="icon" href="../favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=3">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
@@ -45,7 +45,7 @@
   .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
   .eyebrow svg{width:15px;height:15px;}
-  .hero h1{font-weight:800;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.03em;margin-bottom:18px;text-wrap:pretty;}
+  .hero h1{font-weight:600;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.035em;margin-bottom:18px;text-wrap:pretty;}
   .hero h1 .u{color:var(--ai);}
   .hero-sub{font-size:1.14rem;line-height:1.55;color:var(--body);max-width:42ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
@@ -76,7 +76,7 @@
   .sec-head{text-align:center;max-width:720px;margin:0 auto 44px;}
   .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ai);background:var(--ai-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
 
-  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;text-wrap:pretty;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;text-wrap:pretty;}
   .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
 
   /* two kinds of AI */
@@ -113,7 +113,7 @@
 
   /* not every call callout */
   .ex{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-  .ex-copy h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
+  .ex-copy h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
   .ex-copy p{color:var(--body);font-size:1.06rem;line-height:1.6;margin-bottom:14px;}
   .ex-copy p b{color:var(--ink);font-weight:800;}
   .ex-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 30px 70px -50px rgba(16,16,18,.4);}
@@ -141,7 +141,7 @@
 
   /* built-in strip */
   .builtin{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto;}
+  .bgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px;margin:0 auto;}
   .bcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;}
   .bcard .bic{width:44px;height:44px;border-radius:12px;background:var(--ai);color:#fff;display:grid;place-items:center;margin-bottom:16px;}
   .bcard .bic svg{width:22px;height:22px;}
@@ -163,7 +163,7 @@
   /* closer */
   .closer{padding:20px 0 84px;}
   .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:56px 44px;text-align:center;color:var(--ink);}
-  .closer-card h2{font-weight:800;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.03em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
+  .closer-card h2{font-weight:600;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:48ch;margin:0 auto 30px;font-weight:500;}
   .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
@@ -182,23 +182,23 @@
   }
   @media(max-width:560px){ .steps{grid-template-columns:1fr;} .closer-card{padding:48px 26px;} }
 </style>
-<link rel="stylesheet" href="../assets/canon.css?v=2">
+<link rel="stylesheet" href="../assets/canon.css?v=6">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-    <a href="../early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a href="../how-it-works.html">How it works</a>
-      <a href="../features.html">Features</a>
-      <a href="../pricing.html">Pricing</a>
-      <a href="../signin.html">Sign in</a>
-      <a href="../early-access.html" class="nav-cta">Get early access</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
@@ -207,27 +207,27 @@
 <section class="hero" data-screen-label="Hero">
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
-      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Bring your own AI</span>
-      <h1>Keep your number. Forward any extension to <span class="u">whatever AI answering service you want.</span></h1>
-      <p class="hero-sub">Numberline is your business number and call routing. Point one extension at the AI answering service you choose - and leave every other extension ringing your team or your cell. Use different AI agents on different extensions, and switch or turn any of them off in seconds. Your main number never moves.</p>
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Third-party AI answering services</span>
+      <h1>Use the AI answering service you choose, <span class="u">without moving your business number.</span></h1>
+      <p class="hero-sub">Numberline stays your phone system. Forward an extension, menu option, or after-hours call path to a third-party AI answering service when you want one, while the rest of your calls keep ringing your mobile, team, or answering service.</p>
       <div class="hero-acts">
-        <a href="#two-kinds" class="btn btn-ghost btn-lg">How it works</a>
-        <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+        <a href="/how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       </div>
       <ul class="hero-bullets">
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Your main number stays exactly where it is</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Forward one extension to an AI - keep the rest ringing people</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Mix different AI services across extensions; swap any anytime</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Your business number stays right where it is</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Forward one extension to a third-party AI answering service, keep the rest ringing people</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Change or remove that destination later as your needs change</li>
       </ul>
     </div>
 
-    <div class="route reveal" role="img" aria-label="Example routing: Sales rings your mobile, Support goes to an AI answering service, after-hours goes to an AI answering service, operator rings the front desk">
-      <div class="route-cap">One number · your routing</div>
+    <div class="route reveal" role="img" aria-label="Example routing: Sales rings your mobile, Support goes to a third-party AI answering service, after-hours goes to an answering service, operator rings the front desk">
+      <div class="route-cap">Your line · your routing</div>
       <div class="rrow"><span class="rkey">1</span><b>Sales</b><span class="rline"></span><span class="rdest human"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg> Your mobile</span></div>
-      <div class="rrow"><span class="rkey">2</span><b>Support</b><span class="rline"></span><span class="rdest ai">Vapi AI <span class="tag">answers</span></span></div>
-      <div class="rrow"><span class="rkey">◐</span><b>After hours</b><span class="rline"></span><span class="rdest ai">Bland AI <span class="tag">answers</span></span></div>
+      <div class="rrow"><span class="rkey">2</span><b>Support</b><span class="rline"></span><span class="rdest ai">Vapi AI <span class="tag">3rd party</span></span></div>
+      <div class="rrow"><span class="rkey">◐</span><b>After hours</b><span class="rline"></span><span class="rdest human">Answering service</span></div>
       <div class="rrow"><span class="rkey">0</span><b>Operator</b><span class="rline"></span><span class="rdest human">Front desk</span></div>
-      <div class="route-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/></svg> Swap any destination in seconds - no phone number to move</div>
+      <div class="route-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/></svg> Change any destination later. Your number does not move.</div>
     </div>
   </div>
 </section>
@@ -237,7 +237,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How Numberline works</div>
-      <h2>Numberline is your phone system. Forward calls to any AI answering service you want.</h2>
+      <h2>Numberline is your phone system. The AI answering service you choose is a destination.</h2>
       <p>Two big benefits:</p>
     </div>
     <div class="kinds reveal">
@@ -245,21 +245,21 @@
         <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <div class="tagline">Benefit 1</div>
         <h3>Never get stuck with one AI answering service</h3>
-        <p>New AI answering services pop up every week, and the best one keeps changing. If your phone number lives inside one of them, leaving means moving your whole phone system and your number too. With Numberline your number stays put. You just forward a call to whichever AI answering service you want - and pick a different one the day you find a better one.</p>
+        <p>New AI answering services appear all the time, and the best fit for your business can change. If your phone number lives inside one of them, leaving means moving your whole phone system. With Numberline your number stays put. You forward calls to the third-party AI answering service you choose, and you can point them somewhere else later.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Your number stays with Numberline, always</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Try any AI answering service - Vapi, Bland, others</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Switch to a different one anytime, in seconds</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Your business number stays with Numberline</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Use the AI answering service you choose, like Vapi or Bland</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Change destinations later if your needs change</li>
         </ul>
-        <div class="foot">You're never locked into one company.</div>
+        <div class="foot">Your phone system is not tied to one provider.</div>
       </div>
       <div class="kind byo">
         <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a5 5 0 0 1-5 5H9"/></svg></span>
         <div class="tagline">Benefit 2</div>
         <h3>Send each extension wherever you want</h3>
-        <p>You decide where every extension goes - and they don't all have to go to the same place. Your sales line can go to one AI answering service, your support line to another, your personal extension can just ring your own cell phone, and an after-hours line can go to a live answering service. Different extensions, different destinations - your choice.</p>
+        <p>You decide where every extension goes, and they do not all have to go to the same place. Your support line can go to a third-party AI answering service, your personal extension can ring your own cell phone, and an after-hours line can go to a live answering service. Different extensions, different destinations.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sales line &rarr; an AI built for sales calls</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Support line &rarr; a third-party AI answering service</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Personal extension &rarr; rings your own cell phone</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>After-hours line &rarr; a live answering service</li>
         </ul>
@@ -275,20 +275,20 @@
     <div class="sec-head reveal">
       <div class="sec-kicker">Why this matters</div>
       <h2>The risk of signing up with an AI answering service directly</h2>
-      <p>Say you hear about a plumbing AI answering service and want to try it. Sign up with them directly and they usually become your phone company too - they hand you a new number, or you give them yours. So the day a better one comes along, switching means moving your number and setting everything up again.</p>
+      <p>Say you want to try an AI answering service. Sign up with it directly and it often becomes your phone company too: it hands you a new number, or you give it yours. The day you want something different, switching means moving your number and setting everything up again.</p>
     </div>
     <div class="cmp reveal">
       <div class="cmp-row head"><div class="opt">Your choice</div><div class="desc">What it means for you</div></div>
       <div class="cmp-row">
         <div class="opt"><span class="dot" style="background:#DC2626"></span>Sign up with the AI answering service directly</div>
-        <div class="desc">They run your phone number. It's fine until you want to leave - then you're moving your number, redoing your whole setup, and hoping customers don't lose the number they've saved. You're stuck with whatever that one company does next.</div>
+        <div class="desc">They run your phone number. That is fine until you want to leave. Then you are moving your number, redoing your setup, and hoping customers keep calling the right place.</div>
       </div>
       <div class="cmp-row win">
         <div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6 9 17l-5-5"/></svg> Use Numberline and forward to that AI answering service</div>
-        <div class="desc">Your number and phone system stay with Numberline. You forward calls to the AI answering service you picked. Find a better one later? Point that line somewhere else in seconds - your number never moves and your customers never notice.</div>
+        <div class="desc">Your number and phone system stay with Numberline. You forward calls to the third-party AI answering service you picked. If you change your mind later, point that line somewhere else. Your number does not move.</div>
       </div>
     </div>
-    <p style="max-width:900px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">New AI answering services show up all the time. Keep your number with Numberline and you can always try the newest one without redoing anything.</p>
+    <p style="max-width:900px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">New AI answering services appear all the time. Keep your number with Numberline and you can change destinations without redoing your phone system.</p>
   </div>
 </section>
 
@@ -300,7 +300,7 @@
         <div class="sec-kicker">Use it where it fits</div>
         <h2>You don't have to send every call to AI</h2>
         <p>You pick which lines go to an AI answering service and which don't. A lot of businesses want a real person on the phone during the day, and only use an AI answering service for <b>after hours, weekends, or when everyone's on the other line.</b></p>
-        <p>Take a <b>plumber.</b> During the day, calls ring your cell or the office. After hours, instead of sending everyone to voicemail, you forward that line to a plumbing AI answering service that books the job or flags an emergency. Daytime stays human, after-hours gets covered - and you can change either one whenever you want.</p>
+        <p>Take a <b>plumber.</b> During the day, calls ring your cell or the office. After hours, instead of sending everyone to voicemail, you forward that line to the third-party AI answering service you chose. Daytime stays human, after-hours gets covered, and you can change either one later.</p>
       </div>
       <div class="ex-card">
         <div class="eh">
@@ -326,68 +326,40 @@
       <h2>Point an extension at an AI answering service in four steps</h2>
     </div>
     <div class="steps reveal">
-      <div class="step"><div class="sn">1</div><h3>Pick the extension</h3><p>Choose the line, department, or time window where AI should answer - say, after-hours support.</p></div>
-      <div class="step"><div class="sn">2</div><h3>Connect the AI answering service</h3><p>Some providers - like Vapi and Bland - plug into Numberline in one click. Any other company just gives you a phone number, and you forward your extension to that number. Either way takes minutes.</p></div>
+      <div class="step"><div class="sn">1</div><h3>Pick the extension</h3><p>Choose the line, department, or time window where AI should answer, say, after-hours support.</p></div>
+      <div class="step"><div class="sn">2</div><h3>Connect the AI answering service</h3><p>Your provider (Vapi, Bland, or another service) gives you a number or connection details, and Numberline forwards the extension there. We'll share supported setups during early access.</p></div>
       <div class="step"><div class="sn">3</div><h3>Route to it</h3><p>Set that extension to forward to the AI answering service. Everything else keeps ringing people.</p></div>
-      <div class="step"><div class="sn">4</div><h3>Adjust anytime</h3><p>Not happy? Switch the AI, narrow when it runs, or point the extension back to a person - in seconds.</p></div>
+      <div class="step"><div class="sn">4</div><h3>Adjust anytime</h3><p>Not happy? Change the service, narrow when it runs, or point the extension back to a person.</p></div>
     </div>
-    <p class="steps-note reveal"><b>Your number never moves.</b> AI is a destination you route to, not the platform you're locked into.</p>
+    <p class="steps-note reveal"><b>Your number stays with Numberline.</b> A third-party AI answering service is a destination you route to, not your phone system.</p>
   </div>
 </section>
 
-<!-- 5.5 MORE THAN A FORWARD -->
-<section class="block" data-screen-label="More than a forward">
+<!-- 5.5 WHAT NUMBERLINE HANDLES -->
+<section class="block builtin" data-screen-label="What Numberline handles">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-kicker">Why not just any phone service?</div>
-      <h2>Anyone can forward a call. Only Numberline wraps everything around it.</h2>
-      <p>Plenty of phone services can send a call to an AI answering service's number - Grasshopper and the rest can too. But the second that call leaves their system, so does everything else: no record, no alert, no way to plug it into your other tools. With Numberline, handing a call to an AI is where the useful part <em>starts</em> - and we plug straight into the big AI providers instead of just pointing at a number.</p>
-    </div>
-    <div class="kinds reveal">
-      <div class="kind">
-        <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
-        <div class="tagline">A plain forward (Grasshopper &amp; co.)</div>
-        <h3>The call leaves and vanishes</h3>
-        <p>The AI picks up, and that's the end of it as far as your phone company is concerned.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><path d="M18 6 6 18M6 6l12 12"/></svg>No transcript or summary of what happened</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><path d="M18 6 6 18M6 6l12 12"/></svg>No Slack or WhatsApp alert</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><path d="M18 6 6 18M6 6l12 12"/></svg>Doesn't connect to the apps you use</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><path d="M18 6 6 18M6 6l12 12"/></svg>One blind forward - no real routing</li>
-        </ul>
-        <div class="foot">You're on your own after the handoff.</div>
-      </div>
-      <div class="kind byo">
-        <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span>
-        <div class="tagline">Forwarding with Numberline</div>
-        <h3>The call leaves and everything follows</h3>
-        <p>The AI still answers - but the whole Numberline system stays wrapped around it.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Direct integrations with AI answering services - not a blind forward</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Every AI call transcribed &amp; summarized in your inbox</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Instant Slack &amp; WhatsApp notifications</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wires into the apps your team already uses</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Route by extension, hours, or overflow - change it anytime</li>
-        </ul>
-        <div class="foot">The AI answers. Numberline runs everything around it.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. BUILT-IN AI STRIP -->
-<section class="block builtin" data-screen-label="Built-in AI">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-kicker">Included on every plan</div>
-      <h2>The AI you don't have to bring</h2>
+      <div class="sec-kicker">What Numberline handles</div>
+      <h2>The phone system stays with Numberline.</h2>
+      <p>The AI answering service you choose takes the calls you send it. Numberline runs everything around them.</p>
     </div>
     <div class="bgrid reveal">
-      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span><h3>Transcripts &amp; summaries</h3><p>Every voicemail is transcribed and summarized so you can read what a caller needed without pressing play.</p></div>
-      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 3 3 4-7"/></svg></span><h3>Call insights</h3><p>See patterns in your calls and messages - what's coming in, when, and where it's going - to route smarter.</p></div>
-      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg></span><h3>AI greeting voices</h3><p>Generate natural greeting audio from text, preview it, and edit anytime - no recording booth required.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.91.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><h3>Your business line and call routing</h3><p>A local or toll-free business line, with calls routed to the people and services you choose.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg></span><h3>Greetings, extensions, and forwarding</h3><p>Greet callers, offer extensions, and forward each one to your mobile, your team, or the destination you pick.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span><h3>Shared texts, voicemails, and transcripts</h3><p>Texts and voicemails stay with the business in one inbox, with transcripts and summaries you can read.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><h3>Optional notifications to tools like Slack</h3><p>Teams that already use Slack can see missed calls, texts, and voicemails where they coordinate work.</p></div>
     </div>
-    <p class="builtin-note reveal">This AI never answers for you or decides how calls are handled. <b>It just makes your phone system easier to run.</b></p>
+  </div>
+</section>
+
+<!-- 6. WHAT THIS IS NOT -->
+<section class="block alt" data-screen-label="What this is not">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">What this is not</div>
+      <h2>Numberline is not an AI receptionist.</h2>
+      <p>Numberline is the phone system that lets your business decide where calls should go, including to people, answering services, or third-party AI answering services when needed.</p>
+    </div>
   </div>
 </section>
 
@@ -396,16 +368,17 @@
   <div class="wrap" style="padding-top:74px;">
     <div class="sec-head reveal">
       <div class="sec-kicker">Questions</div>
-      <h2>Bring your own AI - common questions</h2>
+      <h2>Third-party AI answering services, common questions</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-q" open><summary><span class="fq-text">What does "bring your own AI" mean?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">It means Numberline doesn't force one AI answering service on you. You choose the AI answering service that fits your business - Vapi, Bland, or your own - and forward any extension to it. Numberline stays your phone number and routing layer; the AI is a destination you can change whenever you like.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Does Numberline include any AI on its own?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Voicemail transcripts, AI call and voicemail summaries, and AI-generated greeting voices are included on every plan. This built-in AI helps you understand and manage calls - it never answers the phone for you or decides how a call is routed.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Should my whole business move to an AI answering service?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">For most businesses, no. A person is still the best experience for most daytime calls. AI is most valuable in the gaps - after hours, weekends, overflow, or a single line. Numberline lets you apply AI exactly where it helps and keep the rest human.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">What if I don't like the AI answering service I picked?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Change it. Because the AI is a routing destination and not your platform, you can switch to a different service, narrow when it runs, or point the extension back to a person in seconds. Your number and setup stay exactly where they are.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Which AI answering services can I connect?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Any service you can reach over SIP, including Vapi and Bland AI, or your own custom voice agent. You connect it once and route the extensions you choose to it.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Why is that better than an all-in-one AI phone product?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">In an all-in-one product, the AI and your phone number are the same thing. If the AI gets worse, more expensive, or isn't right for you, switching means re-platforming your entire phone system. With bring-your-own AI, the AI is swappable and your number stays put - so you're never locked into one vendor's roadmap.</div></details>
+      <details class="faq-q" open><summary><span class="fq-text">What does "third-party AI answering service" mean?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">An AI answering service made by another company that answers calls for your business. Numberline does not force one on you. You choose the service that fits, forward an extension to it, and Numberline stays your phone number and routing. The destination can change whenever you like.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Does Numberline answer calls with AI?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is not an AI receptionist. Numberline routes calls where you decide, and voicemails come with transcripts and summaries (English for now) so you can read what callers needed. If you want AI answering, you connect the third-party service you choose.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Should my whole business move to an AI answering service?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">For most businesses, no. A person is still the best experience for most daytime calls. AI is most valuable in the gaps: after hours, weekends, overflow, or a single line. Numberline lets you apply AI exactly where it helps and keep the rest human.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">What if I don't like the AI answering service I picked?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Change it. Because the AI is a routing destination and not your platform, you can switch to a different service, narrow when it runs, or point the extension back to a person. Your number and setup stay where they are.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Which AI answering services can I connect?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Third-party AI answering services like Vapi and Bland, or your own voice agent. Numberline is designed to work with services that can take a forwarded call. Join early access and we'll share connection details when setup opens.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Why is that better than an AI phone product with its own number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">When the AI and your phone number are the same product, switching means moving your entire phone system. With Numberline, the AI answering service is a destination. If it stops fitting, you change the destination and your number stays put.</div></details>
     </div>
+    <p style="max-width:760px;margin:26px auto 0;text-align:center;color:var(--body);font-size:.98rem;">Learn more: <a href="/learn/small-business-phone-system.html" style="color:var(--accent-dark);font-weight:700;">small business phone system</a>, <a href="/learn/business-phone-number.html" style="color:var(--accent-dark);font-weight:700;">business phone number</a>, <a href="/how-it-works.html" style="color:var(--accent-dark);font-weight:700;">how it works</a>, and <a href="/features.html" style="color:var(--accent-dark);font-weight:700;">features</a>.</p>
   </div>
 </section>
 
@@ -414,11 +387,11 @@
   <div class="wrap">
     <div class="closer-card reveal">
       <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
-      <h2>Forward what you want, to whatever AI you want.</h2>
-      <p>Keep your business number and your routing exactly as they are - and forward any extension to whatever AI answering service you want. Use a different one per extension, keep the rest ringing your team, and switch or drop any of them anytime.</p>
+      <h2>Your phone system. Your choice of answering.</h2>
+      <p>Keep your business line and routing with Numberline, and forward an extension to people, an answering service, or the third-party AI answering service you choose. Change destinations as your business changes.</p>
       <div class="closer-acts">
-        <a href="../features.html" class="btn btn-ghost btn-lg">See all features</a>
-        <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+        <a href="/features.html" class="btn btn-ghost btn-lg">See all features</a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       </div>
     </div>
   </div>
@@ -429,15 +402,15 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the virtual phone system for startups and small businesses. Get a local or toll-free number, forward calls to your mobile or team, and manage shared texts and voicemails in one inbox. Add greetings, extensions, teammates, and channels like Slack, WhatsApp, and third-party AI answering services when your business needs them.</p>
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
       </div>
-        <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="mobile-app.html">Mobile app</a><a href="bring-your-own-ai.html">Bring your own AI</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a><a href="../signin.html">Sign in</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/bring-your-own-ai.html">Third-party AI services</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a><a href="/signin.html">Sign in</a></div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="../for/new-businesses.html">New businesses</a><a href="../for/plumbers.html">Plumbers</a><a href="../for/real-estate.html">Real estate agents</a><a href="../for/contractors.html">Contractors</a><a href="../for/consultants.html">Consultants and agencies</a><a href="../for/interior-design.html">Interior designers</a><a href="../for/law-firms.html">Small law firms</a></div></div>
-        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="virtual-phone-system.html">Virtual phone system</a><a href="small-business-phone-system.html">Small business phone system</a><a href="business-phone-number.html">Business phone number</a><a href="google-voice-alternative.html">Google Voice alternative</a><a href="slack-notifications.html">Slack notifications</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="/learn/virtual-phone-system.html">Virtual phone system</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/local-business-phone-number.html">Local business phone number</a><a href="/learn/toll-free-business-number.html">Toll-free business number</a><a href="/learn/google-voice-alternative.html">Google Voice alternative</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
     <div class="foot-base">© 2026 Numberline. All rights reserved.</div>

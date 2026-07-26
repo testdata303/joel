@@ -660,45 +660,11 @@ function IntegrationsHub({ extensions, webhookCfg, setWebhookCfg }){
     </div>
   );
 }
-function Sidebar({ active, onNav, badges, hideSetup, companies, companyId, onSwitch, isMember }){
-  const [open,setOpen]=useState(false);
-  const ref=useRef(null);
-  useEffect(()=>{
-    if(!open) return;
-    const h=(e)=>{ if(ref.current && !ref.current.contains(e.target)) setOpen(false); };
-    document.addEventListener('mousedown',h);
-    return ()=>document.removeEventListener('mousedown',h);
-  },[open]);
-  const list = companies || [];
-  const cur = list.find(c=>c.id===companyId) || list[0] || { name:'Smilebar' };
+function Sidebar({ active, onNav, badges, hideSetup, isMember }){
   return (
     <aside className="sidebar">
       <div className="sb-top">
-        <a href="index.html" className="sb-brand" style={{textDecoration:'none'}} title="Numberline home"><span className="sb-word"><span className="lmark"><span className="lmr"><i></i><i></i></span></span><span className="lw">NUMBERLINE</span></span></a>
-        <div className="switcher-wrap" ref={ref}>
-          <button className={`switcher${open?' open':''}`} onClick={()=>setOpen(o=>!o)} aria-haspopup="listbox" aria-expanded={open}>
-            <span className={`switcher-mark ${cur.tone||'blue'}`}>{initialsOf(cur.name)}</span>
-            <span className="biz-name">{cur.name}</span>
-            <span className="chev"><Icon name="chevdown" style={{width:16,height:16}}/></span>
-          </button>
-          {open && (
-            <div className="switcher-menu" role="listbox">
-              <div className="switcher-menu-h">Switch business</div>
-              {list.map(c=>(
-                <button key={c.id} role="option" aria-selected={c.id===companyId}
-                  className={`switcher-opt${c.id===companyId?' on':''}`}
-                  onClick={()=>{ onSwitch && onSwitch(c.id); setOpen(false); }}>
-                  <span className={`switcher-mark ${c.tone||'blue'}`}>{initialsOf(c.name)}</span>
-                  <span className="switcher-opt-tx">
-                    <b>{c.name}</b>
-                  </span>
-                  {c.id===companyId && <span className="switcher-check"><Icon name="check"/></span>}
-                </button>
-              ))}
-              <button className="switcher-add"><Icon name="plus"/> Add a business</button>
-            </div>
-          )}
-        </div>
+        <a href="index.html" className="sb-brand" style={{textDecoration:'none'}} title="Numberline home"><img className="sb-mark" src="assets/numberline-symbol.svg" alt=""/><span className="sb-word"><span className="lw">NUMBERLINE</span></span></a>
       </div>
       <nav className="sb-nav">
         {NAV.map(n=>(
@@ -725,9 +691,19 @@ function Sidebar({ active, onNav, badges, hideSetup, companies, companyId, onSwi
   );
 }
 
-function Topbar({ onMenu, who, role }){
+function Topbar({ onMenu, who, role, companies, companyId, onSwitch, onAccount }){
   const name = who || 'Bob Stevens';
   const sub = role || 'Admin';
+  const [open,setOpen]=useState(false);
+  const ref=useRef(null);
+  useEffect(()=>{
+    if(!open) return;
+    const h=(e)=>{ if(ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown',h);
+    return ()=>document.removeEventListener('mousedown',h);
+  },[open]);
+  const list = companies || [];
+  const cur = list.find(c=>c.id===companyId) || list[0] || { name:'Smilebar' };
   return (
     <header className="topbar">
       <button className="hamburger" onClick={onMenu} aria-label="Open menu"><Icon name="menu" style={{width:20,height:20}}/></button>
@@ -738,11 +714,36 @@ function Topbar({ onMenu, who, role }){
       </button>
       <div className="top-actions">
         <button className="icon-btn"><Icon name="bell" style={{width:19,height:19}}/><span className="dot"/></button>
-        <button className="acct">
-          <Avatar name={name}/>
-          <span className="acct-who"><b>{name}</b><span>{sub}</span></span>
-          <Icon name="chevdown" style={{width:15,height:15,color:'var(--muted)'}}/>
-        </button>
+        <div className="switcher-wrap top" ref={ref}>
+          <button className={`switcher top${open?' open':''}`} onClick={()=>setOpen(o=>!o)} aria-haspopup="listbox" aria-expanded={open}>
+            <span className={`switcher-mark ${cur.tone||'blue'}`}>{initialsOf(cur.name)}</span>
+            <span className="biz-name">{cur.name}</span>
+            <span className="chev"><Icon name="chevdown" style={{width:16,height:16}}/></span>
+          </button>
+          {open && (
+            <div className="switcher-menu top" role="listbox">
+              <div className="switcher-menu-h">Switch business</div>
+              {list.map(c=>(
+                <button key={c.id} role="option" aria-selected={c.id===companyId}
+                  className={`switcher-opt${c.id===companyId?' on':''}`}
+                  onClick={()=>{ onSwitch && onSwitch(c.id); setOpen(false); }}>
+                  <span className={`switcher-mark ${c.tone||'blue'}`}>{initialsOf(c.name)}</span>
+                  <span className="switcher-opt-tx">
+                    <b>{c.name}</b>
+                  </span>
+                  {c.id===companyId && <span className="switcher-check"><Icon name="check"/></span>}
+                </button>
+              ))}
+              <button className="switcher-add"><Icon name="plus"/> Add a business</button>
+              <button className="switcher-user" onClick={()=>{ setOpen(false); onAccount && onAccount(); }}>
+                <Avatar name={name}/>
+                <span className="switcher-user-tx"><b>{name}</b><span>{sub} · bob@smilebar.co</span></span>
+                <span className="switcher-chev"><Icon name="chevright"/></span>
+              </button>
+              <button className="switcher-out">Sign out</button>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
@@ -1467,6 +1468,7 @@ function App(){
     else if(id==='settings'){ setScreen('settings'); setView('list'); }
     else if(id==='billing'){ setScreen('billing'); setView('list'); }
     else if(id==='myext'){ setScreen('myext'); setView('list'); }
+    else if(id==='account'){ setScreen('account'); setView('list'); }
   };
   // deep-link from a contact into the activity screens, filtered to that number
   const openFiltered=(dest,num,name)=>{
@@ -1491,6 +1493,7 @@ function App(){
     : screen==='whatsapp' ? 'whatsapp'
     : screen==='sms' ? 'inbox'
     : screen==='settings' ? 'settings'
+    : screen==='account' ? 'account'
     : screen==='billing' ? 'billing'
     : screen==='sysmap' ? 'sysmap'
     : screen==='numbers' ? 'numbers'
@@ -1604,11 +1607,10 @@ function App(){
 
   return (
     <div className={`app${navOpen?' nav-open':''}${paneOpen?' pane-open':''}`}>
-      <Sidebar active={activeNav} onNav={onNav} badges={navBadges} hideSetup={setupDismissed}
-        companies={COMPANIES} companyId={companyId} onSwitch={switchCompany} isMember={isMember}/>
+      <Sidebar active={activeNav} onNav={onNav} badges={navBadges} hideSetup={setupDismissed} isMember={isMember}/>
       <div className="scrim" onClick={()=>setNavOpen(false)}/>
       <div className="main">
-        <Topbar onMenu={()=>setNavOpen(true)} who={me} role={isMember?'Member':'Admin'}/>
+        <Topbar onMenu={()=>setNavOpen(true)} who={me} role={isMember?'Member':'Admin'} companies={COMPANIES} companyId={companyId} onSwitch={switchCompany} onAccount={()=>onNav('account')}/>
         <div className="scroll">
           <div className="page">
             {screen==='setup' ? (
@@ -1735,6 +1737,8 @@ function App(){
                 onOpenExt={(e)=>{ if(e){ setScreen('extensions'); selectExt(e); } else onNav('extensions'); }}/>
             ) : screen==='billing' ? (
               <window.BillingScreen/>
+            ) : screen==='account' ? (
+              <window.AccountScreen me={{name:me, role:isMember?'Member':'Admin', email:'bob@smilebar.co'}} companies={COMPANIES} companyId={companyId}/>
             ) : screen==='settings' ? (
               <SettingsScreen onNav={onNav} extensions={EXTENSIONS} numbers={BUSINESS_LINES} businessName="Smilebar"/>
             ) : view==='list' ? (
