@@ -1,7 +1,6 @@
 /* ============================================================
-   APP CANON - carries the Numberline logo direction into the
-   product: hard-edged geometry, ink-first actions, the
-   rule-with-ticks motif, Figtree 900 caps.
+   APP CANON - carries the Numberline brand into the product:
+   soft rounded geometry, ink-first actions, Figtree caps labels.
    Loaded LAST of all app stylesheets, so it wins.
    ============================================================ */
 
@@ -27,20 +26,15 @@
 .vm-cardic.slack,.cap-ic.slack{background:#f3eefb;color:#7a4ddb;}
 .alert-ic.wa,.wa-flow-ic.wa,.wa-dest-ic.wa,.qx-dismissed-ic.wa{background:var(--wa-soft);color:#12a05a;}
 
-/* Workspace mark: squared like the logo tile, but keeps its colour */
-.switcher-mark{border-radius:2px;}
+/* Workspace mark: gently rounded, keeps its colour */
+.switcher-mark{border-radius:8px;}
 .switcher-mark.blue{background:var(--blue-soft);color:var(--blue);}
 .switcher-mark.green{background:var(--green-soft);color:var(--green);}
 
-/* Squared affordances - circles reserved for person avatars */
-.icon-btn,.greet-play,.psys-play,.esys-play,.cflow-playbtn,
-.id-av.guess,.id-av.unknown,.cc-sug-go{border-radius:3px;}
-
-/* Active nav: flat ground + an ink tick on the leading edge */
-.sb-item{position:relative;}
-.sb-item.active{background:var(--bg-alt);color:var(--ink);font-weight:800;}
-.sb-item.active::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:15px;background:var(--ink);}
-.sb-item.sub.active{color:var(--ink);}
+/* Rounded affordances - icon actions and play buttons are circular */
+.icon-btn,.greet-play,.psys-play,.esys-play,.cflow-playbtn,.nrow-play,.vm-play,.tts-play,.act-play,.sms-evt-play,.vp-play,.avp-play,.ge-playbig,.greeting .play,.qs-play,.qs-hold-play{border-radius:50%;}
+.id-av.guess,.id-av.unknown{border-radius:50%;}
+.cc-sug-go{border-radius:10px;}
 
 /* Every small label: Figtree 900 caps at the wordmark's tracking */
 .sb-group,.ss-grouph,.dlabel,.srail-label,.d-sec-h,.hist-h,.notes-h,.cprof-h,
@@ -50,3 +44,11 @@
   font-family:var(--display);font-weight:900;letter-spacing:.11em;
 }
 .cflow-tier{font-family:var(--display);font-weight:900;letter-spacing:.11em;color:var(--ink);text-transform:uppercase;font-size:.7rem;}
+
+/* ---- Brand type refresh (mirrors site): headline weight 800 -> 600, tracking -.035em ---- */
+h1,h2{font-weight:700;letter-spacing:-.03em;}
+/* Page-level titles: Figtree 600, site headline tracking */
+.lv-title,.phead h1,.id-primary,.set-title,.sysov-head h1,.ov3-biz h1,.qs-title,.psys-title,.qx-head h1,.ud-id-name h1,.sn-head h1,.apps-head h1,.wh-headtx h1,.cflow-h h1{font-family:var(--display);font-weight:600;letter-spacing:-.035em;}
+.id-primary.num{letter-spacing:-.01em;}
+/* Section / panel / modal headers: step down to 700 so hierarchy holds at small sizes */
+.panel-head h2,.esys-sectitle h2,.apps-sectionh h2,.sysempty h2,.sysmng-t h2,.qx-dismissed h2,.modal-h h3,.sms-title,.plan-name,.qs-dismiss-h,.nevent-t h3,.pane-sec-h h3{font-weight:700;}

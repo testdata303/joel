@@ -11,7 +11,7 @@
 /* preview toggle (simple vs multi-extension) */
 .esys-preview{ display:inline-flex; align-items:center; gap:3px; background:var(--bg-alt); border:1px solid var(--line); border-radius:3px; padding:3px; flex-shrink:0; }
 .esys-preview > span{ font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:0 7px 0 7px; }
-.esys-preview button{ padding:6px 12px; border-radius:2px; font-size:.82rem; font-weight:700; color:var(--body); transition:background .12s,color .12s; white-space:nowrap; }
+.esys-preview button{ padding:6px 12px; border-radius:10px; font-size:.82rem; font-weight:700; color:var(--body); transition:background .12s,color .12s; white-space:nowrap; }
 .esys-preview button.on{ background:#fff; color:var(--blue); box-shadow:0 1px 2px rgba(15,17,21,.1); }
 
 /* icon-filled extension tile (Main Extension in simple mode) */
@@ -114,7 +114,7 @@
 .esys-greetmeta b{ font-size:.96rem; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
 .esys-greetmeta span{ font-size:.8rem; color:var(--muted); font-variant-numeric:tabular-nums; }
 .esys-greetbody .wave{ display:flex; align-items:center; gap:2.5px; height:32px; overflow:hidden; flex-shrink:0; }
-.esys-greetbody .wave i{ width:2.5px; max-height:28px; border-radius:2px; background:#d4cbef; display:block; }
+.esys-greetbody .wave i{ width:2.5px; max-height:28px; border-radius:10px; background:#d4cbef; display:block; }
 .esys-greettext{
   font-size:.95rem; line-height:1.55; color:var(--body); text-wrap:pretty;
   padding:14px 16px; background:var(--bg-alt); border-radius:4px;

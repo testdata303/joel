@@ -9,7 +9,6 @@
 /* --- Nav logo: identical size on every page (homepage was smaller) --- */
 .logo,.logo:hover,.logo:focus{color:var(--ink);}
 nav .logo{font-size:1.72rem;}
-.logo .lmark{background:currentColor;}
 .btn-primary:hover,.nav-cta:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
 
 /* --- Function / feature icon tiles: ONE branded tile (soft blue fill,
@@ -63,3 +62,16 @@ nav .logo{font-size:1.72rem;}
        paragraphs under the hero read left-aligned; headings and the
        closer stay centred. Applies to current and future /for/ pages. --- */
 body.lp .pain-copy{text-align:left;}
+
+/* --- Shot card header: the "No per-user pricing" stamp overlaps the
+       top-right corner, so the title row must never run under it. Reserve
+       the corner and drop the Live badge - the title is enough. --- */
+body.lp .shot-top{padding-right:152px;min-height:52px;}
+body.lp .shot-top .badge{display:none;}
+
+/* --- Closer card small print: was white-on-white on the light card --- */
+body.lp .closer-mini{color:var(--muted);}
+
+/* --- Lighter brand (700): wordmark echoes match the lockup --- */
+.cmp-row.joel .opt,.cmp4-row.joel .opt{font-weight:700;letter-spacing:.015em;}
+.nup-stamp{font-weight:700;}

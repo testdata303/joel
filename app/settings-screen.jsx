@@ -67,4 +67,48 @@ function SettingsScreen({ onNav, extensions, numbers, businessName }){
   );
 }
 
-Object.assign(window, { SettingsScreen });
+/* Personal account page - opened from the top-right user row */
+function AccountScreen({ me, companies, companyId }){
+  const Avatar=window.Avatar;
+  const ini=(n)=>String(n||'').split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+  const list=companies||[];
+  const curName=(list.find(c=>c.id===companyId)||{}).name||'Smilebar';
+  return (
+    <div className="settings-screen">
+      <div className="set-head">
+        <h1 className="set-title">Your account</h1>
+        <p className="set-sub">Your personal profile and sign-in. Business-wide settings live in Settings.</p>
+      </div>
+      <div className="set-group">
+        <div className="set-grouph">Profile</div>
+        <div className="acc-card">
+          <div className="acc-idrow"><Avatar name={me.name}/><span className="acc-id"><b>{me.name}</b><span>{me.role} at {curName}</span></span><button className="acc-edit">Edit</button></div>
+          <div className="acc-row"><span className="acc-lbl">Email</span><span className="acc-val">{me.email}</span><button className="acc-edit">Change</button></div>
+          <div className="acc-row"><span className="acc-lbl">Mobile</span><span className="acc-val">+1 (617) 555-0134</span><button className="acc-edit">Change</button></div>
+        </div>
+      </div>
+      <div className="set-group">
+        <div className="set-grouph">Sign-in &amp; security</div>
+        <div className="acc-card">
+          <div className="acc-row"><span className="acc-lbl">Password</span><span className="acc-val">Last changed 4 months ago</span><button className="acc-edit">Update</button></div>
+          <div className="acc-row"><span className="acc-lbl">Two-step verification</span><span className="acc-val">On · text message to ···0134</span><button className="acc-edit">Manage</button></div>
+        </div>
+      </div>
+      <div className="set-group">
+        <div className="set-grouph">Your businesses</div>
+        <div className="acc-card">
+          {list.map(c=>(
+            <div className="acc-row biz" key={c.id}>
+              <span className={`switcher-mark ${c.tone||'blue'}`}>{ini(c.name)}</span>
+              <span className="acc-val">{c.name}</span>
+              <span className="acc-role">{c.role==='member'?'Member':'Owner'}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button className="acc-signout">Sign out of Numberline</button>
+    </div>
+  );
+}
+
+Object.assign(window, { SettingsScreen, AccountScreen });
