@@ -19,7 +19,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --slack:#4A154B;--slack-green:#2EB67D;--slack-blue:#36C5F0;--slack-red:#E01E5A;--slack-gold:#ECB22E;
     --sans:'Plus Jakarta Sans',system-ui,sans-serif;
@@ -32,8 +32,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
-  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -51,7 +51,7 @@
   .hero-sub{font-size:1.14rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
-  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
   .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
@@ -200,8 +200,8 @@
   .closer-card h2{font-weight:600;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
   .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .closer-card .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;box-shadow:none;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .closer-card .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .closer-card .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
   .closer-card .btn-ghost:hover{border-color:var(--ink);}
 
@@ -336,7 +336,7 @@
     <div class="hero-copy reveal">
       <span class="eyebrow">Phone system with Slack notifications</span>
       <h1>A phone system that keeps your team updated in <span class="u">Slack.</span></h1>
-      <p class="hero-sub">Numberline gives your business a local or toll-free line, a simple menu, call routing, shared texts, and voicemail transcripts, with Slack notifications so missed calls and messages do not disappear in a separate phone app. It is built for teams that already use Slack to coordinate work.</p>
+      <p class="hero-sub">Numberline gives your business a local or toll-free line, a simple menu, call routing, shared texts, and voicemail transcripts, with Slack notifications so missed calls and messages don't disappear in a separate phone app. It is built for teams that already use Slack to coordinate work.</p>
       <div class="hero-acts">
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
         <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
@@ -488,11 +488,11 @@
       <div class="panel">
         <div class="panel-top phone"><b><span class="p-ico"><svg viewBox="0 0 19.84 10.88" fill="none" style="overflow:visible"><path d="M 0 5.44 C 1.49 .54, 8.43 .54, 9.92 5.44 C 11.41 .54, 18.35 .54, 19.84 5.44" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path></svg></span>Numberline phone system</b><span class="tg">Routing</span></div>
         <div class="panel-body">
-          <div class="pgreet">"Thanks for calling. Press 1 for sales, 2 for support, or 0 for the operator. Know the extension? Dial it, like 101 for Bob."</div>
+          <div class="pgreet">"Thanks for calling. Press 1 for sales, 2 for support, or 0 for the owner. Know the extension? Dial it, like 101 for Bob."</div>
           <div class="prow"><span class="k">1</span><div class="pl"><b>Sales</b></div><div class="dest">Rings 2 mobiles</div></div>
           <div class="prow"><span class="k">2</span><div class="pl"><b>Support</b></div><div class="dest"><a href="/learn/bring-your-own-ai.html" style="color:inherit;font-weight:inherit;">Any AI/Answering Service</a></div></div>
           <div class="prow"><span class="k ext">101</span><div class="pl"><b>Bob</b></div><div class="dest">Rings Bob's mobile</div></div>
-          <div class="prow"><span class="k zero">0</span><div class="pl"><b>Operator</b></div><div class="dest">Rings the front desk</div></div>
+          <div class="prow"><span class="k zero">0</span><div class="pl"><b>Owner</b></div><div class="dest">Rings the owner's mobile</div></div>
         </div>
       </div>
       <div class="panel">
@@ -534,7 +534,7 @@
     <div class="not-card reveal">
       <div class="sec-kicker">What this is not</div>
       <h2>Slack notifications, not a Slack call center.</h2>
-      <p>Numberline does not turn Slack into a call center. You do not answer calls in Slack. You do not reply to texts from Slack in this version. <b>Numberline is where the phone system lives. Slack is where the right people see that something happened.</b></p>
+      <p>Numberline does not turn Slack into a call center. You don't answer calls in Slack. You don't reply to texts from Slack in this version. <b>Numberline is where the phone system lives. Slack is where the right people see that something happened.</b></p>
     </div>
   </div>
 </section>
@@ -552,7 +552,7 @@
       <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Need more than one person to see missed calls or messages</li>
       <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Work with assistants, contractors, or remote help</li>
       <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Want calls routed by function</li>
-      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Do not want enterprise phone software</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Don't want enterprise phone software</li>
     </ul>
   </div>
 </section>
@@ -571,7 +571,7 @@
       <details class="faq-q"><summary><span class="fq-text">Can Numberline send voicemail transcripts to Slack?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. When a voicemail comes in, Numberline can send a notification with the transcript so the team knows what the caller needed.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can Numberline send new text notifications to Slack?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. When a customer texts your business number, Numberline can notify the right Slack channel so the message does not sit unseen.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can I reply to texts from Slack?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not in this version. Slack notifications help your team see what happened. Replies and follow-up happen in Numberline.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can I answer phone calls in Slack?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline routes calls to phones, lines, assistants, contractors, or call centers. Slack is for notifications.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Can I answer phone calls in Slack?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline routes calls to mobile phones, teammates, or the destinations you choose. Slack is for notifications.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Do I need new phones or equipment?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline forwards calls to the cell phone you already have. There is nothing to buy or install. Compatible desk phones are optional, never required.</div></details>
     </div>
   </div>
@@ -598,13 +598,13 @@
       <div class="foot-top">
         <div class="foot-brand">
         <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/bring-your-own-ai.html">Third-party AI services</a></div>
         <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a><a href="/signin.html">Sign in</a></div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a></div></div>
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="/learn/virtual-phone-system.html">Virtual phone system</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/local-business-phone-number.html">Local business phone number</a><a href="/learn/toll-free-business-number.html">Toll-free business number</a><a href="/learn/google-voice-alternative.html">Google Voice alternative</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>

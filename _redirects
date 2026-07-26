@@ -23,6 +23,7 @@
 /phone-system-for-consultants    /for/consultants.html    200
 /phone-system-for-law-firms      /for/law-firms.html      200
 /phone-system-for-interior-designers  /for/interior-design.html  200
+/phone-system-for-medspas             /for/medspas.html         200
 
 # Learn pages - clean slugs serve the /learn/*.html files.
 /slack-notifications                     /learn/slack-notifications.html                     200

@@ -9,7 +9,7 @@
 /* --- Nav logo: identical size on every page (homepage was smaller) --- */
 .logo,.logo:hover,.logo:focus{color:var(--ink);}
 nav .logo{font-size:1.72rem;}
-.btn-primary:hover,.nav-cta:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
+.btn-primary:hover,.nav-cta:hover{background:var(--cta-dark);border-color:var(--cta-dark);color:#fff;}
 
 /* --- Function / feature icon tiles: ONE branded tile (soft blue fill,
        blue glyph, no colored border). Colour lives in the tile, not borders. --- */

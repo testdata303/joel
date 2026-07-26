@@ -19,7 +19,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
     --green:#15803D;--green-soft:#A8F5C8;
     --ai:#BE185D;--ai-soft:#CFE0FF;--ai-line:#F9C7DE;
     --sans:'Plus Jakarta Sans',system-ui,sans-serif;
@@ -32,8 +32,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
-  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -50,7 +50,7 @@
   .hero-sub{font-size:1.14rem;line-height:1.55;color:var(--body);max-width:42ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
-  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
   .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
@@ -221,12 +221,12 @@
       </ul>
     </div>
 
-    <div class="route reveal" role="img" aria-label="Example routing: Sales rings your mobile, Support goes to a third-party AI answering service, after-hours goes to an answering service, operator rings the front desk">
+    <div class="route reveal" role="img" aria-label="Example routing: Sales rings your mobile, Support goes to a third-party AI answering service, after-hours goes to an answering service, the owner option rings the owner’s mobile">
       <div class="route-cap">Your line · your routing</div>
       <div class="rrow"><span class="rkey">1</span><b>Sales</b><span class="rline"></span><span class="rdest human"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg> Your mobile</span></div>
       <div class="rrow"><span class="rkey">2</span><b>Support</b><span class="rline"></span><span class="rdest ai">Vapi AI <span class="tag">3rd party</span></span></div>
       <div class="rrow"><span class="rkey">◐</span><b>After hours</b><span class="rline"></span><span class="rdest human">Answering service</span></div>
-      <div class="rrow"><span class="rkey">0</span><b>Operator</b><span class="rline"></span><span class="rdest human">Front desk</span></div>
+      <div class="rrow"><span class="rkey">0</span><b>Owner</b><span class="rline"></span><span class="rdest human">Owner’s mobile</span></div>
       <div class="route-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/></svg> Change any destination later. Your number does not move.</div>
     </div>
   </div>
@@ -257,7 +257,7 @@
         <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a5 5 0 0 1-5 5H9"/></svg></span>
         <div class="tagline">Benefit 2</div>
         <h3>Send each extension wherever you want</h3>
-        <p>You decide where every extension goes, and they do not all have to go to the same place. Your support line can go to a third-party AI answering service, your personal extension can ring your own cell phone, and an after-hours line can go to a live answering service. Different extensions, different destinations.</p>
+        <p>You decide where every extension goes, and they don't all have to go to the same place. Your support line can go to a third-party AI answering service, your personal extension can ring your own cell phone, and an after-hours line can go to a live answering service. Different extensions, different destinations.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Support line &rarr; a third-party AI answering service</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Personal extension &rarr; rings your own cell phone</li>
@@ -309,7 +309,7 @@
         </div>
         <ul class="ex-when">
           <li><span class="lbl">Business hours</span><span class="who human">Rings your cell</span></li>
-          <li><span class="lbl">When you're on another call</span><span class="who human">Rings the office</span></li>
+          <li><span class="lbl">When you're on another call</span><span class="who human">Rings the owner’s mobile</span></li>
           <li><span class="lbl">After hours &amp; weekends</span><span class="who ai">AI answering service</span></li>
           <li><span class="lbl">Billing questions</span><span class="who human">Your bookkeeper</span></li>
         </ul>
@@ -403,13 +403,13 @@
       <div class="foot-top">
         <div class="foot-brand">
         <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/bring-your-own-ai.html">Third-party AI services</a></div>
         <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a><a href="/signin.html">Sign in</a></div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a></div></div>
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="/learn/virtual-phone-system.html">Virtual phone system</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/local-business-phone-number.html">Local business phone number</a><a href="/learn/toll-free-business-number.html">Toll-free business number</a><a href="/learn/google-voice-alternative.html">Google Voice alternative</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>

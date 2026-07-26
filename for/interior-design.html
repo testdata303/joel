@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 <title>Phone System for Interior Design Firms | Numberline</title>
-<meta name="description" content="Numberline gives an interior design studio one business number, so every inquiry sounds like a studio. Keep project texts and WhatsApp in one shared inbox, and let designers call clients from their own phones showing the studio number.">
+<meta name="description" content="Numberline is an interior design studio phone system for project calls, texts, voicemails, and follow-up, with a studio line, shared inbox, and callbacks from the studio number.">
 <link rel="canonical" href="/phone-system-for-interior-designers">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=4">
@@ -19,7 +19,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --warn:#c0492b;--warn-soft:#fdeeea;
     --gold:#f5a623;
@@ -33,8 +33,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
-  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -46,8 +46,8 @@
   .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
   .logo{font-size:1.72rem;}
   .hdr-right{display:flex;align-items:center;gap:18px;}
-  .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
-  .hdr-cta:hover{background:var(--accent-dark);}
+  .hdr-cta{background:var(--cta);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
+  .hdr-cta:hover{background:var(--cta-dark);}
 
   /* hero */
   .hero{padding:36px 0 56px;background:var(--paper);}
@@ -61,7 +61,7 @@
   .hero-sub{font-size:1.1rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:20px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
-  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
   .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
@@ -69,11 +69,11 @@
   .shot{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);}
   .shot-top{border-radius:21px 21px 0 0;}
   .shot > :last-child:not(.shot-stamp){border-radius:0 0 21px 21px;overflow:hidden;}
-  .shot-stamp{position:absolute;top:-30px;right:-12px;z-index:2;background:var(--paper,#fff);}
-  .shot-top{background:var(--ink);color:#fff;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .shot-stamp{position:absolute;top:-30px;right:-12px;z-index:2;}
+  .shot-top{background:#fff;color:#1F2329;border-bottom:1px solid #E5E7EB;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;}
   .shot-top b{font-size:.98rem;font-weight:700;}
-  .shot-top .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(27,181,106,.18);color:#7ef0b4;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
-  .shot-top .badge i{width:7px;height:7px;border-radius:50%;background:#34d98a;display:block;}
+  .shot-top .badge{display:inline-flex;align-items:center;gap:6px;background:#ECFDF3;border:1px solid #CDEEDE;color:#0f7a47;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
+  .shot-top .badge i{width:7px;height:7px;border-radius:50%;background:#1bb56a;display:block;}
   .shot-body{padding:15px 20px 5px;}
   .shot-greet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:.85rem;color:var(--body);line-height:1.45;margin-bottom:8px;}
   .shot-greet small{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px;}
@@ -85,7 +85,7 @@
   .route .rt span{font-size:.82rem;color:var(--muted);font-weight:600;}
   .route .arr{margin-left:auto;color:var(--muted);font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1;}
   .shot-cap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted);text-align:center;padding:13px 0 2px;text-transform:uppercase;}
-  .shot-ah{display:flex;align-items:center;gap:11px;padding:11px 20px;background:#FDF4F9;border-top:1px solid var(--line);}
+  .shot-ah{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:13px 20px;background:#FDF4F9;border-top:1px solid var(--line);}
   .shot-ah-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#B0447F;background:#FBE3F0;border:1px solid #F6D0E4;padding:5px 9px;border-radius:6px;flex:none;}
   .shot-ah-tx{font-size:.83rem;color:var(--body);line-height:1.4;font-weight:600;}
   .shot-ah-tx b{color:#B0447F;font-weight:800;}
@@ -156,10 +156,10 @@
   /* example setup */
   .setup-wrap{background:var(--soft);}
   .flow{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(16,16,18,.04),0 24px 60px -46px rgba(16,16,18,.3);}
-  .flow-top{background:var(--ink);color:#fff;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-  .flow-top .mn small{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:800;margin-bottom:5px;}
+  .flow-top{background:#fff;color:#1F2329;border-bottom:1px solid #E5E7EB;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .flow-top .mn small{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:5px;}
   .flow-top .mn b{font-size:1.42rem;font-weight:800;letter-spacing:.01em;font-family:var(--display);}
-  .flow-top .biz{font-weight:700;font-size:.92rem;color:rgba(255,255,255,.8);}
+  .flow-top .biz{font-weight:700;font-size:.92rem;color:var(--body);}
   .flow-greet{padding:18px 26px;background:var(--soft);border-bottom:1px solid var(--line);font-size:.98rem;color:var(--body);line-height:1.55;font-style:italic;}
   .flow-rows{padding:4px 26px;}
   .frow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:16px;padding:16px 0;border-top:1px solid var(--line);}
@@ -191,10 +191,10 @@
   .cmp-row.head{background:var(--soft);}
   .cmp-row > div{padding:20px 24px;}
   .cmp-row .opt{font-weight:800;font-size:1.04rem;display:flex;align-items:center;gap:10px;}
-  .cmp-row.joel{background:var(--ink);}
-  .cmp-row.joel .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
-  .cmp-row.joel .desc{color:rgba(255,255,255,.86);}
-  .cmp-row.joel .desc a{color:#fff;text-decoration-color:rgba(255,255,255,.5);}
+  .cmp-row.best{background:var(--ink);}
+  .cmp-row.best .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
+  .cmp-row.best .desc{color:rgba(255,255,255,.86);}
+  .cmp-row.best .desc a{color:#fff;text-decoration-color:rgba(255,255,255,.5);}
   .cmp-row .desc{color:var(--body);font-size:.98rem;line-height:1.5;border-left:1px solid var(--line);}
   .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
 
@@ -203,8 +203,8 @@
   .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;text-align:center;color:var(--ink);}
   .closer-card h2{font-weight:600;font-size:clamp(2rem,3.8vw,2.9rem);letter-spacing:-.035em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
-  .closer-card .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;box-shadow:none;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .closer-card .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .closer-mini{margin-top:18px;font-size:.92rem;color:rgba(255,255,255,.82);font-weight:600;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   /* faq */
@@ -270,6 +270,12 @@
 .frow .fk{background:#F3F4F6;color:#374151;}
 .frow .fk.zero{background:#374151;color:#fff;}
 .frow .dest{color:var(--c,var(--ink));}
+.route .fic.key{grid-auto-rows:min-content;row-gap:1px;font-size:.9rem;border-bottom-width:2.5px;border-radius:9px;}
+.route .fic.key::after{content:'press';font-size:.4rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:800;line-height:1;}
+.frow .fk{grid-auto-rows:min-content;row-gap:1px;}
+.frow .fk::after{content:'press';font-size:.44rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;line-height:1;opacity:.7;}
+.frow .fk.ext::after{content:'dial';}
+.frow .fk.ah::after{content:none;}
 </style>
 <link rel="stylesheet" href="../assets/canon.css?v=6">
 </head>
@@ -277,17 +283,17 @@
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-    <a href="../early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a href="../how-it-works.html">How it works</a>
-      <a href="../features.html">Features</a>
-      <a href="../pricing.html">Pricing</a>
-      <a href="../signin.html">Sign in</a>
-      <a href="../early-access.html" class="nav-cta">Get early access</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
@@ -297,33 +303,33 @@
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
       <div class="hero-kick"><span class="eyebrow">Phone system for interior designers</span></div>
-      <h1>Sound like the studio you are, from the <span class="u">very first call.</span></h1>
-      <p class="hero-sub">One studio line for the whole team. New inquiries reach a designer, project texts and WhatsApp photos land in a shared inbox, and your team can call clients from their own phones without ever handing out a personal number.</p>
+      <h1>The interior design studio phone system for <span class="u">project calls, texts, and follow-up.</span></h1>
+      <p class="hero-sub">Numberline gives your studio a business line for inquiries, projects, deliveries, and client follow-up. Keep texts and WhatsApp messages in a shared inbox, and call clients from your own phone while showing the studio number.</p>
       <div class="hero-acts">
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
-        <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       </div>
       <ul class="hero-bullets">
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>A studio number for your website, Instagram, and invoices</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Texts and WhatsApp for every project in one shared inbox</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Call a client from your own phone, showing the studio number</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>A studio line for your website, Instagram, invoices, and proposals</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Keep project texts, WhatsApp photos, and voicemails in one shared inbox</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Call clients from your own phone while showing the studio number</li>
       </ul>
     </div>
 
-    <div class="shot reveal" role="img" aria-label="One inquiry at Ashgrove Interiors: the caller presses 1, two designers ring, and a WhatsApp photo lands in the shared inbox">
+    <div class="shot reveal" role="img" aria-label="Sample design studio phone setup: a new project call rings two designers, texts and voicemails go to the shared inbox, and after-hours calls forward to an answering service">
       <span class="nup-stamp nup-lg shot-stamp" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <div class="shot-top">
-        <b>One inquiry at Ashgrove Interiors</b>
+        <b>Sample design studio phone setup</b>
         <span class="badge"><i></i> Live</span>
       </div>
       <div class="shot-body">
-        <div class="shot-greet"><small>Tuesday, 10:12 AM: someone calls about a full-home refresh</small>Thanks for calling Ashgrove Interiors. Press 1 for a new project, 2 for a project already underway, 3 for trade and deliveries, or 0 for the studio.</div>
+        <div class="shot-greet"><small>Callers hear your greeting</small>Thanks for calling Ashgrove Interiors. Press 1 for a new project, 2 for a project already underway, 3 for trade and deliveries, or 0 for the studio.</div>
         <div class="route fn-number"><span class="fic key">1</span><div class="rt"><b>They press 1, new project</b><span>A referral who just saw your Instagram</span></div></div>
         <div class="route fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div class="rt"><b>Two designers ring at once</b><span>Whoever is free picks up, on their own phone</span></div></div>
-        <div class="route fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="rt"><b>Both on site?</b><span>Voicemail arrives typed out, so you can read it</span></div></div>
-        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>"Here's the wallpaper I love"</b><span>WhatsApp photos land in the shared inbox</span></div></div>
+        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>Texts / Voicemails</b><span>Sent to shared inbox, email, or Slack</span></div></div>
+        <div class="route fn-ai"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><div class="rt"><b>After hours</b><span>Forward to a third-party answering service</span></div></div>
       </div>
-      <div class="shot-ah"><span class="shot-ah-badge">AI answering</span><span class="shot-ah-tx">Too busy to pick up? Send any option to <a href="../learn/bring-your-own-ai.html" style="color:var(--ai,#BE185D);font-weight:700;">a third-party answering service you choose</a>, and switch it off whenever you like.</span></div>
+      <div class="shot-ah"><span class="shot-ah-badge">Inquiry routing</span><span class="shot-ah-tx">Forward new project inquiries, after-hours messages, or overflow calls during busy install weeks to your own answering provider or <a href="/learn/bring-your-own-ai.html" style="color:var(--ai,#BE185D);font-weight:700;">the third-party AI answering service you choose</a>.</span></div>
     </div>
   </div>
 </section>
@@ -342,11 +348,11 @@
 <section class="block pain" data-screen-label="Pain">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>People decide how good your studio is before you say a word.</h2>
+      <h2>Your studio shouldn't run from whichever designer's phone the client texted first.</h2>
     </div>
     <div class="pain-copy reveal">
-      <p>Someone who found you on Instagram is calling three designers this morning. If your number rings a personal cell and you are on site with a client, it goes to voicemail - and they have already moved on to the next name on their list.</p>
-      <p><b>The bigger problem shows up later.</b> Once a project starts, everything about it lives on one person's phone: the texts, the photos of tile samples, the "can we push Thursday?" messages. Nobody else can see any of it. When that designer is away, the client waits.</p>
+      <p>Interior design work is full of calls, texts, photos, vendor updates, client questions, and project follow-up. Many studios start by giving clients a personal cell number. <b>That works until multiple designers, assistants, suppliers, and clients need visibility.</b> Numberline gives the studio a line and shared inbox so project communication stays with the business.</p>
+      
     </div>
   </div>
 </section>
@@ -356,7 +362,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How Numberline works for design studios</div>
-      <h2>One studio number. Every call and message in one place.</h2>
+      <h2>A studio line for project calls and client messages.</h2>
     </div>
     <div class="fnlist-card grid reveal">
       <ol class="hsteps grid">
@@ -395,7 +401,7 @@
       <div class="fcard reveal"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Texts and WhatsApp in one inbox</h3><p>Clients text photos of fabrics, tiles, and rooms - and plenty of them prefer WhatsApp. Both land in the same shared inbox, so any designer can pick up the thread instead of it sitting unread on one phone.</p><div class="eg"><b>Example</b>A client sends a wallpaper photo on WhatsApp; whoever is at the studio replies with the quote.</div></div>
       <div class="fcard reveal"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div><h3>Call clients as the studio</h3><p>Your designers ring clients from the phone already in their pocket, but the studio number is what shows up on the client’s screen. No personal numbers handed out, and every call back reaches a line the whole team can answer.</p><div class="eg"><b>Example</b>A designer calls from her own phone on the way to a site visit; the client sees the studio number.</div></div>
       <div class="fcard reveal"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></div><h3>Voicemail you can actually read</h3><p>If everyone is busy, the caller leaves a message and you get it written out as text, plus an email. Skim it between appointments instead of holding the phone to your ear on a noisy site.</p><div class="eg"><b>Example</b>Read a new inquiry between meetings and reply before the end of the day.</div></div>
-      <div class="fcard reveal"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3><a href="../learn/bring-your-own-ai.html" style="color:inherit;text-decoration:none;">Add AI answering if you want it</a></h3><p>Point any menu option at a third-party AI answering service that picks up and takes the details, captures the message, or helps with booking depending on the service you choose. Use it after hours or all day when the studio is flat out. Turn it off any time.</p><div class="eg"><b>Example</b>Send new inquiries to a third-party answering service during install week, and back to your designers after.</div></div>
+      <div class="fcard reveal"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3><a href="/learn/bring-your-own-ai.html" style="color:inherit;text-decoration:none;">Add a third-party answering service</a></h3><p>Point any menu option at a third-party AI answering service that picks up and takes the details, captures the message, or helps with booking depending on the service you choose. Use it after hours or all day when the studio is flat out. Turn it off any time.</p><div class="eg"><b>Example</b>Send new inquiries to a third-party answering service during install week, and back to your designers after.</div></div>
     </div>
   </div>
 </section>
@@ -448,11 +454,11 @@
       </div>
       <div class="flow-greet">"Thanks for calling Ashgrove Interiors. Press 1 for a new project, 2 for a project already underway, 3 for trade and deliveries, or 0 for the studio. Know the extension? Dial it, like 101 for Nadia."</div>
       <div class="flow-rows">
-        <div class="frow"><div class="fk">1</div><div class="fl"><b>New projects</b><span>Someone inquiring about working with you</span></div><div class="dest">Rings both senior designers</div></div>
-        <div class="frow"><div class="fk">2</div><div class="fl"><b>Current projects</b><span>A client with a question mid-project</span></div><div class="dest">Rings their designer</div></div>
-        <div class="frow"><div class="fk">3</div><div class="fl"><b>Trade &amp; deliveries</b><span>Showrooms, suppliers, and drivers</span></div><div class="dest">Rings the studio manager</div></div>
+        <div class="frow"><div class="fk">1</div><div class="fl"><b>New projects</b><span>Someone inquiring about working with you</span></div><div class="dest">Both designers' mobiles</div></div>
+        <div class="frow"><div class="fk">2</div><div class="fl"><b>Current projects</b><span>A client with a question mid-project</span></div><div class="dest">Their designer's mobile</div></div>
+        <div class="frow"><div class="fk">3</div><div class="fl"><b>Trade &amp; deliveries</b><span>Showrooms, suppliers, and drivers</span></div><div class="dest">Studio manager's mobile</div></div>
         <div class="frow"><div class="fk ext">101</div><div class="fl"><b>Nadia</b><span>Clients part-way through a project</span></div><div class="dest">Rings Nadia's cell</div></div>
-        <div class="frow"><div class="fk zero">0</div><div class="fl"><b>The studio</b><span>Everything else</span></div><div class="dest">Rings the studio manager</div></div>
+        <div class="frow"><div class="fk zero">0</div><div class="fl"><b>The studio</b><span>Everything else</span></div><div class="dest">Principal's mobile</div></div>
       </div>
       <div class="flow-foot">
         <div><b>Just you</b>Every option rings your cell. Callers still hear a studio, not a personal phone.</div>
@@ -473,11 +479,11 @@
     <div class="cmp reveal">
       <div class="cmp-row head"><div class="opt">Option</div><div class="desc">What it actually means day to day</div></div>
       <div class="cmp-row"><div class="opt">Your own cell phone</div><div class="desc">Free, and it is where nearly every studio starts. But clients keep your private number forever, project texts mix in with personal messages, and nobody else on the team can see a thing.</div></div>
-      <div class="cmp-row"><div class="opt">A free second-number app</div><div class="desc">Apps like Google Voice give you an extra phone number on the same handset. Fine for one person - but there is no menu, no way to ring two designers at once, no WhatsApp, and no shared inbox. <a href="../learn/google-voice-alternative.html" style="color:var(--accent-dark);font-weight:700;">More on how those compare</a>.</div></div>
+      <div class="cmp-row"><div class="opt">A free second-number app</div><div class="desc">Apps like Google Voice give you an extra phone number on the same handset. Fine for one person - but there is no menu, no way to ring two designers at once, no WhatsApp, and no shared inbox. <a href="/learn/google-voice-alternative.html" style="color:var(--accent-dark);font-weight:700;">More on how those compare</a>.</div></div>
       <div class="cmp-row"><div class="opt">A big office phone system</div><div class="desc">Powerful, but priced per person, sold on contracts, and set up through an admin panel built for call centers. You would spend more time configuring it than using it.</div></div>
-      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Numberline</div><div class="desc">One studio number, a short menu, calls ringing the right designers' own phones, voicemail written out, and texts plus WhatsApp in a shared inbox. Made for a studio of one to ten.</div></div>
+      <div class="cmp-row best"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Numberline</div><div class="desc">Numberline gives the studio a local or toll-free line, a short menu, calls ringing the right designers' own phones, shared texts and WhatsApp, voicemail transcripts, callbacks from the studio number, and room to add designers or answering services when needed.</div></div>
     </div>
-    <p style="max-width:820px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">Related reading: <a href="../learn/virtual-phone-system.html" style="color:var(--accent-dark);font-weight:700;">what a virtual phone system is</a>, <a href="../learn/business-phone-number.html" style="color:var(--accent-dark);font-weight:700;">getting a business number</a>, and <a href="../learn/mobile-app.html" style="color:var(--accent-dark);font-weight:700;">calling from your cell phone</a>.</p>
+    <p style="max-width:820px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">Related reading: <a href="/learn/virtual-phone-system.html" style="color:var(--accent-dark);font-weight:700;">what a virtual phone system is</a>, <a href="/learn/business-phone-number.html" style="color:var(--accent-dark);font-weight:700;">getting a business number</a>, and <a href="/learn/mobile-app.html" style="color:var(--accent-dark);font-weight:700;">calling from your cell phone</a>.</p>
   </div>
 </section>
 
@@ -509,7 +515,7 @@
       <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <h2>Answer like a studio, even when it is just you.</h2>
       <p>A studio line on your website and Instagram, inquiries ringing the designers who are free, and every project text and WhatsApp photo in an inbox the whole studio can see.</p>
-      <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       <div class="closer-mini"><span>New or existing number</span> · <span>Your cell stays private</span> · <span>Built for small studios</span></div>
     </div>
   </div>
@@ -520,15 +526,15 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
       </div>
-        <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../learn/mobile-app.html">Mobile app</a><a href="../learn/slack-notifications.html">Slack notifications</a><a href="../learn/bring-your-own-ai.html">Third-party AI services</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a><a href="../signin.html">Sign in</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/bring-your-own-ai.html">Third-party AI services</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a><a href="/signin.html">Sign in</a></div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="new-businesses.html">New businesses</a><a href="plumbers.html">Plumbers</a><a href="real-estate.html">Real estate agents</a><a href="contractors.html">Contractors</a><a href="consultants.html">Consultants and agencies</a><a href="interior-design.html">Interior designers</a><a href="law-firms.html">Small law firms</a></div></div>
-        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="../learn/virtual-phone-system.html">Virtual phone system</a><a href="../learn/small-business-phone-system.html">Small business phone system</a><a href="../learn/business-phone-number.html">Business phone number</a><a href="../learn/google-voice-alternative.html">Google Voice alternative</a><a href="../learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="/learn/virtual-phone-system.html">Virtual phone system</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/google-voice-alternative.html">Google Voice alternative</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
     <div class="foot-base">© 2026 Numberline. All rights reserved.</div>

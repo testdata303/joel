@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 <title>Phone System for New Businesses | Numberline</title>
-<meta name="description" content="Starting a business? Numberline gives you a local or toll-free business line that rings the cell you already have, keeps your personal number private, and grows into a full phone system when you hire.">
+<meta name="description" content="Numberline is a small business phone system for calls, texts, voicemails, and follow-up. Start with a local or toll-free business line, forward calls to the phone you already use, and add teammates as you grow.">
 <link rel="canonical" href="/phone-system-for-new-businesses">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=4">
@@ -19,7 +19,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --warn:#c0492b;--warn-soft:#fdeeea;
     --gold:#f5a623;
@@ -33,8 +33,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
-  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -46,8 +46,8 @@
   .lp-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
   .logo{font-size:1.72rem;}
   .hdr-right{display:flex;align-items:center;gap:18px;}
-  .hdr-cta{background:var(--accent);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
-  .hdr-cta:hover{background:var(--accent-dark);}
+  .hdr-cta{background:var(--cta);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem;}
+  .hdr-cta:hover{background:var(--cta-dark);}
 
   /* hero */
   .hero{padding:36px 0 56px;background:var(--paper);}
@@ -61,7 +61,7 @@
   .hero-sub{font-size:1.1rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:20px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
-  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
   .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
@@ -69,11 +69,11 @@
   .shot{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 80px -40px rgba(16,16,18,.28),0 16px 40px -30px rgba(16,16,18,.14);}
   .shot-top{border-radius:21px 21px 0 0;}
   .shot > :last-child:not(.shot-stamp){border-radius:0 0 21px 21px;overflow:hidden;}
-  .shot-stamp{position:absolute;top:-30px;right:-12px;z-index:2;background:var(--paper,#fff);}
-  .shot-top{background:var(--ink);color:#fff;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .shot-stamp{position:absolute;top:-30px;right:-12px;z-index:2;}
+  .shot-top{background:#fff;color:#1F2329;border-bottom:1px solid #E5E7EB;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;}
   .shot-top b{font-size:.98rem;font-weight:700;}
-  .shot-top .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(27,181,106,.18);color:#7ef0b4;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
-  .shot-top .badge i{width:7px;height:7px;border-radius:50%;background:#34d98a;display:block;}
+  .shot-top .badge{display:inline-flex;align-items:center;gap:6px;background:#ECFDF3;border:1px solid #CDEEDE;color:#0f7a47;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;}
+  .shot-top .badge i{width:7px;height:7px;border-radius:50%;background:#1bb56a;display:block;}
   .shot-body{padding:15px 20px 5px;}
   .shot-greet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:.85rem;color:var(--body);line-height:1.45;margin-bottom:8px;}
   .shot-greet small{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px;}
@@ -89,7 +89,7 @@
   .route .rt span{font-size:.82rem;color:var(--muted);font-weight:600;}
   .route .arr{margin-left:auto;color:var(--muted);font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1;}
   .shot-cap{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted);text-align:center;padding:13px 0 2px;text-transform:uppercase;}
-  .shot-ah{display:flex;align-items:center;gap:11px;padding:11px 20px;background:#FDF4F9;border-top:1px solid var(--line);}
+  .shot-ah{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:13px 20px;background:#FDF4F9;border-top:1px solid var(--line);}
   .shot-ah-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#B0447F;background:#FBE3F0;border:1px solid #F6D0E4;padding:5px 9px;border-radius:6px;flex:none;}
   .shot-ah-tx{font-size:.83rem;color:var(--body);line-height:1.4;font-weight:600;}
   .shot-ah-tx b{color:#B0447F;font-weight:800;}
@@ -160,10 +160,10 @@
   /* example setup */
   .setup-wrap{background:var(--soft);}
   .flow{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(16,16,18,.04),0 24px 60px -46px rgba(16,16,18,.3);}
-  .flow-top{background:var(--ink);color:#fff;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-  .flow-top .mn small{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:800;margin-bottom:5px;}
+  .flow-top{background:#fff;color:#1F2329;border-bottom:1px solid #E5E7EB;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .flow-top .mn small{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:5px;}
   .flow-top .mn b{font-size:1.42rem;font-weight:800;letter-spacing:.01em;font-family:var(--display);}
-  .flow-top .biz{font-weight:700;font-size:.92rem;color:rgba(255,255,255,.8);}
+  .flow-top .biz{font-weight:700;font-size:.92rem;color:var(--body);}
   .flow-greet{padding:18px 26px;background:var(--soft);border-bottom:1px solid var(--line);font-size:.98rem;color:var(--body);line-height:1.55;font-style:italic;}
   .flow-rows{padding:4px 26px;}
   .frow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:16px;padding:16px 0;border-top:1px solid var(--line);}
@@ -195,10 +195,10 @@
   .cmp-row.head{background:var(--soft);}
   .cmp-row > div{padding:20px 24px;}
   .cmp-row .opt{font-weight:800;font-size:1.04rem;display:flex;align-items:center;gap:10px;}
-  .cmp-row.joel{background:var(--ink);}
-  .cmp-row.joel .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
-  .cmp-row.joel .desc{color:rgba(255,255,255,.86);}
-  .cmp-row.joel .desc a{color:#fff;text-decoration-color:rgba(255,255,255,.5);}
+  .cmp-row.best{background:var(--ink);}
+  .cmp-row.best .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
+  .cmp-row.best .desc{color:rgba(255,255,255,.86);}
+  .cmp-row.best .desc a{color:#fff;text-decoration-color:rgba(255,255,255,.5);}
   .cmp-row .desc{color:var(--body);font-size:.98rem;line-height:1.5;border-left:1px solid var(--line);}
   .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
 
@@ -207,8 +207,8 @@
   .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;text-align:center;color:var(--ink);}
   .closer-card h2{font-weight:600;font-size:clamp(2rem,3.8vw,2.9rem);letter-spacing:-.035em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
-  .closer-card .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;box-shadow:none;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .closer-card .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .closer-mini{margin-top:18px;font-size:.92rem;color:var(--muted);font-weight:600;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
 
   /* faq */
@@ -281,23 +281,29 @@
 .frow .fk{background:#F3F4F6;color:#374151;}
 .frow .fk.zero{background:#374151;color:#fff;}
 .frow .dest{color:var(--c,var(--ink));}
+.route .fic.key{grid-auto-rows:min-content;row-gap:1px;font-size:.9rem;border-bottom-width:2.5px;border-radius:9px;}
+.route .fic.key::after{content:'press';font-size:.4rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:800;line-height:1;}
+.frow .fk{grid-auto-rows:min-content;row-gap:1px;}
+.frow .fk::after{content:'press';font-size:.44rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;line-height:1;opacity:.7;}
+.frow .fk.ext::after{content:'dial';}
+.frow .fk.ah::after{content:none;}
 </style>
 <link rel="stylesheet" href="../assets/canon.css?v=6">
 </head><body class="lp">
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-    <a href="../early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a href="../how-it-works.html">How it works</a>
-      <a href="../features.html">Features</a>
-      <a href="../pricing.html">Pricing</a>
-      <a href="../signin.html">Sign in</a>
-      <a href="../early-access.html" class="nav-cta">Get early access</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
@@ -309,16 +315,16 @@
       <div class="hero-kick"><span class="eyebrow">Phone system for new businesses</span>
       
       </div>
-      <h1>Start your business with a number that is <span class="u">not your personal cell.</span></h1>
-      <p class="hero-sub">Get a local or toll-free business line, forward calls to the phone you already use, and add greetings, voicemail transcripts, texts, extensions, and teammates when you need them.</p>
+      <h1>Start your business with a line that <span class="u">belongs to the business.</span></h1>
+      <p class="hero-sub">Get a local or toll-free business line before your personal cell gets printed everywhere. Forward calls to the phone you already use, manage texts and voicemails in one place, and add greetings, extensions, teammates, and more numbers as the business grows.</p>
       <div class="hero-acts">
         <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
-        <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       </div>
       <ul class="hero-bullets">
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>A local or toll-free number for your business</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Rings the cell phone you already have</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Your personal number stays private, forever</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Put a business line on your website, Google profile, invoices, and email signature</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Forward calls to the phone you already use</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Add greetings, texts, voicemail transcripts, extensions, and teammates later</li>
       </ul>
     </div>
 
@@ -326,18 +332,18 @@
     <div class="shot reveal" role="img" aria-label="Numberline day-one setup showing a greeting and a call forwarded to the founder's cell">
       <span class="nup-stamp nup-lg shot-stamp" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <div class="shot-top">
-        <b>Your setup: day one</b>
+        <b>Sample day-one phone setup</b>
         <span class="badge"><i></i> Live</span>
       </div>
       <div class="shot-body">
-        <div class="shot-greet"><small>Greeting: generated for you</small>Thanks for calling Harlo Design. Please hold while we connect you.</div>
+        <div class="shot-greet"><small>Callers hear your greeting</small>Thanks for calling Harlo Design. Please hold while we connect you.</div>
         <div class="route-tree">
         <div class="route fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div class="rt"><b>Calls ring your cell</b><span>Forwarded straight to the phone in your pocket</span></div></div>
-        <div class="route fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="rt"><b>No answer?</b><span>Voicemail, transcribed and emailed to you</span></div></div>
-        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>Texts</b><span>Land in your business inbox, not your Messages app</span></div></div>
+        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>Texts / Voicemails</b><span>Sent to shared inbox, email, or Slack</span></div></div>
+        <div class="route fn-ai"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><div class="rt"><b>After hours</b><span>Forward to a third-party answering service</span></div></div>
         </div>
       </div>
-      <div class="shot-ah"><span class="shot-ah-badge">Later</span><span class="shot-ah-tx">When you grow, add <b>extensions, teammates, or channels</b> like WhatsApp, Slack, and third-party AI answering services. Same number.</span></div>
+      <div class="shot-ah"><span class="shot-ah-badge">Lead routing</span><span class="shot-ah-tx">Forward new leads or after-hours calls to your own answering provider or <a href="/learn/bring-your-own-ai.html" style="color:var(--ai,#BE185D);font-weight:700;">the third-party AI answering service you choose</a>, while regular calls keep ringing your phone.</span></div>
     </div>
   </div>
 </section>
@@ -356,11 +362,11 @@
 <section class="block pain" data-screen-label="Pain">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>The first number you use follows you forever.</h2>
+      <h2>The first number you publish tends to follow the business.</h2>
     </div>
     <div class="pain-copy reveal">
-      <p>When you start a business, your number ends up everywhere fast: your website, your Google Business Profile, invoices, business cards, the sign on the door. If that number is your personal cell, it's out there for good.</p>
-      <p><b>Strangers calling at dinner. Spam that never stops. No way to tell a business call from a personal one.</b> And when you eventually hire, there's no way to hand off "your" number. Starting with a real business line now saves all of that later.</p>
+      <p>New founders often start by putting a personal cell number on the website, Google Business Profile, invoices, ads, and business cards. It feels easy at first. <b>Then customers keep using it, texts mix with personal messages, and adding help means giving someone access to the founder's phone.</b> Numberline gives the business its own line from day one.</p>
+      
     </div>
   </div>
 </section>
@@ -370,7 +376,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-kicker">How Numberline works for a brand-new business</div>
-      <h2>From no number to taking business calls.</h2>
+      <h2>A business line. Calls, texts, and follow-up stay organized.</h2>
     </div>
     <div class="fnlist-card grid reveal">
 <ol class="hsteps grid">
@@ -533,7 +539,7 @@
       </div>
       <div class="flow-foot">
         <div><b>Day one</b>Your business line forwards to your cell. That's the whole setup, and it's enough.</div>
-        <div><b>First help</b>Add an assistant, teammate, or answering service and route calls to them too.</div>
+        <div><b>First help</b>Add an assistant, teammate, or outside answering provider and route calls to them too.</div>
         <div><b>Later</b>Add extensions, more numbers, WhatsApp, Slack, or third-party AI answering services. The number on the sign never changes.</div>
       </div>
     </div>
@@ -552,7 +558,7 @@
       <div class="cmp-row"><div class="opt">Just use your cell</div><div class="desc">Free and instant, but your personal number becomes the business number forever, with no greeting, no separation, and no way to hand off calls later.</div></div>
       <div class="cmp-row"><div class="opt">A second phone or SIM</div><div class="desc">Another device or line to carry and pay for. Still just a cell number: no greeting, no business texting inbox, nothing to grow into.</div></div>
       <div class="cmp-row"><div class="opt">Free virtual number apps</div><div class="desc">Fine for a side project. But limited business features, and no path to extensions, a team, or a real phone system when the business grows.</div></div>
-      <div class="cmp-row joel"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Numberline</div><div class="desc">A real business number that rings the phone you already have, with a professional greeting, readable voicemail, business texting, and a full phone system waiting behind it for the day you hire.</div></div>
+      <div class="cmp-row best"><div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M20 6L9 17l-5-5"/></svg> Numberline</div><div class="desc">A local or toll-free business line that rings the phone you already have, with a greeting, shared texts and voicemails, transcripts, callbacks from the business number, and room to add extensions, teammates, and more numbers as you grow.</div></div>
     </div>
   </div>
 </section>
@@ -582,7 +588,7 @@
       <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <h2>Start your business with its own number.</h2>
       <p>Pick a number, get a greeting in your business's name, and take your first call on the phone already in your pocket.</p>
-      <a href="../early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
       <div class="closer-mini"><span>New or ported number</span> · <span>Works on the phone you have</span> · <span>Grows when you hire</span></div>
     </div>
   </div>
@@ -593,15 +599,15 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="../index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
       </div>
-        <div class="foot-col"><h5>Product</h5><a href="../how-it-works.html">How it works</a><a href="../features.html">Features</a><a href="../pricing.html">Pricing</a><a href="../learn/mobile-app.html">Mobile app</a><a href="../learn/slack-notifications.html">Slack notifications</a><a href="../learn/bring-your-own-ai.html">Third-party AI services</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="../about.html">About</a><a href="../about.html">Contact</a><a href="../about.html">Support</a><a href="../signin.html">Sign in</a></div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/bring-your-own-ai.html">Third-party AI services</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a><a href="/signin.html">Sign in</a></div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="new-businesses.html">New businesses</a><a href="plumbers.html">Plumbers</a><a href="real-estate.html">Real estate agents</a><a href="contractors.html">Contractors</a><a href="consultants.html">Consultants and agencies</a><a href="interior-design.html">Interior designers</a><a href="law-firms.html">Small law firms</a></div></div>
-        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="../learn/virtual-phone-system.html">Virtual phone system</a><a href="../learn/small-business-phone-system.html">Small business phone system</a><a href="../learn/business-phone-number.html">Business phone number</a><a href="../learn/google-voice-alternative.html">Google Voice alternative</a><a href="../learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="/learn/virtual-phone-system.html">Virtual phone system</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/google-voice-alternative.html">Google Voice alternative</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
     <div class="foot-base">© 2026 Numberline. All rights reserved.</div>

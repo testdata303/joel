@@ -19,7 +19,7 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
     --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
-    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#2540EE;--cta-soft:#E7EBFE;--cta-dark:#1B31C4;--accent-soft:#F1F1F0;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
     --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
     --slack:#4A154B;--slack-green:#2EB67D;--slack-blue:#36C5F0;--slack-red:#E01E5A;--slack-gold:#ECB22E;
     --sans:'Plus Jakarta Sans',system-ui,sans-serif;
@@ -32,8 +32,8 @@
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
   .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;padding:13px 22px;}
-  .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
   .btn-ghost:hover{border-color:var(--ink);}
   .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
@@ -51,7 +51,7 @@
   .hero-sub{font-size:1.14rem;line-height:1.5;color:var(--body);max-width:40ch;margin-bottom:26px;font-weight:500;}
   .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
   .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
-  .hero-bullets li{display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
   .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
   .hero-bullets .ck svg{width:14px;height:14px;}
 
@@ -199,8 +199,8 @@
   .closer-card h2{font-weight:600;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
   .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:46ch;margin:0 auto 30px;font-weight:500;}
   .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .closer-card .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);border-width:1px;box-shadow:none;}
-  .closer-card .btn-primary:hover{background:var(--accent-dark);color:#fff;}
+  .closer-card .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;box-shadow:none;}
+  .closer-card .btn-primary:hover{background:var(--cta-dark);color:#fff;}
   .closer-card .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
   .closer-card .btn-ghost:hover{border-color:var(--ink);}
 
@@ -367,7 +367,7 @@
     <div class="whatis-copy reveal">
       <div class="sec-kicker">Mobile app</div>
       <h2>Outbound calling from your business number.</h2>
-      <p>The Numberline mobile app lets you make outgoing calls from your phone using your Numberline business number. Customers see the business number, not your personal cell, so you can call back from the right number while keeping your personal number private. Incoming calls do not have to depend on the app: Numberline can route calls to the phones, lines, assistants, contractors, or call centers you choose.</p>
+      <p>The Numberline mobile app lets you make outgoing calls from your phone using your Numberline business number. Customers see the business number, not your personal cell, so you can call back from the right number while keeping your personal number private. Incoming calls don't have to depend on the app: Numberline can route calls to the mobiles, teammates, or outside answering providers you choose.</p>
     </div>
     <div class="pillset reveal">
       <div class="pillset-head"><span class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></span> <span class="lbl">What the app does</span></div>
@@ -387,7 +387,7 @@
       <h2>Calling customers back should not expose your personal number.</h2>
     </div>
     <div class="prob-copy reveal">
-      <p>Small business calls do not only happen from an office. Owners call from the road. Assistants call from home. Contractors or remote team members may need to return customer calls. Without a business calling app, those calls often come from personal cell numbers. <b>That creates confusion for customers and makes the business harder to manage.</b></p>
+      <p>Small business calls don't only happen from an office. Owners call from the road. Assistants call from home. Contractors or remote team members may need to return customer calls. Without a business calling app, those calls often come from personal cell numbers. <b>That creates confusion for customers and makes the business harder to manage.</b></p>
     </div>
   </div>
 </section>
@@ -400,7 +400,7 @@
       <h2>The app is one part of your phone system.</h2>
     </div>
     <p class="steps-note reveal" style="max-width:720px;font-size:1.08rem;line-height:1.6;">Numberline is more than a calling app. It is a phone system for modern small businesses. Get a local or toll-free number, add numbers as needed, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and add optional Slack notifications for teams that use Slack.</p>
-    <p class="steps-note reveal">The mobile app handles one important job: <b>making outgoing calls from your business number</b> when you are not sitting at a desk. Incoming calls do not depend on the app: Numberline forwards them to the phones, lines, assistants, or answering services you choose.</p>
+    <p class="steps-note reveal">The mobile app handles one important job: <b>making outgoing calls from your business number</b> when you are not sitting at a desk. Incoming calls don't depend on the app: Numberline forwards them to the phones, lines, assistants, or answering services you choose.</p>
   </div>
 </section>
 
@@ -448,7 +448,7 @@
         <div class="panel-top phone"><b><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>Mobile calling setup</b><span class="tg">Example</span></div>
         <div class="panel-body" style="padding:6px 22px 14px;">
           <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Business number</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Your Numberline local or toll-free number</span></div>
-          <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Incoming calls</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Route to the owner, office line, assistant, or whoever should answer</span></div>
+          <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Incoming calls</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Route to the owner's mobile, an assistant's mobile, or whoever should answer</span></div>
           <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;flex:none;width:150px;">Missed calls</b><span style="color:var(--muted);font-weight:600;font-size:.9rem;line-height:1.5;flex:1;">Go to voicemail, get transcribed, and notify the team</span></div>
           <div style="display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);"><b style="font-size:.92rem;color:var(--ink);flex:none;width:150px;">Outgoing calls</b><span style="color:var(--ink);font-weight:700;font-size:.9rem;line-height:1.5;flex:1;">Use the Numberline mobile app to call customers back from the business number</span></div>
         </div>
@@ -499,7 +499,7 @@
     <div class="faq-list">
       <details class="faq-q" open><summary><span class="fq-text">What is the Numberline mobile app for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The Numberline mobile app lets you make outgoing business calls from your phone using your Numberline business number as the caller ID.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Will customers see my personal cell number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. When you make calls through the Numberline mobile app, customers see your business number instead of your personal cell number.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Do incoming calls have to go through the app?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Incoming calls can route to the phones, lines, assistants, contractors, or call centers you choose.</div></details>
+      <details class="faq-q"><summary><span class="fq-text">Do incoming calls have to go through the app?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Incoming calls can route to the mobiles, teammates, or outside answering providers you choose.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can team members make calls from the business number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, the mobile app is designed so owners, assistants, contractors, or remote team members can make business calls from the right number.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Is Numberline just a mobile calling app?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is a phone system for modern small businesses. The mobile app is for outgoing calls from your business number.</div></details>
       <details class="faq-q"><summary><span class="fq-text">Can I use a local or toll-free number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Numberline is designed to support local and toll-free numbers, with the ability to add numbers as needed.</div></details>
@@ -530,13 +530,13 @@
       <div class="foot-top">
         <div class="foot-brand">
         <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
       </div>
         <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/bring-your-own-ai.html">Third-party AI services</a></div>
         <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a><a href="/signin.html">Sign in</a></div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/law-firms.html">Small law firms</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="/for/new-businesses.html">New businesses</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a></div></div>
         <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="/learn/virtual-phone-system.html">Virtual phone system</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/local-business-phone-number.html">Local business phone number</a><a href="/learn/toll-free-business-number.html">Toll-free business number</a><a href="/learn/google-voice-alternative.html">Google Voice alternative</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
       </div>
     </div>
