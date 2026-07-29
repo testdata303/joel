@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Numberline Features | Calls, Texts, Extensions, Slack and More</title>
+<meta name="description" content="Explore Numberline business phone features including calls, SMS, WhatsApp, voicemail, extensions, routing, Slack notifications, SIP phones, webhooks, and using third-party AI services.">
+<link rel="canonical" href="/features">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
+<link rel="icon" href="favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<style>
+
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;}
+  .logo{font-size:1.72rem;}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-links a{color:var(--body);text-decoration:none;font-weight:600;font-size:.94rem;transition:color .18s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta-m{display:none;}
+  .nav-links a.active{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px;text-decoration-color:var(--blue);}
+  .nav-cta{background:var(--cta);color:#fff!important;padding:11px 22px;border-radius:10px;font-weight:700!important;text-decoration:none;}
+  .nav-cta:hover{background:var(--cta-dark);}
+  .btn{padding:15px 30px;border-radius:11px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:all .18s;display:inline-block;} .btn .btn-guillemet{font-weight:700;font-size:1.15em;position:relative;top:.03em;margin-left:-.06em;}
+  .btn-primary{background:var(--cta);color:#fff;border:1px solid var(--cta);} .btn-primary:hover{background:var(--cta-dark);color:#fff;transform:translateY(-1px);}
+  .btn-secondary{background:#fff;color:var(--ink);border:1.5px solid #D6D4CD;} .btn-secondary:hover{border-color:var(--ink);}
+  .btn-white{background:#fff;color:var(--blue);border:1px solid #fff;} .btn-white:hover{transform:translateY(-1px);background:#f3f5ff;}
+  section{padding:84px 0;}
+  .sec-head{max-width:680px;margin-bottom:48px;} .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:600;letter-spacing:-.03em;line-height:1.06;margin-bottom:16px;}
+  .sec-head p{color:var(--body);font-size:1.12rem;line-height:1.55;}
+  .closer{background:var(--blue);color:#fff;text-align:center;}
+  .closer h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:600;letter-spacing:-.035em;line-height:1.15;text-wrap:pretty;margin-bottom:16px;}
+  .closer p{font-size:1.15rem;opacity:.9;margin-bottom:32px;}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+
+  /* HERO */
+  header{text-align:center;padding:78px 0 64px;border-bottom:1px solid var(--line);}
+  .eyebrow{display:inline-block;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
+  h1{font-size:clamp(2.5rem,5.6vw,4.3rem);font-weight:600;letter-spacing:-.035em;line-height:1.03;margin-bottom:22px;}
+  .lede{font-size:clamp(1.08rem,2vw,1.35rem);color:var(--body);max-width:46ch;margin:0 auto 36px;line-height:1.5;}
+  .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  /* JUMP NAV */
+
+  /* FEATURE BLOCK (grouped list) */
+  .fblock{border-bottom:1px solid var(--line);}
+  .fblock .wrap{display:grid;grid-template-columns:300px 1fr;gap:50px;}
+  .fb-head{position:sticky;top:170px;align-self:start;}
+  .fb-ic{width:48px;height:48px;border-radius:13px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin-bottom:16px;} .fb-ic svg{width:25px;height:25px;}
+  .fb-head h2{font-size:1.7rem;font-weight:600;letter-spacing:-.02em;margin-bottom:8px;}
+  .fb-head p{color:var(--muted);font-size:.98rem;line-height:1.5;}
+  .fb-list{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .fitem{background:#fff;padding:22px 24px;}
+  .fitem .ft{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1rem;margin-bottom:5px;}
+  .fitem .ft svg{width:16px;height:16px;color:var(--blue);flex-shrink:0;}
+  .fitem p{color:var(--muted);font-size:.9rem;line-height:1.5;}
+  .tag-soon{font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ai);background:var(--ai-soft);padding:2px 7px;border-radius:5px;margin-left:7px;vertical-align:middle;}
+  .tag-ai{font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ai);background:var(--ai-soft);padding:2px 7px;border-radius:5px;margin-left:7px;vertical-align:middle;}
+
+  /* AI band */
+  .aiband{background:linear-gradient(180deg,#f6f9ff,#eef3ff);border-bottom:1px solid #d6e0fb;}
+  .aiband .fb-ic{background:var(--ai-soft);color:var(--ai);}
+  .aiband .fb-head h2{color:var(--ink);}
+  .aiband .fitem .ft svg{color:var(--ai);}
+
+  /* CALLOUT: plug-in VoIP phone */
+  .byod{background:var(--bg-alt);border-bottom:1px solid var(--line);}
+  .byod-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .byod-copy h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px;}
+  .byod-copy>p{color:var(--body);font-size:1.08rem;line-height:1.6;margin-bottom:22px;max-width:46ch;}
+  .byod-steps{list-style:none;counter-reset:bs;}
+  .byod-steps li{counter-increment:bs;display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-size:1rem;font-weight:600;}
+  .byod-steps li::before{content:counter(bs);width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:.82rem;font-weight:800;display:grid;place-items:center;flex-shrink:0;}
+  .byod-steps li small{display:block;color:var(--muted);font-weight:500;font-size:.88rem;margin-top:2px;}
+  /* desk phone illustration */
+  .deskphone{background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:0 20px 50px rgba(15,17,21,.05);text-align:center;}
+  .dp-art{width:200px;height:150px;margin:0 auto 22px;position:relative;}
+  .dp-base{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:170px;height:78px;background:var(--ink);border-radius:14px 14px 10px 10px;}
+  .dp-screen{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:120px;height:34px;background:var(--blue-soft);border:6px solid #232329;border-radius:6px;display:grid;place-items:center;font-size:.62rem;font-weight:800;color:var(--blue);letter-spacing:.05em;}
+  .dp-keys{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:grid;grid-template-columns:repeat(3,1fr);gap:5px;width:78px;}
+  .dp-keys i{height:7px;border-radius:2px;background:#3a3a42;}
+  .dp-handset{position:absolute;top:6px;left:6px;width:34px;height:120px;background:var(--ink);border-radius:16px;}
+  .dp-cord{position:absolute;top:40px;left:40px;width:30px;height:2px;background:var(--line);}
+  .dp-eth{display:inline-flex;align-items:center;gap:8px;background:var(--bg-alt);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.84rem;font-weight:700;color:var(--body);}
+  .dp-eth svg{width:16px;height:16px;color:var(--green);}
+
+  /* CALLOUT: developer */
+  .dev{background:#0d0d10;color:#fff;border-bottom:1px solid #1e1e25;}
+  .dev .kicker{color:#7fdcff;background:none;padding:0;}
+  .dev-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center;}
+  .dev-copy h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px;color:#fff;}
+  .dev-copy>p{color:#aab0bb;font-size:1.06rem;line-height:1.6;margin-bottom:22px;max-width:46ch;}
+  .dev-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .dev-chip{background:#18181d;border:1px solid #2a2a31;border-radius:100px;padding:7px 15px;font-size:.82rem;font-weight:600;color:#d6dae1;} .dev-chip b{color:#5fd3ff;font-weight:700;}
+  .code{background:#07070a;border:1px solid #1e1e25;border-radius:16px;overflow:hidden;font-family:ui-monospace,'SF Mono',Menlo,monospace;}
+  .code-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid #1e1e25;}
+  .code-bar .d{width:11px;height:11px;border-radius:50%;} .d1{background:#ff5f57;}.d2{background:#febc2e;}.d3{background:#28c840;}
+  .code-bar .ep{margin-left:10px;font-size:.74rem;color:#6b7280;} .code-bar .ep b{color:#5fd3ff;font-weight:600;}
+  .code pre{padding:18px 20px;font-size:.8rem;line-height:1.7;color:#c9d1d9;overflow-x:auto;margin:0;}
+  .code .k{color:#79c0ff;}.code .s{color:#7ee787;}.code .p{color:#d2a8ff;}.code .c{color:#6b7280;}
+
+  /* footer styles inherited from assets/site.css (shared across all pages) */
+
+  @media(max-width:860px){
+    .nav-links a:not(.nav-cta){display:none;} .wrap{padding:0 22px;} .logo{font-size:2rem;}
+    .fblock .wrap{grid-template-columns:1fr;gap:26px;} .fb-head{position:static;}
+    .fb-list{grid-template-columns:1fr;} .dev-grid{grid-template-columns:1fr;gap:34px;} .byod-grid{grid-template-columns:1fr;gap:34px;}
+  }
+
+  /* MOBILE NAV */
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;margin:-8px;color:var(--ink);}
+  .hamburger svg{width:28px;height:28px;display:block;}
+  @media(max-width:860px){
+    .hamburger{display:block;}
+    .nav-links{position:fixed;top:88px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 0;box-shadow:0 16px 40px rgba(15,17,21,.08);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
+    .nav-links a:not(.nav-cta){display:block!important;padding:15px 24px;font-size:1.05rem;border-bottom:1px solid var(--line-soft);}
+    .nav-links a.nav-cta{display:none;}
+    .nav-cta-m{display:inline-flex;align-items:center;margin-left:auto;margin-right:14px;padding:9px 15px;font-size:.82rem;border-radius:9px;}
+  }
+  /* FORWARD-TO-APPS MOAT VISUAL */
+  .moat{background:var(--bg-alt);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .moat-head{max-width:680px;margin:0 auto 44px;text-align:center;}
+  .moat-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:600;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px;}
+  .moat-head p{color:var(--body);font-size:1.1rem;line-height:1.6;}
+  .moat-diagram{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:0;}
+  .moat-source{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 24px;text-align:center;}
+  .moat-source .ms-l{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:3px;}
+  .moat-source .ms-n{font-size:1.2rem;font-weight:800;color:var(--ink);}
+  .moat-stem{width:2px;height:26px;background:var(--line);}
+  .moat-fan{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;}
+  .moat-dest{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .moat-dest .md-ic{width:40px;height:40px;border-radius:11px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;} .moat-dest .md-ic svg{width:21px;height:21px;}
+  .moat-dest b{font-size:.92rem;font-weight:800;color:var(--ink);} .moat-dest span{font-size:.76rem;color:var(--muted);font-weight:500;}
+  .moat-note{margin-top:28px;text-align:center;color:var(--body);font-size:.96rem;font-weight:600;}
+  .moat-note b{color:var(--ink);font-weight:800;}
+  @media(max-width:640px){.moat-fan{grid-template-columns:1fr 1fr;}}
+  /* VERTICALS */
+  .fverts{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .fvert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .fvert{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;transition:box-shadow .2s,transform .2s;}
+  .fvert:hover{box-shadow:0 14px 36px rgba(15,17,21,.06);transform:translateY(-2px);}
+  .fvert .fv-ic{width:42px;height:42px;border-radius:11px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin-bottom:14px;} .fvert .fv-ic svg{width:22px;height:22px;}
+  .fvert h3{font-size:1.06rem;font-weight:800;letter-spacing:-.015em;margin-bottom:7px;}
+  .fvert p{color:var(--body);font-size:.92rem;line-height:1.55;font-weight:500;}
+  .fvert p b{color:var(--ink);font-weight:700;}
+  @media(max-width:860px){.fvert-grid{grid-template-columns:1fr;}}
+
+  /* === standard closer (matches homepage) === */
+  .closer{background:#fff;color:var(--ink);text-align:center;padding:48px 0 56px;}
+  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;color:var(--ink);}
+  .closer-card h2{font-weight:600;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
+  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
+  .closer-card .btn-primary{background:var(--cta)!important;color:#fff!important;border:1px solid var(--cta)!important;}
+  .closer-card .btn-primary:hover{background:var(--cta-dark)!important;color:#fff!important;transform:translateY(-1px);}
+
+  
+  /* === features content toolkit === */
+  .jx-hero{text-align:center;padding:80px 0 56px;border-bottom:1px solid var(--line);}
+  .jx-hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin-bottom:18px;max-width:18ch;margin-left:auto;margin-right:auto;}
+  .jx-hero p{font-size:clamp(1.08rem,2vw,1.35rem);color:var(--body);max-width:48ch;margin:0 auto 32px;line-height:1.5;}
+  .jx-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .fg{padding:64px 0;border-bottom:1px solid var(--line);}
+  .fg:last-of-type{border-bottom:none;}
+  .fg-top{max-width:760px;margin-bottom:30px;}
+  .fg-top h2{font-size:1.4rem;font-weight:600;letter-spacing:-.02em;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+  .fg-top h2 .n{font-size:.78rem;font-weight:600;color:var(--blue);background:var(--blue-soft);width:24px;height:24px;border-radius:7px;display:grid;place-items:center;flex-shrink:0;}
+  .fg-top p{color:var(--body);font-size:1rem;line-height:1.5;}
+  .fl{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .fi{display:flex;align-items:center;gap:11px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;}
+  .fi .ck{width:22px;height:22px;color:#131316;display:grid;place-items:center;flex-shrink:0;}
+  .fi .ck svg{width:13px;height:13px;}
+  .fi b{font-size:.94rem;font-weight:700;letter-spacing:-.01em;line-height:1.25;}
+  .fi .tag{margin-left:auto;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:3px 7px;border-radius:5px;white-space:nowrap;}
+  .fi .tag.soon{color:var(--muted);background:var(--bg-alt);}
+  .jx-alt{background:var(--bg-alt);}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .ig{display:flex;gap:14px;align-items:flex-start;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff;}
+  .ig .lg{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;color:#fff;}
+  .ig .lg svg{width:23px;height:23px;}
+  .ig-bd h3{font-size:1.02rem;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap;}
+  .ig-bd p{font-size:.9rem;color:var(--body);line-height:1.45;}
+  .ig .tag{font-size:.58rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:3px 7px;border-radius:5px;}
+  .ig .tag.soon{color:var(--muted);background:var(--bg-alt);}
+  .ig .tag.on{color:var(--green);background:var(--green-soft);}
+  .lg.slack{background:#4A154B;} .lg.wa{background:#25D366;} .lg.ink{background:var(--ink);} .lg.zap{background:#FF4F00;} .lg.ai{background:var(--blue);}
+  @media(max-width:860px){.fl,.ig-grid{grid-template-columns:1fr;}}
+
+</style>
+<style>
+
+</style>
+
+<style id="dc-semantic2">
+/* feature-section icon chips off CTA blue */
+.jx-card .ic{background:#F3F4F6;color:#374151;}
+.ai-agent{background:#F5F3FF;color:#6D28D9;} .ai-arrow{color:#6D28D9;}
+.diff-card .dc-ic{background:#F3F4F6;color:#374151;}
+.guar-row .gic{background:#F3F4F6;color:#374151;}
+.fb-ic{background:#F3F4F6;color:#374151;}
+.aiband .fb-ic{background:#F5F3FF;color:#6D28D9;}
+.fvert .fv-ic{background:#F3F4F6;color:#374151;}
+.moat-dest .md-ic{background:#F3F4F6;color:#374151;}
+.fg-top h2 .n{background:#F3F4F6;color:#374151;}
+.fi .ck{background:none;color:#131316;}
+.fitem .ft svg{color:#374151;}
+.aiband .fitem .ft svg{color:#6D28D9;}
+.moat-source .ms-l{color:#374151;}
+</style>
+<style id="fviz">
+  /* ===== full-width feature rows ===== */
+  .frow-ink{--c:var(--ink);--cs:#F3F4F6;--cl:#E5E7EB;}
+  .frow-sec{padding:8px 0 0;}
+  .frow-sec-single{padding:0;}
+  .frow-sec-single .frow{border-top:1px solid var(--line);margin-top:56px;padding-top:72px;}
+  .frow{display:grid;grid-template-columns:1.02fr 1fr;gap:64px;align-items:center;padding:60px 0;border-top:1px solid var(--line);}
+  .frow-sec .frow:first-child{border-top:none;}
+  .frow.rev .frow-viz{order:-1;}
+  .frow-hd{display:flex;align-items:center;gap:15px;margin-bottom:18px;}
+  .frow-ic{width:52px;height:52px;border-radius:14px;background:var(--cs);color:var(--c);display:grid;place-items:center;flex:none;}
+  .frow-ic svg{width:26px;height:26px;}
+  .frow-ink .frow-ic{background:var(--ink);color:#fff;}
+  .frow-hd-t{display:flex;flex-direction:column;gap:2px;}
+  .frow-num{font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--c);opacity:.9;}
+  .frow-ink .frow-num{color:var(--muted);}
+  .frow h3{font-size:clamp(1.5rem,2.7vw,2.05rem);font-weight:800;letter-spacing:-.028em;line-height:1.04;color:var(--ink);}
+  .frow-desc{color:var(--body);font-size:1.06rem;line-height:1.6;margin-bottom:22px;max-width:48ch;}
+  .fchips{display:flex;flex-wrap:wrap;gap:9px;}
+  .fchip{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 14px 7px 10px;}
+  .fchip svg{width:14px;height:14px;color:var(--cta);flex:none;}
+  .frow-ink .fchip svg{color:var(--ink);}
+  .fchip.pro{border-color:var(--line);background:#F1F1F0;}
+  .fchip.pro em{font-style:normal;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--line);padding-left:7px;margin-left:1px;}
+  .frow-ink .fchip.pro em{color:var(--body);}
+
+  /* ===== shared visual frame ===== */
+  .frow-viz{min-width:0;}
+  .fviz{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 30px 66px -38px rgba(15,17,21,.5);}
+  .fviz-cap{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--c);margin-bottom:14px;}
+  .frow-ink .fviz-cap{color:var(--muted);}
+
+  /* number picker */
+  .vpk-row{display:flex;align-items:center;gap:13px;padding:14px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:10px;}
+  .vpk-row:last-child{margin-bottom:0;}
+  .vpk-row.sel{border-color:var(--c);background:var(--cs);}
+  .vpk-tick{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex:none;color:#fff;}
+  .vpk-row.sel .vpk-tick{background:var(--c);border-color:var(--c);}
+  .vpk-tick svg{width:13px;height:13px;opacity:0;}
+  .vpk-row.sel .vpk-tick svg{opacity:1;}
+  .vpk-t{flex:1;min-width:0;}
+  .vpk-t b{display:block;font-size:1.02rem;font-weight:800;color:var(--ink);}
+  .vpk-t small{display:block;color:var(--muted);font-size:.82rem;font-weight:500;margin-top:1px;}
+  .vpk-tag{font-size:.64rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:100px;flex:none;}
+  .vpk-tag.sel{color:var(--c);background:#fff;}
+  .vpk-tag.free{color:var(--ink);background:#fff;}
+
+  /* greeting player */
+  .vgr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .vgr-voice{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;color:var(--c);background:var(--cs);padding:5px 11px;border-radius:100px;}
+  .vgr-voice svg{width:14px;height:14px;}
+  .vplay{width:52px;height:52px;border-radius:50%;background:var(--c);color:#fff;border:none;cursor:pointer;display:grid;place-items:center;flex:none;box-shadow:0 10px 22px -10px var(--c);}
+  .frow-ink .vplay{background:var(--ink);box-shadow:none;}
+  .vplay svg{width:22px;height:22px;margin-left:2px;}
+  .vgr-player{display:flex;align-items:center;gap:15px;padding:6px 4px 4px;}
+  .vgr-player.sm .vplay{width:42px;height:42px;}
+  .vgr-player.sm .vplay svg{width:18px;height:18px;}
+  .vwave{display:flex;align-items:center;gap:3px;flex:1;height:40px;min-width:0;overflow:hidden;}
+  .vwave i{flex:1;min-width:2px;border-radius:2px;background:var(--c);opacity:.32;}
+  .frow-ink .vwave i{background:var(--ink);}
+  .vgr-time{font-size:.82rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;flex:none;}
+  .vgr-text{position:relative;margin-top:14px;padding:15px 16px;background:var(--bg-alt);border:1px solid var(--line);border-radius:13px;font-size:.92rem;line-height:1.55;color:var(--ink);font-weight:500;}
+  .vgr-edit{float:right;margin:-2px -3px 3px 10px;font-size:.58rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--c);background:var(--cs);padding:3px 8px;border-radius:6px;}
+
+  /* routing menu */
+  .vmn-greet{display:flex;gap:10px;align-items:center;background:var(--cs);border-radius:12px;padding:12px 14px;margin-bottom:14px;}
+  .vmn-greet svg{width:18px;height:18px;color:var(--c);flex:none;}
+  .vmn-greet span{font-size:.9rem;font-weight:600;color:var(--ink);font-style:italic;}
+  .vmn-row{display:flex;align-items:center;gap:13px;padding:12px 2px;border-top:1px solid var(--line-soft);}
+  .vmn-row b{font-weight:800;font-size:.98rem;color:var(--ink);flex:none;}
+  .vmn-key{width:38px;height:38px;border-radius:11px;background:var(--bg-alt);border:1px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:.98rem;color:var(--ink);flex:none;}
+  .vmn-arrow{flex:1;height:2px;background:var(--line);position:relative;min-width:14px;}
+  .vmn-arrow::after{content:'';position:absolute;right:0;top:-3px;border-left:6px solid var(--line);border-top:4px solid transparent;border-bottom:4px solid transparent;}
+  .vmn-dest{font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:100px;flex:none;}
+  .vmn-dest.num{color:var(--ink);background:#fff;}
+  .vmn-dest.ai{color:var(--ink);background:#fff;}
+  .vmn-dest.desk{color:var(--ink);background:#fff;}
+
+  /* inbox */
+  .vib-top{display:flex;align-items:center;justify-content:space-between;padding:2px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+  .vib-top b{font-size:1rem;font-weight:800;color:var(--ink);}
+  .vib-tabs{display:flex;gap:5px;}
+  .vib-tabs span{font-size:.72rem;font-weight:700;color:var(--muted);padding:5px 11px;border-radius:100px;}
+  .vib-tabs span.on{color:var(--c);background:var(--cs);}
+  .vib-row{display:flex;align-items:center;gap:12px;padding:13px 6px;border-radius:12px;}
+  .vib-row.unread{background:var(--cs);}
+  .vib-av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:#fff;flex:none;}
+  .vib-av.a1{background:#6366F1;}.vib-av.a2{background:#0EA5A0;}.vib-av.a3{background:#E4655E;}
+  .vib-c{flex:1;min-width:0;}
+  .vib-h{display:flex;align-items:center;gap:8px;}
+  .vib-h b{font-size:.94rem;font-weight:800;color:var(--ink);}
+  .vib-ch{font-size:.58rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:5px;}
+  .vib-ch.sms{color:var(--ink);background:#fff;}
+  .vib-ch.wa{color:#0B7A44;background:#DCFCE7;}
+  .vib-c p{font-size:.85rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .vib-time{font-size:.74rem;color:var(--muted);font-weight:600;flex:none;}
+
+  /* voicemail */
+  .vvm-hd{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .vvm-who b{display:block;font-size:1rem;font-weight:800;color:var(--ink);}
+  .vvm-who small{display:block;font-size:.8rem;color:var(--muted);font-weight:500;margin-top:1px;}
+  .vvm-sum{margin-top:14px;padding:13px 15px;background:var(--cs);border-radius:12px;}
+  .vvm-tr{margin-top:10px;padding:0 3px;}
+  .vvm-l{display:block;font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:4px;}
+  .vvm-l.muted{color:var(--muted);}
+  .vvm-sum p{font-size:.9rem;line-height:1.5;color:var(--ink);font-weight:500;}
+  .vvm-tr p{font-size:.86rem;line-height:1.5;color:var(--muted);font-style:italic;}
+
+  /* notifications */
+  .vnt{display:flex;flex-direction:column;gap:12px;background:transparent;border:none;box-shadow:none;padding:0;}
+  .vnt-toast{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:0 16px 34px -24px rgba(15,17,21,.5);}
+  .vnt-ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:none;color:#fff;}
+  .vnt-ic svg{width:20px;height:20px;}
+  .vnt-ic.email{background:#2454D6;}.vnt-ic.slack{background:#4A154B;}.vnt-ic.hook{background:var(--ink);}
+  .vnt-b{flex:1;min-width:0;}
+  .vnt-b b{font-size:.9rem;font-weight:800;color:var(--ink);}
+  .vnt-b p{font-size:.83rem;color:var(--muted);margin-top:1px;}
+  .vnt-t{font-size:.72rem;color:var(--muted);font-weight:600;flex:none;}
+
+  /* dashboard */
+  .vdb{display:grid;grid-template-columns:140px 1fr;gap:0;padding:0;overflow:hidden;}
+  .vdb-side{background:var(--bg-alt);border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:3px;min-width:0;}
+  .vdb-logo{font-family:var(--display,inherit);font-weight:800;font-size:.95rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px;}
+  .vdb-logo b{font-weight:800;}
+  .vdb-nav{font-size:.8rem;font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px;}
+  .vdb-nav.on{color:var(--ink);background:#fff;font-weight:800;box-shadow:0 2px 8px -4px rgba(15,17,21,.3);}
+  .vdb-main{padding:20px;min-width:0;}
+  .vdb-h{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .vdb-h b{font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .vdb-live{font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:#fff;padding:3px 8px;border-radius:100px;}
+  .vdb-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;min-width:0;}
+  .vdb-card{border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-width:0;}
+  .vdb-card small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;}
+  .vdb-card b{font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.1;}
+  .vdb-list{display:flex;flex-direction:column;gap:8px;}
+  .vdb-li{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.83rem;font-weight:600;color:var(--ink);padding:9px 12px;border:1px solid var(--line);border-radius:11px;min-width:0;}
+  .vdb-li span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .vdb-pill{font-size:.68rem;font-weight:800;padding:3px 9px;border-radius:100px;white-space:nowrap;flex:none;}
+  .vdb-pill.num{color:var(--ink);background:#fff;}
+  .vdb-pill.ai{color:var(--ink);background:#fff;}
+  .vdb-pill.desk{color:var(--ink);background:#fff;}
+
+  /* ===== device band ===== */
+  .fdev{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;}
+  .fdev-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .fdev-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;letter-spacing:-.028em;line-height:1.08;margin-bottom:14px;}
+  .fdev-head p{color:var(--body);font-size:1.08rem;line-height:1.55;}
+  .fdev-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:860px;margin:0 auto;}
+  .fdev-item{background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px 30px 30px;text-align:center;box-shadow:0 26px 60px -40px rgba(15,17,21,.5);}
+  .fdev-viz{display:flex;justify-content:center;align-items:flex-end;min-height:330px;margin-bottom:22px;}
+  .fdev-cap b{display:block;font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .fdev-cap span{display:block;font-size:.88rem;color:var(--muted);font-weight:500;margin-top:3px;}
+  .fdev-item .deskphone{border:none;box-shadow:none;padding:0;}
+
+  /* phone frame */
+  .vphone{width:236px;border-radius:38px;padding:9px;background:#16161a;box-shadow:0 30px 60px -30px rgba(15,17,21,.7);}
+  .vphone-scr{background:#fff;border-radius:30px;overflow:hidden;position:relative;}
+  .vph-top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px 6px;font-size:.72rem;font-weight:700;color:var(--ink);}
+  .vph-dots{width:52px;height:16px;background:#16161a;border-radius:0 0 12px 12px;position:absolute;top:0;left:50%;transform:translateX(-50%);}
+  .vph-hd{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 12px;border-bottom:1px solid var(--line);}
+  .vph-hd b{font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .vph-badge{font-size:.6rem;font-weight:700;color:var(--ink);background:#fff;padding:3px 8px;border-radius:100px;}
+  .vph-call{display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid var(--line-soft);text-align:left;}
+  .vph-av{width:36px;height:36px;border-radius:50%;background:#E2E6EE;color:#5A6172;display:grid;place-items:center;font-size:.74rem;font-weight:800;flex:none;}
+  .vph-c{flex:1;min-width:0;}
+  .vph-c b{display:block;font-size:.9rem;font-weight:700;color:var(--ink);}
+  .vph-c small{display:block;font-size:.74rem;color:var(--muted);margin-top:1px;}
+  .vph-call.miss .vph-c b,.vph-call.miss .vph-c small{color:#DC2626;}
+  .vph-ic{color:#DC2626;}.vph-ic svg{width:16px;height:16px;}
+  .vph-tab{display:flex;justify-content:space-between;padding:11px 16px 15px;}
+  .vph-tab span{font-size:.66rem;font-weight:700;color:var(--muted);}
+  .vph-tab span.on{color:var(--ink);}
+
+  /* ===== integrations ===== */
+  .fintg{padding:72px 0 36px;border-top:1px solid var(--line);}
+  .fintg-head{max-width:760px;margin:0 auto 34px;text-align:center;}
+  .fintg-head .frow-ic{margin:0 auto 14px;}
+  .fintg-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:600;letter-spacing:-.028em;}
+  .fintg-head .frow-num{display:none;}
+  .fintg-head p{color:var(--body);font-size:1.06rem;line-height:1.55;margin-top:10px;}
+  .fintg .ig-grid{max-width:1000px;margin:0 auto;}
+  .fintg > .wrap > p{max-width:760px;margin:20px auto 0;text-align:center;}
+
+  @media(max-width:900px){
+    .frow{grid-template-columns:1fr;gap:30px;padding:46px 0;}
+    .frow.rev .frow-viz{order:0;}
+    .fdev-grid,.vdb{grid-template-columns:1fr;}
+    .vdb-side{flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid var(--line);}
+  }
+</style>
+<style id="convention-sweep">
+/* one convention: white tiles + thin border + black glyph; aqua only as accent chip */
+.lg,.lg.slack,.lg.wa,.lg.ink,.lg.zap,.lg.ai{background:#fff!important;border:1px solid #E7E3DA;color:var(--ink)!important;}
+.lg svg{color:var(--ink)!important;}
+.vnt-ic,.vnt-ic.email,.vnt-ic.slack,.vnt-ic.hook{background:#fff!important;border:1px solid #E7E3DA;color:var(--ink)!important;}
+.frow-ic{background:#fff!important;border:1px solid #E7E3DA;}
+.frow-ink .frow-ic{background:#fff!important;}
+.frow-num{display:none!important;}
+.frow-ic{color:#2D4ED8!important;}
+.frow-ic svg{color:#2D4ED8!important;}
+.fb-ic,.fvert .fv-ic,.moat-dest .md-ic{color:#2D4ED8!important;}
+.fb-ic svg,.fvert .fv-ic svg,.moat-dest .md-ic svg{color:#2D4ED8!important;}
+.fi .ck{background:#EEF3FF!important;color:#2D4ED8!important;}
+.fi .ck svg{color:#2D4ED8!important;}
+.fitem .ft svg{color:#2D4ED8!important;}
+.kicker,.jx-kicker,.moat-source .ms-l{color:#2D4ED8!important;}
+.fg-top h2 .n{color:#2D4ED8!important;background:#EEF3FF!important;}
+.ig .tag,.fi .tag{color:#2240C2!important;background:#EEF3FF!important;}
+.fintg-head .frow-ic svg{color:#2D4ED8!important;}
+/* product mockups keep the app's Signal Blue UI */
+.vplay{background:#2D4ED8!important;box-shadow:none!important;color:#fff!important;}
+.frow-ink .vplay{background:var(--ink)!important;box-shadow:none!important;color:#fff!important;}
+.vwave i{background:#2D4ED8!important;}
+.vpk-row.sel{border-color:#2D4ED8!important;background:#EEF3FF!important;}
+.vpk-row.sel .vpk-tick{background:#2D4ED8!important;border-color:#2D4ED8!important;}
+.vgr-voice{color:#2240C2!important;background:#EEF3FF!important;border:1px solid #D6E2FF;}
+.vib-row.unread,.vvm-sum{background:#EEF3FF!important;}
+.vib-tabs span.on{color:#2240C2!important;background:#EEF3FF!important;}
+.vib-av.a1{background:#6366F1!important;}.vib-av.a2{background:#0EA5A0!important;}.vib-av.a3{background:#E4655E!important;}
+.vvm-l{color:#2240C2!important;}
+.vgr-edit{background:#EEF3FF!important;border:1px solid #D6E2FF;color:#2240C2!important;}
+.vmn-greet{background:#EEF3FF!important;color:var(--ink)!important;}
+.ig .tag,.fi .tag{color:var(--ink)!important;background:#F1F1F0!important;}
+.ig .tag.on{color:var(--ink)!important;background:#A2FBEF!important;}
+.ig .tag.soon,.fi .tag.soon{color:var(--muted)!important;background:#F1F1F0!important;}
+.tag-soon{color:var(--muted)!important;background:#F1F1F0!important;}
+.kicker,.jx-kicker,.fg-top h2 .n,.moat-source .ms-l{color:var(--ink)!important;}
+.fg-top h2 .n{background:#F1F1F0!important;}
+.fb-ic,.fvert .fv-ic,.moat-dest .md-ic{background:#fff!important;border:1px solid #E7E3DA;}
+.dp-eth svg{color:#2D4ED8!important;}
+.byod-steps li::before{background:var(--ink)!important;}
+.btn-white{color:var(--ink)!important;}
+.nav-links a.active{text-decoration-color:var(--ink)!important;}
+.fchip,.fchip.pro{background:#F1F1F0!important;color:var(--ink)!important;}
+
+.dp-screen{background:#F1F1F0!important;}
+</style>
+<style id="fsubs-css">
+.fsubs{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px;}
+.fsub{display:flex;gap:11px;align-items:flex-start;padding:15px 17px;border:1px solid var(--line);border-radius:13px;background:#fff;}
+.fsub .ck{width:20px;height:20px;border-radius:6px;background:#EEF3FF;color:#2D4ED8;display:grid;place-items:center;flex:none;margin-top:1px;}
+.fsub .ck svg{width:11px;height:11px;}
+.fsub b{display:block;font-size:.92rem;font-weight:800;letter-spacing:-.01em;line-height:1.3;margin-bottom:3px;color:var(--ink);}
+.fsub b em{font-style:normal;font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:#F1F1F0;padding:2px 7px;border-radius:5px;margin-left:6px;vertical-align:middle;white-space:nowrap;}
+.fsub p{font-size:.84rem;color:var(--body);line-height:1.5;font-weight:500;}
+.fsub-more{display:inline-block;margin-top:5px;font-size:.78rem;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--line);padding-bottom:1px;}
+.fsub-more:hover{border-bottom-color:var(--ink);}
+@media(min-width:901px) and (max-width:1080px){.fsubs{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){.fsubs{grid-template-columns:1fr;margin-top:0;}}
+</style>
+<link rel="stylesheet" href="assets/canon.css?v=6">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},{"@type":"ListItem","position":2,"name":"Features","item":"https://numberline.com/features"}]}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<header class="jx-hero">
+  <div class="wrap">
+    <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+    <h1>A complete phone system. No per-user pricing.</h1>
+    <p>Calls, texts, voicemail, extensions, routing, Slack, WhatsApp, compatible desk phones, webhooks, and using third-party AI services. Add everyone who needs access without another seat fee.</p>
+    <div class="jx-acts">
+      <a href="pricing.html" class="btn btn-secondary">See pricing</a>
+      <a href="early-access.html" class="btn btn-primary btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+    </div>
+    <p style="margin:18px auto 0;color:var(--muted);font-size:.9rem;font-weight:600;">Unlimited users · No per-user pricing · Simple plans at launch</p>
+  </div>
+</header>
+
+<section class="frow-sec"><div class="wrap">
+<article class="frow fn-number reveal" id="numbers">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div class="frow-hd-t"><span class="frow-num">01</span><h3>Business numbers</h3></div></div>
+      <p class="frow-desc">Choose a local or toll-free number, or move the number your customers already know - for free. It keeps working the whole time the transfer completes.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vpk">
+  <div class="fviz-cap">Choose your number</div>
+  <div class="vpk-row sel"><span class="vpk-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="vpk-t"><b>(212) 555-0182</b><small>New York · Local</small></span><span class="vpk-tag sel">Selected</span></div>
+  <div class="vpk-row"><span class="vpk-tick"></span><span class="vpk-t"><b>(800) 244-7746</b><small>Toll-free</small></span></div>
+  <div class="vpk-row"><span class="vpk-tick"></span><span class="vpk-t"><b>Keep my number</b><small>Port it - keeps working the whole time</small></span><span class="vpk-tag free">Free</span></div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Local numbers</b><p>A number in the area code your customers know. Search by city or area code.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Toll-free numbers</b><p>An 800-series number that reads national, for customers anywhere.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Port your number <em>Free</em></b><p>Move the number your customers already have saved. It keeps working the whole time the transfer completes, and nothing changes for callers.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Additional numbers</b><p>Add numbers for a second location or a campaign. They share the same extensions, inbox, and settings.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Vanity numbers</b><p>A number that spells a word, toll-free or local, that customers remember from one hearing.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>SMS registration status</b><p>Follow your number’s carrier text-messaging registration, so you know exactly when business texting is live.</p></div></div></div>
+  </article>
+<article class="frow fn-ai rev reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg></span><div class="frow-hd-t"><span class="frow-num">02</span><h3>AI-generated greetings</h3></div></div>
+      <p class="frow-desc">Write what callers hear during business hours, after hours, holidays, and voicemail. Generate the audio with an AI voice, preview it, and edit the text anytime.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vgr">
+  <div class="vgr-top"><span class="fviz-cap" style="margin:0">Main greeting</span><span class="vgr-voice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> AI voice · Ava</span></div>
+  <div class="vgr-player"><button class="vplay" aria-label="Play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></button><div class="vwave"><i style="height:8px"></i><i style="height:26px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:30px"></i><i style="height:34px"></i><i style="height:27px"></i><i style="height:19px"></i><i style="height:24px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:26px"></i><i style="height:17px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:31px"></i><i style="height:23px"></i><i style="height:28px"></i><i style="height:28px"></i><i style="height:33px"></i><i style="height:29px"></i><i style="height:21px"></i><i style="height:23px"></i><i style="height:34px"></i></div><span class="vgr-time">0:12</span></div>
+  <div class="vgr-text">&ldquo;Thanks for calling Reyes Plumbing. For sales press 1, for support press 2, or stay on the line and we&rsquo;ll be right with you.&rdquo;<span class="vgr-edit">Editable</span></div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Main greeting</b><p>What callers hear first during business hours: your welcome and menu options.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>After-hours greeting</b><p>A different message for evenings, weekends, and closed days.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Holiday &amp; away dates</b><p>Set dates ahead of time; the right greeting plays automatically.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>AI voice generation</b><p>Type the words; the audio is generated in your chosen AI voice and saved as a recording. Nothing is synthesized live on calls.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Preview &amp; listen</b><p>Play the greeting before callers hear it; regenerate until it sounds right.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Editable greeting text</b><p>Change the words anytime; saving renders a fresh recording.</p></div></div></div>
+  </article>
+<article class="frow fn-fwd reveal" id="extensions">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><div class="frow-hd-t"><span class="frow-num">03</span><h3>Extensions & call forwarding</h3></div></div>
+      <p class="frow-desc">Create extensions for Sales, Support, Billing, or individual people - then route each one to mobiles, the Numberline app, an existing business phone, an outside answering provider, or a third-party AI answering service.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vmn">
+  <div class="fviz-cap">Caller hears your menu</div>
+  <div class="vmn-greet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg><span>&ldquo;Thanks for calling Reyes Plumbing…&rdquo;</span></div>
+  <div class="vmn-row"><span class="vmn-key">1</span><b>Sales</b><span class="vmn-arrow"></span><span class="vmn-dest num">Bob&rsquo;s mobile</span></div>
+  <div class="vmn-row"><span class="vmn-key">2</span><b>Support</b><span class="vmn-arrow"></span><a href="learn/using-third-party-ai-services.html" class="vmn-dest ai" style="text-decoration:none;">AI service</a></div>
+  <div class="vmn-row"><span class="vmn-key">101</span><b>Bob</b><span class="vmn-arrow"></span><span class="vmn-dest desk">Desk phone</span></div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Department &amp; personal extensions</b><p>Sales, Support, Billing, plus direct extensions for people (Bob is 101).</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Forward to any phone number</b><p>Destinations are ordinary phones: mobiles, an existing business phone, a landline.</p><a class="fsub-more" href="/features/call-forwarding.html">Learn more &rsaquo;</a></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Forward to the Numberline app</b><p>Ring teammates in the mobile app, with business caller ID.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Compatible SIP phones</b><p>Register a desk phone to an extension: plug into ethernet and it rings.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Route to an outside provider or AI</b><p>Send any extension to your answering provider or a third-party AI answering service.</p><a class="fsub-more" href="/learn/using-third-party-ai-services.html">Learn more &rsaquo;</a></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Ring one-by-one or all at once</b><p>First pickup takes the call; everyone else’s phone stops ringing.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Call Announce</b><p>Hear which extension the call is for before you accept, so you always answer as the business.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Per-destination schedules</b><p>Business hours ring the team; after hours follow a different path.</p></div></div></div>
+  </article>
+<article class="frow fn-sms rev reveal" id="messaging">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="frow-hd-t"><span class="frow-num">04</span><h3>SMS & WhatsApp inbox</h3></div></div>
+      <p class="frow-desc">Let customers message your business number by SMS or WhatsApp. Every conversation lands in one shared inbox - the history stays with the company, not one person&rsquo;s phone.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vib">
+  <div class="vib-top"><b>Shared inbox</b><div class="vib-tabs"><span class="on">All</span><span>SMS</span><span>WhatsApp</span></div></div>
+  <div class="vib-row unread"><span class="vib-av a1">RM</span><div class="vib-c"><div class="vib-h"><b>Rosa Martinez</b><span class="vib-ch sms">SMS</span></div><p>Hi! Are you free Thursday morning to look at a leak?</p></div><span class="vib-time">2m</span></div>
+  <div class="vib-row"><span class="vib-av a2">JT</span><div class="vib-c"><div class="vib-h"><b>James Tan</b><span class="vib-ch wa">WhatsApp</span></div><p>Thanks - see you at 9. 👍</p></div><span class="vib-time">1h</span></div>
+  <div class="vib-row"><span class="vib-av a3">LP</span><div class="vib-c"><div class="vib-h"><b>Lena Powell</b><span class="vib-ch sms">SMS</span></div><p>Can you send the invoice to this number?</p></div><span class="vib-time">3h</span></div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Shared SMS &amp; WhatsApp inbox</b><p>Every conversation visible to the whole team, not trapped on one person’s phone.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>See the number &amp; channel</b><p>Each thread shows which number it came to and whether it’s SMS or WhatsApp.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Reply over the same channel</b><p>Answers go back the way the customer wrote, always from the business number.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>New outbound texts</b><p>Start a conversation from the business number, not your cell.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Archive &amp; resolve</b><p>Clear handled threads from the inbox; the history stays searchable.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Block numbers</b><p>Stop spam senders from calling or texting again.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Lightweight contacts</b><p>Name a number once and the name appears on every future call and text.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Internal notes</b><p>Leave a note on a thread for teammates. Customers never see it.</p></div></div></div>
+  </article>
+<article class="frow fn-vm reveal" id="voicemail">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="frow-hd-t"><span class="frow-num">05</span><h3>Calls & voicemail</h3></div></div>
+      <p class="frow-desc">See every call, missed call, and voicemail in one place. Read the transcript or AI summary when listening isn&rsquo;t convenient, and call back with your business caller ID.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vvm">
+  <div class="vvm-hd"><span class="vib-av a2">MC</span><div class="vvm-who"><b>Miguel Cruz</b><small>(415) 555-0147 · 0:34 · Missed call</small></div></div>
+  <div class="vgr-player sm"><button class="vplay" aria-label="Play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></button><div class="vwave"><i style="height:8px"></i><i style="height:26px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:34px"></i><i style="height:34px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:30px"></i><i style="height:34px"></i><i style="height:27px"></i><i style="height:19px"></i><i style="height:24px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:26px"></i><i style="height:17px"></i><i style="height:34px"></i><i style="height:30px"></i><i style="height:31px"></i><i style="height:23px"></i><i style="height:28px"></i><i style="height:28px"></i><i style="height:33px"></i></div></div>
+  <div class="vvm-sum"><span class="vvm-l">AI summary</span><p>Miguel wants a quote for a water-heater install and asks for a callback before Friday.</p></div>
+  <div class="vvm-tr"><span class="vvm-l muted">Transcript</span><p>&ldquo;Hey, this is Miguel - I saw your listing and wanted to get a quote for a new water heater…&rdquo;</p></div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Call history</b><p>Every answered, outgoing, and missed call on the business number, in one list.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Missed calls</b><p>See who you missed, with the voicemail and transcript attached to the same entry.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Transcripts</b><p>Read the message when you can’t listen: in the app, in email, or in Slack.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>AI summaries</b><p>A two-line summary of what the caller wants and when they need a callback.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Search</b><p>Find any call or voicemail by name, number, or what was said.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Outbound calling</b><p>Call customers from the mobile app using the business number.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Your business caller ID</b><p>Callbacks show the business number, never anyone’s personal cell.</p></div></div></div>
+  </article>
+<article class="frow frow-ink rev reveal" id="notifications">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><div class="frow-hd-t"><span class="frow-num">06</span><h3>Voicemail to email &amp; Slack</h3></div></div>
+      <p class="frow-desc">Voicemail never sits unheard in an app. Every message is transcribed and delivered where you already look: email with the recording attached, a Slack channel, or your own software by webhook.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vnt">
+  <div class="vnt-toast"><span class="vnt-ic email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></span><div class="vnt-b"><b>Email · Voicemail · Ext 1 Sales</b><p>Miguel Cruz · transcript + MP3 attached</p></div><span class="vnt-t">now</span></div>
+  <div class="vnt-toast"><span class="vnt-ic slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v8M10 21v-8M3 10h8M21 14h-8"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span><div class="vnt-b"><b>Slack · #front-desk</b><p>Voicemail from Miguel Cruz: &ldquo;quote for a water heater&hellip;&rdquo;</p></div><span class="vnt-t">now</span></div>
+  <div class="vnt-toast"><span class="vnt-ic hook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></span><div class="vnt-b"><b>Webhook · 200 OK</b><p>voicemail.created → your CRM</p></div><span class="vnt-t">now</span></div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Voicemail to email</b><p>Every voicemail is transcribed and emailed to the addresses you choose. The transcript is in the body, so you read it before you call back.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>MP3 recording attached</b><p>The recording arrives as an MP3 attachment you can play, forward, or file anywhere.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Voicemail to Slack <em>Grow &amp; Max</em></b><p>Voicemails post to the channel you choose, transcript included, where the whole team sees them.</p><a class="fsub-more" href="/learn/slack-notifications.html">Learn more &rsaquo;</a></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Delivery by extension</b><p>Sales voicemails go to different people than Support. Each extension has its own recipients.</p></div></div></div>
+  </article>
+</div></section>
+<section class="fdev">
+  <div class="wrap">
+    <div class="fdev-head"><h2>The app in your pocket. The desk phone on your desk.</h2><p>Take business calls on the Numberline mobile app, on the web, or on a compatible SIP desk phone - same number, same extensions, wherever you are.</p></div>
+    <div class="fdev-grid">
+      <div class="fdev-item"><div class="fdev-viz"><div class="vphone"><div class="vphone-scr">
+   <div class="vph-top"><span>9:41</span><span class="vph-dots"></span></div>
+   <div class="vph-hd"><b>Recents</b><span class="vph-badge">Reyes Plumbing</span></div>
+   <div class="vph-call miss"><span class="vph-av">MC</span><div class="vph-c"><b>Miguel Cruz</b><small>Missed · 2m ago</small></div><span class="vph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></div>
+   <div class="vph-call"><span class="vph-av">RM</span><div class="vph-c"><b>Rosa Martinez</b><small>Incoming · 1h ago</small></div></div>
+   <div class="vph-call"><span class="vph-av">JT</span><div class="vph-c"><b>James Tan</b><small>Outgoing · 3h ago</small></div></div>
+   <div class="vph-tab"><span class="on">Calls</span><span>Inbox</span><span>Keypad</span><span>Settings</span></div>
+ </div></div></div><div class="fdev-cap"><b>Numberline mobile app</b><span>iOS & Android · calls, texts, voicemail</span></div></div>
+      <div class="fdev-item"><div class="fdev-viz"><div class="deskphone">
+   <div class="dp-art"><div class="dp-handset"></div><div class="dp-cord"></div><div class="dp-base"></div><div class="dp-screen">NUMBERLINE</div><div class="dp-keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+   <span class="dp-eth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg> Plug into ethernet - no server</span>
+ </div></div><div class="fdev-cap"><b>Compatible SIP desk phones</b><span>Bring your own - plug in and register</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="fintg" id="integrations">
+  <div class="wrap">
+    <div class="fintg-head "><span class="frow-ic fn-ai" style="--c:var(--ink);--cs:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><div><span class="frow-num" style="--c:var(--ink);color:var(--ink)">07</span><h2>Integrations</h2></div><p>Connect Numberline to the tools you already use. Send alerts to Slack, add WhatsApp to your number, trigger webhooks, and route any extension to the AI answering service you choose. <a href="learn/using-third-party-ai-services.html" style="color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap;">See how using third-party AI services works &rsaquo;</a></p></div>
+    <div class="ig-grid">
+      <div class="ig reveal"><div class="lg slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v8M10 21v-8M3 10h8M21 14h-8"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></div><div class="ig-bd"><h3>Slack</h3><p>Post new texts, missed calls, and voicemails into the channels your team already watches.</p></div></div>
+      <div class="ig reveal"><div class="lg wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.2A8 8 0 1 1 8 20.4z"/></svg></div><div class="ig-bd"><h3>WhatsApp</h3><p>Let customers message your business number on WhatsApp. Conversations appear alongside SMS in the shared Numberline inbox.</p></div></div>
+      <div class="ig reveal"><div class="lg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><div class="ig-bd"><h3>Vapi<span class="tag">AI answering</span></h3><p>Connect a Vapi voice agent to any extension through SIP.</p></div></div>
+      <div class="ig reveal"><div class="lg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="ig-bd"><h3>Bland AI<span class="tag">AI answering</span></h3><p>Route an extension to a Bland AI agent for answering, qualification, scheduling, or after-hours coverage.</p></div></div>
+      <div class="ig reveal"><div class="lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></div><div class="ig-bd"><h3>Webhooks<span class="tag">Max</span></h3><p>Send call and message events to your own software in real time.</p></div></div>
+      <div class="ig reveal"><div class="lg zap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div class="ig-bd"><h3>Zapier<span class="tag soon">Coming soon</span></h3><p>Connect Numberline to other apps with no-code automations.</p></div></div>
+    </div>
+    <p style="margin-top:18px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;">Numberline provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the AI service that fits your business. <a href="learn/using-third-party-ai-services.html" style="color:var(--ink);font-weight:700;">Learn about using third-party AI services &rsaquo;</a></p>
+  </div>
+</section>
+<section class="frow-sec-single"><div class="wrap"><article class="frow frow-ink reveal">
+    <div class="frow-copy">
+      <div class="frow-hd"><span class="frow-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6"/></svg></span><div class="frow-hd-t"><span class="frow-num">08</span><h3>One place to manage it all</h3></div></div>
+      <p class="frow-desc">Manage numbers, greetings, extensions, routing, voicemail delivery, users, permissions, and integrations from one clear dashboard - with unlimited users on every plan.</p>
+    </div>
+    <div class="frow-viz"><div class="fviz vdb">
+  <div class="vdb-side"><span class="vdb-logo">Any<b>Phone</b></span><span class="vdb-nav on">Overview</span><span class="vdb-nav">Numbers</span><span class="vdb-nav">Greetings</span><span class="vdb-nav">Forwarding</span><span class="vdb-nav">Users</span><span class="vdb-nav">Integrations</span></div>
+  <div class="vdb-main"><div class="vdb-h"><b>Phone system</b><span class="vdb-live">Live</span></div>
+    <div class="vdb-cards"><div class="vdb-card"><small>Numbers</small><b>2</b></div><div class="vdb-card"><small>Extensions</small><b>5</b></div><div class="vdb-card"><small>Users</small><b>&infin;</b></div></div>
+    <div class="vdb-list"><div class="vdb-li"><span>Ext 1 · Sales</span><span class="vdb-pill num">Mobile</span></div><div class="vdb-li"><span>Ext 2 · Support</span><span class="vdb-pill ai">AI service</span></div><div class="vdb-li"><span>Ext 101 · Bob</span><span class="vdb-pill desk">Desk phone</span></div></div>
+  </div>
+</div></div>
+      <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Unlimited users on every plan</b><p>Add everyone who needs access; the price never changes per person.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Phone system overview</b><p>One screen showing your numbers, extensions, and where every call goes.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Numbers</b><p>Add, port, and manage all your numbers in one place.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Greetings</b><p>Write, generate, and schedule everything callers hear.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Call forwarding</b><p>Change destinations, ring order, and schedules anytime; the number stays the same.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Voicemail delivery</b><p>Choose where recordings and transcripts go: the inbox, email, or Slack.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Advanced settings</b><p>Users, permissions, devices, webhooks, and integrations.</p></div></div></div>
+  </article></div></section>
+
+<section class="closer" id="start">
+  <div class="wrap">
+    <div class="closer-card">
+      <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <h2>Get the business phone number your company can grow around.</h2>
+      <p>Start with one number ringing your phone. Add people, extensions, devices, Slack, WhatsApp, AI answering services, and webhooks without per-user pricing.</p>
+      <a href="early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Unlimited users · No per-user pricing · Simple plans at launch</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+      </div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it works</a><a href="/pricing.html">Pricing</a><a href="/numbers/index.html">Numbers</a><a href="/learn/mobile-app.html">Mobile app</a><a href="/signin.html">Sign in</a></div>
+        <div class="foot-col"><h5>Features</h5><a href="/features.html">All features</a><a href="/features/call-forwarding.html">Call forwarding</a><a href="/learn/slack-notifications.html">Slack notifications</a><a href="/learn/using-third-party-ai-services.html">Using third-party AI services</a></div>
+        <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col foot-col-wide"><h5>Industries</h5><div class="foot-links"><a href="/for/startups.html">Startups</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a><a href="/for/index.html">All industries</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Use cases</h5><div class="foot-links"><a href="/use-cases/ring-multiple-cell-phones.html">Rings multiple cell phones</a><a href="/use-cases/index.html">All use cases</a></div></div>
+        <div class="foot-col foot-col-wide"><h5>Learn</h5><div class="foot-links"><a href="/learn/business-phone-number.html">Business phone number</a><a href="/learn/small-business-phone-system.html">Small business phone system</a><a href="/learn/do-i-need-a-business-phone-system.html">Do I need a phone system?</a><a href="/learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone</a><a href="/learn/voicemail-greeting-scripts.html">Voicemail scripts</a><a href="/learn/index.html">All guides</a></div></div>
+      </div>
+    </div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // mobile nav toggle
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');hb.innerHTML='<svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\'><path d=\'M3 6h18M3 12h18M3 18h18\'/></svg>';});});
+    }
+  })();
+
+</script>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
+</body>
+</html>

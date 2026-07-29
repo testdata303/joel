@@ -1,0 +1,21 @@
+<!--
+  CANONICAL SPECIMEN: Number Picker (.resv)
+  Canonical owner: numbers/boston.html (hero)
+  Consumers: /numbers/ family pages (city and type heroes)
+  Anatomy: .resv-top (title + mono tag) > .rrow rows (display-font number + area-code chip + Reserve button) > .resv-more (browse link) > .resv-foot (honesty note).
+  Relationships: Sample Setup shows the SYSTEM working; Number Picker shows the INVENTORY to choose - the Numbers family's storefront moment. Number Card (.numcard) is its static sibling for hub displays; keep them distinct.
+  Future: post-launch, rows become live availability without markup changes (Reserve buttons point at real reservation instead of early access).
+  CONTENT LAW: numbers are always 555-01XX samples; the foot note says so plainly; pre-launch, every
+  Reserve/browse action routes to /early-access.html (no instant or "pick now" claims).
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer). Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page&#39;s design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+<div class="resv" style="max-width:460px;">
+  <div class="resv-top"><b>Pick your Boston number</b><span class="tg">Sample numbers</span></div>
+  <div class="rrow"><span class="rnum">(617) 555-0134</span><em>617 &#183; Boston</em><a class="rbtn" href="/early-access.html">Reserve</a></div>
+  <div class="rrow"><span class="rnum">(857) 555-0121</span><em>857 &#183; Boston</em><a class="rbtn" href="/early-access.html">Reserve</a></div>
+  <a class="resv-more" href="/early-access.html">Look for other Boston numbers &#187;</a>
+  <div class="resv-foot">Example numbers. Join early access and pick your real number at setup, or bring the one you already have.</div>
+</div>

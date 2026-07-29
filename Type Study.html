@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Headline Type Study | Numberline Brand</title>
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Geist:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<style>
+a{color:var(--accent-ink);}a:hover{color:var(--cta-dark);}
+.bs-wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.bs-hero{padding:64px 0 36px;border-bottom:1px solid var(--line)}
+.bs-hero h1{font-size:2.9rem;line-height:1.05;margin-bottom:14px}
+.bs-hero p{color:var(--body);font-size:1.05rem;font-weight:500;max-width:700px;line-height:1.6}
+.bs-kick{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#131316;background:#A2FBEF;padding:6px 12px;border-radius:8px;margin-bottom:14px}
+.bs-sec{padding:48px 0;border-bottom:1px solid var(--line)}
+.bs-sec>h2{font-size:1.7rem;margin-bottom:8px}
+.bs-lede{color:var(--body);font-weight:500;max-width:720px;line-height:1.6;margin-bottom:28px}
+.prin{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.prin div{border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px;background:#fff}
+.prin b{display:block;font-size:.95rem;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.prin p{font-size:.85rem;color:var(--body);line-height:1.5;font-weight:500}
+@media(max-width:900px){.prin{grid-template-columns:1fr 1fr}}
+.opt{border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:26px;background:#fff}
+.opt-head{display:flex;align-items:baseline;gap:16px;padding:16px 22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.opt-id{font-weight:800;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em}
+.opt-meta{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.opt-note{margin-left:auto;text-align:right;font-size:.84rem;color:var(--body);font-weight:500;max-width:420px;line-height:1.45}
+.opt.pick{border-color:#131316;box-shadow:0 24px 60px -38px rgba(16,16,18,.35)}
+.pick-tag{font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:#A2FBEF;color:#131316;border-radius:6px;padding:4px 8px}
+/* demo canvas: mini nav + hero + section head, typeset per option via --hd/--hw/--ht */
+.demo{padding:0}
+.demo .dnav{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--line-soft)}
+.demo .dlogo{display:inline-flex;align-items:center;gap:.345em;font-family:var(--hd);font-weight:700;font-size:1.45rem;color:var(--ink);letter-spacing:var(--hwls,.015em)}
+.demo .dlogo .lmr{display:flex;justify-content:space-between;align-items:flex-start;width:.9375em;border-top:.10625em solid currentColor}
+.demo .dlogo .lmr i{display:block;width:.10625em;height:.2125em;background:currentColor}
+.demo .dnav-r{display:flex;align-items:center;gap:22px}
+.demo .dnav-r span{font-size:.94rem;font-weight:600;color:var(--body)}
+.demo .dnav-r .dcta{background:#131316;color:#fff;border-radius:10px;padding:10px 18px;font-weight:700;font-size:.9rem}
+.demo .dhero{padding:44px 26px 40px;max-width:760px}
+.demo .deb{display:inline-flex;align-items:center;gap:9px;font-size:.8rem;font-weight:800;letter-spacing:.005em;text-transform:uppercase;background:var(--cta-soft);color:var(--cta-dark);padding:7px 13px;border-radius:8px;margin-bottom:20px}
+.demo .deb i{width:8px;height:8px;border-radius:50%;background:var(--cta);font-style:normal}
+.demo .dhero h3{font-family:var(--hd);font-weight:var(--hw,800);font-size:3.1rem;line-height:1.04;letter-spacing:var(--ht,-.03em);color:var(--ink);margin-bottom:16px;text-wrap:balance}
+.demo .dhero p{font-size:1.08rem;color:var(--body);line-height:1.5;font-weight:500;max-width:44ch;margin-bottom:22px}
+.demo .dacts{display:flex;gap:12px}
+.demo .dacts .b1{background:var(--cta);color:#fff;font-weight:700;font-size:.95rem;padding:13px 22px;border-radius:10px}
+.demo .dacts .b2{background:#fff;border:1.5px solid #131316;color:#131316;font-weight:700;font-size:.95rem;padding:12px 22px;border-radius:10px}
+.demo .dsec{border-top:1px solid var(--line-soft);padding:30px 26px 36px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.demo .dk{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:10px}
+.demo .dsec h4{font-family:var(--hd);font-weight:var(--hw,800);font-size:1.65rem;letter-spacing:var(--ht,-.03em);line-height:1.12;color:var(--ink)}
+.demo .dsec .dspec{font-family:var(--mono);font-size:.74rem;color:var(--muted);line-height:1.8}
+@media(max-width:760px){.demo .dsec{grid-template-columns:1fr}.demo .dhero h3{font-size:2.3rem}.opt-note{margin-left:0;text-align:left}}
+/* option typography scopes */
+.f-a{--hd:'Figtree';--hw:800;--ht:-.03em}
+.f-b{--hd:'Figtree';--hw:600;--ht:-.035em}
+.f-c{--hd:'Schibsted Grotesk';--hw:700;--ht:-.03em}
+.f-d{--hd:'Geist';--hw:600;--ht:-.035em}
+.f-e{--hd:'Instrument Sans';--hw:700;--ht:-.028em}
+.f-f{--hd:'Bricolage Grotesque';--hw:700;--ht:-.02em}
+.lc .dlogo{text-transform:lowercase;letter-spacing:-.02em;font-weight:750}
+.uc .dlogo{text-transform:uppercase}
+/* wordmark case section */
+.wm-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wm{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff}
+.wm .dlogo{display:inline-flex;align-items:center;gap:.345em;font-size:2rem;color:var(--ink)}
+.wm .dlogo .lmr{display:flex;justify-content:space-between;align-items:flex-start;width:.9375em;border-top:.10625em solid currentColor}
+.wm .dlogo .lmr i{display:block;width:.10625em;height:.2125em;background:currentColor}
+.wm small{display:block;margin-top:14px;font-size:.84rem;color:var(--body);font-weight:500;line-height:1.5}
+.wm .tag{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:16px}
+@media(max-width:760px){.wm-row{grid-template-columns:1fr}}
+.rec{background:#F7F7F8;border:1px solid var(--line);border-radius:18px;padding:28px;margin-top:6px}
+.rec h3{font-size:1.25rem;letter-spacing:-.02em;margin-bottom:12px}
+.rec ol{margin:0 0 0 20px;color:var(--body);font-weight:500;line-height:1.7;font-size:.96rem}
+.rec li b{color:var(--ink)}
+footer.bs-f{padding:40px 0 70px;color:var(--muted);font-size:.85rem;font-weight:500}
+</style>
+</head>
+<body>
+<div class="bs-wrap">
+<header class="bs-hero">
+  <span class="bs-kick">Brand study</span>
+  <h1>Headline type, post-Numberline.</h1>
+  <p>Current system: <b>Figtree 800</b> headlines, all-caps <b>NUMBERLINE</b> wordmark, Plus Jakarta Sans body. The question: what moves the site toward Mercury / Slack / "the future" territory? Body + UI text stays Plus Jakarta Sans in every option below — this study only changes headlines and the wordmark.</p>
+</header>
+
+<section class="bs-sec">
+  <h2>What the reference brands actually do</h2>
+  <p class="bs-lede">Mercury, Slack, and Linear get their modern feel less from exotic fonts and more from typographic restraint:</p>
+  <div class="prin">
+    <div><b>Weight restraint</b><p>Headlines at 500–700, never 800+. Confidence comes from size and space, not boldness. Our 800 everywhere reads loud.</p></div>
+    <div><b>Bigger, tighter, calmer</b><p>Larger sizes, tighter tracking (−0.03 to −0.04em), snug leading, generous whitespace around the block.</p></div>
+    <div><b>Sentence case + lowercase marks</b><p>slack, mercury, stripe, linear — wordmarks are lowercase or sentence case. All-caps + letterspacing reads institutional.</p></div>
+    <div><b>One voice</b><p>A single grotesk carries the brand. Character comes from a few distinctive letterforms, not decoration.</p></div>
+  </div>
+</section>
+
+<section class="bs-sec">
+  <h2>Directions</h2>
+  <p class="bs-lede">Same hero, same content, six treatments. A is today's baseline.</p>
+
+  <div class="opt f-a uc">
+    <div class="opt-head"><span class="opt-id">A — Baseline (today)</span><span class="opt-meta">Figtree 800 · caps wordmark</span><span class="opt-note">Friendly and solid, but max-weight everywhere + caps logo is the "2019 SaaS template" combination.</span></div>
+    <div class="demo">
+      <div class="dnav"><span class="dlogo"><span class="lmr"><i></i><i></i></span>Numberline</span><div class="dnav-r"><span>How it works</span><span>Pricing</span><span class="dcta">Get early access</span></div></div>
+      <div class="dhero"><span class="deb"><i></i>The virtual phone system for small businesses</span><h3>Sound professional &amp; stay connected as your business grows.</h3><p>Get a local or toll-free number, forward calls to your mobile or team, and manage texts and voicemails in one inbox.</p><div class="dacts"><span class="b1">Get early access »</span><span class="b2">See how it works</span></div></div>
+      <div class="dsec"><div><div class="dk">Start simple</div><h4>Start with one number. The full system is ready when you need it.</h4></div><div class="dspec">h1: Figtree 800 / −.03em<br>wordmark: UPPERCASE 700<br>vibe: friendly, loud, familiar</div></div>
+    </div>
+  </div>
+
+  <div class="opt f-b lc">
+    <div class="opt-head"><span class="opt-id">B — Same font, modern manners</span><span class="opt-meta">Figtree 600 · lowercase wordmark</span><span class="opt-note">The zero-cost move: drop 800→600, tighten tracking, lowercase the mark. Keeps Figtree's Circular-like warmth (the Slack side).</span></div>
+    <div class="demo">
+      <div class="dnav"><span class="dlogo"><span class="lmr"><i></i><i></i></span>numberline</span><div class="dnav-r"><span>How it works</span><span>Pricing</span><span class="dcta">Get early access</span></div></div>
+      <div class="dhero"><span class="deb"><i></i>The virtual phone system for small businesses</span><h3>Sound professional &amp; stay connected as your business grows.</h3><p>Get a local or toll-free number, forward calls to your mobile or team, and manage texts and voicemails in one inbox.</p><div class="dacts"><span class="b1">Get early access »</span><span class="b2">See how it works</span></div></div>
+      <div class="dsec"><div><div class="dk">Start simple</div><h4>Start with one number. The full system is ready when you need it.</h4></div><div class="dspec">h1: Figtree 600 / −.035em<br>wordmark: lowercase 750<br>vibe: calmer, warmer, Slack-adjacent</div></div>
+    </div>
+  </div>
+
+  <div class="opt f-c lc pick">
+    <div class="opt-head"><span class="opt-id">C — Schibsted Grotesk</span><span class="pick-tag">Recommended</span><span class="opt-meta">700 · lowercase wordmark</span><span class="opt-note">Modern editorial grotesk — tight apertures, real character in a/g/t. Premium-fintech feel (the Mercury side) without being Inter-generic. Barely used in SaaS.</span></div>
+    <div class="demo">
+      <div class="dnav"><span class="dlogo"><span class="lmr"><i></i><i></i></span>numberline</span><div class="dnav-r"><span>How it works</span><span>Pricing</span><span class="dcta">Get early access</span></div></div>
+      <div class="dhero"><span class="deb"><i></i>The virtual phone system for small businesses</span><h3>Sound professional &amp; stay connected as your business grows.</h3><p>Get a local or toll-free number, forward calls to your mobile or team, and manage texts and voicemails in one inbox.</p><div class="dacts"><span class="b1">Get early access »</span><span class="b2">See how it works</span></div></div>
+      <div class="dsec"><div><div class="dk">Start simple</div><h4>Start with one number. The full system is ready when you need it.</h4></div><div class="dspec">h1: Schibsted Grotesk 700 / −.03em<br>wordmark: lowercase 750<br>vibe: sharp, premium, editorial</div></div>
+    </div>
+  </div>
+
+  <div class="opt f-d lc">
+    <div class="opt-head"><span class="opt-id">D — Geist</span><span class="opt-meta">600 · lowercase wordmark</span><span class="opt-note">The "future" pick — Vercel's face, ultra-clean, engineered. Risk: rapidly becoming the default of 2025-era dev tools; less warmth for a small-business audience.</span></div>
+    <div class="demo">
+      <div class="dnav"><span class="dlogo"><span class="lmr"><i></i><i></i></span>numberline</span><div class="dnav-r"><span>How it works</span><span>Pricing</span><span class="dcta">Get early access</span></div></div>
+      <div class="dhero"><span class="deb"><i></i>The virtual phone system for small businesses</span><h3>Sound professional &amp; stay connected as your business grows.</h3><p>Get a local or toll-free number, forward calls to your mobile or team, and manage texts and voicemails in one inbox.</p><div class="dacts"><span class="b1">Get early access »</span><span class="b2">See how it works</span></div></div>
+      <div class="dsec"><div><div class="dk">Start simple</div><h4>Start with one number. The full system is ready when you need it.</h4></div><div class="dspec">h1: Geist 600 / −.035em<br>wordmark: lowercase 750<br>vibe: technical, precise, cool</div></div>
+    </div>
+  </div>
+
+  <div class="opt f-e lc">
+    <div class="opt-head"><span class="opt-id">E — Instrument Sans</span><span class="opt-meta">700 · lowercase wordmark</span><span class="opt-note">Middle path: neo-grotesk with subtle quirk, warmer than Geist, quieter than Schibsted. Safe-modern.</span></div>
+    <div class="demo">
+      <div class="dnav"><span class="dlogo"><span class="lmr"><i></i><i></i></span>numberline</span><div class="dnav-r"><span>How it works</span><span>Pricing</span><span class="dcta">Get early access</span></div></div>
+      <div class="dhero"><span class="deb"><i></i>The virtual phone system for small businesses</span><h3>Sound professional &amp; stay connected as your business grows.</h3><p>Get a local or toll-free number, forward calls to your mobile or team, and manage texts and voicemails in one inbox.</p><div class="dacts"><span class="b1">Get early access »</span><span class="b2">See how it works</span></div></div>
+      <div class="dsec"><div><div class="dk">Start simple</div><h4>Start with one number. The full system is ready when you need it.</h4></div><div class="dspec">h1: Instrument Sans 700 / −.028em<br>wordmark: lowercase 750<br>vibe: neutral-modern, unobtrusive</div></div>
+    </div>
+  </div>
+
+  <div class="opt f-f lc">
+    <div class="opt-head"><span class="opt-id">F — Bricolage Grotesque</span><span class="opt-meta">700 · lowercase wordmark</span><span class="opt-note">The personality wildcard — big ink traps, humanist bounce. Most Slack-like energy, least Mercury. Could skew playful for a phone system.</span></div>
+    <div class="demo">
+      <div class="dnav"><span class="dlogo"><span class="lmr"><i></i><i></i></span>numberline</span><div class="dnav-r"><span>How it works</span><span>Pricing</span><span class="dcta">Get early access</span></div></div>
+      <div class="dhero"><span class="deb"><i></i>The virtual phone system for small businesses</span><h3>Sound professional &amp; stay connected as your business grows.</h3><p>Get a local or toll-free number, forward calls to your mobile or team, and manage texts and voicemails in one inbox.</p><div class="dacts"><span class="b1">Get early access »</span><span class="b2">See how it works</span></div></div>
+      <div class="dsec"><div><div class="dk">Start simple</div><h4>Start with one number. The full system is ready when you need it.</h4></div><div class="dspec">h1: Bricolage 700 / −.02em<br>wordmark: lowercase 750<br>vibe: characterful, warm, indie</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bs-sec">
+  <h2>The wordmark case question</h2>
+  <p class="bs-lede">Independent of font choice, this is the single biggest brand-age signal. Shown in Schibsted Grotesk:</p>
+  <div class="wm-row">
+    <div class="wm uc" style="--hd:'Schibsted Grotesk'"><span class="tag">Today</span><span class="dlogo" style="font-family:'Schibsted Grotesk';font-weight:700;letter-spacing:.015em"><span class="lmr"><i></i><i></i></span>NUMBERLINE</span><small>All-caps + letterspacing: institutional, telecom-legacy. Reads like the incumbents Numberline replaces.</small></div>
+    <div class="wm"><span class="tag">Proposed</span><span class="dlogo" style="font-family:'Schibsted Grotesk';font-weight:750;letter-spacing:-.02em"><span class="lmr"><i></i><i></i></span>numberline</span><small>Lowercase, tight: the slack/mercury/stripe convention. Also literally on-brand — a number line is lowercase, horizontal, continuous.</small></div>
+  </div>
+</section>
+
+<section class="bs-sec" style="border-bottom:none">
+  <h2>Recommendation</h2>
+  <div class="rec">
+    <h3>C + the manners from B, in this order:</h3>
+    <ol>
+      <li><b>Lowercase the wordmark</b> (biggest signal, zero redraw — the tick-mark glyph already works at lowercase x-height).</li>
+      <li><b>Drop headline weight 800 → 700</b>, tracking −.03em → −.035em, and let hero sizes grow ~10%. Applies whichever font wins.</li>
+      <li><b>Swap headlines to Schibsted Grotesk</b> — Mercury-grade character, distinct from every competitor, pairs cleanly with Plus Jakarta body.</li>
+      <li><b>Keep</b>: Plus Jakarta for body/UI, Spline Sans Mono eyebrows, ink-only headlines, the function color system — those already read modern.</li>
+    </ol>
+  </div>
+</section>
+<footer class="bs-f">Numberline brand · headline type study · body copy remains Plus Jakarta Sans throughout</footer>
+</div>
+</body>
+</html>

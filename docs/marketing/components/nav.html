@@ -1,0 +1,26 @@
+<!--
+  CANONICAL SPECIMEN: Nav
+  Canonical owner: index.html (identical everywhere)
+  Consumers: every page
+  Permitted variants: none; changes sweep all pages in the same session
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer) + assets/site.css. Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>

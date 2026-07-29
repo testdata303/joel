@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Business Phone for Startups | Numberline</title>
+<meta name="description" content="A startup needs a business number before it needs a phone system. Get a local or toll-free business line forwarded to your mobile, with shared texts, voicemail transcripts, and follow-up, and add extensions and teammates when you hire.">
+<link rel="canonical" href="/for/startups">
+<link rel="icon" type="image/svg+xml" href="../../../../favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32.png?v=4">
+<link rel="icon" href="../../../../favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="../../../../favicon-180.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../assets/site.css?v=5">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
+    --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
+
+  /* hero */
+  .hero{padding:40px 0 44px;background:linear-gradient(180deg,#F4F5FC 0%,#fff 78%);}
+  .hero-grid{display:grid;grid-template-columns:.98fr 1.02fr;gap:48px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
+  .hero h1{font-weight:600;font-size:clamp(2.1rem,3.9vw,3rem);line-height:1.08;letter-spacing:-.035em;margin-bottom:16px;text-wrap:pretty;}
+  .hero-sub{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:42ch;margin-bottom:22px;font-weight:500;}
+  .hero-sub b{color:var(--ink);font-weight:700;}
+  .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:20px;}
+  .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .hero-bullets .ck svg{width:14px;height:14px;}
+
+  /* trust strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
+  .strip-inner{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;padding:20px 0;color:var(--body);font-weight:700;font-size:.95rem;}
+  .strip-inner span{display:inline-flex;align-items:center;gap:9px;}
+  .strip-inner svg{width:18px;height:18px;color:var(--accent);}
+
+  /* section shell */
+  section.block{padding:72px 0;}
+
+
+
+  /* why day one */
+  .why{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .why-copy{max-width:700px;margin:0 auto 36px;text-align:center;}
+  .why-copy p{font-size:1.16rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .why-copy b{color:var(--ink);font-weight:700;}
+  .why-copy a{color:var(--accent-dark);font-weight:700;}
+  .spots{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:720px;margin:0 auto;}
+  .spots span{display:inline-flex;align-items:center;padding:9px 16px;border:1px solid var(--line);border-radius:100px;font-weight:700;font-size:.95rem;background:#fff;}
+
+  /* now vs later */
+  .nvl-wrap{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .nvl{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto;}
+  .nvl-col{border-radius:20px;padding:32px;border:1px solid var(--line);background:#fff;}
+  .nvl-col.now{border-color:#CDEEDE;background:var(--green-soft);}
+  .nvl-col .tag{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:6px;display:block;color:var(--muted);}
+  .nvl-col.now .tag{color:var(--green-ink);}
+  .nvl-col h3{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px;}
+  .nvl-lede{font-size:.95rem;color:var(--body);font-weight:600;margin-bottom:24px;}
+  .nvl-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+  .nvl-col li{display:flex;align-items:flex-start;gap:11px;font-size:1rem;line-height:1.45;font-weight:600;color:var(--ink);}
+  .nvl-col li a{color:var(--accent-dark);}
+  .nvl-col li .ic{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;margin-top:0;align-self:center;}
+  .nvl-col li .ic svg{width:13px;height:13px;}
+  .nvl-col.now li .ic{background:#c4ecd6;color:var(--green-ink);}
+  .nvl-col.later li .ic{background:var(--soft);color:var(--body);}
+  .nvl-col .sub{margin-top:18px;padding-top:16px;border-top:1px solid rgba(19,19,22,.08);font-size:.92rem;color:var(--body);font-weight:600;line-height:1.5;}
+  .nvl-col .sub b{color:var(--ink);}
+
+  /* stage notes */
+  .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .stage{border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff;}
+  .stage h3{font-size:1.1rem;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;}
+  .stage p{color:var(--body);font-size:.95rem;line-height:1.55;}
+  .stage p a{color:var(--accent-dark);font-weight:700;}
+  .stage .scenario-tag{display:inline-flex;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--cta-dark);background:var(--cta-soft);padding:5px 10px;border-radius:6px;margin-bottom:14px;}
+
+  /* closer */
+
+  @media(max-width:980px){.stages{grid-template-columns:1fr;}}
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero{padding:28px 0 48px;}
+    .hero-sub{max-width:none;}
+    .nvl{grid-template-columns:1fr;}
+    .strip-inner{gap:18px;font-size:.88rem;}
+    footer{padding-bottom:96px;}
+  }
+</style>
+<link rel="stylesheet" href="../../../../assets/canon.css?v=22">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},
+{"@type":"ListItem","position":2,"name":"Industries","item":"https://numberline.com/for"},
+{"@type":"ListItem","position":3,"name":"Startups","item":"https://numberline.com/for/startups"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do I need a business phone before I have customers?","acceptedAnswer":{"@type":"Answer","text":"You need the number before you need the phone system. The number goes on your website, filings, and profiles you're setting up right now, and changing it later means updating everything. Answering it stays as simple as your mobile ringing."}},
+{"@type":"Question","name":"Can I just use my cell number for my startup?","acceptedAnswer":{"@type":"Answer","text":"You can, but the number gets published everywhere and follows you for good, every list, database, and customer keeps it. A business number gives customers something permanent while your personal cell stays private."}},
+{"@type":"Question","name":"What does day one actually look like?","acceptedAnswer":{"@type":"Answer","text":"A local or toll-free number, forwarded to your own mobile, with business voicemail and transcripts, shared texting, and callbacks from the business number. That's the whole setup until you want more."}},
+{"@type":"Question","name":"What happens when I hire my first person?","acceptedAnswer":{"@type":"Answer","text":"Add them and forward calls to their mobile too. Numberline has unlimited users instead of per-seat pricing, so a hire is a new destination, not a new bill."}},
+{"@type":"Question","name":"Do I need to know about extensions and greetings now?","acceptedAnswer":{"@type":"Answer","text":"No. They exist when you want them, a greeting when you want to sound more established, extensions when there are enough people to route between. Nothing about the day-one setup has to be planned around them."}},
+{"@type":"Question","name":"Can investors and customers text the number?","acceptedAnswer":{"@type":"Answer","text":"Yes. Texts to the business number land in a shared inbox, and you reply from the business number, from the mobile app, wherever you are."}}]}
+</script>
+</head>
+<body class="lp">
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Business phone for startups</span>
+      <h1>A business number first. A phone system when you need it.</h1>
+      <p class="hero-sub">A startup needs less phone than you think: a <a href="/how-it-works.html" style="color:var(--accent-dark);">business number</a> on the website and the filings, forwarded to your own mobile. <b>That's the whole day-one setup.</b> The phone system, greetings, extensions, teammates, is already there when you're ready for it.</p>
+      <div class="hero-acts">
+        <a href="#day-one" class="btn btn-ghost btn-lg">See the day-one setup</a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      </div>
+      <ul class="hero-bullets">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>A business line for your website, filings, and investor deck</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Forward calls to your own mobile, and teammates' mobiles later</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Texts, voicemails, and follow-up stay with the business, not your cell</li>
+      </ul>
+    </div>
+
+    <div class="shot reveal" role="img" aria-label="Sample startup phone setup: calls to the business number ring the founder's mobile; texts and voicemails go to a shared inbox; callbacks come from the business number">
+      <span class="nup-stamp nup-lg shot-stamp" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <div class="shot-top">
+        <b>Startup phone setup</b>
+        <span class="tg">Sample setup</span>
+      </div>
+      <div class="shot-body">
+        <div class="shot-in fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div class="rt"><b>One business number</b><span>Local or toll-free, on everything you publish</span></div></div>
+        <div class="rings">
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div class="rt"><b>Calls ring your mobile</b><span>The founder's own phone</span></div></div>
+        <div class="ring fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>Texts / Voicemails</b><span>Sent to shared inbox, email, or Slack</span></div></div>
+        <div class="ring fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M6 16h12"/></svg></span><div class="rt"><b>Callbacks from the business number</b><span>Via the mobile app, your cell stays private</span></div></div>
+        </div>
+      </div>
+      <div class="shot-foot"><b>That's the whole setup.</b> Greetings, extensions, and teammates are one screen away when you want them, nothing to plan now.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-press">
+    <span class="press-label">From the team featured in</span>
+    <div class="press-logos">
+      <span class="pl pl-forbes">Forbes</span>
+      <span class="pl pl-inc">Inc<i>.</i></span>
+      <span class="pl pl-cnbc">CNBC</span>
+      <span class="pl pl-nyt">The New York Times</span>
+    </div>
+  </div>
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Keep your cell private</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Unlimited users</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> No hardware to buy</span>
+  </div>
+</div>
+
+
+<!-- JOURNEY -->
+<section class="block" data-screen-label="The journey">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>From day one to your first hire.</h2>
+    </div>
+    <div class="seq reveal">
+      <div class="seq-node"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span><div><b>You start the company</b><span class="sub">LLC filed, website going up</span></div></div>
+      <div class="seq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+      <div class="seq-node fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div><b>You get a business number</b><span class="sub">Local or toll-free, on everything you publish</span></div></div>
+      <div class="seq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+      <div class="seq-node fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div><b>Calls forward to your mobile</b><span class="sub">Nothing to install; your cell stays private</span></div></div>
+      <div class="seq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+      <div class="seq-node fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div><b>Your first hire answers too</b><span class="sub">Two mobiles ring; whoever answers first takes the call</span></div></div>
+      <div class="seq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+      <div class="seq-node fn-ext"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"/></svg></span><div><b>You grow into a phone system</b><span class="sub">Greeting, extensions, teammates, same number, no migration</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. WHY DAY ONE -->
+<section class="block why" data-screen-label="Why a number on day one">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Why the number comes before the phone system.</h2>
+    </div>
+    <div class="why-copy reveal">
+      <p>The number you publish in your first month is the one that sticks, it gets crawled, listed, saved, and printed. <b>If that's your personal cell, it follows you for good.</b> A business number gives every profile and filing something permanent, keeps <a href="/how-it-works.html">your personal number private</a>, and costs you nothing in complexity: it just rings your mobile.</p>
+    </div>
+    <div class="spots reveal" style="margin-top:32px;">
+      <span>Your website</span><span>LLC / incorporation filings</span><span>Google Business Profile</span><span>Pitch deck</span><span>Bank and vendor forms</span><span>Email signature</span><span>App store listing</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3. NOW VS LATER -->
+<section class="block nvl-wrap" id="day-one" data-screen-label="Now vs later">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What you need now. What's there when you grow.</h2>
+    </div>
+    <div class="nvl">
+      <div class="nvl-col now reveal">
+        <h3>Get started quickly</h3>
+        <p class="nvl-lede">Everything below works the minute you set it up.</p>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>A <a href="/how-it-works.html">local or toll-free business number</a></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><a href="/how-it-works.html">Calls forwarded</a> to your own mobile</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Voicemails emailed to you</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Texts in a shared inbox</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Callbacks from the business number</li>
+        </ul>
+        <p class="sub"><b>Ten minutes of decisions,</b> then it's just your phone ringing.</p>
+      </div>
+      <div class="nvl-col later reveal">
+        <h3>Then add features</h3>
+        <p class="nvl-lede">Add each piece when the business asks for it. Nothing to migrate.</p>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>Add users</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>Customize greetings</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>Connect Slack &amp; WhatsApp</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>Forward calls after hours</li>
+        </ul>
+        <p class="sub">Each is <b>optional and reversible</b>, the number your customers know never changes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. STAGE NOTES -->
+<section class="block" data-screen-label="Stage notes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Three startup moments, one answer each.</h2>
+    </div>
+    <div class="stages">
+      <div class="stage reveal"><span class="scenario-tag">Forming the company</span><h3>Filing the LLC or incorporating</h3><p>Forms ask for a business phone. Get the number before you file so the paperwork, the bank, and the registered agent all carry the business line, not your cell in a public record.</p></div>
+      <div class="stage reveal"><span class="scenario-tag">Solo founder</span><h3>You are the whole company</h3><p>Every call is you either way, the difference is what the caller sees and keeps. The business number rings your mobile, and callbacks come from the business number, so work and life stay separable even when you're both.</p></div>
+      <div class="stage reveal"><span class="scenario-tag">First teammates</span><h3>Two or three of you</h3><p>Point new-business calls at <a href="/how-it-works.html">both founders' mobiles</a> and whoever answers first takes the call. Texts and voicemails sit in one shared inbox, so nobody's phone is the company's memory.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. FAQ -->
+<section class="faq" data-screen-label="FAQ">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Questions founders ask</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-q" open><summary>Do I need a business phone before I have customers?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">You need the number before you need the phone system. The number goes on your website, filings, and profiles you're setting up right now, and changing it later means updating everything. Answering it stays as simple as your mobile ringing.</div></details>
+      <details class="faq-q"><summary>Can I just use my cell number for my startup?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">You can, but the number gets published everywhere and follows you for good, every list, database, and customer keeps it. A business number gives customers something permanent while your personal cell stays private. See <a href="/how-it-works.html">personal cell vs business phone system</a>.</div></details>
+      <details class="faq-q"><summary>What does day one actually look like?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">A local or toll-free number, forwarded to your own mobile, with business voicemail and transcripts, shared texting, and callbacks from the business number. That's the whole setup until you want more.</div></details>
+      <details class="faq-q"><summary>What happens when I hire my first person?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Add them and <a href="/how-it-works.html">forward calls</a> to their mobile too. Numberline has unlimited users instead of per-seat pricing, so a hire is a new destination, not a new bill.</div></details>
+      <details class="faq-q"><summary>Do I need to know about extensions and greetings now?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. They exist when you want them, a greeting when you want to sound more established, extensions when there are enough people to route between. Nothing about the day-one setup has to be planned around them.</div></details>
+      <details class="faq-q"><summary>Can investors and customers text the number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Texts to the business number land in a shared inbox, and you reply from the business number, from the mobile app, wherever you are.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA -->
+<section class="closer">
+  <div class="wrap">
+    <div class="closer-card reveal">
+      <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <h2>Put a business number on the website before the website ships.</h2>
+      <p>Start with the number and your own mobile. Grow into the phone system in place, same number, no migration.</p>
+      <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <div class="closer-mini"><span>New or ported number</span> · <span>Works on the phone you have</span> · <span>Unlimited users</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one. Built for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+      </div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it Works &amp; Features</a><a href="/pricing.html">Pricing</a><a href="/numbers/index.html">Numbers</a><a href="/signin.html">Sign in</a></div>
+        
+        <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
+        <div class="foot-col"><h5>Industries</h5><a href="/for/startups.html">Startups</a><a href="/for/plumbers.html">Plumbers</a><a href="/for/real-estate.html">Real estate agents</a><a href="/for/contractors.html">Contractors</a><a href="/for/consultants.html">Consultants and agencies</a><a href="/for/interior-design.html">Interior designers</a><a href="/for/medspas.html">Med spas</a><a href="/for/law-firms.html">Small law firms</a><a href="/for/index.html">All industries</a></div>
+      </div>
+    </div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');});});
+    }
+  })();
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#5158E2"/><path d="M 30 55 C 36 39, 47 39, 50 55 C 53 39, 64 39, 70 55" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/></svg></template>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
+</body>
+</html>

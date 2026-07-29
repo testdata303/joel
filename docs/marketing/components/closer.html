@@ -1,0 +1,25 @@
+<!--
+  CANONICAL SPECIMEN: Closer card
+  Canonical owner: use-cases/ring-multiple-cell-phones.html
+  Consumers: every page
+  LAW (July 2026): ONE primary CTA only ("Get early access" + guillemet). NO secondary button in
+  closers - the two-button acts row belongs to heroes. Normalized site-wide July 2026.
+  Permitted variants: stamp optional; h2/p copy and mini-line items vary; .closer-micro (checkmark
+  micro-line) allowed in place of .closer-mini. NOTHING else varies.
+  Page wrapper: <section class="closer"><div class="wrap"> ...card... </div></section> - the
+  .closer section (background, width, padding) is owned by canon.css. Pages NEVER carry local
+  .closer/.closer-card CSS, never add btn-arrow, never wrap the CTA in .closer-acts.
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer) + assets/site.css. Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+
+<div class="closer-card reveal">
+      <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <h2>One number your whole team can answer.</h2>
+      <p>Add the mobiles that should ring, keep texts and voicemail shared, and call back from the business number.</p>
+      <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <div class="closer-micro"><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Money-back guarantee</span><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> No long term contracts</span></div>
+      
+    </div>

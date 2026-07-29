@@ -1,0 +1,19 @@
+<!--
+  CANONICAL SPECIMEN: Number Card (.numcard)
+  Canonical owner: numbers/index.html
+  Consumers: /numbers/ family pages (hub, type pages, city pages)
+  Anatomy: .nc-num (specimen number, display font) + .nc-chips (em chips; first chip carries a fn-* class
+  so the number type wears its function color - fn-number blue) + optional .nc-note one-liner.
+  As <a> when it links a real page; as <div> when it is a visual specimen only.
+  CONTENT LAW: specimen numbers are always 555-01XX fictional numbers; chips are facts (type, place),
+  never marketing; pre-launch bans apply (no "pick your number now", no instant claims).
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer). Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:860px;">
+<div class="numcard"><span class="nc-num">(617) 555-0134</span><span class="nc-chips"><em class="fn-number">Local</em><em>Boston</em></span><span class="nc-note">A local presence in the area code your customers dial.</span></div>
+<div class="numcard"><span class="nc-num">(800) 555-0199</span><span class="nc-chips"><em class="fn-number">Toll-free</em><em>National</em></span><span class="nc-note">Reads national, not tied to one city.</span></div>
+<div class="numcard"><span class="nc-num">Your number</span><span class="nc-chips"><em class="fn-number">Bring your own</em></span><span class="nc-note">Designed to support bringing the number you already have.</span></div>
+</div>

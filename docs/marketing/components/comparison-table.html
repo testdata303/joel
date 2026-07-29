@@ -1,0 +1,97 @@
+<!--
+  CANONICAL SPECIMEN + DATA SOURCE: Comparison Table (.cmp)
+  Canonical owner: for/plumbers.html ("How Numberline compares" section)
+  Consumers: all industry pages, how-it-works, most learn pages (~17)
+
+  OPERATING RULE (owner decision, July 2026): Comparison claims are product data, not page copy.
+  They are updated in the canonical comparison source, verified against official sources, and
+  inherited everywhere. A page chooses WHICH rows to show (3-4 alternatives + Numberline); it
+  never rewrites a row. Copy each row VERBATIM. Changing a chip, verdict, or name happens HERE
+  first, then rolls out to every consumer in the same session.
+
+  POLARITY LAW: alternatives carry ONLY red x .gap chips (downsides, limitations, costs,
+  dependencies, tradeoffs); the .verdict beneath the name may neutrally say what the option is.
+  Numberline rows carry ONLY green check .has chips (benefits), selected 4-6 per page from the
+  approved pool below; never render the whole pool. No green chips in competitor rows, ever.
+  FACTUAL LAW: no absolute claims ("No integrations", "No team", "Cannot route calls",
+  "They hold your number") unless objectively and currently true. Use qualified, durable
+  language ("Limited native integrations", "Provider-issued numbers add switching work").
+  LENGTH LAW: chips are 3-7 words, one idea, never wrapping; 2-4 chips per alternative.
+  Column heading is "What to know" (never "How it compares" or optimized-for phrasing:
+  rows are no longer mixed-polarity).
+  Winning row is ALWAYS "cmp-row best" (tonal inversion). "Answering services" is the
+  law-firms variant of the AI row (AI kept low-key per CLAUDE.md): related but distinct chips.
+  "Numberline mobile app" is the winning row ONLY on learn/mobile-app.
+  "Generic calling app" was REMOVED July 2026: too vague to verify. Do not reintroduce unless
+  narrowed to a defined category with verifiable claims.
+  Sanctioned dialects (own markup, not this data, but same factual law):
+  google-voice-alternative 3-column, using-third-party-ai-services 2-row choice
+  contrast. The homepage prose dialect was RETIRED 2026-07-28; index.html consumes
+  these rows verbatim.
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer). Do not restyle inline.
+  Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!--
+  VERIFICATION METADATA (internal; never render)
+  last_verified: 2026-07-28
+
+  Google Voice
+  official_sources: workspace.google.com/products/voice (plans + feature tiers); Workspace pricing pages
+  approved_claims: Priced per user ($10/$20/$30 per user per month) | Workspace required for teams (multi-user tiers need a paid Workspace license) | Advanced routing needs higher tiers (auto attendants, ring groups from Standard) | Built around Google accounts
+  rejected_claims: "No integrations" (has Workspace integrations) | "only for one person" / "built for one person" (business plans are multi-user) | "cannot route calls" (Standard+ routes) | "Lives on Google's roadmap" (unverifiable slogan)
+  applicable_contexts: any general comparison; learn/google-voice-alternative owns its own 3-column dialect
+
+  Grasshopper
+  official_sources: grasshopper.com + grasshopper.com/blog/phone-system-pricing (account-level plans; unlimited users on Solo Plus and Small Business)
+  approved_claims: Limited native integrations | Fewer workflow connections | Built for simpler phone setups | account-level pricing (verdict)
+  rejected_claims: per-user pricing | "supports only one person" | "No integrations" (too absolute) | "Designed before Slack..." (era slogan, goes stale)
+  applicable_contexts: how-it-works, general comparisons; never under per-user systems
+
+  Per-user phone systems (Quo, Dialpad, Aircall)
+  official_sources: quo.com/pricing (from $15/user/mo); dialpad.com/pricing (per user); aircall.io pricing + support.aircall.io (per license, most plans 3-license minimum)
+  approved_claims: Cost grows with every user | Occasional access still costs | Advanced features cost more (tiered plans) | Some plans require minimum seats (Aircall: 3+)
+  rejected_claims: "lack integrations" (all three offer integrations) | "built for teams living inside the product" (unverifiable)
+  applicable_contexts: how-it-works, homepage dialect, pricing-adjacent comparisons
+
+  Enterprise phone systems (category)
+  official_sources: category; no single vendor claimed
+  approved_claims: Usually priced per user | More setup and administration | Often sold with contracts | Designed for contact-center workflows
+  rejected_claims: "requires contracts" or "requires hardware" universally | "needs an admin to run it" as absolute
+
+  Twilio APIs
+  official_sources: twilio.com/en-us/voice + twilio.com pricing (usage-based per minute and per number)
+  approved_claims: Not a finished phone system | You build the interface and routing | Usage and carrier fees are separate | Ongoing changes need engineering | You manage compliance setup and support
+  rejected_claims: comparing raw APIs as if they were Twilio Flex; row renamed "Twilio APIs" July 2026 for precision
+
+  AI answering services (category)
+  official_sources: category; provider models vary (some use your existing number, others issue or port one)
+  approved_claims: Not your full phone system | Prompts and workflows are provider-specific | Provider-issued numbers add switching work | Team calls and texts need another system
+  rejected_claims: "They hold your number" universally | "Hard to switch providers" (too absolute) | green Numberline benefits inside this row
+
+  Answering services (category, human)
+  official_sources: category; typically usage-priced (per minute/call)
+  approved_claims: Usage costs rise with call volume | Quality depends on outside agents | Scripts and routing need upkeep | Your team still needs a phone system | Provider-issued numbers add switching work
+  rejected_claims: same absolutes as the AI row; keep human and AI rows distinct
+
+  Personal cell phone / Second phone / A number without a system: category facts, self-evident; no external source required.
+  Generic calling app: REMOVED 2026-07-28 (too vague to verify honestly).
+  Numberline rows: claims limited to shipped/confirmed product behavior; do not add app claims that have not shipped.
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+<div class="cmp reveal">
+  <div class="cmp-row head"><div class="opt">Option</div><div class="desc">What to know</div></div>
+  <div class="cmp-row"><div class="opt">Personal cell phone<span class="verdict">Your personal number becomes the business line</span></div><div class="gaps"><span class="gap">Customers get your personal number</span><span class="gap">Calls and messages stay with you</span><span class="gap">No shared routing or team inbox</span><span class="gap">Handoffs depend on one person</span></div></div>
+  <div class="cmp-row"><div class="opt">Google Voice<span class="verdict">Business calling managed through Google Workspace</span></div><div class="gaps"><span class="gap">Priced per user</span><span class="gap">Workspace required for teams</span><span class="gap">Advanced routing needs higher tiers</span><span class="gap">Built around Google accounts</span></div></div>
+  <div class="cmp-row"><div class="opt">Grasshopper<span class="verdict">A simple virtual phone system, account-level pricing</span></div><div class="gaps"><span class="gap">Limited native integrations</span><span class="gap">Fewer workflow connections</span><span class="gap">Built for simpler phone setups</span></div></div>
+  <div class="cmp-row"><div class="opt">Per-user phone systems<span class="verdict">Quo, Dialpad, Aircall: licensed per teammate</span></div><div class="gaps"><span class="gap">Cost grows with every user</span><span class="gap">Occasional access still costs</span><span class="gap">Advanced features cost more</span><span class="gap">Some plans require minimum seats</span></div></div>
+  <div class="cmp-row"><div class="opt">Enterprise phone systems<span class="verdict">Built for larger organizations and contact centers</span></div><div class="gaps"><span class="gap">Usually priced per user</span><span class="gap">More setup and administration</span><span class="gap">Often sold with contracts</span><span class="gap">Designed for contact-center workflows</span></div></div>
+  <div class="cmp-row"><div class="opt">Twilio APIs<span class="verdict">Programmable communications infrastructure</span></div><div class="gaps"><span class="gap">Not a finished phone system</span><span class="gap">You build the interface and routing</span><span class="gap">Usage and carrier fees are separate</span><span class="gap">Ongoing changes need engineering</span></div></div>
+  <div class="cmp-row"><div class="opt">AI answering services<span class="verdict">An AI layer for selected calls</span></div><div class="gaps"><span class="gap">Not your full phone system</span><span class="gap">Prompts and workflows are provider-specific</span><span class="gap">Provider-issued numbers add switching work</span><span class="gap">Team calls and texts need another system</span></div></div>
+  <div class="cmp-row"><div class="opt">Answering services<span class="verdict">Outsourced people answering selected calls</span></div><div class="gaps"><span class="gap">Usage costs rise with call volume</span><span class="gap">Quality depends on outside agents</span><span class="gap">Your team still needs a phone system</span><span class="gap">Provider-issued numbers add switching work</span></div></div>
+  <div class="cmp-row"><div class="opt">Second phone<span class="verdict">Separation by carrying another device</span></div><div class="gaps"><span class="gap">Another device and line to manage</span><span class="gap">Still belongs to one person</span><span class="gap">No shared routing or team inbox</span><span class="gap">Handoffs require the phone or login</span></div></div>
+  <div class="cmp-row"><div class="opt">A number without a system<span class="verdict">A phone number with basic service</span></div><div class="gaps"><span class="gap">You still build the phone system</span><span class="gap">No shared routing or team workflow</span><span class="gap">Follow-up stays fragmented</span></div></div>
+  <!-- Numberline rows below show the FULL approved benefit pool. A page renders only the 4-6 most relevant chips, in this order. -->
+  <div class="cmp-row best"><div class="opt">Numberline<span class="verdict">A business number and phone system in one</span></div><div class="gaps"><span class="has">Local or toll-free business number</span><span class="has">Forward calls to mobiles or teams</span><span class="has">Shared texts, voicemail, and transcripts</span><span class="has">Call back from the business number</span><span class="has">Add greetings, extensions, and numbers</span><span class="has">Add teammates without adding seats</span><span class="has">Unlimited users, no per-user pricing</span><span class="has">Works on the phones your team has</span><span class="has">Connect Slack, WhatsApp, and webhooks</span><span class="has">Use third-party AI services</span></div></div>
+  <div class="cmp-row best"><div class="opt">Numberline mobile app<span class="verdict">Your business number on your mobile</span></div><div class="gaps"><span class="has">Call out from the business number</span><span class="has">Send and receive shared business texts</span><span class="has">Read voicemail transcripts and history</span><span class="has">Use permitted business numbers</span><span class="has">Works with Numberline routing and inbox</span><span class="has">No second phone to carry</span><span class="has">Unlimited users, no per-user pricing</span></div></div>
+</div>

@@ -6,14 +6,15 @@
 <meta name="format-detection" content="telephone=no">
 <title>Get early access to Numberline | The phone system for modern small businesses</title>
 <meta name="description" content="Numberline is launching soon. Join the early access list and we'll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.">
+<link rel="canonical" href="/early-access">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
 <link rel="icon" href="favicon.ico?v=4" sizes="any">
 <link rel="apple-touch-icon" href="favicon-180.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5">
 <style>
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
@@ -46,7 +47,7 @@
   }
 
   /* ---- shared section header ---- */
-  .kicker{display:inline-block;color:var(--accent);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;margin-bottom:14px;}
+
   .sec-head{max-width:720px;margin:0 auto 48px;text-align:center;}
   .sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px;text-wrap:pretty;}
   .sec-head p{font-size:1.12rem;line-height:1.6;color:var(--body);}
@@ -91,6 +92,8 @@
   .chip.on .box{background:var(--accent);border-color:var(--accent);}
   .chip.on .box svg{opacity:1;}
   .ea-submit{width:100%;margin-top:6px;}
+  .btn-submit{background:var(--ink);color:#fff;border-color:var(--ink);border-width:1px;padding:13px 22px;}
+  .btn-submit:hover{background:#33333A;color:#fff;}
   .ea-form-fine{text-align:center;color:var(--muted);font-size:.84rem;font-weight:600;margin-top:14px;}
   @media(max-width:560px){.chip-grid{grid-template-columns:1fr;}.ea-form-card{padding:28px 22px;}}
 
@@ -122,32 +125,34 @@
   .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:1rem;line-height:1.62;}
 
   /* ---- final CTA ---- */
-  .closer{background:#fff;text-align:center;padding:44px 0 72px;}
-  .closer-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:56px 40px;}
-  .closer-card h2{font-weight:600;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
-  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:38rem;margin:0 auto 30px;font-weight:500;}
+  /* footer join CTA color: canon.css */
 
   @media(max-width:860px){
     section{padding:64px 0;}
     .nav-links a:not(.nav-cta){}
   }
 </style>
-<link rel="stylesheet" href="assets/canon.css?v=6">
+<link rel="stylesheet" href="assets/canon.css?v=25">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},{"@type":"ListItem","position":2,"name":"Early access","item":"https://numberline.com/early-access"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When is Numberline launching?","acceptedAnswer":{"@type":"Answer","text":"Numberline is launching soon. Get early access and we'll send updates as setup becomes available."}},{"@type":"Question","name":"Can I get a number today?","acceptedAnswer":{"@type":"Answer","text":"Not yet. Early access lets you join the list before public launch. When Numberline is ready, you'll be able to get a local or toll-free number or bring your current number."}},{"@type":"Question","name":"Can I bring my current business number?","acceptedAnswer":{"@type":"Answer","text":"Yes, Numberline is designed to support number porting. We'll share more details when early access opens."}},{"@type":"Question","name":"Is Numberline only for one number?","acceptedAnswer":{"@type":"Answer","text":"No. You can start with a local or toll-free number and add numbers as needed."}},{"@type":"Question","name":"Is Numberline an AI receptionist?","acceptedAnswer":{"@type":"Answer","text":"No. Numberline is a phone system for modern small businesses. It is designed to connect with third-party AI services when your business needs them, but Numberline itself is not positioned as an AI receptionist."}},{"@type":"Question","name":"Who is Numberline for?","acceptedAnswer":{"@type":"Answer","text":"Numberline is for modern small businesses that need a real phone system without enterprise complexity. It is built for founders, owners, small teams, contractors, assistants, and businesses that use tools like Slack."}}]}
+</script>
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
     <a href="#join" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a href="how-it-works.html">How it works</a>
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="signin.html">Sign in</a>
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
       <a href="#join" class="nav-cta">Get early access</a>
     </div>
   </div>
@@ -162,7 +167,7 @@
       <p class="lede reveal in">Numberline is launching soon. Join the early access list and we&rsquo;ll let you know when you can get a local or toll-free number, bring your current number, and set up your phone system.</p>
       <form class="ea-hero-form reveal in" id="heroForm" novalidate>
         <input type="email" id="heroEmail" placeholder="Work email" autocomplete="email" aria-label="Work email">
-        <button type="submit" class="btn btn-primary">Get early access</button>
+        <button type="submit" class="btn btn-submit">Join the list</button>
       </form>
       <div class="ea-hero-note reveal in">No spam. Just launch updates and early access details.</div>
       <div class="ea-hero-sec reveal in">
@@ -174,11 +179,30 @@
   </div>
 </header>
 
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-press">
+    <span class="press-label">From the team featured in</span>
+    <div class="press-logos">
+      <span class="pl pl-forbes">Forbes</span>
+      <span class="pl pl-inc">Inc<i>.</i></span>
+      <span class="pl pl-cnbc">CNBC</span>
+      <span class="pl pl-nyt">The New York Times</span>
+    </div>
+  </div>
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Built for small teams</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Keep your cell private</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> No hardware to buy</span>
+  </div>
+</div>
+
+
 <!-- 2. PRODUCT EXPLANATION -->
 <section class="ea-what" data-screen-label="What is Numberline">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">What is Numberline?</div>
       <h2>The phone system for modern small businesses</h2>
       <p>Numberline helps small businesses handle calls and messages without giving every customer a personal cell number or buying an enterprise phone system. Get a local or toll-free number, set up menus and extensions, route calls, manage shared texts and voicemails, receive voicemail transcripts, and keep your team updated in Slack.</p>
     </div>
@@ -233,7 +257,7 @@
           <label class="field-label" for="f-email">Work email</label>
           <input class="ea-input" type="email" id="f-email" name="email" placeholder="you@yourbusiness.com" autocomplete="email" required>
         </div>
-        <button type="submit" class="btn btn-primary ea-submit">Get early access</button>
+        <button type="submit" class="btn btn-submit ea-submit">Join the list</button>
         <div class="ea-form-fine">No spam. Just launch updates and early access details.</div>
       </form>
     </div>
@@ -300,12 +324,12 @@
   <div class="wrap">
     <h2>Early access questions</h2>
     <div class="faq-list">
-      <details class="faq-q" open><summary><span class="fq-text">When is Numberline launching?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is launching soon. Get early access and we&rsquo;ll send updates as setup becomes available.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can I get a number today?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not yet. Early access lets you join the list before public launch. When Numberline is ready, you&rsquo;ll be able to get a local or toll-free number or bring your current number.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Can I bring my current business number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, Numberline is designed to support number porting. We&rsquo;ll share more details when early access opens.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is Numberline only for one number?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. You can start with a local or toll-free number and add numbers as needed.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Is Numberline an AI receptionist?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is a phone system for modern small businesses. It is designed to connect with third-party AI services when your business needs them, but Numberline itself is not positioned as an AI receptionist.</div></details>
-      <details class="faq-q"><summary><span class="fq-text">Who is Numberline for?</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is for modern small businesses that need a real phone system without enterprise complexity. It is built for founders, owners, small teams, contractors, assistants, and businesses that use tools like Slack.</div></details>
+      <details class="faq-q" open><summary>When is Numberline launching?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is launching soon. Get early access and we&rsquo;ll send updates as setup becomes available.</div></details>
+      <details class="faq-q"><summary>Can I get a number today?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Not yet. Early access lets you join the list before public launch. When Numberline is ready, you&rsquo;ll be able to get a local or toll-free number or bring your current number.</div></details>
+      <details class="faq-q"><summary>Can I bring my current business number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes, Numberline is designed to support number porting. We&rsquo;ll share more details when early access opens.</div></details>
+      <details class="faq-q"><summary>Is Numberline only for one number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. You can start with a local or toll-free number and add numbers as needed.</div></details>
+      <details class="faq-q"><summary>Is Numberline an AI receptionist?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is a phone system for modern small businesses. It is designed to connect with third-party AI services when your business needs them, but Numberline itself is not positioned as an AI receptionist.</div></details>
+      <details class="faq-q"><summary>Who is Numberline for?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is for modern small businesses that need a real phone system without enterprise complexity. It is built for founders, owners, small teams, contractors, assistants, and businesses that use tools like Slack.</div></details>
     </div>
   </div>
 </section>
@@ -316,7 +340,8 @@
     <div class="closer-card reveal">
       <h2>Join the early access list</h2>
       <p>Be first to know when Numberline is ready for setup.</p>
-      <a href="#join" class="btn btn-primary btn-lg" id="finalCta">Get early access</a>
+      <a href="#join" class="btn btn-primary btn-lg" id="finalCta">Get early access <span class="btn-guillemet" aria-hidden="true">&#187;</span></a>
+      <div class="closer-micro"><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Money-back guarantee</span><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> No long term contracts</span></div>
     </div>
   </div>
 </section>
@@ -326,15 +351,13 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one. Built for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+        <form class="foot-join" action="/early-access.html" method="get" aria-label="Get early access"><input type="email" name="email" placeholder="Work email" autocomplete="email" aria-label="Work email"><button type="submit" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">&#187;</span></button></form>
       </div>
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a><a href="learn/bring-your-own-ai.html">Third-party AI services</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
-      </div>
-      <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/interior-design.html">Interior designers</a><a href="for/medspas.html">Med spas</a><a href="for/law-firms.html">Small law firms</a></div></div>
-        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it Works &amp; Features</a><a href="/pricing.html">Pricing</a><a href="/slack.html">Slack notifications</a><a href="/whatsapp.html">Texts &amp; WhatsApp inbox</a><a href="/ai-voice-agents.html">Using AI voice agents</a><a href="/signin.html">Sign in</a></div>
+        
+        <div class="foot-col"><h5>Compare</h5><a href="/compare/google-voice.html">Numberline vs Google Voice</a></div><div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
       </div>
     </div>
     <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
@@ -401,5 +424,6 @@
   /* NOTE: demo only. Wire form submissions to your early-access list
      (e.g. an email service or CRM) before going live. */
 </script>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
 </body>
 </html>

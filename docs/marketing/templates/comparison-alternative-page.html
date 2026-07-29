@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Google Voice Alternative for Small Businesses | Numberline</title>
+<meta name="description" content="A Google Voice alternative for small businesses: a business line with Slack and WhatsApp integrations, third-party AI answering, shared texts, voicemail transcripts, and no per-user pricing.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="/go/google-voice-alternative">
+<!-- REFERENCE TEMPLATE (comparison/alternative campaign). Live render: compare/google-voice.html. When building a new campaign: set the real canonical, drop the noindex, swap the competitor content, register per MARKETING.md. -->
+<link rel="icon" type="image/svg+xml" href="../favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=4">
+<link rel="icon" href="../favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="../favicon-180.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=5">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
+    --green:#1bb56a;--green-soft:#ecfdf3;--green-ink:#0f7a47;
+    --slack:#4A154B;--slack-green:#2EB67D;--slack-blue:#36C5F0;--slack-red:#E01E5A;--slack-gold:#ECB22E;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
+  .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
+  .btn-arrow:hover svg{transform:translateX(3px);}
+
+
+  /* hero */
+  .hero{padding:60px 0 34px;background:var(--paper);}
+  .hero-grid{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;}
+  .hero-copy{display:flex;flex-direction:column;align-items:center;max-width:900px;}
+  .hero-kick{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+  .hero-kick .nup-stamp{margin:0;transform:rotate(6deg);}
+  /* caps row (homepage capstrip component) */
+  .capstrip{border-top:1px solid var(--line);margin-top:48px;padding-top:48px;width:100%;grid-column:1/-1;}
+  .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin:0 auto;max-width:1020px;text-align:left;}
+  .cap{display:flex;gap:13px;align-items:flex-start;text-align:left;transition:transform .16s ease;color:inherit;text-decoration:none;}
+  .cap:hover{transform:translateY(-3px);}
+  .cap-ic{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:none;border:0;}
+  .cap-ic svg{width:23px;height:23px;}
+  .cap-ic.users{background:#FDF8DF;} .cap-ic.users svg{color:#6B5A12;}
+  .cap-ic.slack{background:#DFF6E7;} .cap-ic.slack svg{color:#2E8B57;}
+  .cap-ic.wa{background:#DAF4F9;} .cap-ic.wa svg{color:#2A8697;}
+  .cap-ic.ai{background:#FBE3F0;} .cap-ic.ai svg{color:#C05590;}
+  .cap b{display:block;font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:3px;text-wrap:balance;}
+  .cap span{font-size:.85rem;color:var(--muted);line-height:1.42;}
+  @media(max-width:760px){.caps{grid-template-columns:repeat(2,1fr);gap:24px 18px;}}
+  .hero-copy h1{font-size:clamp(2.6rem,5.2vw,4.1rem);}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
+  .eyebrow .sl{width:15px;height:15px;display:block;}
+  .hero h1{font-weight:600;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.035em;margin-bottom:18px;text-wrap:pretty;}
+  .hero h1 .u{color:inherit;}
+  .hero-sub{font-size:1.16rem;line-height:1.55;color:var(--body);max-width:62ch;margin:0 auto 26px;font-weight:500;}
+  .hero-acts{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+  section.hero .hero-copy .hero-bullets{list-style:none;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:center;gap:10px 28px;}
+  section.hero .hero-copy .hero-bullets li{white-space:nowrap;}
+  .hero .hero-bullets li{text-wrap:pretty;display:flex;align-items:center;gap:7px;font-size:.94rem;font-weight:600;color:var(--body);}
+  .hero-bullets .ck{width:18px;height:18px;color:var(--muted);display:grid;place-items:center;flex-shrink:0;}
+  .hero-bullets .ck svg{width:14px;height:14px;}
+
+  /* hero routing map - mirrors the homepage hero, Slack row highlighted */
+  .hero-route{background:#F7F7F8;border:1px solid var(--line);border-radius:24px;padding:28px;}
+  .hr-cap{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .hr-rows{display:flex;flex-direction:column;gap:12px;}
+  .hr-map{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:11px;}
+  .hr-src,.hr-dst{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;min-width:0;}
+  .hr-ic{width:34px;height:34px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;flex:none;}
+  .hr-ic svg{width:17px;height:17px;color:var(--ink);}
+  .hr-src b,.hr-dst b{font-weight:700;font-size:.95rem;color:var(--ink);line-height:1.2;text-wrap:balance;}
+  .hr-dst{background:#fff;border-color:var(--line);}
+  .hr-dst .hr-ic{background:#fff;}
+  .hr-dst .hr-ic svg{color:#131316;}
+  .hr-dst b{color:var(--accent-dark);}
+  .hr-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none;font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1;}
+  /* highlighted Slack row */
+  .hr-map.hl .hr-src{border-color:var(--accent);box-shadow:0 0 0 3px rgba(45,78,216,.15);}
+  .hr-map.hl .hr-dst{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(45,78,216,.15);}
+  .hr-map.hl .hr-dst .hr-ic{background:rgba(255,255,255,.18);}
+  .hr-map.hl .hr-dst .hr-ic svg{color:#fff;}
+  .hr-map.hl .hr-dst b{color:#fff;}
+  .hr-map.hl .hr-arrow{color:var(--accent);}
+  .hr-tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.7rem;letter-spacing:.03em;padding:8px 13px;border-radius:999px;}
+  .hr-tag svg{width:14px;height:14px;}
+  @media(max-width:620px){.hr-map{grid-template-columns:1fr;gap:5px;}.hr-arrow{transform:rotate(90deg);}}
+
+  /* trust strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
+  .strip-inner{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;padding:20px 0;color:var(--body);font-weight:700;font-size:.95rem;}
+  .strip-inner span{display:inline-flex;align-items:center;gap:9px;}
+  .strip-inner svg{width:18px;height:18px;color:var(--accent);}
+
+  /* section shell */
+  section.block{padding:74px 0;}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 44px;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cta-dark);background:var(--cta-soft);font-weight:800;padding:6px 13px;border-radius:8px;margin-bottom:14px;}
+
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;text-wrap:pretty;}
+  .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
+
+  /* what Numberline is */
+  .whatis{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .whatis-copy .sec-kicker{margin-bottom:12px;}
+  .whatis-copy h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;text-wrap:pretty;}
+  .whatis-copy p{color:var(--body);font-size:1.08rem;line-height:1.6;max-width:46ch;}
+  .pillset{display:flex;flex-direction:column;gap:10px;}
+  .pillset-head{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-bottom:8px;}
+  .pillset-head .logo{font-size:1.5rem;}
+  .pillset-head .lbl{font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .pill{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:700;font-size:1rem;}
+  .pill .pic{width:34px;height:34px;border-radius:9px;background:var(--cs,var(--accent-soft));color:var(--c,var(--accent));display:grid;place-items:center;flex-shrink:0;}
+  .pill .pic svg{width:18px;height:18px;}
+
+  /* problem */
+  .problem{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .prob-copy{max-width:720px;margin:0 auto;text-align:center;}
+  .prob-copy p{font-size:1.16rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .prob-copy b{color:var(--ink);font-weight:700;}
+
+  /* steps */
+
+  .steps-wrap{background:var(--soft);}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .steps.four{grid-template-columns:repeat(4,1fr);}
+  .steps.plus{grid-template-columns:repeat(3,1fr);margin-top:18px;}
+  .steps.plus .step{border-style:dashed;background:color-mix(in srgb,var(--soft) 45%,#fff);}
+  .steps.plus .step h3{margin-bottom:6px;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;}
+    .step h3{font-size:1rem;font-weight:800;margin-bottom:7px;line-height:1.2;}
+  .step p{color:var(--body);font-size:.9rem;line-height:1.5;}
+  .steps-note{text-align:center;max-width:620px;margin:32px auto 0;color:var(--body);font-size:1.02rem;font-weight:500;}
+  .steps-note b{color:var(--ink);font-weight:800;}
+
+  .card .cic{background:var(--c,#374151);color:#fff;}
+  .setup-one{max-width:620px;margin:0 auto;}
+  /* cards grid */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;}
+  .card .cic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;color:#fff;}
+  .card .cic svg{width:22px;height:22px;}
+  .cic.miss{background:var(--slack-red);} .cic.txt{background:var(--slack-green);} .cic.vm{background:var(--slack-blue);}
+  .card h3{font-size:1.16rem;font-weight:800;letter-spacing:-.01em;margin-bottom:8px;}
+  .card p{color:var(--body);font-size:.96rem;line-height:1.55;}
+
+  /* example setup */
+  .setup-wrap{background:var(--soft);}
+  .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto;align-items:start;}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -50px rgba(16,16,18,.4);}
+  .panel-top{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;color:#fff;}
+  .panel-top.phone{background:var(--ink);}
+  .panel-top.slack{background:var(--slack);}
+  .panel-top b{font-size:.96rem;font-weight:700;}
+  .panel-top.phone b{display:inline-flex;align-items:center;gap:9px;}
+  .panel-top .p-ico{width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.14);display:inline-grid;place-items:center;flex:none;}
+  .panel-top .p-ico svg{width:15px;height:15px;display:block;}
+  .panel-top .tg{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;opacity:.7;}
+  .panel-body{padding:20px 22px;}
+  .pgreet{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:.88rem;color:var(--body);line-height:1.5;font-style:italic;margin-bottom:16px;}
+  .prow{display:flex;align-items:center;gap:13px;padding:11px 0;border-top:1px solid var(--line);}
+  .prow:first-of-type{border-top:none;}
+  .prow .k{width:32px;height:32px;border-radius:9px;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;flex-shrink:0;}
+  .prow .k.zero{background:var(--ink);}
+  .prow .k.ext{width:auto;min-width:32px;padding:0 9px;font-size:.82rem;}
+  .prow .pl b{display:block;font-size:.94rem;font-weight:800;}
+  .prow .dest{margin-left:auto;font-weight:700;font-size:.86rem;color:var(--accent-dark);text-align:right;}
+  .srow{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);}
+  .srow:first-of-type{border-top:none;}
+  .srow .ev{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.92rem;}
+  .srow .ev .ic{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff;flex-shrink:0;}
+  .srow .ev .ic svg{width:13px;height:13px;}
+  .srow .chan{margin-left:auto;display:inline-flex;align-items:center;gap:4px;background:var(--slack);color:#fff;font-weight:700;font-size:.84rem;padding:5px 11px;border-radius:8px;}
+  .srow .chan .h{opacity:.6;}
+  .setup-foot{max-width:980px;margin:22px auto 0;text-align:center;color:var(--body);font-size:1rem;font-weight:500;}
+  .setup-foot b{color:var(--ink);font-weight:800;}
+
+  /* why different + comparison */
+  .compare-green{background:#F6F7FB;border-top:1px solid #ECEEF4;border-bottom:1px solid #ECEEF4;}
+  .compare-green .cmp{max-width:980px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(16,16,18,.04),0 18px 40px -28px rgba(15,17,21,.18);}
+  .cmp .cmp-row{display:grid;grid-template-columns:1fr 1.25fr 1.25fr;border-top:1px solid var(--line);}
+  .cmp-row:first-child{border-top:none;}
+  .cmp-row.head{background:var(--soft);}
+  .cmp .cmp-row>div{padding:18px 22px;}
+  .cmp-row .crit{font-weight:800;font-size:.98rem;display:flex;align-items:center;}
+  .cmp-row .gv,.cmp-row .jl{color:var(--body);font-size:.95rem;line-height:1.5;border-left:1px solid var(--line);display:flex;align-items:flex-start;gap:10px;}
+  .cmp-row .jl{background:#fff;border-left-color:var(--line);}
+  .cmp-row.head>div{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);font-weight:800;padding:14px 22px;display:flex;align-items:center;gap:8px;}
+  .cmp-row.head .jl{color:var(--ink);}
+  .cmp-row .mk{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .cmp-row .mk svg{width:12px;height:12px;}
+  .cmp-row .mk.no{background:#fdecec;color:#c2352b;}
+  .cmp-row .mk.yes{background:var(--green-soft);color:var(--green-ink);}
+  .cmp-row .gv b,.cmp-row .jl b{color:var(--ink);font-weight:800;display:block;margin-bottom:2px;}
+  .cmp .lbl{display:none;}
+  @media(max-width:880px){
+    .cmp .cmp-row{grid-template-columns:1fr;}
+    .cmp-row.head{display:none;}
+    .cmp-row .crit{padding-bottom:4px;}
+    .cmp-row .gv,.cmp-row .jl{border-left:none;}
+    .cmp .lbl{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:4px;}
+    .cmp-row .jl .lbl{color:var(--accent-dark);}
+  }
+
+  /* not section */
+  .notband{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .not-card{max-width:760px;margin:0 auto;text-align:center;}
+  .not-card h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
+  .not-card p{font-size:1.12rem;line-height:1.6;color:var(--body);font-weight:500;}
+  .not-card p b{color:var(--ink);font-weight:700;}
+
+  /* who for */
+  .whofor{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .whofor li{list-style:none;display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;font-weight:600;font-size:1rem;color:var(--ink);}
+  .whofor li .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .whofor li .ck svg{width:14px;height:14px;}
+
+  /* closer */
+
+  /* faq */
+  .faq{padding:0 0 84px;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .faq-q summary::-webkit-details-marker{display:none;}
+  .faq-q summary .ic{width:22px;height:22px;color:var(--accent);flex-shrink:0;transition:transform .2s;}
+  .faq-q[open] summary .ic{transform:rotate(45deg);}
+  .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
+
+
+
+  @media(max-width:980px){
+    .steps,.steps.four{grid-template-columns:repeat(2,1fr);}
+    .cards3{grid-template-columns:1fr;}
+  }
+  @media(max-width:880px){
+    section.hero .hero-copy .hero-bullets{display:grid;grid-template-columns:repeat(2,max-content);justify-content:center;gap:10px 22px;}
+    section.hero .hero-copy .hero-bullets li{white-space:normal;font-size:.9rem;}
+    .hero{padding:40px 0 26px;}
+    .hero-sub{max-width:none;}
+    .whatis{grid-template-columns:1fr;gap:32px;}
+    .setup-grid{grid-template-columns:1fr;}
+    .whofor{grid-template-columns:1fr;}
+    .strip-inner{gap:18px;font-size:.88rem;}
+    .cmp-row{grid-template-columns:1fr;}
+    .cmp-row .desc{border-left:none;border-top:1px solid var(--line);}
+    .cmp-row.best .desc{border-top-color:#c9d2ff;}
+    .cmp-row.head{display:none;}
+    footer{padding-bottom:96px;}
+  }
+  @media(max-width:560px){
+    .steps,.steps.four{grid-template-columns:1fr;}
+  }
+</style>
+
+<style id="dc-semantic">
+/* semantic product-diagram destination colors - CTA blue reserved for buttons */
+@media(min-width:621px){
+  .hr-dst{background:#F9FAFB;border-color:#E5E7EB;}
+  .hr-dst .hr-ic{background:#fff;}
+  .hr-dst .hr-ic svg{color:#374151;}
+  .hr-dst b{color:#374151;}
+  .hr-dst.dc-phone{background:#fff;border-color:var(--line);} .hr-dst.dc-phone .hr-ic svg{color:var(--ink);} .hr-dst.dc-phone b{color:var(--ink);}
+  .hr-dst.dc-slack{background:#fff;border-color:var(--line);} .hr-dst.dc-slack .hr-ic svg{color:var(--ink);} .hr-dst.dc-slack b{color:var(--ink);}
+  .hr-dst.dc-inbox{background:#fff;border-color:var(--line);} .hr-dst.dc-inbox .hr-ic svg{color:var(--ink);} .hr-dst.dc-inbox b{color:var(--ink);}
+  .hr-dst.dc-tools{background:#fff;border-color:var(--line);} .hr-dst.dc-tools .hr-ic svg{color:var(--ink);} .hr-dst.dc-tools b{color:var(--ink);}
+  .hr-map.hl .hr-dst{background:#fff;border-color:var(--line);box-shadow:0 0 0 3px rgba(97,31,105,.14);}
+  .hr-map.hl .hr-dst .hr-ic{background:#fff;}
+  .hr-map.hl .hr-dst .hr-ic svg{color:var(--ink);}
+  .hr-map.hl .hr-dst b{color:var(--ink);}
+  .hr-map.hl .hr-src{border-color:var(--line);box-shadow:0 0 0 3px rgba(97,31,105,.10);}
+  .hr-map.hl .hr-arrow{color:var(--ink);}
+}
+.hr-tag{background:#fff;color:var(--ink);}
+.hr-tag svg{color:var(--ink);}
+</style>
+
+<style id="dc-semantic2">
+@media(min-width:621px){
+  .prow .k{background:#F3F4F6;color:#374151;}
+  .prow .k.zero{background:#374151;color:#fff;}
+  .prow .dest{color:var(--ink);}
+}
+</style>
+
+<style id="flat-routing">
+/* flat routing rows: label left, destination chip right, hairline dividers */
+.hr-rows{gap:0;}
+.hr-map{display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px solid var(--line);}
+.hr-map:last-child{border-bottom:none;}
+.hr-arrow{display:none;}
+.hr-src{background:transparent;border:none;padding:0;box-shadow:none!important;flex:1 1 0;min-width:0;}
+.hr-src b{display:block;}
+.hr-dst b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hr-src b{white-space:normal;}
+.hr-dst{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:100px;padding:5px 13px 5px 7px;flex:0 1 auto;gap:7px;max-width:62%;}
+.hr-dst .hr-ic{width:24px;height:24px;background:transparent!important;}
+.hr-dst .hr-ic svg{width:15px;height:15px;}
+.hr-map.hl .hr-src{border:none;box-shadow:none!important;}
+@media(max-width:620px){.hr-map{flex-wrap:wrap;row-gap:4px;}.hr-dst{margin-left:auto;}}
+</style>
+<link rel="stylesheet" href="../assets/canon.css?v=23">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},{"@type":"ListItem","position":2,"name":"Google Voice Alternative","item":"https://numberline.com/go/google-voice-alternative"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Google Voice bad?","acceptedAnswer":{"@type":"Answer","text":"No. Google Voice is a solid free second number for one person. The difference for a business is the model: it charges per user, ties access to a Google account, and does not connect to tools like Slack, WhatsApp, or a third-party AI answering service."}},{"@type":"Question","name":"Can I move my number from Google Voice?","acceptedAnswer":{"@type":"Answer","text":"Numberline is designed to support bringing your current business number. Join early access and we'll share porting details when setup opens."}},{"@type":"Question","name":"What does Numberline add?","acceptedAnswer":{"@type":"Answer","text":"The same phone-system essentials, without the Google tie: unlimited users with no per-user pricing, a shared SMS and WhatsApp inbox, voicemail transcripts, Slack notifications, webhooks, and forwarding to third-party AI answering services."}},{"@type":"Question","name":"Do you charge per user?","acceptedAnswer":{"@type":"Answer","text":"No. Users are unlimited. Add teammates, assistants, and contractors without another seat fee."}},{"@type":"Question","name":"Can more than one person answer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Route calls to different people, share a text inbox, and give everyone who needs it visibility in Slack."}},{"@type":"Question","name":"Is it a phone system or a second number?","acceptedAnswer":{"@type":"Answer","text":"A phone system: greetings, extensions, call forwarding, shared texts, and voicemail transcripts on one business number."}},{"@type":"Question","name":"Do I need new phones or equipment?","acceptedAnswer":{"@type":"Answer","text":"No. Numberline forwards calls to the cell phone you already have. There is nothing to buy or install. Compatible desk phones are optional, never required."}}]}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <div class="hero-kick"><span class="eyebrow">Google Voice alternative</span><span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span></div>
+      <h1>The Google Voice alternative with integrations &amp; no per-user pricing.</h1>
+      <p class="hero-sub">Google Voice covers the phone basics. Numberline adds what it won't: Slack and WhatsApp, webhooks, third-party AI answering, unlimited users with no per-user pricing, and a business line that isn't tied to Google.</p>
+      <div class="hero-acts">
+        <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      </div>
+      <ul class="hero-bullets">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Unlimited users</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>No long-term contracts</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Not tied to Google</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Free human support</li>
+      </ul>
+      </div>
+    </div>
+    <div class="capstrip reveal">
+      <div class="caps reveal">
+        <a class="cap" href="/how-it-works.html#extensions"><span class="cap-ic users"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><path d="M7.5 12h3M10.5 12 16 6.5M10.5 12 16 17.5"/><circle cx="18.5" cy="5" r="2.5"/><circle cx="18.5" cy="19" r="2.5"/></svg></span><div><b>Extensions for functions and people</b><span>Create department or personal extensions, then forward them anywhere.</span></div></a>
+        <a class="cap" href="/slack.html"><span class="cap-ic slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg></span><div><b><mark class="svc slack">Slack</mark> notifications</b><span>Send missed calls and voicemail summaries to the channels you watch.</span></div></a>
+        <a class="cap" href="/whatsapp.html"><span class="cap-ic wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg></span><div><b><mark class="svc wa">WhatsApp</mark> built in</b><span>Let customers message the same business number.</span></div></a>
+        <a class="cap" href="/ai-voice-agents.html"><span class="cap-ic ai"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.7 5.6L19.5 10l-5.8 1.4L12 17l-1.7-5.6L4.5 10l5.8-1.4z"/></svg></span><div><b>Works with <mark class="svc ai">AI answering services</mark></b><span>Point any extension at Vapi, Bland AI, or the provider you like. Swap anytime.</span></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-press">
+    <span class="press-label">From the team featured in</span>
+    <div class="press-logos">
+      <span class="pl pl-forbes">Forbes</span>
+      <span class="pl pl-inc">Inc<i>.</i></span>
+      <span class="pl pl-cnbc">CNBC</span>
+      <span class="pl pl-nyt">The New York Times</span>
+    </div>
+  </div>
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Built for small teams</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> A line that belongs to the business</span>
+  </div>
+</div>
+
+<!-- 2. WHAT Numberline IS -->
+<section class="block" data-screen-label="What Numberline is">
+  <div class="wrap whatis">
+    <div class="whatis-copy reveal">
+      <h2>What Google Voice doesn't do.</h2>
+      <p>Google Voice has the team phone basics covered: menus, ring groups, voicemail. What it doesn't have is everything around them. There are no integrations (no Slack, no WhatsApp, no webhooks, no third-party AI answering), business use requires Google Workspace, every teammate is another monthly seat, and your phone system lives inside Google for as long as you keep the number.</p>
+    </div>
+    <div class="pillset reveal">
+      <div class="pillset-head"><span class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></span> <span class="lbl">What you get instead</span></div>
+      <div class="pill fn-ext"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span> No per-user pricing</div>
+      <div class="pill fn-number"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span> A line that belongs to the business</div>
+      <div class="pill fn-sms"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Optional Slack notifications</div>
+      <div class="pill fn-ai"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span> Third-party AI answering services optional</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. THE ANSWER -->
+<section class="block problem" data-screen-label="The Numberline answer">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Team access without per-user pricing.</h2>
+    </div>
+    <div class="prob-copy reveal">
+      <p>As a team grows, per-user pricing grows with it, and a phone system inside Google Workspace stays there. <b>Numberline takes a different approach: unlimited users with no per-user pricing, the integrations you choose (Slack, WhatsApp, webhooks, third-party AI answering), and a business line that belongs to the business, not to a suite.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. HOW SWITCHING WORKS -->
+<section class="block steps-wrap" id="how" data-screen-label="How it works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How Numberline works.</h2>
+    </div>
+    <div class="fnlist-card grid glance-tiles reveal">
+      <div class="hsteps grid hsteps-four">
+        <a class="hstep fn-number" href="/how-it-works.html#get-a-number"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"></path></svg></span><b>1. Get a toll free or local number</b></div><p class="hstep-desc">Pick a local or toll-free number, or bring the one your customers already call.</p></div></a>
+        <a class="hstep fn-ext" href="/how-it-works.html#extensions"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"></path></svg></span><b>2. Create greetings &amp; extensions</b></div><p class="hstep-desc">Record what callers hear, then route them to departments and people.</p></div></a>
+        <a class="hstep fn-fwd" href="/how-it-works.html#forwarding"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><b>3. Forward calls to your mobile</b></div><p class="hstep-desc">Ring the right mobiles, in the order you want.</p></div></a>
+        <a class="hstep fn-vm" href="/how-it-works.html#voicemails"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"></circle><circle cx="18" cy="12" r="4"></circle><path d="M6 16h12"></path></svg></span><b>4. Get voicemails emailed</b></div><p class="hstep-desc">Recordings and transcripts land in email and Slack.</p></div></a>
+      </div>
+      <div class="hsteps grid hsteps-extra">
+        <a class="hstep fn-sms" href="/how-it-works.html#messaging"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><b>+ Reply to SMS/WhatsApp</b></div></div></a>
+        <a class="hstep fn-number" href="/how-it-works.html#calling"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M22 8V2h-6M15 9l7-7"></path></svg></span><b>+ Call out as your business</b></div></div></a>
+        <a class="hstep fn-ai" href="/how-it-works.html#integrations"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></span><b>+ Connect integrations</b></div></div></a>
+      </div>
+    </div>
+    <p class="steps-note reveal"><b>Already on Google Voice? Switching is easy.</b> Join early access and we'll help you bring your number and walk you through each step before public launch.</p>
+  </div>
+</section>
+
+<!-- 5. WHAT YOU GET -->
+<section class="block" data-screen-label="What shows up in Slack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Where Numberline is built differently.</h2>
+    </div>
+    <div class="cards3">
+      <div class="card fn-fwd reveal">
+        <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg></div>
+        <h3>Unlimited users</h3>
+        <p>Add teammates, assistants, and contractors without another seat fee. Google Voice charges for every person who answers.</p>
+      </div>
+      <div class="card fn-ai reveal">
+        <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></div>
+        <h3>Slack, WhatsApp &amp; webhooks</h3>
+        <p>Missed-call, text, and voicemail alerts in Slack. WhatsApp messages in the shared inbox alongside SMS. Webhooks into your own software, and forwarding to the third-party AI answering service you choose.</p>
+      </div>
+      <div class="card fn-number reveal">
+        <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"></path></svg></div>
+        <h3>Not tied to Google</h3>
+        <p>No Workspace requirement and no Google account gatekeeping. The number belongs to the business, and you decide where calls, texts, and voicemails go.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EXAMPLE SETUP -->
+<section class="block setup-wrap" data-screen-label="Example setup">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>A simple Numberline setup a small team can share.</h2>
+    </div>
+    <div class="setup-one">
+    <div class="shot sample-setup reveal" role="img" aria-label="Sample setup after switching from Google Voice: calls ring the owner's and assistant's mobiles, texts and WhatsApp land in the shared inbox, voicemails go to email and Slack, after hours forwards to your answering provider">
+      <div class="shot-top"><b>After you switch from Google Voice</b><span class="tg">Sample setup</span></div>
+      <div class="shot-body">
+        <div class="shot-in fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"></path></svg></span><div><b>Your business number</b><span>(415) 555-0134 &middot; ported from Google Voice</span></div></div>
+        <div class="rings">
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><div class="rt"><b>Calls</b><span>Your greeting, then the right people</span></div><span class="dest">Owner + assistant mobiles</span></div>
+        <div class="ring fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><div class="rt"><b>Texts &amp; WhatsApp</b><span>One history the whole team sees</span></div><span class="dest">Shared inbox</span></div>
+        <div class="ring fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"></circle><circle cx="18" cy="12" r="4"></circle><path d="M6 16h12"></path></svg></span><div class="rt"><b>Voicemails</b><span>Recorded, transcribed, summarized</span></div><span class="dest">Email &amp; Slack</span></div>
+        <div class="ring fn-ai"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span><div class="rt"><b>After hours</b><span>Your answering provider or a third-party AI answering service</span></div><span class="dest">Your provider</span></div>
+        </div>
+      </div>
+      <div class="shot-foot"><b>Everything stays with the business.</b> Calls, texts, voicemails, and follow-up live on the business number, not in one Google account.</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. WHY THIS IS DIFFERENT -->
+<section class="block compare-green" data-screen-label="Why this is different">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Google Voice vs Numberline for a small business.</h2>
+      <p>Here is what the two models mean for a team. Google Voice plans can change, so check their current details.</p>
+    </div>
+    <div class="cmp reveal">
+      <div class="cmp-row head"><div class="crit"></div><div class="gv">Google Voice</div><div class="jl">Numberline</div></div>
+      <div class="cmp-row">
+        <div class="crit">Pricing model</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span><b>Priced per user</b>Business plans add cost for each teammate who answers.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span><b>No per-user pricing</b>Add teammates, assistants, and contractors as the business grows.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Account requirement</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span><b>Tied to Google accounts</b>Business use runs through Google account management.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span><b>No Google account required</b>Works without Workspace; the line belongs to the business.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Shared team texting</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>Texting is built around one person's account.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span>A shared text inbox for the business. Anyone on the team can reply.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">WhatsApp</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>No WhatsApp support; messaging is SMS only.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span>WhatsApp messages land in the shared inbox alongside SMS.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Integrations</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>Built to work within Google's own tools.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span>Slack notifications, WhatsApp, webhooks, and forwarding to third-party AI answering services.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Menus &amp; extensions</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>Auto-attendants and ring groups require higher plan tiers.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span>Menus, extensions, and routing by function are core to Numberline.</span></div>
+      </div>
+      <div class="cmp-row">
+        <div class="crit">Leaving</div>
+        <div class="gv"><span class="mk no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><span class="lbl">Google Voice</span>The number is tied to your Google account.</span></div>
+        <div class="jl"><span class="mk yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><span class="lbl">Numberline</span>The number belongs to your business, and you decide where calls go.</span></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- 8. WHAT THIS IS NOT -->
+<section class="block notband" data-screen-label="What this is not">
+  <div class="wrap">
+    <div class="not-card reveal">
+      <h2>Google Voice is fine, until you need it to connect.</h2>
+      <p>This is not a knock on Google Voice: the team phone basics are there. <b>The difference is everything around them: per-user pricing, the Google Workspace requirement, and no way to connect Slack, WhatsApp, webhooks, or an AI answering service. That connected layer is what Numberline was built for.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. WHO THIS IS FOR -->
+<section class="block" data-screen-label="Who this is for">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>When to move on from Google Voice.</h2>
+    </div>
+    <ul class="whofor reveal">
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>You want to connect a third-party AI answering service</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>You don't want access tied to a Google account</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>You want SMS and WhatsApp in one shared inbox</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>You want missed calls, texts, and voicemails in Slack</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>You may need more than one number</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>You don't want per-user pricing</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="faq" data-screen-label="FAQ">
+  <div class="wrap" style="padding-top:74px;">
+    <div class="sec-head reveal">
+      <h2>Questions about switching from Google Voice</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-q" open><summary>Is Google Voice bad?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Google Voice is a solid free second number for one person. The difference for a business is the model: it charges per user, ties access to a Google account, and does not connect to tools like Slack, WhatsApp, or a third-party AI answering service.</div></details>
+      <details class="faq-q"><summary>Can I move my number from Google Voice?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Numberline is designed to support bringing your current business number. Join early access and we'll share porting details when setup opens.</div></details>
+      <details class="faq-q"><summary>What does Numberline add?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">The same phone-system essentials, without the Google tie: unlimited users with no per-user pricing, a shared SMS and WhatsApp inbox, voicemail transcripts, Slack notifications, webhooks, and forwarding to third-party AI answering services.</div></details>
+      <details class="faq-q"><summary>Do you charge per user?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Users are unlimited. Add teammates, assistants, and contractors without another seat fee.</div></details>
+      <details class="faq-q"><summary>Can more than one person answer?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Yes. Route calls to different people, share a text inbox, and give everyone who needs it visibility in Slack.</div></details>
+      <details class="faq-q"><summary>Is it a phone system or a second number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">A phone system: greetings, extensions, call forwarding, shared texts, and voicemail transcripts on one business number. See <a href="/how-it-works.html" style="color:var(--accent-dark);font-weight:700;">how Numberline works</a>.</div></details>
+      <details class="faq-q"><summary>Do I need new phones or equipment?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline forwards calls to the cell phone you already have. There is nothing to buy or install. Compatible desk phones are optional, never required.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FINAL CTA -->
+<section class="closer">
+  <div class="wrap">
+    <div class="closer-card reveal">
+      <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <h2>Switch to a phone system that doesn't charge per user &amp; isn't tied to Google accounts.</h2>
+      <p>Unlimited users with no per-seat fee, no Google account required, and integrations with Slack, WhatsApp, and third-party AI answering services.</p>
+      <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one. Built for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+      </div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it Works &amp; Features</a><a href="/pricing.html">Pricing</a><a href="/signin.html">Sign in</a></div>
+        
+        <div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
+      </div>
+      </div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
+  </div>
+</footer>
+
+
+
+<script>
+  (function(){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');});});
+    }
+  })();
+</script>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numberline — Site Architecture &amp; AI Search Strategy v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Figtree:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+doc-page{--ink:#131316;--body:#4A4A52;--muted:#6E7480;--line:#E8EAEE;--soft:#F6F6F7;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;
+font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);font-size:14.5px;line-height:1.62}
+doc-page a{color:#3E45C7;text-decoration:none}doc-page a:hover{text-decoration:underline}
+h1,h2,h3{font-family:'Figtree',sans-serif;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:30px;font-weight:800;line-height:1.15;margin:0 0 6px}
+.doc-meta{color:var(--muted);font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin:0 0 26px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+h2{font-size:19px;font-weight:700;margin:34px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+h2 .n{color:var(--cta);margin-right:8px}
+h3{font-size:15px;font-weight:700;margin:20px 0 6px}
+p{margin:0 0 10px;color:var(--body)}
+p.lead{color:var(--ink);font-size:15.5px}
+ul,ol{margin:0 0 12px;padding-left:20px;color:var(--body)}
+li{margin:3px 0}
+strong{color:var(--ink)}
+code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.88em;background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--ink);white-space:nowrap}
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:13px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 10px;border-bottom:2px solid var(--ink)}
+td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--body);vertical-align:top}
+td:first-child{color:var(--ink);font-weight:600}
+.callout{background:var(--beige);border:1px solid #E5E1D6;border-radius:10px;padding:14px 18px;margin:12px 0 16px;break-inside:avoid;orphans:3;widows:3}
+.callout p{margin:0}.callout p+p{margin-top:8px}
+.callout .tag{display:inline-block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);background:#A2FBEF;border-radius:4px;padding:2px 8px;margin-bottom:6px}
+.rule{font-weight:700;color:var(--ink)}
+.tree{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;line-height:1.75;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:10px 0 16px;color:var(--body);break-inside:avoid}
+.tree b{color:var(--ink)}
+.tree .c{color:var(--muted)}
+.chg td:first-child{white-space:nowrap}
+.keep{color:#1FAE63;font-weight:700}.drop{color:#B4552D;font-weight:700}
+</style>
+</head>
+<body>
+<doc-page margin="0.85in">
+<h1>Site architecture &amp; AI search strategy — v2</h1>
+<p class="doc-meta">Numberline · Growth engineering memo · Revised after IA review · July 2026</p>
+<p class="lead">v2 applies one test to every piece of structure from v1: <strong>does it make today's ~40–60-page site simpler, or does it solve next year's problem early?</strong> The result is a smaller model — four content hubs instead of six — that still scales to thousands of pages, because hubs absorb growth on their index pages, not in the URL tree or the nav.</p>
+
+<h2><span class="n">0</span>What changed, what stays</h2>
+<table class="chg">
+<thead><tr><th>Decision</th><th>v1</th><th>v2 and why</th></tr></thead>
+<tr><td><span class="drop">Changed</span> Category name</td><td>"Phone systems for"</td><td><strong>"Industries."</strong> Clearest scan for a customer looking for their business type; stage pages (startups, LLCs, solo founders) live in the same <code>/for/</code> folder and column. URLs stay <code>/for/…</code>.</td></tr>
+<tr><td><span class="drop">Changed</span> Numbers hub</td><td>Dedicated <code>/numbers/</code></td><td><strong>Dropped.</strong> Two pages don't justify a hub, and moving them invites churn. Number pages live in <code>/learn/</code> permanently, grouped as a "Business numbers" section on the Learn index.</td></tr>
+<tr><td><span class="drop">Changed</span> Integrations hub</td><td><code>/integrations/</code> post-launch</td><td><strong>Deferred indefinitely.</strong> Four connections are features, not a directory. Slack notifications, WhatsApp, and webhooks become <code>/features/…</code> pages; a "Connections" section on the Features index does the grouping.</td></tr>
+<tr><td><span class="drop">Changed</span> Use cases</td><td>Filed under <code>/learn/</code></td><td><strong>Promoted to a first-class content type at <code>/use-cases/</code>.</strong> Situation pages are the AI-search spearhead and they're neither guides nor features — they earn their own template and hub (§4).</td></tr>
+<tr><td><span class="drop">Changed</span> Compare</td><td>Reserved + "pre-write during beta"</td><td><strong>Reserved path only.</strong> No pre-writing, no roadmap slot, no optimization around it. The only action stays: de-link and <code>noindex</code> the existing Google Voice page.</td></tr>
+<tr><td><span class="keep">Kept</span> Everything else</td><td colspan="2">Five-item nav that never grows · footer as curated hub columns · two-level URLs (<code>/hub/slug</code>) · one topic = one URL forever · extensionless URLs via Netlify now · standardized linking blocks · pillar guides as Learn's spine · answer-first pages, schema, entity consistency (§8).</td></tr>
+</table>
+<p>Net: v1 proposed six hubs (for, features, numbers, learn, integrations, compare). v2 launches with <strong>four</strong> — <code>/for/</code>, <code>/features/</code>, <code>/use-cases/</code>, <code>/learn/</code> — and that is the complete model at 60 pages, 200 pages, and 5,000 pages.</p>
+
+<h2><span class="n">1</span>Navigation (unchanged)</h2>
+<div class="tree"><b>How it works</b> · <b>Features</b> · <b>Pricing</b> · <b>Learn</b> · <b>Sign in</b> · <b>[Get early access]</b></div>
+<p>Five items, permanently. Industries, use cases, and stages never enter the nav — they're reached through the footer, the homepage, and hub pages. Use cases don't need a nav slot: their traffic arrives from search and AI answers, not from people browsing the header.</p>
+
+<h2><span class="n">2</span>Footer</h2>
+<table>
+<thead><tr><th>Column</th><th>Links</th></tr></thead>
+<tr><td>Product</td><td>How it works · Pricing · Mobile app · Sign in</td></tr>
+<tr><td>Features</td><td>Call forwarding · Business texting · Voicemail · Extensions · Business caller ID · Slack notifications → "All features"</td></tr>
+<tr><td>Industries</td><td>The current 8 industries in the established order → "See all" once the <code>/for/</code> index exists</td></tr>
+<tr><td>Use cases</td><td>Top 5–6 situations (ring multiple cell phones, keep your personal number private, forward calls to your cell…) → "All use cases"</td></tr>
+<tr><td>Learn</td><td>Pillar guides + business-number pages → "All guides"</td></tr>
+<tr><td>Company</td><td>About · Contact · Support</td></tr>
+</table>
+<p>Same rule as v1: each column is a curated top set capped at ~8 links; the hub index carries the full list, so the footer never grows again. The brand paragraph stays verbatim above the columns — it's the canonical entity definition (§8).</p>
+<div class="callout"><span class="tag">Do now</span><p>Rename "Phone systems for" → <strong>"Industries"</strong> and "Compare / Learn" → <strong>"Learn"</strong>; remove the Google Voice alternative link and <code>noindex</code> that page. Three small edits, no page moves.</p></div>
+
+<h2><span class="n">3</span>The four hubs</h2>
+<table>
+<thead><tr><th>Hub</th><th>Label</th><th>What belongs under it</th></tr></thead>
+<tr><td><code>/for/</code></td><td>Industries</td><td>Industries (plumbers, law firms…) and business stages (startups, LLCs, solo founders). One hub for the whole "who" axis; the index groups by category.</td></tr>
+<tr><td><code>/features/</code></td><td>Features</td><td>One page per capability — call forwarding, business texting, voicemail, extensions, caller ID, greetings — plus connections (Slack notifications, WhatsApp, webhooks) as a "Connections" section on the index. <code>features.html</code> becomes the index at the same URL. If connections ever number in the dozens, that index section can split into its own hub with a mechanical batch of 301s — designed for, not built.</td></tr>
+<tr><td><code>/use-cases/</code></td><td>Use cases</td><td>Real-world situations, one per page: "rings multiple cell phones," "keep my personal number private," "business phone for overseas assistants." Distinct template: direct answer up top → the Numberline setup (hero-shot style mockup) → the features it uses → CTA. Commercial intent, unlike Learn.</td></tr>
+<tr><td><code>/learn/</code></td><td>Learn</td><td>Everything educational: pillar guides, business-number pages (local, toll-free, second number) as a "Business numbers" index section, scripts and templates, etiquette. This is the thousands-of-pages hub; all sub-categorization lives on the index page, never in URLs.</td></tr>
+</table>
+<p><strong>Reserved, absent from the roadmap:</strong> <code>/compare/</code>. When comparison pages make sense post-launch, they land there without touching anything above. That's the entire plan for them.</p>
+
+<h2><span class="n">4</span>Why use cases are their own type</h2>
+<p>Situation queries — "business phone that rings multiple cell phones," "keep my personal number private" — are how people phrase problems to AI assistants, and they're the queries where a small brand can win outright because the best answer is a specific setup, not a listicle. They don't fit the other types:</p>
+<ul>
+<li>Not <strong>features</strong> — a situation usually composes several features (forwarding + shared texting + after-hours routing).</li>
+<li>Not <strong>industries</strong> — the same situation cuts across plumbers, consultants, and law firms.</li>
+<li>Not <strong>guides</strong> — the reader wants a working setup and a next step, not education.</li>
+</ul>
+<p>Filing them under Learn (v1) would have made Learn a junk drawer of mixed intent by page 200. A dedicated type gives them a repeatable template today — which makes manual maintenance <em>easier</em>, since each new use case is a fill-in of a known shape — and gives industry pages their natural cross-link target ("Plumbers use these setups: …").</p>
+
+<h2><span class="n">5</span>URL structure</h2>
+<div class="tree">/ &nbsp;/how-it-works &nbsp;/pricing &nbsp;/about &nbsp;/early-access<br>
+<b>/for/</b>plumbers · law-firms · startups · solo-founders … <span class="c">(industries + stages)</span><br>
+<b>/features/</b>call-forwarding · business-texting · voicemail · slack-notifications …<br>
+<b>/use-cases/</b>ring-multiple-cell-phones · keep-your-personal-number-private …<br>
+<b>/learn/</b>business-phone-number · toll-free-business-number · voicemail-greeting-scripts …<br>
+<b>/compare/</b> <span class="c">(reserved, empty, post-launch)</span></div>
+<p>Rules unchanged from v1: two levels maximum; slugs lowercase and hyphenated; one topic = one URL forever (rewrite in place, never fork a near-duplicate); drop <code>.html</code> now via Netlify pretty URLs + 301s in <code>_redirects</code> + canonicals, while the index is small.</p>
+
+<h2><span class="n">6</span>Internal linking</h2>
+<p>Same three standardized blocks per page (breadcrumb with schema, descriptive in-body links, a "Related" block before the footer), with use cases added to the cross-type rules:</p>
+<ul>
+<li><strong>Industry pages</strong> → 2–3 features + <strong>2 use cases common in that vertical</strong> + 1 learn guide.</li>
+<li><strong>Use-case pages</strong> → every feature in the setup + 1–2 industries where it's typical + 1 guide.</li>
+<li><strong>Feature pages</strong> → 2 use cases that showcase the feature + 1–2 industries + hub.</li>
+<li><strong>Learn pages</strong> → 2–3 features + 1–2 use cases or industries + 1 sibling guide.</li>
+</ul>
+<p><span class="rule">Publish rule (unchanged):</span> no page ships with fewer than 3 inbound links — hub index + 2 related pages, updated in the same commit.</p>
+
+<h2><span class="n">7</span>Existing pages under v2</h2>
+<table>
+<thead><tr><th>Page</th><th>Home</th><th>Change from v1</th></tr></thead>
+<tr><td>Core pages + all 8 <code>for/</code> pages</td><td>Unchanged</td><td>None — already correct.</td></tr>
+<tr><td>learn/ pillar guides (business phone number, virtual phone system, small business phone system, personal cell vs business phone)</td><td><code>/learn/</code></td><td>None — Learn's spine.</td></tr>
+<tr><td>learn/local-business-phone-number, toll-free-business-number</td><td><code>/learn/</code> — <strong>stay put</strong></td><td>v1 moved them to <code>/numbers/</code>; v2 cancels the move. They become the "Business numbers" section of the Learn index.</td></tr>
+<tr><td>learn/bring-your-own-ai</td><td><code>/learn/</code> — stays</td><td>v1 sent it to <code>/integrations/</code>. It reads as education about connecting third-party services — correct in Learn, and it keeps AI answering framed as third-party rather than a Numberline feature.</td></tr>
+<tr><td>learn/slack-notifications, learn/mobile-app</td><td>→ <code>/features/…</code> when the hub launches</td><td>Same intent as v1, simpler destination (features, not integrations). 301s in <code>_redirects</code>. The only two page moves left in the whole plan.</td></tr>
+<tr><td>learn/google-voice-alternative</td><td>Held → <code>/compare/</code> someday</td><td>Now: de-link from footer + <code>noindex</code>. Nothing else, per §0.</td></tr>
+</table>
+
+<h2><span class="n">8</span>Next pages to build (beta)</h2>
+<h3>Industries — /for/</h3>
+<p><strong>Electricians · HVAC · cleaning services · dentists · accountants.</strong> Adjacent to proven templates, same page formula.</p>
+<h3>Stages — /for/</h3>
+<p><strong>Startups · new LLCs · solo founders.</strong> "Start with a business number, grow into a phone system" is literally their story.</p>
+<h3>Use cases — /use-cases/</h3>
+<p><strong>Ring multiple cell phones · keep your personal number private · forward business calls to your cell · after-hours call routing · business phone while traveling · overseas assistants.</strong> Build the template once, then these are the cheapest high-leverage pages on the roadmap.</p>
+<h3>Features — /features/</h3>
+<p><strong>Call forwarding · business texting · voicemail (+ transcripts) · extensions · business caller ID.</strong> Build early — every industry and use-case page needs them as link targets.</p>
+<h3>Learn — /learn/</h3>
+<p><strong>Voicemail greeting scripts · phone menu (extension) examples · call forwarding guide · business texting templates · second business number.</strong> Scripts/templates earn citations pre-launch without signaling positioning.</p>
+
+<h2><span class="n">9</span>How this scales without reorganizing</h2>
+<ul>
+<li><strong>60 → 200 pages:</strong> nothing structural changes. Hub indexes gain sub-sections; footer columns stay capped and curated. The one planned promotion — <code>features.html</code> becomes the <code>/features/</code> index — happens at the same URL.</li>
+<li><strong>200 → thousands:</strong> still four hubs. Learn's index grows real sub-category sections (Guides / Business numbers / Scripts &amp; templates / Etiquette); <code>/for/</code> groups industries by category. If connections outgrow the Features index, that one section splits to <code>/integrations/</code> with batch 301s — the single pre-designed escape hatch. <code>/compare/</code> opens post-launch as pure addition.</li>
+<li><strong>AI search practices (unchanged from v1):</strong> canonical entity paragraph everywhere + <code>Organization</code> schema + <code>llms.txt</code>; a 40–60-word liftable answer under every H1; real-question FAQ blocks with <code>FAQPage</code> schema; depth over breadth while the domain is young; per-hub <code>sitemap.xml</code> segments; terminology discipline as entity hygiene; tag AI-assistant referrers in analytics from day one.</li>
+</ul>
+
+<h2 style="border-top:2px solid var(--ink)"><span class="n">10</span>Addendum — knowledge-graph review</h2>
+<p class="lead">Stress test before locking: if the goal is the world's best knowledge graph around business communications for small businesses — not an SEO site — does this architecture hold? Short answer: <strong>the folders hold; what's missing is an explicit topic layer on top of them.</strong> Folders are a filing system. The graph is expressed by pillar pages and links, and links don't care which folder a page lives in.</p>
+
+<h3>10.1 The true parent topics</h3>
+<p>Ten pillars will each accumulate 10–30 children. Each pillar already has (or is planned to have) one canonical page; its children deliberately span hubs:</p>
+<table>
+<thead><tr><th>Pillar</th><th>Canonical page</th><th>Children it will parent (examples)</th></tr></thead>
+<tr><td>Business phone number</td><td><code>/learn/business-phone-number</code></td><td>Local · toll-free · second number · how to get one · keep/port your existing number · business vs personal number · business SMS number</td></tr>
+<tr><td>Call forwarding &amp; routing</td><td><code>/features/call-forwarding</code></td><td>Forward calls to your cell · ring multiple cell phones · after-hours routing · forward overseas · scheduled &amp; holiday routing</td></tr>
+<tr><td>Business texting</td><td><code>/features/business-texting</code></td><td>Shared texting · text from your business number · shared inbox · texting templates · customer text messaging</td></tr>
+<tr><td>Voicemail</td><td><code>/features/voicemail</code></td><td>Shared voicemail · transcripts · greeting scripts · after-hours voicemail · holiday greetings</td></tr>
+<tr><td>Greetings, extensions &amp; menus</td><td><code>/features/extensions</code></td><td>Phone menu (tree) examples · extension setups · greeting examples · phone etiquette</td></tr>
+<tr><td>Answering coverage</td><td>a future <code>/learn/</code> guide (who answers when you can't)</td><td>Remote receptionist · overseas assistants · third-party AI answering · answering-service routing — always framed as routing to providers, never Numberline answering</td></tr>
+<tr><td>Starting a business</td><td><code>/for/startups</code></td><td>LLCs · solo founders · before hiring employees · new businesses · one-person businesses</td></tr>
+<tr><td>Privacy &amp; the personal number</td><td><code>/learn/personal-cell-vs-business-phone-system</code></td><td>Keep your personal number private · business caller ID · work-life separation · business phone while traveling</td></tr>
+<tr><td>Business phone systems</td><td><code>/learn/small-business-phone-system</code></td><td>Virtual phone system · do I need a phone system · what it costs · phone system vs answering service</td></tr>
+<tr><td>Modern teams</td><td>a future <code>/learn/shared-team-phone</code> guide</td><td>Unlimited users vs per-seat pricing · shared inbox · team texting · remote teams · contractors · permissions · working from anywhere — owns the unlimited-users differentiator. Overlaps keep one owner: overseas assistants stay with Answering coverage, caller ID and traveling with Privacy; cross-link, never duplicate.</td></tr>
+</table>
+<p>Each industry page eventually becomes a small pillar of its own (plumber voicemail scripts, law-firm intake routing) — same mechanics, later.</p>
+
+<h3>10.2 Are the hubs artificial SEO buckets?</h3>
+<p>Honest verdict: the four hubs are <strong>content types</strong>, not knowledge areas — <code>/for/</code> = audience pages, <code>/features/</code> = capability pages, <code>/use-cases/</code> = situation pages, <code>/learn/</code> = explainers. That is correct design, not a flaw: content types tell you what template a page uses and give URLs a permanent home; knowledge areas are the pillars in 10.1, and every pillar's children deliberately cross hub lines (Call Forwarding parents a feature page, three use cases, and a guide). The one real bucket risk is <strong>Learn as a catch-all</strong> — mitigated exactly by pillar ownership: a page's true parent is its pillar, and the Learn index groups by pillar, so the folder never has to carry meaning.</p>
+
+<h3>10.3 Does every conceivable question have a home?</h3>
+<p>Test by question shape rather than keyword:</p>
+<table>
+<thead><tr><th>Question shape</th><th>Home</th></tr></thead>
+<tr><td>"What is X / how does X work / how do I…"</td><td><code>/learn/</code></td></tr>
+<tr><td>"I'm in situation Y — what setup do I need?"</td><td><code>/use-cases/</code></td></tr>
+<tr><td>"I run a [business type] — what should I use?"</td><td><code>/for/</code></td></tr>
+<tr><td>"Can it do X?"</td><td><code>/features/</code></td></tr>
+<tr><td>"X vs Y / alternatives to X"</td><td><code>/compare/</code> (reserved)</td></tr>
+<tr><td>"How do I do X <em>in Numberline</em>?"</td><td>The one true gap: product-usage questions belong in a help center, not marketing. Reserve <code>/help/</code> for post-launch — same hub mechanics, separate surface.</td></tr>
+</table>
+<p>Every business-communications question ChatGPT will be asked resolves to one of those six shapes, so the answer is yes — with <code>/help/</code> reserved alongside <code>/compare/</code>.</p>
+
+<h3>10.4 What to change: add the topic layer, touch nothing else</h3>
+<p>No URL, nav, or folder changes. Four editorial mechanisms turn the page collection into a graph:</p>
+<ul>
+<li><span class="rule">Maintain a topic map.</span> One flat editorial file — now created as <code>topics.md</code> at the repo root: every pillar, every child, every question each page answers, one URL per question. Since the site is maintained manually, this file — not a CMS — is the knowledge graph's source of truth. A proposed page that has no parent pillar in the map is a page that shouldn't be written.</li>
+<li><span class="rule">One question, one URL, everywhere.</span> The map assigns each question to exactly one page; every other page that touches the question links to it instead of re-answering it. This is the single biggest behavioral difference between a knowledge graph and an SEO page pile — no cannibalization, and AI engines see one authoritative answer per question.</li>
+<li><span class="rule">Bidirectional pillar links as law.</span> Every child links UP to its pillar on first mention (descriptive anchor, in the opening paragraph). Every pillar links DOWN to all its children in a structured "In this topic" section that grows over time — pillar pages, not folders, are the graph's real hubs. Add a "Part of:" line to the standard Related block.</li>
+<li><span class="rule">One canonical definition per entity.</span> Like the brand paragraph, each pillar term (business phone number, call forwarding, shared inbox…) gets a single reusable definition sentence used verbatim wherever the term is introduced. Consistent definitions across hundreds of pages are what make a model treat the site as the authority on the entity.</li>
+</ul>
+<p>Locked, the model reads: <strong>four content-type folders for URL stability · ten topic pillars for meaning · links carry the graph.</strong> That combination is timeless — pillars and children can grow indefinitely without a single URL ever needing to move.</p>
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>

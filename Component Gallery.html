@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Numberline Component Gallery (internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<link rel="stylesheet" href="assets/canon.css?v=6">
+<link rel="stylesheet" href="docs/marketing/components/preview.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:0;background:#EEF0F4;font-family:'Plus Jakarta Sans',sans-serif;color:#1F2329}
+a{color:#1F2329}a:hover{color:#4353FF}
+.g-head{background:#fff;border-bottom:1px solid #E5E7EB;padding:28px 32px}
+.g-head h1{margin:0 0 6px;font-family:'Figtree',sans-serif;font-weight:900;font-size:26px;letter-spacing:-.01em}
+.g-head p{margin:0;font-size:14px;color:#5B616B;max-width:820px;line-height:1.55}
+.g-head code{font-family:'Spline Sans Mono',monospace;font-size:12.5px;background:#F3F4F6;padding:1px 5px;border-radius:4px}
+.g-toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.g-toc a{font-size:12.5px;font-weight:700;text-decoration:none;background:#F3F4F6;border:1px solid #E5E7EB;border-radius:99px;padding:5px 12px}
+.g-toc a:hover{border-color:#4353FF}
+.g-item{margin:36px 32px}
+.g-meta{background:#fff;border:1px solid #E5E7EB;border-radius:12px 12px 0 0;padding:16px 20px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline}
+.g-meta h2{margin:0;font-family:'Figtree',sans-serif;font-weight:800;font-size:17px}
+.g-meta .g-tag{font-family:'Spline Sans Mono',monospace;font-size:11.5px;color:#5B616B}
+.g-meta .g-tag b{color:#1F2329;font-weight:600}
+.g-meta .g-warn{font-size:11.5px;font-weight:700;color:#92400E;background:#FEF3C7;border-radius:99px;padding:2px 10px}
+.g-what{background:#fff;border:1px solid #E5E7EB;border-top:0;padding:10px 20px;margin:0;font-size:13.5px;line-height:1.5;color:#3F4753}
+.g-what+.g-stage{border-radius:0 0 12px 12px}
+.g-stage{border:1px solid #E5E7EB;border-top:0;border-radius:0 0 12px 12px;overflow:hidden;background:#fff}
+.g-stage.pad{padding:32px}
+.g-err{padding:20px;font-family:'Spline Sans Mono',monospace;font-size:12.5px;color:#B91C1C}
+@media(max-width:720px){.g-item{margin:24px 12px}.g-head{padding:20px 16px}}
+.g-stage.narrow>*{max-width:720px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+<header class="g-head">
+<h1>Component Gallery</h1>
+<p>Internal page. Every marketing primitive rendered live from its canonical specimen in <code>docs/marketing/components/</code>, styled by <code>assets/site.css</code> + <code>assets/canon.css</code>. To change one: edit the specimen markup, or the shared styles in canon.css, then update the owner page and every consumer in the same session (see IMPLEMENTATION_REGISTRY.md).</p>
+<nav class="g-toc" id="toc"></nav>
+</header>
+<main id="gallery"></main>
+<script>
+const items=[
+{n:"Nav",f:"nav",owner:"index.html",who:"every page (33 files, manifest-driven)",pad:false,what:"Site-wide navigation. One markup everywhere; only sanctioned variant is the early-access #join CTA."},
+{n:"Footer",f:"footer",owner:"index.html",who:"standard + held pages (31 files)",pad:false,what:"Entrance to the knowledge graph: verbatim brand entity paragraph + 6 link columns under a capacity rule."},
+{n:"Hero shell",f:"hero-shell",owner:"use-cases/ring-multiple-cell-phones.html",who:"5 reference pages",pad:false,what:"Page-opening composition: eyebrow, answer-first H1, lede, CTA row, hero visual."},
+{n:"Function List (.hsteps)",f:"function-list",owner:"index.html hero",who:"industry + learn pages",pad:true,what:"The signature how-it-works list: one row per product function, each wearing its fixed function color."},
+{n:"Sample Setup, tree form",f:"sample-setup-tree",owner:"use-cases/ring-multiple-cell-phones.html",who:"for/startups, features/call-forwarding",pad:true,what:"Business number on top, tree connectors down to function-colored destinations. Shows a real setup, not settings."},
+{n:"Sample Setup, call-flow form",f:"sample-setup-call-flow",owner:"for/plumbers.html",who:"all 8 industry pages",pad:true,narrow:true,what:"The hero 'shot': greeting, keypress, and where the call lands, told as one caller's journey."},
+{n:"Event Sequence (.seq)",f:"event-sequence",owner:"use-cases/ring-multiple-cell-phones.html",who:"call-forwarding, startups",pad:true,what:"A call told over time: ring, answer, miss, voicemail, follow-up. Teaches behavior, not configuration."},
+{n:"Setup Variations (.vars)",f:"setup-variations",owner:"rings page",who:"call-forwarding",pad:true,what:"Two or three small setup diagrams side by side: same feature, different businesses."},
+{n:"Made Of rows (.uses)",f:"made-of-rows",owner:"rings page",who:"call-forwarding",pad:true,what:"'This page's setup is made of' rows linking each function to its feature page. Lateral graph movement."},
+{n:"Now vs Later (.nvl)",f:"now-vs-later",owner:"for/startups.html",who:"startups only (by design)",pad:true,what:"Left: the working day-one setup. Right: features added later, on the same number."},
+{n:"Setup Picker (.pick)",f:"decision-table",owner:"features/call-forwarding.html",who:"feature pages",pad:true,what:"Recognizable business scenarios (owner only / owner + assistant / whole team), then one after-hours modifier. Never raw routing modes."},
+{n:"Comparison Table (.cmp)",f:"comparison-table",owner:"for/plumbers.html",who:"industry + learn pages (14 tables)",pad:true,what:"Verified product-data rows: alternatives carry only qualified red \u2715 chips, Numberline only green \u2713 chips from the approved pool."},
+{n:"FAQ accordion",f:"faq",owner:"rings page",who:"every page with a visible FAQ",pad:true,what:"Native details/summary accordion; questions mirror the page's FAQPage schema."},
+{n:"Closer card",f:"closer",owner:"rings page",who:"every page",pad:true,what:"Final CTA: one promise restated, ONE primary action (Get early access + guillemet), optional stamp, optional trust micro-line. Section + card styles live in canon.css; pages never restyle .closer locally."},
+{n:"Section header (.sec-head)",f:"section-header",owner:"rings page",who:"every page",pad:true,what:"Heading + optional support line. Kicker pills are retired; headings stand alone."},
+{n:"Topic Index (.tix)",f:"topic-index",owner:"learn/index.html",who:"all hub pages",pad:true,what:"Hub roster: every live page in the family, one row each. Hubs carry the full roster by law."},
+{n:"Number Card (.numcard)",f:"number-card",owner:"numbers/index.html",who:"/numbers/ family",pad:true,what:"One card per NUMBER TYPE a business can get: local, toll-free, or bring-your-own. The big number is a fictional 555-01XX specimen showing what each type looks like to callers; chips state type + place. Card links to that type's page."},
+{n:"Number Picker (.resv)",f:"number-picker",owner:"numbers/boston.html",who:"/numbers/ family heroes",pad:true,narrow:true,what:"The storefront moment: browsable inventory of available specimen numbers on city/type pages."},
+{n:"Trust Strip (.strip)",f:"trust-strip",owner:"for/plumbers.html",who:"every landing page below hero",pad:false,what:"Four icon + phrase reassurances directly under the hero."},
+{n:"Hero CTA block",f:"hero-cta-block",owner:"learn/business-phone-number.html",who:"every landing hero",pad:true,narrow:true,what:"CTA law: 'See how it works' left, 'Get early access \u00bb' right, checkmark bullets below in canonical order."}
+];
+const toc=document.getElementById("toc"),main=document.getElementById("gallery");
+items.forEach(async it=>{
+  toc.insertAdjacentHTML("beforeend",`<a href="#c-${it.f}">${it.n}</a>`);
+  const sec=document.createElement("section");
+  sec.className="g-item";sec.id="c-"+it.f;
+  sec.innerHTML=`<div class="g-meta"><h2>${it.n}</h2><span class="g-tag">edit: <b>docs/marketing/components/${it.f}.html</b></span><span class="g-tag">owner: <b>${it.owner}</b></span><span class="g-tag">consumers: <b>${it.who}</b></span>${it.warn?`<span class="g-warn">${it.warn}</span>`:""}</div>${it.what?`<p class="g-what">${it.what}</p>`:""}<div class="g-stage${it.pad?" pad":""}${it.narrow?" narrow":""}"><div class="g-err">loading…</div></div>`;
+  main.appendChild(sec);
+  const stage=sec.querySelector(".g-stage");
+  try{
+    const r=await fetch(`docs/marketing/components/${it.f}.html`);
+    if(!r.ok)throw new Error(r.status);
+    let html=await r.text();
+    html=html.replace(/^\s*<!--[\s\S]*?-->/,"").replace(/<link[^>]*rel="stylesheet"[^>]*>/g,"");
+    stage.innerHTML=html;
+  }catch(e){stage.innerHTML=`<div class="g-err">Could not load specimen: docs/marketing/components/${it.f}.html (${e.message})</div>`;}
+});
+document.addEventListener("click",e=>{
+  const q=e.target.closest(".faq-q,.fq,summary");if(!q)return;
+  const item=q.closest(".faq-item,.fitem,details");if(item&&item.tagName!=="DETAILS"){e.preventDefault();item.classList.toggle("open");}
+});
+</script>
+</body>
+</html>

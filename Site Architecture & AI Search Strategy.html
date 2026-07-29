@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numberline — Site Architecture &amp; AI Search Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Figtree:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+doc-page{--ink:#131316;--body:#4A4A52;--muted:#6E7480;--line:#E8EAEE;--soft:#F6F6F7;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;
+font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);font-size:14.5px;line-height:1.62}
+doc-page a{color:#3E45C7;text-decoration:none}doc-page a:hover{text-decoration:underline}
+h1,h2,h3{font-family:'Figtree',sans-serif;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:30px;font-weight:800;line-height:1.15;margin:0 0 6px}
+.doc-meta{color:var(--muted);font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin:0 0 26px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+h2{font-size:19px;font-weight:700;margin:34px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+h2 .n{color:var(--cta);margin-right:8px}
+h3{font-size:15px;font-weight:700;margin:20px 0 6px}
+p{margin:0 0 10px;color:var(--body)}
+p.lead{color:var(--ink);font-size:15.5px}
+ul,ol{margin:0 0 12px;padding-left:20px;color:var(--body)}
+li{margin:3px 0}
+strong{color:var(--ink)}
+code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.88em;background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--ink);white-space:nowrap}
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:13px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 10px;border-bottom:2px solid var(--ink)}
+td{padding:7px 10px;border-bottom:1px solid var(--line);color:var(--body);vertical-align:top}
+td:first-child{color:var(--ink);font-weight:600}
+.callout{background:var(--beige);border:1px solid #E5E1D6;border-radius:10px;padding:14px 18px;margin:12px 0 16px;break-inside:avoid;orphans:3;widows:3}
+.callout p{margin:0}.callout p+p{margin-top:8px}
+.callout .tag{display:inline-block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);background:#A2FBEF;border-radius:4px;padding:2px 8px;margin-bottom:6px}
+.rule{font-weight:700;color:var(--ink)}
+.tree{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;line-height:1.75;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:10px 0 16px;color:var(--body);break-inside:avoid}
+.tree b{color:var(--ink)}
+.tree .c{color:var(--muted)}
+</style>
+</head>
+<body>
+<doc-page margin="0.85in">
+<h1>Marketing site architecture &amp; AI search strategy</h1>
+<p class="doc-meta">Numberline · Growth engineering memo · July 2026</p>
+<p class="lead">Goal: an information architecture that ships the early-access site as-is today and absorbs thousands of pages over five years without a reorganization. The design principle throughout: <strong>the nav never scales — hubs scale.</strong> Navigation and footer point at a small, fixed set of hub pages; every future page is a spoke under one of them.</p>
+
+<h2><span class="n">1</span>Navigation</h2>
+<p>Keep the top nav at five items, permanently. It already links three of the four hubs it will ever need — add <strong>Learn</strong> and stop.</p>
+<div class="tree"><b>How it works</b> · <b>Features</b> · <b>Pricing</b> · <b>Learn</b> <span class="c">← add</span> · <b>Sign in</b> · <b>[Get early access]</b></div>
+<ul>
+<li><strong>Never put industries in the nav.</strong> At 8 pages a dropdown looks thin; at 80 it's unusable. Industries live in the footer, on the homepage, and on the <code>/for/</code> hub.</li>
+<li><strong>Features</strong> points at <code>features.html</code> today and at the <code>/features/</code> hub when individual feature pages exist — same nav item, no change ever needed.</li>
+<li>Post-launch additions (Integrations, Compare) also enter as footer hubs, not nav items. The nav is a product statement, not a sitemap.</li>
+</ul>
+
+<h2><span class="n">2</span>Footer</h2>
+<p>The footer is the sitemap-in-miniature: one column per hub, each showing a <em>curated</em> top set plus a "See all →" link to the hub page. The hub carries the full list; the footer never grows past ~8 links per column.</p>
+<table>
+<thead><tr><th>Column</th><th>Links</th></tr></thead>
+<tr><td>Product</td><td>How it works · Pricing · Mobile app · Slack notifications · Third-party AI services · Sign in <em>(Integrations links move to their own column when <code>/integrations/</code> launches)</em></td></tr>
+<tr><td>Features</td><td>Call forwarding · Business texting · Voicemail · Extensions · Business caller ID · Greetings → "All features"</td></tr>
+<tr><td>Phone systems for</td><td>Current 8 industries (in the established order) → "All industries" once <code>/for/</code> index exists. Keep this human label — it outperforms "Solutions" and "Industries" for both users and AI-engine comprehension.</td></tr>
+<tr><td>Learn</td><td>5–7 pillar guides (business phone number, virtual phone system, small business phone system, personal cell vs business phone…) → "All guides"</td></tr>
+<tr><td>Company</td><td>About · Contact · Support</td></tr>
+</table>
+<div class="callout"><span class="tag">Do now</span><p>Rename the current "Compare / Learn" column to <strong>Learn</strong> and remove the Google Voice alternative link from it. That page is exactly the competitor-signaling content you've decided to defer — see §6.</p></div>
+<p>Keep the brand paragraph above the columns verbatim. It is the canonical entity definition AI engines will quote — every page carrying the identical paragraph is a feature, not repetition (§8).</p>
+
+<h2><span class="n">3</span>Directory (hub) pages</h2>
+<p>Six hubs, four live in year one. Each hub page is a real page — an indexed, linkable directory with a one-paragraph framing and a categorized list of every child.</p>
+<table>
+<thead><tr><th>Hub</th><th>What belongs under it</th><th>When</th></tr></thead>
+<tr><td><code>/for/</code></td><td>Everyone the product is <em>for</em>: industries (plumbers, law firms…) AND business stages (startups, LLCs, solo founders). One hub covers both, so you never face an "/industries vs /startups" split later. Hub index groups by category.</td><td>Build index during beta (8 pages already justify it)</td></tr>
+<tr><td><code>/features/</code></td><td>One page per capability: call forwarding, business texting, voicemail, extensions, caller ID, greetings, after-hours routing. <code>features.html</code> becomes the hub index.</td><td>Beta — start with 4–5</td></tr>
+<tr><td><code>/numbers/</code></td><td>One page per number type: local, toll-free, second business number, virtual number, business SMS number. Positioning is "business number first" — the number is the front door and deserves its own hub rather than burial in Learn.</td><td>Beta — hub + 3 pages</td></tr>
+<tr><td><code>/learn/</code></td><td>Everything educational: pillar guides, use-case answer pages ("business phone that rings multiple cell phones"), scripts and templates. This becomes the thousands-of-pages hub; sub-categorize on the hub page (Guides / Use cases / Scripts &amp; templates), not in the URL.</td><td>Live — add index page</td></tr>
+<tr><td><code>/integrations/</code></td><td>Slack, WhatsApp, webhooks, third-party AI answering services — one page per connection, always framed as "connect when you need it."</td><td>Post-launch</td></tr>
+<tr><td><code>/compare/</code></td><td>Reserved. All "X alternative" and "Numberline vs X" pages land here after launch. Reserving the path now means adding comparisons later touches zero existing URLs.</td><td>Post-launch only</td></tr>
+</table>
+
+<h2><span class="n">4</span>URL structure</h2>
+<div class="tree">/ &nbsp;/how-it-works &nbsp;/pricing &nbsp;/about &nbsp;/early-access<br>
+<b>/for/</b>plumbers · law-firms · startups · llcs … <span class="c">(industries + stages)</span><br>
+<b>/features/</b>call-forwarding · business-texting · voicemail …<br>
+<b>/numbers/</b>local · toll-free · second-business-number …<br>
+<b>/learn/</b>business-phone-number · ring-multiple-cell-phones · voicemail-greeting-scripts …<br>
+<b>/integrations/</b>slack · whatsapp · webhooks · ai-answering <span class="c">(later)</span><br>
+<b>/compare/</b>google-voice-alternative · … <span class="c">(reserved, post-launch)</span></div>
+<ul>
+<li><span class="rule">Two levels, maximum.</span> <code>/hub/slug</code>, never deeper. Categorization beyond that happens on hub pages, so pages can be re-grouped editorially without URL changes.</li>
+<li><span class="rule">Keep <code>/for/</code>.</span> It's already live, it reads as natural language ("Numberline for plumbers"), and it flexes across industries and audience stages where <code>/industries/</code> can't.</li>
+<li><span class="rule">One topic = one URL, forever.</span> A URL is a promise to search engines and AI indexes. If a page's angle changes, rewrite the content in place; never fork a near-duplicate slug.</li>
+<li><span class="rule">Drop <code>.html</code> now.</span> Netlify's "pretty URLs" serves <code>/for/plumbers</code> from <code>for/plumbers.html</code>; add <code>.html→extensionless</code> 301s in <code>_redirects</code> and a canonical tag on every page. Pre-launch is the only free moment to do this.</li>
+<li>Slugs: lowercase, hyphenated, no dates, no stop-words unless the phrase needs them (<code>personal-cell-vs-business-phone</code> is fine).</li>
+</ul>
+
+<h2><span class="n">5</span>Internal linking</h2>
+<p>The knowledge graph comes from <em>standardized blocks</em>, not ad-hoc links. Every spoke page carries three:</p>
+<ol>
+<li><strong>Breadcrumb</strong> to its hub (<code>Learn → Business phone number</code>) — with BreadcrumbList schema.</li>
+<li><strong>In-body contextual links</strong> where a feature, number type, or industry is mentioned, using descriptive anchors that match the target's H1 ("shared business texting", not "learn more").</li>
+<li><strong>A "Related" block</strong> before the footer, cross-type by rule:
+<ul><li>Industry pages → 3 features that vertical leans on + 2 learn guides + the relevant number type.</li>
+<li>Learn pages → 2–3 features + 1–2 industries where the answer applies + 1 sibling guide.</li>
+<li>Feature pages → 2–3 industries that showcase it + 1–2 guides + hub.</li>
+<li>Number pages → the pillar business-phone-number guide + 2 features + 1 industry.</li></ul></li>
+</ol>
+<p><span class="rule">Publish rule:</span> no page ships with fewer than 3 inbound links — add it to its hub index and to 2 related pages in the same commit. The three pillar guides (business phone number, virtual phone system, small business phone system) act as connective tissue and should eventually link to nearly everything.</p>
+
+<h2><span class="n">6</span>Existing pages, reorganized</h2>
+<table>
+<thead><tr><th>Page</th><th>Home</th><th>Why</th></tr></thead>
+<tr><td>index, how-it-works, features, pricing, about, early-access, signin/signup</td><td>Root (unchanged)</td><td>Core product narrative; small fixed set. <code>features.html</code> is promoted to the <code>/features/</code> hub index when feature pages exist — same URL.</td></tr>
+<tr><td>for/ — all 8 industry pages</td><td><code>/for/</code> (unchanged)</td><td>Already correct: they're "who it's for" pages and the hub absorbs stage pages (startups, LLCs) alongside them.</td></tr>
+<tr><td>learn/business-phone-number, virtual-phone-system, small-business-phone-system, personal-cell-vs-business-phone-system</td><td><code>/learn/</code> (unchanged)</td><td>Pillar guides — the heart of the educational-authority strategy. They stay put as Learn's spine.</td></tr>
+<tr><td>learn/local-business-phone-number, toll-free-business-number</td><td>→ <code>/numbers/local</code>, <code>/numbers/toll-free</code></td><td>These are number-type pages with commercial intent, not guides. Move when the <code>/numbers/</code> hub launches, with 301s — avoids a Learn/Numbers duplicate pair later.</td></tr>
+<tr><td>learn/slack-notifications, bring-your-own-ai</td><td>→ <code>/integrations/slack</code>, <code>/integrations/ai-answering</code></td><td>They describe connections, not lessons. Keep in the Product footer column until the hub exists, then 301.</td></tr>
+<tr><td>learn/mobile-app</td><td>→ <code>/features/mobile-app</code></td><td>Product capability, not education. Move with the features hub.</td></tr>
+<tr><td>learn/google-voice-alternative</td><td>→ <code>/compare/google-voice-alternative</code>, <strong>held</strong></td><td>Violates the no-comparisons constraint you set. Now: remove from footer + add <code>noindex</code>. At launch: move to <code>/compare/</code>, index, and promote.</td></tr>
+</table>
+<p>Net effect: five pages get a planned one-time move with redirects, everything else never moves. <code>Extension Detail.html</code>, the studies, and <code>brand-colors.html</code> are internal artifacts — keep them out of <code>sitemap.xml</code>.</p>
+
+<h2><span class="n">7</span>Next pages to build (beta-appropriate)</h2>
+<h3>Industries — /for/</h3>
+<p>Adjacent to proven templates: <strong>electricians · HVAC · cleaning services · dentists · accountants</strong>. Same page formula (H1, hero setup shot, routing strip), vertical-specific routing labels.</p>
+<h3>Startup &amp; stage — /for/</h3>
+<p><strong>startups · new LLCs · solo founders</strong>. Highest positioning leverage: "start with a business number, grow into a phone system" is literally their story, and "before hiring employees" content has almost no credible competition.</p>
+<h3>Use cases — /learn/</h3>
+<p><strong>Ring multiple cell phones · keep your personal number private · business phone while traveling · after-hours call routing</strong>. These match how people actually phrase questions to AI assistants — each opens with a direct answer, then shows the Numberline setup.</p>
+<h3>Numbers — /numbers/</h3>
+<p>Hub index + <strong>second business number</strong> + the two moved pages (local, toll-free). Second-number intent is a natural early-adopter profile.</p>
+<h3>Features — /features/</h3>
+<p><strong>Call forwarding · business texting · voicemail (+ transcripts) · extensions · business caller ID</strong>. These five are what every industry and use-case page needs to link to — build them early so the internal graph has anchors.</p>
+<h3>Learn guides — /learn/</h3>
+<p><strong>Voicemail greeting scripts · phone menu (extension) examples · call forwarding guide · business texting templates</strong>. Scripts/templates content earns citations and links pre-launch without revealing competitive positioning.</p>
+
+<h2><span class="n">8</span>AI search &amp; SEO scalability</h2>
+<ul>
+<li><span class="rule">One canonical entity definition.</span> The footer paragraph is Numberline's machine-readable identity. Use it verbatim on every page, mirror it in <code>Organization</code> schema and an <code>llms.txt</code> at the root. Consistency across hundreds of pages is what teaches AI models what Numberline <em>is</em>.</li>
+<li><span class="rule">Answer-first pages.</span> Every spoke page opens with a 40–60-word direct answer under the H1 that an AI engine can lift whole. Structure the rest for extraction: numbered steps, tables, definition-style headings that are real questions.</li>
+<li><span class="rule">FAQ blocks with schema.</span> 3–5 genuinely asked questions per page, marked up as <code>FAQPage</code>; plus <code>BreadcrumbList</code> everywhere. No schema types you can't honestly claim (no fabricated reviews or ratings pre-launch).</li>
+<li><span class="rule">Depth beats breadth during beta.</span> Publish only pages with unique substance — a thin 300-word vertical page hurts the domain's authority-per-page average that AI retrieval implicitly scores. 30 excellent pages now outperform 100 templated ones.</li>
+<li><span class="rule">Hubs are the crawl surface.</span> Every page ≤2 clicks from home via its hub; segment <code>sitemap.xml</code> per hub so index coverage per category is measurable.</li>
+<li><span class="rule">Terminology discipline.</span> The existing copy conventions (mobile-first destinations, third-party AI answering, no enterprise language) are also entity hygiene — AI engines learn the product's shape from consistent phrasing. Keep enforcing them mechanically.</li>
+<li><span class="rule">Measure AI referrals now.</span> Tag traffic from AI-assistant referrers/user-agents in analytics from day one, so you have a baseline before the channel matters.</li>
+<li><span class="rule">Comparisons stay dark until launch</span> — but write them during beta and hold them, so <code>/compare/</code> can ship as a complete hub the week you launch instead of dripping out signals for months.</li>
+</ul>
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>

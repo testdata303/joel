@@ -1,0 +1,163 @@
+{
+ "$comment": "Authoritative manifest of active site files, consumed by tools/site-system.mjs (verify / apply / report) and by IMPLEMENTATION_REGISTRY.md consumer lists. Update in the same commit as any page added, held, or retired. To add a page: add an entry under pages with category/family/nav/footer/indexable, then run node tools/site-system.mjs verify. Variants must exist in variants{} before a page may declare them. Categories: standard = permanent product pages (Core), owner-approved Feature pages (/slack, /whatsapp), and Compare pages (/compare/*); campaign = /go/ marketing campaign pages (indexable, never linked from nav or footer, disposable; see docs/marketing/MARKETING.md); utility = sanctioned utility shell. The permanent site is intentionally small (owner decision 2026-07-29): Home, How it works & features, Pricing, About, Early access, Sign in. Everything else is a campaign page.",
+ "updated": "2026-07-29",
+ "origin": "https://numberline.com",
+ "specimens": {
+  "nav": "docs/marketing/components/nav.html",
+  "footer": "docs/marketing/components/footer.html",
+  "footer-utility": "docs/marketing/components/footer-utility.html"
+ },
+ "variants": {
+  "nav": {
+   "standard": "specimen verbatim",
+   "early-access-join": "specimen with both CTA hrefs pointing at #join; consumers: early-access.html only"
+  },
+  "footer": {
+   "standard": "footer specimen verbatim (entity paragraph + Product and Company columns)",
+   "utility": "footer-utility specimen (copyright line only); consumers: signin.html + signup.html only"
+  }
+ },
+ "comparison_consumers": [
+  "index.html",
+  "how-it-works.html",
+  "docs/marketing/templates/campaigns/vertical-plumbers.html",
+  "docs/marketing/templates/campaigns/vertical-contractors.html",
+  "docs/marketing/templates/campaigns/vertical-consultants.html",
+  "docs/marketing/templates/campaigns/vertical-interior-design.html",
+  "docs/marketing/templates/campaigns/vertical-medspas.html",
+  "docs/marketing/templates/campaigns/vertical-law-firms.html",
+  "docs/marketing/templates/campaigns/vertical-real-estate.html",
+  "compare/google-voice.html"
+ ],
+ "allowlist_local_patterns": {
+  "trigger-action": "index.html only; homepage trigger-to-action cards, renamed from .flow 2026-07-28; NOT the Call Flow component",
+  "scenario-tag": "campaign templates only (was for/startups.html); functional stage labels, NOT deprecated kickers"
+ },
+ "pages": {
+  "index.html": {
+   "category": "standard",
+   "family": "Core",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "canonical": "/",
+   "reference": false
+  },
+  "how-it-works.html": {
+   "category": "standard",
+   "family": "Core",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "reference": true
+  },
+  "pricing.html": {
+   "category": "standard",
+   "family": "Core",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "reference": false
+  },
+  "about.html": {
+   "category": "standard",
+   "family": "Core",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "reference": false
+  },
+  "early-access.html": {
+   "category": "standard",
+   "family": "Core",
+   "nav": "early-access-join",
+   "footer": "standard",
+   "indexable": true,
+   "reference": false
+  },
+  "slack.html": {
+   "category": "standard",
+   "family": "Feature",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "canonical": "/slack",
+   "reference": true
+  },
+  "whatsapp.html": {
+   "category": "standard",
+   "family": "Feature",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "canonical": "/whatsapp",
+   "reference": false
+  },
+  "ai-voice-agents.html": {
+   "category": "standard",
+   "family": "Feature",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "canonical": "/ai-voice-agents",
+   "reference": false
+  },
+  "compare/google-voice.html": {
+   "category": "standard",
+   "family": "Compare",
+   "nav": "standard",
+   "footer": "standard",
+   "indexable": true,
+   "canonical": "/compare/google-voice",
+   "reference": true
+  },
+  "signin.html": {
+   "category": "utility",
+   "family": "Utility",
+   "nav": "standard",
+   "footer": "utility",
+   "indexable": false,
+   "reference": false
+  },
+  "signup.html": {
+   "category": "utility",
+   "family": "Utility",
+   "nav": "standard",
+   "footer": "utility",
+   "indexable": false,
+   "reference": false
+  }
+ },
+ "campaign_templates": [
+  "docs/marketing/templates/campaigns/vertical-plumbers.html",
+  "docs/marketing/templates/campaigns/vertical-contractors.html",
+  "docs/marketing/templates/campaigns/vertical-consultants.html",
+  "docs/marketing/templates/campaigns/vertical-interior-design.html",
+  "docs/marketing/templates/campaigns/vertical-law-firms.html",
+  "docs/marketing/templates/campaigns/vertical-medspas.html",
+  "docs/marketing/templates/campaigns/vertical-real-estate.html",
+  "docs/marketing/templates/campaigns/vertical-startups.html",
+  "docs/marketing/templates/campaigns/industries-hub.html",
+  "docs/marketing/templates/campaigns/numbers-hub.html",
+  "docs/marketing/templates/campaigns/city-boston.html",
+  "docs/marketing/templates/campaigns/number-type-vanity.html",
+  "docs/marketing/templates/comparison-alternative-page.html"
+ ],
+ "internal_artifacts": [
+  "Extension Detail.html",
+  "Component Gallery.html",
+  "Accent Study.html",
+  "Type Study.html",
+  "brand-colors.html",
+  "Site Architecture & AI Search Strategy.html",
+  "Site Architecture & AI Search Strategy v2.html",
+  "app/",
+  "docs/",
+  "screenshots/",
+  "uploads/",
+  "tools/"
+ ],
+ "generated_or_stale": [
+  "export/"
+ ]
+}

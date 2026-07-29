@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Using AI Voice Agents | Numberline</title>
+<meta name="description" content="Numberline is the permanent layer between your business and AI voice agents: forward extensions and after-hours calls to the agent or answering service you choose, and change it anytime. Your number stays put.">
+<link rel="canonical" href="/ai-voice-agents">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
+<link rel="icon" href="favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="favicon-180.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=3">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --ink:#131316;--body:#3c4147;--muted:#838995;--line:#E8EAEE;--soft:#F1F3F6;--bg:#FFFFFF;
+    --accent:#131316;--accent-dark:#33333A;--neon:#A2FBEF;--beige:#F4F2ED;--cta:#5158E2;--cta-soft:#ECEDFC;--cta-dark:#3E45C7;--accent-soft:#F1F1F0;
+    --green:#15803D;--green-soft:#A8F5C8;
+    --ai:#3E45C7;--ai-soft:#ECEDFC;--ai-line:#D6E2FF;
+    --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;} .reveal.in{opacity:1;transform:none;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;text-decoration:none;border-radius:11px;font-size:1rem;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;border:1.5px solid transparent;font-family:var(--sans);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--cta);color:#fff;border-color:var(--cta);border-width:1px;padding:13px 22px;}
+  .btn-primary:hover{background:var(--cta-dark);color:#fff;}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);padding:12px 22px;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-lg{padding:15px 28px;font-size:1rem;min-width:206px;}
+  .btn-arrow svg{width:18px;height:18px;transition:transform .18s;}
+  .btn-arrow:hover svg{transform:translateX(3px);}
+
+  /* hero */
+  .hero{padding:60px 0 68px;}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.9rem;letter-spacing:.005em;text-transform:uppercase;padding:7px 13px;border-radius:8px;margin-bottom:20px;}
+  .eyebrow svg{width:15px;height:15px;}
+  .hero h1{font-weight:600;font-size:clamp(2.2rem,4.2vw,3.3rem);line-height:1.07;letter-spacing:-.035em;margin-bottom:18px;text-wrap:pretty;}
+  .hero h1 .u{color:var(--ink);}
+  .hero-sub{font-size:1.14rem;line-height:1.55;color:var(--body);max-width:42ch;margin-bottom:26px;font-weight:500;}
+  .hero-acts{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:28px;}
+  .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .hero-bullets li{text-wrap:pretty;display:flex;align-items:flex-start;gap:11px;font-size:1.02rem;font-weight:600;color:var(--ink);}
+  .hero-bullets .ck{width:24px;height:24px;color:#131316;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+  .hero-bullets .ck svg{width:14px;height:14px;}
+
+  /* hero routing card */
+  .route{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 34px 74px -46px rgba(16,16,18,.5);}
+  .route-cap{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;padding:0 4px;}
+  .rrow{display:flex;align-items:center;gap:12px;padding:13px 4px;border-top:1px solid var(--line-soft);}
+  .rrow:first-of-type{border-top:none;}
+  .rkey{width:34px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--line);border-bottom-width:2.5px;display:grid;grid-auto-rows:min-content;row-gap:2px;place-items:center;place-content:center;font-weight:800;font-size:.86rem;line-height:1;color:var(--ink);flex:none;}
+  .rkey::after{content:'press';font-size:.38rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;line-height:1;opacity:.7;}
+  .rkey.ah{background:var(--ai-soft);border:0;color:var(--ai);}
+  .rkey.ah::after{content:none;}
+  .rkey.ah svg{width:16px;height:16px;}
+  .rrow b{font-weight:800;font-size:.96rem;color:var(--ink);}
+  .rline{flex:1;height:2px;background:var(--line);position:relative;min-width:12px;}
+  .rline::after{content:'';position:absolute;right:0;top:-3px;border-left:6px solid var(--line);border-top:4px solid transparent;border-bottom:4px solid transparent;}
+  .rdest{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:100px;flex:none;}
+  .rdest.human{color:var(--accent-dark);background:var(--accent-soft);}
+  .rdest.ai{color:var(--ai);background:var(--ai-soft);}
+  .rdest .tag{font-size:.56rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;opacity:.8;}
+  .route-foot{margin-top:14px;padding:12px 14px;background:var(--ai-soft);border-radius:12px;display:flex;align-items:center;gap:9px;font-size:.84rem;font-weight:700;color:var(--ai);}
+  .route-foot svg{width:16px;height:16px;flex:none;}
+
+  /* section shell */
+  section.block{padding:74px 0;}
+  .block.alt{background:var(--soft);}
+  .sec-head{text-align:center;max-width:720px;margin:0 auto 44px;}
+  .sec-kicker{display:inline-flex;align-items:center;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ai);background:var(--ai-soft);font-weight:800;padding:7px 14px;border-radius:999px;margin-bottom:14px;}
+
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;text-wrap:pretty;}
+  .sec-head p{margin-top:14px;color:var(--body);font-size:1.08rem;line-height:1.55;}
+
+  /* two kinds of AI */
+  .kinds{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .kind{border:1px solid var(--line);border-radius:20px;padding:30px;background:#fff;}
+  .kind.byo{border-color:var(--ai-line);background:linear-gradient(180deg,#fff, #F6F7FD);}
+  .kind-ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:var(--soft);color:var(--ink);}
+  .kind.byo .kind-ic{background:var(--ai-soft);color:var(--ai);}
+  .kind-ic svg{width:25px;height:25px;}
+  .kind .tagline{font-size:.82rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--body);margin-bottom:8px;}
+  .kind.byo .tagline{color:var(--ai);}
+  .kind h3{font-size:1.35rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px;line-height:1.12;}
+  .kind>p{color:var(--body);font-size:1rem;line-height:1.55;margin-bottom:18px;}
+  .kind ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  .kind li{display:flex;align-items:flex-start;gap:10px;font-size:.96rem;font-weight:600;color:var(--ink);line-height:1.4;}
+  .kind li svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--ink);}
+  .kind.byo li svg{color:var(--ai);}
+  .kind .foot{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted);font-weight:600;}
+  .kind.byo .foot{border-top-color:var(--ai-line);}
+
+  /* risk / comparison */
+  .cmp{max-width:940px;margin:0 auto;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;}
+  .cmp-row{display:grid;grid-template-columns:1.1fr 2fr;border-top:1px solid var(--line);}
+  .cmp-row:first-child{border-top:none;}
+  .cmp-row.head{background:var(--soft);}
+  .cmp-row>div{padding:22px 24px;}
+  .cmp-row .opt{font-weight:800;font-size:1.04rem;display:grid!important;grid-template-columns:20px 1fr;align-items:center;gap:10px;line-height:1.25;}
+  .cmp-row .opt{align-items:center;}
+  .cmp-row .opt .mk{width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;flex:none;}
+  .cmp-row .opt .mk svg{width:12px;height:12px;}
+  .cmp-row .opt .mk svg{width:12px;height:12px;}
+  .cmp-row .opt .mk.no{background:#fdecec;color:#c2352b;}
+  .cmp-row .opt .mk.yes{background:var(--green-soft);color:var(--green-ink,var(--green));}
+  .cmp-row .desc{color:var(--body);font-size:.99rem;line-height:1.55;border-left:1px solid var(--line);}
+  .cmp-row.win{background:var(--ai-soft);}
+  .cmp-row.win .opt{color:var(--ink);}
+  .cmp-row.win .desc{border-left-color:var(--ai-line);}
+  .cmp-row.head .desc,.cmp-row.head .opt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;}
+
+  /* agents grid */
+  .ig-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .ig{display:flex;gap:14px;align-items:flex-start;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff;}
+  .ig .lg{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;background:#fff;border:1px solid #E7E3DA;color:var(--ink);}
+  .ig .lg svg{width:23px;height:23px;}
+  .ig-bd h3{font-size:1.02rem;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap;}
+  .ig-bd p{font-size:.9rem;color:var(--body);line-height:1.45;}
+  .ig .tag{font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:100px;color:var(--ai);background:var(--ai-soft);}
+  @media(max-width:860px){.ig-grid{grid-template-columns:1fr;}}
+  /* not every call callout */
+  .ex{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .ex-copy h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
+  .ex-copy p{color:var(--body);font-size:1.06rem;line-height:1.6;margin-bottom:14px;}
+  .ex-copy p b{color:var(--ink);font-weight:800;}
+  .ex-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 30px 70px -50px rgba(16,16,18,.4);}
+  .ex-card .eh{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+  .ex-card .eh .av{width:42px;height:42px;border-radius:12px;background:var(--ai-soft);color:var(--ai);display:grid;place-items:center;flex:none;}
+  .ex-card .eh .av svg{width:22px;height:22px;}
+  .ex-card .eh b{font-size:1.05rem;font-weight:800;}
+  .ex-card .eh small{display:block;color:var(--muted);font-size:.84rem;font-weight:600;}
+  .ex-when{list-style:none;margin-top:14px;}
+  .ex-when li{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line-soft);font-size:.94rem;}
+  .ex-when li:first-child{border-top:none;}
+  .ex-when .lbl{font-weight:700;color:var(--ink);flex:1;}
+  .ex-when .who{font-size:.78rem;font-weight:700;padding:4px 11px;border-radius:100px;flex:none;}
+  .ex-when .who.human{color:var(--accent-dark);background:var(--accent-soft);}
+  .ex-when .who.ai{color:var(--ai);background:var(--ai-soft);}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;}
+  .step .sn{display:inline-grid;place-items:center;height:30px;padding:0 12px;border-radius:999px;background:var(--cta-soft);color:var(--cta-dark);font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;line-height:1;margin-bottom:16px;}
+  .step h3{font-size:1.02rem;font-weight:800;margin-bottom:7px;line-height:1.2;}
+  .step p{color:var(--body);font-size:.92rem;line-height:1.5;}
+  .steps-note{text-align:center;max-width:640px;margin:32px auto 0;color:var(--body);font-size:1.02rem;font-weight:500;}
+  .steps-note b{color:var(--ink);font-weight:800;}
+
+  /* built-in strip */
+  .builtin{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .bgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px;margin:0 auto;}
+  .bcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;}
+  .bcard .bic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid #E7E3DA;color:#2D4ED8;display:grid;place-items:center;margin-bottom:16px;}
+  .bcard .bic svg{width:22px;height:22px;}
+  .bcard h3{font-size:1.1rem;font-weight:800;margin-bottom:7px;}
+  .bcard p{color:var(--body);font-size:.94rem;line-height:1.55;}
+  .builtin-note{text-align:center;max-width:640px;margin:34px auto 0;color:var(--body);font-size:1rem;font-weight:500;}
+  .builtin-note b{color:var(--ink);font-weight:800;}
+
+  /* faq */
+  .faq{padding:0 0 84px;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-q{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+  .faq-q summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .faq-q summary::-webkit-details-marker{display:none;}
+  .faq-q summary .ic{width:22px;height:22px;color:var(--ai);flex-shrink:0;transition:transform .2s;}
+  .faq-q[open] summary .ic{transform:rotate(45deg);}
+  .faq-q .ans{padding:0 22px 20px;color:var(--body);font-size:.99rem;line-height:1.6;}
+
+  /* closer */
+  .closer{padding:20px 0 84px;}
+  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:56px 44px;text-align:center;color:var(--ink);}
+  .closer-card h2{font-weight:600;font-size:clamp(2rem,3.8vw,2.8rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:16px;text-wrap:pretty;}
+  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:48ch;margin:0 auto 30px;font-weight:500;}
+  .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  @media(max-width:980px){ .steps{grid-template-columns:repeat(2,1fr);} .bgrid{grid-template-columns:1fr;} }
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero{padding:40px 0 48px;}
+    .hero-sub{max-width:none;}
+    .kinds{grid-template-columns:1fr;}
+    .ex{grid-template-columns:1fr;gap:28px;}
+    .cmp-row{grid-template-columns:1fr;}
+    .cmp-row .desc{border-left:none;border-top:1px solid var(--line);}
+    .cmp-row.win .desc{border-top-color:var(--ai-line);}
+    .cmp-row.head{display:none;}
+    footer{padding-bottom:96px;}
+  }
+  @media(max-width:560px){ .steps{grid-template-columns:1fr;} .closer-card{padding:48px 26px;} }
+</style>
+<link rel="stylesheet" href="assets/canon.css?v=25">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},{"@type":"ListItem","position":2,"name":"Using AI voice agents","item":"https://numberline.com/ai-voice-agents"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does \"third-party AI answering service\" mean?","acceptedAnswer":{"@type":"Answer","text":"An AI answering service made by another company that answers calls for your business. Numberline does not force one on you. You choose the service that fits, forward an extension to it, and Numberline stays your phone number and routing. The destination can change whenever you like."}},{"@type":"Question","name":"Does Numberline answer calls with AI?","acceptedAnswer":{"@type":"Answer","text":"No. Numberline is not an AI receptionist. Numberline routes calls where you decide, and voicemails come with transcripts and summaries (English for now) so you can read what callers needed. If you want AI answering, you connect the third-party service you choose."}},{"@type":"Question","name":"Should my whole business move to an AI answering service?","acceptedAnswer":{"@type":"Answer","text":"For most businesses, no. A person is still the best experience for most daytime calls. AI is most valuable in the gaps: after hours, weekends, overflow, or a single line. Numberline lets you apply AI exactly where it helps and keep the rest human."}},{"@type":"Question","name":"What if I don't like the AI answering service I picked?","acceptedAnswer":{"@type":"Answer","text":"Change it. Because the AI is a routing destination and not your platform, you can switch to a different service, narrow when it runs, or point the extension back to a person. Your number and setup stay where they are."}},{"@type":"Question","name":"Which AI answering services can I connect?","acceptedAnswer":{"@type":"Answer","text":"Third-party AI answering services like Vapi and Bland, or your own voice agent. Numberline is designed to work with services that can take a forwarded call. Join early access and we'll share connection details when setup opens."}},{"@type":"Question","name":"Why is that better than an AI phone product with its own number?","acceptedAnswer":{"@type":"Answer","text":"When the AI and your phone number are the same product, switching means moving your entire phone system. With Numberline, the AI answering service is a destination. If it stops fitting, you change the destination and your number stays put."}}]}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Using AI voice agents</span>
+      <h1>The permanent layer between your business &amp; <span class="u">AI voice agents.</span></h1>
+      <p class="hero-sub">AI voice agents will keep changing; your phone number shouldn't. Numberline stays your phone system, and you forward any extension or the after-hours path to whichever third-party AI voice agent or answering service you choose. Swap it whenever a better one appears.</p>
+      <div class="hero-acts">
+        <a href="/how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      </div>
+      <ul class="hero-bullets">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Your business number stays right where it is</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Forward one extension to a third-party AI answering service, keep the rest ringing people</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Change or remove that destination later as your needs change</li>
+      </ul>
+    </div>
+
+    <div class="route reveal" role="img" aria-label="Example routing: Sales rings your mobile, Support goes to a third-party AI answering service, after-hours goes to an answering service, the owner option rings the owner’s mobile">
+      <div class="route-cap">Your line · your routing</div>
+      <div class="rrow"><span class="rkey">1</span><b>Sales</b><span class="rline"></span><span class="rdest human"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg> Your mobile</span></div>
+      <div class="rrow"><span class="rkey">2</span><b>Support</b><span class="rline"></span><span class="rdest ai">Vapi AI <span class="tag">3rd party</span></span></div>
+      <div class="rrow"><span class="rkey ah"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><b>After hours</b><span class="rline"></span><span class="rdest human">Answering service</span></div>
+      <div class="rrow"><span class="rkey">0</span><b>Owner</b><span class="rline"></span><span class="rdest human">Owner’s mobile</span></div>
+      <div class="route-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/></svg> Change any destination later. Your number does not move.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TWO KINDS OF AI -->
+<div class="strip">
+  <div class="wrap strip-press">
+    <span class="press-label">From the team featured in</span>
+    <div class="press-logos"><span class="pl pl-forbes">Forbes</span><span class="pl pl-inc">Inc<i>.</i></span><span class="pl pl-cnbc">CNBC</span><span class="pl pl-nyt">The New York Times</span></div>
+  </div>
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Built for small teams</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Keep your cell private</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> No hardware to buy</span>
+  </div>
+</div>
+
+<section class="block" id="two-kinds" data-screen-label="Two kinds of AI">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Numberline is the permanent layer. The AI voice agent is a destination.</h2>
+      <p>Agents and answering services plug in and swap out; the number, greetings, extensions, and routing stay with the business. Two big benefits:</p>
+    </div>
+    <div class="kinds reveal">
+      <div class="kind byo">
+        <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <div class="tagline">Benefit 1</div>
+        <h3>Never get stuck with one AI voice agent</h3>
+        <p>New AI answering services appear all the time, and the best fit for your business can change. If your phone number lives inside one of them, leaving means moving your whole phone system. With Numberline your number stays put. You forward calls to the third-party AI answering service you choose, and you can point them somewhere else later.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Your business number stays with Numberline</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Use the AI answering service you choose, like Vapi or Bland</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Change destinations later if your needs change</li>
+        </ul>
+        <div class="foot">Your phone system is not tied to one provider.</div>
+      </div>
+      <div class="kind byo">
+        <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a5 5 0 0 1-5 5H9"/></svg></span>
+        <div class="tagline">Benefit 2</div>
+        <h3>Send each extension wherever you want</h3>
+        <p>You decide where every extension goes, and they don't all have to go to the same place. Your support line can go to a third-party AI answering service, your personal extension can ring your own cell phone, and an after-hours line can go to a live answering service. Different extensions, different destinations.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Support line &rarr; a third-party AI answering service</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Personal extension &rarr; rings your own cell phone</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>After-hours line &rarr; a live answering service</li>
+        </ul>
+        <div class="foot">Every extension goes exactly where it makes sense.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. THE RISK OF ONE AI -->
+<section class="block alt" data-screen-label="Why bring your own">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>The risk of signing up with an AI answering service directly</h2>
+      <p>Say you want to try an AI answering service. Sign up with it directly and it often becomes your phone company too: it hands you a new number, or you give it yours. The day you want something different, switching means moving your number and setting everything up again.</p>
+    </div>
+    <div class="kinds reveal">
+      <div class="kind">
+        <span class="kind-ic" style="background:#fdecec;color:#c2352b;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+        <div class="tagline" style="color:#c2352b;">Without Numberline</div>
+        <h3>The AI service becomes your phone company</h3>
+        <p>Sign up with an AI answering service directly and your setup lives with that provider: prompts, workflows, and often a provider-issued number. The day you want to leave, you may be moving a number, rebuilding your setup, and hoping customers keep calling the right place.</p>
+      </div>
+      <div class="kind byo">
+        <span class="kind-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div class="tagline">With Numberline</div>
+        <h3>The AI service is just a destination</h3>
+        <p>Your number and phone system stay with Numberline. You forward calls to the third-party AI answering service you picked. If you change your mind later, point that line somewhere else. Your number does not move.</p>
+      </div>
+    </div>
+    <p style="max-width:900px;margin:26px auto 0;text-align:center;color:var(--muted);font-weight:600;font-size:.95rem;">New AI answering services appear all the time. Keep your number with Numberline and you can change destinations without redoing your phone system.</p>
+  </div>
+</section>
+
+
+<!-- 3.5 AGENTS YOU CAN CONNECT -->
+<section class="block" id="agents" data-screen-label="AI agents you can connect">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Connect the agent apps you choose.</h2>
+      <p>Any extension, menu option, or after-hours path can forward to these today. More connect through SIP forwarding as they appear.</p>
+    </div>
+    <div class="ig-grid reveal" style="max-width:1000px;margin:0 auto;">
+      <div class="ig"><div class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><div class="ig-bd"><h3>Vapi<span class="tag">AI voice agent</span></h3><p>Connect a Vapi voice agent to any extension through SIP.</p></div></div>
+      <div class="ig"><div class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="ig-bd"><h3>Bland AI<span class="tag">AI voice agent</span></h3><p>Route an extension to a Bland AI agent for answering, qualification, scheduling, or after-hours coverage.</p></div></div>
+      <div class="ig"><div class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></div><div class="ig-bd"><h3>Your own voice agent<span class="tag">SIP</span></h3><p>Built something custom? Numberline forwards calls to any agent that can take a forwarded or SIP call.</p></div></div>
+      <div class="ig"><div class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div class="ig-bd"><h3>Answering providers<span class="tag">Live</span></h3><p>Prefer people? Forward the same paths to your own live answering provider instead, or mix the two.</p></div></div>
+    </div>
+    <p style="margin-top:20px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;text-align:center;margin-left:auto;margin-right:auto;">Numberline provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the agent that fits your business.</p>
+  </div>
+</section>
+
+<!-- 4. NOT EVERY CALL NEEDS AI -->
+<section class="block" data-screen-label="Not every call needs AI">
+  <div class="wrap">
+    <div class="ex reveal">
+      <div class="ex-copy">
+        <h2>You don't have to send every call to AI</h2>
+        <p>You pick which lines go to an AI answering service and which don't. A lot of businesses want a real person on the phone during the day, and only use an AI answering service for <b>after hours, weekends, or when everyone's on the other line.</b></p>
+        <p>Take a <b>plumber.</b> During the day, calls ring your cell or the office. After hours, instead of sending everyone to voicemail, you forward that line to the third-party AI answering service you chose. Daytime stays human, after-hours gets covered, and you can change either one later.</p>
+      </div>
+      <div class="ex-card">
+        <div class="eh">
+          <span class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2 8 8l-2-2-3 3 6 6 3-3-2-2 6-6z"/><path d="m14 12 6 6-2 2-6-6"/></svg></span>
+          <div><b>Ace Plumbing</b><small>Where each call goes</small></div>
+        </div>
+        <ul class="ex-when">
+          <li><span class="lbl">Business hours</span><span class="who human">Rings your cell</span></li>
+          <li><span class="lbl">When you're on another call</span><span class="who human">Rings the owner’s mobile</span></li>
+          <li><span class="lbl">After hours &amp; weekends</span><span class="who ai">AI answering service</span></li>
+          <li><span class="lbl">Billing questions</span><span class="who human">Your bookkeeper</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. HOW IT WORKS -->
+<section class="block alt" data-screen-label="How it works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Point an extension at an AI answering service in four steps</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="sn">Step 1</div><h3>Pick the extension</h3><p>Choose the line, department, or time window where AI should answer, say, after-hours support.</p></div>
+      <div class="step"><div class="sn">Step 2</div><h3>Connect the AI answering service</h3><p>Your provider (Vapi, Bland, or another service) gives you a number or connection details, and Numberline forwards the extension there. We'll share supported setups during early access.</p></div>
+      <div class="step"><div class="sn">Step 3</div><h3>Route to it</h3><p>Set that extension to forward to the AI answering service. Everything else keeps ringing people.</p></div>
+      <div class="step"><div class="sn">Step 4</div><h3>Adjust anytime</h3><p>Not happy? Change the service, narrow when it runs, or point the extension back to a person.</p></div>
+    </div>
+    <p class="steps-note reveal"><b>Your number stays with Numberline.</b> A third-party AI answering service is a destination you route to, not your phone system.</p>
+  </div>
+</section>
+
+<!-- 5.5 WHAT NUMBERLINE HANDLES -->
+<section class="block builtin" data-screen-label="What Numberline handles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>The phone system stays with Numberline.</h2>
+      <p>The AI answering service you choose takes the calls you send it. Numberline runs everything around them.</p>
+    </div>
+    <div class="bgrid reveal">
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.91.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><h3>Your business line and call routing</h3><p>A local or toll-free business line, with calls routed to the people and services you choose.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg></span><h3>Greetings, extensions, and forwarding</h3><p>Greet callers, offer extensions, and forward each one to your mobile, your team, or the destination you pick.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1 0 2 .9 2 2v12c0 1.1-1 2-2 2H4c-1 0-2-.9-2-2V6c0-1.1 1-2 2-2z"/><path d="m22 7-10 5L2 7"/></svg></span><h3>Shared texts, voicemails, and transcripts</h3><p>Texts and voicemails stay with the business in <a href="/whatsapp.html" style="color:var(--accent-dark);font-weight:700;">one inbox</a>, with transcripts and summaries you can read.</p></div>
+      <div class="bcard"><span class="bic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><h3>Optional notifications to tools like Slack</h3><p>Teams that already use Slack can see <a href="/slack.html" style="color:var(--accent-dark);font-weight:700;">missed calls, texts, and voicemails in Slack</a>, where they coordinate work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHAT THIS IS NOT -->
+<section class="block alt" data-screen-label="What this is not">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Numberline is not an AI receptionist.</h2>
+      <p>Numberline is the phone system that lets your business decide where calls should go, including to people, answering services, or third-party AI answering services when needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="faq" data-screen-label="FAQ">
+  <div class="wrap" style="padding-top:74px;">
+    <div class="sec-head reveal">
+      <h2>Third-party AI answering services, common questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-q" open><summary>What does "third-party AI answering service" mean?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">An AI answering service made by another company that answers calls for your business. Numberline does not force one on you. You choose the service that fits, forward an extension to it, and Numberline stays your phone number and routing. The destination can change whenever you like.</div></details>
+      <details class="faq-q"><summary>Does Numberline answer calls with AI?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">No. Numberline is not an AI receptionist. Numberline routes calls where you decide, and voicemails come with transcripts and summaries (English for now) so you can read what callers needed. If you want AI answering, you connect the third-party service you choose.</div></details>
+      <details class="faq-q"><summary>Should my whole business move to an AI answering service?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">For most businesses, no. A person is still the best experience for most daytime calls. AI is most valuable in the gaps: after hours, weekends, overflow, or a single line. Numberline lets you apply AI exactly where it helps and keep the rest human.</div></details>
+      <details class="faq-q"><summary>What if I don't like the AI answering service I picked?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Change it. Because the AI is a routing destination and not your platform, you can switch to a different service, narrow when it runs, or point the extension back to a person. Your number and setup stay where they are.</div></details>
+      <details class="faq-q"><summary>Which AI answering services can I connect?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">Third-party AI answering services like Vapi and Bland, or your own voice agent. Numberline is designed to work with services that can take a forwarded call. Join early access and we'll share connection details when setup opens.</div></details>
+      <details class="faq-q"><summary>Why is that better than an AI phone product with its own number?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="ans">When the AI and your phone number are the same product, switching means moving your entire phone system. With Numberline, the AI answering service is a destination. If it stops fitting, you change the destination and your number stays put.</div></details>
+    </div>
+    <p style="max-width:760px;margin:26px auto 0;text-align:center;color:var(--body);font-size:.98rem;">Learn more: <a href="/how-it-works.html" style="color:var(--accent-dark);font-weight:700;">how Numberline works</a> and <a href="/pricing.html" style="color:var(--accent-dark);font-weight:700;">pricing</a>.</p>
+  </div>
+</section>
+
+<!-- 8. CLOSER -->
+<section class="closer">
+  <div class="wrap">
+    <div class="closer-card reveal">
+      <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <h2>Your phone system. Your choice of answering.</h2>
+      <p>Keep your business line and routing with Numberline, and forward an extension to people, an answering service, or the third-party AI answering service you choose. Change destinations as your business changes.</p>
+      <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <div class="closer-micro"><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Money-back guarantee</span><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> No long term contracts</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one. Built for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+        <form class="foot-join" action="/early-access.html" method="get" aria-label="Get early access"><input type="email" name="email" placeholder="Work email" autocomplete="email" aria-label="Work email"><button type="submit" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">&#187;</span></button></form>
+      </div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it Works &amp; Features</a><a href="/pricing.html">Pricing</a><a href="/slack.html">Slack notifications</a><a href="/whatsapp.html">Texts &amp; WhatsApp inbox</a><a href="/ai-voice-agents.html">Using AI voice agents</a><a href="/signin.html">Sign in</a></div>
+        
+        <div class="foot-col"><h5>Compare</h5><a href="/compare/google-voice.html">Numberline vs Google Voice</a></div><div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
+      </div>
+      </div>
+    <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+  (function(){
+    var hb=document.getElementById('hb'),nl=document.getElementById('navlinks');
+    if(hb&&nl){
+      hb.addEventListener('click',function(){
+        var open=nl.classList.toggle('open');
+        hb.setAttribute('aria-expanded',open);
+        hb.innerHTML=open
+          ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+          :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      });
+      nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');hb.setAttribute('aria-expanded','false');});});
+    }
+  })();
+</script>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
+</body>
+</html>

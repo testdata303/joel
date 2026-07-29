@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title>How Numberline Works | Start With One Business Number</title>
-<meta name="description" content="Start with one Numberline business number ringing your mobile, then add extensions, teammates, Slack, WhatsApp, and third-party AI answering services.">
+<title>How Numberline Works &amp; Features | Unlimited Users, No Per-User Fees</title>
+<meta name="description" content="How Numberline works and every feature included: a business number with call routing, extensions, shared texts, voicemail transcripts, and follow-up. Unlimited users, no per-user fees.">
+<link rel="canonical" href="/how-it-works">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
 <link rel="icon" href="favicon.ico?v=4" sizes="any">
 <link rel="apple-touch-icon" href="favicon-180.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/features-rows.css">
 <style>
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
@@ -36,48 +38,17 @@
   .jx-hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin-bottom:20px;max-width:18ch;margin-left:auto;margin-right:auto;}
   .jx-hero p{font-size:clamp(1.08rem,2vw,1.32rem);color:var(--body);max-width:46ch;margin:0 auto 32px;line-height:1.5;}
   .jx-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .jx-kicker{display:inline-block;color:var(--cta-dark);background:var(--cta-soft);font-size:.8rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:16px;padding:7px 13px;border-radius:8px;}
-  .jx-head{max-width:680px;margin:0 auto 44px;text-align:center;}
+
+  .jx-head{max-width:760px;margin:0 auto 44px;text-align:center;}
+  .jx-head h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin-bottom:18px;text-wrap:pretty;}
   .jx-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px;text-wrap:pretty;}
   .jx-head p{font-size:1.1rem;color:var(--body);line-height:1.55;}
   .jx-alt{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   section{padding:80px 0;}
 
   /* ======= THE WHOLE SYSTEM - one unifying diagram ======= */
-  .glance{background:var(--bg-alt);border-bottom:1px solid var(--line);}
-  .rdiag{max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 28px;box-shadow:0 30px 70px -45px rgba(16,16,18,.28);}
-  .rd-source{display:flex;align-items:center;gap:13px;padding:15px 17px;background:#fff;border-radius:14px;}
-  .rd-source .ic{width:44px;height:44px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 4px 10px -6px rgba(36,84,214,.5);}
-  .rd-source .ic svg{width:22px;height:22px;color:var(--ink);}
-  .rd-src-txt{display:flex;flex-direction:column;}
-  .rd-src-txt b{font-size:1.05rem;font-weight:800;letter-spacing:-.01em;}
-  .rd-src-txt span{font-size:.85rem;color:var(--muted);font-weight:600;}
-  .rd-src-badge{margin-left:auto;font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:#fff;border:1px solid var(--line);padding:5px 11px;border-radius:100px;}
-  .rd-cat{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:22px 4px 4px;}
-  .rd-rows{display:flex;flex-direction:column;position:relative;margin-left:16px;padding-left:26px;}
-  .rd-rows::before{content:'';position:absolute;left:0;top:-6px;bottom:0;width:2px;background:var(--line);border-radius:2px;}
-  .rd-row{display:flex;align-items:center;gap:14px;padding:12px 4px;position:relative;}
-  .rd-row::before{content:'';position:absolute;left:-26px;top:50%;width:26px;height:2px;margin-top:-1px;background:var(--line);}
-  .rd-row:last-child::after{content:'';position:absolute;left:-28px;top:calc(50% + 1px);bottom:0;width:6px;background:#fff;}
-  .rd-ext{display:flex;align-items:center;gap:9px;font-weight:700;font-size:.94rem;color:#374151;flex:none;}
-  .rd-ext .x{font-size:.64rem;font-weight:800;letter-spacing:.03em;color:#374151;background:#E5E7EB;padding:3px 7px;border-radius:6px;flex:none;min-width:46px;text-align:center;}
-  .rd-lead{flex:1;min-width:24px;}
-  .rd-dest{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;padding:7px 13px;border-radius:100px;background:#fff;color:var(--ink);flex:none;}
-  .rd-dest svg{width:15px;height:15px;color:var(--ink);flex:none;}
-  .rd-dest.ai{background:#fff;color:var(--ink);} .rd-dest.ai svg{color:var(--ink);}
-  .rd-row.msg .rd-ext svg{color:var(--ink);width:16px;height:16px;flex:none;}
-  .rd-dest.msg{background:#fff;color:var(--ink);} .rd-dest.msg svg{color:var(--ink);}
-  @media(max-width:620px){
-    .rdiag{padding:18px;}
-    .rd-src-badge{display:none;}
-    .rd-rows{margin-left:6px;padding-left:16px;}
-    .rd-rows::before{left:0;}
-    .rd-row{flex-wrap:wrap;gap:6px;padding:10px 2px;}
-    .rd-row::before{left:-16px;width:16px;}
-    .rd-row:last-child::after{left:-18px;}
-    .rd-lead{display:none;}
-    .rd-dest{margin-left:auto;}
-  }
+  .glance{border-bottom:1px solid var(--line);padding:32px 0 52px;}
+  .glance .nup-stamp{margin:0 auto 26px;}
   .glance-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;max-width:720px;margin:26px auto 0;}
   .glance-legend a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:#fff;border:1px solid var(--cl,var(--line));border-radius:100px;padding:7px 14px 7px 9px;font-size:.83rem;font-weight:700;color:var(--ink);transition:transform .15s,box-shadow .15s;}
   .glance-legend a:hover{transform:translateY(-2px);box-shadow:0 10px 22px -14px rgba(16,16,18,.4);}
@@ -85,19 +56,41 @@
   .glance-legend .dot svg{width:13px;height:13px;}
   .glance-legend .n{font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c);}
   .glance-tiles{margin-top:30px;}
-  .glance-tiles a.hstep{text-decoration:none;transition:transform .15s,box-shadow .15s;}
-  .glance-tiles a.hstep:hover{transform:translateY(-2px);box-shadow:0 12px 26px -16px rgba(16,16,18,.45);}
+  .glance .fnlist-card.grid{max-width:1100px;}
 
+  .stepblock .fsubs{grid-column:1/-1;margin-top:10px;}
+  .vem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+  .vem-h{display:flex;align-items:center;gap:11px;}
+  .vem-av{width:36px;height:36px;border-radius:50%;background:var(--cta-soft,#EEF3FF);color:var(--cta-dark,#2240C2);display:grid;place-items:center;font-weight:800;font-size:.95rem;flex:none;}
+  .vem-hd{display:flex;flex-direction:column;line-height:1.3;min-width:0;}
+  .vem-hd b{font-size:.92rem;font-weight:800;}
+  .vem-hd span{font-size:.78rem;color:var(--muted);font-weight:600;}
+  .vem-time{margin-left:auto;font-size:.76rem;color:var(--muted);font-weight:600;}
+  .vem-sub{margin-top:12px;font-weight:800;font-size:.95rem;letter-spacing:-.01em;}
+  .vem-body{margin-top:8px;font-size:.9rem;line-height:1.55;color:var(--body);font-weight:500;}
+  .vem-body b{color:var(--ink);}
+  .vem-tr{display:block;margin-top:8px;font-style:italic;color:var(--muted);}
+  .vem-att{display:inline-flex;align-items:center;gap:8px;margin-top:14px;border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:.84rem;font-weight:700;color:var(--ink);}
+  .vem-att svg{width:14px;height:14px;color:var(--muted);}
+  .vem-att span{color:var(--muted);font-weight:600;}
+  .vem-slack{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:.86rem;font-weight:600;color:var(--body);}
+  .vem-slack svg{width:15px;height:15px;color:var(--muted);flex:none;}
+  .stepblock .ig-grid{grid-column:1/-1;margin-top:18px;gap:12px;}
+  .stepblock .ig{padding:15px 17px;border-radius:13px;gap:11px;}
+  .stepblock .ig .lg{width:34px;height:34px;border-radius:9px;}
+  .stepblock .ig .lg svg{width:18px;height:18px;}
+  .stepblock .ig-bd h3{font-size:.92rem;letter-spacing:-.01em;margin-bottom:3px;line-height:1.3;}
+  .stepblock .ig-bd p{font-size:.84rem;font-weight:500;line-height:1.5;color:var(--body);}
+  .stepblock .wrap>p[style]{grid-column:1/-1;}
   /* ======= ALTERNATING ILLUSTRATED STEP BLOCKS ======= */
   .stepblock{border-bottom:1px solid var(--line);padding:74px 0;}
   /* de-candy: every walkthrough step uses the ONE accent (blue); function colors live only in the legend map */
   .stepblock.fn-number,.stepblock.fn-ext,.stepblock.fn-fwd,.stepblock.fn-vm,.stepblock.fn-sms,.stepblock.fn-ai{--c:var(--cta);--cs:var(--cta-soft);--cl:#C9D3FB;}
   .stepblock .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-  .stepblock:nth-child(even) .visual{order:-1;}
-  .step-tag{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  .step-tag{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:14px;}
   .step-tag .num{width:50px;height:50px;border-radius:14px;background:var(--cs);color:var(--c);display:grid;place-items:center;font-size:1.5rem;font-weight:800;flex-shrink:0;line-height:1;}
   .step-tag .num svg{width:25px;height:25px;color:var(--c);}
-  .step-tag h2{font-size:clamp(1.6rem,3vw,2.15rem);font-weight:600;letter-spacing:-.03em;line-height:1.04;}
+  .step-tag h2{font-size:clamp(1.6rem,3vw,2.15rem);font-weight:600;letter-spacing:-.03em;line-height:1.18;}
   .step-opt{display:inline-block;margin-left:2px;font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--c);background:var(--cs);padding:4px 10px;border-radius:100px;vertical-align:middle;position:relative;top:-4px;}
   .step-copy>p{color:var(--body);font-size:1.12rem;line-height:1.6;margin-bottom:22px;max-width:46ch;}
   .step-list{list-style:none;}
@@ -216,41 +209,10 @@
 
   /* ======= comparison ======= */
   .cmp-section{background:#F6F7FB;border-top:1px solid #ECEEF4;border-bottom:1px solid #ECEEF4;}
-  .cmp4{max-width:1080px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(16,16,18,.04),0 18px 40px -28px rgba(15,17,21,.18);}
-  .cmp4-row{display:grid;grid-template-columns:.85fr 1.2fr 1.3fr 1.45fr;border-top:1px solid var(--line);}
-  .cmp4-row:first-child{border-top:none;}
-  .cmp4-row.head{background:var(--bg-alt);}
-  .cmp4-row>div{padding:18px 20px;border-left:1px solid var(--line);}
-  .cmp4-row>div:first-child{border-left:none;}
-  .cmp4-row.head>div{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;}
-  .cmp4 .opt{font-weight:800;font-size:1.04rem;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;}
-  .cmp4 .cell{color:var(--body);font-size:.93rem;line-height:1.5;}
-  .cmp4-row.joel{background:var(--ink);}
-  .cmp4-row.joel .opt{color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.02em;}
-  .cmp4-row.joel .cell{color:rgba(255,255,255,.82);}
-  .cmp4-row.joel .lbl{color:rgba(255,255,255,.55);}
-  .cmp4-row.joel>div{border-left-color:rgba(255,255,255,.16);}
-  .cmp4-row.joel .opt svg{width:18px;height:18px;color:var(--neon);}
-  .cmp4 .lbl{display:none;}
   .cmp-cta{text-align:center;margin-top:40px;}
   .cmp-cta p{font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;max-width:32ch;margin:0 auto 24px;text-wrap:pretty;}
-  @media(max-width:880px){
-    .cmp4-row{grid-template-columns:1fr;}
-    .cmp4-row.head{display:none;}
-    .cmp4-row>div{border-left:none;border-top:1px solid var(--line-soft);}
-    .cmp4-row>div:first-child{border-top:none;}
-    .cmp4-row .opt{font-size:1.12rem;padding-bottom:6px;}
-    .cmp4 .lbl{display:block;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:5px;}
-    .cmp4-row.joel>div{border-top-color:rgba(255,255,255,.16);}
-  }
 
   /* closer */
-  .closer{background:#fff;color:var(--ink);text-align:center;padding:48px 0 56px;}
-  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;color:var(--ink);}
-  .closer-card h2{font-weight:600;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
-  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
-  .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
-  .closer-micro svg{width:15px;height:15px;flex-shrink:0;}
 
   /* mobile nav */
   .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;margin:-8px;color:var(--ink);}
@@ -264,107 +226,93 @@
     .nav-links a.nav-cta{display:none;}
     .nav-cta-m{display:inline-flex;align-items:center;margin-left:auto;margin-right:14px;padding:9px 15px;font-size:.82rem;border-radius:9px;}
   }
+  .route{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--line);}
+  .route:first-child{border-top:none;}
+  .route .fic{width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none;}
+  .route .fic svg{width:18px;height:18px;color:var(--ink);}
+  .route .rt b{display:block;font-size:.92rem;font-weight:700;}
+  .route .rt span{font-size:.82rem;color:var(--muted);font-weight:600;line-height:1.4;display:block;}
 </style>
-<link rel="stylesheet" href="assets/canon.css?v=6">
+<link rel="stylesheet" href="assets/canon.css?v=25">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},{"@type":"ListItem","position":2,"name":"How it works & features","item":"https://numberline.com/how-it-works"}]}
+</script>
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-    <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a href="#" class="active">How it works</a>
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="signin.html">Sign in</a>
-      <a href="early-access.html" class="nav-cta">Get early access</a>
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
 
-<header class="jx-hero" data-screen-label="How it works hero">
-  <div class="wrap">
-    <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
-    <h1>One number. You decide where every call goes.</h1>
-    <p>Get a business number, decide where it rings, and catch what you miss. Add extensions, teammates, messaging, and AI only when you need them.</p>
-    <div class="jx-acts">
-      <a href="early-access.html" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
-      <a href="pricing.html" class="btn btn-secondary">See pricing</a>
-    </div>
-  </div>
-</header>
 
 <!-- ======= THE WHOLE SYSTEM AT A GLANCE ======= -->
-<section class="glance" data-screen-label="Whole system at a glance">
+<section class="glance hero-band" data-screen-label="Hero: four steps">
   <div class="wrap">
     <div class="jx-head">
-      <div class="jx-kicker">How it all fits together</div>
-      <h2>Your number sits on top of everything.</h2>
-      <p>One business number, routed however your day needs it - to people, devices, messaging, and AI. Here's the shape of it before we walk each part.</p>
-    </div>
-
-    <div class="rdiag reveal">
-      <div class="rd-source">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"></path></svg></span>
-        <span class="rd-src-txt"><b>Your business number</b><span>(212) 555-5225</span></span>
-        <span class="rd-src-badge">Toll-free or local</span>
-      </div>
-      <div class="rd-cat">Call routing</div>
-      <div class="rd-rows">
-        <div class="rd-row">
-          <span class="rd-ext"><span class="x">Ext 1</span> Sales</span>
-          <span class="rd-lead" aria-hidden="true"></span>
-          <span class="rd-dest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg> Bob&rsquo;s mobile</span>
-        </div>
-        <div class="rd-row">
-          <span class="rd-ext"><span class="x">Ext 2</span> Support</span>
-          <span class="rd-lead" aria-hidden="true"></span>
-          <a href="learn/bring-your-own-ai.html" class="rd-dest ai" style="text-decoration:none;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg> Any AI/Answering Service</a>
-        </div>
-        <div class="rd-row">
-          <span class="rd-ext"><span class="x">Ext 101</span> Bob</span>
-          <span class="rd-lead" aria-hidden="true"></span>
-          <span class="rd-dest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg> Bob&rsquo;s mobile</span>
-        </div>
-      </div>
-      <div class="rd-cat">Messaging</div>
-      <div class="rd-rows">
-        <div class="rd-row msg">
-          <span class="rd-ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> SMS + WhatsApp</span>
-          <span class="rd-lead" aria-hidden="true"></span>
-          <span class="rd-dest msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"></path><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"></path></svg> Shared inbox</span>
-        </div>
-      </div>
+      <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <h1>Four steps to a working phone system.</h1>
+      <p>One business number, routed however your day needs it - to people, devices, messaging, and AI. Four steps to set up, plus what you can layer on.</p>
     </div>
 
     <div class="fnlist-card grid glance-tiles reveal">
-      <div class="hsteps grid">
-        <a class="hstep fn-number" href="#get-a-number"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"></path></svg></span><b>Get a number</b></div><div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Toll-free or local</span></span></div></div></a>
-        <a class="hstep fn-ext" href="#extensions"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"></path></svg></span><b>Extensions</b></div><div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Departments/team</span></span></div></div></a>
-        <a class="hstep fn-fwd" href="#forwarding"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><b>Forward calls</b></div><div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Route to mobile</span></span></div></div></a>
-        <a class="hstep fn-vm" href="#voicemails"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"></circle><circle cx="18" cy="12" r="4"></circle><path d="M6 16h12"></path></svg></span><b>Voicemails</b></div><div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Email &amp; Slack</span></span></div></div></a>
-        <a class="hstep fn-sms" href="#messaging"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><b>SMS &amp; WhatsApp</b></div><div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">Team inbox</span></span></div></div></a>
-        <a class="hstep fn-ai" href="#integrations"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></span><b>Integrations &amp; AI</b></div><div class="hstep-flow"><span class="hstep-out"><span class="hstep-res">AI tools</span></span></div></div></a>
+      <div class="hsteps grid hsteps-four">
+        <a class="hstep fn-number" href="#get-a-number"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"></path></svg></span><b>1. Get a toll free or local number</b></div><p class="hstep-desc">Pick a local or toll-free number, or bring the one your customers already call.</p></div></a>
+        <a class="hstep fn-ext" href="#extensions"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M6 8.5v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3M12 13.5v2"></path></svg></span><b>2. Create greetings &amp; extensions</b></div><p class="hstep-desc">Record what callers hear, then route them to departments and people.</p></div></a>
+        <a class="hstep fn-fwd" href="#forwarding"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><b>3. Forward calls to your mobile</b></div><p class="hstep-desc">Ring the right mobiles, in the order you want.</p></div></a>
+        <a class="hstep fn-vm" href="#voicemails"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"></circle><circle cx="18" cy="12" r="4"></circle><path d="M6 16h12"></path></svg></span><b>4. Get voicemails emailed</b></div><p class="hstep-desc">Recordings and transcripts land in email and Slack.</p></div></a>
+      </div>
+      <div class="hsteps grid hsteps-extra">
+        <a class="hstep fn-sms" href="#messaging"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><b>+ Reply to SMS/WhatsApp</b></div></div></a>
+        <a class="hstep fn-number" href="#calling"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M22 8V2h-6M15 9l7-7"></path></svg></span><b>+ Call out as your business</b></div></div></a>
+        <a class="hstep fn-ai" href="#integrations"><div class="hstep-body"><div class="hstep-title"><span class="hstep-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></span><b>+ Connect integrations</b></div></div></a>
       </div>
     </div>
   </div>
-</section>
+  <div class="jx-acts" style="margin-top:36px;">
+      <a href="pricing.html" class="btn btn-secondary">See pricing</a>
+      <a href="early-access.html" class="btn btn-primary btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">&#187;</span></a>
+    </div>
+    <div class="closer-micro"><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Money-back guarantee</span><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> No long term contracts</span></div>
+  </section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-press">
+    <span class="press-label">From the team featured in</span>
+    <div class="press-logos">
+      <span class="pl pl-forbes">Forbes</span>
+      <span class="pl pl-inc">Inc<i>.</i></span>
+      <span class="pl pl-cnbc">CNBC</span>
+      <span class="pl pl-nyt">The New York Times</span>
+    </div>
+  </div>
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"></path></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path></svg> Built for small teams</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Keep your cell private</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg> No hardware to buy</span>
+  </div>
+</div>
 
 <!-- ======= STEP 1 · GET A NUMBER ======= -->
 <div class="stepblock fn-number" id="get-a-number" data-screen-label="Step 1 Get a number">
   <div class="wrap">
     <div class="step-copy">
-      <div class="step-tag"><span class="num">1</span><h2>Get a number</h2></div>
+      <div class="step-tag"><span class="num">1</span><h2>Get a toll free or local number</h2></div>
       <p>Every account starts with one business number. Pick a fresh one or bring the number your customers already know.</p>
-      <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Local</b> - a number in any US area code, so you look local.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Toll-free</b> - an 800, 888, or 877 number for a national feel.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Keep yours</b> - port your current number free. It never stops working.</span></li>
-      </ul>
+      
     </div>
     <div class="visual">
       <div class="il reveal">
@@ -385,6 +333,7 @@
         </div>
       </div>
     </div>
+    <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Local numbers</b><p>A number in the area code your customers know. Search by city or area code.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Toll-free numbers</b><p>An 800-series number that reads national, for customers anywhere.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Port your number</b><p>Move the number your customers already have saved. It keeps working the whole time the transfer completes, and nothing changes for callers.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Additional numbers</b><p>Add numbers for a second location or a campaign. They share the same extensions, inbox, and settings.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Vanity numbers</b><p>A number that spells a word, toll-free or local, that customers remember from one hearing.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>SMS registration status</b><p>Follow your number’s carrier text-messaging registration, so you know exactly when business texting is live.</p></div></div></div>
   </div>
 </div>
 
@@ -392,23 +341,19 @@
 <div class="stepblock fn-ext" id="extensions" data-screen-label="Step 2 Extensions">
   <div class="wrap">
     <div class="step-copy">
-      <div class="step-tag"><span class="num">2</span><h2>Create extensions <span class="step-opt">Optional</span></h2></div>
-      <p>Extensions are how callers reach the right place - &ldquo;press 1 for Sales, 2 for Support&rdquo; - or dial a person directly. Each one rings wherever you point it.</p>
-      <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>One per department or person - Sales, Support, or 101 for Bob.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Each has its own greeting, hours, ring order, and voicemail.</span></li>
-      </ul>
-      <div class="step-note"><strong>Just starting?</strong> Skip extensions entirely - your number rings straight to your cell. Add a menu the day you need one.</div>
+      <div class="step-tag"><span class="num">2</span><h2>Create your main greeting &amp; extensions</h2></div>
+      <p>Record what callers hear first, then give them somewhere to go - &ldquo;press 1 for Sales, 2 for Support&rdquo; - or dial a person directly. Each extension rings wherever you point it.</p>
     </div>
     <div class="visual">
       <div class="il reveal">
         <div class="il-cap">Caller hears your menu</div>
         <div class="menu-greet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h3l4 4V7L7 11H4a1 1 0 0 0-1 0z"></path><path d="M16 8a5 5 0 0 1 0 8"></path></svg><p>&ldquo;Thanks for calling Reyes Plumbing…&rdquo;</p></div>
         <div class="mrow"><span class="mkey">1</span><b>Sales</b><span class="marrow"></span><span class="mdest">Bob&rsquo;s mobile</span></div>
-        <div class="mrow"><span class="mkey">2</span><b>Support</b><span class="marrow"></span><a href="learn/bring-your-own-ai.html" class="mdest ai" style="text-decoration:none;">AI service</a></div>
-        <div class="mrow"><span class="mkey">101</span><b>Bob</b><span class="marrow"></span><span class="mdest">Bob&rsquo;s mobile</span></div>
+        <div class="mrow"><span class="mkey">2</span><b>Support</b><span class="marrow"></span><span class="mdest ai">AI service</span></div>
+        <div class="mrow"><span class="mkey ext">101</span><b>Bob</b><span class="marrow"></span><span class="mdest">Bob&rsquo;s mobile</span></div>
       </div>
     </div>
+    <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Main greeting</b><p>What callers hear first during business hours: your welcome and menu options.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>After-hours greeting</b><p>A different message for evenings, weekends, and closed days.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Holiday &amp; away dates</b><p>Set dates ahead of time; the right greeting plays automatically.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>AI voice generation</b><p>Type the words; the audio is generated in your chosen AI voice and saved as a recording. Nothing is synthesized live on calls.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Preview &amp; listen</b><p>Play the greeting before callers hear it; regenerate until it sounds right.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Your own voice</b><p>Prefer the personal touch? Record a greeting yourself, or upload audio you already have.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Editable greeting text</b><p>Change the words anytime; saving renders a fresh recording.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Department extensions</b><p>Sales, Support, Billing - each one rings the right mobiles.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Employee extensions</b><p>Direct lines for people: Bob is 101, dialable from the menu anytime.</p></div></div></div>
   </div>
 </div>
 
@@ -416,24 +361,19 @@
 <div class="stepblock fn-fwd" id="forwarding" data-screen-label="Step 3 Forward calls">
   <div class="wrap">
     <div class="step-copy">
-      <div class="step-tag"><span class="num">3</span><h2>Forward calls</h2></div>
+      <div class="step-tag"><span class="num">3</span><h2>Forward calls to your mobile</h2></div>
       <p>Ring one phone, several people, or a mix - in order, all at once, or on a schedule. Your personal number always stays private.</p>
-      <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Just you</b> - your mobile, the app, or a desk phone.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span><b>Your business</b> - teammates, an outside answering provider, or a third-party AI answering service, each with its own schedule.</span></li>
-      </ul>
     </div>
     <div class="visual">
       <div class="il reveal">
-        <div class="il-cap">When Sales rings</div>
-        <div class="seq-src">Ext 1 · Sales</div>
-        <div class="seq">
-          <div class="srow"><span class="sdot">1</span><span class="sco"><span class="sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></span><b>Bob&rsquo;s mobile</b><span class="swhen">rings 15s</span></span></div>
-          <div class="srow"><span class="sdot">2</span><span class="sco"><span class="sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 3-5 6-5s6 2 6 5"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M15.5 20c0-2.6 2-4 4.5-4"></path></svg></span><b>The whole team app</b><span class="swhen">then 20s</span></span></div>
+        <div class="il-cap">Where calls ring</div>
+        <div class="route-rows">
+        <div class="route fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 3-5 6-5s6 2 6 5"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M15.5 20c0-2.6 2-4 4.5-4"></path></svg></span><div class="rt"><b>Teammates&rsquo; mobiles</b><span>Ring next, each on its own schedule</span></div></div>
+        <div class="route fn-ai"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span><div class="rt"><b>After hours</b><span>Forward to your own answering provider or a third-party AI answering service</span></div></div>
         </div>
-        <div class="seq-end"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Still no answer? The AI service picks up.</div>
       </div>
     </div>
+    <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Forward to any phone number</b><p>Destinations are ordinary phones: mobiles, an existing business phone, a landline.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Forward to the Numberline app</b><p>Ring teammates in the mobile app, with business caller ID.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Compatible SIP phones</b><p>Register a desk phone to an extension: plug into ethernet and it rings.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Route to an outside provider or AI</b><p>Send any extension to your answering provider or a third-party AI answering service.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Ring one-by-one or all at once</b><p>First pickup takes the call; everyone else’s phone stops ringing.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Call Announce</b><p>Hear which extension the call is for before you accept, so you always answer as the business.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Per-destination schedules</b><p>Business hours ring the team; after hours follow a different path.</p></div></div></div>
   </div>
 </div>
 
@@ -441,45 +381,54 @@
 <div class="stepblock fn-vm" id="voicemails" data-screen-label="Step 4 Voicemails">
   <div class="wrap">
     <div class="step-copy">
-      <div class="step-tag"><span class="num">4</span><h2>Get voicemails</h2></div>
+      <div class="step-tag"><span class="num">4</span><h2>Get voicemails emailed &amp; notified in Slack</h2></div>
       <p>Every missed call is recorded, transcribed, and summarized by AI - then sent where you'll actually see it.</p>
-      <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Audio, full transcript, and a short summary in Numberline or by email.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Pushed straight to email and Slack so the right person follows up fast.</span></li>
-      </ul>
     </div>
     <div class="visual">
-      <div class="phone reveal">
-        <div class="screen">
-          <div class="sc-note">
-            <div class="sc-h">
-              <span class="sc-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"></circle><circle cx="18" cy="12" r="4"></circle><path d="M6 16h12"></path></svg></span>
-              <span><span class="sc-hn">New voicemail</span><span class="sc-hs">(415) 555-0182 · 0:24</span></span>
-              <span class="sc-badge">Summary</span>
-            </div>
-            <div class="sc-sum"><b>Water heater is leaking</b> - wants a callback this afternoon for an emergency visit.</div>
-            <div class="sc-wave"><i style="height:40%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:35%"></i><i style="height:65%"></i><i style="height:95%"></i><i style="height:45%"></i><i style="height:75%"></i><i style="height:30%"></i><i style="height:60%"></i></div>
-            <div class="sc-chips">
-              <span class="sc-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>Email</span>
-              <span class="sc-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M9 8v8M15 8v8M8 12h8"></path></svg>Slack</span>
-            </div>
-          </div>
+      <div class="il reveal">
+        <div class="il-cap">Voicemail lands in your email</div>
+        <div class="vem">
+          <div class="vem-h"><span class="vem-av">N</span><div class="vem-hd"><b>Numberline</b><span>to team@reyesplumbing.com</span></div><span class="vem-time">2:14 PM</span></div>
+          <div class="vem-sub">New voicemail · Sales · (415) 555-0182 · 0:24</div>
+          <div class="vem-body"><b>Summary:</b> Water heater is leaking - wants a callback this afternoon for an emergency visit.<span class="vem-tr">&ldquo;Hi, this is Priya. Our water heater is leaking pretty badly - can someone call me back this afternoon? I think it's an emergency.&rdquo;</span></div>
+          <div class="vem-att"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.4 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>voicemail.mp3<span>0:24</span></div>
+        </div>
+        <div class="vem-slack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M9 8v8M15 8v8M8 12h8"></path></svg>Also posted to <b>#voicemails</b> in Slack</div>
+      </div>
+    </div>
+    <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Call history</b><p>Every answered, outgoing, and missed call on the business number, in one list.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Missed calls</b><p>See who you missed, with the voicemail and transcript attached to the same entry.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Transcripts</b><p>Read the message when you can’t listen: in the app, in email, or in Slack.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>AI summaries</b><p>A two-line summary of what the caller wants and when they need a callback.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Search</b><p>Find any call or voicemail by name, number, or what was said.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Voicemail to email</b><p>Every voicemail is transcribed and emailed to the addresses you choose. The transcript is in the body, so you read it before you call back.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>MP3 recording attached</b><p>The recording arrives as an MP3 attachment you can play, forward, or file anywhere.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Voicemail to Slack</b><p>Voicemails post to the channel you choose, transcript included, where the whole team sees them.</p><a class="fsub-more" href="#features">Learn more &rsaquo;</a></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Delivery by extension</b><p>Sales voicemails go to different people than Support. Each extension has its own recipients.</p></div></div></div>
+  </div>
+</div>
+
+<!-- ======= STEP 7 · CALL OUT AS YOUR BUSINESS ======= -->
+<div class="stepblock fn-number" id="calling" data-screen-label="Step 7 Call out as your business">
+  <div class="wrap">
+    <div class="step-copy">
+      <div class="step-tag"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M22 8V2h-6M15 9l7-7"></path></svg></span><h2>Call out as your business</h2></div>
+      <p>The Numberline app puts your business line on the phone you already carry. Dial out and customers see your business caller ID - your personal number stays private.</p>
+    </div>
+    <div class="visual">
+      <div class="il reveal">
+        <div class="il-cap">Calling back from the app</div>
+        <div class="route-rows">
+        <div class="route fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M22 8V2h-6M15 9l7-7"></path></svg></span><div class="rt"><b>You call Miguel back</b><span>Straight from his voicemail in the app</span></div></div>
+        <div class="route fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"></path></svg></span><div class="rt"><b>He sees (212) 555-0182</b><span>Your business number, not your cell</span></div></div>
+        <div class="route fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"></path></svg></span><div class="rt"><b>Your personal number stays private</b><span>Work and personal never mix</span></div></div>
         </div>
       </div>
     </div>
+    <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Numberline mobile app</b><p>Calls, texts, voicemails, and settings on the phone already in your pocket. No new hardware.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Business caller ID on outbound calls</b><p>Dial out or return a call and customers see your business number, never your cell.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Tap to call back</b><p>Return a voicemail or text from its transcript, straight from the business number.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Work stays separate</b><p>Business calls ring the app; your personal line and number stay untouched.</p></div></div></div>
   </div>
 </div>
+
+
 
 <!-- ======= STEP 5 · SMS & WHATSAPP ======= -->
 <div class="stepblock fn-sms" id="messaging" data-screen-label="Step 5 SMS and WhatsApp">
   <div class="wrap">
     <div class="step-copy">
-      <div class="step-tag"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><h2>SMS &amp; WhatsApp <span class="step-opt">Extra</span></h2></div>
+      <div class="step-tag"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><h2>Get SMS &amp; WhatsApp messages on your business number, in one shared team inbox.</h2></div>
       <p>Customers message your business number and every conversation lands in one shared inbox - the history stays with the company, not one person's phone.</p>
-      <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Any teammate can reply from the shared inbox.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>When someone leaves, the conversations don't leave with them.</span></li>
-      </ul>
     </div>
     <div class="visual">
       <div class="il reveal">
@@ -493,6 +442,7 @@
         <div class="inbox-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3 3-5 6-5s6 2 6 5"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M15.5 20c0-2.6 2-4 4.5-4"></path></svg>3 teammates can reply<span class="who-row"><span class="av">B</span><span class="av">M</span><span class="av">+1</span></span></div>
       </div>
     </div>
+    <div class="fsubs"><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Shared team inbox</b><p>Texts and WhatsApp messages land in one inbox the whole team can see, not on one person's phone.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Assign to users</b><p>Give a conversation an owner so nothing falls through; everyone sees who has it.</p></div></div><div class="fsub"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Reply from the business number</b><p>Answers go back over the same channel the customer wrote, always from the business.</p></div></div></div>
   </div>
 </div>
 
@@ -500,13 +450,8 @@
 <div class="stepblock fn-ai" id="integrations" data-screen-label="Step 6 Integrations and AI">
   <div class="wrap">
     <div class="step-copy">
-      <div class="step-tag"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></span><h2>Add integrations &amp; AI <span class="step-opt">Extra</span></h2></div>
+      <div class="step-tag"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></span><h2>Add integrations &amp; connect AI answering tools</h2></div>
       <p>Route any extension to the AI answering service that fits, send alerts to Slack, and trigger webhooks into your own software.</p>
-      <ul class="step-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Point Sales at a lead-qualifier, Support at an answer bot, Scheduling at a booking agent.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span>Switch providers without ever changing your number or extensions.</span></li>
-      </ul>
-      <div class="step-note"><strong>Bring your own AI.</strong> Numberline includes AI transcripts, summaries, and greetings - and lets you route calls to the answering service you choose. <a href="learn/bring-your-own-ai.html" style="color:var(--c);font-weight:800;">See how it works &rsaquo;</a></div>
     </div>
     <div class="visual">
       <div class="il reveal">
@@ -521,85 +466,56 @@
         </div>
       </div>
     </div>
+    <div class="ig-grid">
+      <div class="ig reveal" id="slack"><div class="lg slack" style="background:#fff;border:1px solid #E5E7EB;color:inherit;"><svg viewBox="0 0 24 24" fill="none"><path d="M9.1 2.5a2 2 0 0 0 0 4h2v-2a2 2 0 0 0-2-2Zm0 5.3H4a2 2 0 1 0 0 4h5.1a2 2 0 0 0 0-4Z" fill="#36C5F0"/><path d="M21.5 9.8a2 2 0 1 0-4 0v2h2a2 2 0 0 0 2-2Zm-5.3 0V4.7a2 2 0 1 0-4 0v5.1a2 2 0 0 0 4 0Z" fill="#2EB67D"/><path d="M14.2 21.5a2 2 0 0 0 0-4h-2v2a2 2 0 0 0 2 2Zm0-5.3h5.1a2 2 0 1 0 0-4h-5.1a2 2 0 0 0 0 4Z" fill="#ECB22E"/><path d="M2.5 14.2a2 2 0 1 0 4 0v-2h-2a2 2 0 0 0-2 2Zm5.3 0v5.1a2 2 0 1 0 4 0v-5.1a2 2 0 0 0-4 0Z" fill="#E01E5A"/></svg></div><div class="ig-bd"><h3>Slack</h3><p>Post new texts, missed calls, and voicemails into the channels your team already watches. <a href="/slack.html" style="color:var(--accent-dark);font-weight:700;">More &rarr;</a></p></div></div>
+      <div class="ig reveal"><div class="lg wa" style="background:#fff;border:1px solid #E5E7EB;color:inherit;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2a9.9 9.9 0 0 0-8.6 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Z" fill="#25D366"/><path d="M9.3 7.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.5 2.5 1 3 .8 3.6.7.5 0 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.6.1-.3-.1-1.2-.4-2.3-1.4a8.6 8.6 0 0 1-1.6-2c-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5v-.5L9.3 7.2Z" fill="#fff"/></svg></div><div class="ig-bd"><h3>WhatsApp</h3><p>Let customers message your business number on WhatsApp. Conversations appear alongside SMS in the shared Numberline inbox. <a href="/whatsapp.html" style="color:var(--accent-dark);font-weight:700;">More &rarr;</a></p></div></div>
+      <div class="ig reveal"><div class="lg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><div class="ig-bd"><h3>Vapi<span class="tag">AI answering</span></h3><p>Connect a Vapi voice agent to any extension through SIP.</p></div></div>
+      <div class="ig reveal"><div class="lg ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><div class="ig-bd"><h3>Bland AI<span class="tag">AI answering</span></h3><p>Route an extension to a Bland AI agent for answering, qualification, scheduling, or after-hours coverage.</p></div></div>
+      <div class="ig reveal"><div class="lg ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M9 19h6a4 4 0 0 0 4-4V9M6 16V9a4 4 0 0 1 4-4h5"/></svg></div><div class="ig-bd"><h3>Webhooks<span class="tag">Max</span></h3><p>Send call and message events to your own software in real time.</p></div></div>
+      <div class="ig reveal"><div class="lg zap" style="background:#fff;border:1px solid #E5E7EB;color:inherit;"><svg viewBox="0 0 24 24" fill="none"><path d="M14.6 12c0 .8-.15 1.5-.4 2.2-.7.26-1.4.4-2.2.4s-1.5-.14-2.2-.4a6.3 6.3 0 0 1-.4-2.2c0-.77.14-1.5.4-2.2A6.3 6.3 0 0 1 12 9.4c.78 0 1.5.15 2.2.4.25.7.4 1.43.4 2.2Zm7-1.6h-5.55l3.92-3.93a10.5 10.5 0 0 0-2.44-2.44L13.6 7.96V2.4A9.9 9.9 0 0 0 12 2.25c-.55 0-1.09.05-1.6.15v5.56L6.47 4.03a10.1 10.1 0 0 0-2.44 2.44l3.93 3.93H2.4S2.25 11.45 2.25 12c0 .55.05 1.1.15 1.6h5.56l-3.93 3.93a10.4 10.4 0 0 0 2.44 2.44l3.93-3.93v5.56c.51.1 1.05.15 1.6.15.55 0 1.09-.05 1.6-.15v-5.56l3.93 3.93a10.4 10.4 0 0 0 2.44-2.44l-3.93-3.93h5.56c.1-.5.15-1.05.15-1.6 0-.55-.05-1.09-.15-1.6Z" fill="#FF4F00"/></svg></div><div class="ig-bd"><h3>Zapier<span class="tag soon">Coming soon</span></h3><p>Connect Numberline to other apps with no-code automations.</p></div></div>
+    </div>
+    <p style="margin-top:18px;color:var(--body);font-size:1rem;line-height:1.55;max-width:760px;font-weight:600;">Numberline provides AI-generated greetings, transcripts, and voicemail summaries. For answering calls, use the AI service that fits your business. <a href="/ai-voice-agents.html" style="color:var(--accent-dark);font-weight:700;">More on using AI voice agents &rarr;</a></p>
   </div>
 </div>
 
-<!-- ======= EVERYTHING ELSE ======= -->
-<section data-screen-label="Everything else included">
-  <div class="wrap">
-    <div class="jx-head">
-      <div class="jx-kicker">More that comes with it</div>
-      <h2>Every extra feature, included.</h2>
-      <p>The extras that would be add-ons or extra seats elsewhere come standard here.</p>
-    </div>
-    <div class="extras">
-      <div class="xcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M15 3l6 6M21 3l-6 6"></path></svg></div><h3>Make calls as your business</h3><p>Dial out from the app or a desk phone. Customers see your business caller ID; your personal number stays private.</p></div>
-      <div class="xcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></div><h3>App &amp; desk phones</h3><p>Use the Numberline app on the phone you already carry, or connect a compatible SIP desk phone.</p></div>
-      <div class="xcard reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M2.5 20c0-3.2 3-5.2 6.5-5.2S15.5 16.8 15.5 20"></path><circle cx="17.5" cy="9" r="2.4"></circle><path d="M15.8 20c0-2.7 2-4.2 4.7-4.2"></path></svg></div><h3>Unlimited users</h3><p>Add teammates, an EA, or a contractor without turning each person into another paid seat.</p></div>
-    </div>
-    <div style="text-align:center;margin-top:36px;"><a href="early-access.html" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">&raquo;</span></a></div>
-  </div>
+
+<section class="fdev" style="padding:40px 0;background:#F2F5FF;border-top:1px solid #E5E9F5;border-bottom:1px solid #E5E9F5;">
+  <div class="wrap"><div style="max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+    <div style="max-width:640px;"><h2 style="font-size:1.25rem;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;">Want a physical desk phone?</h2><p style="color:var(--body);font-size:1rem;line-height:1.55;">Connect a compatible SIP desk phone: plug it in and it registers to your business number and extensions. Optional, the mobile app does everything.</p></div>
+    <span style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-size:.9rem;font-weight:700;color:var(--ink);white-space:nowrap;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><rect x="4" y="9" width="16" height="11" rx="1.5"></rect><path d="M9 20v-3h6v3M9 4h6v5H9z"></path></svg> Plug into ethernet, no server</span>
+  </div></div>
 </section>
+
+
+
 
 <!-- ======= COMPARISON ======= -->
 <section class="cmp-section" data-screen-label="How Numberline compares">
   <div class="wrap">
-    <div class="jx-head"><div class="jx-kicker">HOW Numberline COMPARES</div><h2>Choose the model that fits your business.</h2><p>Google Voice fits companies centered on Google Workspace. Grasshopper keeps forwarding simple. Quo, Dialpad, and Aircall charge per user. Twilio gives developers communications infrastructure. Numberline gives the entire company one complete, extensible phone system.</p></div>
+    <div class="jx-head"><h2>How Numberline is different.</h2><p>The usual options are built around one person, one Google account, per-user pricing, or your own developers. Numberline is built around the business: one number, unlimited users, and a phone system you change in settings, not in contracts.</p></div>
 
-    <div class="cmp4 reveal">
-      <div class="cmp4-row head">
-        <div>Option</div><div>Where it works</div><div>What to know</div><div>How Numberline is different</div>
-      </div>
-      <div class="cmp4-row">
-        <div class="opt">Google Voice</div>
-        <div class="cell"><span class="lbl">Where it works</span>Basic business calling for companies centered on Google Workspace.</div>
-        <div class="cell"><span class="lbl">What to know</span>Team access and more complete phone-system features are tied to Google users and licenses.</div>
-        <div class="cell"><span class="lbl">How Numberline is different</span>Numberline can start with one number ringing one phone, then add unlimited users, extensions, Slack, WhatsApp, devices, and AI answering services.</div>
-      </div>
-      <div class="cmp4-row">
-        <div class="opt">Grasshopper</div>
-        <div class="cell"><span class="lbl">Where it works</span>Simple forwarding and extensions with account-level pricing.</div>
-        <div class="cell"><span class="lbl">What to know</span>It was designed before Slack, WhatsApp, shared messaging, and bring-your-own AI became normal.</div>
-        <div class="cell"><span class="lbl">How Numberline is different</span>Numberline keeps the simplicity while adding modern messaging, notifications, devices, integrations, and outside AI services.</div>
-      </div>
-      <div class="cmp4-row">
-        <div class="opt">Quo, Dialpad and Aircall</div>
-        <div class="cell"><span class="lbl">Where it works</span>Teams that want most employees actively working inside the phone product.</div>
-        <div class="cell"><span class="lbl">What to know</span>The bill grows whenever another teammate, assistant, or contractor needs access.</div>
-        <div class="cell"><span class="lbl">How Numberline is different</span>Numberline includes unlimited users and does not add another seat fee when someone needs visibility or occasional access.</div>
-      </div>
-      <div class="cmp4-row">
-        <div class="opt">Twilio</div>
-        <div class="cell"><span class="lbl">Where it works</span>Technical teams that want to build and maintain their own communications application.</div>
-        <div class="cell"><span class="lbl">What to know</span>The company owns the interface, routing logic, compliance work, maintenance, and support.</div>
-        <div class="cell"><span class="lbl">How Numberline is different</span>Numberline provides the working phone system while still allowing webhooks, SIP connections, and custom software.</div>
-      </div>
-      <div class="cmp4-row joel">
-        <div class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Numberline</div>
-        <div class="cell"><span class="lbl">Where it works</span>New businesses and modern small businesses that want a complete phone system without per-user pricing.</div>
-        <div class="cell"><span class="lbl">What to know</span>Plan limits apply to numbers, extensions, minutes, and advanced capabilities, not users.</div>
-        <div class="cell"><span class="lbl">How Numberline is different</span>Start with one number ringing one phone. Build a tailored system across people, devices, messaging, integrations, and AI while Numberline remains the phone system underneath.</div>
-      </div>
+    <div class="cmp reveal">
+      <div class="cmp-row head"><div class="opt">Option</div><div class="desc">What to know</div></div>
+      <div class="cmp-row"><div class="opt">Google Voice<span class="verdict">Business calling managed through Google Workspace</span></div><div class="gaps"><span class="gap">Priced per user</span><span class="gap">Workspace required for teams</span><span class="gap">Advanced routing needs higher tiers</span><span class="gap">Built around Google accounts</span></div></div>
+      <div class="cmp-row"><div class="opt">Grasshopper<span class="verdict">A simple virtual phone system, account-level pricing</span></div><div class="gaps"><span class="gap">Limited native integrations</span><span class="gap">Fewer workflow connections</span><span class="gap">Built for simpler phone setups</span></div></div>
+      <div class="cmp-row"><div class="opt">Per-user phone systems<span class="verdict">Quo, Dialpad, Aircall: licensed per teammate</span></div><div class="gaps"><span class="gap">Cost grows with every user</span><span class="gap">Occasional access still costs</span><span class="gap">Advanced features cost more</span><span class="gap">Some plans require minimum seats</span></div></div>
+      <div class="cmp-row"><div class="opt">Twilio APIs<span class="verdict">Programmable communications infrastructure</span></div><div class="gaps"><span class="gap">Not a finished phone system</span><span class="gap">You build the interface and routing</span><span class="gap">Usage and carrier fees are separate</span><span class="gap">Ongoing changes need engineering</span></div></div>
+      <div class="cmp-row best"><div class="opt">Numberline<span class="verdict">A business number and phone system in one</span></div><div class="gaps"><span class="has">Unlimited users, no per-user pricing</span><span class="has">Works on the phones your team has</span><span class="has">Forward calls to mobiles or teams</span><span class="has">Shared texts, voicemail, and transcripts</span><span class="has">Connect Slack, WhatsApp, and webhooks</span><span class="has">Add greetings, extensions, and numbers</span></div></div>
     </div>
 
-    <div class="cmp-cta reveal">
-      <p>Set up the phone system your business should have had from day one.</p>
-      <a href="early-access.html" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
-    </div>
+    
   </div>
 </section>
 
 <section class="closer" id="start">
   <div class="wrap">
-    <div class="closer-card">
+    <div class="closer-card reveal">
       <span class="nup-stamp nup-lg" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
       <h2>Get the business phone number your company can grow around.</h2>
       <p>One number can ring one phone or power a tailored system across people, devices, Slack, WhatsApp, and AI answering services.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
-        <a href="features.html" class="btn btn-secondary btn-lg">Explore every feature</a>
-      </div>
-      <div class="closer-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> From $20/month · Unlimited users · Month-to-month · Free human support</div>
+      <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <div class="closer-micro"><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Money-back guarantee</span><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> No long term contracts</span></div>
+      
     </div>
   </div>
 </section>
@@ -609,15 +525,13 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one. Built for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+        <form class="foot-join" action="/early-access.html" method="get" aria-label="Get early access"><input type="email" name="email" placeholder="Work email" autocomplete="email" aria-label="Work email"><button type="submit" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">&#187;</span></button></form>
       </div>
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a><a href="learn/bring-your-own-ai.html">Third-party AI services</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
-      </div>
-      <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/interior-design.html">Interior designers</a><a href="for/medspas.html">Med spas</a><a href="for/law-firms.html">Small law firms</a></div></div>
-        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it Works &amp; Features</a><a href="/pricing.html">Pricing</a><a href="/slack.html">Slack notifications</a><a href="/whatsapp.html">Texts &amp; WhatsApp inbox</a><a href="/ai-voice-agents.html">Using AI voice agents</a><a href="/signin.html">Sign in</a></div>
+        
+        <div class="foot-col"><h5>Compare</h5><a href="/compare/google-voice.html">Numberline vs Google Voice</a></div><div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
       </div>
     </div>
     <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
@@ -643,5 +557,6 @@
     }
   })();
 </script>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
 </body>
 </html>

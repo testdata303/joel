@@ -1,0 +1,55 @@
+<!--
+  CANONICAL SPECIMEN: Sample Setup, Call Flow form
+  Canonical owner: for/plumbers.html
+  Consumers: all industry pages; .shot-lg variant also on learn/shared-team-phone + learn/answering-coverage
+  HERO FORM (owner, 2026-07-28): the menu/tree form - one keycap row PER menu option (1/2/3/0) with
+  its destination ("Rings ..."), so visitors see the extensions at a glance. The narrative
+  caller-journey rows are RETIRED in heroes.
+  Permitted variants: greeting quote copy; option names and destinations per vertical. After-hours is a STANDARD ROW
+  (fn-ai moon icon), never a separate strip: the .shot-ah routing strip is RETIRED (2026-07-28).
+  Size/destination variant (canon.css): .shot.shot-lg = standalone full-width card (owner: "Where each
+  call goes" on for/plumbers.html) - same anatomy, plus a .dest pill (destination) on the right of each
+  .route row and fn-vm / fn-sms icon rows for "Nobody answers?" and "Texts". The hero shot and the
+  large card are ONE component; never build a separate "flow" dialect (the old .flow is retired).
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer) + assets/site.css. Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+
+<div class="shot reveal" role="img" aria-label="Sample plumbing phone setup: an emergency call rings the on-call plumber, texts and voicemails go to the shared inbox, and after-hours calls forward to an answering service">
+      <span class="nup-stamp nup-lg shot-stamp" role="img" aria-label="No per-user pricing">No per-user<span class="nup-l2">pricing!</span></span>
+      <div class="shot-top">
+        <b>Sample plumbing phone setup</b>
+        <span class="tg">Sample setup</span>
+      </div>
+      <div class="shot-body">
+        <div class="shot-greet"><small>Callers hear your greeting</small>Thanks for calling Metro Plumbing. Press 1 for new jobs, 2 for existing customers, 3 for an emergency, or 0 for the operator.</div>
+        <div class="rings">
+        <div class="route fn-number"><span class="fic key">1</span><div class="rt"><b>New jobs</b><span>Rings the owner's + office mobiles</span></div></div>
+        <div class="route fn-fwd"><span class="fic key">2</span><div class="rt"><b>Existing customers</b><span>Rings the dispatcher's mobile</span></div></div>
+        <div class="route fn-ext"><span class="fic key">3</span><div class="rt"><b>Emergencies</b><span>Rings the on-call plumber's cell</span></div></div>
+        <div class="route fn-fwd"><span class="fic key">0</span><div class="rt"><b>Operator</b><span>Rings the owner's mobile</span></div></div>
+        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div class="rt"><b>Texts / Voicemails</b><span>Sent to shared inbox, email, or Slack</span></div></div>
+        <div class="route fn-ai"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><div class="rt"><b>After hours</b><span>Forward to a third-party answering service</span></div></div>
+        </div>
+      </div>
+    </div>
+
+<!-- VARIANT: .shot-lg - standalone full-width card with .dest destination pills ("Where each call goes") -->
+<div style="height:28px"></div>
+<div class="shot shot-lg reveal">
+      <div class="shot-top"><b>Where each call goes: (415) 555-0134</b><span class="tg">Sample setup</span></div>
+      <div class="shot-body">
+        <div class="shot-greet"><small>Callers hear your greeting</small>Thanks for calling Metro Plumbing. Press 1 for new jobs, 2 for existing customers, 3 for an emergency, or 0 for the operator.</div>
+        <div class="rings">
+        <div class="route fn-fwd"><span class="fic key">1</span><div class="rt"><b>New jobs</b><span>Estimate requests</span></div><span class="dest">Owner's + office mobiles</span></div>
+        <div class="route fn-fwd"><span class="fic key">2</span><div class="rt"><b>Existing customers</b><span>Scheduled work, questions</span></div><span class="dest">Dispatcher's mobile</span></div>
+        <div class="route fn-fwd"><span class="fic key">3</span><div class="rt"><b>Emergencies</b><span>Water through the ceiling</span></div><span class="dest">On-call plumber's cell</span></div>
+        <div class="route fn-fwd"><span class="fic key">0</span><div class="rt"><b>Operator</b><span>Direct line</span></div><span class="dest">Owner's mobile</span></div>
+        <div class="route fn-vm"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="4"></circle><circle cx="18" cy="12" r="4"></circle><path d="M6 16h12"></path></svg></span><div class="rt"><b>Nobody answers?</b><span>Voicemail becomes a transcript; whoever is free calls back from the business number</span></div><span class="dest">Shared inbox</span></div>
+        <div class="route fn-sms"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><div class="rt"><b>Texts</b><span>Leak photos and messages, visible to the whole crew</span></div><span class="dest">Shared inbox</span></div>
+        <div class="route fn-ai"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><div class="rt"><b>After hours</b><span>Forward to your own answering provider or the third-party AI answering service you choose</span></div><span class="dest">Your answering service</span></div>
+        </div>
+      </div>
+    </div>

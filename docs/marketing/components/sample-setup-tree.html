@@ -1,0 +1,23 @@
+<!--
+  CANONICAL SPECIMEN: Sample Setup, tree form
+  Canonical owner: use-cases/ring-multiple-cell-phones.html
+  Consumers: for/startups.html, features/call-forwarding.html
+  Permitted variants: .st status chips OR .dest destination chips on rows; .shot-in top node always present
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer) + assets/site.css. Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+
+<div class="shot sample-setup reveal" role="img" aria-label="Sample setup: someone calls the business number and three mobiles ring at once; Rosa answers and the other phones stop ringing">
+      <div class="shot-top"><b>Incoming call, three phones ringing</b><span class="tg">Sample setup</span></div>
+      <div class="shot-body">
+        <div class="shot-in fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div><b>Someone calls your business number</b><span>(415) 555-0134</span></div></div>
+        <div class="rings">
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="rt"><b>Rosa's mobile</b><span>Owner</span></div><span class="st answered">Answered</span></div>
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="rt"><b>Sam's mobile</b><span>Assistant</span></div><span class="st stopped">Stopped</span></div>
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="rt"><b>Dee's mobile</b><span>On call this week</span></div><span class="st stopped">Stopped</span></div>
+        </div>
+      </div>
+      <div class="shot-foot"><b>Whoever answers first takes the call.</b> Rosa picked up, so Sam's and Dee's phones stopped ringing.</div>
+    </div>

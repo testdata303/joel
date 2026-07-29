@@ -1,0 +1,63 @@
+<!--
+  CANONICAL SPECIMEN: Setup Picker (.pick) - recognizable business setups
+  Canonical owner: features/call-forwarding.html
+  Consumers: feature pages that offer a genuine choice between setups
+
+  WHY (challenged July 2026): the earlier Decision Picker asked visitors to choose between
+  routing METHODS ("ring one phone / everyone at once / in order"). That is telephony
+  configuration, and it violated the site law "show the business running, not the software
+  being configured." Visitors think in scenarios ("my assistant should catch what I miss"),
+  not modes. The replacement keeps the same architecture and tile vocabulary but anchors
+  every card in a recognizable business. The ring methods still appear - embodied, not named:
+  Owner only = one phone; Owner + assistant = in order (numbered badges); The whole team =
+  everyone at once; After hours = the schedule modifier.
+
+  ANATOMY (unchanged architecture):
+    .pick-q  - step label ("Step 1" mono tag + question). Two per component:
+               Step 1 "Who answers your calls?" / Step 2 "Should it change after hours?"
+    .pk x3   - three equal SCENARIO cards in one row: Owner only / Owner + assistant /
+               The whole team
+    .pk.pk-mod - the AFTER-HOURS modifier, one full-width card underneath. Scheduling changes
+               the path any setup takes outside business hours; NEVER a fourth equal card.
+    Each card: .pk-viz tile diagram (.pcol = tile + .pn name label under it; .on = rings,
+    dim = silent; person tints tell people apart: default purple, .p2 blue, .p3 green; numbered badges for order; labeled groups + .pk-arrow transition on the
+    modifier card, after-hours label tinted .gl.alt) + h4 scenario name + .pk-what one or two
+    SHORT sentences + .pk-when "Best when" + the situation.
+  CONTENT LAW: cards are named after PEOPLE AND BUSINESSES, never routing modes or system
+  words ("Mode", "simultaneous", "sequential", "first responder"). Tiles carry names (Owner,
+  Assistant, Sarah). The diagram must match the words. Copy is scan-first: a visitor should
+  find their own business in under five seconds, then see whether after hours changes it.
+  No emoji; tiles + labels are the vocabulary.
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer). Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+<div class="pick reveal">
+  <div class="pick-q"><span class="pq-n">Step 1</span>Who answers your calls?</div>
+  <div class="pk">
+    <div class="pk-viz"><div class="row"><span class="pcol"><span class="ph on"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="pn">Owner</span></span><span class="pcol"><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span></span><span class="pcol"><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span></span></div></div>
+    <h4>Owner only</h4>
+    <p class="pk-what">Every call rings the owner's mobile. Most solo businesses start here.</p>
+    <p class="pk-when"><span class="pk-tag">Best when</span>You answer everything today</p>
+  </div>
+  <div class="pk">
+    <div class="pk-viz"><div class="row"><span class="pcol"><span class="ph on"><i>1</i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="pn">Owner</span></span><span class="pcol"><span class="ph on p2"><i>2</i><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="pn">Assistant</span></span></div></div>
+    <h4>Owner + assistant</h4>
+    <p class="pk-what">The owner's mobile rings first, the assistant's a few seconds later.</p>
+    <p class="pk-when"><span class="pk-tag">Best when</span>Someone should catch what you miss</p>
+  </div>
+  <div class="pk">
+    <div class="pk-viz"><div class="row"><span class="pcol"><span class="ph on"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="pn">Sarah</span></span><span class="pcol"><span class="ph on p2"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="pn">Mike</span></span><span class="pcol"><span class="ph on p3"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="pn">Jo</span></span></div></div>
+    <h4>The whole team</h4>
+    <p class="pk-what">Everyone's mobile rings together. First to answer takes the call.</p>
+    <p class="pk-when"><span class="pk-tag">Best when</span>Whoever is free should answer</p>
+  </div>
+  <div class="pick-q"><span class="pq-n">Step 2</span>Should it change after hours?</div>
+  <div class="pk pk-mod">
+    <div class="pk-viz"><div class="grp"><span class="gl">Business hours</span><div class="row"><span class="ph on"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span><span class="ph on p2"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span></div></div><span class="pk-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span><div class="grp"><span class="gl alt">After hours</span><div class="row"><span class="ph ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"></path></svg></span></div></div></div>
+    <h4>After hours</h4>
+    <p class="pk-what">The team answers during the day. After hours, calls go to an on-call mobile, voicemail, or the outside answering provider you choose.</p>
+    <p class="pk-when"><span class="pk-tag">Best when</span>Evenings and weekends need coverage</p>
+  </div>
+</div>

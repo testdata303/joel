@@ -1,0 +1,310 @@
+{
+ "$comment": "CANONICAL FEATURE REGISTRY (IA_PLAN_2026-07-28.md §0 rule 3, §9d - FROZEN). One entry per capability; every surface (homepage, features hub, footer, pricing, comparison, future docs/onboarding) REFERENCES this file, never keeps its own list. Cards render `outcome` (a declarative one-liner - NEVER the buying question; owner law 2026-07-28); `buying_question` remains the page-planning field. OWNER DECISION 2026-07-28: there are NO feature detail pages; /features.html is the single features surface and every capability renders there as a static card with a descriptive outcome line. Catalog link law: a card links ONLY when its owner is a /features/ page (standalone or anchored); capabilities owned elsewhere (numbers storefront, hub sections) render as static cards until their feature-owned home ships. Verified by tools/site-system.mjs. status: live | promised (brand-paragraph capability, pre-launch) | planned (NEVER rendered anywhere). anchor: null means the owner page top (Wave 2 pages add their anchors on shipping). surfaces: which surfaces may render the capability; adding a surface is a new string, never a schema change.",
+ "updated": "2026-07-28",
+ "categories": {
+  "numbers": {
+   "name": "Numbers",
+   "fn": "fn-number"
+  },
+  "extensions": {
+   "name": "Greetings & extensions",
+   "fn": "fn-ext"
+  },
+  "routing": {
+   "name": "Call routing",
+   "fn": "fn-fwd"
+  },
+  "voicemail": {
+   "name": "Voicemail",
+   "fn": "fn-vm"
+  },
+  "texting": {
+   "name": "Texting & inbox",
+   "fn": "fn-sms"
+  },
+  "connections": {
+   "name": "Apps & AI",
+   "fn": "fn-ai"
+  }
+ },
+ "features": [
+  {
+   "id": "business-numbers",
+   "name": "Local & toll-free numbers",
+   "category": "numbers",
+   "buying_question": "Can I get the right kind of number?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub",
+    "homepage"
+   ],
+   "notes": "Owned by the /numbers/ hub (local merged there permanently)",
+   "outcome": "Get a number in the area code your customers dial, or an 800-style number for a national presence. Use both together if it helps."
+  },
+  {
+   "id": "keep-your-number",
+   "name": "Port your number",
+   "category": "numbers",
+   "buying_question": "Can I bring the number my customers already call?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Designed to support bringing the business number your customers already call. Join early access and we'll share porting details when setup opens."
+  },
+  {
+   "id": "main-greeting",
+   "name": "Main greeting",
+   "category": "extensions",
+   "buying_question": "Can callers hear a professional greeting?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "notes": "Scripts library is the live owner until /features/extensions ships",
+   "outcome": "Record a welcome in your own words. Callers hear the business, not a personal cell, from the first second."
+  },
+  {
+   "id": "extensions",
+   "name": "Extensions",
+   "category": "extensions",
+   "buying_question": "Can callers dial a person or team directly?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub",
+    "homepage"
+   ],
+   "notes": "Wave 2A page live 2026-07-28; one page for greeting + menus + extensions per frozen IA",
+   "outcome": "Give every person and department a direct number like 101, forwarded to the mobiles they already carry."
+  },
+  {
+   "id": "holiday-greetings",
+   "name": "After-hours greetings",
+   "category": "extensions",
+   "buying_question": "Can I set a different greeting for holidays?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "A different welcome outside business hours, so evening and weekend callers know what happens next."
+  },
+  {
+   "id": "call-forwarding",
+   "name": "Call forwarding",
+   "category": "routing",
+   "buying_question": "Can calls reach the right person's mobile?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub",
+    "homepage"
+   ],
+   "outcome": "Send calls to your business number to the right person's mobile. Nothing to install, no desk phones required."
+  },
+  {
+   "id": "schedules",
+   "name": "Call schedules",
+   "category": "routing",
+   "buying_question": "Can routing change after hours or on holidays?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Change where calls go by time: one path during business hours, another after hours and on holidays."
+  },
+  {
+   "id": "call-transfers",
+   "name": "Call transfers",
+   "category": "routing",
+   "buying_question": "Can I pass a live call to a teammate?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "planned",
+   "surfaces": [],
+   "notes": "NOT rendered: owner has not confirmed the capability is shipped"
+  },
+  {
+   "id": "voicemail-delivery",
+   "name": "Voicemail to email & Slack",
+   "category": "voicemail",
+   "buying_question": "Can voicemails land where my team already looks?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Voicemails arrive where the team already looks: the shared inbox, email, or a Slack channel you choose."
+  },
+  {
+   "id": "business-texting",
+   "name": "Business texting",
+   "category": "texting",
+   "buying_question": "Can customers text my business number?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub",
+    "homepage"
+   ],
+   "notes": "Wave 2A page live 2026-07-28",
+   "outcome": "Customers text the business number and the team replies from it. Photos and messages stay with the business."
+  },
+  {
+   "id": "shared-inbox",
+   "name": "Shared SMS inbox",
+   "category": "texting",
+   "buying_question": "Can my whole team answer one business number?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "notes": "The team page is the standalone story; the inbox is its section",
+   "outcome": "Every text lands in one inbox the whole team can see, so a conversation never gets stuck on one phone."
+  },
+  {
+   "id": "callbacks",
+   "name": "Callbacks from the business number",
+   "category": "texting",
+   "buying_question": "Can I call customers back showing the business number?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Call customers back from the business number using your own mobile; they see the business, not your cell."
+  },
+  {
+   "id": "mobile-app",
+   "name": "Mobile app",
+   "category": "connections",
+   "buying_question": "Can I run the business line on the phone I already have?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Run the business line on the phone you already have: answer, call back, text, and check voicemail."
+  },
+  {
+   "id": "slack-notifications",
+   "name": "Slack notifications",
+   "category": "connections",
+   "buying_question": "Can my team see calls where they already work?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Send missed calls, texts, and voicemail summaries into the Slack channels your team watches."
+  },
+  {
+   "id": "whatsapp",
+   "name": "WhatsApp",
+   "category": "connections",
+   "buying_question": "Can customers WhatsApp my business number?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub",
+    "homepage"
+   ],
+   "outcome": "Customers message the same business number on WhatsApp, and it lands in the shared inbox."
+  },
+  {
+   "id": "webhooks",
+   "name": "Webhooks",
+   "category": "connections",
+   "buying_question": "Can events reach my own tools?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Send call and message events to your own tools and workflows."
+  },
+  {
+   "id": "third-party-ai",
+   "name": "Using third-party AI services",
+   "category": "connections",
+   "buying_question": "Can I plug in the answering service I choose?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub",
+    "homepage"
+   ],
+   "notes": "Label fixed verbatim by CLAUDE.md label law",
+   "outcome": "Route calls to your own answering provider or the third-party AI answering service you choose. Numberline stays your phone system."
+  },
+  {
+   "id": "ring-options",
+   "name": "Ring options",
+   "category": "routing",
+   "buying_question": "How should calls ring the team?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Decide how each call rings: one phone, several mobiles at once, or one person first with backups after.",
+   "notes": "Merged from ring-together / ring-in-order / ring-group (owner, 2026-07-28)"
+  },
+  {
+   "id": "custom-notifications",
+   "name": "Custom notifications",
+   "category": "connections",
+   "buying_question": "Can I choose which events reach me, and where?",
+   "owner_page": "/features.html",
+   "anchor": null,
+   "standalone": false,
+   "status": "live",
+   "surfaces": [
+    "features_hub"
+   ],
+   "outcome": "Choose which events reach you and where: calls, texts, and voicemails, delivered to email or the channels you pick.",
+   "notes": "Added by owner 2026-07-28"
+  }
+ ]
+}

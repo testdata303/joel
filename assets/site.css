@@ -113,6 +113,7 @@ nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(25
 
 /* footer */
 footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px;}
+footer .wrap{max-width:1140px;} /* footer owns its width - page-local .wrap overrides must not squeeze it */
 .foot-inner{display:flex;flex-direction:column;gap:44px;}
 .foot-top{display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start;}
 .foot-brand{max-width:420px;flex:1;min-width:280px;}
@@ -163,8 +164,14 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 32px
   --fn-fwd:#4A1160;--fn-fwd-soft:#E9D2FF;--fn-fwd-line:#D9B8FF;
   --fn-vm:#0A5A2A;--fn-vm-soft:#A8F5C8;--fn-vm-line:#7FE8AB;
   --fn-sms:#08525E;--fn-sms-soft:#9FEFFF;--fn-sms-line:#6FE0F5;
-  --fn-ai:#12308F;--fn-ai-soft:#CFE0FF;--fn-ai-line:#A8C4FF;
+  --fn-ai:#B0447F;--fn-ai-soft:#FBE3F0;--fn-ai-line:#F6D0E4;
 }
+/* mark.svc - service-name highlights inside function-list rows; never browser-default yellow */
+mark.svc{background:none;padding:0;font-weight:700;color:inherit;}
+mark.svc.slack{--svc:#EBD6ED;}
+mark.svc.wa{--svc:#A8F5C8;}
+mark.svc.ai{--svc:#CFE0FF;}
+mark.svc.zap{--svc:#FCFA4D;}
 .fn-number{--c:var(--fn-number);--cs:var(--fn-number-soft);--cl:var(--fn-number-line);}
 .fn-ext{--c:var(--fn-ext);--cs:var(--fn-ext-soft);--cl:var(--fn-ext-line);}
 .fn-fwd{--c:var(--fn-fwd);--cs:var(--fn-fwd-soft);--cl:var(--fn-fwd-line);}

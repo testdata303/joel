@@ -1,0 +1,38 @@
+<!--
+  CANONICAL SPECIMEN: Hero shell
+  Canonical owner: use-cases/ring-multiple-cell-phones.html
+  Consumers: all walkthrough pages
+  Permitted variants: grid ratio + padding per page; Sample Setup form varies (tree / call flow)
+  Styles: assets/canon.css (CANONICAL PRIMITIVES layer) + assets/site.css. Do not restyle inline.
+  Copy markup FROM this file, never from an arbitrary page. Registry: docs/marketing/IMPLEMENTATION_REGISTRY.md
+-->
+<!-- PREVIEW (view-only): the links below style this specimen when opened directly. NEVER copy them into a page; a page's design comes from assets/site.css + assets/canon.css. Copy only the component markup below. -->
+<link rel="stylesheet" href="../../../assets/site.css"><link rel="stylesheet" href="../../../assets/canon.css"><link rel="stylesheet" href="preview.css">
+
+<section class="hero" data-screen-label="Direct answer">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Use case</span>
+      <h1>A business phone that rings multiple cell phones.</h1>
+      <p class="hero-answer">A business number can ring several cell phones at the same time. Calls to your Numberline number ring every mobile you add, yours, your assistant's, the on-call tech's, and <b>whoever answers first takes the call.</b> Everyone else's phone stops ringing, and texts and voicemails still land in the shared inbox.</p>
+      <div class="hero-acts">
+        <a href="/how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
+        <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      </div>
+      <p class="hero-note">This is <a href="/features/call-forwarding.html">call forwarding</a> doing its simplest, most useful trick: one number, several phones.</p>
+    </div>
+
+    <div class="shot sample-setup reveal" role="img" aria-label="Sample setup: someone calls the business number and three mobiles ring at once; Rosa answers and the other phones stop ringing">
+      <div class="shot-top"><b>Incoming call, three phones ringing</b><span class="tg">Sample setup</span></div>
+      <div class="shot-body">
+        <div class="shot-in fn-number"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3 14 21"/></svg></span><div><b>Someone calls your business number</b><span>(415) 555-0134</span></div></div>
+        <div class="rings">
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="rt"><b>Rosa's mobile</b><span>Owner</span></div><span class="st answered">Answered</span></div>
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="rt"><b>Sam's mobile</b><span>Assistant</span></div><span class="st stopped">Stopped</span></div>
+        <div class="ring fn-fwd"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="rt"><b>Dee's mobile</b><span>On call this week</span></div><span class="st stopped">Stopped</span></div>
+        </div>
+      </div>
+      <div class="shot-foot"><b>Whoever answers first takes the call.</b> Rosa picked up, so Sam's and Dee's phones stopped ringing.</div>
+    </div>
+  </div>
+</section>

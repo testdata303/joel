@@ -6,19 +6,20 @@
 <meta name="format-detection" content="telephone=no">
 <title>Numberline - About</title>
 <meta name="description" content="Small businesses are entering their most powerful era in history. Here's what we've learned watching them get here.">
+<link rel="canonical" href="/about">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=4">
 <link rel="icon" href="favicon.ico?v=4" sizes="any">
 <link rel="apple-touch-icon" href="favicon-180.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo+Black&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&family=Caveat:wght@500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5">
 <style>
   :root{--cream:#faf7f2;--script:'Caveat',cursive;} /* page-specific tokens; rest inherited from site.css */
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:820px;margin:0 auto;padding:0 32px;}
-  nav .wrap,.closer .wrap{max-width:1100px;}
+  nav .wrap{max-width:1100px;}
 
   /* NAV */
   nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:50;}
@@ -200,9 +201,6 @@
   }
 
   /* CLOSER */
-  .closer{background:var(--blue);color:#fff;text-align:center;padding:88px 0;border-bottom:none;}
-  .closer h2{font-size:clamp(1.85rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;text-wrap:pretty;}
-  .closer p{font-size:1.08rem;opacity:.94;margin-bottom:30px;max-width:50ch;margin-left:auto;margin-right:auto;text-wrap:pretty;}
   .btn-white{display:inline-block;background:#fff;color:var(--blue);padding:14px 28px;border-radius:11px;font-weight:800;text-decoration:none;transition:transform .18s;}
   .btn-white:hover{transform:translateY(-1px);background:#f3f5ff;}
 
@@ -212,18 +210,9 @@
   .reveal.in{opacity:1;transform:none;}
 
   /* === standard closer (matches homepage) === */
-  .closer{background:#fff;color:var(--ink);text-align:center;padding:48px 0 56px;}
-  .closer .wrap{max-width:1140px;}
-  .closer-card{background:#F2F5FF;border:1px solid #E5E9F5;border-radius:26px;padding:60px 46px;color:var(--ink);}
-  .closer-card h2{font-weight:600;font-size:clamp(2.1rem,4vw,3.2rem);letter-spacing:-.035em;line-height:1.12;margin-bottom:18px;color:var(--ink);text-wrap:pretty;}
-  .closer-card p{font-size:1.12rem;line-height:1.55;color:var(--body);max-width:40rem;margin:0 auto 30px;font-weight:400;}
-  .closer-card .btn-primary{background:var(--cta)!important;color:#fff!important;border:1px solid var(--cta)!important;}
-  .closer-card .btn-primary:hover{background:var(--cta-dark)!important;color:#fff!important;transform:translateY(-1px);}
-  .closer-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 </style>
 <style>
-  .closer-micro{margin-top:16px;font-size:.88rem;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
-  .closer-micro svg{width:15px;height:15px;flex-shrink:0;}
+
 </style>
 
 <style id="dc-semantic2">
@@ -233,23 +222,25 @@
 .diff-card .dc-ic{background:#F3F4F6;color:#374151;}
 .guar-row .gic{background:#F3F4F6;color:#374151;}
 </style>
-<link rel="stylesheet" href="assets/canon.css?v=6">
+<link rel="stylesheet" href="assets/canon.css?v=25">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Numberline","item":"https://numberline.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://numberline.com/about"}]}
+</script>
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-    <a href="early-access.html" class="nav-cta nav-cta-m">Get early access</a>
+    <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+    <a href="/early-access.html" class="nav-cta nav-cta-m">Get early access</a>
     <button class="hamburger" id="hb" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <div class="nav-links" id="navlinks">
-      <a href="how-it-works.html">How it works</a>
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="signin.html">Sign in</a>
-      <a href="early-access.html" class="nav-cta">Get early access</a>
+      <a href="/how-it-works.html">How it Works &amp; Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/signin.html">Sign in</a>
+      <a href="/early-access.html" class="nav-cta">Get early access</a>
     </div>
   </div>
 </nav>
@@ -268,6 +259,23 @@
     </div>
   </div>
 </header>
+
+<div class="strip">
+  <div class="wrap strip-press">
+    <span class="press-label">From the team featured in</span>
+    <div class="press-logos"><span class="pl pl-forbes">Forbes</span><span class="pl pl-inc">Inc<i>.</i></span><span class="pl pl-cnbc">CNBC</span><span class="pl pl-nyt">The New York Times</span></div>
+  </div>
+  <div class="wrap strip-inner">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg> Simple setup</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Built for small teams</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Keep your cell private</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg> No hardware to buy</span>
+  </div>
+</div>
+
+
+
+
 
 <!-- THE TEAM -->
 <section class="chapter">
@@ -380,13 +388,11 @@
 <!-- CLOSER -->
 <section class="closer" id="start">
   <div class="wrap">
-    <div class="closer-card">
+    <div class="closer-card reveal">
       <h2>Built for the people who start something.</h2>
       <p>One number, unlimited teammates, and a business that sounds like a business today. No per-user pricing, ever.</p>
-      <div class="closer-acts">
-        <a href="pricing.html" class="btn btn-ghost btn-lg">See pricing</a>
-        <a href="early-access.html" class="btn btn-primary btn-lg btn-arrow">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
-      </div>
+      <a href="/early-access.html" class="btn btn-primary btn-lg">Get early access <span class="btn-guillemet" aria-hidden="true">»</span></a>
+      <div class="closer-micro"><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Money-back guarantee</span><span style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> No long term contracts</span></div>
     </div>
   </div>
 </section>
@@ -396,15 +402,13 @@
     <div class="foot-inner">
       <div class="foot-top">
         <div class="foot-brand">
-        <a href="index.html" class="logo"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
-        <p>Numberline is the phone system for modern small businesses. Get a local or toll-free business line, forward calls to your mobile or team, manage shared texts and voicemails in one inbox, call back from the business number, and add greetings, extensions, Slack, WhatsApp, or third-party AI answering services when you need them.</p>
+        <a href="/index.html" class="logo" aria-label="Numberline home"><span class="lmark"><span class="lmr"><i></i><i></i></span></span><span class="lw">NUMBERLINE</span></a>
+        <p>Numberline is a business number and phone system in one. Built for startups, small businesses, and modern teams. Get a local or toll-free business number, forward calls, manage shared texts and voicemails, call back from your business number, add greetings and extensions, and connect Slack, WhatsApp, webhooks, or third-party AI answering services when you need them.</p>
+        <form class="foot-join" action="/early-access.html" method="get" aria-label="Get early access"><input type="email" name="email" placeholder="Work email" autocomplete="email" aria-label="Work email"><button type="submit" class="btn btn-primary">Get early access <span class="btn-guillemet" aria-hidden="true">&#187;</span></button></form>
       </div>
-        <div class="foot-col"><h5>Product</h5><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a><a href="learn/mobile-app.html">Mobile app</a><a href="learn/slack-notifications.html">Slack notifications</a><a href="learn/bring-your-own-ai.html">Third-party AI services</a></div>
-        <div class="foot-col"><h5>Company</h5><a href="about.html">About</a><a href="about.html">Contact</a><a href="about.html">Support</a><a href="signin.html">Sign in</a></div>
-      </div>
-      <div class="foot-cols">
-        <div class="foot-col foot-col-wide"><h5>Phone systems for</h5><div class="foot-links"><a href="for/new-businesses.html">New businesses</a><a href="for/plumbers.html">Plumbers</a><a href="for/real-estate.html">Real estate agents</a><a href="for/contractors.html">Contractors</a><a href="for/consultants.html">Consultants and agencies</a><a href="for/interior-design.html">Interior designers</a><a href="for/medspas.html">Med spas</a><a href="for/law-firms.html">Small law firms</a></div></div>
-        <div class="foot-col foot-col-wide"><h5>Compare / Learn</h5><div class="foot-links"><a href="learn/virtual-phone-system.html">Virtual phone system</a><a href="learn/small-business-phone-system.html">Small business phone system</a><a href="learn/business-phone-number.html">Business phone number</a><a href="learn/google-voice-alternative.html">Google Voice alternative</a><a href="learn/personal-cell-vs-business-phone-system.html">Personal cell vs business phone system</a></div></div>
+        <div class="foot-col"><h5>Product</h5><a href="/how-it-works.html">How it Works &amp; Features</a><a href="/pricing.html">Pricing</a><a href="/slack.html">Slack notifications</a><a href="/whatsapp.html">Texts &amp; WhatsApp inbox</a><a href="/ai-voice-agents.html">Using AI voice agents</a><a href="/signin.html">Sign in</a></div>
+        
+        <div class="foot-col"><h5>Compare</h5><a href="/compare/google-voice.html">Numberline vs Google Voice</a></div><div class="foot-col"><h5>Company</h5><a href="/about.html">About</a><a href="/about.html">Contact</a><a href="/about.html">Support</a></div>
       </div>
     </div>
     <div class="foot-base">© 2026 Numberline. All rights reserved.</div>
@@ -428,5 +432,6 @@
     }
   })();
 </script>
+<script>/* preview-only shim: rewrites root-relative links under the design-preview path prefix; inert in production */(function(){var m=location.pathname.match(/^(.*\/serve)\//);if(!m)return;var p=m[1];document.querySelectorAll('a[href^="/"]').forEach(function(a){var h=a.getAttribute('href');if(h.indexOf('//')!==0&&h.indexOf(p)!==0)a.setAttribute('href',p+h);});})();</script>
 </body>
 </html>

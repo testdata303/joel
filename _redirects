@@ -1,37 +1,66 @@
-# Netlify redirects - legacy filenames → clean URLs (301 permanent).
-/Plumber%20Landing%20Page.html              /for/plumbers                301
-/Phone%20System%20with%20Slack%20Notifications.html   /learn/slack-notifications   301
+# Netlify redirects. The permanent site is intentionally small: /, /how-it-works, /pricing, /about, /early-access, /signin (+ /signup at launch).
+# Campaign pages live under /go/ (see docs/marketing/MARKETING.md); add each campaign's rules in the campaign block below.
+# Order matters: exact rules before splats, 301s before the 200 rewrites.
 
-# Friendly short aliases
-/plumbers        /for/plumbers                301
-/slack           /learn/slack-notifications   301
+# --- Campaign pages (/go/*) ---
+# (none live yet)
 
-# Signup is hidden until public launch - send anyone who reaches it to early access.
-# Use 302 (temporary) so /signup can return unchanged at launch.
-/signup          /early-access                302
-/signup.html     /early-access                302
+# --- Comparison pages (/compare/*) ---
+/compare/google-voice /compare/google-voice.html 200
+/go/google-voice-alternative /compare/google-voice 301
+/go/google-voice-alternative.html /compare/google-voice 301
 
-# Mobile app
-/mobile-app      /learn/mobile-app.html      200
+# --- Legacy filenames + short aliases (301) ---
+/Plumber%20Landing%20Page.html /how-it-works 301
+/Phone%20System%20with%20Slack%20Notifications.html /slack 301
+/plumbers /how-it-works 301
 
-# Early access
-/early-access    /early-access.html           200
+# --- Signup hidden until launch (302 temporary so /signup can return at launch) ---
+/signup /early-access 302
+/signup.html /early-access 302
 
-# Vertical landing pages - clean slugs serve the /for/*.html files (rewrite, keeps URL).
-/phone-system-for-real-estate    /for/real-estate.html    200
-/phone-system-for-contractors    /for/contractors.html    200
-/phone-system-for-consultants    /for/consultants.html    200
-/phone-system-for-law-firms      /for/law-firms.html      200
-/phone-system-for-interior-designers  /for/interior-design.html  200
-/phone-system-for-medspas             /for/medspas.html         200
+# --- Retired features hub (2026-07-29): merged into /how-it-works ---
+/features /how-it-works 301
+/features.html /how-it-works 301
+/features/* /how-it-works 301
 
-# Learn pages - clean slugs serve the /learn/*.html files.
-/slack-notifications                     /learn/slack-notifications.html                     200
-/bring-your-own-ai                       /learn/bring-your-own-ai.html                       200
-/virtual-phone-system                    /learn/virtual-phone-system.html                    200
-/small-business-phone-system             /learn/small-business-phone-system.html             200
-/business-phone-number                   /learn/business-phone-number.html                   200
-/local-business-phone-number             /learn/local-business-phone-number.html             200
-/toll-free-business-number               /learn/toll-free-business-number.html               200
-/google-voice-alternative                /learn/google-voice-alternative.html                200
-/personal-cell-vs-business-phone-system  /learn/personal-cell-vs-business-phone-system.html  200
+# --- Retired industry + numbers sections (2026-07-29): now campaign templates in docs/marketing/templates/campaigns/; slugs free for future /go/ campaigns ---
+/for/* /how-it-works 301
+/numbers/* /how-it-works 301
+
+# --- Deleted /learn/ and /use-cases/ families (2026-07-28) ---
+/learn/* /how-it-works 301
+/use-cases/* /how-it-works 301
+
+# --- Legacy flat slugs (301) ---
+/phone-system-for-plumbers /how-it-works 301
+/phone-system-for-real-estate /how-it-works 301
+/phone-system-for-contractors /how-it-works 301
+/phone-system-for-consultants /how-it-works 301
+/phone-system-for-law-firms /how-it-works 301
+/phone-system-for-interior-designers /how-it-works 301
+/phone-system-for-medspas /how-it-works 301
+/business-phone-for-startups /how-it-works 301
+/mobile-app /how-it-works 301
+/slack-notifications /slack 301
+/small-business-phone-system /how-it-works 301
+/personal-cell-vs-business-phone-system /how-it-works 301
+/google-voice-alternative /compare/google-voice 301
+/business-phone-number /how-it-works 301
+/local-business-phone-number /how-it-works 301
+/toll-free-business-number /how-it-works 301
+/virtual-phone-system /how-it-works 301
+/bring-your-own-ai /ai-voice-agents 301
+/using-third-party-ai-services /ai-voice-agents 301
+/learn/using-third-party-ai-services /ai-voice-agents 301
+/learn/using-third-party-ai-services.html /ai-voice-agents 301
+
+# --- Canonical extensionless URLs serve their files (200 rewrites) ---
+/how-it-works /how-it-works.html 200
+/pricing /pricing.html 200
+/about /about.html 200
+/early-access /early-access.html 200
+/signin /signin.html 200
+/slack /slack.html 200
+/whatsapp /whatsapp.html 200
+/ai-voice-agents /ai-voice-agents.html 200

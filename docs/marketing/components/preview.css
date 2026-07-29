@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@500;600;700;800;900&family=Spline+Sans+Mono:wght@500;600&display=swap');
+/* PREVIEW-ONLY stylesheet for docs/marketing/components/ specimens and Component Gallery.html.
+   Never load this on a live page. Two jobs:
+   1. Preview chrome (fonts, page vars, disable reveal animations) so a specimen opened directly renders styled.
+   2. Holding pen for component rules that still live inline on owner pages instead of assets/canon.css.
+      When a rule set is lifted to canon.css, DELETE it here (canon is the style authority). */
+:root{--soft:#F6F7F9;--line:#E5E7EB;--ink:#1F2329;--body:#4B5159;--muted:#5B616B;--green-soft:#EAF8F0;--green-ink:#137A4C;--accent-dark:#2E3ACF;--cta-dark:#25272E;--cta-soft:#F0F1F4;--bg:#fff}
+body{margin:0;padding:32px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:#F3F4F6}
+.reveal,[class*="reveal"]{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+/* --- pending centralization: Now vs Later (owner: for/startups.html) --- */
+.nvl{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto}
+.nvl-col{border-radius:20px;padding:32px;border:1px solid var(--line);background:#fff}
+.nvl-col.now{border-color:#CDEEDE;background:var(--green-soft)}
+.nvl-col .tag{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:6px;display:block;color:var(--muted)}
+.nvl-col.now .tag{color:var(--green-ink)}
+.nvl-col h3{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;margin:0 0 4px}
+.nvl-lede{font-size:.95rem;color:var(--body,#3c4147);font-weight:600;margin:0 0 24px}
+.nvl-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin:0;padding:0}
+.nvl-col li{display:block;position:relative;padding-left:33px;font-size:1rem;line-height:1.45;font-weight:600;color:var(--ink)}
+.nvl-col li a{color:var(--accent-dark)}
+.nvl-col li .ic{position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center}
+.nvl-col li .ic svg{width:13px;height:13px}
+.nvl-col.now li .ic{background:#c4ecd6;color:var(--green-ink)}
+.nvl-col.later li .ic{background:var(--soft);color:var(--body)}
+.nvl-col .sub{margin-top:18px;padding-top:16px;border-top:1px solid rgba(19,19,22,.08);font-size:.92rem;color:var(--body);font-weight:600;line-height:1.5}
+.nvl-col .sub b{color:var(--ink)}
+@media(max-width:720px){.nvl{grid-template-columns:1fr}}
+/* --- pending centralization: Sample Setup call-flow rows (owner: for/plumbers.html) --- */
+.route{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+.route:first-of-type{border-top:none}
+.route .fic{width:34px;height:34px;border-radius:10px;background:var(--cs,#fff);border:1px solid var(--line);display:grid;place-items:center;flex:none;font-weight:800;font-size:1rem;color:var(--ink)}
+.route .fic svg{width:18px;height:18px;color:var(--c,var(--ink))}
+.route .fic.key{grid-auto-rows:min-content;row-gap:1px;font-size:.9rem;border-bottom-width:2.5px;border-radius:9px;background:#fff}
+.route .fic.key::after{content:'press';font-size:.4rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:800;line-height:1}
+.route .rt b{display:block;font-size:.92rem;font-weight:700}
+.route .rt span{font-size:.82rem;color:var(--muted);font-weight:600}
+.route .arr{display:none}
+.route-tree{margin:0;padding:0}
+.route-tree::before{display:none}
+.shot-greet small{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px}
+.shot-ah{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:14px 26px;background:#FDF4F9;border-top:1px solid var(--line)}
+.shot-ah-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#B0447F;background:#FBE3F0;border:1px solid #F6D0E4;padding:5px 9px;border-radius:6px;flex:none}
+.shot-ah-tx{font-size:.83rem;color:var(--body);line-height:1.4;font-weight:600}
+.shot-ah-tx b{color:#B0447F;font-weight:800}
